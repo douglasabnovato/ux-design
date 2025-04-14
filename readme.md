@@ -1,3 +1,3 @@
 ## UX Design
 
-Utilizar o futebol para praticar css moderno.
+Desenvolver um site aplicando técnicas de ux design em detalhes.
