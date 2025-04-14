@@ -1,0 +1,59 @@
+<!-- Menu -->
+
+<template if:true={modalAberto}>
+    <div class="modal-overlay">
+        <div class="modal">
+            <div class="modal-body">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" placeholder="Seu nome" oninput={handleInputChange} required>
+                <label for="sobrenome">Sobrenome:</label>
+                <input type="text" id="sobrenome" name="sobrenome" placeholder="Seu sobrenome" oninput={handleInputChange} required>
+                <label for="celular">Telefone (WhatsApp):</label>
+                <input type="text" id="celular" name="celular" placeholder="Seu celular" oninput={handleInputChange} required>
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" placeholder="Seu e-mail" oninput={handleInputChange} required> 
+                <div class="form-group"> 
+                    <lightning-select name="estadoGuide" class="label" id="estadoGuide" label="Estado" value={value}
+                        options={options} onchange={handleStateChange} required></lightning-select>
+                </div> 
+                <div class="form-group"> 
+                    <lightning-select name="cidadeGuide" class="label" id="cidadeGuide" label="Cidade"
+                        value={cidade} options={cidades} onchange={handleCityChange} required>Sua Cidade
+                    </lightning-select>
+                </div> 
+                <div class="form-group"> 
+                    <lightning-select name="nomeGuide" class="label" id="nomeGuide"
+                        label="A sua Guide Shop mais perto de você" value={guide} options={guides}
+                        onchange={handleGuideChange} required>Sua Guide</lightning-select>
+                </div>
+                <dev class="lb-checkbox">
+                    <input type="checkbox" onclick={handleCheckboxes} name="firstcheck" id="firstcheck" class="checkbox-class" required>
+                    <span>Eu concordo com a Política de Privacidade e autorizo o uso dos meus dados.</span>
+                </dev>
+                <dev class="lb-checkbox">
+                    <input type="checkbox" onclick={handleCheckboxes} name="secondcheck" id="secondcheck" class="checkbox-class">
+                    <span>Concordo em receber E-mails, SMS e Whatsapp da ABC da Construção.</span>
+                </dev>
+            </div>
+            <div class="modal-footer">
+                <button class="submit-btn" type="submit" onclick={handleSubmit}>CADASTRAR</button>
+                <button class="submit-btn2" onclick={fecharModal}>Cancelar</button>
+            </div>
+        </div>
+    </div>
+</template>
+<nav class="menu">
+    <div class="logo-header">
+        <img width="240" height="120" src="https://abcdaconstrucao.my.site.com/flamengo/sfsites/c/cms/delivery/media/MCBYHQ4YAUDBBXDGNSGOJPMQCTVA"/>
+    </div>
+    <ul class="navegacao">
+        <li><a onclick={homeScroll}>Home</a></li>
+        <li><a onclick={campanhaScroll}>Campanha</a></li>
+        <li><a onclick={beneficiosScroll}>Benefícios</a></li>
+        <li><a onclick={sobreScroll}>ABC da Construção</a></li>
+        <li><a onclick={duvidasScroll}>Dúvidas Frequentes</a></li>
+    </ul>
+    <div class="button-container">
+        <button class="button-cadastro" title="Cadastre-se" onclick={abrirModal}>Cadastre-se</button>
+    </div>
+</nav>

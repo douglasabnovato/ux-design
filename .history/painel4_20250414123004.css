@@ -1,0 +1,122 @@
+* {
+    font-family: 'Noto Sans', sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.quinta-dobra {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100vw;
+    max-width: 100%;
+
+    padding-block-start: 120px;
+    padding-block-end: 300px;
+    height: auto;
+
+    background-color: rgb(0, 0, 0);
+}
+
+/*Parte do FAQ*/
+.faq-container {
+    height: 100vh;
+    width: 100vw;
+    max-width: 1200px;
+    margin: 0px auto;
+
+    padding-inline: 40px;
+    padding-block: 120px;
+}
+
+.faq-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 30px;
+    font-weight: 800;
+
+    padding-block: 22px;
+    text-align: center;
+}
+
+.faq-logo {
+    padding-right: 40px;
+    color: #dedede;
+}
+
+.faq-title h1 {
+    color: #dedede;
+}
+
+.faq-item {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background-color: rgb(46, 46, 46);
+    color: #dedede;
+
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 600;
+
+    padding: 15px;
+}
+
+.faq-answer {
+    background-color: rgb(46, 46, 46);
+    color: #dedede;
+    border-top: 1px solid #ddd;
+    padding: 15px;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 15px;
+}
+
+.faq-answer p a {
+    text-decoration: none;
+    color: #696969;
+} 
+
+.arrow {
+    transition: transform 0.3s;
+    color: red;
+}
+
+.rotate {
+    transform: rotate(180deg);
+}
+
+/********************Respons**************************/
+
+/* FAQ e quinta dobra */
+@media (max-width: 1024px) {
+
+    .quinta-dobra {
+        padding-block-start: 70px;
+        padding-block-end: 320px;
+        height: auto;
+    }
+
+    .faq-title {
+        font-size: 30px;
+        max-width: 100%;
+    }
+
+    .faq-container {
+        max-width: 95%;
+    }
+ 
+    .faq-answer p {
+        text-align: justify;
+    }
+}

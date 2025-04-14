@@ -1,0 +1,173 @@
+* {
+    font-family: 'Noto Sans', sans-serif;
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    outline: none;
+    border: none;
+    list-style: none;
+}
+
+.quarta-dobra {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding-block: 66px;
+    padding-inline: 26px;
+}
+
+.quarta-dobra h1 {
+    display: flex;
+    justify-content: center;
+    font-weight: 700 !important;
+    font-size: 40px;
+    padding-top: 46px;
+    padding-bottom: 30px
+}
+
+.quarta-dobra-logo {
+    display: flex;
+    justify-items: center;
+    border-radius: 6px;
+    border: 2px solid #fcfcf7;
+}
+
+/* parte 2 */
+.quarta-dobra-p2 {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 942px;
+    margin: 0px auto;
+    height: auto;
+    padding-bottom: 30px
+}
+
+/* coluna 1 */
+.quarta-dobra-p2-t {
+    width: 100%;
+    max-width: 502px;
+    padding-block: 10px;
+    padding-right: 4px;
+}
+
+.quarta-dobra-p2-t p {
+    font-weight: 500;
+    font-size: 17px;
+    color: #795851;
+    padding-left: 4px;
+    padding-bottom: 12px;
+    width: 100%;
+}
+
+
+/* coluna 1 */
+.quarta-dobra-p2-t2 {
+    padding-top: 0px;
+    padding-inline: 2px;
+    padding-bottom: 62px;
+    width: 100%;
+    max-width: 902px;
+    margin: 0px auto;
+}
+
+.quarta-dobra-p2-t2 p {
+    font-weight: 500;
+    font-size: 17px;
+    color: #795851;
+    padding-inline: 12px;
+    padding-bottom: 12px;
+    width: 100%;
+}
+
+/* coluna 2 */
+.quarta-dobra-quadrado {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    text-align: center;
+    width: 100%;
+    max-width: 388px;
+
+    padding-inline-start: 4px;
+    padding-inline-end: 6px;
+}
+
+.quarta-dobra-p2-c {
+    background-color: #fff;
+    transition: 2s;
+    border-radius: 12px;
+    padding-inline: 6px;
+    padding-block: 10px;
+}
+
+.quarta-dobra-p2-c:hover {
+    scale: 0.8;
+}
+
+.quarta-dobra-p2-c h1 {
+    color: #E8210B;
+    font-weight: 700;
+    font-size: 40px
+}
+
+.quarta-dobra-p2-c p {
+    color: black;
+    font-weight: 400;
+    font-size: 20px;
+}
+
+/********************Respons**************************/
+
+/* Quarta dobra */
+@media (max-width: 780px) {
+    .quarta-dobra {}
+
+    .quarta-dobra-p2 {
+        padding-block: 22px;
+        padding-inline: 4px;
+    }
+
+    .quarta-dobra-p2-t {
+        max-width: 100%;
+        padding-block: 12px;
+        padding-inline-start: 4px;
+        padding-inline-end: 3px;
+    }
+
+    .quarta-dobra-p2-t p {
+        text-align: justify;
+    }
+
+
+    .quarta-dobra-quadrado {
+        grid-template-columns: 1fr;
+        max-width: 100%;
+
+        padding-block-start: 22px;
+        padding-block-end: 14px;
+        padding-inline-start: 12px;
+        padding-inline-end: 10px;
+    }
+
+
+    .quarta-dobra-p2-t2 p {
+        text-align: justify;
+    }
+
+    .quarta-dobra-p2-c .card-tres,
+    .quarta-dobra-p2-c .card-quatro {
+        padding-block: 20px;
+    }
+
+    .quarta-dobra-p2-c h1 {
+        font-size: 32px;
+    }
+
+    .quarta-dobra-p2-c p {
+        font-size: 22px;
+    }
+}

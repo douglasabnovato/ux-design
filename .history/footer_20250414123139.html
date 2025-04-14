@@ -1,0 +1,120 @@
+<template>
+    <template if:true={modalAberto}>
+        <div class="modal-overlay">
+            <div class="modal">
+                <div class="modal-body">
+                    <label for="nome">Nome:</label>
+                    <input type="text" id="nome" name="nome" placeholder="Seu nome" oninput={handleInputChange} required>
+
+                    <label for="sobrenome">Sobrenome:</label>
+                    <input type="text" id="sobrenome" name="sobrenome" placeholder="Seu sobrenome" oninput={handleInputChange} required>
+
+                    <label for="numero">Telefone (WhatsApp):</label>
+                    <input type="text" id="celular" name="celular" placeholder="Seu celular" oninput={handleInputChange} required>
+
+                    <label for="email">E-mail:</label>
+                    <input type="email" id="email" name="email" placeholder="Seu e-mail" oninput={handleInputChange} required>
+
+                    <div class="form-group">
+                        <!-- <label for="estadoGuide">Estado</label> -->
+                        <lightning-select name="estadoGuide" class="label" id="estadoGuide" label="Estado" value={value} options={options}
+                        onchange={handleStateChange} required></lightning-select>
+                    </div>
+
+                    <div class="form-group">
+                        <!-- <label for="cidadeGuide">Cidade</label> -->
+                        <lightning-select name="cidadeGuide" class="label" id="cidadeGuide" label="Cidade" value={cidade} options={cidades}
+                        onchange={handleCityChange} required>Sua Cidade</lightning-select>
+                    </div>
+
+                    <div class="form-group">
+                        <!-- <label for="nomeGuide">A sua Guide Shop mais perto de você</label> -->
+                        <lightning-select name="nomeGuide" class="label" id="nomeGuide" label="A sua Guide Shop mais perto de você" value={guide} options={guides}
+                        onchange={handleGuideChange} required>Sua Guide</lightning-select>
+                    </div>
+                    
+                    <dev class="lb-checkbox">
+                        <input type="checkbox" onclick={handleCheckboxes} name="firstcheck" id="firstcheck" class="checkbox-class" required> 
+                        <span>Eu concordo com a Política de Privacidade e autorizo o uso dos meus dados..</span>
+                    </dev>
+                    <dev class="lb-checkbox">
+                        <input type="checkbox" onclick={handleCheckboxes} name="secondcheck" id="secondcheck" class="checkbox-class"> 
+                        <span>Concordo em receber E-mails, SMS e Whatsapp da ABC da Construção.</span>
+                    </dev>
+
+                </div>
+                <div class="modal-footer">
+                    <button class="submit-btn" type="submit" onclick={handleSubmit}>CADASTRAR</button>
+                    <button class="submit-btn2" onclick={fecharModal}>Cancelar</button>
+                </div>
+            </div>
+        </div>
+    </template>
+    <section class="footer">
+        <div class="app-button">
+            <button onclick={abrirModal}>Cadastre-se</button>
+        </div>
+        <div class="footer-icons">
+            <a href="https://www.abcdaconstrucao.com.br/" target="_blank">
+                <img
+          src="https://abcdaconstrucao.my.site.com/saopaulofc/sfsites/c/cms/delivery/media/MCKHGPJFJPUZEULL4IWXVCPQ7E4M"
+          alt="ABC da Construção - A Maior Especialista em Acabamentos"
+          class="footer-abc" />
+            </a>
+
+            <a href="https://www.instagram.com/abcdaconstrucao/" target="_blank">
+                <img
+          src="https://abcdaconstrucao.my.site.com/saopaulofc/sfsites/c/cms/delivery/media/MCERU36YHFTFHAVDHJ47DEAWUVDM"
+          alt="Instagram da ABC"
+          class="footer-instagram" />
+            </a>
+
+            <a href="https://www.facebook.com/novaabcdaconstrucao/" target="_blank">
+                <img
+          src="https://abcdaconstrucao.my.site.com/saopaulofc/sfsites/c/cms/delivery/media/MCICPEAONYMFE3HJRE22N4E4XNY4"
+          alt="Facebook da ABC"
+          class="footer-facebook" />
+            </a>
+
+            <a href="https://www.youtube.com/user/ABCdaConstrucao" target="_blank">
+                <img
+          src="https://abcdaconstrucao.my.site.com/saopaulofc/sfsites/c/cms/delivery/media/MCSHTQ55DVYRAMXJCH5XIQ6245XI"
+          alt="Youtube da ABC"
+          class="footer-youtube" />
+            </a>
+        </div>
+        <nav class="footer-links">
+            <a target="_blank" href="https://www.abcdaconstrucao.com.br/diretorio-de-lojas">Lojas ABC</a>
+            <a target="_blank" href="https://sejaumfranqueado.abcevoce.com.br/franquias">Seja um franqueado</a>
+        </nav>
+    </section>
+    <section class="container">
+        <div class="flex-container">
+            <div class="flex-item left-item">
+                <p class="text-left">Informamos que os dados pessoais tratados neste site serão utilizados para
+                    registro na base da ABC da Construção e envio de informações pelos nossos canais oficiais.
+                    Os comunicados podem contemplar fornecimento de cupons de desconto, envio de informações através
+                    de e-mail marketing, whatsapp, SMS, ligações telefônicas e redes sociais.
+                </p>
+            </div>
+            <div class="flex-item center-item img-center">
+                <a href="https://www.abcdaconstrucao.com.br/" target="_blank">
+                    <img
+                src="https://abcdaconstrucao.my.site.com/saopaulofc/sfsites/c/cms/delivery/media/MC6H2AVJ4A6RB5NLC4FVALDPSL3U"
+                alt="ABC da Construção - A Maior Especialista em Acabamentos"
+                class="footer-abc" />
+                </a>
+            </div>
+            <div class="flex-item right-item">
+                <p class="text-right">Para mais informações sobre o tratamento de dados pessoais pelo ABC da Construção,
+                    acesse nossa &nbsp;
+                    <a href="https://www.abcdaconstrucao.com.br/central-de-atendimento/politica-de-privacidade"
+                        target="_blank" class="politica-privacidade">
+                        <strong>Política de Privacidade</strong>
+                    </a>
+                </p>
+            </div>
+        </div>
+    </section>
+    <p class="footer-latest-text">© 2025. Mysa S.A.. Todos direitos reservados.</p>
+</template>
