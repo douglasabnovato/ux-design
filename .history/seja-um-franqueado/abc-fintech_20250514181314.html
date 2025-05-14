@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .custom-container{
+	color : black;
+}
+
+:host {
+  --destaque: #E5E5E5;
+  --fonte: 'Satoshi-Variable', sans-serif;
+  --background-light: #EBF0F4;
+  --neutral-dark: #333333;
+  display: block;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: "Satoshi-Variable";
+  src: url('sfsites/c/resource/FontSatoshi/Satoshi_Complete/Fonts/WEB/fonts/Satoshi-Variable.woff2') format('woff2'),
+    url('sfsites/c/resource/FontSatoshi/Satoshi_Complete/Fonts/WEB/fonts/Satoshi-Variable.woff') format('woff'),
+    url('sfsites/c/resource/FontSatoshi/Satoshi_Complete/Fonts/WEB/fonts/Satoshi-Variable.ttf') format('truetype');
+  font-weight: 300 900;
+  font-display: swap;
+  font-style: normal;
+}
+
+
+* {
+  font-family: var(--fonte) !important;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  list-style: none;
+  text-decoration: none;
+}
+
+a {
+  all: unset;
+  color: inherit;
+  text-decoration: none !important;
+  cursor: pointer;
+}
+
+header {
+  all: unset;
+  display: none !important;
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  overflow-x: hidden !important;
+}
+
+body {
+  font-family: var(--fonte);
+  color: #D7D3D0;
+  background-color: var(--neutral-dark);
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  overflow-x: hidden;
+}
+
+html {
+  font-size: 16px;
+  max-width: 100%;
+  height: 100dvh;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  font-family: var(--fonte);
+}
+
+button,
+input,
+textarea,
+select {
+  all: unset;
+  font-family: var(--fonte);
+  color: inherit;
+  background: none;
+  border: none;
+  box-sizing: border-box;
+  outline: none;
+}
+
+/* img {
+  all: unset;
+  max-width: 100%;
+  height: auto;
+  display: block;
+} */
+
+ul,
+ol {
+  all: unset;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+table {
+  all: unset;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+:host {
+  display: block;
+  box-sizing: border-box;
+}
+
+
+
+
+/* SECTION ABC X */
+
+.section-abc-x {
+    width: 100%;
+    padding: 40px 0;
+    background-color: #212121;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+}
+
+.logo-abc-x {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.logo-abc-x img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    max-height: 84px;
+}
+
+@media (max-width: 600px) {
+    .logo-abc-x img {
+        max-height: 64px;
+    }
+}
+
+.content-abcx {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    text-align: center;
+    overflow: visible;
+    padding: 0 2rem;
+    width: 100%;
+}
+
+.content-abcx .logo-abcx {
+    width: 307.82px;
+    height: 72px;
+    background-color: transparent;
+}
+
+.text-abcx {
+    width: 100%;
+    max-width: 900px;
+}
+
+.content-abcx .text-abcx h3 span {
+    font-size: 3rem;
+    font-weight: 700;
+    background: linear-gradient(180deg, #FFF 50%, #999 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: #fff;
+    display: inline-block;
+    text-align: center;
+    line-height: 1.1;
+    overflow: visible;
+    padding: 2px 0;
+}
+
+.content-abcx .text-abcx h3 {
+    font-size: 40px;
+    font-weight: 300;
+    color: #FFFFFF;
+    line-height: 110%;
+    text-align: center;
+}
+
+.content-abcx .text-abcx p {
+    font-size: 20px;
+    color: #e5e5e5;
+    line-height: 110%;
+}
+
+.content-abcx .text-abcx p strong {
+    font-weight: 900;
+    color: #FFFFFF;
+    line-height: 110%;
+}
+
+@media (max-width: 600px) {
+    .content-abcx {
+        padding: 0 1.5rem;
+    }
+
+    .content-abcx .text-abcx h3 span {
+        font-size: 36px;
+        line-height: 110%;
+        white-space: normal;
+        overflow-wrap: break-word;
+        word-break: break-word;
+    }
+
+    .content-abcx .text-abcx p strong {
+        font-size: 16px;
+        display: flex;
+        line-height: 110%;
+    }
+
+    .text-abcx p .text-abcx p strong {
+        display: none;
+    }
+}
+
+
+/*prova social 1*/
+.container-prova-social-1 {
+  display: flex;
+  width: 100%;
+  max-width: 1200px;
+  min-width: 350px;
+}
+
+.carrossel-prova-social-1 {
+  display: grid;
+  grid-auto-flow: column;
+  gap: 1.2rem;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  scroll-behavior: smooth; 
+}
+
+.card-prova-social {
+  height: 290px;
+  width: 440px;
+  scroll-snap-align: center;
+  border-radius: 16px;
+}
+
+.card-prova-social iframe {
+  border-radius: 16px;
+}
+
+@media (max-width: 600px) {
+.card-prova-social
+{
+  height: 150px;
+  width: 250px;
+}
+  
+.carrossel-prova-social-1 {
+  padding: 0 24px;
+}
+.container-seta-esquerda,
+.container-seta-direita {
+  display: none;
+}
+
+}
+
+.container-seta-esquerda,
+.container-seta-direita {
+  display: flex;
+  align-items: center;
+}
+
+.container-seta-esquerda img,
+.container-seta-direita img {
+  cursor: pointer;
+}
+
+
+.botao-escolha-modelo {
+    padding: 12px 20px;
+    background-color: #20A389;
+    text-align: center;
+    color: #fff;
+    font-weight: 700;
+    font-size: 20px;
+    border-radius: 28px;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden; 
+    animation: botao-escolha-modelo 5s infinite ease-in-out;
+    transition: all 0.5s ease-in-out !important;
+}
+
+
+.botao-escolha-modelo::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -50%;
+  width: 50%;
+  height: 100%;
+  background: rgba(102, 220, 183, 0.3);
+  filter: blur(12px);
+  transform: skewX(-10deg);
+  animation: shine-effect 2.5s infinite ease-in-out alternate;
+}
+
+.text-abcx > a {
+  text-decoration: none !important;
+}
+
+@keyframes shine-effect {
+  0% {
+    left: -50%;
+  }
+  100% {
+    left: 150%;
+  }
+}
+
+
+@keyframes botao-escolha-modelo {
+  0% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+  60% {
+    transform: translateY(0);
+  }
+  70% {
+    transform: translateY(-2px);
+  }
+  80% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+    </style>
+</head>
+<body> 
+  <section class="section-abc-x">
+    <div class="content-abcx">
+      <div class="text-abcx">
+        <div class="logo-abc-x">
+          <img src="https://abcdaconstrucao.my.site.com/sejaumfranqueado/sfsites/c/cms/delivery/media/MCRERXUV3GXNHNFPVXFQ2TZKIFDE" alt="Logo ABC Fintech">
+        </div>
+        <h3>
+          <span>Mais conversão, menos juros!</span> 
+        </h3>
+        <br>
+        <p>
+          <span>Condições especiais que apenas o líder consegue negociar.</span>
+        </p>
+        <br>
+        <br>
+
+        <!-- PROVA SOCIAL 1 -->
+        <div class="container-prova-social-1">
+
+          <div class="container-seta-esquerda">
+            <img
+              src="https://abcdaconstrucao.my.site.com/sejaumfranqueado/sfsites/c/cms/delivery/media/MCU75UUHXOIFEJVC5NYSBPVKCINU">
+          </div>
+
+          <div class="carrossel-prova-social-1">
+
+            <article class="card-prova-social">
+              <iframe    
+              alt="ULISSES GUZELLA"             
+                width="100%" 
+                height="100%"
+                loading="lazy"
+                src="https://www.youtube.com/embed/GEAqiWxo2fI?si=BGJSRBjk5SEfWrUN&rel=0"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+              </iframe>
+            </article>
+
+            <article class="card-prova-social">
+              <iframe      
+              alt="LUCAS HEILBRUN"           
+                width="100%" 
+                height="100%"
+                loading="lazy"
+                src="https://www.youtube.com/embed/suXTUq3lL-M?si=Umt3s5u3Mjsz5z7G&rel=0"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+              </iframe>
+            </article>         
+
+          </div>
+
+          <div class="container-seta-direita">
+            <img
+              src="https://abcdaconstrucao.my.site.com/sejaumfranqueado/sfsites/c/cms/delivery/media/MCPGGPZRLV7ZA7FC3VO2PVYUEMYA">
+          </div>
+
+        </div>
+
+        <br>
+        <br>
+
+        <a  onclick={formScroll} ><button class="botao-escolha-modelo">PROTEJA SEUS GANHOS</button></a>
+        </br>
+      </div>
+    </div>
+  </section> 
+</body>
+</html>

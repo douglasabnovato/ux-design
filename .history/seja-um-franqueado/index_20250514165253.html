@@ -1,0 +1,3439 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      /* Start - LpSejaUmFranqueadoHeaderNavBarFullbanner */
+      :host {
+        --destaque: #e5e5e5;
+        --fonte: "Satoshi-Variable", sans-serif;
+        --background-light: #ebf0f4;
+        --neutral-dark: #333333;
+        display: block;
+        box-sizing: border-box;
+      }
+
+      @font-face {
+        font-family: "Satoshi-Variable";
+        src: url("sfsites/c/resource/FontSatoshi/Satoshi_Complete/Fonts/WEB/fonts/Satoshi-Variable.woff2")
+            format("woff2"),
+          url("sfsites/c/resource/FontSatoshi/Satoshi_Complete/Fonts/WEB/fonts/Satoshi-Variable.woff")
+            format("woff"),
+          url("sfsites/c/resource/FontSatoshi/Satoshi_Complete/Fonts/WEB/fonts/Satoshi-Variable.ttf")
+            format("truetype");
+        font-weight: 300 900;
+        font-display: swap;
+        font-style: normal;
+      }
+
+      * {
+        font-family: var(--fonte) !important;
+        margin: 0;
+        padding: 0;
+        scroll-behavior: smooth;
+        box-sizing: border-box;
+        outline: none;
+        border: none;
+        list-style: none;
+        text-decoration: none;
+      }
+
+      a {
+        all: unset;
+        color: inherit;
+        text-decoration: none !important;
+        cursor: pointer;
+      }
+
+      header {
+        all: unset;
+        display: none !important;
+        margin: 0;
+        padding: 0;
+      }
+
+      main {
+        overflow-x: hidden !important;
+      }
+
+      body {
+        font-family: var(--fonte);
+        color: #d7d3d0;
+        background-color: var(--neutral-dark);
+        height: 100vh;
+        justify-content: center;
+        align-items: center;
+        overflow-x: hidden;
+      }
+
+      html {
+        font-size: 16px;
+        max-width: 100%;
+        height: 100dvh;
+        scroll-behavior: smooth;
+        overflow-x: hidden;
+        margin: 0;
+        padding: 0;
+        font-family: var(--fonte);
+      }
+
+      button,
+      input,
+      textarea,
+      select {
+        all: unset;
+        font-family: var(--fonte);
+        color: inherit;
+        background: none;
+        border: none;
+        box-sizing: border-box;
+        outline: none;
+      }
+
+      /* img {
+  all: unset;
+  max-width: 100%;
+  height: auto;
+  display: block;
+} */
+
+      ul,
+      ol {
+        all: unset;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      table {
+        all: unset;
+        border-collapse: collapse;
+        width: 100%;
+      }
+
+      /* HEADER */
+      /* OCULTAR H1 */
+      .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        margin: -1px;
+        padding: 0;
+        border: 0;
+        clip: rect(0, 0, 0, 0);
+        overflow: hidden;
+        white-space: nowrap;
+      }
+
+      /* NAV MENU */
+      .full-container-menu {
+        display: flex;
+        width: 100%;
+        background-color: #292929;
+        position: fixed;
+        top: 0;
+        z-index: 500;
+        padding: 0 !important;
+      }
+
+      .content-menu {
+        position: relative;
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+        height: 80px;
+        background-image: linear-gradient(
+          90deg,
+          #ffffff00 0%,
+          #6c6c6cff 50%,
+          #ffffff00 100%
+        ) !important;
+        background-size: 100% 5px !important;
+        background-repeat: no-repeat !important;
+        background-position: bottom !important;
+        padding: 0 1rem !important;
+      }
+
+      @media (max-width: 1440px) {
+        .content-menu {
+          padding: 0 16px;
+        }
+      }
+
+      .content-menu::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 30%;
+        width: 0;
+        height: 4px;
+        background: linear-gradient(
+          90deg,
+          #ffffff00 0%,
+          #ffffffcc 50%,
+          #ffffff00 100%
+        );
+        opacity: 0;
+        animation: light-pass 6s ease-in-out infinite;
+      }
+
+      @keyframes light-pass {
+        0% {
+          left: 0%;
+          width: 0;
+          opacity: 0;
+        }
+
+        25% {
+          left: 30%;
+          width: 400px;
+          opacity: 1;
+        }
+
+        50% {
+          left: 30%;
+          width: 800px;
+          opacity: 1;
+        }
+
+        75% {
+          left: 30%;
+          width: 400px;
+          opacity: 1;
+        }
+
+        100% {
+          left: 30%;
+          width: 0;
+          opacity: 0;
+        }
+      }
+
+      .menu-icon {
+        display: none;
+        width: 48px;
+        height: 48px;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        background-color: transparent;
+        border: none;
+        box-shadow: none;
+      }
+
+      @media (max-width: 900px) {
+        .menu-icon {
+          display: flex;
+        }
+      }
+
+      .logo-container {
+        display: flex;
+        align-items: center;
+        height: 3rem;
+        margin-right: auto;
+      }
+
+      .logo-container img {
+        height: 3rem;
+      }
+
+      @media (max-width: 900px) {
+        .logo-container {
+          width: auto;
+          margin-right: 0;
+        }
+
+        .logo-container img {
+          height: clamp(2.8rem, 5vw, 3rem);
+        }
+      }
+
+      .navbar {
+        width: 100%;
+        display: flex;
+        gap: 15px;
+        align-items: center;
+        justify-content: center;
+        padding: 0.75rem;
+      }
+
+      .menu-item {
+        text-decoration: none !important;
+        text-align: center;
+        color: #b4b4b4 !important;
+        font-size: 1rem;
+        font-weight: 400;
+        padding: 5px 10px;
+        transition: all 0.3s ease-in-out !important;
+        /* will-change: color, transform; */
+      }
+
+      .menu-item:hover {
+        color: #fff !important;
+        /* transform: scale(1.04); */
+        font-weight: bold;
+        text-decoration: none !important;
+      }
+
+      @media (max-width: 900px) {
+        .menu-item {
+          font-size: 1.2rem;
+        }
+      }
+
+      /* 
+.menu-item {
+  text-decoration: none;
+  text-align: center;
+  color: #B4B4B4;
+  font-size: 1rem;
+  font-weight: 400;
+  transition: color 0.3s ease;
+  padding: 5px 10px;
+}
+
+.menu-item:hover {
+  color: #fff;
+  font-weight: bold;
+  transition: 0.35s ease-in-out, padding 0.35s ease-in-out;
+} */
+
+      /* MOBILEDROPDOWN */
+      @media (max-width: 900px) {
+        .navbar {
+          position: absolute;
+          top: 80px;
+          left: 0;
+          width: 100%;
+          background-color: #292929;
+          overflow: hidden;
+          max-height: 0;
+          flex-direction: column;
+          gap: 15px;
+          padding: 0;
+          box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+          z-index: 499;
+          transition: max-height 0.4s ease-in-out, padding 0.4s ease-in-out;
+        }
+
+        .navbar.active {
+          max-height: 350px;
+          padding: 20px 0;
+          border-radius: 0 0 16px 16px;
+        }
+
+        .menu-item {
+          display: block;
+          text-align: center;
+          padding: 10px;
+          color: #b4b4b4 !important;
+        }
+
+        .menu-item:hover {
+          color: #fff !important;
+          font-weight: bold;
+        }
+      }
+
+      .cta-container {
+        display: flex;
+        align-items: center;
+      }
+
+      .cta-button {
+        all: unset;
+        display: inline-block;
+        background-color: #e3062d !important;
+        color: #fff !important;
+        font-weight: 800;
+        padding: 8px 10px;
+        border-radius: 6px;
+        text-decoration: none !important;
+        box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.4);
+        transition: all 0.5s ease-in-out !important;
+        text-align: center;
+        font-size: 14px;
+        white-space: nowrap;
+        position: relative;
+        z-index: 1;
+        cursor: pointer;
+        overflow: hidden;
+        animation: cta-button 5s infinite ease-in-out;
+      }
+
+      .cta-button::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -50%;
+        width: 50%;
+        height: 100%;
+        background: rgba(255, 170, 170, 0.3);
+        filter: blur(12px);
+        transform: skewX(-10deg);
+        animation: shine-effect 2.5s infinite ease-in-out alternate;
+      }
+
+      @keyframes shine-effect {
+        0% {
+          left: -50%;
+        }
+        100% {
+          left: 150%;
+        }
+      }
+
+      @keyframes cta-button {
+        0% {
+          transform: translateY(0);
+        }
+        40% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-4px);
+        }
+        60% {
+          transform: translateY(0);
+        }
+        70% {
+          transform: translateY(-2px);
+        }
+        80% {
+          transform: translateY(0);
+        }
+        100% {
+          transform: translateY(0);
+        }
+      }
+
+      .cta-button:link,
+      .cta-button:visited {
+        color: #fff !important;
+        text-decoration: none !important;
+      }
+
+      .cta-button:hover {
+        background-color: #20a389 !important;
+        box-shadow: 0 0 15px 5px rgba(32, 163, 137, 0.4);
+        color: #fff !important;
+      }
+
+      .cta-button:active {
+        transform: scale(0.95);
+        box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.6);
+        transition: transform 0.6s ease, box-shadow 0.6s ease;
+      }
+
+      @media (max-width: 430px) {
+        .cta-button {
+          font-size: clamp(0.75rem, 1.5vw, 1rem);
+          padding: 10px 0.75rem;
+          font-weight: 800;
+        }
+      }
+
+      @media (max-width: 900px) {
+        .cta-button {
+          padding: 0.75rem 1rem;
+          font-weight: 800;
+        }
+      }
+
+      .fullbanner {
+        width: 100%;
+        height: 350px;
+        position: relative;
+        display: flex;
+        margin-top: 16px;
+        align-items: center;
+        justify-content: center;
+        background-image: url("https://abcdaconstrucao.my.site.com/sejaumfranqueado/sfsites/c/cms/delivery/media/MCSPPIOOSWYNCULL3RX3227S47TQ");
+        background-size: cover;
+        background-position: left;
+      }
+
+      /*.fullbanner img {
+  width: auto;
+  height: 180px;
+  object-fit: cover;
+}*/
+
+      .junte-se-a-mais-de-450 {
+        max-width: 64vw;
+        font-size: clamp(22px, 5vw, 64px);
+        text-align: center;
+        font-weight: 800;
+        line-height: 1.1;
+        color: #fff;
+        padding: 0 16px;
+        text-shadow: 0px 12px 20px rgba(0, 0, 0, 0.8);
+      }
+
+      @media (max-width: 600px) {
+        .fullbanner {
+          height: 220px;
+          margin-top: 28px;
+          background-position: calc(0% + -140px) center;
+        }
+
+        .junte-se-a-mais-de-450 {
+          padding: 0px;
+          max-width: 80vw;
+        }
+      }
+
+      @media (max-width: 1200px) {
+        .fullbanner img {
+          height: 60px;
+        }
+      }
+
+      .cta-falar-com-especialista {
+        position: absolute;
+        bottom: 1.5rem;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #e6394699 !important;
+        backdrop-filter: blur(3px);
+        color: #fff !important;
+        padding: 0.75rem 28px;
+        border-radius: 40px;
+        display: flex;
+        align-items: center;
+        font-weight: bold;
+        line-height: 120%;
+        cursor: pointer;
+        justify-content: center;
+        gap: 8px;
+        text-decoration: none;
+        text-align: center;
+        font-size: 1.2rem;
+        flex-wrap: nowrap;
+        transition: all 0.2s ease-in-out !important;
+        z-index: 1;
+      }
+
+      @media (max-width: 1200px) {
+        .cta-falar-com-especialista {
+          font-size: 1rem;
+        }
+      }
+
+      .cta-falar-com-especialista:hover {
+        background-color: #20a38999 !important;
+        backdrop-filter: blur(24px);
+        transform: translateX(-50%) scale(1.01);
+        box-shadow: 0px 2px 16px 0px rgba(0, 0, 0, 0.8),
+          0px 4px 20px 0px rgba(32, 163, 137, 0.8);
+      }
+
+      .cta-falar-com-especialista:active {
+        transform: translateX(-50%) scale(0.99);
+        box-shadow: 0px 0px 10px rgba(32, 163, 137, 0.6);
+        transition: transform 0.1s ease-in-out, box-shadow 0.1s ease-in-out;
+      }
+
+      .icon-falar-com-especialista {
+        width: 1.25rem !important;
+        height: 1.25rem !important;
+      }
+
+      .falar-com-especialista {
+        white-space: nowrap;
+      }
+      /* The End - LpSejaUmFranqueadoHeaderNavBarFullbanner */
+
+      /* Start - LpSejaUmFranqueadoFirstSection */
+
+      @font-face {
+        font-family: "Satoshi-Variable";
+        src: url("sfsites/c/resource/FontSatoshi/Satoshi_Complete/Fonts/WEB/fonts/Satoshi-Variable.woff2")
+            format("woff2"),
+          url("sfsites/c/resource/FontSatoshi/Satoshi_Complete/Fonts/WEB/fonts/Satoshi-Variable.woff")
+            format("woff"),
+          url("sfsites/c/resource/FontSatoshi/Satoshi_Complete/Fonts/WEB/fonts/Satoshi-Variable.ttf")
+            format("truetype");
+        font-weight: 300 900;
+        font-display: swap;
+        font-style: normal;
+      }
+
+      * {
+        font-family: var(--fonte);
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        outline: none;
+        border: none;
+        list-style: none;
+        text-decoration: none;
+      }
+
+      a {
+        all: unset;
+        color: inherit;
+        text-decoration: none !important;
+        cursor: pointer;
+      }
+
+      /* (tirar os styles automaticos do browser) */
+      input:-webkit-autofill,
+      select:-webkit-autofill {
+        -webkit-box-shadow: 0 0 0 30px white inset !important;
+        -webkit-text-fill-color: black !important;
+      }
+
+      input:-webkit-autofill:hover,
+      select:-webkit-autofill:hover,
+      input:-webkit-autofill:focus,
+      select:-webkit-autofill:focus {
+        -webkit-box-shadow: 0 0 0 30px white inset !important;
+        -webkit-text-fill-color: #2865e8 !important;
+      }
+
+      /* HEADER */
+      /* OCULTAR H1 */
+      .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        margin: -1px;
+        padding: 0;
+        border: 0;
+        clip: rect(0, 0, 0, 0);
+        overflow: hidden;
+        white-space: nowrap;
+      }
+
+      /* NAV MENU */
+      .full-container-menu {
+        display: flex;
+        width: 100%;
+        background-color: #292929;
+        position: fixed;
+        top: 0;
+        z-index: 500;
+      }
+
+      .content-menu {
+        position: relative;
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+        height: 80px;
+        background-image: linear-gradient(
+          90deg,
+          #ffffff00 0%,
+          #6c6c6cff 50%,
+          #ffffff00 100%
+        ) !important;
+        background-size: 100% 5px !important;
+        background-repeat: no-repeat !important;
+        background-position: bottom !important;
+      }
+
+      @media (max-width: 1440px) {
+        .content-menu {
+          padding: 0 16px;
+        }
+      }
+
+      .content-menu::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 30%;
+        width: 0;
+        height: 4px;
+        background: linear-gradient(
+          90deg,
+          #ffffff00 0%,
+          #ffffffcc 50%,
+          #ffffff00 100%
+        );
+        opacity: 0;
+        animation: light-pass 6s ease-in-out infinite;
+      }
+
+      @keyframes light-pass {
+        0% {
+          left: 0%;
+          width: 0;
+          opacity: 0;
+        }
+
+        25% {
+          left: 30%;
+          width: 400px;
+          opacity: 1;
+        }
+
+        50% {
+          left: 30%;
+          width: 800px;
+          opacity: 1;
+        }
+
+        75% {
+          left: 30%;
+          width: 400px;
+          opacity: 1;
+        }
+
+        100% {
+          left: 30%;
+          width: 0;
+          opacity: 0;
+        }
+      }
+
+      .menu-icon {
+        display: none;
+        width: 48px;
+        height: 48px;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        background-color: transparent;
+        border: none;
+        box-shadow: none;
+      }
+
+      @media (max-width: 900px) {
+        .menu-icon {
+          display: flex;
+        }
+      }
+
+      .logo-container {
+        display: flex;
+        align-items: center;
+        height: 3rem;
+        margin-right: auto;
+      }
+
+      .logo-container img {
+        height: 3rem;
+      }
+
+      @media (max-width: 900px) {
+        .logo-container {
+          width: auto;
+          margin-right: 0;
+        }
+
+        .logo-container img {
+          height: clamp(2.8rem, 5vw, 3rem);
+        }
+      }
+
+      .navbar {
+        width: 100%;
+        display: flex;
+        gap: 15px;
+        align-items: center;
+        justify-content: center;
+        padding: 0.75rem;
+      }
+
+      .menu-item {
+        text-decoration: none;
+        text-align: center;
+        color: #b4b4b4;
+        font-size: 1rem;
+        font-weight: 400;
+        transition: color 0.3s ease;
+        padding: 5px 10px;
+      }
+
+      .menu-item:hover {
+        color: #fff;
+        font-weight: bold;
+        transition: 0.35s ease-in-out, padding 0.35s ease-in-out;
+      }
+
+      @media (max-width: 900px) {
+        .menu-item {
+          font-size: 1.2rem;
+        }
+      }
+
+      /* MOBILEDROPDOWN*/
+      @media (max-width: 900px) {
+        .navbar {
+          position: absolute;
+          top: 80px;
+          left: 0;
+          width: 100%;
+          background-color: #292929;
+          overflow: hidden;
+          max-height: 0;
+          flex-direction: column;
+          gap: 15px;
+          padding: 0;
+          box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+          z-index: 499;
+          transition: max-height 0.4s ease-in-out, padding 0.4s ease-in-out;
+        }
+
+        .navbar.active {
+          max-height: 350px;
+          padding: 20px 0;
+          border-radius: 0 0 16px 16px;
+        }
+
+        .navbar.active::after {
+          content: "";
+          position: absolute;
+          bottom: 0;
+          left: 30%;
+          width: 0;
+          height: 4px;
+          background: linear-gradient(
+            90deg,
+            #ffffff00 0%,
+            #ffffffcc 50%,
+            #ffffff00 100%
+          );
+          opacity: 0;
+          animation: light-pass-navbar 6s ease-in-out infinite;
+        }
+
+        .menu-item {
+          display: block;
+          text-align: center;
+          padding: 10px;
+          color: #b4b4b4;
+          text-decoration: none;
+        }
+
+        .menu-item:hover {
+          color: #fff;
+          font-weight: bold;
+        }
+
+        @keyframes light-pass-navbar {
+          0% {
+            left: 0%;
+            width: 0;
+            opacity: 0;
+          }
+
+          25% {
+            left: 30%;
+            width: 400px;
+            opacity: 1;
+          }
+
+          50% {
+            left: 30%;
+            width: 800px;
+            opacity: 1;
+          }
+
+          75% {
+            left: 30%;
+            width: 400px;
+            opacity: 1;
+          }
+
+          100% {
+            left: 30%;
+            width: 0;
+            opacity: 0;
+          }
+        }
+      }
+
+      .cta-container {
+        display: flex;
+        align-items: center;
+      }
+
+      .cta-button {
+        background-color: #e3062d;
+        color: #fff;
+        font-weight: 600;
+        padding: 8px 10px;
+        border-radius: 6px;
+        text-decoration: none;
+        box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.4);
+        transition: background-color 0.3s, box-shadow 0.3s ease-in-out,
+          transform 0.1s ease;
+        text-align: center;
+        font-size: 14px;
+        white-space: nowrap;
+        position: relative;
+        z-index: 1;
+      }
+
+      .cta-button:hover {
+        background-color: #20a389;
+        box-shadow: 0 0 15px 5px rgba(32, 163, 137, 0.4);
+      }
+
+      .cta-button:active {
+        transform: scale(0.95);
+        box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.6);
+        transition: transform 0.1s ease-in-out, box-shadow 0.1s ease-in-out;
+      }
+
+      @media (max-width: 430px) {
+        .cta-button {
+          font-size: clamp(0.75rem, 1.5vw, 1rem);
+          padding: 10px 0.75rem;
+        }
+      }
+
+      @media (max-width: 900px) {
+        .cta-button {
+          padding: 0.75rem 1rem;
+        }
+      }
+
+      .fullbanner {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-image: url(/assets/images/fullbanner-bg-seja-um-franqueado.png);
+        /* background-image: url('/abcdaconstrucao-seja-um-franqueado/assets/images/fullbanner-bg-seja-um-franqueado.png'); */
+        background-size: cover;
+        background-position: left;
+        width: 100%;
+        height: 366px;
+      }
+
+      .fullbanner img {
+        width: auto;
+        height: 100%;
+      }
+
+      @media (max-width: 600px) {
+        .fullbanner {
+          height: 220px;
+          background-position: calc(0% + -140px) center;
+        }
+
+        .fullbanner img {
+          height: 100%;
+        }
+      }
+
+      .cta-falar-com-especialista {
+        position: absolute;
+        bottom: 1.25rem;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #e6394699;
+        backdrop-filter: blur(3px);
+        color: #fff;
+        padding: 1rem 20px;
+        border-radius: 40px;
+        display: flex;
+        align-items: center;
+        font-weight: bold;
+        line-height: 120%;
+        cursor: pointer;
+        justify-content: center;
+        gap: 8px;
+        text-decoration: none;
+        text-align: center;
+        font-size: 1rem;
+        flex-wrap: nowrap;
+        transition: background-color 0.5s ease, transform 0.1s ease,
+          box-shadow 0.3s ease-in-out;
+        z-index: 1;
+      }
+
+      .cta-falar-com-especialista:hover {
+        background-color: #20a38999;
+        backdrop-filter: blur(24px);
+        transform: translateX(-50%) scale(1.01);
+
+        box-shadow: 0 0 20px 5px rgba(32, 163, 137, 0.8);
+      }
+
+      .cta-falar-com-especialista:active {
+        transform: translateX(-50%) scale(0.99);
+        box-shadow: 0px 0px 10px rgba(32, 163, 137, 0.6);
+        transition: transform 0.1s ease-in-out, box-shadow 0.1s ease-in-out;
+      }
+
+      .icon-falar-com-especialista {
+        width: 1.25rem !important;
+        height: 1.25rem !important;
+      }
+
+      .falar-com-especialista {
+        white-space: nowrap;
+      }
+
+      .conteudo-seja-um-franqueado-abc {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 2rem;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      @media (max-width: 800px) {
+        .conteudo-seja-um-franqueado-abc {
+          gap: 1rem;
+        }
+      }
+
+      .svg-suf-desk {
+        display: flex;
+        padding-top: 1.5rem;
+        width: 100%;
+        max-width: 700px;
+      }
+
+      @media (max-width: 1440px) {
+        .svg-suf-desk {
+          padding: 2rem 1rem 0rem 1rem;
+        }
+      }
+
+      @media (max-width: 800px) {
+        .svg-suf-desk {
+          display: none;
+        }
+      }
+
+      .svg-suf-mobile {
+        display: none;
+        width: 100%;
+        max-width: 40rem;
+        margin: 0 auto;
+        padding-top: 1rem;
+      }
+
+      @media (max-width: 800px) {
+        .svg-suf-mobile {
+          display: flex;
+          width: clamp(14rem, 77vw, 40rem);
+        }
+      }
+
+      .faca-parte {
+        display: flex;
+        width: 100%;
+        max-width: 1200px;
+        gap: 80px;
+        justify-content: center;
+      }
+
+      @media (max-width: 1440px) {
+        .faca-parte {
+          padding: 0px 1rem;
+        }
+      }
+
+      @media (max-width: 800px) {
+        .faca-parte {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 2rem;
+        }
+      }
+
+      @media (max-width: 800px) {
+        .nossas-guides-container {
+          text-align: left;
+          word-wrap: break-word;
+          overflow-wrap: break-word;
+          gap: 12px;
+          max-width: 1200px;
+          width: 100%;
+        }
+      }
+
+      .texto-faca-parte {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        justify-content: space-between;
+      }
+
+      .maior-rede-de-acabamentos {
+        /*font-weight: 500;*/
+        font-size: 1.5rem;
+        line-height: 120%;
+        color: #e5e5e5;
+        margin: 0;
+        text-align: center;
+        max-width: 1000px;
+      }
+
+      @media (max-width: 800px) {
+        .maior-rede-de-acabamentos {
+          text-align: center;
+          font-size: 14px;
+        }
+      }
+
+      .subtexto {
+        font-weight: 400;
+        font-size: 1.3rem;
+        line-height: 120%;
+        color: #969696;
+        margin: 0;
+        max-width: 1200px;
+        width: 100%;
+        /* margin-bottom: 2rem; */
+      }
+
+      @media (max-width: 800px) {
+        .subtexto {
+          /* display: none; */
+          text-align: center;
+          font-size: 1rem;
+          line-height: 120%;
+          padding: 0 1rem;
+        }
+      }
+
+      .escudos-times {
+        display: none;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .escudos {
+        max-width: 258px;
+        min-width: 100px;
+      }
+
+      @media (max-width: 800px) {
+        .escudos {
+          max-width: 200px;
+        }
+      }
+
+      .nossas-guides-container {
+        flex: 1;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+
+        & h3 {
+          color: var(--destaque);
+          font-size: clamp(2.5rem, 5vw, 3rem);
+          font-style: normal;
+          font-weight: 600;
+          line-height: clamp(2.5rem, 6vw, 5rem);
+        }
+
+        & .subtexto-guide {
+          font-weight: 400;
+          font-size: 1.3rem;
+          line-height: 120%;
+          color: #969696;
+          margin: 0;
+          max-width: 900px;
+          width: 100%;
+
+          @media (max-width: 600px) {
+            font-size: 1rem;
+          }
+        }
+      }
+
+      @media (max-width: 1440px) {
+        .nossas-guides-container {
+          padding: 0 1rem;
+        }
+      }
+
+      .big-numbers ul::-webkit-scrollbar {
+        display: none;
+        padding: 0px;
+      }
+
+      .big-numbers ul {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        width: 100%;
+        gap: 2rem;
+        overflow: visible;
+      }
+
+      .big-numbers ul li {
+        display: flex;
+        flex-direction: row;
+        font-size: 14px;
+        border-radius: 12px;
+        height: auto;
+        font-weight: bold;
+        color: #232323;
+        background-color: #f3f9f8;
+        background: linear-gradient(
+          180deg,
+          #fff 0%,
+          #eaf0ef 60%,
+          #eaf0ef 20%,
+          #c3c3c3 100%
+        );
+        padding: 0.75rem;
+        gap: 1rem;
+        align-items: center;
+        flex: 0 0 auto;
+        width: auto;
+        justify-content: center;
+      }
+
+      @media (max-width: 800px) {
+        .big-numbers {
+          max-width: 100%;
+          overflow: hidden;
+        }
+
+        .big-numbers ul {
+          display: flex;
+          flex-wrap: nowrap;
+          gap: 1rem;
+          overflow-x: auto;
+          padding: 1rem;
+          box-sizing: border-box;
+          margin: 0;
+          width: 100%;
+        }
+
+        .big-numbers ul li {
+          flex: 0 0 auto;
+          width: auto;
+        }
+      }
+
+      .number {
+        font-size: 2.5rem;
+        font-weight: 900;
+      }
+
+      .big-numbers__icon {
+        width: 4rem;
+        height: 4rem;
+        border-radius: 50%;
+      }
+
+      .big-numbers__info {
+        display: inline-block;
+        font-size: 15px;
+        line-height: 120%;
+        max-width: 200px;
+        width: auto;
+        padding: 10px 0 0 0;
+      }
+
+      .carousel {
+        margin: 0 auto;
+        overflow: hidden;
+        position: relative;
+        width: 100%;
+        padding: 2rem 0;
+      }
+
+      .carousel__track {
+        display: flex;
+        gap: 0.75rem;
+        max-width: 100%;
+      }
+
+      @media (max-width: 900px) {
+        .carousel__track {
+          gap: 20px;
+        }
+      }
+
+      @media (max-width: 800px) {
+        .carousel__track {
+          gap: 15px;
+        }
+      }
+
+      @media (max-width: 600px) {
+        .carousel__track {
+          gap: 10px;
+        }
+      }
+
+      @media (max-width: 430px) {
+        .carousel__track {
+          gap: 5px;
+        }
+      }
+
+      .carousel__card {
+        aspect-ratio: 3/4;
+        border-radius: 1rem;
+        flex-shrink: 0;
+        margin: 0 10px;
+        overflow: hidden;
+        position: relative;
+        width: 300px;
+      }
+
+      @media (max-width: 1200px) {
+        .carousel__card {
+          width: 280px;
+        }
+      }
+
+      @media (max-width: 900px) {
+        .carousel__card {
+          width: 250px;
+        }
+      }
+
+      @media (max-width: 800px) {
+        .carousel__card {
+          width: 230px;
+        }
+      }
+
+      @media (max-width: 600px) {
+        .carousel__card {
+          width: 200px;
+          margin: 0 6px;
+        }
+      }
+
+      @media (max-width: 430px) {
+        .carousel__card {
+          width: 180px;
+          margin: 0 4px;
+        }
+      }
+
+      .carousel__card img {
+        height: 100%;
+        left: 0;
+        object-fit: cover;
+        position: absolute;
+        top: 0;
+        transition: transform 300ms ease-in-out;
+        width: 100%;
+      }
+
+      .carousel__card:hover img {
+        transform: scale(1.1);
+      }
+
+      .carousel__card .gradient-overlay {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 50%;
+        background: linear-gradient(
+          180deg,
+          rgba(0, 0, 0, 0) 30%,
+          #333 60%,
+          #000 100%
+        );
+        opacity: 0.7;
+      }
+
+      .text-content {
+        gap: 12px;
+      }
+
+      .carousel__card .text-content {
+        position: absolute;
+        bottom: 5%;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 265px;
+        text-align: left;
+        word-wrap: break-word;
+      }
+
+      @media (max-width: 1280px) {
+        .carousel__card .text-content {
+          width: 280px;
+          left: 56%;
+        }
+      }
+
+      @media (max-width: 900px) {
+        .carousel__card .text-content {
+          width: 240px;
+          left: 54%;
+        }
+      }
+
+      @media (max-width: 800px) {
+        .carousel__card .text-content {
+          width: 220px;
+          left: 54%;
+        }
+      }
+
+      @media (max-width: 700px) {
+        .carousel__card .text-content {
+          width: 220px;
+          left: 54%;
+        }
+      }
+
+      @media (max-width: 600px) {
+        .carousel__card .text-content {
+          width: 170px;
+          left: 48%;
+        }
+      }
+
+      @media (max-width: 430px) {
+        .carousel__card .text-content {
+          width: 160px;
+          left: 50%;
+        }
+      }
+
+      .cidade-guide-shop {
+        font-size: 1.3rem;
+        font-weight: bold;
+        line-height: 120%;
+        color: #fff;
+        margin-bottom: 0.3rem;
+      }
+
+      @media (max-width: 1280px) {
+        .cidade-guide-shop {
+          font-size: 1rem;
+        }
+      }
+
+      @media (max-width: 900px) {
+        .cidade-guide-shop {
+          font-size: 1rem;
+        }
+      }
+
+      .guide-shop-abc-da-construcao {
+        font-size: 0.8rem;
+        font-weight: normal;
+        color: #e9e9e9;
+        line-height: 120%;
+      }
+
+      @media (max-width: 1280px) {
+        .guide-shop-abc-da-construcao {
+          font-size: 0.9rem;
+        }
+      }
+
+      @media (max-width: 800px) {
+        .guide-shop-abc-da-construcao {
+          font-size: 0.8rem;
+        }
+      }
+
+      @media (max-width: 430px) {
+        .guide-shop-abc-da-construcao {
+          font-size: 0.65rem;
+        }
+      }
+
+      @keyframes scroll-infinite {
+        0% {
+          transform: translateX(0);
+        }
+
+        100% {
+          transform: translateX(calc(-100% / 2));
+        }
+      }
+
+      section.modelo-de-negocio {
+        background-color: var(--background-light);
+        justify-content: center;
+        justify-items: center;
+        padding: 2rem 0;
+
+        & h2 {
+          padding: 0 2rem;
+        }
+      }
+
+      .modelo-de-negocio__info {
+        font-size: 20px;
+        line-height: 120%;
+        text-align: center;
+        max-width: 900px;
+        color: #848484;
+        font-weight: 400;
+        padding: 0 2rem;
+      }
+
+      @media (max-width: 600px) {
+        .modelo-de-negocio__info {
+          font-size: 16px;
+          line-height: 120%;
+        }
+      }
+
+      .cards-solucoes-negocio {
+        display: flex;
+        max-width: 1280px;
+        width: 100%;
+        justify-content: center;
+        gap: 2rem;
+        flex-wrap: wrap;
+      }
+
+      @media (max-width: 600px) {
+        .cards-solucoes-negocio {
+          padding: 0 1rem;
+        }
+      }
+
+      .card-negocio {
+        min-width: 420px;
+        max-width: 420px;
+        flex-direction: column;
+        align-items: center;
+        background-color: #f3f9f8;
+        border-radius: 20px;
+        box-shadow: 0px 12px 24px -5px rgba(67, 111, 126, 0.2),
+          0px 8px 12px -6px rgba(67, 111, 126, 0.2);
+        overflow: hidden;
+      }
+
+      @media (max-width: 600px) {
+        .card-negocio {
+          min-width: unset;
+        }
+      }
+
+      .card-image img {
+        width: auto;
+        height: auto;
+        transition: transform 300ms ease-in-out;
+      }
+
+      .card-image:hover img {
+        transform: scale(1.03);
+      }
+
+      .card-content {
+        padding: 24px 24px 28px;
+      }
+
+      .card-content h1 {
+        font-size: 32px;
+        line-height: 120%;
+        color: var(--neutral-dark);
+        margin-bottom: 16px;
+      }
+
+      @media (max-width: 600px) {
+        .card-content h1 {
+          font-size: 30px;
+        }
+      }
+
+      .card-content .highlight {
+        color: #d72a36;
+        font-weight: 800;
+      }
+
+      .benefits {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .benefits strong {
+        font-weight: 900;
+        font-size: 17px;
+        color: var(--neutral-dark);
+      }
+
+      .benefits li {
+        font-size: 1.1rem;
+        color: #4f4f4f;
+        font-weight: 500;
+        line-height: 120%;
+        margin-bottom: 16px;
+        position: relative;
+        padding-left: 24px;
+      }
+
+      .benefits li::before {
+        content: "\2192";
+        color: #a3b4b4;
+        position: absolute;
+        left: 0;
+        top: 0.25rem;
+      }
+
+      .conheca-modelos-negocio {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        margin-top: 4rem;
+
+        & h2 {
+          color: var(--neutral-dark);
+          font-size: clamp(2.5rem, 5vw, 4rem);
+          font-style: normal;
+          font-weight: 500;
+          line-height: clamp(120%, 6vw, 120%);
+        }
+
+        & strong {
+          font-weight: 1600px;
+        }
+      }
+
+      .modelo-de-negocio h2,
+      .conheca-modelos-negocio h2 {
+        font-size: 64px;
+        line-height: clamp(110%, 6vw, 120%);
+        text-align: center;
+        font-style: normal;
+        font-weight: 500;
+        max-width: 900px;
+        color: var(--neutral-dark);
+      }
+
+      .modelo-de-negocio h2 span {
+        font-weight: 900;
+      }
+
+      .span-bolder {
+        font-weight: 900;
+      }
+
+      @media (max-width: 600px) {
+        .modelo-de-negocio h2,
+        .conheca-modelos-negocio h2 {
+          font-size: 48px;
+          padding: 0 2rem;
+          font-weight: black;
+        }
+
+        .conheca-modelos-negocio h2 span {
+          font-weight: 900;
+        }
+      }
+
+      .modelo-fraquias {
+        display: flex;
+        gap: 2rem;
+        max-width: 1200px;
+        margin: 0 auto;
+        flex-wrap: nowrap;
+
+        & .card-modelo-franquias {
+          background-color: var(--neutral-dark);
+          border-radius: 1rem;
+          display: flex;
+          flex-direction: column;
+          flex: 0 1 378px;
+          max-width: 378px;
+          box-shadow: 0px 12px 24px -5px rgba(67, 111, 126, 0.2),
+            0px 8px 12px -6px rgba(67, 111, 126, 0.2);
+
+          & .info {
+            flex-direction: column;
+            padding: 2rem;
+          }
+
+          & img {
+            aspect-ratio: 16/9;
+            object-fit: cover;
+            border-radius: 1rem 1rem 0 0;
+            width: 100%;
+            height: auto;
+          }
+
+          & h4 {
+            color: var(--destaque);
+            font-size: 1.5rem;
+            font-weight: 700;
+          }
+
+          & p {
+            color: #b4b4b4;
+            position: relative;
+            padding-left: 1.5rem;
+          }
+
+          & p::before {
+            content: "\2192";
+            color: #a3b4b4;
+            position: absolute;
+            left: 0;
+            top: 0;
+            transform: none;
+            display: block;
+            align-items: flex-start;
+          }
+
+          & .icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 8px;
+            object-fit: cover;
+          }
+
+          & .icon-texto-modelo-franquia {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 1rem;
+            margin-bottom: 1rem;
+          }
+        }
+      }
+
+      @media (max-width: 800px) {
+        .modelo-fraquias {
+          flex-direction: column;
+          padding: 1rem;
+
+          & .card-modelo-franquias {
+            width: 100%;
+            max-width: 420px;
+            margin: 0 auto;
+          }
+        }
+      }
+
+      /* SECTION ABC X */
+
+      .section-abc-x {
+        width: 100%;
+        padding: 40px 0;
+        background-color: #333333;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+      }
+
+      .logo-abc-x {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        margin-bottom: 20px;
+      }
+
+      .logo-abc-x img {
+        display: block;
+        max-width: 100%;
+        height: auto;
+        max-height: 84px;
+      }
+
+      @media (max-width: 600px) {
+        .logo-abc-x img {
+          max-height: 64px;
+        }
+      }
+
+      .content-abcx {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        text-align: center;
+        overflow: visible;
+        padding: 0 2rem;
+      }
+
+      .content-abcx .logo-abcx {
+        width: 307.82px;
+        height: 72px;
+        background-color: transparent;
+      }
+
+      .content-abcx .text-abcx h3 span {
+        font-size: 3rem;
+        font-weight: 700;
+        background: linear-gradient(180deg, #fff 50%, #999 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        color: #fff;
+        display: inline-block;
+        text-align: center;
+        white-space: nowrap;
+        line-height: 1.1;
+        overflow: visible;
+        padding: 2px 0;
+      }
+
+      .content-abcx .text-abcx h3 {
+        font-size: 40px;
+        font-weight: 300;
+        color: #ffffff;
+        line-height: 120%;
+        text-align: center;
+      }
+
+      .content-abcx .text-abcx p {
+        font-size: 20px;
+        color: #e5e5e5;
+        line-height: 120%;
+      }
+
+      .content-abcx .text-abcx p strong {
+        font-weight: 900;
+        color: #ffffff;
+        line-height: 150%;
+      }
+
+      @media (max-width: 600px) {
+        .content-abcx {
+          padding: 0 1.5rem;
+        }
+
+        .content-abcx .text-abcx h3 span {
+          font-size: 48px;
+          white-space: normal;
+          overflow-wrap: break-word;
+          word-break: break-word;
+        }
+
+        .content-abcx .text-abcx h3 {
+          font-size: 24px;
+        }
+
+        .content-abcx .text-abcx p strong {
+          font-size: 20px;
+          display: flex;
+          line-height: 120%;
+        }
+
+        .text-abcx p .text-abcx p strong {
+          display: none;
+        }
+      }
+
+      /*prova social 1*/
+      .container-prova-social-1 {
+        display: flex;
+        width: 100%;
+        min-width: 350px;
+      }
+
+      .carrossel-prova-social-1 {
+        display: grid;
+        grid-auto-flow: column;
+        gap: 1.2rem;
+        overflow-x: auto;
+        overscroll-behavior-x: contain;
+        scroll-snap-type: x mandatory;
+        scrollbar-width: none;
+        scroll-behavior: smooth;
+      }
+
+      .card-prova-social {
+        height: 290px;
+        width: 440px;
+        scroll-snap-align: center;
+        border-radius: 16px;
+      }
+
+      .card-prova-social iframe {
+        border-radius: 16px;
+      }
+
+      @media (max-width: 600px) {
+        .card-prova-social {
+          height: 150px;
+          width: 250px;
+        }
+
+        .carrossel-prova-social-1 {
+          padding: 0 24px;
+        }
+        .container-seta-esquerda,
+        .container-seta-direita {
+          display: none;
+        }
+      }
+
+      .container-seta-esquerda,
+      .container-seta-direita {
+        display: flex;
+        align-items: center;
+      }
+
+      .container-seta-esquerda img,
+      .container-seta-direita img {
+        cursor: pointer;
+      }
+
+      .experience-years {
+        font-size: 2.5rem;
+        font-weight: 900;
+        color: #333;
+      }
+
+      .section-the-news {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        /*min-height: 100vh;*/
+        margin: 0;
+        background-color: #333333;
+        color: white;
+        overflow-x: auto;
+      }
+
+      .card-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+        max-width: 1280px;
+        width: 100%;
+        padding: 0 20px;
+        box-sizing: border-box;
+      }
+
+      .card-main {
+        display: grid;
+        place-items: center;
+        grid-column: span 2;
+        background-color: black;
+        border-radius: 16px;
+        overflow: hidden;
+      }
+
+      .card-secondary-container {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+        gap: 24px;
+        height: 100%;
+      }
+
+      .card-secondary {
+        display: grid;
+        place-items: center;
+        background-color: black;
+        border-radius: 16px;
+        height: 100%;
+        width: 100%;
+        overflow: hidden;
+        padding: 0;
+        margin: 0;
+      }
+
+      .card-image {
+        width: 100%;
+        height: 100%;
+        display: block;
+      }
+
+      @media (max-width: 768px) {
+        .card-container {
+          display: flex;
+          flex-direction: column;
+          gap: 16px;
+        }
+
+        .card-main,
+        .card-secondary-container {
+          min-width: 100%;
+        }
+
+        .card-secondary-container {
+          display: flex;
+          flex-direction: column;
+          gap: 16px;
+        }
+      }
+      /* The End - LpSejaUmFranqueadoFirstSection */
+    </style>
+  </head>
+  <body>
+    <!-- Start - LpSejaUmFranqueadoHeaderNavBarFullbanner -->
+
+    <!-- Header Fullbanner -->
+    <div class="full-container-menu">
+      <div class="content-menu">
+        <div class="menu-icon" aria-label="Abrir menu">
+          <img
+            src="https://abcdaconstrucao.my.site.com/sejaumfranqueado/sfsites/c/cms/delivery/media/MCDF4PGJR5XJB53J7CWCN7YYFXFQ"
+            alt="Menu Icone"
+            fetchpriority="high"
+          />
+          <!-- <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M4 6h16M4 12h16M4 18h16" stroke="#fff" stroke-width="2" stroke-linecap="round" />
+        </svg> -->
+        </div>
+        <div class="logo-container">
+          <img
+            class="logo"
+            src="https://abcdaconstrucao.my.site.com/sejaumfranqueado/sfsites/c/cms/delivery/media/MCEBKEXVFBW5HJZCSDXOVZFRTXBQ"
+            alt="ABC da Construção"
+            fetchpriority="high"
+          />
+        </div>
+        <nav class="navbar">
+          <a href="#guide-shops-30" class="menu-item">Guide Shops</a>
+          <a href="#modelo-negocio-33" class="menu-item">Modelo de Negócio</a>
+          <a href="#modelos-33" class="menu-item">Modelos</a>
+          <a href="#abc-x-36" class="menu-item">Saiba Mais</a>
+          <!--<a href="#" class="menu-item">Dúvidas</a>-->
+        </nav>
+        <div class="cta-container">
+          <a onclick="{formScroll}" class="cta-button">QUERO UMA FRANQUIA</a>
+        </div>
+      </div>
+    </div>
+    <div class="fullbanner">
+      <span class="junte-se-a-mais-de-450"
+        >JUNTE-SE A MAIS DE 400 FRANQUEADOS DE SUCESSO</span
+      >
+      <!--<img class=""
+      src="https://abcdaconstrucao.my.site.com/sejaumfranqueado/sfsites/c/cms/delivery/media/MCYDK6XULUEZBF5NV5CUQXVCHUCY"
+      alt="Marcio Garcia ABC da Construção">-->
+      <a onclick="{formScroll}" class="cta-falar-com-especialista">
+        <!--<img
+        src="https://abcdaconstrucao.my.site.com/sejaumfranqueado/sfsites/c/cms/delivery/media/MCUHWVOW727VGHLLP7FYG753QFFY"
+        alt="Ícone Falar com Especialista" class="icon-falar-com-especialista">-->
+        <span class="falar-com-especialista">SEJA DONO DO SEU NEGÓCIO</span>
+      </a>
+    </div>
+    <!-- The End - LpSejaUmFranqueadoHeaderNavBarFullbanner -->
+
+    <!-- Start - LpSejaUmFranqueadoFirstSection -->
+    <section class="seja-um-franqueado" style="background-color: #333">
+      <!--SVGs e BIG NUMBERS-->
+      <div class="conteudo-seja-um-franqueado-abc">
+        <!-- SEJA UM FRANQUEADO -->
+        <img
+          class="svg-suf-desk"
+          src="https://abcdaconstrucao.my.site.com/sejaumfranqueado/sfsites/c/cms/delivery/media/MCBRVVCAJJPRDFFDBNQUOZC2BQJ4"
+          alt="Seja um franqueado"
+          fetchpriority="high"
+        />
+        <img
+          class="svg-suf-mobile"
+          src="https://abcdaconstrucao.my.site.com/sejaumfranqueado/sfsites/c/cms/delivery/media/MCS66O25RLSBHZDLROQWXFU6ADDA"
+          alt="Seja um franqueado"
+          fetchpriority="high"
+        />
+
+        <!-- O modelo de negócio... -->
+        <div class="faca-parte">
+          <div class="texto-faca-parte">
+            <h1 class="sr-only">
+              Seja um Franqueado ABC da Construção em ABC da Construção
+            </h1>
+            <h2 class="maior-rede-de-acabamentos">
+              O modelo de negócio que está transformando o mercado da construção
+              no Brasil: inovação e rentabilidade em um setor que não para de
+              evoluir.
+            </h2>
+
+            <!--<p class="subtexto">
+            Ao se juntar à ABC da Construção, líder em inovação, você pode faturar milhões com o modelo
+            exclusivo de Guide Shop.
+          </p>-->
+          </div>
+          <!--<div class="escudos-times">
+          <img class="escudos"
+            src="https://abcdaconstrucao.my.site.com/sejaumfranqueado/sfsites/c/cms/delivery/media/MCYYSONL2LGVASLEVB3ZZGBSLDFI"
+            alt="Patrocinadores oficiais">
+        </div>-->
+        </div>
+
+        <!-- PROVA SOCIAL 1 -->
+        <div class="container-prova-social-1">
+          <div class="container-seta-esquerda">
+            <img
+              src="https://abcdaconstrucao.my.site.com/sejaumfranqueado/sfsites/c/cms/delivery/media/MCU75UUHXOIFEJVC5NYSBPVKCINU"
+            />
+          </div>
+
+          <div class="carrossel-prova-social-1">
+            <article class="card-prova-social">
+              <iframe
+                alt="MATEUS SILVA"
+                width="100%"
+                height="100%"
+                src="https://www.youtube.com/embed/F6Em07sJA8U?si=zjKJtGyLyTYmlGGi&rel=0"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
+              >
+              </iframe>
+            </article>
+
+            <article class="card-prova-social">
+              <iframe
+                alt="DEISI DALL"
+                width="100%"
+                height="100%"
+                src="https://www.youtube.com/embed/Cgw2nK7Hf6g?si=2HZUssgR_YwMhRoQ&rel=0"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
+              >
+              </iframe>
+            </article>
+
+            <article class="card-prova-social">
+              <iframe
+                alt="PEDRO CHARBEL"
+                width="100%"
+                height="100%"
+                src="https://www.youtube.com/embed/e3smSbM7BZo?si=IjzVwzuRAm_AIZHQ&rel=0"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
+              >
+              </iframe>
+            </article>
+
+            <article class="card-prova-social">
+              <iframe
+                alt="RODRIGO SALES  E TADEU AQUINO"
+                width="100%"
+                height="100%"
+                src="https://www.youtube.com/embed/GWbMyIsM3wQ?si=ql9LnY2QyWsO6R5I&rel=0"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
+              >
+              </iframe>
+            </article>
+          </div>
+
+          <div class="container-seta-direita">
+            <img
+              src="https://abcdaconstrucao.my.site.com/sejaumfranqueado/sfsites/c/cms/delivery/media/MCPGGPZRLV7ZA7FC3VO2PVYUEMYA"
+            />
+          </div>
+        </div>
+
+        <!--BIG NUMBERS-->
+        <div class="big-numbers">
+          <ul>
+            <li>
+              <div>
+                <img
+                  class="big-numbers__icon"
+                  src="https://abcdaconstrucao.my.site.com/sejaumfranqueado/sfsites/c/cms/delivery/media/MCWNEY5WSEEBBVLPHA2QPKMEIK5A"
+                />
+              </div>
+              <div class="big-numbers__info">
+                <span class="number">+400</span>
+                <span> Guide Shops espalhadas no Brasil</span>
+              </div>
+            </li>
+            <li>
+              <div>
+                <img
+                  class="big-numbers__icon"
+                  src="https://abcdaconstrucao.my.site.com/sejaumfranqueado/sfsites/c/cms/delivery/media/MCMYGMJWR7XJEFBCSLPS7NIRGM44"
+                />
+              </div>
+              <div class="big-numbers__info">
+                <span class="number">+1.100</span>
+                <span> cidades possuem cobertura ABC</span>
+              </div>
+            </li>
+            <li>
+              <div>
+                <img
+                  class="big-numbers__icon"
+                  src="https://abcdaconstrucao.my.site.com/sejaumfranqueado/sfsites/c/cms/delivery/media/MCAARPCOQCJBDK7L6N55XRTRZ56I"
+                />
+              </div>
+              <div class="big-numbers__info">
+                <span class="number">10x</span>
+                <span> mais ágil em logística proprietária</span>
+              </div>
+            </li>
+            <li>
+              <div>
+                <img
+                  class="big-numbers__icon"
+                  src="https://abcdaconstrucao.my.site.com/sejaumfranqueado/sfsites/c/cms/delivery/media/MCHABNAI3VTNGIPG7AC3IM6KUJOM"
+                />
+              </div>
+              <div class="big-numbers__info">
+                <span class="number">+10</span>
+                <span> estados do Brasil estão com a ABC</span>
+              </div>
+            </li>
+            <li>
+              <div>
+                <img
+                  class="big-numbers__icon"
+                  src="https://abcdaconstrucao.my.site.com/sejaumfranqueado/sfsites/c/cms/delivery/media/MCS3M3NXCHHNEFLFIC5J2XB2SF6E"
+                />
+              </div>
+
+              <div class="big-numbers__info">
+                <span class="experience-years"></span>
+                <span> anos de experiência no varejo</span>
+              </div>
+            </li>
+            <li>
+              <div>
+                <img
+                  class="big-numbers__icon"
+                  src="https://abcdaconstrucao.my.site.com/sejaumfranqueado/sfsites/c/cms/delivery/media/MCCONTJOME35BOLESJTEDGIVS54Q"
+                />
+              </div>
+              <div class="big-numbers__info">
+                <span class="number">21</span>
+                <span> centros de distribuição no Brasil</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <!--THE NEWS-->
+        <div class="section-the-news">
+          <div class="card-container">
+            <div class="card-main">
+              <a
+                href="https://www.ft.com/americas-fastest-growing-companies-2023"
+                target="_blank"
+                ><img
+                  class="card-image"
+                  src="https://abcdaconstrucao.my.site.com/sejaumfranqueado/sfsites/c/cms/delivery/media/MCLXSTDBEQLFB2NBKLPSVJ2NB6P4"
+                  alt="Financial Times"
+              /></a>
+            </div>
+            <div class="card-secondary-container">
+              <div class="card-secondary">
+                <a
+                  href="https://valor.globo.com/patrocinado/dino/noticia/2024/09/30/mapeamento-da-construcao-aponta-aumento-no-volume-de-obras.ghtml"
+                  target="_blank"
+                  ><img
+                    class="card-image"
+                    src="https://abcdaconstrucao.my.site.com/sejaumfranqueado/sfsites/c/cms/delivery/media/MC2NFXDQZ5HBFBLGTVURIASSNC6U"
+                    alt="Valor Econômico"
+                /></a>
+              </div>
+              <div class="card-secondary">
+                <a
+                  href="https://imoveis.estadao.com.br/decoracao-reforma-e-construcao/faturamento-da-industria-de-materiais-de-construcao-subiu-28-em-2024/"
+                  target="_blank"
+                  ><img
+                    class="card-image"
+                    src="https://abcdaconstrucao.my.site.com/sejaumfranqueado/sfsites/c/cms/delivery/media/MCE5QEXE4T3RADJG7DBAS3NWGIYI"
+                    alt="Estadão"
+                /></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- NOSSAS GUIDE SHOPS -->
+        <div class="nossas-guides-container" id="guide-shops">
+          <h3>Nossas Guide Shops</h3>
+
+          <p class="subtexto-guide">
+            Com presença nacional, nosso time de especialistas está pronto para
+            achar o ponto perfeito para você e alavancar suas vendas.
+          </p>
+        </div>
+      </div>
+
+      <!--CARROSSEL JS-->
+      <div class="carousel">
+        <div class="carousel__track">
+          <!--LOJA 1-->
+          <div class="carousel__card">
+            <img
+              src="https://abcdaconstrucao.my.site.com/sejaumfranqueado/sfsites/c/cms/delivery/media/MCI2CDAAHHEZB7HGU7SMXE63PTYU"
+              alt="Guide Shop 1"
+            />
+            <div class="gradient-overlay"></div>
+            <div class="text-content">
+              <div class="cidade-guide-shop">Montes Claros MG</div>
+              <div class="guide-shop-abc-da-construcao">
+                Guide Shop ABC da Construção
+              </div>
+            </div>
+          </div>
+          <!--LOJA 2-->
+          <div class="carousel__card">
+            <img
+              src="https://abcdaconstrucao.my.site.com/sejaumfranqueado/sfsites/c/cms/delivery/media/MCVPQWDQBUB5AHPOVCKVDTEO3BZY"
+              alt="Guide Shop 2"
+            />
+            <div class="gradient-overlay"></div>
+            <div class="text-content">
+              <div class="cidade-guide-shop">N. Sra. do Carmo MG</div>
+              <div class="guide-shop-abc-da-construcao">
+                Guide Shop ABC da Construção
+              </div>
+            </div>
+          </div>
+          <!--LOJA 3-->
+          <div class="carousel__card">
+            <img
+              src="https://abcdaconstrucao.my.site.com/sejaumfranqueado/sfsites/c/cms/delivery/media/MCVZHTBWGTIVCUXOY4L7Q35LGFWQ"
+              alt="Guide Shop 3"
+            />
+            <div class="gradient-overlay"></div>
+            <div class="text-content">
+              <div class="cidade-guide-shop">Linhares MG</div>
+              <div class="guide-shop-abc-da-construcao">
+                Guide Shop ABC da Construção
+              </div>
+            </div>
+          </div>
+          <!--LOJA 4-->
+          <div class="carousel__card">
+            <img
+              src="https://abcdaconstrucao.my.site.com/sejaumfranqueado/sfsites/c/cms/delivery/media/MCZGMFHVHMSJEW3DUOGYQUATZE4A"
+              alt="Guide Shop 4"
+            />
+            <div class="gradient-overlay"></div>
+            <div class="text-content">
+              <div class="cidade-guide-shop">Vila Velha ES</div>
+              <div class="guide-shop-abc-da-construcao">
+                Guide Shop ABC da Construção
+              </div>
+            </div>
+          </div>
+          <!--LOJA 5-->
+          <div class="carousel__card">
+            <img
+              src="https://abcdaconstrucao.my.site.com/sejaumfranqueado/sfsites/c/cms/delivery/media/MCD4AGYACGKBHG3DV4DAW3RIS32Y"
+              alt="Guide Shop 5"
+            />
+            <div class="gradient-overlay"></div>
+            <div class="text-content">
+              <div class="cidade-guide-shop">Vitória da Conquista BA</div>
+              <div class="guide-shop-abc-da-construcao">
+                Guide Shop ABC da Construção
+              </div>
+            </div>
+          </div>
+          <!--LOJA 6-->
+          <div class="carousel__card">
+            <img
+              src="https://abcdaconstrucao.my.site.com/sejaumfranqueado/sfsites/c/cms/delivery/media/MCNA6C2KYY45ATDJBN2POW5KF2JI"
+              alt="Guide Shop 6"
+            />
+            <div class="gradient-overlay"></div>
+            <div class="text-content">
+              <div class="cidade-guide-shop">Teixeira de Freitas BA</div>
+              <div class="guide-shop-abc-da-construcao">
+                Guide Shop ABC da Construção
+              </div>
+            </div>
+          </div>
+          <!--LOJA 7-->
+          <div class="carousel__card">
+            <img
+              src="https://abcdaconstrucao.my.site.com/sejaumfranqueado/sfsites/c/cms/delivery/media/MCXRAAUWFOTNA67PQD27TZQ3JLYU"
+              alt="Guide Shop 7"
+            />
+            <div class="gradient-overlay"></div>
+            <div class="text-content">
+              <div class="cidade-guide-shop">Niterói RJ</div>
+              <div class="guide-shop-abc-da-construcao">
+                Guide Shop ABC da Construção
+              </div>
+            </div>
+          </div>
+          <!--LOJA 8-->
+          <div class="carousel__card">
+            <img
+              src="https://abcdaconstrucao.my.site.com/sejaumfranqueado/sfsites/c/cms/delivery/media/MCGCK53NZPRJDAXETNASTBPDASAU"
+              alt="Guide Shop 8"
+            />
+            <div class="gradient-overlay"></div>
+            <div class="text-content">
+              <div class="cidade-guide-shop">Leblon RJ</div>
+              <div class="guide-shop-abc-da-construcao">
+                Guide Shop ABC da Construção
+              </div>
+            </div>
+          </div>
+          <!--LOJA 9-->
+          <div class="carousel__card">
+            <img
+              src="https://abcdaconstrucao.my.site.com/sejaumfranqueado/sfsites/c/cms/delivery/media/MC2NMGS2VAX5HPNDORTVRRWHMFEU"
+              alt="Guide Shop 9"
+            />
+            <div class="gradient-overlay"></div>
+            <div class="text-content">
+              <div class="cidade-guide-shop">Goiânia GO</div>
+              <div class="guide-shop-abc-da-construcao">
+                Guide Shop ABC da Construção
+              </div>
+            </div>
+          </div>
+          <!--LOJA 10-->
+          <div class="carousel__card">
+            <img
+              src="https://abcdaconstrucao.my.site.com/sejaumfranqueado/sfsites/c/cms/delivery/media/MCHP76LYZMT5BOHIKMEDQWTDRZSA"
+              alt="Guide Shop 10"
+            />
+            <div class="gradient-overlay"></div>
+            <div class="text-content">
+              <div class="cidade-guide-shop">Caldas Novas GO</div>
+              <div class="guide-shop-abc-da-construcao">
+                Guide Shop ABC da Construção
+              </div>
+            </div>
+          </div>
+          <!--LOJA 11-->
+          <div class="carousel__card">
+            <img
+              src="https://abcdaconstrucao.my.site.com/sejaumfranqueado/sfsites/c/cms/delivery/media/MC4RTFJBQCFVGSZJKYZGA2DZWEZU"
+              alt="Guide Shop 11"
+            />
+            <div class="gradient-overlay"></div>
+            <div class="text-content">
+              <div class="cidade-guide-shop">Londrina PR</div>
+              <div class="guide-shop-abc-da-construcao">
+                Guide Shop ABC da Construção
+              </div>
+            </div>
+          </div>
+          <!--LOJA 12-->
+          <div class="carousel__card">
+            <img
+              src="https://abcdaconstrucao.my.site.com/sejaumfranqueado/sfsites/c/cms/delivery/media/MCNC2FID5ATNDS3OJ7QCKFPGY6VE"
+              alt="Guide Shop 12"
+            />
+            <div class="gradient-overlay"></div>
+            <div class="text-content">
+              <div class="cidade-guide-shop">Balneário Camboriú SC</div>
+              <div class="guide-shop-abc-da-construcao">
+                Guide Shop ABC da Construção
+              </div>
+            </div>
+          </div>
+          <!--LOJA 13-->
+          <div class="carousel__card">
+            <img
+              src="https://abcdaconstrucao.my.site.com/sejaumfranqueado/sfsites/c/cms/delivery/media/MCFFPIU7BYHREPLHAVS6CHYIPLY4"
+              alt="Guide Shop 13"
+            />
+            <div class="gradient-overlay"></div>
+            <div class="text-content">
+              <div class="cidade-guide-shop">Campo Grande MS</div>
+              <div class="guide-shop-abc-da-construcao">
+                Guide Shop ABC da Construção
+              </div>
+            </div>
+          </div>
+          <!--LOJA 14-->
+          <div class="carousel__card">
+            <img
+              src="https://abcdaconstrucao.my.site.com/sejaumfranqueado/sfsites/c/cms/delivery/media/MC675ENUFYPFH3TMMXUWS536BYWE"
+              alt="Guide Shop 14"
+            />
+            <div class="gradient-overlay"></div>
+            <div class="text-content">
+              <div class="cidade-guide-shop">Florianópolis SC</div>
+              <div class="guide-shop-abc-da-construcao">
+                Guide Shop ABC da Construção
+              </div>
+            </div>
+          </div>
+          <!--LOJA 15-->
+          <div class="carousel__card">
+            <img
+              src="https://abcdaconstrucao.my.site.com/sejaumfranqueado/sfsites/c/cms/delivery/media/MC2NOOMOTOVNB5VL4GDFVMNI7OWI"
+              alt="Guide Shop 15"
+            />
+            <div class="gradient-overlay"></div>
+            <div class="text-content">
+              <div class="cidade-guide-shop">Sorocaba - SP</div>
+              <div class="guide-shop-abc-da-construcao">
+                Guide Shop ABC da Construção
+              </div>
+            </div>
+          </div>
+          <!--LOJA 16-->
+          <div class="carousel__card">
+            <img
+              src="https://abcdaconstrucao.my.site.com/sejaumfranqueado/sfsites/c/cms/delivery/media/MCKMDHI24WBRFYJPB3IS7MHNJUFU"
+              alt="Guide Shop 16"
+            />
+            <div class="gradient-overlay"></div>
+            <div class="text-content">
+              <div class="cidade-guide-shop">Mogi das Cruzes SP</div>
+              <div class="guide-shop-abc-da-construcao">
+                Guide Shop ABC da Construção
+              </div>
+            </div>
+          </div>
+          <!--LOJA 17-->
+          <div class="carousel__card">
+            <img
+              src="https://abcdaconstrucao.my.site.com/sejaumfranqueado/sfsites/c/cms/delivery/media/MCTBYRWHSY6VFYHPIIV53Z7LZZOE"
+              alt="Guide Shop 17"
+            />
+            <div class="gradient-overlay"></div>
+            <div class="text-content">
+              <div class="cidade-guide-shop">São José dos Campos SP</div>
+              <div class="guide-shop-abc-da-construcao">
+                Guide Shop ABC da Construção
+              </div>
+            </div>
+          </div>
+          <!--LOJA 18-->
+          <div class="carousel__card">
+            <img
+              src="https://abcdaconstrucao.my.site.com/sejaumfranqueado/sfsites/c/cms/delivery/media/MCIT2HOKRQ5FC6VD5YZVB6DFFKVY"
+              alt="Guide Shop 18"
+            />
+            <div class="gradient-overlay"></div>
+            <div class="text-content">
+              <div class="cidade-guide-shop">Curitiba PR</div>
+              <div class="guide-shop-abc-da-construcao">
+                Guide Shop ABC da Construção
+              </div>
+            </div>
+          </div>
+          <!--LOJA 19-->
+          <div class="carousel__card">
+            <img
+              src="https://abcdaconstrucao.my.site.com/sejaumfranqueado/sfsites/c/cms/delivery/media/MC4HWV3UYF4RC2VM3BY53XSV2QZI"
+              alt="Guide Shop 19"
+            />
+            <div class="gradient-overlay"></div>
+            <div class="text-content">
+              <div class="cidade-guide-shop">BH - Pedro II MG</div>
+              <div class="guide-shop-abc-da-construcao">
+                Guide Shop ABC da Construção
+              </div>
+            </div>
+          </div>
+          <!--LOJA 20-->
+          <div class="carousel__card">
+            <img
+              src="https://abcdaconstrucao.my.site.com/sejaumfranqueado/sfsites/c/cms/delivery/media/MCS4OOAQO4KZHX7KEZMALA7B3P7U"
+              alt="Guide Shop 20"
+            />
+            <div class="gradient-overlay"></div>
+            <div class="text-content">
+              <div class="cidade-guide-shop">Campinas SP</div>
+              <div class="guide-shop-abc-da-construcao">
+                Guide Shop ABC da Construção
+              </div>
+            </div>
+          </div>
+          <!--LOJA 21-->
+          <div class="carousel__card">
+            <img
+              src="https://abcdaconstrucao.my.site.com/sejaumfranqueado/sfsites/c/cms/delivery/media/MCF7WMVWZDOZHWLAIIEREX4BCRDI"
+              alt="Guide Shop 21"
+            />
+            <div class="gradient-overlay"></div>
+            <div class="text-content">
+              <div class="cidade-guide-shop">Bonito MS</div>
+              <div class="guide-shop-abc-da-construcao">
+                Guide Shop ABC da Construção
+              </div>
+            </div>
+          </div>
+          <!--LOJA 22-->
+          <div class="carousel__card">
+            <img
+              src="https://abcdaconstrucao.my.site.com/sejaumfranqueado/sfsites/c/cms/delivery/media/MCNWOOZ65IBZDIBGXY6L2HZYDF3A"
+              alt="Guide Shop 22"
+            />
+            <div class="gradient-overlay"></div>
+            <div class="text-content">
+              <div class="cidade-guide-shop">Anápolis GO</div>
+              <div class="guide-shop-abc-da-construcao">
+                Guide Shop ABC da Construção
+              </div>
+            </div>
+          </div>
+          <!--LOJA 23-->
+          <div class="carousel__card">
+            <img
+              src="https://abcdaconstrucao.my.site.com/sejaumfranqueado/sfsites/c/cms/delivery/media/MCX4EAGEK7HVDCLHREFQF45VJBJY"
+              alt="Guide Shop 23"
+            />
+            <div class="gradient-overlay"></div>
+            <div class="text-content">
+              <div class="cidade-guide-shop">Cafelândia SP</div>
+              <div class="guide-shop-abc-da-construcao">
+                Guide Shop ABC da Construção
+              </div>
+            </div>
+          </div>
+          <!--LOJA 24-->
+          <div class="carousel__card">
+            <img
+              src="https://abcdaconstrucao.my.site.com/sejaumfranqueado/sfsites/c/cms/delivery/media/MCYXNX6JPGDJHNBHXBS6MGQPYOQM"
+              alt="Guide Shop 24"
+            />
+            <div class="gradient-overlay"></div>
+            <div class="text-content">
+              <div class="cidade-guide-shop">Cianorte PR</div>
+              <div class="guide-shop-abc-da-construcao">
+                Guide Shop ABC da Construção
+              </div>
+            </div>
+          </div>
+          <!--LOJA 25-->
+          <div class="carousel__card">
+            <img
+              src="https://abcdaconstrucao.my.site.com/sejaumfranqueado/sfsites/c/cms/delivery/media/MCZITS7W6X75HPFE2O7WR5D7EC64"
+              alt="Guide Shop 25"
+            />
+            <div class="gradient-overlay"></div>
+            <div class="text-content">
+              <div class="cidade-guide-shop">Curitina PR</div>
+              <div class="guide-shop-abc-da-construcao">
+                Guide Shop ABC da Construção
+              </div>
+            </div>
+          </div>
+          <!--LOJA 26-->
+          <div class="carousel__card">
+            <img
+              src="https://abcdaconstrucao.my.site.com/sejaumfranqueado/sfsites/c/cms/delivery/media/MCE3HG7QOIU5ET7C7JHDGLSNMWKM"
+              alt="Guide Shop 26"
+            />
+            <div class="gradient-overlay"></div>
+            <div class="text-content">
+              <div class="cidade-guide-shop">Esmeraldas MG</div>
+              <div class="guide-shop-abc-da-construcao">
+                Guide Shop ABC da Construção
+              </div>
+            </div>
+          </div>
+          <!--LOJA 27-->
+          <div class="carousel__card">
+            <img
+              src="https://abcdaconstrucao.my.site.com/sejaumfranqueado/sfsites/c/cms/delivery/media/MCUTGY3A4QVJCGTBB4SVZKUJ464Q"
+              alt="Guide Shop 27"
+            />
+            <div class="gradient-overlay"></div>
+            <div class="text-content">
+              <div class="cidade-guide-shop">Hortolândia MG</div>
+              <div class="guide-shop-abc-da-construcao">
+                Guide Shop ABC da Construção
+              </div>
+            </div>
+          </div>
+          <!--LOJA 28-->
+          <div class="carousel__card">
+            <img
+              src="https://abcdaconstrucao.my.site.com/sejaumfranqueado/sfsites/c/cms/delivery/media/MCI3K7KCVIHBHHJM2IHLNHCUW2DY"
+              alt="Guide Shop 28"
+            />
+            <div class="gradient-overlay"></div>
+            <div class="text-content">
+              <div class="cidade-guide-shop">Iracemápolis SP</div>
+              <div class="guide-shop-abc-da-construcao">
+                Guide Shop ABC da Construção
+              </div>
+            </div>
+          </div>
+          <!--LOJA 29-->
+          <div class="carousel__card">
+            <img
+              src="https://abcdaconstrucao.my.site.com/sejaumfranqueado/sfsites/c/cms/delivery/media/MCUICURWTT2RHNFMQSKIJLFCZADI"
+              alt="Guide Shop 29"
+            />
+            <div class="gradient-overlay"></div>
+            <div class="text-content">
+              <div class="cidade-guide-shop">Jaraguá do Sul SC</div>
+              <div class="guide-shop-abc-da-construcao">
+                Guide Shop ABC da Construção
+              </div>
+            </div>
+          </div>
+          <!--LOJA 30-->
+          <div class="carousel__card">
+            <img
+              src="https://abcdaconstrucao.my.site.com/sejaumfranqueado/sfsites/c/cms/delivery/media/MCNCF4E6R5H5CXBNVP2QMMSHBIBY"
+              alt="Guide Shop 30"
+            />
+            <div class="gradient-overlay"></div>
+            <div class="text-content">
+              <div class="cidade-guide-shop">Juatuba MG</div>
+              <div class="guide-shop-abc-da-construcao">
+                Guide Shop ABC da Construção
+              </div>
+            </div>
+          </div>
+          <!--LOJA 31-->
+          <div class="carousel__card">
+            <img
+              src="https://abcdaconstrucao.my.site.com/sejaumfranqueado/sfsites/c/cms/delivery/media/MCHYX2WC75HJAUTL453O7X4XRWHI"
+              alt="Guide Shop 31"
+            />
+            <div class="gradient-overlay"></div>
+            <div class="text-content">
+              <div class="cidade-guide-shop">Londrina PR</div>
+              <div class="guide-shop-abc-da-construcao">
+                Guide Shop ABC da Construção
+              </div>
+            </div>
+          </div>
+          <!--LOJA 32-->
+          <div class="carousel__card">
+            <img
+              src="https://abcdaconstrucao.my.site.com/sejaumfranqueado/sfsites/c/cms/delivery/media/MCXFZZMLV3WRAONHEKL3GO2CDGAQ"
+              alt="Guide Shop 32"
+            />
+            <div class="gradient-overlay"></div>
+            <div class="text-content">
+              <div class="cidade-guide-shop">Matão SP</div>
+              <div class="guide-shop-abc-da-construcao">
+                Guide Shop ABC da Construção
+              </div>
+            </div>
+          </div>
+          <!--LOJA 33-->
+          <div class="carousel__card">
+            <img
+              src="https://abcdaconstrucao.my.site.com/sejaumfranqueado/sfsites/c/cms/delivery/media/MCVCX3CASFUBAKLBPBT5A5OT5QBI"
+              alt="Guide Shop 33"
+            />
+            <div class="gradient-overlay"></div>
+            <div class="text-content">
+              <div class="cidade-guide-shop">Barreiro MG</div>
+              <div class="guide-shop-abc-da-construcao">
+                Guide Shop ABC da Construção
+              </div>
+            </div>
+          </div>
+          <!--LOJA 34-->
+          <div class="carousel__card">
+            <img
+              src="https://abcdaconstrucao.my.site.com/sejaumfranqueado/sfsites/c/cms/delivery/media/MCIKGGGY5JXJBGHBHPZHBNTS23UQ"
+              alt="Guide Shop 34"
+            />
+            <div class="gradient-overlay"></div>
+            <div class="text-content">
+              <div class="cidade-guide-shop">Oliveira MG</div>
+              <div class="guide-shop-abc-da-construcao">
+                Guide Shop ABC da Construção
+              </div>
+            </div>
+          </div>
+          <!--LOJA 35-->
+          <div class="carousel__card">
+            <img
+              src="https://abcdaconstrucao.my.site.com/sejaumfranqueado/sfsites/c/cms/delivery/media/MCVGBZ2EBFL5F4XALJGLDHGMC3GU"
+              alt="Guide Shop 35"
+            />
+            <div class="gradient-overlay"></div>
+            <div class="text-content">
+              <div class="cidade-guide-shop">Barra Mansa RJ</div>
+              <div class="guide-shop-abc-da-construcao">
+                Guide Shop ABC da Construção
+              </div>
+            </div>
+          </div>
+          <!--LOJA 36-->
+          <div class="carousel__card">
+            <img
+              src="https://abcdaconstrucao.my.site.com/sejaumfranqueado/sfsites/c/cms/delivery/media/MCVULERC2KURETHMSGE7SGOWEHDE"
+              alt="Guide Shop 36"
+            />
+            <div class="gradient-overlay"></div>
+            <div class="text-content">
+              <div class="cidade-guide-shop">São Francisco do Sul SC</div>
+              <div class="guide-shop-abc-da-construcao">
+                Guide Shop ABC da Construção
+              </div>
+            </div>
+          </div>
+          <!--LOJA 37-->
+          <div class="carousel__card">
+            <img
+              src="https://abcdaconstrucao.my.site.com/sejaumfranqueado/sfsites/c/cms/delivery/media/MCBVJDK7WW6ZCPTED5XRKY5WYGEE"
+              alt="Guide Shop 37"
+            />
+            <div class="gradient-overlay"></div>
+            <div class="text-content">
+              <div class="cidade-guide-shop">Gabriel do Oeste MS</div>
+              <div class="guide-shop-abc-da-construcao">
+                Guide Shop ABC da Construção
+              </div>
+            </div>
+          </div>
+          <!--LOJA 38-->
+          <div class="carousel__card">
+            <img
+              src="https://abcdaconstrucao.my.site.com/sejaumfranqueado/sfsites/c/cms/delivery/media/MCMF2MWVCYSFG6JF7XAHTXZTAVX4"
+              alt="Guide Shop 38"
+            />
+            <div class="gradient-overlay"></div>
+            <div class="text-content">
+              <div class="cidade-guide-shop">Telêmaco Borba PR</div>
+              <div class="guide-shop-abc-da-construcao">
+                Guide Shop ABC da Construção
+              </div>
+            </div>
+          </div>
+          <!--LOJA 39-->
+          <div class="carousel__card">
+            <img
+              src="https://abcdaconstrucao.my.site.com/sejaumfranqueado/sfsites/c/cms/delivery/media/MCTUILMSXXFJCDROJO72NJDOIBTM"
+              alt="Guide Shop 39"
+            />
+            <div class="gradient-overlay"></div>
+            <div class="text-content">
+              <div class="cidade-guide-shop">Uberaba MG</div>
+              <div class="guide-shop-abc-da-construcao">
+                Guide Shop ABC da Construção
+              </div>
+            </div>
+          </div>
+          <!--LOJA 40-->
+          <div class="carousel__card">
+            <img
+              src="https://abcdaconstrucao.my.site.com/sejaumfranqueado/sfsites/c/cms/delivery/media/MCNQDB75H7QBECNO5XVY2TZLFCKE"
+              alt="Guide Shop 40"
+            />
+            <div class="gradient-overlay"></div>
+            <div class="text-content">
+              <div class="cidade-guide-shop">Uberlândia MG</div>
+              <div class="guide-shop-abc-da-construcao">
+                Guide Shop ABC da Construção
+              </div>
+            </div>
+          </div>
+          <!--LOJA 41-->
+          <div class="carousel__card">
+            <img
+              src="https://abcdaconstrucao.my.site.com/sejaumfranqueado/sfsites/c/cms/delivery/media/MCV7POS6ME2FESPJY4UARWCTRQAM"
+              alt="Guide Shop 41"
+            />
+            <div class="gradient-overlay"></div>
+            <div class="text-content">
+              <div class="cidade-guide-shop">Guanambi BA</div>
+              <div class="guide-shop-abc-da-construcao">
+                Guide Shop ABC da Construção
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- The End - LpSejaUmFranqueadoFirstSection -->
+
+    <!-- Start - LpSejaUmFranqueadoModeloDeNegocio -->
+    <!-- MODELO DE NEGÓCIO -->
+    <section class="modelo-de-negocio" id="modelo-negocio">
+      <div class="section-title-modelo-negocio">
+        <h3>Nosso Modelo de Negócios</h3>
+        <br />
+        <p class="modelo-de-negocio__info">
+          Invista em uma verdadeira máquina de crescimento e faturamento com
+          nosso ecossistema exclusivo, testado e aprovado!
+        </p>
+      </div>
+      <br />
+      <div class="cards-solucoes-negocio">
+        <div class="card-negocio">
+          <div class="card-container">
+            <div class="card-image">
+              <img
+                src="https://abcdaconstrucao.my.site.com/sejaumfranqueado/sfsites/c/cms/delivery/media/MC6KGPZQJUGNDEHHMUFDFYE3BZRI"
+                alt="A maior rede de acabamentos"
+              />
+            </div>
+            <div class="card-content">
+              <h3>A maior rede de acabamentos do Brasil</h3>
+              <ul class="benefits">
+                <li>Mais de 400 franquias</li>
+                <li>Maior Portfólio de produtos do Brasil</li>
+                <li>21 Centros de Distribuição</li>
+              </ul>
+              <article class="card-prova-social">
+                <iframe
+                  loading="lazy"
+                  width="100%"
+                  height="100%"
+                  src="https://www.youtube.com/embed/HPfgRAXE3Vk?si=Hi_kmPKU78NNHPft&rel=0&modestbranding=1&showinfo=0&iv_load_policy=3"
+                  title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  allowfullscreen
+                >
+                </iframe>
+              </article>
+              <a onclick="{formScroll}"
+                ><button class="botao-escolha-modelo">
+                  COMO FAZER PARTE?
+                </button></a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="card-negocio">
+          <div class="card-container">
+            <div class="card-image">
+              <img
+                src="https://abcdaconstrucao.my.site.com/sejaumfranqueado/sfsites/c/cms/delivery/media/MCWIEFN2N3FNCL7IKLHNUKKHJJTI"
+                alt="Vendas sem limites"
+              />
+            </div>
+            <div class="card-content">
+              <h3>Vendas sem limites</h3>
+              <ul class="benefits">
+                <li>Mais de 18 alavancas de venda</li>
+                <li>Vendas On, Off, 24 horas e 7 dias por semana</li>
+                <li>IA própria para alavancar suas vendas</li>
+              </ul>
+              <article class="card-prova-social">
+                <iframe
+                  loading="lazy"
+                  width="100%"
+                  height="100%"
+                  src="https://www.youtube.com/embed/9Yj3EJtJU8M?si=K-YsPc9NqC_wqNyZ&rel=0&modestbranding=1&showinfo=0&iv_load_policy=3"
+                  title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  allowfullscreen
+                >
+                </iframe>
+              </article>
+              <a onclick="{formScroll}"
+                ><button class="botao-escolha-modelo">
+                  MULTIPLIQUE SEUS LUCROS
+                </button></a
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="card-negocio">
+          <div class="card-container">
+            <div class="card-image">
+              <img
+                src="https://abcdaconstrucao.my.site.com/sejaumfranqueado/sfsites/c/cms/delivery/media/MCJOOAKZED5JED7DGKFNCSERGKPM"
+                alt="Maior Portfólio de produtos do Brasil"
+              />
+            </div>
+            <div class="card-content">
+              <h3>Maior Portfólio de produtos do Brasil</h3>
+              <ul class="benefits">
+                <li>Os melhores preços, as marcas mais importantes</li>
+                <li>Marcas próprias e linhas exclusivas</li>
+                <li>O produto certo para todo tipo de cliente</li>
+              </ul>
+              <article class="card-prova-social">
+                <iframe
+                  loading="lazy"
+                  width="100%"
+                  height="100%"
+                  src="https://www.youtube.com/embed/_TDUyYlu3u0?si=4luD7bLQ5NT82DK2&rel=0&modestbranding=1&showinfo=0&iv_load_policy=3"
+                  title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  allowfullscreen
+                >
+                </iframe>
+              </article>
+              <a onclick="{formScroll}"
+                ><button class="botao-escolha-modelo">
+                  QUERO SABER MAIS
+                </button></a
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="card-negocio">
+          <div class="card-container">
+            <div class="card-image">
+              <img
+                src="https://abcdaconstrucao.my.site.com/sejaumfranqueado/sfsites/c/cms/delivery/media/MCWH3MDTD3TVFB5HIQKRHONFDOCY"
+                alt="Logística Nacional"
+              />
+            </div>
+            <div class="card-content">
+              <h3>Logística Nacional</h3>
+              <ul class="benefits">
+                <li>21 Centros de Distribuição espalhados no país</li>
+                <li>Frota própria ao seu alcance</li>
+                <li>15 novos Centros de Distribuição em desenvolvimento</li>
+              </ul>
+              <article class="card-prova-social">
+                <iframe
+                  loading="lazy"
+                  width="100%"
+                  height="100%"
+                  src="https://www.youtube.com/embed/YNid3hOyqxg?si=XdZFz1AcuSAQ6uVP&rel=0&modestbranding=1&showinfo=0&iv_load_policy=3"
+                  title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  allowfullscreen
+                >
+                </iframe>
+              </article>
+              <a onclick="{formScroll}"
+                ><button class="botao-escolha-modelo">
+                  QUERO MINHA FROTA
+                </button></a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--MODELO DAS FRANQUIAS-->
+      <div class="conheca-modelos-negocio" id="modelos">
+        <div class="section-title-modelo-negocio">
+          <h3>Mais do que franquias, <span>Guide Shops!</span></h3>
+          <br />
+          <p class="modelo-de-negocio__info">
+            Conheça os modelos de franquia que transformou o mercado de
+            construção:
+          </p>
+        </div>
+      </div>
+      <br />
+
+      <div class="modelo-fraquias">
+        <!-- LIGHT -->
+        <div class="card-modelo-franquias">
+          <img
+            src="https://abcdaconstrucao.my.site.com/sejaumfranqueado/sfsites/c/cms/delivery/media/MCIX5YD3EQBFFOZO3X5SEM7UMKDE"
+            alt="Modelo Light"
+          />
+          <div class="info">
+            <div class="icon-texto-modelo-franquia">
+              <h4>Light</h4>
+            </div>
+            <p>
+              Ideal para espaços compactos, oferece uma operação enxuta e
+              eficiente, garantindo toda a experiência ABC em menor escala, com
+              foco em resultados rápidos e eficazes.
+            </p>
+            <article class="card-prova-social">
+              <iframe
+                loading="lazy"
+                width="100%"
+                height="100%"
+                src="https://www.youtube.com/embed/u6dZyoBiHfA?si=kf73rNcylXC-MjJe&rel=0&modestbranding=1&showinfo=0&iv_load_policy=3"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
+              >
+              </iframe>
+            </article>
+            <a onclick="{formScroll}"
+              ><button class="botao-escolha-modelo modelo-center">
+                ESCOLHA O SEU MODELO
+              </button></a
+            >
+          </div>
+        </div>
+
+        <!-- MULTI -->
+        <div class="card-modelo-franquias">
+          <img
+            src="https://abcdaconstrucao.my.site.com/sejaumfranqueado/sfsites/c/cms/delivery/media/MCSGDNT75HANEVBBFUDUZUB647QM"
+            alt="Modelo Multi"
+          />
+          <div class="info">
+            <div class="icon-texto-modelo-franquia">
+              <h4>Multi</h4>
+            </div>
+            <p>
+              Nosso modelo ideal para você que busca o equilíbrio entre
+              eficiência e maiores possibilidades. A combinação de um showroom
+              completo com amplitude em resultados.
+            </p>
+            <article class="card-prova-social">
+              <iframe
+                loading="lazy"
+                width="100%"
+                height="100%"
+                src="https://www.youtube.com/embed/suXTUq3lL-M?si=Umt3s5u3Mjsz5z7G&rel=0&modestbranding=1&showinfo=0&iv_load_policy=3"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
+              >
+              </iframe>
+            </article>
+            <a onclick="{formScroll}"
+              ><button class="botao-escolha-modelo modelo-center">
+                ESCOLHA O SEU MODELO
+              </button></a
+            >
+          </div>
+        </div>
+
+        <!-- TOTAL -->
+        <div class="card-modelo-franquias">
+          <img
+            src="https://abcdaconstrucao.my.site.com/sejaumfranqueado/sfsites/c/cms/delivery/media/MCIGPABFALFZAKPKZLREVR5LL3Q4"
+            alt="Modelo Total"
+          />
+          <div class="info">
+            <div class="icon-texto-modelo-franquia">
+              <h4>Total</h4>
+            </div>
+            <p>
+              O nosso modelo mais completo. Nossa Guide Shop Total oferece toda
+              experiência ABC. Capaz de ampliar suas possibilidades em
+              performance, de fidelização de especificadores locais e maiores
+              resultados em vendas.
+            </p>
+            <article class="card-prova-social">
+              <iframe
+                loading="lazy"
+                width="100%"
+                height="100%"
+                src="https://www.youtube.com/embed/77mComNSXkU?si=A8UjfkgDAk1NcUDp&rel=0&modestbranding=1&showinfo=0&iv_load_policy=3"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
+              >
+              </iframe>
+            </article>
+            <a onclick="{formScroll}"
+              ><button class="botao-escolha-modelo modelo-center">
+                ESCOLHA O SEU MODELO
+              </button></a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- The End - LpSejaUmFranqueadoModeloDeNegocio -->
+
+    <script>
+      /* Start - LpSejaUmFranqueadoHeaderNavBarFullbanner */
+      function renderedCallback() {
+        const menuIcon = this.template.querySelector(".menu-icon");
+        const navbar = this.template.querySelector(".navbar");
+
+        if (menuIcon && navbar) {
+          menuIcon.addEventListener("click", () => {
+            navbar.classList.toggle("active");
+          });
+        } else {
+          console.error("Elementos '.menu-icon' ou '.navbar' não encontrados.");
+        }
+      }
+
+      function formScroll() {
+        const topDiv = document.querySelector(
+          "c-lp-seja-um-franqueado-formulario"
+        );
+        topDiv.scrollIntoView({
+          behavior: "smooth",
+          block: "center",
+          inline: "nearest",
+        });
+      }
+      /* The End - LpSejaUmFranqueadoHeaderNavBarFullbanner */
+
+      /* Start - LpSejaUmFranqueadoFirstSection */
+
+      var scrollSpeed = 1;
+      var currentTranslate = 0;
+      var animationId = null;
+      var isDragging = false;
+      var startPosition = 0;
+      var prevTranslate = 0;
+      var cardWidth = 0;
+      var cloneCount = 0;
+      var isListenersRegistered = false;
+
+      function renderedCallback() {
+        if (this.isListenersRegistered) return;
+        this.isListenersRegistered = true;
+
+        const carousel = this.template.querySelector(".carousel");
+        const track = this.template.querySelector(".carousel__track");
+
+        if (!carousel || !track) {
+          console.error("Elementos do carrossel não encontrados.");
+          return;
+        }
+
+        const cards = Array.from(track.children);
+        this.cardWidth = cards[0].getBoundingClientRect().width;
+        const visibleCardsCount = Math.ceil(
+          carousel.offsetWidth / this.cardWidth
+        );
+        this.cloneCount = visibleCardsCount * 2;
+
+        this.cloneCards(cards, track);
+        this.startContinuousAnimation();
+        this.setupEventListeners(carousel, track);
+      }
+
+      function cloneCards(cards, track) {
+        const clonesToStart = cards.slice(-this.cloneCount);
+        const clonesToEnd = cards.slice(0, this.cloneCount);
+
+        clonesToStart.forEach((card) => {
+          const clone = card.cloneNode(true);
+          clone.classList.add("clone");
+          track.prepend(clone);
+        });
+
+        clonesToEnd.forEach((card) => {
+          const clone = card.cloneNode(true);
+          clone.classList.add("clone");
+          track.appendChild(clone);
+        });
+
+        this.currentTranslate = -this.cardWidth * this.cloneCount;
+        track.style.transform = `translateX(${this.currentTranslate}px)`;
+      }
+
+      function startContinuousAnimation() {
+        cancelAnimationFrame(this.animationId);
+        this.animationId = requestAnimationFrame(() => this.animate());
+      }
+
+      function animate() {
+        const track = this.template.querySelector(".carousel__track");
+        const totalCards = track.children.length;
+        const maxTranslate = -this.cardWidth * (totalCards - this.cloneCount);
+        const resetTranslate = -this.cardWidth * this.cloneCount;
+
+        if (!this.isDragging) {
+          this.currentTranslate -= this.scrollSpeed;
+          track.style.transform = `translateX(${this.currentTranslate}px)`;
+        }
+
+        if (this.currentTranslate <= maxTranslate) {
+          this.currentTranslate = resetTranslate;
+          track.style.transform = `translateX(${this.currentTranslate}px)`;
+        }
+
+        if (this.currentTranslate >= 0) {
+          this.currentTranslate = maxTranslate;
+          track.style.transform = `translateX(${this.currentTranslate}px)`;
+        }
+
+        this.animationId = requestAnimationFrame(() => this.animate());
+      }
+
+      function setupEventListeners(carousel, track) {
+        carousel.addEventListener("mousedown", (e) => {
+          this.isDragging = true;
+          this.startPosition = e.pageX;
+          this.prevTranslate = this.currentTranslate;
+          cancelAnimationFrame(this.animationId);
+        });
+
+        carousel.addEventListener("mousemove", (e) => {
+          if (!this.isDragging) return;
+          const delta = e.pageX - this.startPosition;
+
+          if (Math.abs(delta) > this.cardWidth * this.cloneCount) return;
+
+          this.currentTranslate = this.prevTranslate + delta;
+          track.style.transform = `translateX(${this.currentTranslate}px)`;
+        });
+
+        carousel.addEventListener("mouseup", () => this.handleDragEnd(track));
+        carousel.addEventListener("mouseleave", () =>
+          this.handleDragEnd(track)
+        );
+
+        carousel.addEventListener("touchstart", (e) => {
+          this.isDragging = true;
+          this.startPosition = e.touches[0].clientX;
+          this.prevTranslate = this.currentTranslate;
+          cancelAnimationFrame(this.animationId);
+        });
+
+        carousel.addEventListener("touchmove", (e) => {
+          if (!this.isDragging) return;
+          const delta = e.touches[0].clientX - this.startPosition;
+
+          if (Math.abs(delta) > this.cardWidth * this.cloneCount) return;
+
+          this.currentTranslate = this.prevTranslate + delta;
+          track.style.transform = `translateX(${this.currentTranslate}px)`;
+        });
+
+        carousel.addEventListener("touchend", () => this.handleDragEnd(track));
+        carousel.addEventListener("touchcancel", () =>
+          this.handleDragEnd(track)
+        );
+
+        carousel.addEventListener("dragstart", (e) => e.preventDefault());
+
+        carousel.addEventListener("mouseenter", () => {
+          this.scrollSpeed /= 2;
+        });
+
+        carousel.addEventListener("mouseleave", () => {
+          this.scrollSpeed *= 2;
+        });
+      }
+
+      function handleDragEnd(track) {
+        if (this.isDragging) {
+          this.isDragging = false;
+          this.startContinuousAnimation();
+        }
+      }
+
+      function disconnectedCallback() {
+        if (this.animationId) {
+          cancelAnimationFrame(this.animationId);
+        }
+      }
+
+      //carrossel de videos
+
+      function addArrowScrollSupport() {
+        const carousel = this.template.querySelector(
+          ".carrossel-prova-social-1"
+        );
+        const leftArrow = this.template.querySelector(
+          ".container-seta-esquerda"
+        );
+        const rightArrow = this.template.querySelector(
+          ".container-seta-direita"
+        );
+        const cards = this.template.querySelectorAll(".card-prova-social");
+
+        if (!carousel || cards.length === 0) {
+          console.error(
+            "Elemento .carrossel-prova-social-1 ou .card-prova-social não encontrado."
+          );
+          return;
+        }
+
+        const cardWidth = cards[0].offsetWidth + 12;
+
+        if (leftArrow) {
+          leftArrow.addEventListener("click", () => {
+            carousel.scrollTo({ left: 0, behavior: "smooth" });
+          });
+        }
+
+        if (rightArrow) {
+          rightArrow.addEventListener("click", () => {
+            const maxScroll = carousel.scrollWidth - carousel.clientWidth;
+            carousel.scrollTo({ left: maxScroll, behavior: "smooth" });
+          });
+        }
+      }
+
+      function renderedCallback() {
+        if (this.isListenersRegistered) return;
+        this.isListenersRegistered = true;
+
+        const carousel = this.template.querySelector(".carousel");
+        const track = this.template.querySelector(".carousel__track");
+
+        if (!carousel || !track) {
+          console.error("Elementos do carrossel não encontrados.");
+          return;
+        }
+
+        const cards = Array.from(track.children);
+        this.cardWidth = cards[0].getBoundingClientRect().width;
+        const visibleCardsCount = Math.ceil(
+          carousel.offsetWidth / this.cardWidth
+        );
+        this.cloneCount = visibleCardsCount * 2;
+
+        this.cloneCards(cards, track);
+        this.startContinuousAnimation();
+        this.setupEventListeners(carousel, track);
+
+        this.addArrowScrollSupport();
+
+        // ** Lógica para calcular a idade da ABC **
+        const inaugurationYear = 1958;
+        const currentYear = new Date().getFullYear();
+        const experienceYears = currentYear - inaugurationYear;
+
+        const experienceElements =
+          this.template.querySelectorAll(".experience-years");
+        if (experienceElements.length > 0) {
+          experienceElements.forEach((element) => {
+            element.textContent = `+${experienceYears}`;
+          });
+        } else {
+          console.error(
+            "Nenhum elemento com a classe 'experience-years' foi encontrado."
+          );
+        }
+      }
+
+      /* The End - LpSejaUmFranqueadoFirstSection */
+
+      /*  Start - LpSejaUmFranqueadoModeloDeNegocio */
+
+      function formScroll() {
+        const topDiv = document.querySelector(
+          "c-lp-seja-um-franqueado-formulario"
+        );
+        topDiv.scrollIntoView({
+          behavior: "smooth",
+          block: "center",
+          inline: "nearest",
+        });
+      }
+      
+      function renderedCallback() {
+        if (this.template.querySelectorAll('a[href="#formulario-53-33"]')) {
+          this.template
+            .querySelectorAll('a[href="#formulario-53-33"]')
+            .forEach((a) => {
+              a.href = "#formulario-53";
+            });
+        }
+      }
+      /*  The End - LpSejaUmFranqueadoModeloDeNegocio */
+    </script>
+  </body>
+</html>

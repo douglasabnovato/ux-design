@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Seja Um Franqueado</title>
+
+    <style>
+
+
+      /* Start - LpSejaUmFranqueadoModeloDeNegocio */
+      .custom-container {
+        color: black;
+      }
+
+      @font-face {
+        font-family: "Satoshi-Variable";
+        src: url("sfsites/c/resource/FontSatoshi/Satoshi_Complete/Fonts/WEB/fonts/Satoshi-Variable.woff2")
+            format("woff2"),
+          url("sfsites/c/resource/FontSatoshi/Satoshi_Complete/Fonts/WEB/fonts/Satoshi-Variable.woff")
+            format("woff"),
+          url("sfsites/c/resource/FontSatoshi/Satoshi_Complete/Fonts/WEB/fonts/Satoshi-Variable.ttf")
+            format("truetype");
+        font-weight: 300 900;
+        font-display: swap;
+        font-style: normal;
+      }
+
+      a {
+        all: unset;
+        color: inherit;
+        text-decoration: none !important;
+        cursor: pointer;
+      }
+
+      header {
+        all: unset;
+        display: none !important;
+        margin: 0;
+        padding: 0;
+      }
+
+      main {
+        overflow-x: hidden !important;
+      }
+
+      body {
+        font-family: var(--fonte);
+        color: #d7d3d0;
+        background-color: var(--neutral-dark);
+        height: 100vh;
+        justify-content: center;
+        align-items: center;
+        overflow-x: hidden;
+      }
+
+      html {
+        font-size: 16px;
+        max-width: 100%;
+        height: 100dvh;
+        scroll-behavior: smooth;
+        overflow-x: hidden;
+        margin: 0;
+        padding: 0;
+        font-family: var(--fonte);
+      }
+
+      button,
+      input,
+      textarea,
+      select {
+        all: unset;
+        font-family: var(--fonte);
+        color: inherit;
+        background: none;
+        border: none;
+        box-sizing: border-box;
+        outline: none;
+      }
+
+      /* img {
+  all: unset;
+  max-width: 100%;
+  height: auto;
+  display: block;
+} */
+
+      ul,
+      ol {
+        all: unset;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      table {
+        all: unset;
+        border-collapse: collapse;
+        width: 100%;
+      }
+
+      section.modelo-de-negocio {
+        background-color: var(--background-light);
+        padding: 2rem 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .section-title-modelo-negocio {
+        display: flex;
+        width: 100%;
+        max-width: 1200px;
+        flex-direction: column;
+        align-items: flex-start;
+
+        & h3 {
+          line-height: 48px;
+          font-size: 48px;
+          font-weight: 600;
+          text-align: left;
+        }
+      }
+
+      .modelo-de-negocio__info {
+        line-height: 120%;
+        color: #848484;
+        font-weight: 400;
+        font-size: 1.3rem;
+        width: 100%;
+        max-width: 900px;
+      }
+
+      @media (max-width: 600px) {
+        .modelo-de-negocio__info {
+          font-size: 16px;
+          line-height: 120%;
+          padding: 0 24px;
+        }
+      }
+
+      .cards-solucoes-negocio {
+        display: flex;
+        max-width: 1280px;
+        width: 100%;
+        justify-content: center;
+        gap: 2rem;
+        flex-wrap: wrap;
+      }
+
+      @media (max-width: 600px) {
+        .cards-solucoes-negocio {
+          padding: 0 1rem;
+        }
+      }
+
+      .card-negocio {
+        min-width: 420px;
+        max-width: 420px;
+        flex-direction: column;
+        align-items: center;
+        background-color: #f3f9f8;
+        border-radius: 20px;
+        box-shadow: 0px 12px 24px -5px rgba(67, 111, 126, 0.2),
+          0px 8px 12px -6px rgba(67, 111, 126, 0.2);
+        overflow: hidden;
+      }
+
+      @media (max-width: 600px) {
+        .card-negocio {
+          min-width: unset;
+        }
+      }
+
+      .card-image img {
+        width: 100%;
+        height: auto;
+        transition: transform 300ms ease-in-out;
+      }
+
+      .card-image:hover img {
+        transform: scale(1.03);
+      }
+
+      .card-content {
+        padding: 24px 24px 28px;
+        display: flex;
+        gap: 12px;
+        flex-direction: column;
+      }
+
+      .card-content h3 {
+        font-size: 32px;
+        line-height: 32px;
+        line-height: 120%;
+        font-weight: 800;
+        color: var(--neutral-dark);
+        margin-bottom: 16px;
+      }
+
+      @media (max-width: 600px) {
+        .card-content h3 {
+          font-size: 30px;
+        }
+      }
+
+      .card-content .highlight {
+        color: #d72a36;
+        font-weight: 800;
+      }
+
+      .benefits {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .benefits strong {
+        font-weight: 900;
+        font-size: 17px;
+        color: var(--neutral-dark);
+      }
+
+      .benefits li {
+        font-size: 1.1rem;
+        color: #4f4f4f;
+        font-weight: 500;
+        line-height: 120%;
+        margin-bottom: 16px;
+        position: relative;
+        padding-left: 24px;
+      }
+
+      .benefits li::before {
+        content: "\2192";
+        color: #a3b4b4;
+        position: absolute;
+        left: 0;
+        top: 0.25rem;
+      }
+
+      .conheca-modelos-negocio {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        margin-top: 4rem;
+        max-width: 1200px;
+        width: 100%;
+
+        & h3 {
+          color: var(--neutral-dark);
+          font-size: clamp(2.5rem, 5vw, 3rem);
+          font-style: normal;
+          font-weight: 600;
+          text-align: left;
+          line-height: clamp(120%, 6vw, 120%);
+        }
+
+        & strong {
+          font-weight: 1600px;
+        }
+      }
+
+      .modelo-de-negocio h3,
+      .conheca-modelos-negocio h3 {
+        font-size: 2rem;
+        line-height: clamp(110%, 6vw, 120%);
+        text-align: left;
+        font-style: normal;
+        font-weight: 600;
+        max-width: 900px;
+        color: var(--neutral-dark);
+      }
+
+      .span-bolder {
+        font-weight: 900;
+      }
+
+      @media (max-width: 600px) {
+        .modelo-de-negocio h3,
+        .conheca-modelos-negocio h3 {
+          font-size: 48px;
+          padding: 0 1.25rem;
+        }
+
+        .conheca-modelos-negocio h3 span {
+          font-weight: 900;
+        }
+      }
+
+      .modelo-fraquias {
+        display: flex;
+        gap: 2rem;
+        max-width: 1200px;
+        margin: 0 auto;
+        flex-wrap: nowrap;
+
+        & .card-modelo-franquias {
+          background-color: var(--neutral-dark);
+          border-radius: 1rem;
+          display: flex;
+          flex-direction: column;
+          max-width: 378px;
+          height: 100%;
+          box-shadow: 0px 12px 24px -5px rgba(67, 111, 126, 0.2),
+            0px 8px 12px -6px rgba(67, 111, 126, 0.2);
+
+          & .info {
+            display: flex;
+            gap: 20px;
+            flex-direction: column;
+            padding: 28px;
+          }
+
+          & img {
+            aspect-ratio: 16/9;
+            object-fit: cover;
+            border-radius: 1rem 1rem 0 0;
+            width: 100%;
+            height: auto;
+          }
+
+          & h4 {
+            color: var(--destaque);
+            font-size: 3rem;
+            line-height: 3rem;
+            font-weight: 700;
+          }
+
+          & p {
+            color: #b4b4b4;
+            position: relative;
+          }
+
+          & p::before {
+            /*content: '\2192';*/
+            color: #a3b4b4;
+            position: absolute;
+            left: 0;
+            top: 0;
+            transform: none;
+            display: block;
+            align-items: flex-start;
+          }
+
+          & .icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 8px;
+            object-fit: cover;
+          }
+
+          & .icon-texto-modelo-franquia {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 1rem;
+          }
+        }
+      }
+
+      @media (max-width: 800px) {
+        .modelo-fraquias {
+          flex-direction: column;
+          padding: 1rem;
+
+          & .card-modelo-franquias {
+            width: 100%;
+            max-width: 420px;
+            margin: 0 auto;
+          }
+        }
+      }
+
+      .card-prova-social {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 16px;
+        width: 100%;
+      }
+
+      .card-prova-social iframe {
+        border-radius: 16px;
+        width: auto;
+        height: auto;
+        object-fit: cover;
+      }
+
+      .botao-escolha-modelo {
+        padding: 12px 20px;
+        background-color: #20a389;
+        text-align: center;
+        color: #fff;
+        font-weight: 700;
+        font-size: 20px;
+        border-radius: 28px;
+        position: relative;
+        cursor: pointer;
+        overflow: hidden;
+        animation: botao-escolha-modelo 5s infinite ease-in-out;
+        transition: all 0.5s ease-in-out !important;
+      }
+
+      .modelo-center {
+        width: 100%;
+      }
+
+      .botao-escolha-modelo::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -50%;
+        width: 50%;
+        height: 100%;
+        background: rgba(102, 220, 183, 0.3);
+        filter: blur(12px);
+        transform: skewX(-10deg);
+        animation: shine-effect 2.5s infinite ease-in-out alternate;
+      }
+
+      .card-content > a {
+        text-align: center;
+        text-decoration: none !important;
+      }
+
+      @keyframes shine-effect {
+        0% {
+          left: -50%;
+        }
+
+        100% {
+          left: 150%;
+        }
+      }
+
+      @keyframes botao-escolha-modelo {
+        0% {
+          transform: translateY(0);
+        }
+
+        40% {
+          transform: translateY(0);
+        }
+
+        50% {
+          transform: translateY(-4px);
+        }
+
+        60% {
+          transform: translateY(0);
+        }
+
+        70% {
+          transform: translateY(-2px);
+        }
+
+        80% {
+          transform: translateY(0);
+        }
+
+        100% {
+          transform: translateY(0);
+        }
+      }
+
+      .video-e-botao {
+        height: 100%;
+      }
+      /* The End - LpSejaUmFranqueadoModeloDeNegocio */
+    </style>
+  </head>
+  <body>
+    <!-- iframe - LpSejaUmFranqueadoHeaderNavBarFullbanner -->
+    <iframe
+      src="./header-navbar-fullbanner.html"
+      width="100%"
+      height="52%"
+      style="padding-block-end: 12px;"
+    ></iframe>
+
+    <!-- iframe - LpSejaUmFranqueadoFirstSection -->
+    <iframe
+      src="./first-section.html"
+      width="100%"
+      height="260%"
+      style="padding-block-end: 12px;"
+    ></iframe>
+
+    
+
+    <!-- Start - LpSejaUmFranqueadoModeloDeNegocio -->
+    <!-- MODELO DE NEGÓCIO -->
+    <section class="modelo-de-negocio" id="modelo-negocio">
+      <div class="section-title-modelo-negocio">
+        <h3>Nosso Modelo de Negócios</h3>
+        <br />
+        <p class="modelo-de-negocio__info">
+          Invista em uma verdadeira máquina de crescimento e faturamento com
+          nosso ecossistema exclusivo, testado e aprovado!
+        </p>
+      </div>
+      <br />
+      <div class="cards-solucoes-negocio">
+        <div class="card-negocio">
+          <div class="card-container">
+            <div class="card-image">
+              <img
+                src="https://abcdaconstrucao.my.site.com/sejaumfranqueado/sfsites/c/cms/delivery/media/MC6KGPZQJUGNDEHHMUFDFYE3BZRI"
+                alt="A maior rede de acabamentos"
+              />
+            </div>
+            <div class="card-content">
+              <h3>A maior rede de acabamentos do Brasil</h3>
+              <ul class="benefits">
+                <li>Mais de 400 franquias</li>
+                <li>Maior Portfólio de produtos do Brasil</li>
+                <li>21 Centros de Distribuição</li>
+              </ul>
+              <article class="card-prova-social">
+                <iframe
+                  loading="lazy"
+                  width="100%"
+                  height="100%"
+                  src="https://www.youtube.com/embed/HPfgRAXE3Vk?si=Hi_kmPKU78NNHPft&rel=0&modestbranding=1&showinfo=0&iv_load_policy=3"
+                  title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  allowfullscreen
+                >
+                </iframe>
+              </article>
+              <a onclick="{formScroll}"
+                ><button class="botao-escolha-modelo">
+                  COMO FAZER PARTE?
+                </button></a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="card-negocio">
+          <div class="card-container">
+            <div class="card-image">
+              <img
+                src="https://abcdaconstrucao.my.site.com/sejaumfranqueado/sfsites/c/cms/delivery/media/MCWIEFN2N3FNCL7IKLHNUKKHJJTI"
+                alt="Vendas sem limites"
+              />
+            </div>
+            <div class="card-content">
+              <h3>Vendas sem limites</h3>
+              <ul class="benefits">
+                <li>Mais de 18 alavancas de venda</li>
+                <li>Vendas On, Off, 24 horas e 7 dias por semana</li>
+                <li>IA própria para alavancar suas vendas</li>
+              </ul>
+              <article class="card-prova-social">
+                <iframe
+                  loading="lazy"
+                  width="100%"
+                  height="100%"
+                  src="https://www.youtube.com/embed/9Yj3EJtJU8M?si=K-YsPc9NqC_wqNyZ&rel=0&modestbranding=1&showinfo=0&iv_load_policy=3"
+                  title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  allowfullscreen
+                >
+                </iframe>
+              </article>
+              <a onclick="{formScroll}"
+                ><button class="botao-escolha-modelo">
+                  MULTIPLIQUE SEUS LUCROS
+                </button></a
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="card-negocio">
+          <div class="card-container">
+            <div class="card-image">
+              <img
+                src="https://abcdaconstrucao.my.site.com/sejaumfranqueado/sfsites/c/cms/delivery/media/MCJOOAKZED5JED7DGKFNCSERGKPM"
+                alt="Maior Portfólio de produtos do Brasil"
+              />
+            </div>
+            <div class="card-content">
+              <h3>Maior Portfólio de produtos do Brasil</h3>
+              <ul class="benefits">
+                <li>Os melhores preços, as marcas mais importantes</li>
+                <li>Marcas próprias e linhas exclusivas</li>
+                <li>O produto certo para todo tipo de cliente</li>
+              </ul>
+              <article class="card-prova-social">
+                <iframe
+                  loading="lazy"
+                  width="100%"
+                  height="100%"
+                  src="https://www.youtube.com/embed/_TDUyYlu3u0?si=4luD7bLQ5NT82DK2&rel=0&modestbranding=1&showinfo=0&iv_load_policy=3"
+                  title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  allowfullscreen
+                >
+                </iframe>
+              </article>
+              <a onclick="{formScroll}"
+                ><button class="botao-escolha-modelo">
+                  QUERO SABER MAIS
+                </button></a
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="card-negocio">
+          <div class="card-container">
+            <div class="card-image">
+              <img
+                src="https://abcdaconstrucao.my.site.com/sejaumfranqueado/sfsites/c/cms/delivery/media/MCWH3MDTD3TVFB5HIQKRHONFDOCY"
+                alt="Logística Nacional"
+              />
+            </div>
+            <div class="card-content">
+              <h3>Logística Nacional</h3>
+              <ul class="benefits">
+                <li>21 Centros de Distribuição espalhados no país</li>
+                <li>Frota própria ao seu alcance</li>
+                <li>15 novos Centros de Distribuição em desenvolvimento</li>
+              </ul>
+              <article class="card-prova-social">
+                <iframe
+                  loading="lazy"
+                  width="100%"
+                  height="100%"
+                  src="https://www.youtube.com/embed/YNid3hOyqxg?si=XdZFz1AcuSAQ6uVP&rel=0&modestbranding=1&showinfo=0&iv_load_policy=3"
+                  title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  allowfullscreen
+                >
+                </iframe>
+              </article>
+              <a onclick="{formScroll}"
+                ><button class="botao-escolha-modelo">
+                  QUERO MINHA FROTA
+                </button></a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--MODELO DAS FRANQUIAS-->
+      <div class="conheca-modelos-negocio" id="modelos">
+        <div class="section-title-modelo-negocio">
+          <h3>Mais do que franquias, <span>Guide Shops!</span></h3>
+          <br />
+          <p class="modelo-de-negocio__info">
+            Conheça os modelos de franquia que transformou o mercado de
+            construção:
+          </p>
+        </div>
+      </div>
+      <br />
+
+      <div class="modelo-fraquias">
+        <!-- LIGHT -->
+        <div class="card-modelo-franquias">
+          <img
+            src="https://abcdaconstrucao.my.site.com/sejaumfranqueado/sfsites/c/cms/delivery/media/MCIX5YD3EQBFFOZO3X5SEM7UMKDE"
+            alt="Modelo Light"
+          />
+          <div class="info">
+            <div class="icon-texto-modelo-franquia">
+              <h4>Light</h4>
+            </div>
+            <p>
+              Ideal para espaços compactos, oferece uma operação enxuta e
+              eficiente, garantindo toda a experiência ABC em menor escala, com
+              foco em resultados rápidos e eficazes.
+            </p>
+            <article class="card-prova-social">
+              <iframe
+                loading="lazy"
+                width="100%"
+                height="100%"
+                src="https://www.youtube.com/embed/u6dZyoBiHfA?si=kf73rNcylXC-MjJe&rel=0&modestbranding=1&showinfo=0&iv_load_policy=3"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
+              >
+              </iframe>
+            </article>
+            <a onclick="{formScroll}"
+              ><button class="botao-escolha-modelo modelo-center">
+                ESCOLHA O SEU MODELO
+              </button></a
+            >
+          </div>
+        </div>
+
+        <!-- MULTI -->
+        <div class="card-modelo-franquias">
+          <img
+            src="https://abcdaconstrucao.my.site.com/sejaumfranqueado/sfsites/c/cms/delivery/media/MCSGDNT75HANEVBBFUDUZUB647QM"
+            alt="Modelo Multi"
+          />
+          <div class="info">
+            <div class="icon-texto-modelo-franquia">
+              <h4>Multi</h4>
+            </div>
+            <p>
+              Nosso modelo ideal para você que busca o equilíbrio entre
+              eficiência e maiores possibilidades. A combinação de um showroom
+              completo com amplitude em resultados.
+            </p>
+            <article class="card-prova-social">
+              <iframe
+                loading="lazy"
+                width="100%"
+                height="100%"
+                src="https://www.youtube.com/embed/suXTUq3lL-M?si=Umt3s5u3Mjsz5z7G&rel=0&modestbranding=1&showinfo=0&iv_load_policy=3"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
+              >
+              </iframe>
+            </article>
+            <a onclick="{formScroll}"
+              ><button class="botao-escolha-modelo modelo-center">
+                ESCOLHA O SEU MODELO
+              </button></a
+            >
+          </div>
+        </div>
+
+        <!-- TOTAL -->
+        <div class="card-modelo-franquias">
+          <img
+            src="https://abcdaconstrucao.my.site.com/sejaumfranqueado/sfsites/c/cms/delivery/media/MCIGPABFALFZAKPKZLREVR5LL3Q4"
+            alt="Modelo Total"
+          />
+          <div class="info">
+            <div class="icon-texto-modelo-franquia">
+              <h4>Total</h4>
+            </div>
+            <p>
+              O nosso modelo mais completo. Nossa Guide Shop Total oferece toda
+              experiência ABC. Capaz de ampliar suas possibilidades em
+              performance, de fidelização de especificadores locais e maiores
+              resultados em vendas.
+            </p>
+            <article class="card-prova-social">
+              <iframe
+                loading="lazy"
+                width="100%"
+                height="100%"
+                src="https://www.youtube.com/embed/77mComNSXkU?si=A8UjfkgDAk1NcUDp&rel=0&modestbranding=1&showinfo=0&iv_load_policy=3"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
+              >
+              </iframe>
+            </article>
+            <a onclick="{formScroll}"
+              ><button class="botao-escolha-modelo modelo-center">
+                ESCOLHA O SEU MODELO
+              </button></a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- The End - LpSejaUmFranqueadoModeloDeNegocio -->
+
+    <script>
+
+
+      /*  Start - LpSejaUmFranqueadoModeloDeNegocio */
+
+      function formScroll() {
+        const topDiv = document.querySelector(
+          "c-lp-seja-um-franqueado-formulario"
+        );
+        topDiv.scrollIntoView({
+          behavior: "smooth",
+          block: "center",
+          inline: "nearest",
+        });
+      }
+
+      function renderedCallback() {
+        if (this.template.querySelectorAll('a[href="#formulario-53-33"]')) {
+          this.template
+            .querySelectorAll('a[href="#formulario-53-33"]')
+            .forEach((a) => {
+              a.href = "#formulario-53";
+            });
+        }
+      }
+      /*  The End - LpSejaUmFranqueadoModeloDeNegocio */
+    </script>
+  </body>
+</html>

@@ -1,0 +1,1624 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulário</title>
+    <style>
+      :host {
+        --destaque: #e5e5e5;
+        --fonte: "Satoshi-Variable", sans-serif;
+        --background-light: #ebf0f4;
+        --neutral-dark: #333333;
+        display: block;
+        box-sizing: border-box;
+      }
+
+      @font-face {
+        font-family: "Satoshi-Variable";
+        src: url("sfsites/c/resource/FontSatoshi/Satoshi_Complete/Fonts/WEB/fonts/Satoshi-Variable.woff2")
+            format("woff2"),
+          url("sfsites/c/resource/FontSatoshi/Satoshi_Complete/Fonts/WEB/fonts/Satoshi-Variable.woff")
+            format("woff"),
+          url("sfsites/c/resource/FontSatoshi/Satoshi_Complete/Fonts/WEB/fonts/Satoshi-Variable.ttf")
+            format("truetype");
+        font-weight: 300 900;
+        font-display: swap;
+        font-style: normal;
+      }
+
+      * {
+        font-family: var(--fonte);
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        outline: none;
+        border: none;
+        list-style: none;
+        text-decoration: none;
+      }
+
+      a {
+        all: unset;
+        color: inherit;
+        text-decoration: none !important;
+        cursor: pointer;
+      }
+
+      input:-webkit-autofill,
+      select:-webkit-autofill {
+        -webkit-box-shadow: 0 0 0 1000px white inset !important;
+        -webkit-text-fill-color: #333 !important;
+        background-color: white !important;
+        caret-color: #333 !important;
+        transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+      }
+
+      input:-webkit-autofill:hover,
+      select:-webkit-autofill:hover,
+      input:-webkit-autofill:active,
+      select:-webkit-autofill:active,
+      input:-webkit-autofill:focus,
+      select:-webkit-autofill:focus,
+      input:-webkit-autofill:valid,
+      select:-webkit-autofill:valid {
+        -webkit-box-shadow: 0 0 0 1000px white inset !important;
+        -webkit-text-fill-color: #333 !important;
+        background-color: white !important;
+        caret-color: #333 !important;
+      }
+
+      select {
+        font-size: 16px;
+        font-weight: normal;
+        color: #000 !important;
+        border-radius: 8px;
+        background-color: #fff !important;
+        padding: 10px;
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        cursor: pointer;
+        width: 100%;
+        padding-right: 30px;
+        border: 1px solid #ccc;
+      }
+
+      /* setinha no select */
+      .select-custom {
+        position: relative;
+        display: inline-block;
+        width: 100%;
+      }
+
+      .select-custom::after {
+        content: "▼";
+        /* Ícone da setinha */
+        font-size: 9px;
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        pointer-events: none;
+      }
+
+      option {
+        background-color: #fff !important;
+        color: #000 !important;
+        font-size: 14px;
+        border: none;
+      }
+
+      option:hover {
+        background-color: #525252 !important;
+        color: #fff !important;
+        font-weight: bold !important;
+      }
+
+      option:checked {
+        background-color: #fff !important;
+        color: #000 !important;
+      }
+
+      select:focus {
+        background-color: #fff !important;
+        outline: none;
+        box-shadow: 0 0 0 2px #333 !important;
+      }
+
+      select::-webkit-scrollbar {
+        width: 8px;
+        background-color: transparent;
+      }
+
+      select::-webkit-scrollbar-thumb {
+        background-color: #333 !important;
+        border-radius: 12px;
+        border: 2px solid transparent;
+      }
+
+      select::-webkit-scrollbar-thumb:hover {
+        background-color: #333 !important;
+      }
+
+      select::-webkit-scrollbar-track {
+        background-color: transparent;
+      }
+
+      .label-input-row {
+        -webkit-appearance: none;
+        display: flex;
+        gap: 10px;
+        width: 100%;
+      }
+
+      .label-input {
+        -webkit-appearance: none;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+        width: 100%;
+      }
+
+      .label-input label {
+        -webkit-appearance: none;
+        color: #676767;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 500;
+        width: 100%;
+        text-align: left;
+      }
+
+      /* Estilo padrão do input */
+      .label-input input {
+        -webkit-appearance: none;
+        all: unset;
+        display: flex;
+        height: 48px;
+        padding: 0px 16px;
+        align-items: center;
+        gap: 4px;
+        width: 100%;
+        border-radius: 6px;
+        background: #fff;
+        border: 2px solid transparent;
+        color: var(--neutral-dark);
+        font-size: 13px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 12px;
+        transition: border-color 0.3s, background-color 0.3s;
+        box-sizing: border-box;
+        text-align: left;
+      }
+
+      /* Input inválido só  se estiver preenchido */
+      .label-input input:invalid:not(:placeholder-shown) {
+        -webkit-appearance: none;
+        background: #fff;
+        color: #333;
+      }
+
+      .invalid-input {
+        -webkit-appearance: none;
+        border: 0.8px solid #e3062d !important;
+      }
+
+      /* Input válidado */
+      .label-input input:valid {
+        border-color: #848484;
+        color: #333;
+        -webkit-appearance: none;
+        background: #fff;
+        border: 1px;
+      }
+
+      /* Input foco */
+      .label-input input:focus {
+        outline: none;
+        -webkit-appearance: none;
+        box-shadow: 0 0 3px rgba(135, 135, 135, 0.4);
+        background: #fff;
+        border: 0.3px solid #a1a1a1;
+      }
+
+      .select-custom {
+        -webkit-appearance: none;
+        position: relative;
+        width: 100%;
+        border-radius: 4px;
+        overflow: hidden;
+        padding: 1.5px;
+      }
+
+      select:focus {
+        outline: none !important;
+        box-shadow: none !important;
+        border: 0.3px solid #a1a1a1;
+      }
+
+      .select-custom select {
+        padding-right: 30px;
+        display: flex;
+        height: 48px;
+        padding: 0px 16px;
+        align-items: center;
+        gap: 4px;
+        width: 100%;
+        border-radius: 6px;
+        background: #fff;
+        border: none;
+        -moz-appearance: none;
+        appearance: none;
+        color: #848484;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 20px;
+      }
+
+      .select-custom .ph-caret-down {
+        position: absolute;
+        top: 50%;
+        right: 10px;
+        transform: translateY(-50%);
+        pointer-events: none;
+        /* width: 20px;
+    height: 20px; */
+        fill: #333;
+      }
+
+      /* FORMULÁRIO DE CADASTRO */
+
+      .section-formulario {
+        display: grid;
+        width: 100%;
+        /*height: 850px;*/
+        align-items: center;
+        justify-content: center;
+        background-color: #333;
+        padding: 0 1rem;
+      }
+
+      .form-container {
+        display: flex;
+        width: 100%;
+        max-width: 1200px;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 50px;
+        margin: 0 auto;
+        padding: 40px 20px 40px;
+        justify-content: center;
+        align-items: center;
+      }
+
+      @media (max-width: 1000px) {
+        .form-container {
+          flex-direction: column;
+          align-items: center;
+          gap: 20px;
+          text-align: center;
+        }
+
+        .form-container > * {
+          width: 100%;
+        }
+      }
+
+      .franquia-info {
+        display: grid;
+        width: 100%;
+        max-width: 580px;
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      .forms {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        max-width: 580px;
+        padding: 32px 32px;
+        gap: 24px;
+        border-radius: 24px;
+        /* background: #F6F6F6; */
+        background: linear-gradient(
+          180deg,
+          #fff 0%,
+          #eaf0ef 60%,
+          #eaf0ef 100%,
+          #eaf0ef 100%
+        );
+        /* background: #ECEFF1; */
+        transition: height 0.5s ease;
+        overflow: hidden;
+        min-width: 350px;
+      }
+
+      @media (max-width: 430px) {
+        .forms {
+          max-width: 390px;
+          padding: 32px 32px;
+        }
+      }
+
+      @media (max-width: 600px) {
+        .forms {
+          padding: 32px 20px;
+        }
+      }
+
+      h5 {
+        color: #fff;
+        font-size: 40px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 120%;
+      }
+
+      @media (max-width: 1000px) {
+        h5 {
+          font-size: 28px;
+          text-align: left;
+        }
+      }
+
+      p {
+        color: #969696;
+        font-size: 16px;
+        line-height: 24px;
+        text-align: left;
+      }
+
+      figure {
+        display: flex;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .form-title {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        align-self: stretch;
+      }
+
+      .forms-title {
+        color: var(--neutral-dark);
+        text-align: center;
+        font-size: 28px;
+        font-style: normal;
+        font-weight: 900;
+        line-height: 120%;
+        max-width: 360px;
+      }
+
+      .container-progress-bar {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+        align-self: stretch;
+      }
+
+      .line-progress {
+        height: 10px;
+        align-self: stretch;
+        border-radius: 100px;
+        background: #d4d4d4;
+      }
+
+      .progress-percent {
+        color: var(--neutral-dark);
+        text-align: center;
+        font-size: 13px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 100%;
+        letter-spacing: 1px;
+      }
+
+      .progress-bar {
+        height: 10px;
+        background-color: #e3062d;
+        width: 100%;
+        border-radius: 100px;
+        transition: width 0.5s ease-out;
+      }
+
+      .formStep1 {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        width: 100%;
+      }
+
+      .botao-investimento {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+        padding: 12px;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 100%;
+        letter-spacing: 1px;
+        text-align: center;
+        color: var(--neutral-dark);
+        border: none;
+        border-radius: 6px;
+        background-color: #ffffff;
+        outline: none;
+        transition: box-shadow 0.3s ease-in-out;
+        cursor: pointer;
+      }
+
+      .botao-investimento:hover {
+        box-shadow: inset 0 0 1.5px var(--neutral-dark);
+      }
+
+      .botao-investimento.selected {
+        background-color: var(--neutral-dark);
+        color: #fff;
+      }
+
+      .botao-proxima-etapa {
+        display: flex;
+        height: 52px;
+        width: 100%;
+        padding: 0px 24px;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+        flex: 1 0 0;
+        border: none;
+        border-radius: 6px;
+        background-color: #c7c7c7;
+        color: #a4a4a4;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 20px;
+        transition: background-color 0.3 ease-in-out;
+      }
+
+      .botao-proxima-etapa.selected {
+        background-color: var(--neutral-dark);
+        cursor: pointer;
+        color: #fff;
+      }
+
+      .botaoProximaEtapaStep2.selected {
+        background-color: var(--neutral-dark);
+        cursor: pointer;
+        color: #fff;
+      }
+
+      .formStep2 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+        width: 100%;
+      }
+
+      .sub-aviso {
+        color: #919191;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+      }
+
+      .frame-botoes {
+        display: flex;
+        width: 100%;
+        align-items: flex-start;
+        gap: 16px;
+        align-self: stretch;
+        margin-top: 16px;
+      }
+
+      .botao-voltar-Step2 {
+        display: flex;
+        width: 52px;
+        height: 52px;
+        justify-content: center;
+        align-items: center;
+        border-radius: 6px;
+        background-color: #fff;
+        color: #848484;
+        border: none;
+        cursor: pointer;
+        transition: background-color 0.3s ease-in-out;
+      }
+
+      .botao-voltar-Step2:hover {
+        background-color: #d2d2d2;
+      }
+
+      .botao-voltar-Step2 i {
+        width: 21.333px;
+        height: 16px;
+        flex-shrink: 0;
+      }
+
+      .botao-voltar-Step3 {
+        display: flex;
+        width: 52px;
+        height: 52px;
+        justify-content: center;
+        align-items: center;
+        border-radius: 6px;
+        background-color: #fff;
+        color: #848484;
+        border: none;
+        cursor: pointer;
+        transition: background-color 0.3s ease-in-out;
+      }
+
+      .botao-voltar-Step3:hover {
+        background-color: #d2d2d2;
+      }
+
+      .botao-voltar-Step3 i {
+        width: 21.333px;
+        height: 16px;
+        flex-shrink: 0;
+      }
+
+      .formStep3 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+        width: 100%;
+      }
+
+      .checkbox-group {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+        align-self: stretch;
+      }
+
+      .checkbox-item {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        align-self: stretch;
+        color: #848484;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        text-align: left;
+      }
+
+      @media (max-width: 600px) {
+        .checkbox-item {
+          font-size: 10px;
+        }
+      }
+
+      input[type="checkbox"] {
+        accent-color: #2865e8;
+      }
+
+      .not-robot {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        align-self: stretch;
+        border-radius: 6px;
+        background: #f9f9f9;
+      }
+
+      .botaoEnviar {
+        display: flex;
+        height: 52px;
+        width: 100%;
+        padding: 0px 24px;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+        flex: 1 0 0;
+        border: none;
+        border-radius: 6px;
+        background-color: #c7c7c7;
+        color: #a4a4a4;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 20px;
+        transition: background-color 0.3 ease-in-out;
+      }
+
+      .botaoEnviar.selected {
+        background-color: #0fa848;
+        color: #fff;
+        cursor: pointer;
+      }
+
+      .titleStep4 span {
+        display: inline-block;
+        color: var(--neutral-dark);
+        text-align: center;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 120%;
+        gap: 1rem;
+      }
+
+      .botaoReset {
+        display: flex;
+        height: 52px;
+        width: 100%;
+        padding: 0px 24px;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+        border-radius: 6px;
+        border: 2px solid var(--e-commerce-prime-stroke, #e8e8e8);
+        background: #fff;
+        color: var(--neutral-dark);
+        font-feature-settings: "liga" off, "clig" off;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 20px;
+        cursor: pointer;
+      }
+
+      .botaoLinkEspecialista {
+        display: none;
+        height: 52px;
+        width: 100%;
+        padding: 0px 24px;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+        border-radius: 6px;
+        border: none;
+        background-color: var(--neutral-dark);
+        color: #fff;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 20px;
+        white-space: nowrap;
+        cursor: pointer;
+      }
+
+      @media (max-width: 600px) {
+        .botaoLinkEspecialista {
+          font-size: 16px;
+        }
+      }
+
+      .input-error {
+        outline: 1px solid red;
+        border: none;
+      }
+
+      .input-container {
+        position: relative;
+        display: inline-block;
+      }
+
+      .tooltip {
+        visibility: hidden;
+        background-color: #f44336;
+
+        color: #fff;
+        text-align: left;
+        border-radius: 4px;
+        padding: 5px 10px;
+        position: absolute;
+        z-index: 1;
+        top: 50%;
+        left: 105%;
+        transform: translateY(-50%);
+        opacity: 0;
+        transition: opacity 0.3s;
+        width: 250px;
+      }
+
+      .tooltip::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        right: 100%;
+        margin-top: -5px;
+        border-width: 5px;
+        border-style: solid;
+        border-color: transparent #f44336 transparent transparent;
+      }
+
+      .input-container .tooltip.show {
+        visibility: visible;
+        opacity: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <template>
+      <!--FORMULÁRIO-->
+      <section class="section-formulario" data-id="formulario">
+        <div class="form-container">
+          <div class="franquia-info">
+            <h5>
+              Seja um franqueado ABC da Construção! Preencha o formulário para
+              começar
+            </h5>
+            <p>
+              A ABC da Construção oferece um modelo de franquia revolucionário,
+              com múltiplas fontes de receita e um sistema comprovado de
+              sucesso.
+            </p>
+            <p>
+              Com acesso exclusivo ao nosso inovador modelo de Guide Shops, com
+              operação facilitada e plataforma digital exclusiva, você terá
+              todas as ferramentas e serviços ABC para atingir o sucesso do seu
+              negócio.
+            </p>
+          </div>
+          <div class="forms">
+            <div class="form-title">
+              <figure>
+                <img
+                  src="https://abcdaconstrucao.my.site.com/sejaumfranqueado/sfsites/c/cms/delivery/media/MCPUBRH6D55ZAE3AXZNATJ5MBXBQ"
+                  alt="Franquia ABC Miniatura"
+                />
+              </figure>
+              <p class="titleStep1 forms-title">
+                Selecione quanto você pretende investir:
+              </p>
+              <p class="titleStep2 forms-title" style="display: none">
+                Informe seus dados:
+              </p>
+              <p class="titleStep3 forms-title" style="display: none">
+                E por fim... Onde deseja abrir uma franquia?
+              </p>
+              <p class="titleStep4 forms-title" style="display: none">
+                Parabéns!<br /><span
+                  >Seus dados foram enviados com sucesso, e dentro de alguns
+                  instantes um especialista entrará em contato com você.</span
+                >
+              </p>
+              <br />
+              <div class="container-progress-bar">
+                <div class="line-progress">
+                  <div class="progress-bar"></div>
+                </div>
+                <output class="progress-percent">0%</output>
+              </div>
+            </div>
+            <form action="#" autocomplete="off">
+              <div class="formStep1">
+                <button
+                  type="button"
+                  class="botao-investimento"
+                  value="Até R$150 mil"
+                >
+                  Até <strong>R$150 mil</strong>
+                </button>
+                <button
+                  type="button"
+                  class="botao-investimento"
+                  value="R$150 mil a R$250 mil"
+                >
+                  <strong>R$150 mil</strong> a <strong>R$250 mil</strong>
+                </button>
+                <button
+                  type="button"
+                  class="botao-investimento"
+                  value="R$150 mil a R$250 mil"
+                >
+                  <strong>R$150 mil</strong> a <strong>R$250 mil</strong>
+                </button>
+                <button
+                  type="button"
+                  class="botao-investimento"
+                  value="R$250 mil a R$350 mil"
+                >
+                  <strong>R$250 mil</strong> a <strong>R$350 mil</strong>
+                </button>
+                <button
+                  type="button"
+                  class="botao-investimento"
+                  value="+R$350 mil"
+                >
+                  +<strong>R$350 mil</strong>
+                </button>
+                <div class="frame-botoes" style="margin-top: 28px">
+                  <button
+                    type="button"
+                    class="botao-proxima-etapa-step1 botao-proxima-etapa"
+                    disabled
+                  >
+                    PRÓXIMA ETAPA
+                  </button>
+                </div>
+              </div>
+              <div class="formStep2" style="display: none">
+                <p class="sub-aviso">
+                  <span
+                    ><img
+                      src="https://abcdaconstrucao.my.site.com/sejaumfranqueado/sfsites/c/cms/delivery/media/MCB5NLIMFEWZAOFJJG33MGFLGH4Y"
+                      alt=""
+                  /></span>
+                  Campos indicados com * são obrigatórios
+                </p>
+                <div class="label-input">
+                  <label for="name">Nome Completo *</label>
+                  <input
+                    type="text"
+                    class="name"
+                    name="name"
+                    placeholder="Digite seu nome completo"
+                    required
+                  />
+                </div>
+                <div class="label-input">
+                  <label for="email">E-mail *</label>
+                  <input
+                    type="email"
+                    class="email"
+                    name="email"
+                    placeholder="Digite seu e-mail"
+                    required
+                  />
+                </div>
+                <div class="label-input-row">
+                  <div class="label-input">
+                    <label for="tel">Celular / Whatsapp *</label>
+                    <input
+                      type="tel"
+                      class="tel"
+                      name="tel"
+                      placeholder="(xx) x xxxx-xxxx"
+                      required
+                    />
+                  </div>
+                  <div class="label-input">
+                    <label for="profession">Profissão *</label>
+                    <div class="select-custom">
+                      <select name="profession" class="profession" required>
+                        <option value="" disabled selected>Selecione</option>
+                        <option value="lojista_acabamentos">
+                          Lojista de Acabamentos
+                        </option>
+                        <option value="lojista_madeireira">
+                          Lojista de Madeireira
+                        </option>
+                        <option value="lojista_marmoraria">
+                          Lojista de Marmoraria
+                        </option>
+                        <option value="lojista_material_construcao">
+                          Lojista de Material de Construção
+                        </option>
+                        <option value="construtor">
+                          Construtor/Construtora
+                        </option>
+                        <option value="especificador">
+                          Especificador (Engenheiro, Arquiteto e Designer de
+                          Interiores)
+                        </option>
+                        <option value="advogado">Advogado(a)</option>
+                        <option value="bancario">Bancário(a)</option>
+                        <option value="empresario">Empresário(a)</option>
+                        <option value="imobiliaria_corretor">
+                          Imobiliária / Corretor
+                        </option>
+                        <option value="investidor">Investidor(a)</option>
+                        <option value="saude">Saúde</option>
+                        <option value="varejo_outros">
+                          Varejo Outros (Alimentação, Automotivo, etc)
+                        </option>
+                        <option value="vendas">Vendas</option>
+                        <option value="comercial">Comercial</option>
+                        <option value="outros">Outros</option>
+                      </select>
+                      <i class="ph ph-caret-down"></i>
+                    </div>
+                  </div>
+                </div>
+                <div class="frame-botoes">
+                  <button type="button" class="botao-voltar-Step2">
+                    <img
+                      src="https://abcdaconstrucao.my.site.com/sejaumfranqueado/sfsites/c/cms/delivery/media/MCG3C22A55TBGCNLK2H74ESIHPAY"
+                      alt="Ícone Seta Voltar"
+                    />
+                  </button>
+                  <button
+                    type="button"
+                    class="botao-proxima-etapa-step2 botao-proxima-etapa"
+                    disabled
+                  >
+                    PRÓXIMA ETAPA
+                  </button>
+                </div>
+              </div>
+              <div class="formStep3" style="display: none">
+                <div class="label-input-row">
+                  <div class="label-input">
+                    <label for="state">Estado *</label>
+                    <div class="select-custom">
+                      <select name="state" class="state" required>
+                        <option value="" disabled selected>Selecione</option>
+                        <option value="AC">AC</option>
+                        <option value="AL">AL</option>
+                        <option value="AM">AM</option>
+                        <option value="AP">AP</option>
+                        <option value="BA">BA</option>
+                        <option value="CE">CE</option>
+                        <option value="DF">DF</option>
+                        <option value="ES">ES</option>
+                        <option value="GO">GO</option>
+                        <option value="MA">MA</option>
+                        <option value="MS">MS</option>
+                        <option value="MT">MT</option>
+                        <option value="MG">MG</option>
+                        <option value="PA">PA</option>
+                        <option value="PB">PB</option>
+                        <option value="PE">PE</option>
+                        <option value="PI">PI</option>
+                        <option value="PR">PR</option>
+                        <option value="RJ">RJ</option>
+                        <option value="RN">RN</option>
+                        <option value="RS">RS</option>
+                        <option value="RO">RO</option>
+                        <option value="RR">RR</option>
+                        <option value="SC">SC</option>
+                        <option value="SP">SP</option>
+                        <option value="SE">SE</option>
+                        <option value="TO">TO</option>
+                      </select>
+                      <i class="ph ph-caret-down"></i>
+                    </div>
+                  </div>
+                  <div class="label-input">
+                    <label for="city">Cidade *</label>
+                    <div class="select-custom">
+                      <select name="city" class="city">
+                        <option value="" disabled selected>Selecione</option>
+                      </select>
+                      <i class="ph ph-caret-down"></i>
+                    </div>
+                  </div>
+                </div>
+                <div class="checkbox-group">
+                  <div class="checkbox-item">
+                    <input
+                      type="checkbox"
+                      class="privacyPolicy"
+                      name="privacyPolicy"
+                      required
+                      checked
+                    />
+                    <label for="privacyPolicy">
+                      Eu concordo com a Política de Privacidade e autorizo o uso
+                      dos meus dados conforme descrito.
+                    </label>
+                  </div>
+                  <div class="checkbox-item">
+                    <input
+                      type="checkbox"
+                      class="marketingConsent"
+                      name="marketingConsent"
+                      checked
+                    />
+                    <label for="marketingConsent">
+                      Concordo em receber E-mails, SMS e Whatsapp da ABC da
+                      Construção.
+                    </label>
+                  </div>
+                  <div class="not-robot">
+                    <img src="assets/img/nao-sou-robo.svg" alt="" />
+                  </div>
+                </div>
+                <div class="frame-botoes">
+                  <button type="button" class="botao-voltar-Step3">
+                    <img
+                      src="https://abcdaconstrucao.my.site.com/sejaumfranqueado/sfsites/c/cms/delivery/media/MCG3C22A55TBGCNLK2H74ESIHPAY"
+                      alt="Ícone Seta Voltar"
+                    />
+                  </button>
+                  <button type="submit" class="botaoEnviar" disabled>
+                    ENVIAR DADOS
+                  </button>
+                </div>
+              </div>
+              <div class="formStep4" style="display: none">
+                <div class="frame-botoes">
+                  <button class="botaoReset" type="reset">
+                    Novo cadastro<img
+                      src="https://abcdaconstrucao.my.site.com/sejaumfranqueado/sfsites/c/cms/delivery/media/MCLTRSULKES5BI3FIBNSSRE2QHPU"
+                      alt="Botão Resetar Formulário"
+                    />
+                  </button>
+                  <button class="botaoLinkEspecialista" type="button">
+                    FALAR AGORA
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+    </template>
+    <script>
+      import { LightningElement, api, wire, track } from "lwc";
+      import { CurrentPageReference } from "lightning/navigation";
+      import upsertLead from "@salesforce/apex/LpSejaUmFranqueadoService.upsertLead";
+      import getCityByUf from "@salesforce/apex/LpSejaUmFranqueadoService.getCityByUf";
+
+      export default class MultiStepForm extends LightningElement {
+        currentStep = 1;
+        progress = 0;
+        isListenersRegistered = false;
+        validEmail = false;
+        @api medium;
+        @api campaign;
+        @api term;
+        @api utm_source;
+        @api utm_medium;
+        @api utm_campaign;
+
+        @wire(CurrentPageReference)
+        getStateParameters(currentPageReference) {
+          if (currentPageReference) {
+            this.medium = currentPageReference.state?.medium;
+            this.campaign = currentPageReference.state?.campaign;
+            this.term = currentPageReference.state?.term;
+            this.utm_source = currentPageReference.state?.utm_source;
+            this.utm_medium = currentPageReference.state?.utm_medium;
+            this.utm_campaign = currentPageReference.state?.utm_campaign;
+
+            console.log("medium: " + this.medium);
+            console.log("campaign: " + this.campaign);
+            console.log("term: " + this.term);
+            console.log("utm_source: " + this.utm_source);
+            console.log("utm_medium: " + this.utm_medium);
+            console.log("utm_campaign: " + this.utm_campaign);
+          }
+        }
+
+        formData = {
+          investment: null,
+          medium: this.medium,
+          campaign: this.campaign,
+          term: this.term,
+          utm_source: this.utm_source,
+          utm_medium: this.utm_medium,
+          utm_campaign: this.utm_campaign,
+          name: "",
+          email: "",
+          tel: "",
+          profession: "",
+          state: "",
+          city: "",
+          privacyPolicy: true,
+          marketingConsent: true,
+          firstName: "",
+          lastName: "",
+          idLead: "",
+          recordtypeDevName: "Expansao",
+          company: "ABC",
+          company2: "ABC Expansão",
+          owner: "00GbJ0000062OFjUAM",
+          canalDeEntrada: "Landing Page Expansão",
+        };
+
+        renderedCallback() {
+          if (this.isListenersRegistered) return;
+          this.isListenersRegistered = true;
+
+          const formContainer = this.template.querySelector(".forms");
+          if (!formContainer) {
+            console.error("Elemento .forms não encontrado.");
+            return;
+          }
+
+          this.initializeProgressBar();
+
+          const investmentButtons = this.template.querySelectorAll(
+            ".botao-investimento"
+          );
+          investmentButtons.forEach((button) => {
+            button.addEventListener("click", () =>
+              this.selectInvestment(button)
+            );
+          });
+
+          const backButtonStep2 = this.template.querySelector(
+            ".botao-voltar-Step2"
+          );
+          const nextButtonStep1 = this.template.querySelector(
+            ".botao-proxima-etapa-step1"
+          );
+          const nextButtonStep2 = this.template.querySelector(
+            ".botao-proxima-etapa-step2"
+          );
+          const backButtonStep3 = this.template.querySelector(
+            ".botao-voltar-Step3"
+          );
+          const submitButton = this.template.querySelector(".botaoEnviar");
+          const resetButton = this.template.querySelector(".botaoReset");
+          const getState = this.template.querySelector(".state");
+
+          if (backButtonStep2)
+            backButtonStep2.addEventListener("click", () =>
+              this.handlePreviousStep()
+            );
+          if (nextButtonStep1)
+            nextButtonStep1.addEventListener("click", () =>
+              this.handleNextStep()
+            );
+          if (nextButtonStep2)
+            nextButtonStep2.addEventListener("click", () =>
+              this.handleNextStep()
+            );
+          if (backButtonStep3)
+            backButtonStep3.addEventListener("click", () =>
+              this.handlePreviousStep()
+            );
+          if (getState)
+            getState.addEventListener("change", (e) =>
+              this.handleSelectState(e)
+            );
+
+          if (submitButton) {
+            submitButton.addEventListener("click", (event) => {
+              event.preventDefault();
+
+              let name = this.formData.name;
+              let firstName = name.split(" ")[0];
+              let lastName =
+                name.split(" ").length > 1
+                  ? name.replace(firstName, "").trim()
+                  : firstName.trim();
+              let idLead = firstName.concat(
+                lastName.replaceAll(" ", "").trim(),
+                this.formData.tel.trim()
+              );
+
+              this.formData.idLead = idLead;
+
+              this.formData.medium = this.medium;
+              this.formData.campaign = this.campaign;
+              this.formData.term = this.term;
+              this.formData.utm_source = this.utm_source;
+              this.formData.utm_medium = this.utm_medium;
+              this.formData.utm_campaign = this.utm_campaign;
+
+              this.formData.recordtypeDevName = "Expansao";
+              this.formData.company = "ABC";
+              this.formData.company2 = "ABC Expansão";
+              this.formData.owner = "00GbJ0000062OFjUAM";
+              this.formData.canalDeEntrada = "Landing Page Expansão";
+              this.formData.firstName = firstName;
+              this.formData.lastName = lastName;
+              this.formData.marketingConsent =
+                this.formData.marketingConsent.toString();
+              this.formData.privacyPolicy =
+                this.formData.privacyPolicy.toString();
+
+              upsertLead({ lead: JSON.stringify(this.formData) })
+                .then(() => {
+                  console.log("submit ok: ");
+                  window.dataLayer.push({
+                    event: "Lead",
+                    email: this.formData.email,
+                    phone: this.formData.tel,
+                  });
+                })
+                .catch((error) => {
+                  console.log("submit error: ", error);
+                });
+              console.log("formdata", this.formData);
+              console.log("Dados enviados com sucesso!!!!!.");
+              this.handleNextStep();
+              this.finalizeProgressBar();
+            });
+          }
+
+          if (resetButton) {
+            resetButton.addEventListener("click", () => {
+              this.resetForm();
+            });
+          }
+
+          formContainer.addEventListener("input", (event) => {
+            const target = event.target;
+            const field = target.name;
+
+            if (
+              ["name", "email", "tel", "profession", "state", "city"].includes(
+                field
+              )
+            ) {
+              this.handleInputChange(event);
+              if (field === "tel") this.validatePhoneInput(target);
+              if (field === "email") this.validateEmail(target);
+              if (this.currentStep === 2) this.updateStep2Progress();
+              if (this.currentStep === 3) this.updateStep3Progress();
+            }
+          });
+
+          // formContainer.addEventListener('focusout', (event) => {
+          //     const target = event.target;
+          //     if (target.name === 'email') {
+          //         this.validateEmail(target);
+          //     }
+          // });
+
+          formContainer.addEventListener("change", (event) => {
+            const target = event.target;
+            const field = target.name;
+
+            if (["privacyPolicy", "marketingConsent"].includes(field)) {
+              this.handleInputChange(event);
+              if (this.currentStep === 3) this.verifyStep3Fields();
+            }
+          });
+
+          if (this.currentStep === 3) this.verifyStep3Fields();
+        }
+
+        validatePhoneInput(input) {
+          const numericValue = input.value.replace(/\D/g, "");
+          if (numericValue.length > 11) {
+            input.value = numericValue.slice(0, 11);
+          }
+
+          if (numericValue.length == 11) {
+            if (input.classList.contains("invalid-input")) {
+              input.classList.remove("invalid-input");
+            }
+          } else {
+            input.classList.add("invalid-input");
+          }
+          // const formattedValue = numericValue.replace(/^(\d{2})(\d{1})(\d{4})(\d{4})$/, '($1) $2 $3-$4');
+          const x = numericValue.match(/(\d{0,2})(\d{0,5})(\d{0,4})/);
+
+          input.value = !x[2]
+            ? x[1]
+            : `(${x[1]}) ${x[2]}` + (x[3] ? `-${x[3]}` : ``);
+          this.formData.tel = numericValue;
+        }
+
+        validateEmail(input) {
+          const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          this.validEmail = emailRegex.test(input.value);
+
+          if (!this.validEmail) {
+            input.classList.add("invalid-input");
+          } else {
+            if (input.classList.contains("invalid-input")) {
+              input.classList.remove("invalid-input");
+            }
+          }
+        }
+
+        initializeProgressBar() {
+          const progressBar = this.template.querySelector(".progress-bar");
+          const progressPercent =
+            this.template.querySelector(".progress-percent");
+
+          if (progressBar) {
+            progressBar.style.width = "0%";
+            progressBar.style.backgroundColor = "";
+          }
+
+          if (progressPercent) {
+            progressPercent.textContent = "0%";
+          }
+        }
+
+        selectInvestment(button) {
+          const investmentButtons = this.template.querySelectorAll(
+            ".botao-investimento"
+          );
+
+          if (button.classList.contains("selected")) {
+            button.classList.remove("selected");
+            this.formData.investment = null;
+            this.progress = 0;
+          } else {
+            investmentButtons.forEach((btn) =>
+              btn.classList.remove("selected")
+            );
+
+            button.classList.add("selected");
+            this.formData.investment = button.value;
+            this.progress = Math.max(this.progress, 80);
+          }
+
+          this.updateProgress();
+
+          const nextButton = this.template.querySelector(
+            ".botao-proxima-etapa-step1"
+          );
+          if (nextButton) {
+            nextButton.disabled = !this.formData.investment;
+            nextButton.classList.toggle("selected", !!this.formData.investment);
+          }
+        }
+
+        handleInputChange(event) {
+          const field = event.target.name;
+          const value =
+            event.target.type === "checkbox"
+              ? event.target.checked
+              : event.target.value;
+          this.formData = { ...this.formData, [field]: value };
+          if (this.currentStep === 3) this.verifyStep3Fields();
+        }
+
+        updateStep2Progress() {
+          const { name, email, tel, profession } = this.formData;
+
+          const fields = [name, email, tel, profession];
+          const filledFields = fields.filter(
+            (field) =>
+              field &&
+              field.trim() !== "" &&
+              tel.trim().length == 11 &&
+              this.validEmail
+          ).length;
+
+          if (filledFields > 0) {
+            this.progress = 80 + (filledFields / fields.length) * 10;
+          } else {
+            this.progress = 80;
+          }
+
+          const nextButton = this.template.querySelector(
+            ".botao-proxima-etapa-step2"
+          );
+          if (nextButton) {
+            nextButton.disabled = filledFields < fields.length;
+            nextButton.classList.toggle(
+              "selected",
+              filledFields === fields.length
+            );
+          }
+
+          this.updateProgress();
+        }
+        //PrimeiroNome + SobreNome + Telefone [Sem espaçoes e caracteres especiais]
+        updateStep3Progress() {
+          const { state, city } = this.formData;
+
+          const fields = [state, city];
+          const filledFields = fields.filter(
+            (field) => field && field.trim() !== ""
+          ).length;
+
+          this.progress = 90 + (filledFields / fields.length) * 9;
+
+          this.updateProgress();
+          this.verifyStep3Fields();
+        }
+
+        verifyStep3Fields() {
+          const { state, city, privacyPolicy } = this.formData;
+
+          const allFieldsFilled = state && city && privacyPolicy;
+
+          const submitButton = this.template.querySelector(".botaoEnviar");
+          if (submitButton) {
+            submitButton.disabled = !allFieldsFilled;
+            submitButton.classList.toggle("selected", allFieldsFilled);
+
+            console.log(
+              `Validação do botão 'Enviar Dados': ${
+                allFieldsFilled ? "Ativado" : "Desativado"
+              }`
+            );
+          }
+        }
+
+        finalizeProgressBar() {
+          const progressBar = this.template.querySelector(".progress-bar");
+          const progressPercent =
+            this.template.querySelector(".progress-percent");
+
+          if (progressBar) {
+            progressBar.style.width = "100%";
+            progressBar.style.backgroundColor = "#0FA848";
+          }
+
+          if (progressPercent) {
+            progressPercent.textContent = "100%";
+          }
+        }
+
+        clearInvestmentSelection() {
+          const investmentButtons = this.template.querySelectorAll(
+            ".botao-investimento"
+          );
+          investmentButtons.forEach((button) => {
+            button.classList.remove("selected");
+          });
+        }
+
+        resetForm() {
+          this.currentStep = 1;
+          this.progress = 0;
+          this.formData = {
+            investment: null,
+            name: "",
+            email: "",
+            tel: "",
+            profession: "",
+            state: "",
+            city: "",
+            privacyPolicy: true,
+            marketingConsent: true,
+            firstName: "",
+            lastName: "",
+            idLead: "",
+            recordtypeDevName: "Expansao",
+            company: "ABC",
+            company2: "ABC Expansão",
+            owner: "00GbJ0000062OFjUAM",
+          };
+
+          setTimeout(() => {
+            this.updateAllCheckboxes();
+            this.resetFields();
+            this.verifyStep3Fields();
+            this.clearInvestmentSelection();
+          }, 0);
+
+          this.updateVisibility();
+          this.initializeProgressBar();
+          console.log("Formulário completamente resetado.");
+        }
+
+        updateAllCheckboxes() {
+          const privacyPolicyCheckbox = this.template.querySelector(
+            "[name='privacyPolicy']"
+          );
+          const marketingConsentCheckbox = this.template.querySelector(
+            "[name='marketingConsent']"
+          );
+
+          if (privacyPolicyCheckbox) {
+            privacyPolicyCheckbox.checked = true;
+          }
+          if (marketingConsentCheckbox) {
+            marketingConsentCheckbox.checked = true;
+          }
+        }
+
+        resetFields() {
+          const inputs = this.template.querySelectorAll("input, select");
+          inputs.forEach((input) => {
+            if (input.type === "checkbox") {
+              input.checked = this.formData[input.name];
+            } else {
+              input.value = this.formData[input.name] || "";
+            }
+          });
+        }
+
+        handleNextStep() {
+          if (this.currentStep < 4) {
+            this.currentStep++;
+            if (this.currentStep === 4) {
+              this.progress = 100;
+            }
+            console.log(`Avançando para a etapa ${this.currentStep}`);
+            this.updateVisibility();
+            this.updateProgress();
+          }
+        }
+
+        handlePreviousStep() {
+          if (this.currentStep > 1) {
+            this.currentStep--;
+            console.log(`Voltando para a etapa ${this.currentStep}`);
+            this.updateVisibility();
+            this.updateProgress();
+          }
+        }
+
+        updateProgress(value = this.progress) {
+          const progressBar = this.template.querySelector(".progress-bar");
+          const progressPercent =
+            this.template.querySelector(".progress-percent");
+
+          if (progressBar) progressBar.style.width = `${value}%`;
+          if (progressPercent)
+            progressPercent.textContent = `${Math.round(value)}%`;
+        }
+
+        updateVisibility() {
+          const steps = ["formStep1", "formStep2", "formStep3", "formStep4"];
+          steps.forEach((stepClass, index) => {
+            const step = this.template.querySelector(`.${stepClass}`);
+            if (step) {
+              step.style.display = this.currentStep === index + 1 ? "" : "none";
+            }
+          });
+
+          const titles = [
+            "titleStep1",
+            "titleStep2",
+            "titleStep3",
+            "titleStep4",
+          ];
+          titles.forEach((titleClass, index) => {
+            const title = this.template.querySelector(`.${titleClass}`);
+            if (title) {
+              title.style.display =
+                this.currentStep === index + 1 ? "" : "none";
+            }
+          });
+
+          console.log(`Visibilidade atualizada para etapa ${this.currentStep}`);
+        }
+
+        handleSelectState(e) {
+          let state = e.target.value.trim();
+          const submitButton = this.template.querySelector(".botaoEnviar");
+          if (submitButton) submitButton.disabled = true;
+          this.formData = { ...this.formData, state, city: "" };
+          this.verifyStep3Fields();
+
+          if (state) {
+            getCityByUf({ uf: state })
+              .then((response) => {
+                this.handleSelectCityByState(response);
+              })
+              .catch((error) => {
+                console.log("Erro ao selecionar estado", error);
+              });
+          }
+        }
+
+        handleSelectCityByState(cities) {
+          let html = ['<option value="" disabled selected>Selecione</option>'];
+          let cities__ = [];
+          if (cities.length) {
+            cities__ = cities.map((city) => {
+              return `<option value="${city.NameCity__c}">${city.NameCity__c}</option>`;
+            });
+          }
+
+          this.template.querySelector(".city").innerHTML = [
+            ...html,
+            ...cities__,
+          ].join("");
+          this.formData.city = "";
+          this.verifyStep3Fields();
+        }
+
+        verifyStep3Fields() {
+          const { state, city, privacyPolicy } = this.formData;
+          const allFieldsFilled = state && city && privacyPolicy;
+
+          const submitButton = this.template.querySelector(".botaoEnviar");
+          if (submitButton) {
+            submitButton.disabled = !allFieldsFilled;
+            submitButton.classList.toggle("selected", allFieldsFilled);
+          }
+        }
+      }
+    </script>
+  </body>
+</html>

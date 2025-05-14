@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!--Header Fullbanner-->
+    <div class="full-container-menu">
+      <div class="content-menu">
+        <div class="menu-icon" aria-label="Abrir menu">
+          <img
+            src="https://abcdaconstrucao.my.site.com/sejaumfranqueado/sfsites/c/cms/delivery/media/MCDF4PGJR5XJB53J7CWCN7YYFXFQ"
+            alt="Menu Icone"
+            fetchpriority="high"
+          />
+          <!-- <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M4 6h16M4 12h16M4 18h16" stroke="#fff" stroke-width="2" stroke-linecap="round" />
+        </svg> -->
+        </div>
+        <div class="logo-container">
+          <img
+            class="logo"
+            src="https://abcdaconstrucao.my.site.com/sejaumfranqueado/sfsites/c/cms/delivery/media/MCEBKEXVFBW5HJZCSDXOVZFRTXBQ"
+            alt="ABC da Construção"
+            fetchpriority="high"
+          />
+        </div>
+        <nav class="navbar">
+          <a href="#guide-shops-30" class="menu-item">Guide Shops</a>
+          <a href="#modelo-negocio-33" class="menu-item">Modelo de Negócio</a>
+          <a href="#modelos-33" class="menu-item">Modelos</a>
+          <a href="#abc-x-36" class="menu-item">Saiba Mais</a>
+          <!--<a href="#" class="menu-item">Dúvidas</a>-->
+        </nav>
+        <div class="cta-container">
+          <a onclick="{formScroll}" class="cta-button">QUERO UMA FRANQUIA</a>
+        </div>
+      </div>
+    </div>
+    <div class="fullbanner">
+      <span class="junte-se-a-mais-de-450"
+        >JUNTE-SE A MAIS DE 400 FRANQUEADOS DE SUCESSO</span
+      >
+      <!--<img class=""
+      src="https://abcdaconstrucao.my.site.com/sejaumfranqueado/sfsites/c/cms/delivery/media/MCYDK6XULUEZBF5NV5CUQXVCHUCY"
+      alt="Marcio Garcia ABC da Construção">-->
+      <a onclick="{formScroll}" class="cta-falar-com-especialista">
+        <!--<img
+        src="https://abcdaconstrucao.my.site.com/sejaumfranqueado/sfsites/c/cms/delivery/media/MCUHWVOW727VGHLLP7FYG753QFFY"
+        alt="Ícone Falar com Especialista" class="icon-falar-com-especialista">-->
+        <span class="falar-com-especialista">SEJA DONO DO SEU NEGÓCIO</span>
+      </a>
+    </div>
+    <script>
+              renderedCallback() {
+
+          const menuIcon = this.template.querySelector(".menu-icon");
+          const navbar = this.template.querySelector(".navbar");
+
+          if (menuIcon && navbar) {
+
+              menuIcon.addEventListener("click", () => {
+                  navbar.classList.toggle("active");
+              });
+          } else {
+              console.error("Elementos '.menu-icon' ou '.navbar' não encontrados.");
+          }
+      }
+
+      formScroll() {
+          const topDiv = document.querySelector('c-lp-seja-um-franqueado-formulario');
+          topDiv.scrollIntoView({ behavior: "smooth", block: "center", inline: "nearest" });
+      }
+    </script>
+  </body>
+</html>
