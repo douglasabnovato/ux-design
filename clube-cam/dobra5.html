@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      @font-face {
+        font-family: "Noto Sans";
+        src: url("https://abcdaconstrucao.my.site.com/atletico/sfsites/c/cms/delivery/media/")
+          format("TrueType");
+        font-weight: 100 900;
+        font-style: normal;
+      }
+
+      * {
+        font-family: "Noto Sans", sans-serif;
+        scroll-behavior: smooth;
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        outline: none;
+        border: none;
+        list-style: none;
+      }
+
+      .quinta-dobra {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: white;
+        height: 100vh;
+      }
+
+      .faq-container {
+        height: 100vh;
+        max-width: 64vw;
+        width: 100%;
+        padding-top: 20px;
+      }
+
+      .faq-logo {
+        padding-right: 40px;
+      }
+
+      .faq-title {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 30px;
+        font-weight: 800;
+        margin-bottom: 20px;
+
+        text-align: center;
+      }
+
+      .faq-item {
+        border: 1px solid #ddd;
+        margin-bottom: 10px;
+        border-radius: 5px;
+      }
+
+      .faq-question {
+        background-color: #f9f9f9;
+        padding: 15px;
+        cursor: pointer;
+        font-size: 18px;
+        font-weight: 600;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: #696969;
+      }
+
+      .faq-answer {
+        padding: 15px;
+        background-color: #fff;
+        border-top: 1px solid #ddd;
+        font-style: italic;
+        font-weight: 400;
+        font-size: 15px;
+      }
+
+      .faq-answer p a {
+        text-decoration: none;
+        color: #696969;
+      }
+
+      .arrow {
+        transition: transform 0.3s;
+        color: #ffd300;
+      }
+
+      .rotate {
+        transform: rotate(180deg);
+      }
+
+      /********************Respons**************************/
+
+      /* FAQ e quinta dobra */
+      @media (max-width: 1024px) {
+        .quinta-dobra {
+          padding-top: 300px;
+          height: auto;
+        }
+
+        .faq-container {
+          max-width: 95%;
+        }
+
+        .faq-title {
+          font-size: 30px;
+          max-width: 100%;
+        }
+
+        .faq-answer p {
+          text-align: justify;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <template>
+      <section class="quinta-dobra">
+        <div class="faq-container">
+          <div class="faq-title">
+            <img
+              class="faq-logo"
+              src="https://abcdaconstrucao.my.site.com/atletico/sfsites/c/cms/delivery/media/MCWBMWKSX3L5EMTFRVDJNQ6P557Y"
+            />
+            <h1>Dúvidas Frequentes</h1>
+          </div>
+          <template for:each="{faqItems}" for:item="faq">
+            <div key="{faq.id}" class="faq-item">
+              <div
+                class="faq-question"
+                onclick="{toggleAnswer}"
+                data-id="{faq.id}"
+              >
+                {faq.question}
+                <span class="{faq.arrowClass}" data-id="{faq.id}">&#9660;</span>
+              </div>
+              <div class="faq-answer" if:true="{faq.visible}">
+                <p>
+                  <a class="url-resp" href="{faq.urlFranquias}">{faq.answer}</a>
+                </p>
+              </div>
+            </div>
+          </template>
+        </div>
+      </section>
+    </template>
+    <script>
+      import { LightningElement, track } from "lwc";
+      export default class LpAtleticoNovaDobra5 extends LightningElement {
+        @track faqItems = [
+          {
+            id: 1,
+            question: "Quando foi o início da parceria?",
+            answer:
+              "O início da parceria com o Clube Atlético Mineiro foi em Maio de 2021, data em que a ABC da Construção se tornou patrocinadora oficial do Clube.",
+            visible: true,
+            arrowClass: "arrow",
+          },
+          {
+            id: 2,
+            question: "Quero saber mais sobre a ABC da Construção.",
+            answer:
+              "Com mais de 67 anos de história, a ABC da Construção é uma das maiores redes de acabamentos do Brasil. Pelo seu modelo inovador, a ABC está fazendo uma revolução no varejo de acabamentos e já é considerada uma das principais construtechs do país. Traduzindo em números, vendemos por ano, aproximadamente 5 milhões de metros quadrados de revestimentos. O segredo? A gente entende de obra e vai te ajudar a comprar o acabamento certo, na quantidade certa pra sua obra. Nem mais, nem menos. Conte conosco pra finalizar sua obra de forma rápida, econômica e segura. Conte conosco pra deixar sua casa como sempre sonhou.",
+            visible: false,
+            arrowClass: "arrow",
+          },
+          {
+            id: 3,
+            question: "Quais são as vantagens de se cadastrar?",
+            answer:
+              "Ao se cadastrar você irá receber em primeira mão todas as ofertas, cupons, dicas, condições, ações e ativações especiais e imperdíveis relacionadas à diversidade e melhores marcas de acabamento para sua obra ou reforma. Nossa intenção é proporcionar experiências incríveis nas lojas ou no site da ABC junto ao seu time do coração.",
+            visible: false,
+            arrowClass: "arrow",
+          },
+          {
+            id: 4,
+            question:
+              "Encontre a Guide Shop da ABC da Construção mais perto de você!",
+            answer: "Quero conhecer a ABC mais próxima de mim. CLIQUE AQUI!",
+            visible: false,
+            arrowClass: "arrow",
+            urlFranquias:
+              "https://www.abcdaconstrucao.com.br/diretorio-de-lojas",
+          },
+        ];
+
+        toggleAnswer(event) {
+          const id = parseInt(event.currentTarget.dataset.id, 10);
+
+          this.faqItems = this.faqItems.map((faq) => {
+            if (faq.id === id) {
+              faq.visible = !faq.visible;
+            } else {
+              faq.visible = false;
+            }
+
+            faq.arrowClass = faq.visible ? "arrow rotate" : "arrow";
+            return faq;
+          });
+        }
+      }
+    </script>
+  </body>
+</html>

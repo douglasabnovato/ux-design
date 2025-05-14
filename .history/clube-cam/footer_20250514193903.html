@@ -1,0 +1,1029 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        font-family: "Noto Sans", sans-serif;
+        box-sizing: border-box;
+        margin: 0px;
+        padding: 0px;
+        scroll-behavior: smooth;
+        outline: none;
+        border: none;
+        list-style: none;
+        text-decoration: none;
+      }
+
+      .app-button {
+        padding: 60px;
+      }
+
+      .app-button button {
+        background-color: #ffd300 !important;
+        border: 1px solid #ffd300 !important;
+        color: #000000;
+        font-weight: bold;
+        font-size: 23px;
+        width: 268px;
+        height: 60px;
+        line-height: 30px;
+        border-radius: 55px;
+        cursor: pointer;
+        transition: 0.9s;
+      }
+
+      .app-button button:hover {
+        scale: 1.2;
+        background-color: #c2a61e !important;
+        border: 1px solid #c2a61e !important;
+      }
+
+      /*Primeira parte da footer*/
+      .footer {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-content: center;
+        align-items: center;
+        background-image: url("https://abcdaconstrucao.my.site.com/atletico/sfsites/c/cms/delivery/media/MCN5N7LL4ULBAATE6AQBE74NX2UU");
+        background-size: cover;
+        background-position: left;
+        height: 60vh;
+        width: 100vw;
+        margin: 0px;
+      }
+
+      .footer-icons {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        align-content: center;
+        gap: 30px;
+        padding-bottom: 20px;
+      }
+
+      .footer-icons a {
+      }
+
+      .footer-icons a:hover {
+        color: #c2a61e !important;
+        font-weight: bold;
+      }
+
+      .footer-abc,
+      .footer-instagram,
+      .footer-facebook,
+      .footer-youtube {
+        width: 36px;
+      }
+
+      .footer-links {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        align-content: center;
+        gap: 20px;
+      }
+
+      .footer-links a {
+        color: #ffffff;
+        font-size: 15px;
+        text-decoration: none;
+        padding-bottom: 60px;
+      }
+
+      .footer-links a:hover {
+        color: #c2a61e !important;
+        font-weight: bold;
+      }
+
+      /*Segunda parte da footer*/
+      .container {
+        margin: 0px;
+        width: 100%;
+        padding-block: 120px;
+        background-color: #121212;
+      }
+
+      .flex-container {
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding-inline: 52px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center !important;
+        align-items: center;
+        background-color: #121212;
+      }
+
+      .flex-item {
+        flex: 1 1 200px;
+        box-sizing: border-box;
+        justify-content: center !important;
+        align-items: center;
+        text-align: left;
+        font-size: 15px;
+        color: #ffffff;
+      }
+
+      .left-item,
+      .center-item,
+      .right-item {
+      }
+
+      .img-center {
+        text-align: right;
+      }
+
+      .img-center img {
+        width: 28%;
+      }
+
+      .politica-privacidade {
+        text-decoration: none !important;
+        color: #ffd300 !important;
+      }
+
+      .politica-privacidade:hover {
+        color: white !important;
+      }
+
+      .footer-latest-text {
+        font-size: 14px;
+        text-align: center;
+        background-color: #121212;
+        color: #5c5c5c;
+        margin: 0px;
+        padding-inline: 15px;
+        padding-block: 16px;
+      }
+
+      /* Formulário */
+      .modal-overlay {
+        animation: fadeInModal 0.35s ease-in-out;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+      }
+
+      .modal {
+        animation: fadeInModal 0.75s ease-in-out;
+        background-color: white;
+        padding: 20px;
+        border-radius: 10px;
+        width: 100%;
+        max-width: 460px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        position: relative;
+        z-index: 1001;
+      }
+
+      /* Parte do modal */
+      @keyframes fadeInModal {
+        from {
+          opacity: 0;
+          transform: translateY(-20px);
+        }
+
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .modal-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .close-btn {
+        background-color: transparent;
+        border: none;
+        font-size: 24px;
+        cursor: pointer;
+      }
+
+      .modal-body {
+        margin-top: 20px;
+        max-height: 400px; /* Defina uma altura máxima adequada para o seu conteúdo */
+        overflow-y: auto; /* Adiciona a barra de scroll vertical quando o conteúdo exceder max-height */
+        overflow-x: hidden; /* Opcional: Esconde a barra de scroll horizontal se aparecer */
+        padding-right: 20px; /* Opcional: Adiciona um espaço para a barra de scroll não cobrir o conteúdo */
+      }
+
+      .modal-body label,
+      .modal-body .label {
+        display: block;
+        margin-top: 10px;
+        text-align: left;
+      }
+
+      form fieldset {
+        border: 2px solid var(--cinza-borda);
+        border-radius: 5px;
+        padding: 2rem;
+        margin-bottom: 1rem;
+        color: var(--cinza-borda);
+      }
+
+      form legend {
+        font-weight: bold;
+        font-size: 1.2rem;
+        padding-inline-start: 1.8rem;
+        padding-inline-end: 1.4rem;
+      }
+
+      .modal-body .form-group lightning-select .slds-form-element__label {
+        text-align: left !important;
+      }
+
+      .modal-body input {
+        width: 100%;
+        padding: 8px;
+        margin-top: 5px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+
+      .form-group {
+        margin-bottom: 1rem;
+      }
+
+      .lb-checkbox {
+        display: block;
+        text-align: left;
+        margin-top: 10px;
+      }
+
+      .lb-checkbox input {
+        width: 16px;
+        height: 16px;
+        margin-right: 5px;
+        vertical-align: middle;
+      }
+
+      .lb-checkbox span {
+        font-size: 0.8rem;
+        vertical-align: middle;
+      }
+
+      .modal-footer {
+        margin-top: 20px;
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .submit-btn {
+        padding: 10px 20px;
+        background-color: #ffd300 !important;
+        border: 1px solid #ffd300 !important;
+        color: #000000;
+        font-weight: bold;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 1rem;
+      }
+
+      .submit-btn:hover {
+        background-color: #ffd500c7 !important;
+        border: 1px solid #ffd500c7 !important;
+      }
+
+      .submit-btn2 {
+        padding: 10px 20px;
+        background-color: #391a1c6d !important;
+        border: 1px solid #391a1c6d !important;
+        color: #000000;
+        font-weight: bold;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 1rem;
+      }
+
+      .submit-btn2:hover {
+        background-color: #040000ae !important;
+        border: 1px solid #040000ae !important;
+      }
+
+      .error-input {
+        border: 1px solid red !important;
+      }
+
+      .error-select lightning-select .slds-select {
+        border: 1px solid red !important;
+        /* Ou use var(--vermelho-erro) se definido */
+      }
+
+      .error-checkbox input[type="checkbox"] {
+        border: 1px solid red !important;
+        outline: 1px solid red !important;
+        /* Adiciona um outline para maior destaque (opcional) */
+      }
+
+      .error-message {
+        color: red;
+        font-size: 0.8rem;
+        margin-top: 0.2rem;
+        text-align: left;
+      }
+
+      /* Formulário - the-end */
+
+      /*Respons*/
+      @media (max-width: 1024px) {
+        .footer,
+        .container,
+        .flex-container {
+          width: 100%;
+          margin: 0px;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .flex-container {
+          width: 100%;
+        }
+
+        .flex-container {
+          flex-direction: column;
+          text-align: center;
+          padding-inline: 32px;
+        }
+
+        .left-item,
+        .center-item,
+        .right-item {
+          margin: 0px;
+        }
+
+        .left-item,
+        .right-item {
+          text-align: justify;
+        }
+
+        .center-item {
+          text-align: center;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .img-center img {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <template>
+      <template if:true="{modalAberto}">
+        <div class="modal-overlay">
+          <div class="modal">
+            <div class="modal-body">
+              <label for="nome">Nome:</label>
+              <input
+                type="text"
+                id="nome"
+                name="nome"
+                placeholder="Seu nome"
+                oninput="{handleInputChange}"
+                required
+                class="{computedClassNome}"
+              />
+              <template if:true="{formErrors.nome}">
+                <div class="error-message">{formErrors.nome}</div>
+              </template>
+
+              <label for="sobrenome">Sobrenome:</label>
+              <input
+                type="text"
+                id="sobrenome"
+                name="sobrenome"
+                placeholder="Seu sobrenome"
+                oninput="{handleInputChange}"
+                required
+                class="{computedClassSobrenome}"
+              />
+              <template if:true="{formErrors.sobrenome}">
+                <div class="error-message">{formErrors.sobrenome}</div>
+              </template>
+
+              <label for="celular">Telefone (WhatsApp):</label>
+              <input
+                type="text"
+                id="celular"
+                name="celular"
+                placeholder="Seu celular"
+                oninput="{handleInputChange}"
+                required
+                class="{computedClassCelular}"
+              />
+              <template if:true="{formErrors.celular}">
+                <div class="error-message">{formErrors.celular}</div>
+              </template>
+
+              <label for="email">E-mail:</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Seu e-mail"
+                oninput="{handleInputChange}"
+                required
+                class="{computedClassEmail}"
+              />
+              <template if:true="{formErrors.email}">
+                <div class="error-message">{formErrors.email}</div>
+              </template>
+
+              <fieldset>
+                <legend>Informações da Guide Shop mais perto de você</legend>
+                <div class="form-group">
+                  <lightning-select
+                    name="estadoGuide"
+                    id="estadoGuide"
+                    label="Estado"
+                    value="{value}"
+                    options="{options}"
+                    onchange="{handleStateChange}"
+                    required
+                    class="{computedClassEstadoGuide}"
+                  >
+                    <option value="" disabled selected>
+                      Selecione o Estado
+                    </option>
+                  </lightning-select>
+                  <template if:true="{formErrors.estadoGuide}">
+                    <div class="error-message">{formErrors.estadoGuide}</div>
+                  </template>
+                </div>
+                <div class="form-group">
+                  <lightning-select
+                    name="cidadeGuide"
+                    id="cidadeGuide"
+                    label="Cidade"
+                    value="{cidade}"
+                    options="{cidades}"
+                    onchange="{handleCityChange}"
+                    required
+                    class="{computedClassCidadeGuide}"
+                  >
+                    <option value="" disabled selected>
+                      Selecione a Cidade
+                    </option>
+                  </lightning-select>
+                  <template if:true="{formErrors.cidadeGuide}">
+                    <div class="error-message">{formErrors.cidadeGuide}</div>
+                  </template>
+                </div>
+                <div class="form-group">
+                  <lightning-select
+                    name="nomeGuide"
+                    id="nomeGuide"
+                    label="A sua Guide Shop mais perto de você"
+                    value="{guide}"
+                    options="{guides}"
+                    onchange="{handleGuideChange}"
+                    required
+                    class="{computedClassNomeGuide}"
+                  >
+                    <option value="" disabled selected>
+                      Selecione a Guide Shop
+                    </option>
+                  </lightning-select>
+                  <template if:true="{formErrors.nomeGuide}">
+                    <div class="error-message">{formErrors.nomeGuide}</div>
+                  </template>
+                </div>
+              </fieldset>
+
+              <div
+                class="lb-checkbox"
+                class:error-checkbox="{formErrors.firstcheck}"
+              >
+                <input
+                  type="checkbox"
+                  onclick="{handleCheckboxes}"
+                  name="firstcheck"
+                  id="firstcheck"
+                  class="checkbox-class"
+                  required
+                />
+                <span
+                  >Eu concordo com a Política de Privacidade e autorizo o uso
+                  dos meus dados.</span
+                >
+                <template if:true="{formErrors.firstcheck}">
+                  <div class="error-message">{formErrors.firstcheck}</div>
+                </template>
+              </div>
+
+              <div
+                class="lb-checkbox"
+                class:error-checkbox="{formErrors.secondcheck}"
+              >
+                <input
+                  type="checkbox"
+                  onclick="{handleCheckboxes}"
+                  name="secondcheck"
+                  id="secondcheck"
+                  class="checkbox-class"
+                />
+                <span
+                  >Concordo em receber E-mails, SMS e Whatsapp da ABC da
+                  Construção.</span
+                >
+                <template if:true="{formErrors.secondcheck}">
+                  <div class="error-message">{formErrors.secondcheck}</div>
+                </template>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button class="submit-btn" type="submit" onclick="{handleSubmit}">
+                CADASTRAR
+              </button>
+              <button class="submit-btn2" onclick="{fecharModal}">
+                Cancelar
+              </button>
+            </div>
+          </div>
+        </div>
+      </template>
+
+      <section class="footer">
+        <div class="app-button">
+          <button onclick="{abrirModal}">Cadastre-se</button>
+        </div>
+        <div class="footer-icons">
+          <a href="https://www.abcdaconstrucao.com.br/" target="_blank">
+            <img
+              src="https://abcdaconstrucao.my.site.com/saopaulofc/sfsites/c/cms/delivery/media/MCKHGPJFJPUZEULL4IWXVCPQ7E4M"
+              alt="ABC da Construção - A Maior Especialista em Acabamentos"
+              class="footer-abc"
+            />
+          </a>
+
+          <a href="https://www.instagram.com/abcdaconstrucao/" target="_blank">
+            <img
+              src="https://abcdaconstrucao.my.site.com/saopaulofc/sfsites/c/cms/delivery/media/MCERU36YHFTFHAVDHJ47DEAWUVDM"
+              alt="Instagram da ABC"
+              class="footer-instagram"
+            />
+          </a>
+
+          <a
+            href="https://www.facebook.com/novaabcdaconstrucao/"
+            target="_blank"
+          >
+            <img
+              src="https://abcdaconstrucao.my.site.com/saopaulofc/sfsites/c/cms/delivery/media/MCICPEAONYMFE3HJRE22N4E4XNY4"
+              alt="Facebook da ABC"
+              class="footer-facebook"
+            />
+          </a>
+
+          <a
+            href="https://www.youtube.com/user/ABCdaConstrucao"
+            target="_blank"
+          >
+            <img
+              src="https://abcdaconstrucao.my.site.com/saopaulofc/sfsites/c/cms/delivery/media/MCSHTQ55DVYRAMXJCH5XIQ6245XI"
+              alt="Youtube da ABC"
+              class="footer-youtube"
+            />
+          </a>
+        </div>
+        <nav class="footer-links">
+          <a
+            target="_blank"
+            href="https://www.abcdaconstrucao.com.br/diretorio-de-lojas"
+            >Lojas ABC</a
+          >
+          <a
+            target="_blank"
+            href="https://sejaumfranqueado.abcevoce.com.br/franquias"
+            >Seja um franqueado</a
+          >
+        </nav>
+      </section>
+      <section class="container">
+        <div class="flex-container">
+          <div class="flex-item left-item">
+            <p class="text-left">
+              Informamos que os dados pessoais tratados neste site serão
+              utilizados para registro na base da ABC da Construção e envio de
+              informações pelos nossos canais oficiais. Os comunicados podem
+              contemplar fornecimento de cupons de desconto, envio de
+              informações através de e-mail marketing, whatsapp, SMS, ligações
+              telefônicas e redes sociais.
+            </p>
+          </div>
+          <div class="flex-item center-item img-center">
+            <a href="https://www.abcdaconstrucao.com.br/" target="_blank">
+              <img
+                src="https://abcdaconstrucao.my.site.com/saopaulofc/sfsites/c/cms/delivery/media/MC6H2AVJ4A6RB5NLC4FVALDPSL3U"
+                alt="ABC da Construção - A Maior Especialista em Acabamentos"
+                class="footer-abc"
+              />
+            </a>
+          </div>
+          <div class="flex-item right-item">
+            <p class="text-right">
+              Para mais informações sobre o tratamento de dados pessoais pelo
+              ABC da Construção, acesse nossa &nbsp;
+              <a
+                href="https://www.abcdaconstrucao.com.br/central-de-atendimento/politica-de-privacidade"
+                target="_blank"
+                class="politica-privacidade"
+              >
+                <strong>Política de Privacidade</strong>
+              </a>
+            </p>
+          </div>
+        </div>
+      </section>
+      <p class="footer-latest-text">
+        © 2025. Mysa S.A.. Todos direitos reservados.
+      </p>
+    </template>
+    <script>
+      import { LightningElement, api, wire, track } from "lwc";
+      import upsertLead from "@salesforce/apex/LpSejaUmFranqueadoService.upsertLead";
+      import getCityByUf from "@salesforce/apex/LpSejaUmFranqueadoService.getCityByUfWithActiveGuideShop";
+      import getGuideByCity from "@salesforce/apex/LpSejaUmFranqueadoService.getFranchisesByStateAndCity";
+      import { ShowToastEvent } from "lightning/platformShowToastEvent"; // Import para exibir mensagens de erro
+
+      export default class LpFlamengoMenu extends LightningElement {
+        @track modalAberto = false;
+
+        @api nome = "";
+        @api sobrenome = "";
+        @api celular = "";
+        @api email = "";
+        @api estadoGuide = "";
+        @api cidadeGuide = "";
+        @api nomeGuide = "";
+        @api firstcheck = false;
+        @api secondcheck = false;
+
+        @track formSent = false;
+
+        @track cidades = [];
+        @track cidade;
+        value = "";
+        @api stateSelected;
+        @track guides = [];
+        @track guide;
+        filial = "";
+
+        @track formErrors = {
+          nome: "",
+          sobrenome: "",
+          celular: "",
+          email: "",
+          estadoGuide: "",
+          cidadeGuide: "",
+          nomeGuide: "",
+          firstcheck: "",
+          secondcheck: "",
+        };
+
+        get options() {
+          return [
+            { label: "Selecione UF", value: "" },
+            { label: "BA", value: "BA" },
+            { label: "DF", value: "DF" },
+            { label: "ES", value: "ES" },
+            { label: "GO", value: "GO" },
+            { label: "MG", value: "MG" },
+            { label: "MS", value: "MS" },
+            { label: "PR", value: "PR" },
+            { label: "RJ", value: "RJ" },
+            { label: "SC", value: "SC" },
+            { label: "SP", value: "SP" },
+          ];
+        }
+
+        get computedClassNome() {
+          return this.formErrors.nome ? "error-input" : "";
+        }
+        get computedClassSobrenome() {
+          return this.formErrors.sobrenome ? "error-input" : "";
+        }
+        get computedClassCelular() {
+          return this.formErrors.celular ? "error-input" : "";
+        }
+        get computedClassEmail() {
+          return this.formErrors.email ? "error-input" : "";
+        }
+        get computedClassEstadoGuide() {
+          return this.formErrors.estadoGuide ? "error-select" : "";
+        }
+        get computedClassCidadeGuide() {
+          return this.formErrors.cidadeGuide ? "error-select" : "";
+        }
+        get computedClassNomeGuide() {
+          return this.formErrors.nomeGuide ? "error-select" : "";
+        }
+        get computedClassFirstcheck() {
+          return this.formErrors.firstcheck ? "error-checkbox" : "";
+        }
+        get computedClassSecondcheck() {
+          return this.formErrors.secondcheck ? "error-checkbox" : "";
+        }
+
+        validateNome(value) {
+          return !value || value.trim() === "" ? "O nome é obrigatório." : "";
+        }
+
+        validateSobrenome(value) {
+          return !value || value.trim() === ""
+            ? "O sobrenome é obrigatório."
+            : "";
+        }
+
+        validateEmail(value) {
+          if (!value || value.trim() === "") {
+            return "O e-mail é obrigatório.";
+          }
+          const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          return !emailRegex.test(value) ? "Formato de e-mail inválido." : "";
+        }
+
+        validateCelular(value) {
+          if (!value || value.trim() === "") {
+            return "O celular é obrigatório.";
+          }
+          const numericValue = value.replace(/\D/g, "");
+          return numericValue.length < 10 || numericValue.length > 11
+            ? "Formato de celular inválido."
+            : "";
+        }
+
+        validateSelect(value) {
+          return !value ? "Selecione uma opção." : "";
+        }
+
+        validateCheckbox(value) {
+          return !value
+            ? "Você precisa concordar com a política de privacidade."
+            : "";
+        }
+
+        handleInputChange(event) {
+          const field = event.target.name;
+          const value = event.target.value;
+          this[field] = value;
+          this.formErrors[field] = ""; // Limpa o erro ao mudar o valor
+
+          if (field === "celular") {
+            const cleanedValue = value.replace(/\D/g, "");
+            const formattedValue = cleanedValue.replace(
+              /(\d{0,2})(\d{0,5})(\d{0,4})/,
+              "($1) $2-$3"
+            );
+            this[field] = formattedValue;
+          } else if (["nome", "sobrenome", "email"].includes(field)) {
+            this.formErrors[field] =
+              this[`validate${field.charAt(0).toUpperCase() + field.slice(1)}`](
+                value
+              );
+          }
+        }
+
+        handleStateChange(event) {
+          this.estadoGuide = event.detail.value;
+          this.stateSelected = this.estadoGuide;
+          this.cidades = [];
+          this.cidadeGuide = "";
+          this.nomeGuide = "";
+          this.guides = [];
+          this.formErrors.estadoGuide = "";
+          if (this.estadoGuide) {
+            this.fetchCities(this.estadoGuide);
+          } else {
+            this.formErrors.estadoGuide = "O estado é obrigatório.";
+          }
+        }
+
+        handleCityChange(event) {
+          this.cidadeGuide = event.detail.value;
+          this.nomeGuide = "";
+          this.guides = [];
+          this.formErrors.cidadeGuide = "";
+          if (this.cidadeGuide && this.stateSelected) {
+            this.fetchGuides(this.stateSelected, this.cidadeGuide);
+          } else if (!this.cidadeGuide) {
+            this.formErrors.cidadeGuide = "A cidade é obrigatória.";
+          }
+        }
+
+        handleGuideChange(event) {
+          this.nomeGuide = event.detail.value;
+          this.filial = this.nomeGuide;
+          this.formErrors.nomeGuide = "";
+        }
+
+        handleCheckboxes(event) {
+          this[event.target.name] = event.target.checked;
+          if (event.target.name === "firstcheck") {
+            this.formErrors.firstcheck = this.validateCheckbox(this.firstcheck);
+          } else if (event.target.name === "secondcheck") {
+            this.formErrors.secondcheck = this.validateCheckbox(
+              this.secondcheck
+            );
+          }
+        }
+
+        abrirModal() {
+          this.modalAberto = true;
+          this.limparErros(); // Limpa os erros ao abrir o modal novamente
+        }
+
+        fecharModal() {
+          this.modalAberto = false;
+          this.limparFormulario(); // Limpa o formulário ao fechar
+          this.limparErros(); // Limpa os erros ao fechar
+        }
+
+        limparFormulario() {
+          this.nome = "";
+          this.sobrenome = "";
+          this.celular = "";
+          this.email = "";
+          this.estadoGuide = "";
+          this.cidadeGuide = "";
+          this.nomeGuide = "";
+          this.firstcheck = false;
+          this.secondcheck = false;
+          this.value = "";
+          this.stateSelected = "";
+          this.cidades = [];
+          this.guides = [];
+          this.guide = "";
+          this.filial = "";
+        }
+
+        limparErros() {
+          this.formErrors = {
+            nome: "",
+            sobrenome: "",
+            celular: "",
+            email: "",
+            estadoGuide: "",
+            cidadeGuide: "",
+            nomeGuide: "",
+            firstcheck: "",
+            secondcheck: "",
+          };
+        }
+
+        fetchCities(uf) {
+          getCityByUf({ uf: uf, guideShopActive: true })
+            .then((listCidades) => {
+              this.cidades = listCidades.map((itemCidade) => ({
+                label: itemCidade.NameCity__c,
+                value: itemCidade.NameCity__c,
+              }));
+            })
+            .catch((error) => {
+              console.error("Erro ao buscar cidades:", error);
+              this.dispatchEvent(
+                new ShowToastEvent({
+                  title: "Erro",
+                  message: "Ocorreu um erro ao buscar as cidades.",
+                  variant: "error",
+                })
+              );
+            });
+        }
+
+        fetchGuides(uf, city) {
+          getGuideByCity({ uf: uf, city: city })
+            .then((listGuides) => {
+              this.guides = listGuides.map((itemGuide) => ({
+                label: itemGuide.NomeAmigavel__c,
+                value: itemGuide.Id,
+              }));
+            })
+            .catch((error) => {
+              console.error("Erro ao buscar guides:", error);
+              this.dispatchEvent(
+                new ShowToastEvent({
+                  title: "Erro",
+                  message: "Ocorreu um erro ao buscar as Guide Shops.",
+                  variant: "error",
+                })
+              );
+            });
+        }
+
+        handleSubmit(event) {
+          event.preventDefault();
+          this.formErrors = {
+            nome: this.validateNome(this.nome),
+            sobrenome: this.validateSobrenome(this.sobrenome),
+            celular: this.validateCelular(this.celular),
+            email: this.validateEmail(this.email),
+            estadoGuide: this.validateSelect(this.estadoGuide),
+            cidadeGuide: this.validateSelect(this.cidadeGuide),
+            nomeGuide: this.validateSelect(this.nomeGuide),
+            firstcheck: this.validateCheckbox(this.firstcheck),
+            secondcheck: this.validateCheckbox(this.secondcheck),
+          };
+
+          const hasErrors = Object.values(this.formErrors).some(
+            (error) => error !== ""
+          );
+
+          if (hasErrors) {
+            this.dispatchEvent(
+              new ShowToastEvent({
+                title: "Erro no Formulário",
+                message: "Por favor, corrija os erros antes de enviar.",
+                variant: "error",
+              })
+            );
+            return;
+          }
+
+          this.isLoading = true;
+          this.formSent = true;
+
+          const fields = {
+            idLead: `${this.nome}${this.sobrenome.trim()}${this.celular
+              .replace(/\D/g, "")
+              .trim()}`,
+            recordtypeDevName: "Cliente_Final",
+            company: "ABC",
+            company2: "Cliente_Final",
+            owner: "005Dn000005RtTdIAK",
+            canalDeEntrada: "Landing Page Clube de Regatas Flamengo",
+            firstName: this.nome,
+            lastName: this.sobrenome,
+            tel: this.celular.replace(/\D/g, ""), // Envia o celular sem formatação
+            email: this.email,
+            stateGuide: this.estadoGuide,
+            cityGuide: this.cidadeGuide,
+            nameGuideShop: this.nomeGuide,
+            filial: this.filial,
+            marketingConsent: this.secondcheck.toString(),
+            privacyPolicy: this.firstcheck.toString(),
+          };
+
+          upsertLead({ lead: JSON.stringify(fields) })
+            .then(() => {
+              console.log("submit REALIZADO: ");
+              window.dataLayer.push({
+                event: "Lead",
+                email: this.email,
+                phone: this.celular,
+              });
+              this.dispatchEvent(
+                new ShowToastEvent({
+                  title: "Sucesso",
+                  message: "Cadastro realizado com sucesso!",
+                  variant: "success",
+                })
+              );
+              this.fecharModal(); // Fecha o modal após o sucesso
+            })
+            .catch((error) => {
+              console.error("submit error: ", error);
+              this.dispatchEvent(
+                new ShowToastEvent({
+                  title: "Erro no Cadastro",
+                  message: "Ocorreu um erro ao realizar o cadastro.",
+                  variant: "error",
+                })
+              );
+            });
+
+          console.log("formdata", fields);
+          console.log("Dados enviados com SUCESSO!");
+        }
+
+        connectedCallback() {
+          console.log("--");
+        }
+
+        errorCallback(error) {
+          console.log("Mensagem de erro:" + error);
+        }
+      }
+    </script>
+  </body>
+</html>

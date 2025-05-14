@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .terceira-dobra {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        width: 100vw;
+        height: 100vh;
+
+        background: url("https://abcdaconstrucao.my.site.com/atletico/sfsites/c/cms/delivery/media/MCIBWSC3DE2ZAY5IEV54XM6M6QAQ")
+          no-repeat;
+        background-size: cover;
+      }
+
+      .terceira-dobra-texto {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        max-width: 24%;
+        padding-right: 32px;
+      }
+
+      .terceira-dobra-texto h2 {
+        font-size: 28px;
+        font-weight: 800;
+        color: #ffffff;
+        padding-bottom: 20px;
+        text-align: justify;
+      }
+
+      .terceira-dobra-texto p {
+        font-size: 24px;
+        font-weight: 700;
+        color: #eec500;
+      }
+
+      /********************Respons**************************/
+
+      /* Terceira dobra */
+      @media (max-width: 1024px) {
+        .terceira-dobra {
+          flex-direction: column;
+          text-align: center;
+        }
+
+        .terceira-dobra-texto {
+          max-width: 90%;
+          align-items: center;
+        }
+
+        .terceira-dobra-texto h2 {
+          max-width: 92%;
+          font-size: 24px;
+          text-align: justify;
+        }
+
+        .terceira-dobra-texto p {
+          max-width: 92%;
+          font-size: 18px;
+          padding-bottom: 20px;
+          text-align: justify;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <template>
+      <section class="terceira-dobra">
+        <div class="terceira-dobra-texto">
+          <h2>Dois gigantes do país renovaram essa parceria!</h2>
+          <p>
+            Descubra agora mesmo o que preparamos para você! Não fique de fora
+            dessa!
+          </p>
+        </div>
+        <div class="terceira-dobra-imagem">
+          <img
+            class="terceira-dobra-imagem-item"
+            src="https://abcdaconstrucao.my.site.com/atletico/sfsites/c/cms/delivery/media/MCLVCZYLZPEBBJVHK4AMNNHIY3IE"
+            height="340"
+            width="340"
+          />
+        </div>
+      </section>
+    </template>
+  </body>
+</html>
