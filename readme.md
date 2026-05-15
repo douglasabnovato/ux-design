@@ -9,4 +9,4 @@ Análises e práticas de técnicas de ux ui design do básico ao avançado utili
 - time 3 
 - loja física 
 - loja ecommerce
-- cliente 
+- cliente - uma franquia
