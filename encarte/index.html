@@ -1,1748 +1,1476 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Encarte</title>
-    <style>
-      :host {
-        --destaque: #e5e5e5;
-        --fonte: -apple-system, BlinkMacSystemFont, "Salesforce Sans",
-          "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-        --background-light: #ebf0f4;
-        --neutral-dark: #333333;
-        --success-color: #00a859;
-        --primary-color: #e3062d;
-      }
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Encarte de Ofertas — ABC da Construção</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    /* ── TOKENS ─────────────────────────────────────────── */
+    :root {
+      --red:       #c8102e;
+      --red-dark:  #9b0c22;
+      --red-light: #f5e6e9;
+      --ink:       #1a1a1a;
+      --ink-60:    #666;
+      --ink-30:    #b8b8b8;
+      --ink-10:    #f0efee;
+      --white:     #ffffff;
+      --cream:     #faf9f7;
+      --success:   #1a6b3c;
+      --success-bg:#e6f4ec;
+      --radius-sm: 6px;
+      --radius-md: 14px;
+      --radius-lg: 24px;
+      --shadow-card: 0 2px 6px rgba(0,0,0,.04), 0 20px 60px rgba(0,0,0,.10);
+      --shadow-lift: 0 4px 12px rgba(0,0,0,.06), 0 32px 80px rgba(0,0,0,.14);
+      --font-display: 'Cormorant Garamond', Georgia, serif;
+      --font-body:    'DM Sans', sans-serif;
+      --ease-out: cubic-bezier(.16,1,.3,1);
+    }
 
-      @font-face {
-        font-family: "Satoshi-Variable";
-        src: url("sfsites/c/resource/FontSatoshi/Satoshi_Complete/Fonts/WEB/fonts/Satoshi-Variable.woff2")
-            format("woff2"),
-          url("sfsites/c/resource/FontSatoshi/Satoshi_Complete/Fonts/WEB/fonts/Satoshi-Variable.woff")
-            format("woff"),
-          url("sfsites/c/resource/FontSatoshi/Satoshi_Complete/Fonts/WEB/fonts/Satoshi-Variable.ttf")
-            format("truetype");
-        font-weight: 300 900;
-        font-display: swap;
-        font-style: normal;
-      }
+    /* ── RESET ──────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font-body);
+      background: var(--cream);
+      color: var(--ink);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+    button { font-family: var(--font-body); cursor: pointer; border: none; background: none; }
+    input, select { font-family: var(--font-body); }
 
-      * {
-        font-family: var(--fonte);
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        outline: none;
-        border: none;
-        list-style: none;
-        text-decoration: none;
-      }
+    /* ── BACKGROUND ─────────────────────────────────────── */
+    .scene {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      overflow: hidden;
+      background: var(--cream);
+    }
+    .scene::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 80% 60% at 10% 20%, rgba(200,16,46,.06) 0%, transparent 60%),
+        radial-gradient(ellipse 60% 80% at 90% 80%, rgba(200,16,46,.04) 0%, transparent 55%);
+    }
+    .scene-line {
+      position: absolute;
+      top: 0; right: 0;
+      width: 55%;
+      height: 100%;
+      background: linear-gradient(135deg, rgba(250,249,247,0) 0%, rgba(26,26,26,.025) 100%);
+      border-left: 1px solid rgba(26,26,26,.06);
+      pointer-events: none;
+    }
+    /* Marble texture grid */
+    .scene-grid {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(26,26,26,.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(26,26,26,.025) 1px, transparent 1px);
+      background-size: 80px 80px;
+    }
 
-      a {
-        all: unset;
-        color: inherit;
-        text-decoration: none !important;
-        cursor: pointer;
-      }
+    /* ── LAYOUT ─────────────────────────────────────────── */
+    .page {
+      position: relative;
+      z-index: 1;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    .main {
+      flex: 1;
+      display: grid;
+      grid-template-columns: 1fr 520px;
+      gap: 0;
+      max-width: 1280px;
+      margin: 0 auto;
+      width: 100%;
+      padding: 60px 40px;
+      align-items: center;
+      min-height: calc(100vh - 80px);
+    }
 
-      input:-webkit-autofill,
-      select:-webkit-autofill {
-        -webkit-box-shadow: 0 0 0 1000px white inset !important;
-        -webkit-text-fill-color: #333 !important;
-        background-color: white !important;
-        caret-color: #333 !important;
-        transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
-      }
+    /* ── SIDEBAR INFO ───────────────────────────────────── */
+    .info {
+      padding-right: 60px;
+      animation: fadeSlideLeft .8s var(--ease-out) both;
+    }
+    .info-logo {
+      margin-bottom: 40px;
+    }
+    .info-logo img {
+      height: 56px;
+      width: auto;
+    }
+    .info-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 20px;
+    }
+    .info-eyebrow::before {
+      content: '';
+      display: block;
+      width: 24px;
+      height: 1px;
+      background: var(--red);
+    }
+    .info-heading {
+      font-family: var(--font-display);
+      font-size: clamp(36px, 4vw, 58px);
+      font-weight: 300;
+      line-height: 1.12;
+      color: var(--ink);
+      margin-bottom: 24px;
+      letter-spacing: -.01em;
+    }
+    .info-heading em {
+      font-style: italic;
+      color: var(--red);
+    }
+    .info-body {
+      font-size: 15px;
+      font-weight: 300;
+      color: var(--ink-60);
+      line-height: 1.7;
+      max-width: 420px;
+      margin-bottom: 48px;
+    }
+    .info-perks {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .perk {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      animation: fadeSlideLeft .8s var(--ease-out) both;
+    }
+    .perk:nth-child(1) { animation-delay: .1s; }
+    .perk:nth-child(2) { animation-delay: .2s; }
+    .perk:nth-child(3) { animation-delay: .3s; }
+    .perk-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      background: var(--red-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .perk-icon svg { width: 14px; height: 14px; }
+    .perk-text strong {
+      display: block;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--ink);
+      margin-bottom: 2px;
+    }
+    .perk-text span {
+      font-size: 12px;
+      color: var(--ink-60);
+      font-weight: 300;
+    }
 
-      input:-webkit-autofill:hover,
-      select:-webkit-autofill:hover,
-      input:-webkit-autofill:active,
-      select:-webkit-autofill:active,
-      input:-webkit-autofill:focus,
-      select:-webkit-autofill:focus,
-      input:-webkit-autofill:valid,
-      select:-webkit-autofill:valid {
-        -webkit-box-shadow: 0 0 0 1000px white inset !important;
-        -webkit-text-fill-color: #333 !important;
-        background-color: white !important;
-        caret-color: #333 !important;
-      }
+    /* ── CARD FORM ──────────────────────────────────────── */
+    .card {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-card);
+      padding: 44px 40px;
+      border: 1px solid rgba(26,26,26,.06);
+      position: relative;
+      overflow: hidden;
+      animation: fadeSlideRight .8s var(--ease-out) .1s both;
+      transition: box-shadow .4s var(--ease-out);
+    }
+    .card:hover {
+      box-shadow: var(--shadow-lift);
+    }
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--red) 0%, #ff6b6b 100%);
+    }
 
-      /* Estilos para select */
-      select {
-        font-size: 16px;
-        font-weight: normal;
-        color: #333 !important;
-        border-radius: 8px;
-        background-color: #fff !important;
-        padding: 10px 12px;
-        appearance: none;
-        -webkit-appearance: none;
-        -moz-appearance: none;
-        cursor: pointer;
-        width: 100%;
-        padding-right: 35px;
-        border: 1px solid #ccc;
-        background-image: none;
-      }
+    /* ── STEP HEADER ────────────────────────────────────── */
+    .step-header {
+      text-align: center;
+      margin-bottom: 32px;
+    }
+    .step-icon {
+      width: 72px;
+      height: 72px;
+      margin: 0 auto 20px;
+      border-radius: 50%;
+      background: var(--red-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform .4s var(--ease-out);
+    }
+    .step-icon:hover { transform: scale(1.05) rotate(-3deg); }
+    .step-icon svg { width: 30px; height: 30px; }
+    .step-icon img { width: 48px; height: 48px; object-fit: contain; }
+    .step-title {
+      font-family: var(--font-display);
+      font-size: 24px;
+      font-weight: 400;
+      color: var(--ink);
+      line-height: 1.3;
+      margin-bottom: 6px;
+    }
+    .step-subtitle {
+      font-size: 13px;
+      color: var(--ink-60);
+      font-weight: 300;
+      line-height: 1.5;
+    }
 
-      /* Placeholder/option para "Selecione" */
-      select option[disabled] {
-        color: #b2bcbf !important;
-      }
+    /* ── PROGRESS ───────────────────────────────────────── */
+    .progress-wrap {
+      margin-bottom: 32px;
+    }
+    .progress-track {
+      height: 4px;
+      background: var(--ink-10);
+      border-radius: 99px;
+      overflow: hidden;
+      margin-bottom: 8px;
+    }
+    .progress-fill {
+      height: 100%;
+      border-radius: 99px;
+      background: linear-gradient(90deg, var(--red) 0%, #ff4d6d 100%);
+      width: 0%;
+      transition: width .6s var(--ease-out);
+    }
+    .progress-fill.done {
+      background: linear-gradient(90deg, var(--success) 0%, #2ea55e 100%);
+    }
+    .progress-label {
+      font-size: 11px;
+      color: var(--ink-60);
+      letter-spacing: .06em;
+      text-align: right;
+    }
+    .progress-label.done { color: var(--success); }
 
-      select option:first-child {
-        color: #b2bcbf !important;
-      }
+    /* ── STEP PANELS ────────────────────────────────────── */
+    .step-panel {
+      display: none;
+    }
+    .step-panel.active {
+      display: block;
+      animation: fadeIn .35s var(--ease-out) both;
+    }
 
-      /* Layout principal e estrutura básica */
-      .section-formulario {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        min-height: 100vh;
-        align-items: center;
-        justify-content: center;
-        background-color: #333;
-        background-image: url("https://abcdaconstrucao.my.site.com/clubedayfla/sfsites/c/cms/delivery/media/MCT7NQNOLSI5AEZJ662UVUIDRJ4U");
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        position: relative;
-        overflow: visible;
-        will-change: transform;
-        background-attachment: fixed;
-      }
+    /* ── FORM FIELDS ────────────────────────────────────── */
+    .row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    .field {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin-bottom: 16px;
+    }
+    .field:last-child { margin-bottom: 0; }
+    .field label {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      color: var(--ink-60);
+    }
+    .field label .req {
+      color: var(--red);
+      margin-left: 2px;
+    }
 
-      @media (max-width: 768px) {
-        .section-formulario {
-          background-attachment: scroll;
-          background-position: top left;
-          /* Alinha a imagem de fundo na parte superior esquerda */
-          /* Em dispositivos móveis, é melhor usar scroll para evitar problemas */
-        }
-      }
+    /* Input */
+    .field input,
+    .field select {
+      height: 48px;
+      padding: 0 16px;
+      border: 1px solid rgba(26,26,26,.12);
+      border-radius: var(--radius-sm);
+      font-size: 14px;
+      color: var(--ink);
+      background: var(--white);
+      outline: none;
+      transition: border-color .2s, box-shadow .2s;
+      appearance: none;
+      -webkit-appearance: none;
+    }
+    .field input::placeholder { color: var(--ink-30); }
+    .field input:focus,
+    .field select:focus {
+      border-color: var(--red);
+      box-shadow: 0 0 0 3px rgba(200,16,46,.08);
+    }
+    .field input.invalid {
+      border-color: var(--red);
+      background: #fff8f9;
+    }
+    .field input.valid {
+      border-color: #2ea55e;
+    }
 
-      .form-container {
-        position: relative;
-        z-index: 1;
-        display: flex;
-        width: 100%;
-        max-width: 1000px;
-        box-sizing: border-box;
-        margin: 0 auto;
-        padding: 32px 20px;
-        justify-content: space-between;
-        align-items: flex-start;
-        overflow: visible;
-      }
+    /* Select wrapper */
+    .select-wrap {
+      position: relative;
+    }
+    .select-wrap select {
+      width: 100%;
+      cursor: pointer;
+      padding-right: 40px;
+      color: var(--ink);
+    }
+    .select-wrap select:disabled {
+      background: var(--ink-10);
+      color: var(--ink-30);
+      cursor: not-allowed;
+    }
+    .select-wrap::after {
+      content: '';
+      position: absolute;
+      right: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 16px;
+      height: 16px;
+      pointer-events: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16' fill='none'%3E%3Cpath d='M4 6L8 10L12 6' stroke='%23666' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+    option { color: var(--ink); background: var(--white); }
 
-      .forms {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        max-width: 472px;
-        padding: 32px;
-        gap: 24px;
-        border-radius: 24px;
-        box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
-        background: #eceff1;
-      }
+    /* Autofill */
+    input:-webkit-autofill {
+      -webkit-box-shadow: 0 0 0 1000px white inset !important;
+      -webkit-text-fill-color: var(--ink) !important;
+    }
 
-      /* Tipografia crítica */
-      h1 {
-        color: #333;
-        font-size: 28px;
-        line-height: 1.3;
-        font-weight: 700;
-      }
+    /* ── CHECKBOXES ─────────────────────────────────────── */
+    .checks {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin: 20px 0 24px;
+    }
+    .check-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+    .check-item input[type="checkbox"] {
+      width: 16px;
+      height: 16px;
+      accent-color: var(--red);
+      margin-top: 2px;
+      flex-shrink: 0;
+      cursor: pointer;
+    }
+    .check-item label {
+      font-size: 12px;
+      color: var(--ink-60);
+      line-height: 1.5;
+      font-weight: 300;
+      cursor: pointer;
+    }
 
-      p {
-        color: #848484;
-        font-size: 16px;
-        line-height: 1.5;
-        font-weight: 300;
-      }
+    /* ── BUTTONS ────────────────────────────────────────── */
+    .btn-group {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+    .btn-primary {
+      flex: 1;
+      height: 52px;
+      border-radius: 99px;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--white);
+      background: var(--ink);
+      transition: background .2s, transform .15s, box-shadow .2s;
+      position: relative;
+      overflow: hidden;
+    }
+    .btn-primary::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(255,255,255,.12) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .btn-primary:disabled {
+      background: var(--ink-10);
+      color: var(--ink-30);
+      cursor: not-allowed;
+      box-shadow: none;
+    }
+    .btn-primary:not(:disabled):hover {
+      background: var(--red);
+      transform: translateY(-1px);
+      box-shadow: 0 8px 24px rgba(200,16,46,.3);
+    }
+    .btn-primary:not(:disabled):active {
+      transform: translateY(0);
+    }
+    .btn-back {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: var(--ink-10);
+      color: var(--ink-60);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: background .2s, color .2s, transform .15s;
+    }
+    .btn-back:hover {
+      background: var(--ink);
+      color: var(--white);
+      transform: translateX(-2px);
+    }
+    .btn-back svg { width: 18px; height: 18px; }
 
-      .forms-title {
-        font-size: 24px;
-        font-weight: bold;
-        color: #333;
-        text-align: center;
-        margin: 16px 0 8px;
-      }
+    /* ── SUCCESS STATE ──────────────────────────────────── */
+    .success-wrap {
+      text-align: center;
+      padding: 8px 0;
+    }
+    .success-icon {
+      width: 80px;
+      height: 80px;
+      margin: 0 auto 24px;
+      border-radius: 50%;
+      background: var(--success-bg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      animation: popIn .5s var(--ease-out) both;
+    }
+    .success-icon svg { width: 36px; height: 36px; }
+    .success-title {
+      font-family: var(--font-display);
+      font-size: 28px;
+      font-weight: 400;
+      color: var(--ink);
+      margin-bottom: 10px;
+    }
+    .success-sub {
+      font-size: 14px;
+      color: var(--ink-60);
+      font-weight: 300;
+      line-height: 1.6;
+      margin-bottom: 32px;
+    }
+    .success-sub strong {
+      color: var(--success);
+      font-weight: 500;
+    }
+    .success-download {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      height: 52px;
+      border-radius: 99px;
+      background: var(--success);
+      color: var(--white);
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+      transition: background .2s, transform .15s, box-shadow .2s;
+      cursor: pointer;
+      border: none;
+      width: 100%;
+    }
+    .success-download:hover {
+      background: #155c33;
+      transform: translateY(-1px);
+      box-shadow: 0 8px 24px rgba(26,107,60,.3);
+    }
+    .success-download svg { width: 16px; height: 16px; }
+    .btn-reset {
+      width: 100%;
+      height: 44px;
+      border-radius: 99px;
+      background: transparent;
+      color: var(--ink-60);
+      font-size: 12px;
+      font-weight: 400;
+      border: 1px solid rgba(26,26,26,.12);
+      transition: border-color .2s, color .2s;
+      cursor: pointer;
+    }
+    .btn-reset:hover {
+      border-color: var(--ink);
+      color: var(--ink);
+    }
 
-      .forms-subtitle {
-        font-size: 14px;
-        font-weight: 400;
-        color: #666;
-        text-align: center;
-        line-height: 1.5;
-        display: none;
-        /* Esconde todos os subtítulos por padrão */
-      }
+    /* ── FOOTER ─────────────────────────────────────────── */
+    footer {
+      position: relative;
+      z-index: 1;
+      border-top: 1px solid rgba(26,26,26,.06);
+      padding: 28px 40px;
+    }
+    .footer-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+    .footer-logo img { height: 36px; width: auto; }
+    .footer-copy {
+      font-size: 12px;
+      color: var(--ink-60);
+      font-weight: 300;
+      text-align: center;
+    }
+    .footer-slogan {
+      font-size: 12px;
+      color: var(--ink-30);
+      font-weight: 300;
+      font-style: italic;
+      font-family: var(--font-display);
+    }
 
-      /* Exibe apenas o subtítulo da etapa 3 */
-      .subtitleStep3.forms-subtitle {
-        display: block;
-      }
+    /* ── ANIMATIONS ─────────────────────────────────────── */
+    @keyframes fadeSlideLeft {
+      from { opacity: 0; transform: translateX(-28px); }
+      to   { opacity: 1; transform: translateX(0); }
+    }
+    @keyframes fadeSlideRight {
+      from { opacity: 0; transform: translateX(28px); }
+      to   { opacity: 1; transform: translateX(0); }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes popIn {
+      0%   { opacity: 0; transform: scale(.6); }
+      70%  { transform: scale(1.08); }
+      100% { opacity: 1; transform: scale(1); }
+    }
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
 
-      /* Componentes de formulário críticos */
-      .label-input {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        gap: 4px;
-        margin-bottom: 16px;
-      }
+    /* Loading state do botão */
+    .btn-primary.loading {
+      pointer-events: none;
+      background: var(--ink-10);
+      color: transparent;
+    }
+    .btn-primary.loading::before {
+      content: '';
+      position: absolute;
+      top: 50%; left: 50%;
+      width: 18px; height: 18px;
+      margin: -9px 0 0 -9px;
+      border: 2px solid var(--ink-30);
+      border-top-color: var(--ink);
+      border-radius: 50%;
+      animation: spin .7s linear infinite;
+    }
 
-      .label-input label {
-        font-size: 14px;
-        font-weight: 500;
-        color: #333;
-        margin-bottom: 4px;
-      }
-
-      .select-custom,
-      .label-input lightning-combobox,
-      .label-input lightning-input {
-        width: 100%;
-      }
-
-      /* Botões críticos */
-      .botao-proxima-etapa {
-        display: flex;
-        height: 52px;
-        width: 100%;
-        padding: 0px 24px;
-        justify-content: center;
-        align-items: center;
-        gap: 8px;
-        flex: 1 0 0;
-        border: none;
-        border-radius: 64px;
-        background-color: #c7c7c7;
-        color: #a4a4a4;
-        font-size: 16px;
-        font-style: normal;
-        font-weight: 700;
-        line-height: 20px;
-        transition: background-color 0.3s ease-in-out;
-      }
-
-      .botao-proxima-etapa:disabled {
-        background-color: #c7c7c7;
-        color: #a4a4a4;
-        cursor: not-allowed;
-      }
-
-      .botao-proxima-etapa.selected {
-        background-color: var(--neutral-dark);
-        cursor: pointer;
-        color: #fff;
-      }
-
-      .botaoProximaEtapaStep2.selected {
-        background-color: var(--neutral-dark);
-        cursor: pointer;
-        color: #fff;
-      }
-
-      /* FIM DOS ESTILOS CRÍTICOS */
-
-      /* ESTILOS SECUNDÁRIOS - MENOS CRÍTICOS */
-      .will-change-transform {
-        will-change: transform;
-      }
-
-      @media (max-width: 1000px) {
-        .form-container {
-          flex-direction: column;
-          align-items: center;
-          gap: 40px;
-        }
-      }
-
-      .franquia-info {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        width: 100%;
-        max-width: 40%;
-        min-width: 300px;
-        gap: 20px;
-        height: fit-content;
-        z-index: 10;
-        transition: all 0.3s ease;
-      }
-
-      @media (min-width: 1000px) {
-        .franquia-info {
-          position: -webkit-sticky !important;
-          position: sticky !important;
-          top: 40px !important;
-          max-height: calc(100vh - 40px);
-          align-self: flex-start !important;
-        }
-      }
-
-      /* Garantir que não haja comportamento sticky em dispositivos móveis */
-      @media (max-width: 999px) {
-        .franquia-info {
-          position: static !important;
-          -webkit-position: static !important;
-          top: auto !important;
-          max-height: none !important;
-          align-self: center !important;
-          width: 100% !important;
-          max-width: 100% !important;
-          align-items: center;
-          text-align: center;
-        }
-
-        .franquia-info h1,
-        .franquia-info p {
-          text-align: center;
-        }
-      }
-
-      @media (max-width: 430px) {
-        .forms {
-          padding: 24px 16px;
-        }
-      }
-
-      figure {
-        display: flex;
-        justify-content: center;
-      }
-
-      .form-title {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 8px;
-      }
-
-      .container-progress-bar {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 8px;
-        align-self: stretch;
-      }
-
-      .line-progress {
-        height: 10px;
-        align-self: stretch;
-        border-radius: 100px;
-        background: #d4d4d4;
-        width: 100%;
-        overflow: hidden;
-      }
-
-      .progress-percent {
-        color: var(--neutral-dark);
-        text-align: center;
-        font-size: 13px;
-        font-style: normal;
-        font-weight: 500;
-        line-height: 100%;
-        letter-spacing: 1px;
-      }
-
-      .progress-bar {
-        height: 10px;
-        background-color: #e3062d;
-        width: 0;
-        border-radius: 100px;
-        transition: width 0.5s ease-out;
-      }
-
-      .regular-bar {
-        height: 100%;
-        background-color: var(--primary-color);
-        transition: width 0.3s ease-out;
-        border-radius: 4px;
-      }
-
-      .success-bar {
-        height: 100%;
-        background-color: var(--success-color);
-        border-radius: 4px;
-        width: 100%;
-      }
-
-      .label-input-row {
-        display: flex;
-        flex-direction: row;
-        gap: 16px;
-        width: 100%;
-      }
-
-      @media (max-width: 600px) {
-        .label-input-row {
-          flex-direction: column;
-          gap: 24px;
-        }
-      }
-
-      .frame-botoes {
-        display: flex;
-        width: 100%;
-        align-items: center;
-        justify-content: center;
-        gap: 16px;
-        margin-top: 20px;
-      }
-
-      .next-step-container {
-        margin-top: 28px;
-      }
-
-      .botao-voltar-Step2 {
-        display: flex;
-        width: 52px;
-        height: 52px;
-        justify-content: center;
-        align-items: center;
-        border-radius: 64px;
-        background-color: #fff;
-        color: #848484;
-        border: none;
-        cursor: pointer;
-        transition: background-color 0.3s ease-in-out;
-      }
-
-      .botao-voltar-Step2:hover {
-        background-color: #d2d2d2;
-      }
-
-      .botao-voltar-Step2 i,
-      .botao-voltar-Step2 img {
-        width: 21.333px;
-        height: 16px;
-        flex-shrink: 0;
-      }
-
-      .botao-voltar-Step3 {
-        display: flex;
-        width: 52px;
-        height: 52px;
-        justify-content: center;
-        align-items: center;
-        border-radius: 64px;
-        background-color: #fff;
-        color: #848484;
-        border: none;
-        cursor: pointer;
-        transition: background-color 0.3s ease-in-out;
-      }
-
-      .botao-voltar-Step3:hover {
-        background-color: #d2d2d2;
-      }
-
-      .botao-voltar-Step3 i {
-        width: 21.333px;
-        height: 16px;
-        flex-shrink: 0;
-      }
-
-      .checkbox-group {
-        display: flex;
-        flex-direction: column;
-        gap: 16px;
-        margin: 16px 0;
-      }
-
-      .checkbox-item {
-        display: flex;
-        align-items: flex-start;
-        margin-bottom: 16px;
-      }
-
-      .checkbox-item lightning-input {
-        font-size: 14px;
-        color: #333;
-      }
-
-      .formStep3 {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
+    /* ── RESPONSIVE ─────────────────────────────────────── */
+    @media (max-width: 960px) {
+      .main {
+        grid-template-columns: 1fr;
+        padding: 40px 24px;
         gap: 40px;
-        text-align: center;
-        padding: 16px 0;
-      }
-
-      .success-buttons {
-        display: flex;
-        width: 100%;
-        align-items: center;
-        justify-content: center;
-        gap: 16px;
-      }
-
-      .botaoReset.resetar-btn {
-        flex: 0 0 auto;
-        background-color: #fff;
-        border: 1px solid #e8e8e8;
-        border-radius: 64px;
-        color: #333;
-        font-weight: 500;
-        width: 52px;
-        height: 52px;
-        padding: 0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin: 0;
-      }
-
-      .botaoOutrasGuideShops {
-        flex: 1;
-        display: flex;
-        height: 52px;
-        max-width: 400px;
-        padding: 0px 24px;
-        justify-content: center;
-        align-items: center;
-        background-color: var(--neutral-dark);
-        color: #fff;
-        font-size: 16px;
-        font-style: normal;
-        font-weight: 700;
-        line-height: 20px;
-        white-space: nowrap;
-        cursor: pointer;
-        border-radius: 64px;
-      }
-
-      /* Footer */
-      .footer {
-        width: 100%;
-        border-top: 0.8px solid rgba(255, 255, 255, 0.1);
-        position: relative;
-        z-index: 1;
-        margin-top: auto;
-      }
-
-      .footer-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        max-width: 1280px;
-        margin: 0 auto;
-        padding: 40px 20px 12px;
-        position: relative;
-      }
-
-      .logo-box {
-        margin-bottom: 30px;
-      }
-
-      .logo-box img {
-        height: 60px;
-        width: auto;
-      }
-
-      .footer-copyright {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        margin-bottom: 8px;
-        opacity: 0.7;
-      }
-
-      .footer-copyright p {
-        font-family: "Chivo", sans-serif;
-        font-weight: 400;
-        font-size: 14px;
-        line-height: 1.5em;
-        text-align: center;
-        color: #000000;
-      }
-
-      .footer-slogan {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        opacity: 0.5;
-      }
-
-      .footer-slogan p {
-        font-family: "Chivo", sans-serif;
-        font-weight: 400;
-        font-size: 12px;
-        line-height: 1.5em;
-        text-align: center;
-        color: #000000;
-      }
-
-      @media (max-width: 768px) {
-        .footer-container {
-          padding: 30px 15px 10px;
-        }
-
-        .logo-box img {
-          height: 50px;
-        }
-
-        .footer-copyright p {
-          font-size: 12px;
-        }
-
-        .footer-slogan p {
-          font-size: 10px;
-        }
-      }
-
-      /* Ajustes para componentes Lightning */
-      :host .slds-form-element__label {
-        display: none !important;
-      }
-
-      :host lightning-input .slds-input,
-      :host lightning-combobox .slds-combobox__input {
-        border-radius: 8px;
-        padding: 10px 12px;
-        font-size: 16px;
-        height: auto;
-      }
-
-      :host lightning-input .slds-input:focus,
-      :host lightning-combobox .slds-combobox__input:focus,
-      :host .slds-has-focus .slds-combobox__input {
-        outline: none !important;
-        box-shadow: 0 0 3px rgba(135, 135, 135, 0.4) !important;
-        border: 0.3px solid #a1a1a1 !important;
-        transition: all 0.3s ease-in-out;
-      }
-
-      :host .slds-has-focus .slds-combobox__input:focus {
-        box-shadow: 0 0 3px rgba(135, 135, 135, 0.4) !important;
-        border-color: #a1a1a1 !important;
-      }
-
-      :host lightning-checkbox-group .slds-form-element__label {
-        display: inline;
-        font-size: 14px;
-      }
-
-      /* Ajuste para o formulário responsivo */
-      @media (max-width: 600px) {
-        .formStep1,
-        .formStep2 {
-          padding: 20px 0;
-        }
-
-        .success-buttons {
-          flex-direction: column;
-        }
-
-        .botaoReset.resetar-btn,
-        .formStep3 .success-buttons {
-          display: flex;
-          width: 100%;
-          align-items: center;
-          justify-content: center;
-          gap: 16px;
-          margin: 8px auto;
-          flex-wrap: wrap;
-          flex-direction: row;
-        }
-
-        .botaoOutrasGuideShops {
-          width: 100%;
-        }
-      }
-
-      /* Estilo para porcentagem de progresso */
-      .progress-percent {
-        font-size: 14px;
-        font-weight: 400;
-        color: #666;
-      }
-
-      /* Classe para texto de sucesso verde */
-      .progress-success {
-        color: var(--success-color);
-      }
-
-      /* Override para o Firefox */
-      select:-moz-focusring {
-        color: transparent !important;
-        text-shadow: 0 0 0 #333;
-      }
-
-      /* Estilo específico para o placeholder */
-      select:invalid {
-        color: #b2bcbf !important;
-      }
-
-      select:required:invalid {
-        color: #b2bcbf !important;
-      }
-
-      /* Removendo a seta padrão do Edge e IE */
-      select::-ms-expand {
-        display: none;
-      }
-
-      /* setinha no select */
-      .select-custom {
-        position: relative;
-        display: inline-block;
-        width: 100%;
-      }
-
-      /* Adicionando um pseudo-elemento para garantir a seta */
-      .select-custom::after {
-        content: "";
-        position: absolute;
-        right: 15px;
-        top: 50%;
-        transform: translateY(-50%);
-        width: 10px;
-        height: 10px;
-        pointer-events: none;
-        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 10 10' fill='none'%3E%3Cpath d='M2.5 4L5 6.5L7.5 4' stroke='%23676767' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
-        background-repeat: no-repeat;
-        background-position: center;
-        z-index: 1;
-      }
-
-      option {
-        background-color: #fff !important;
-        color: #000 !important;
-        font-size: 13px;
-        border: none;
-      }
-
-      select::-webkit-input-placeholder,
-      select::placeholder {
-        color: #b2bcbf;
-      }
-
-      select:disabled,
-      select[disabled],
-      select option:disabled,
-      select option[disabled] {
-        color: #b2bcbf !important;
-      }
-
-      option:hover {
-        background-color: #525252 !important;
-        color: #fff !important;
-        font-weight: bold !important;
-      }
-
-      option:checked {
-        background-color: #fff !important;
-        color: #000 !important;
-      }
-
-      select:focus {
-        background-color: #fff !important;
-        outline: none;
-        box-shadow: 0 0 3px rgba(135, 135, 135, 0.4) !important;
-        border: 0.3px solid #a1a1a1 !important;
-        transition: all 0.3s ease-in-out;
-      }
-
-      select::-webkit-scrollbar {
-        width: 8px;
-        background-color: transparent;
-      }
-
-      select::-webkit-scrollbar-thumb {
-        background-color: #333 !important;
-        border-radius: 12px;
-        border: 2px solid transparent;
-      }
-
-      select::-webkit-scrollbar-thumb:hover {
-        background-color: #333 !important;
-      }
-
-      select::-webkit-scrollbar-track {
-        background-color: transparent;
-      }
-
-      /* Estilos para inputs */
-      .label-input-row {
-        display: flex;
-        gap: 10px;
-        width: 100%;
-        margin-bottom: 6px;
-      }
-
-      @media (max-width: 600px) {
-        .label-input-row {
-          flex-direction: column;
-        }
-      }
-
-      .formStep1 .label-input-row {
-        gap: 8px;
-      }
-
-      .formStep1 .label-input-row .label-input {
-        flex: 1;
-      }
-
-      .label-input {
-        display: flex;
-        flex-direction: column;
         align-items: flex-start;
-        gap: 8px;
-        width: 100%;
       }
+      .info {
+        padding-right: 0;
+        text-align: center;
+        animation-name: fadeIn;
+      }
+      .info-eyebrow { justify-content: center; }
+      .info-body { margin-left: auto; margin-right: auto; }
+      .info-perks { align-items: center; }
+      .perk { max-width: 340px; }
+      .card { animation-name: fadeIn; }
+      footer { padding: 20px 24px; }
+      .footer-inner { flex-direction: column; text-align: center; gap: 8px; }
+    }
+    @media (max-width: 480px) {
+      .card { padding: 32px 24px; border-radius: var(--radius-md); }
+      .row { grid-template-columns: 1fr; gap: 0; }
+      .info-heading { font-size: 32px; }
+    }
+  </style>
+</head>
+<body>
 
-      .label-input label {
-        color: #676767;
-        font-size: 12px;
-        font-style: normal;
-        font-weight: 500;
-        width: 100%;
-        text-align: left;
-      }
+<!-- BACKGROUND -->
+<div class="scene" aria-hidden="true">
+  <div class="scene-grid"></div>
+  <div class="scene-line"></div>
+</div>
 
-      /* Estilo padrão do input */
-      .label-input input {
-        all: unset;
-        display: flex;
-        height: 48px;
-        padding: 0px 16px;
-        align-items: center;
-        gap: 4px;
-        width: 100%;
-        border-radius: 6px;
-        background: #fff;
-        border: 2px solid transparent;
-        color: var(--neutral-dark);
-        font-size: 13px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 12px;
-        transition: border-color 0.3s, background-color 0.3s;
-        box-sizing: border-box;
-        text-align: left;
-      }
+<!-- PAGE -->
+<div class="page">
+  <main class="main">
 
-      .label-input input:invalid:not(:placeholder-shown) {
-        background: #fff;
-        color: #333;
-      }
+    <!-- SIDEBAR -->
+    <aside class="info">
+      <div class="info-logo">
+        <!-- Substitua pelo logo real -->
+        <svg width="120" height="40" viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="40" height="40" rx="8" fill="#c8102e"/>
+          <text x="20" y="26" text-anchor="middle" font-family="sans-serif" font-size="13" font-weight="700" fill="white">abc</text>
+          <text x="60" y="17" font-family="sans-serif" font-size="9" font-weight="500" fill="#1a1a1a" letter-spacing="1">ABC DA</text>
+          <text x="60" y="29" font-family="sans-serif" font-size="9" font-weight="500" fill="#1a1a1a" letter-spacing="1">CONSTRUÇÃO</text>
+        </svg>
+      </div>
 
-      .invalid-input {
-        border: 0.8px solid #e3062d !important;
-      }
+      <span class="info-eyebrow">Ofertas exclusivas</span>
 
-      .label-input input:valid {
-        border-color: #848484;
-        color: #333;
-        background: #fff;
-        border: 1px;
-      }
+      <h1 class="info-heading">
+        Produtos de qualidade<br>
+        <em>na sua região</em>
+      </h1>
 
-      /* Input foco */
-      .label-input input:focus {
-        outline: none;
-        box-shadow: 0 0 3px rgba(135, 135, 135, 0.4);
-        background: #fff;
-        border: 0.3px solid #a1a1a1;
-      }
+      <p class="info-body">
+        Acesse nosso encarte com as melhores ofertas do mês. Preencha o cadastro e baixe agora mesmo — direto no seu dispositivo, sem esperar.
+      </p>
 
-      /* Checkbox styles */
-      .checkbox-group {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        width: 100%;
-        margin-top: 20px;
-      }
-
-      .checkbox-item {
-        display: flex;
-        align-items: flex-start;
-        gap: 10px;
-        width: 100%;
-        color: #676767;
-        font-size: 12px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 1.4;
-        text-align: left;
-        margin-bottom: 8px;
-      }
-
-      @media (max-width: 600px) {
-        .checkbox-item {
-          font-size: 10px;
-        }
-      }
-
-      input[type="checkbox"] {
-        accent-color: #2865e8;
-      }
-
-      .botaoEnviar {
-        display: flex;
-        height: 52px;
-        width: 90%;
-        max-width: 400px;
-        margin: 8px auto;
-        padding: 0px 24px;
-        justify-content: center;
-        align-items: center;
-        gap: 8px;
-        flex: 1 0 0;
-        border: none;
-        border-radius: 64px;
-        background-color: #c7c7c7;
-        color: #a4a4a4;
-        font-size: 16px;
-        font-style: normal;
-        font-weight: 700;
-        line-height: 20px;
-        transition: background-color 0.3s ease-in-out;
-      }
-
-      .botaoEnviar.selected {
-        background-color: #0fa848;
-        color: #fff;
-        cursor: pointer;
-      }
-
-      :host lightning-button button,
-      :host .slds-button {
-        display: flex;
-        height: 52px;
-        padding: 0px 24px;
-        justify-content: center;
-        align-items: center;
-        gap: 8px;
-        border: none;
-        border-radius: 64px !important;
-        font-size: 16px;
-        font-weight: 700;
-        line-height: 20px;
-      }
-
-      :host .slds-button_brand,
-      :host .slds-button--brand {
-        background-color: var(--neutral-dark);
-        color: #fff;
-      }
-
-      :host .slds-button_neutral,
-      :host .slds-button--neutral {
-        background-color: #fff;
-        color: #848484;
-        border: none;
-      }
-
-      :host .slds-button:disabled,
-      :host .slds-button[disabled] {
-        background-color: #c7c7c7 !important;
-        color: #a4a4a4 !important;
-        cursor: not-allowed;
-      }
-    </style>
-  </head>
-  <body>
-    <section class="section-formulario" data-id="formulario">
-      <div class="form-container">
-        <div class="franquia-info">
-          <div class="logo-container">
-            <img
-              src="https://abcdaconstrucao.my.site.com/clubedayfla/sfsites/c/cms/delivery/media/MCZ7TLAK2FZ5H5ZIQRF36NDRO464"
-              alt="Logotema da Campanha do mês"
-              width="140"
-              height="auto"
-            />
+      <div class="info-perks">
+        <div class="perk">
+          <div class="perk-icon">
+            <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M8 1v9M5 7l3 3 3-3M2 12h12v2H2z" stroke="#c8102e" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
           </div>
-          <h1>Cadastre-se e receba as ofertas do mês!</h1>
-          <p>
-            Sua chance de economizar em produtos de qualidade, com ofertas
-            especiais na sua região.
-          </p>
+          <div class="perk-text">
+            <strong>Download imediato</strong>
+            <span>Encarte disponível assim que o cadastro é concluído</span>
+          </div>
         </div>
-        <div class="forms">
-          <div class="form-title">
-            <figure>
-              <img
-                if:true="{isStep1}"
-                src="https://abcdaconstrucao.my.site.com/clubedayfla/sfsites/c/cms/delivery/media/MC5Y62MNEZFJGMPJMBS3EGVEBBCE"
-                alt="Franquia ABC Miniatura"
-                class="image-form"
-                width="100"
-                height="auto"
-              />
-              <img
-                if:true="{isStep2}"
-                src="https://abcdaconstrucao.my.site.com/clubedayfla/sfsites/c/cms/delivery/media/MC5Y62MNEZFJGMPJMBS3EGVEBBCE"
-                alt="Franquia ABC Miniatura"
-                class="image-form"
-                width="100"
-                height="auto"
-              />
-              <img
-                if:true="{isStep3}"
-                src="https://abcdaconstrucao.my.site.com/clubedayfla/sfsites/c/cms/delivery/media/MCVRWGAJ42NFFITBCCJLEOV4KKYE"
-                alt="Check de Sucesso"
-                class="check-form"
-                width="80"
-                height="80"
-              />
-            </figure>
-            <p if:true="{isStep1}" class="titleStep1 forms-title">
-              Ofertas exclusivas <br />na sua região
-            </p>
-            <p if:true="{isStep2}" class="titleStep2 forms-title">
-              Cadastro rápido: Preencha com seus dados
-            </p>
-            <p if:true="{isStep3}" class="titleStep3 forms-title">
-              É hora de economizar!
-            </p>
-            <p if:true="{isStep1}" class="subtitleStep1 forms-subtitle">
-              Selecione sua localização para ver ofertas personalizadas
-            </p>
-            <p if:true="{isStep2}" class="subtitleStep2 forms-subtitle">
-              Estamos quase lá! Preencha os campos abaixo
-            </p>
-            <p if:true="{isStep3}" class="subtitleStep3 forms-subtitle">
-              Confira o catálogo de ofertas no email que você cadastrou e
-              aproveite.<br />Seus dados foram enviados com sucesso e segurança.
-            </p>
-            <br />
-            <div class="container-progress-bar">
-              <div class="line-progress">
-                <div
-                  class="progress-bar"
-                  if:true="{isStep3}"
-                  style="width: 100%; background-color: #00a859"
-                ></div>
-                <div
-                  class="progress-bar"
-                  if:false="{isStep3}"
-                  lwc:dom="manual"
-                ></div>
-              </div>
-              <div
-                class="progress-percent progress-success"
-                if:true="{isStep3}"
-              >
-                100%
-              </div>
-              <div class="progress-percent" if:false="{isStep3}">
-                {progress}%
-              </div>
-            </div>
+        <div class="perk">
+          <div class="perk-icon">
+            <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M8 1.5A6.5 6.5 0 1 1 1.5 8" stroke="#c8102e" stroke-width="1.4" stroke-linecap="round"/>
+              <path d="M4 4.5l.5 2.5 2.5.5" stroke="#c8102e" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
           </div>
-          <form>
-            <!-- Etapa 1 -->
-            <div if:true="{isStep1}" class="formStep1">
-              <div class="label-input-row">
-                <div class="label-input">
-                  <label for="state">Estado *</label>
-                  <div class="select-custom">
-                    <select
-                      name="state"
-                      id="state"
-                      required
-                      onchange="{handleStateChange}"
-                    >
-                      <option value="" disabled selected>Selecione</option>
-                      <template for:each="{stateOptions}" for:item="option">
-                        <option key="{option.value}" value="{option.value}">
-                          {option.label}
-                        </option>
-                      </template>
-                    </select>
-                  </div>
-                </div>
-                <div class="label-input">
-                  <label for="city">Cidade *</label>
-                  <div class="select-custom">
-                    <select
-                      name="city"
-                      id="city"
-                      required
-                      onchange="{handleCityChange}"
-                      disabled="{isCitySelectDisabled}"
-                    >
-                      <option value="" disabled selected>Selecione</option>
-                      <template for:each="{cityOptions}" for:item="option">
-                        <option key="{option.value}" value="{option.value}">
-                          {option.label}
-                        </option>
-                      </template>
-                    </select>
-                  </div>
-                </div>
-              </div>
-              <div class="label-input">
-                <label for="guide_shop"
-                  >Selecione a Guide Shop mais próxima de você *</label
-                >
-                <div class="select-custom">
-                  <select
-                    name="guide_shop"
-                    id="guide_shop"
-                    required
-                    onchange="{handleGuideShopChange}"
-                    disabled="{isGuideShopSelectDisabled}"
-                  >
-                    <option value="" disabled selected>Selecione</option>
-                    <template for:each="{guideShopOptions}" for:item="option">
-                      <option key="{option.value}" value="{option.value}">
-                        {option.label}
-                      </option>
-                    </template>
-                  </select>
-                </div>
-              </div>
-              <div class="frame-botoes next-step-container">
-                <button
-                  type="button"
-                  class="{nextButtonStep1Class}"
-                  disabled="{isNextButtonStep1Disabled}"
-                  onclick="{handleNextStep}"
-                >
-                  AVANÇAR
-                </button>
-              </div>
-            </div>
-
-            <!-- Etapa 2 -->
-            <div if:true="{isStep2}" class="formStep2">
-              <div class="label-input-row">
-                <div class="label-input">
-                  <label for="name">Nome *</label>
-                  <input
-                    type="text"
-                    name="name"
-                    id="name"
-                    placeholder="Digite seu nome"
-                    value="{formData.name}"
-                    onchange="{handleNameChange}"
-                    required
-                  />
-                </div>
-                <div class="label-input">
-                  <label for="lastname">Sobrenome *</label>
-                  <input
-                    type="text"
-                    name="lastname"
-                    id="lastname"
-                    placeholder="Sobrenome"
-                    value="{formData.lastname}"
-                    onchange="{handleLastnameChange}"
-                    required
-                  />
-                </div>
-              </div>
-              <div class="label-input">
-                <label for="tel">Telefone Whatsapp *</label>
-                <input
-                  type="tel"
-                  name="tel"
-                  id="tel"
-                  placeholder="(xx) xxxxx-xxxx"
-                  value="{formData.tel}"
-                  onchange="{handleTelChange}"
-                  required
-                />
-              </div>
-              <div class="label-input">
-                <label for="email">E-mail *</label>
-                <input
-                  type="email"
-                  name="email"
-                  id="email"
-                  placeholder="Digite seu e-mail"
-                  value="{formData.email}"
-                  onchange="{handleEmailChange}"
-                  required
-                />
-              </div>
-              <div class="checkbox-group">
-                <div class="checkbox-item">
-                  <input
-                    type="checkbox"
-                    id="privacyPolicy"
-                    name="privacyPolicy"
-                    checked="{formData.privacyPolicy}"
-                    onchange="{handlePrivacyPolicyChange}"
-                  />
-                  <label for="privacyPolicy">
-                    Eu concordo com a Política de Privacidade e autorizo o uso
-                    dos meus dados conforme descrito.
-                  </label>
-                </div>
-                <div class="checkbox-item">
-                  <input
-                    type="checkbox"
-                    id="marketingConsent"
-                    name="marketingConsent"
-                    checked="{formData.marketingConsent}"
-                    onchange="{handleMarketingConsentChange}"
-                  />
-                  <label for="marketingConsent">
-                    Concordo em receber E-mails, SMS e Whatsapp da ABC da
-                    Construção.
-                  </label>
-                </div>
-              </div>
-              <div class="frame-botoes">
-                <button
-                  type="button"
-                  class="botao-voltar-Step2"
-                  onclick="{handlePreviousStep}"
-                >
-                  <svg
-                    width="20"
-                    height="20"
-                    viewBox="0 0 20 20"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M15 10H5M5 10L10 15M5 10L10 5"
-                      stroke="#333333"
-                      stroke-width="1.5"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-                </button>
-                <button
-                  type="button"
-                  class="{nextButtonStep2Class}"
-                  disabled="{isNextButtonStep2Disabled}"
-                  onclick="{handleSubmitForm}"
-                >
-                  FINALIZAR
-                </button>
-              </div>
-            </div>
-
-            <!-- Etapa 3 -->
-            <div if:true="{isStep3}" class="formStep3">
-              <div class="frame-botoes success-buttons">
-                <button
-                  class="botaoReset resetar-btn"
-                  type="button"
-                  onclick="{resetForm}"
-                >
-                  <svg
-                    width="20"
-                    height="20"
-                    viewBox="0 0 20 20"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M10 3.33325V1.66659L6.66667 4.99992L10 8.33325V6.66659C12.7583 6.66659 15 8.90825 15 11.6666C15 14.4249 12.7583 16.6666 10 16.6666C7.24167 16.6666 5 14.4249 5 11.6666H3.33333C3.33333 15.3499 6.31667 18.3333 10 18.3333C13.6833 18.3333 16.6667 15.3499 16.6667 11.6666C16.6667 7.98325 13.6833 4.99992 10 4.99992V3.33325Z"
-                      fill="#333333"
-                    />
-                  </svg>
-                </button>
-                <button
-                  class="botaoOutrasGuideShops"
-                  type="button"
-                  onclick="{resetForm}"
-                >
-                  Ver Guide Shops
-                </button>
-              </div>
-            </div>
-          </form>
+          <div class="perk-text">
+            <strong>Ofertas do mês</strong>
+            <span>Preços especiais atualizados mensalmente</span>
+          </div>
+        </div>
+        <div class="perk">
+          <div class="perk-icon">
+            <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M8 9A3 3 0 1 0 8 3a3 3 0 0 0 0 6zM2.5 14c0-2.485 2.462-4.5 5.5-4.5s5.5 2.015 5.5 4.5" stroke="#c8102e" stroke-width="1.4" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="perk-text">
+            <strong>Cadastro simplificado</strong>
+            <span>Apenas o essencial — menos de 1 minuto</span>
+          </div>
         </div>
       </div>
-      <!-- FOOTER -->
-      <footer class="footer">
-        <div class="footer-container">
-          <div class="logo-box">
-            <img
-              src="https://abcdaconstrucao.my.site.com/clubedayfla/sfsites/c/cms/delivery/media/MCMP47Z7F55JAYDOZFLPWB2XOOA4"
-              alt="Logo ABC da Construção"
-              width="60"
-              height="auto"
-            />
+    </aside>
+
+    <!-- CARD FORM -->
+    <div class="card" role="main" aria-label="Formulário de cadastro">
+
+      <!-- Step header (shared) -->
+      <div class="step-header" id="stepHeader">
+        <div class="step-icon" id="stepIcon">
+          <!-- ícone injetado via JS -->
+        </div>
+        <p class="step-title" id="stepTitle">Ofertas exclusivas na sua região</p>
+        <p class="step-subtitle" id="stepSubtitle">Selecione sua localização para continuar</p>
+      </div>
+
+      <!-- Progress -->
+      <div class="progress-wrap">
+        <div class="progress-track">
+          <div class="progress-fill" id="progressFill"></div>
+        </div>
+        <div class="progress-label" id="progressLabel">0%</div>
+      </div>
+
+      <form id="mainForm" novalidate>
+
+        <!-- ── STEP 1 ── -->
+        <div class="step-panel active" id="step1" aria-label="Etapa 1 de 2">
+          <div class="row">
+            <div class="field">
+              <label for="state">Estado <span class="req">*</span></label>
+              <div class="select-wrap">
+                <select id="state" name="state" required>
+                  <option value="" disabled selected>Selecione</option>
+                </select>
+              </div>
+            </div>
+            <div class="field">
+              <label for="city">Cidade <span class="req">*</span></label>
+              <div class="select-wrap">
+                <select id="city" name="city" required disabled>
+                  <option value="" disabled selected>Selecione</option>
+                </select>
+              </div>
+            </div>
           </div>
-          <div class="footer-copyright">
-            <p>© 2025 ABC DA CONSTRUÇÃO LTDA. Todos os direitos reservados.</p>
+
+          <div class="field">
+            <label for="guide_shop">Guide Shop mais próxima <span class="req">*</span></label>
+            <div class="select-wrap">
+              <select id="guide_shop" name="guide_shop" required disabled>
+                <option value="" disabled selected>Selecione</option>
+              </select>
+            </div>
           </div>
-          <div class="footer-slogan">
-            <p>Tudo em acabamentos, tudo para você.</p>
+
+          <div class="btn-group" style="margin-top: 8px;">
+            <button type="button" class="btn-primary" id="btnNext1" disabled>
+              Avançar
+            </button>
           </div>
         </div>
-      </footer>
-    </section>
-    <script>
-      /*
-      import { LightningElement, track } from "lwc";
-
-      export default class LpEncarte extends LightningElement {
-        @track formData = {
-          state: "",
-          city: "",
-          guide_shop: "",
-          name: "",
-          lastname: "",
-          email: "",
-          tel: "",
-          privacyPolicy: true,
-          marketingConsent: true,
-          firstName: "",
-          lastName: "",
-          idLead: "",
-          recordtypeDevName: "Expansao",
-          company: "ABC",
-          company2: "ABC Expansão",
-          owner: "00GbJ0000062OFjUAM",
-          canalDeEntrada: "Landing Page Expansão",
-        };
-
-        @track currentStep = 1;
-        @track progress = 0;
-        @track validEmail = false;
-
-        get stateOptions() {
-          return [
-            { label: "Selecione", value: "", disabled: true },
-            { label: "AC", value: "AC" },
-            { label: "AL", value: "AL" },
-            { label: "AM", value: "AM" },
-            { label: "AP", value: "AP" },
-            { label: "BA", value: "BA" },
-            { label: "CE", value: "CE" },
-            { label: "DF", value: "DF" },
-            { label: "ES", value: "ES" },
-            { label: "GO", value: "GO" },
-            { label: "MA", value: "MA" },
-            { label: "MS", value: "MS" },
-            { label: "MT", value: "MT" },
-            { label: "MG", value: "MG" },
-            { label: "PA", value: "PA" },
-            { label: "PB", value: "PB" },
-            { label: "PE", value: "PE" },
-            { label: "PI", value: "PI" },
-            { label: "PR", value: "PR" },
-            { label: "RJ", value: "RJ" },
-            { label: "RN", value: "RN" },
-            { label: "RS", value: "RS" },
-            { label: "RO", value: "RO" },
-            { label: "RR", value: "RR" },
-            { label: "SC", value: "SC" },
-            { label: "SP", value: "SP" },
-            { label: "SE", value: "SE" },
-            { label: "TO", value: "TO" },
-          ];
-        }
-
-        @track cityOptions = [
-          { label: "Selecione", value: "", disabled: true },
-        ];
-
-        @track guideShopOptions = [
-          { label: "Selecione", value: "", disabled: true },
-        ];
-
-        get isStep1() {
-          return this.currentStep === 1;
-        }
-
-        get isStep2() {
-          return this.currentStep === 2;
-        }
-
-        get isStep3() {
-          return this.currentStep === 3;
-        }
-
-        get progressBarStyle() {
-          return `width: ${this.progress}%`;
-        }
-
-        get isCitySelectDisabled() {
-          return !this.formData.state;
-        }
-
-        get isGuideShopSelectDisabled() {
-          return !this.formData.city;
-        }
-
-        get isNextButtonStep1Disabled() {
-          return !(
-            this.formData.state &&
-            this.formData.city &&
-            this.formData.guide_shop
-          );
-        }
-
-        get isNextButtonStep2Disabled() {
-          const { name, lastname, email, tel, privacyPolicy } = this.formData;
-          const isTelValid = tel && tel.length === 11;
-
-          return !(
-            name &&
-            lastname &&
-            email &&
-            this.validEmail &&
-            tel &&
-            isTelValid &&
-            privacyPolicy
-          );
-        }
-
-        get nextButtonStep1Class() {
-          return `botao-proxima-etapa ${
-            !this.isNextButtonStep1Disabled ? "selected" : ""
-          }`;
-        }
-
-        get nextButtonStep2Class() {
-          return `botao-proxima-etapa ${
-            !this.isNextButtonStep2Disabled ? "selected" : ""
-          }`;
-        }
-
-        connectedCallback() {
-          this.initializeProgressBar();
-
-          // Implementar o efeito sticky após o DOM ser renderizado
-          Promise.resolve().then(() => {
-            this.implementSticky();
-
-            // Adicionar listener para redimensionamento da janela
-            window.addEventListener("resize", this.implementSticky.bind(this));
-          });
-        }
-
-        initializeProgressBar() {
-          this.progress = 0;
-          this.renderProgressBar();
-        }
-
-        renderProgressBar() {
-          setTimeout(() => {
-            if (this.currentStep !== 3) {
-              const progressBarElement =
-                this.template.querySelector(".progress-bar");
-              if (progressBarElement) {
-                progressBarElement.style.width = `${this.progress}%`;
-              }
-            }
-          }, 0);
-        }
-
-        handleStateChange(event) {
-          const state = event.target.value;
-          this.formData.state = state;
-          this.formData.city = "";
-          this.formData.guide_shop = "";
-          this.updateStep1Progress();
-
-          // Reset do select de cidade e guide shop
-          const citySelect = this.template.querySelector("#city");
-          const guideShopSelect = this.template.querySelector("#guide_shop");
-
-          if (citySelect) {
-            // Limpar as opções existentes exceto a primeira
-            while (citySelect.options.length > 1) {
-              citySelect.remove(1);
-            }
-          }
-
-          if (guideShopSelect) {
-            while (guideShopSelect.options.length > 1) {
-              guideShopSelect.remove(1);
-            }
-          }
-
-          if (state) {
-            const citiesByState = {
-              SP: ["São Paulo", "Campinas", "Santos", "Ribeirão Preto"],
-              RJ: [
-                "Rio de Janeiro",
-                "Niterói",
-                "Duque de Caxias",
-                "Nova Iguaçu",
-              ],
-              MG: ["Belo Horizonte", "Uberlândia", "Contagem", "Juiz de Fora"],
-              RS: ["Porto Alegre", "Caxias do Sul", "Pelotas", "Canoas"],
-            };
-
-            const cities = citiesByState[state] || ["Cidade Principal"];
-            this.cityOptions = [
-              { label: "Selecione", value: "", disabled: true },
-              ...cities.map((city) => ({ label: city, value: city })),
-            ];
-
-            if (citySelect) {
-              this.cityOptions.forEach((option, index) => {
-                if (index > 0) {
-                  const opt = document.createElement("option");
-                  opt.value = option.value;
-                  opt.text = option.label;
-                  if (option.disabled) opt.disabled = true;
-                  citySelect.add(opt);
-                }
-              });
-            }
-          }
-        }
-
-        handleCityChange(event) {
-          const city = event.target.value;
-          this.formData.city = city;
-          this.formData.guide_shop = "";
-          this.updateStep1Progress();
-
-          const guideShopSelect = this.template.querySelector("#guide_shop");
-
-          if (guideShopSelect) {
-            while (guideShopSelect.options.length > 1) {
-              guideShopSelect.remove(1);
-            }
-          }
-
-          if (city) {
-            this.loadGuideShops(this.formData.state, city);
-          }
-        }
-
-        loadGuideShops(state, city) {
-          const guideShopsByCity = {
-            "São Paulo": [
-              "ABC São Paulo - Centro",
-              "ABC São Paulo - Zona Sul",
-              "ABC São Paulo - Zona Leste",
-            ],
-            Campinas: ["ABC Campinas - Centro", "ABC Campinas - Barão Geraldo"],
-            "Rio de Janeiro": [
-              "ABC Rio - Centro",
-              "ABC Rio - Zona Sul",
-              "ABC Rio - Barra",
-            ],
-            "Belo Horizonte": ["ABC BH - Centro", "ABC BH - Pampulha"],
-            "Porto Alegre": ["ABC POA - Centro", "ABC POA - Zona Sul"],
-          };
-
-          const defaultGuideShops = ["Guide Shop Central"];
-          const guideShops = guideShopsByCity[city] || defaultGuideShops;
-
-          this.guideShopOptions = [
-            { label: "Selecione", value: "", disabled: true },
-            ...guideShops.map((shop) => ({ label: shop, value: shop })),
-          ];
-
-          const guideShopSelect = this.template.querySelector("#guide_shop");
-          if (guideShopSelect) {
-            this.guideShopOptions.forEach((option, index) => {
-              if (index > 0) {
-                const opt = document.createElement("option");
-                opt.value = option.value;
-                opt.text = option.label;
-                if (option.disabled) opt.disabled = true;
-                guideShopSelect.add(opt);
-              }
-            });
-          }
-        }
-
-        handleGuideShopChange(event) {
-          this.formData.guide_shop = event.target.value;
-          this.updateStep1Progress();
-        }
-
-        updateStep1Progress() {
-          const { state, city, guide_shop } = this.formData;
-          const fields = [state, city, guide_shop];
-          const filledFields = fields.filter(
-            (field) => field && field.trim() !== ""
-          ).length;
-
-          this.progress =
-            filledFields > 0 ? (filledFields / fields.length) * 90 : 0;
-          this.renderProgressBar();
-        }
-
-        updateStep2Progress() {
-          const { name, lastname, email, tel } = this.formData;
-
-          const isEmailValid = this.validEmail;
-          const isTelValid = tel && tel.length === 11;
-          const requiredFieldsFilled =
-            name && lastname && email && tel && isEmailValid && isTelValid;
-
-          this.progress = requiredFieldsFilled ? 95 : 90;
-          this.renderProgressBar();
-        }
-
-        handleNextStep() {
-          if (this.currentStep < 2) {
-            this.currentStep++;
-
-            if (this.currentStep === 2) {
-              this.progress = 90;
-              this.renderProgressBar();
-            }
-          }
-        }
-
-        handlePreviousStep() {
-          if (this.currentStep > 1) {
-            this.currentStep--;
-
-            if (this.currentStep === 1) {
-              this.updateStep1Progress();
-            } else if (this.currentStep === 2) {
-              this.updateStep2Progress();
-            }
-          }
-        }
-
-        handleSubmitForm() {
-          let name = this.formData.name;
-          let firstName = name.split(" ")[0];
-          let lastName =
-            name.split(" ").length > 1
-              ? name.replace(firstName, "").trim()
-              : firstName.trim();
-          let idLead = firstName.concat(
-            lastName.replaceAll(" ", "").trim(),
-            this.formData.tel.trim()
-          );
-
-          this.formData.idLead = idLead;
-          this.formData.firstName = firstName;
-          this.formData.lastName = this.formData.lastname || lastName;
-
-          console.log("Dados que seriam enviados:", this.formData);
-
-          this.currentStep = 3;
-
-          this.progress = 100;
-          this.renderProgressBar();
-        }
-
-        resetForm() {
-          this.currentStep = 1;
-          this.progress = 0;
-          this.validEmail = false;
-          this.formData = {
-            state: "",
-            city: "",
-            guide_shop: "",
-            name: "",
-            lastname: "",
-            email: "",
-            tel: "",
-            privacyPolicy: true,
-            marketingConsent: true,
-            firstName: "",
-            lastName: "",
-            idLead: "",
-            recordtypeDevName: "Expansao",
-            company: "ABC",
-            company2: "ABC Expansão",
-            owner: "00GbJ0000062OFjUAM",
-            canalDeEntrada: "Landing Page Expansão",
-          };
-
-          this.cityOptions = [
-            { label: "Selecione", value: "", disabled: true },
-          ];
-          this.guideShopOptions = [
-            { label: "Selecione", value: "", disabled: true },
-          ];
-
-          this.renderProgressBar();
-        }
-
-        handleNameChange(event) {
-          this.formData.name = event.target.value;
-          this.updateStep2Progress();
-        }
-
-        handleLastnameChange(event) {
-          this.formData.lastname = event.target.value;
-          this.updateStep2Progress();
-        }
-
-        handleEmailChange(event) {
-          const email = event.target.value;
-          this.formData.email = email;
-
-          const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-          this.validEmail = emailRegex.test(email);
-
-          this.updateStep2Progress();
-        }
-
-        handleTelChange(event) {
-          let value = event.target.value;
-
-          const numericValue = value.replace(/\D/g, "");
-
-          let formattedValue = numericValue;
-          if (numericValue.length > 2) {
-            formattedValue = `(${numericValue.substring(
-              0,
-              2
-            )}) ${numericValue.substring(2)}`;
-          }
-          if (numericValue.length > 7) {
-            formattedValue = `(${numericValue.substring(
-              0,
-              2
-            )}) ${numericValue.substring(2, 7)}-${numericValue.substring(
-              7,
-              11
-            )}`;
-          }
-
-          event.target.value = formattedValue;
-
-          this.formData.tel = numericValue;
-
-          this.updateStep2Progress();
-        }
-
-        handlePrivacyPolicyChange(event) {
-          this.formData.privacyPolicy = event.target.checked;
-          this.updateStep2Progress();
-        }
-
-        handleMarketingConsentChange(event) {
-          this.formData.marketingConsent = event.target.checked;
-        }
-
-        implementSticky() {
-          const franquiaInfo = this.template.querySelector(".franquia-info");
-          if (!franquiaInfo) return;
-
-          if (window.innerWidth <= 1000) {
-            franquiaInfo.style.position = "static";
-            franquiaInfo.style.width = "100%";
-            franquiaInfo.style.maxWidth = "100%";
-            franquiaInfo.style.top = "auto";
-          } else {
-            franquiaInfo.style.position = "";
-            franquiaInfo.style.top = "";
-            franquiaInfo.style.width = "";
-          }
-        }
-      }*/
-    </script>
-  </body>
+
+        <!-- ── STEP 2 ── -->
+        <div class="step-panel" id="step2" aria-label="Etapa 2 de 2">
+          <div class="row">
+            <div class="field">
+              <label for="name">Nome <span class="req">*</span></label>
+              <input type="text" id="name" name="name" placeholder="Seu nome" autocomplete="given-name" />
+            </div>
+            <div class="field">
+              <label for="lastname">Sobrenome <span class="req">*</span></label>
+              <input type="text" id="lastname" name="lastname" placeholder="Sobrenome" autocomplete="family-name" />
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="tel">WhatsApp <span class="req">*</span></label>
+            <input type="tel" id="tel" name="tel" placeholder="(00) 00000-0000" autocomplete="tel" maxlength="15" inputmode="numeric" />
+          </div>
+
+          <div class="field">
+            <label for="email">E-mail <span class="req">*</span></label>
+            <input type="email" id="email" name="email" placeholder="seu@email.com" autocomplete="email" inputmode="email" />
+          </div>
+
+          <div class="checks">
+            <div class="check-item">
+              <input type="checkbox" id="privacyPolicy" name="privacyPolicy" checked />
+              <label for="privacyPolicy">Concordo com a <strong>Política de Privacidade</strong> e autorizo o uso dos meus dados conforme descrito.</label>
+            </div>
+            <div class="check-item">
+              <input type="checkbox" id="marketingConsent" name="marketingConsent" checked />
+              <label for="marketingConsent">Aceito receber e-mails, SMS e WhatsApp da ABC da Construção com ofertas e novidades.</label>
+            </div>
+          </div>
+
+          <div class="btn-group">
+            <button type="button" class="btn-back" id="btnBack" aria-label="Voltar">
+              <svg viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M14 9H4M4 9l5 5M4 9l5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+            <button type="submit" class="btn-primary" id="btnSubmit" disabled>
+              Baixar encarte
+            </button>
+          </div>
+        </div>
+
+        <!-- ── STEP 3 ── -->
+        <div class="step-panel" id="step3" aria-label="Cadastro concluído">
+          <div class="success-wrap">
+            <div class="success-icon">
+              <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M8 18l7 7 13-13" stroke="#1a6b3c" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h2 class="success-title">Tudo pronto!</h2>
+            <p class="success-sub">
+              Seu encarte está sendo baixado automaticamente.<br>
+              <strong>Aproveite as ofertas exclusivas do mês.</strong>
+            </p>
+            <button type="button" class="success-download" id="btnDownloadAgain">
+              <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M8 1v9M5 7l3 3 3-3M2 12h12v2H2z" stroke="white" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              Baixar novamente
+            </button>
+            <button type="button" class="btn-reset" id="btnReset">
+              Novo cadastro
+            </button>
+          </div>
+        </div>
+
+      </form>
+    </div>
+    <!-- /card -->
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-logo">
+        <svg width="80" height="28" viewBox="0 0 80 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="28" height="28" rx="5" fill="#c8102e"/>
+          <text x="14" y="19" text-anchor="middle" font-family="sans-serif" font-size="10" font-weight="700" fill="white">abc</text>
+          <text x="36" y="12" font-family="sans-serif" font-size="7" font-weight="500" fill="#1a1a1a" letter-spacing=".5">ABC DA</text>
+          <text x="36" y="22" font-family="sans-serif" font-size="7" font-weight="500" fill="#1a1a1a" letter-spacing=".5">CONSTRUÇÃO</text>
+        </svg>
+      </div>
+      <p class="footer-copy">© 2025 ABC da Construção LTDA. Todos os direitos reservados.</p>
+      <p class="footer-slogan">Tudo em acabamentos, tudo para você.</p>
+    </div>
+  </footer>
+</div>
+
+<script>
+/* ════════════════════════════════════════════════════════════════
+   DADOS — 27 estados + principais cidades + guide shops
+   ════════════════════════════════════════════════════════════════ */
+const DATA = {
+  AC: {
+    label: "Acre",
+    cities: {
+      "Rio Branco":   ["ABC Rio Branco — Centro", "ABC Rio Branco — Sobral"],
+      "Cruzeiro do Sul": ["ABC Cruzeiro do Sul — Centro"],
+    }
+  },
+  AL: {
+    label: "Alagoas",
+    cities: {
+      "Maceió":   ["ABC Maceió — Pajuçara", "ABC Maceió — Farol"],
+      "Arapiraca": ["ABC Arapiraca — Centro"],
+    }
+  },
+  AM: {
+    label: "Amazonas",
+    cities: {
+      "Manaus":      ["ABC Manaus — Adrianópolis", "ABC Manaus — Ponta Negra", "ABC Manaus — Flores"],
+      "Parintins":   ["ABC Parintins — Centro"],
+      "Itacoatiara": ["ABC Itacoatiara — Centro"],
+    }
+  },
+  AP: {
+    label: "Amapá",
+    cities: {
+      "Macapá":    ["ABC Macapá — Centro", "ABC Macapá — Universidade"],
+      "Santana":   ["ABC Santana — Centro"],
+    }
+  },
+  BA: {
+    label: "Bahia",
+    cities: {
+      "Salvador":        ["ABC Salvador — Barra", "ABC Salvador — Pituba", "ABC Salvador — Brotas"],
+      "Feira de Santana":["ABC Feira de Santana — Centro", "ABC Feira de Santana — Tomba"],
+      "Vitória da Conquista": ["ABC Vitória da Conquista — Centro"],
+      "Ilhéus":          ["ABC Ilhéus — Centro"],
+      "Camaçari":        ["ABC Camaçari — Centro"],
+    }
+  },
+  CE: {
+    label: "Ceará",
+    cities: {
+      "Fortaleza":   ["ABC Fortaleza — Aldeota", "ABC Fortaleza — Messejana", "ABC Fortaleza — Centro"],
+      "Caucaia":     ["ABC Caucaia — Centro"],
+      "Sobral":      ["ABC Sobral — Centro"],
+      "Juazeiro do Norte": ["ABC Juazeiro do Norte — Centro"],
+    }
+  },
+  DF: {
+    label: "Distrito Federal",
+    cities: {
+      "Brasília":        ["ABC Brasília — Asa Norte", "ABC Brasília — Asa Sul", "ABC Brasília — Taguatinga"],
+      "Ceilândia":       ["ABC Ceilândia — Centro"],
+      "Taguatinga":      ["ABC Taguatinga — Centro"],
+    }
+  },
+  ES: {
+    label: "Espírito Santo",
+    cities: {
+      "Vitória":         ["ABC Vitória — Praia do Canto", "ABC Vitória — Centro"],
+      "Vila Velha":      ["ABC Vila Velha — Itaparica", "ABC Vila Velha — Centro"],
+      "Serra":           ["ABC Serra — Centro"],
+      "Cariacica":       ["ABC Cariacica — Centro"],
+    }
+  },
+  GO: {
+    label: "Goiás",
+    cities: {
+      "Goiânia":         ["ABC Goiânia — Setor Bueno", "ABC Goiânia — Jardim Goiás", "ABC Goiânia — Centro"],
+      "Aparecida de Goiânia": ["ABC Aparecida — Centro"],
+      "Anápolis":        ["ABC Anápolis — Centro"],
+      "Rio Verde":       ["ABC Rio Verde — Centro"],
+    }
+  },
+  MA: {
+    label: "Maranhão",
+    cities: {
+      "São Luís":        ["ABC São Luís — Centro", "ABC São Luís — Cohama"],
+      "Imperatriz":      ["ABC Imperatriz — Centro"],
+      "Timon":           ["ABC Timon — Centro"],
+    }
+  },
+  MT: {
+    label: "Mato Grosso",
+    cities: {
+      "Cuiabá":          ["ABC Cuiabá — Centro", "ABC Cuiabá — CPA"],
+      "Várzea Grande":   ["ABC Várzea Grande — Centro"],
+      "Rondonópolis":    ["ABC Rondonópolis — Centro"],
+    }
+  },
+  MS: {
+    label: "Mato Grosso do Sul",
+    cities: {
+      "Campo Grande":    ["ABC Campo Grande — Centro", "ABC Campo Grande — Chácara Cachoeira"],
+      "Dourados":        ["ABC Dourados — Centro"],
+      "Três Lagoas":     ["ABC Três Lagoas — Centro"],
+    }
+  },
+  MG: {
+    label: "Minas Gerais",
+    cities: {
+      "Belo Horizonte":  ["ABC BH — Savassi", "ABC BH — Pampulha", "ABC BH — Barreiro"],
+      "Uberlândia":      ["ABC Uberlândia — Centro", "ABC Uberlândia — Tibery"],
+      "Contagem":        ["ABC Contagem — Centro"],
+      "Juiz de Fora":    ["ABC Juiz de Fora — Centro", "ABC Juiz de Fora — Santa Luzia"],
+      "Betim":           ["ABC Betim — Centro"],
+      "Montes Claros":   ["ABC Montes Claros — Centro"],
+      "Ribeirão das Neves": ["ABC Ribeirão das Neves — Centro"],
+    }
+  },
+  PA: {
+    label: "Pará",
+    cities: {
+      "Belém":           ["ABC Belém — Nazaré", "ABC Belém — Pedreira"],
+      "Ananindeua":      ["ABC Ananindeua — Centro"],
+      "Santarém":        ["ABC Santarém — Centro"],
+      "Marabá":          ["ABC Marabá — Folha 28"],
+    }
+  },
+  PB: {
+    label: "Paraíba",
+    cities: {
+      "João Pessoa":     ["ABC João Pessoa — Miramar", "ABC João Pessoa — Centro"],
+      "Campina Grande":  ["ABC Campina Grande — Centro"],
+      "Santa Rita":      ["ABC Santa Rita — Centro"],
+    }
+  },
+  PE: {
+    label: "Pernambuco",
+    cities: {
+      "Recife":          ["ABC Recife — Boa Viagem", "ABC Recife — Espinheiro", "ABC Recife — Imbiribeira"],
+      "Caruaru":         ["ABC Caruaru — Centro"],
+      "Olinda":          ["ABC Olinda — Centro"],
+      "Petrolina":       ["ABC Petrolina — Centro"],
+    }
+  },
+  PI: {
+    label: "Piauí",
+    cities: {
+      "Teresina":        ["ABC Teresina — Centro", "ABC Teresina — Leste"],
+      "Parnaíba":        ["ABC Parnaíba — Centro"],
+    }
+  },
+  PR: {
+    label: "Paraná",
+    cities: {
+      "Curitiba":        ["ABC Curitiba — Batel", "ABC Curitiba — Portão", "ABC Curitiba — Centro"],
+      "Londrina":        ["ABC Londrina — Centro", "ABC Londrina — Gleba Palhano"],
+      "Maringá":         ["ABC Maringá — Centro", "ABC Maringá — Zona 7"],
+      "Ponta Grossa":    ["ABC Ponta Grossa — Centro"],
+      "Cascavel":        ["ABC Cascavel — Centro"],
+      "Foz do Iguaçu":   ["ABC Foz do Iguaçu — Centro"],
+    }
+  },
+  RJ: {
+    label: "Rio de Janeiro",
+    cities: {
+      "Rio de Janeiro":  ["ABC Rio — Barra da Tijuca", "ABC Rio — Botafogo", "ABC Rio — Tijuca"],
+      "Niterói":         ["ABC Niterói — Icaraí", "ABC Niterói — Centro"],
+      "Duque de Caxias": ["ABC Duque de Caxias — Centro"],
+      "Nova Iguaçu":     ["ABC Nova Iguaçu — Centro"],
+      "São Gonçalo":     ["ABC São Gonçalo — Centro"],
+      "Campos dos Goytacazes": ["ABC Campos — Centro"],
+    }
+  },
+  RN: {
+    label: "Rio Grande do Norte",
+    cities: {
+      "Natal":           ["ABC Natal — Ponta Negra", "ABC Natal — Candelária"],
+      "Mossoró":         ["ABC Mossoró — Centro"],
+      "Parnamirim":      ["ABC Parnamirim — Centro"],
+    }
+  },
+  RO: {
+    label: "Rondônia",
+    cities: {
+      "Porto Velho":     ["ABC Porto Velho — Centro", "ABC Porto Velho — Olaria"],
+      "Ji-Paraná":       ["ABC Ji-Paraná — Centro"],
+    }
+  },
+  RR: {
+    label: "Roraima",
+    cities: {
+      "Boa Vista":       ["ABC Boa Vista — Centro", "ABC Boa Vista — Caimbé"],
+    }
+  },
+  RS: {
+    label: "Rio Grande do Sul",
+    cities: {
+      "Porto Alegre":    ["ABC POA — Moinhos de Vento", "ABC POA — Boa Vista", "ABC POA — Menino Deus"],
+      "Caxias do Sul":   ["ABC Caxias — Centro", "ABC Caxias — Pioneiro"],
+      "Pelotas":         ["ABC Pelotas — Centro"],
+      "Canoas":          ["ABC Canoas — Centro"],
+      "Santa Maria":     ["ABC Santa Maria — Centro"],
+      "Gravataí":        ["ABC Gravataí — Centro"],
+    }
+  },
+  SC: {
+    label: "Santa Catarina",
+    cities: {
+      "Florianópolis":   ["ABC Floripa — Trindade", "ABC Floripa — Kobrasol"],
+      "Joinville":       ["ABC Joinville — Centro", "ABC Joinville — América"],
+      "Blumenau":        ["ABC Blumenau — Centro"],
+      "Chapecó":         ["ABC Chapecó — Centro"],
+      "Itajaí":          ["ABC Itajaí — Centro"],
+    }
+  },
+  SE: {
+    label: "Sergipe",
+    cities: {
+      "Aracaju":         ["ABC Aracaju — Grageru", "ABC Aracaju — Centro"],
+      "Lagarto":         ["ABC Lagarto — Centro"],
+    }
+  },
+  SP: {
+    label: "São Paulo",
+    cities: {
+      "São Paulo":       ["ABC SP — Moema", "ABC SP — Tatuapé", "ABC SP — Santo André", "ABC SP — Lapa"],
+      "Campinas":        ["ABC Campinas — Cambuí", "ABC Campinas — Taquaral"],
+      "Santos":          ["ABC Santos — Centro", "ABC Santos — Gonzaga"],
+      "Ribeirão Preto":  ["ABC Ribeirão — Centro", "ABC Ribeirão — Nova Aliança"],
+      "Sorocaba":        ["ABC Sorocaba — Centro"],
+      "Osasco":          ["ABC Osasco — Centro"],
+      "São Bernardo do Campo": ["ABC SBC — Centro"],
+      "São José dos Campos": ["ABC SJC — Centro"],
+    }
+  },
+  TO: {
+    label: "Tocantins",
+    cities: {
+      "Palmas":          ["ABC Palmas — Centro", "ABC Palmas — Plano Diretor Sul"],
+      "Araguaína":       ["ABC Araguaína — Centro"],
+    }
+  },
+};
+
+/* ════════════════════════════════════════════════════════════════
+   STATE
+   ════════════════════════════════════════════════════════════════ */
+const state = {
+  step: 1,
+  progress: 0,
+  validEmail: false,
+  data: {
+    state: '', city: '', guide_shop: '',
+    name: '', lastname: '', email: '', tel: '',
+    privacyPolicy: true, marketingConsent: true,
+    firstName: '', lastName: '', idLead: '',
+    recordtypeDevName: 'Expansao',
+    company: 'ABC', company2: 'ABC Expansão',
+    owner: '00GbJ0000062OFjUAM',
+    canalDeEntrada: 'Landing Page Encarte',
+  }
+};
+
+/* ════════════════════════════════════════════════════════════════
+   STEP ICONS (SVG inline)
+   ════════════════════════════════════════════════════════════════ */
+const ICONS = {
+  1: `<svg viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg" width="30" height="30">
+        <path d="M15 3C9.477 3 5 7.477 5 13c0 6.627 10 17 10 17s10-10.373 10-17c0-5.523-4.477-10-10-10z" stroke="#c8102e" stroke-width="1.6" stroke-linejoin="round"/>
+        <circle cx="15" cy="13" r="3" stroke="#c8102e" stroke-width="1.6"/>
+      </svg>`,
+  2: `<svg viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg" width="30" height="30">
+        <rect x="4" y="5" width="22" height="20" rx="3" stroke="#c8102e" stroke-width="1.6"/>
+        <path d="M9 10h12M9 15h8M9 20h5" stroke="#c8102e" stroke-width="1.6" stroke-linecap="round"/>
+      </svg>`,
+  3: `<svg viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg" width="30" height="30">
+        <path d="M6 15l6 6 12-12" stroke="#1a6b3c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>`,
+};
+
+const STEP_CONTENT = {
+  1: { title: 'Ofertas exclusivas na sua região', subtitle: 'Selecione sua localização para continuar' },
+  2: { title: 'Quase lá! Preencha seus dados',    subtitle: 'Cadastro rápido — menos de 1 minuto' },
+  3: { title: 'É hora de economizar!',             subtitle: 'Seus dados foram enviados com sucesso' },
+};
+
+/* ════════════════════════════════════════════════════════════════
+   DOM REFS
+   ════════════════════════════════════════════════════════════════ */
+const $ = id => document.getElementById(id);
+const elState    = $('state');
+const elCity     = $('city');
+const elShop     = $('guide_shop');
+const elName     = $('name');
+const elLastname = $('lastname');
+const elTel      = $('tel');
+const elEmail    = $('email');
+const elPrivacy  = $('privacyPolicy');
+const elMarketing= $('marketingConsent');
+const elBtnNext1 = $('btnNext1');
+const elBtnBack  = $('btnBack');
+const elBtnSubmit= $('btnSubmit');
+const elBtnReset = $('btnReset');
+const elBtnDownloadAgain = $('btnDownloadAgain');
+const elProgress = $('progressFill');
+const elProgressLabel = $('progressLabel');
+const elStepIcon  = $('stepIcon');
+const elStepTitle = $('stepTitle');
+const elStepSub   = $('stepSubtitle');
+
+/* ════════════════════════════════════════════════════════════════
+   POPULATE STATES
+   ════════════════════════════════════════════════════════════════ */
+function populateStates() {
+  Object.entries(DATA)
+    .sort((a, b) => a[1].label.localeCompare(b[1].label))
+    .forEach(([uf, info]) => {
+      const opt = document.createElement('option');
+      opt.value = uf;
+      opt.textContent = `${uf} — ${info.label}`;
+      elState.appendChild(opt);
+    });
+}
+
+/* ════════════════════════════════════════════════════════════════
+   CLEAR SELECT
+   ════════════════════════════════════════════════════════════════ */
+function clearSelect(el, placeholder) {
+  el.innerHTML = `<option value="" disabled selected>${placeholder}</option>`;
+}
+
+/* ════════════════════════════════════════════════════════════════
+   PROGRESS
+   ════════════════════════════════════════════════════════════════ */
+function setProgress(pct, done = false) {
+  state.progress = pct;
+  elProgress.style.width = pct + '%';
+  elProgressLabel.textContent = pct + '%';
+  if (done) {
+    elProgress.classList.add('done');
+    elProgressLabel.classList.add('done');
+  } else {
+    elProgress.classList.remove('done');
+    elProgressLabel.classList.remove('done');
+  }
+}
+
+function updateStep1Progress() {
+  const { state: s, city, guide_shop } = state.data;
+  const filled = [s, city, guide_shop].filter(v => v).length;
+  setProgress(filled > 0 ? Math.round((filled / 3) * 85) : 0);
+}
+
+function updateStep2Progress() {
+  const { name, lastname, email, tel } = state.data;
+  const ok = name && lastname && email && state.validEmail && tel && tel.length === 11;
+  setProgress(ok ? 95 : 90);
+}
+
+/* ════════════════════════════════════════════════════════════════
+   STEP NAVIGATION
+   ════════════════════════════════════════════════════════════════ */
+function showStep(n) {
+  [1, 2, 3].forEach(i => {
+    $('step' + i).classList.toggle('active', i === n);
+  });
+  state.step = n;
+  elStepIcon.innerHTML = ICONS[n];
+  elStepTitle.textContent = STEP_CONTENT[n].title;
+  elStepSub.textContent   = STEP_CONTENT[n].subtitle;
+
+  // icon bg on step 3
+  elStepIcon.style.background = n === 3 ? 'var(--success-bg)' : 'var(--red-light)';
+}
+
+/* ════════════════════════════════════════════════════════════════
+   HANDLERS — STEP 1
+   ════════════════════════════════════════════════════════════════ */
+elState.addEventListener('change', () => {
+  const uf = elState.value;
+  state.data.state = uf;
+  state.data.city  = '';
+  state.data.guide_shop = '';
+
+  clearSelect(elCity, 'Selecione');
+  clearSelect(elShop, 'Selecione');
+  elCity.disabled = true;
+  elShop.disabled = true;
+
+  if (uf && DATA[uf]) {
+    Object.keys(DATA[uf].cities)
+      .sort()
+      .forEach(city => {
+        const opt = document.createElement('option');
+        opt.value = city;
+        opt.textContent = city;
+        elCity.appendChild(opt);
+      });
+    elCity.disabled = false;
+  }
+  updateStep1Progress();
+  checkStep1();
+});
+
+elCity.addEventListener('change', () => {
+  const city = elCity.value;
+  state.data.city = city;
+  state.data.guide_shop = '';
+
+  clearSelect(elShop, 'Selecione');
+  elShop.disabled = true;
+
+  const uf = state.data.state;
+  if (uf && city && DATA[uf]?.cities[city]) {
+    DATA[uf].cities[city].forEach(shop => {
+      const opt = document.createElement('option');
+      opt.value = shop;
+      opt.textContent = shop;
+      elShop.appendChild(opt);
+    });
+    elShop.disabled = false;
+  }
+  updateStep1Progress();
+  checkStep1();
+});
+
+elShop.addEventListener('change', () => {
+  state.data.guide_shop = elShop.value;
+  updateStep1Progress();
+  checkStep1();
+});
+
+function checkStep1() {
+  const ok = !!(state.data.state && state.data.city && state.data.guide_shop);
+  elBtnNext1.disabled = !ok;
+}
+
+elBtnNext1.addEventListener('click', () => {
+  showStep(2);
+  setProgress(90);
+  elName.focus();
+});
+
+/* ════════════════════════════════════════════════════════════════
+   HANDLERS — STEP 2
+   ════════════════════════════════════════════════════════════════ */
+elBtnBack.addEventListener('click', () => {
+  showStep(1);
+  updateStep1Progress();
+});
+
+elName.addEventListener('input', () => {
+  state.data.name = elName.value.trim();
+  updateStep2Progress();
+  checkStep2();
+});
+
+elLastname.addEventListener('input', () => {
+  state.data.lastname = elLastname.value.trim();
+  updateStep2Progress();
+  checkStep2();
+});
+
+// Email validation
+elEmail.addEventListener('input', () => {
+  const val = elEmail.value;
+  state.data.email = val;
+  const rx = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  state.validEmail = rx.test(val);
+  elEmail.classList.toggle('valid',   state.validEmail && val.length > 0);
+  elEmail.classList.toggle('invalid', !state.validEmail && val.length > 3);
+  updateStep2Progress();
+  checkStep2();
+});
+
+// Tel mask
+elTel.addEventListener('input', () => {
+  let nums = elTel.value.replace(/\D/g, '').slice(0, 11);
+  let fmt = nums;
+  if (nums.length > 2)  fmt = `(${nums.slice(0,2)}) ${nums.slice(2)}`;
+  if (nums.length > 7)  fmt = `(${nums.slice(0,2)}) ${nums.slice(2,7)}-${nums.slice(7,11)}`;
+  elTel.value = fmt;
+  state.data.tel = nums;
+  updateStep2Progress();
+  checkStep2();
+});
+
+elPrivacy.addEventListener('change', () => {
+  state.data.privacyPolicy = elPrivacy.checked;
+  updateStep2Progress();
+  checkStep2();
+});
+
+elMarketing.addEventListener('change', () => {
+  state.data.marketingConsent = elMarketing.checked;
+});
+
+function checkStep2() {
+  const { name, lastname, email, tel, privacyPolicy } = state.data;
+  const ok = !!(name && lastname && email && state.validEmail && tel && tel.length === 11 && privacyPolicy);
+  elBtnSubmit.disabled = !ok;
+}
+
+/* ════════════════════════════════════════════════════════════════
+   SUBMIT — download + step 3
+   ════════════════════════════════════════════════════════════════ */
+$('mainForm').addEventListener('submit', e => {
+  e.preventDefault();
+  handleSubmit();
+});
+
+elBtnSubmit.addEventListener('click', e => {
+  e.preventDefault();
+  handleSubmit();
+});
+
+function handleSubmit() {
+  if (elBtnSubmit.disabled) return;
+
+  // Derive firstName / lastName / idLead
+  const fullName  = state.data.name;
+  const firstName = fullName.split(' ')[0];
+  const lastName  = fullName.includes(' ')
+    ? fullName.split(' ').slice(1).join(' ')
+    : state.data.lastname;
+  const idLead = firstName + state.data.lastname.replace(/\s/g,'') + state.data.tel;
+
+  state.data.firstName = firstName;
+  state.data.lastName  = state.data.lastname || lastName;
+  state.data.idLead    = idLead;
+
+  // Loading state
+  elBtnSubmit.classList.add('loading');
+  elBtnSubmit.disabled = true;
+
+  // Simula envio (substitua pelo fetch real)
+  setTimeout(() => {
+    console.log('Payload:', JSON.stringify(state.data, null, 2));
+
+    // Download automático
+    triggerDownload();
+
+    // Avança para step 3
+    showStep(3);
+    setProgress(100, true);
+    elBtnSubmit.classList.remove('loading');
+  }, 900);
+}
+
+/* ════════════════════════════════════════════════════════════════
+   DOWNLOAD
+   ════════════════════════════════════════════════════════════════ */
+function triggerDownload() {
+  const link = document.createElement('a');
+  link.href = 'encarte/novidades.png';
+  link.download = 'encarte-abc-novidades.png';
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+}
+
+elBtnDownloadAgain.addEventListener('click', triggerDownload);
+
+/* ════════════════════════════════════════════════════════════════
+   RESET
+   ════════════════════════════════════════════════════════════════ */
+function resetAll() {
+  state.data = {
+    state: '', city: '', guide_shop: '',
+    name: '', lastname: '', email: '', tel: '',
+    privacyPolicy: true, marketingConsent: true,
+    firstName: '', lastName: '', idLead: '',
+    recordtypeDevName: 'Expansao',
+    company: 'ABC', company2: 'ABC Expansão',
+    owner: '00GbJ0000062OFjUAM',
+    canalDeEntrada: 'Landing Page Encarte',
+  };
+  state.validEmail = false;
+
+  elState.value = '';
+  clearSelect(elCity, 'Selecione'); elCity.disabled = true;
+  clearSelect(elShop, 'Selecione'); elShop.disabled = true;
+
+  elName.value = '';
+  elLastname.value = '';
+  elTel.value = '';
+  elEmail.value = '';
+  elEmail.classList.remove('valid', 'invalid');
+  elPrivacy.checked   = true;
+  elMarketing.checked = true;
+
+  elBtnNext1.disabled  = true;
+  elBtnSubmit.disabled = true;
+
+  showStep(1);
+  setProgress(0);
+}
+
+elBtnReset.addEventListener('click', resetAll);
+
+/* ════════════════════════════════════════════════════════════════
+   INIT
+   ════════════════════════════════════════════════════════════════ */
+document.addEventListener('DOMContentLoaded', () => {
+  populateStates();
+  showStep(1);
+  setProgress(0);
+});
+</script>
+</body>
 </html>

@@ -2,10 +2,7 @@
 
 ### ABC da Construção
 
-- Cliente: Expansão
-- Link oficial: https://encarte.abcevoce.com.br/
-- Ordem:
-    1. Encarte 
+- Cliente: Expansão 
 - Views
     - ![View 1](./github/view-1.jpg) 
 
