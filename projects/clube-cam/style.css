@@ -1125,6 +1125,63 @@ main {
     width: 18px;
   }
 }
+
+.form-feedback {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  margin-bottom: 18px;
+  padding: 16px 18px;
+  border-radius: 18px;
+  border: 1px solid transparent;
+  background: rgba(255, 255, 255, 0.04);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.16);
+}
+
+.form-feedback.success {
+  background: linear-gradient(180deg, rgba(35, 135, 72, 0.18), rgba(20, 92, 48, 0.16));
+  border-color: rgba(87, 203, 132, 0.28);
+}
+
+.form-feedback.error {
+  background: linear-gradient(180deg, rgba(170, 34, 34, 0.2), rgba(120, 18, 18, 0.16));
+  border-color: rgba(255, 107, 107, 0.3);
+}
+
+.form-feedback__icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  background: rgba(255, 255, 255, 0.12);
+  color: var(--branco);
+  font-weight: 800;
+}
+
+.form-feedback.success .form-feedback__icon {
+  background: rgba(87, 203, 132, 0.24);
+  color: #8df0b5;
+}
+
+.form-feedback.error .form-feedback__icon {
+  background: rgba(255, 107, 107, 0.24);
+  color: #ffb2b2;
+}
+
+.form-feedback__title {
+  color: var(--branco);
+  font-size: 1rem;
+  margin-bottom: 4px;
+}
+
+.form-feedback__text {
+  color: #d7d7d7;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
 /* FIM  Formulário*/
 
 /*footer*/
