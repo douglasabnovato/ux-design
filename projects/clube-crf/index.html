@@ -314,7 +314,7 @@
 
             <figure class="section-estadio__media">
               <img
-                src="./assets/secao-1-hero - bg.png"
+                src="./assets/torcida-crf-estadio.png"
                 alt="Estádio do Flamengo em clima de grandeza e torcida"
                 class="section-estadio__image"
               />
@@ -330,7 +330,7 @@
           <div class="section-lance__grid">
             <figure class="section-lance__media">
               <img
-                src="./assets/CRF - comemoracao jogadores em campo.JPG"
+                src="./assets/jogadores-comemorando.png"
                 alt="Jogador do Flamengo em lance de jogo"
                 class="section-lance__image"
               />
@@ -408,7 +408,7 @@
 
             <figure class="section-torcida__media">
               <img
-                src="./assets/CRF - torcida.png"
+                src="./assets/CRF - estadio torcida.jpg"
                 alt="Torcida do Flamengo no estádio"
                 class="section-torcida__image"
               />
@@ -511,8 +511,7 @@
         </div>
       </section>
       <!-- FIM Seção 9: Patrocínio e credibilidade -->
-
-      <!-- campanha -->
+  
       <!-- campanha -->
       <section id="campanha" class="section section-campanha" aria-labelledby="campanha-title">
         <div class="container">
@@ -549,7 +548,7 @@
             <div class="section-campanha__media">
               <figure class="section-campanha__image-wrap">
                 <img
-                  src="./assets/secao-2-jogadores-frase.png"
+                  src="./assets/abc-construcao-patrocinio-flamengo.jpg"
                   alt="Frase da campanha com jogadores do Flamengo"
                   class="section-campanha__image"
                 />
@@ -721,59 +720,254 @@
       </section>
       <!-- FIM duvidas --> 
     </main>
-
+ 
     <!-- Formulário -->
     <section id="cadastro" class="signup-section" aria-labelledby="signup-title">
-      <div class="signup-container">
+    <div class="signup-container">
         <div class="signup-copy">
-          <span class="signup-kicker">Participe da ativação</span>
-          <h2 id="signup-title">Me conta seu lado rubro-negro e descubra o seu jeito ABC</h2>
-          <p>
-            Preencha rapidinho e receba ofertas, novidades e experiências feitas
+        <span class="signup-kicker">Participe da ativação</span>
+        <h2 id="signup-title">Me conta seu lado rubro-negro e descubra o seu jeito ABC</h2>
+        <p>
+            Preencha em 3 etapas e receba ofertas, novidades e experiências feitas
             para quem torce pelo Flamengo e gosta de construir com a ABC da Construção.
-          </p>
+        </p>
+
+        <div class="signup-copy__benefits" aria-label="Resumo dos benefícios">
+            <article class="signup-copy__benefit">
+            <h3>Mais relevante</h3>
+            <p>Campos organizados por lógica para uma experiência leve e rápida.</p>
+            </article>
+
+            <article class="signup-copy__benefit">
+            <h3>Mais humano</h3>
+            <p>Conversa primeiro com o cliente, depois com a loja, e por fim com o coração rubro-negro.</p>
+            </article>
+
+            <article class="signup-copy__benefit">
+            <h3>Mais memorável</h3>
+            <p>O card final transforma o envio em um encerramento bonito e marcante.</p>
+            </article>
+        </div>
         </div>
 
-        <div class="signup-card">
-          <form id="landingForm" class="signup-form">
-            <div class="form-step is-active" data-step="1">
-              <h3>Começa pelo básico</h3>
+        <div class="signup-card" id="signupCard">
+        <div class="signup-card__top">
+            <div class="signup-progress" aria-label="Progresso do formulário">
+            <div class="signup-progress__meta">
+                <span id="stepLabel">Etapa 1 de 3</span>
+                <strong id="stepTitle">Informações do cliente</strong>
+            </div>
 
-              <div class="form-group">
+            <div class="signup-progress__bar" role="progressbar" aria-valuemin="1" aria-valuemax="3" aria-valuenow="1">
+                <span class="signup-progress__bar-fill" id="progressFill"></span>
+            </div>
+
+            <ol class="signup-progress__steps">
+                <li class="is-active">Cliente</li>
+                <li>Loja e produtos</li>
+                <li>CRF e diversão</li>
+            </ol>
+            </div>
+        </div>
+
+        <form id="landingForm" class="signup-form" novalidate>
+            <!-- Step 1 -->
+            <div class="form-step is-active" data-step="1" aria-labelledby="step1-title">
+            <h3 id="step1-title">Começa pelo básico</h3>
+            <p class="form-step__text">
+                Vamos começar com seus dados para personalizar sua experiência.
+            </p>
+
+            <div class="form-grid">
+                <div class="form-group">
                 <label for="nome">Nome</label>
-                <input id="nome" name="nome" type="text" placeholder="Seu nome" />
+                <input id="nome" name="nome" type="text" placeholder="Seu nome" autocomplete="given-name" />
                 <div class="error" id="errorNome"></div>
-              </div>
+                </div>
 
-              <div class="form-group">
+                <div class="form-group">
                 <label for="sobrenome">Sobrenome</label>
-                <input id="sobrenome" name="sobrenome" type="text" placeholder="Seu sobrenome" />
+                <input id="sobrenome" name="sobrenome" type="text" placeholder="Seu sobrenome" autocomplete="family-name" />
                 <div class="error" id="errorSobrenome"></div>
-              </div>
+                </div>
 
-              <div class="form-group">
+                <div class="form-group">
                 <label for="celular">Celular</label>
-                <input id="celular" name="celular" type="tel" placeholder="(99) 99999-9999" />
+                <input id="celular" name="celular" type="tel" placeholder="(99) 99999-9999" autocomplete="tel" />
                 <div class="error" id="errorCelular"></div>
-              </div>
+                </div>
 
-              <div class="form-group">
+                <div class="form-group">
                 <label for="email">E-mail</label>
-                <input id="email" name="email" type="email" placeholder="seu@email.com" />
+                <input id="email" name="email" type="email" placeholder="seu@email.com" autocomplete="email" />
                 <div class="error" id="errorEmail"></div>
-              </div>
+                </div>
+            </div>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="form-step" data-step="2" aria-labelledby="step2-title">
+            <h3 id="step2-title">Loja ABC e seus produtos</h3>
+            <p class="form-step__text">
+                Agora vamos entender onde você está comprando e o que está buscando.
+            </p>
+
+            <div class="form-grid">
+                <div class="form-group">
+                <label for="estado">Estado</label>
+                <select id="estado" name="estado">
+                    <option value="">Selecione</option>
+                    <option value="AC">AC</option>
+                    <option value="AL">AL</option>
+                    <option value="AP">AP</option>
+                    <option value="AM">AM</option>
+                    <option value="BA">BA</option>
+                    <option value="CE">CE</option>
+                    <option value="DF">DF</option>
+                    <option value="ES">ES</option>
+                    <option value="GO">GO</option>
+                    <option value="MA">MA</option>
+                    <option value="MG">MG</option>
+                    <option value="MS">MS</option>
+                    <option value="MT">MT</option>
+                    <option value="PA">PA</option>
+                    <option value="PB">PB</option>
+                    <option value="PE">PE</option>
+                    <option value="PI">PI</option>
+                    <option value="PR">PR</option>
+                    <option value="RJ">RJ</option>
+                    <option value="RN">RN</option>
+                    <option value="RO">RO</option>
+                    <option value="RR">RR</option>
+                    <option value="RS">RS</option>
+                    <option value="SC">SC</option>
+                    <option value="SP">SP</option>
+                    <option value="SE">SE</option>
+                    <option value="TO">TO</option>
+                </select>
+                <div class="error" id="errorEstado"></div>
+                </div>
+
+                <div class="form-group">
+                <label for="cidade">Cidade</label>
+                <input id="cidade" name="cidade" type="text" placeholder="Sua cidade" />
+                <div class="error" id="errorCidade"></div>
+                </div>
+
+                <div class="form-group">
+                <label for="loja">Loja ABC da Construção</label>
+                <input id="loja" name="loja" type="text" placeholder="Nome da loja ou guide shop" />
+                <div class="error" id="errorLoja"></div>
+                </div>
+
+                <div class="form-group">
+                <label for="produto">Produto de interesse</label>
+                <select id="produto" name="produto">
+                    <option value="">Selecione</option>
+                    <option value="revestimentos">Revestimentos</option>
+                    <option value="pisos">Pisos</option>
+                    <option value="loucas-metais">Louças e metais</option>
+                    <option value="portas-janelas">Portas e janelas</option>
+                    <option value="tintas">Tintas</option>
+                    <option value="acabamentos">Acabamentos</option>
+                </select>
+                <div class="error" id="errorProduto"></div>
+                </div>
+            </div>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="form-step" data-step="3" aria-labelledby="step3-title">
+            <h3 id="step3-title">CRF e uma pergunta divertida</h3>
+            <p class="form-step__text">
+                Agora queremos conhecer seu lado rubro-negro e deixar tudo mais divertido.
+            </p>
+
+            <div class="form-grid">
+                <div class="form-group">
+                <label for="time">Seu time do coração</label>
+                <select id="time" name="time">
+                    <option value="">Selecione</option>
+                    <option value="flamengo">Flamengo</option>
+                    <option value="outro">Outro time</option>
+                    <option value="nao-declaro">Prefiro não declarar</option>
+                </select>
+                <div class="error" id="errorTime"></div>
+                </div>
+
+                <div class="form-group">
+                <label for="momento">Seu momento mais rubro-negro</label>
+                <select id="momento" name="momento">
+                    <option value="">Selecione</option>
+                    <option value="jogo">Ver jogo com a família</option>
+                    <option value="bar">Assistir com amigos</option>
+                    <option value="estadio">Ir ao estádio</option>
+                    <option value="casa">Ver em casa com emoção</option>
+                </select>
+                <div class="error" id="errorMomento"></div>
+                </div>
+
+                <div class="form-group">
+                <label for="diversao">Pergunta divertida: se o Flamengo fosse um sabor, qual seria?</label>
+                <select id="diversao" name="diversao">
+                    <option value="">Selecione</option>
+                    <option value="pimenta">Pimenta com atitude</option>
+                    <option value="chocolate">Chocolate intenso</option>
+                    <option value="morango">Morango explosivo</option>
+                    <option value="cafe">Café forte</option>
+                    <option value="mistura">Mistura surpreendente</option>
+                </select>
+                <div class="error" id="errorDiversao"></div>
+                </div>
+
+                <div class="form-group form-group--full">
+                <label class="form-check">
+                    <input id="consentimento" name="consentimento" type="checkbox" />
+                    <span>Concordo em receber novidades, ofertas e comunicações da ABC da Construção.</span>
+                </label>
+                <div class="error" id="errorConsentimento"></div>
+                </div>
+            </div>
             </div>
 
             <div class="form-actions">
-              <button class="action-button secondary" type="button" id="prevStep">Voltar</button>
-              <button class="action-button" type="button" id="nextStep">Continuar</button>
-              <button class="action-button is-hidden" type="submit" id="submitForm">Enviar</button>
+            <button class="action-button secondary" type="button" id="prevStep">Voltar</button>
+            <button class="action-button" type="button" id="nextStep">Continuar</button>
+            <button class="action-button is-hidden" type="submit" id="submitForm">Enviar</button>
             </div>
-          </form>
+
+            <div class="signup-response" id="signupResponse" aria-live="polite" aria-atomic="true" hidden>
+            <div class="signup-response__badge">Cadastro concluído</div>
+            <h3>Pronto, agora é com a Nação e com a ABC da Construção</h3>
+            <p>
+                Seus dados foram recebidos com sucesso. Em breve você pode receber novidades,
+                ofertas e experiências pensadas para o universo rubro-negro.
+            </p>
+
+            <div class="signup-response__summary">
+                <div>
+                <span>Cliente</span>
+                <strong id="summaryCliente">-</strong>
+                </div>
+                <div>
+                <span>Loja ABC</span>
+                <strong id="summaryLoja">-</strong>
+                </div>
+                <div>
+                <span>Time do coração</span>
+                <strong id="summaryTime">-</strong>
+                </div>
+            </div>
+
+            <button type="button" class="signup-response__button" id="resetForm">
+                Fazer novo cadastro
+            </button>
+            </div>
+        </form>
         </div>
-      </div>
+    </div>
     </section>
-    <!-- FIM Formulário -->
+    <!-- FIM Formulário --> 
 
     <!-- footer -->
     <footer class="footer" id="footer" role="contentinfo">
