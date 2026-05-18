@@ -346,3 +346,50 @@ document.addEventListener("DOMContentLoaded", () => {
 
   setStep(1);
 });
+
+const menuToggle = document.getElementById("menuToggle");
+const siteMenu = document.getElementById("main-navigation");
+
+function closeMenu() {
+  if (!menuToggle || !siteMenu) return;
+  siteMenu.classList.remove("is-open");
+  menuToggle.setAttribute("aria-expanded", "false");
+  menuToggle.setAttribute("aria-label", "Abrir menu");
+}
+
+function openMenu() {
+  if (!menuToggle || !siteMenu) return;
+  siteMenu.classList.add("is-open");
+  menuToggle.setAttribute("aria-expanded", "true");
+  menuToggle.setAttribute("aria-label", "Fechar menu");
+}
+
+if (menuToggle && siteMenu) {
+  menuToggle.addEventListener("click", () => {
+    const isOpen = siteMenu.classList.contains("is-open");
+    if (isOpen) {
+      closeMenu();
+    } else {
+      openMenu();
+    }
+  });
+
+  siteMenu.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => {
+      if (window.innerWidth <= 860) closeMenu();
+    });
+  });
+
+  document.addEventListener("click", (event) => {
+    if (
+      !siteMenu.contains(event.target) &&
+      !menuToggle.contains(event.target)
+    ) {
+      closeMenu();
+    }
+  });
+
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 860) closeMenu();
+  });
+}

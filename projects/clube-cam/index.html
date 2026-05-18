@@ -9,12 +9,16 @@
     />
     <meta name="theme-color" content="#0b0b0b" />
     <meta name="author" content="douglasabnovato" />
-    <title>Clube CAM | ABC da Construção</title>
-    <link rel="icon" href="./assets/favicon.ico" type="image/x-icon" />
+    <title>CAM | ABC da Construção</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="./public/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./public/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./public/favicon-16x16.png">
+    <link rel="manifest" href="./public/site.webmanifest">
+
     <link rel="stylesheet" href="./style.css" />
   </head> 
   <body>  
-    <!-- Header -->
+    <!-- Header --> 
     <header class="lp-header" id="topo">
       <div class="lp-header__inner">
         <a href="#topo" class="lp-header__brand" aria-label="Ir para o topo da página">
@@ -33,6 +37,7 @@
           aria-label="Abrir menu"
           aria-controls="main-navigation"
           aria-expanded="false"
+          id="menuToggle"
         >
           <span aria-hidden="true"></span>
           <span aria-hidden="true"></span>
@@ -45,11 +50,13 @@
           <a href="#beneficios" class="lp-header__link">Benefícios</a>
           <a href="#sobre" class="lp-header__link">ABC da Construção</a>
           <a href="#duvidas" class="lp-header__link">Dúvidas</a>
+          <a href="#cadastro" class="lp-header__link lp-header__link--cta-mobile">Cadastre-se</a>
         </nav>
 
-        <a href="#modal" class="lp-header__cta" id="openModalButtonHeader">Cadastre-se</a>
+        <a href="#cadastro" class="lp-header__cta" id="openModalButtonHeader">Cadastre-se</a>
       </div>
     </header>
+    <!-- FIM Header -->
 
     <main>
       <!-- hero -->
@@ -119,6 +126,51 @@
         </div>
       </section>
 
+      <!-- Seção 1: Emoção da comemoração -->
+      <section id="emocao-comemoracao" class="section section-emocao">
+        <div class="container">
+          <div class="section-emocao__grid">
+            <div class="section-emocao__content">
+              <span class="section-emocao__kicker">A emoção do Galo em destaque</span>
+
+              <h2 class="section-title section-emocao__title">
+                A comemoração que faz a torcida sentir de verdade
+              </h2>
+
+              <p class="section-text section-emocao__text">
+                Quando o Galo celebra, a emoção vai além do campo. Essa parceria foi criada para transformar esse sentimento em uma experiência mais próxima, mais intensa e mais marcante para torcedores e clientes.
+              </p>
+
+              <div class="section-emocao__bullets">
+                <div class="section-emocao__bullet">
+                  <h3>Paixão</h3>
+                  <p>Uma imagem que traduz a força da torcida e a energia da celebração.</p>
+                </div>
+
+                <div class="section-emocao__bullet">
+                  <h3>Pertencimento</h3>
+                  <p>Um convite para viver a campanha como parte da história do clube.</p>
+                </div>
+
+                <div class="section-emocao__bullet">
+                  <h3>Impacto</h3>
+                  <p>Um início de jornada que prende a atenção e prepara o usuário para continuar.</p>
+                </div>
+              </div>
+            </div>
+
+            <figure class="section-emocao__media">
+              <img
+                src="./assets/CAM - comemoracao.png"
+                alt="Jogadores do Atlético Mineiro comemorando em campo"
+                class="section-emocao__image"
+              />
+            </figure>
+          </div>
+        </div>
+      </section>
+      <!-- FIM Seção 1 -->
+
       <!-- beneficios -->
       <section id="beneficios" class="section">
         <div class="highlight">
@@ -138,6 +190,55 @@
           </figure>
         </div>
       </section> 
+
+      <!-- Seção 2: Celebração com jogadores -->
+      <section id="celebracao-jogadores" class="section section-celebracao">
+        <div class="container">
+          <div class="section-celebracao__grid">
+            <figure class="section-celebracao__media">
+              <img
+                src="./assets/CAM - comemoracao jogadores.png"
+                alt="Jogadores do Atlético Mineiro comemorando juntos"
+                class="section-celebracao__image"
+              />
+            </figure>
+
+            <div class="section-celebracao__content">
+              <span class="section-celebracao__kicker">Pertencimento que contagia</span>
+
+              <h2 class="section-title section-celebracao__title">
+                Quando o time vibra junto, a torcida sente ainda mais forte
+              </h2>
+
+              <p class="section-text section-celebracao__text">
+                Essa é a energia que conecta o Galo, a torcida e a parceria com a ABC da Construção. Uma celebração coletiva que traduz união, confiança e a força de estar lado a lado em cada conquista.
+              </p>
+
+              <div class="section-celebracao__cards">
+                <article class="section-celebracao__card">
+                  <h3>União</h3>
+                  <p>O grupo celebra como um só, reforçando o sentimento de família atleticana.</p>
+                </article>
+
+                <article class="section-celebracao__card">
+                  <h3>Intensidade</h3>
+                  <p>Uma imagem vibrante para transmitir energia, movimento e emoção real.</p>
+                </article>
+
+                <article class="section-celebracao__card">
+                  <h3>Conexão</h3>
+                  <p>Torcida e clube compartilham a mesma vibração, fortalecendo a campanha.</p>
+                </article>
+              </div>
+
+              <a href="#beneficios" class="section-celebracao__cta">
+                Ver os benefícios
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- FIM Seção 2 -->
 
       <!-- sobre -->
       <section id="sobre" class="section" aria-labelledby="about-title">
@@ -192,6 +293,342 @@
         </div>
       </section>
 
+      <!-- Seção 3: A parceria em movimento -->
+      <section id="parceria-movimento" class="section section-parceria">
+        <div class="container">
+          <div class="section-parceria__grid">
+            <div class="section-parceria__content">
+              <span class="section-parceria__kicker">Presença que chega longe</span>
+
+              <h2 class="section-title section-parceria__title">
+                A parceria em movimento, levando força para todo lugar
+              </h2>
+
+              <p class="section-text section-parceria__text">
+                A ABC da Construção está onde a obra acontece. Com estrutura, capilaridade
+                e logística inteligente, a marca reforça sua presença no dia a dia de quem
+                busca qualidade, atendimento e entrega de verdade.
+              </p>
+
+              <div class="section-parceria__stats">
+                <article class="section-parceria__stat">
+                  <h3>Estrutura</h3>
+                  <p>Uma operação sólida para atender com agilidade e confiança.</p>
+                </article>
+
+                <article class="section-parceria__stat">
+                  <h3>Força</h3>
+                  <p>Uma marca grande, com presença consistente e reconhecimento nacional.</p>
+                </article>
+
+                <article class="section-parceria__stat">
+                  <h3>Presença</h3>
+                  <p>Mais perto do cliente, da loja ao canteiro, com experiência completa.</p>
+                </article>
+              </div>
+
+              <a href="#beneficios" class="section-parceria__cta">Conhecer os benefícios</a>
+            </div>
+
+            <figure class="section-parceria__media">
+              <img
+                src="./assets/abc-construcao-caminhoes.png"
+                alt="Caminhões da ABC da Construção em operação"
+                class="section-parceria__image"
+              />
+            </figure>
+          </div>
+        </div>
+      </section>
+      <!-- FIM Seção 3 -->
+
+      <!-- Seção 4: Novidades e vantagens -->
+      <section id="novidades-vantagens" class="section section-novidades">
+        <div class="container">
+          <div class="section-novidades__grid">
+            <div class="section-novidades__content">
+              <span class="section-novidades__kicker">Ofertas que chamam atenção</span>
+
+              <h2 class="section-title section-novidades__title">
+                Novidades e vantagens para quem quer mais da ABC
+              </h2>
+
+              <p class="section-text section-novidades__text">
+                A campanha traz oportunidades especiais para quem acompanha, se cadastra e quer aproveitar o melhor da ABC da Construção com benefícios pensados para o seu momento.
+              </p>
+
+              <div class="section-novidades__highlights">
+                <article class="section-novidades__card">
+                  <h3>Benefícios exclusivos</h3>
+                  <p>Condições especiais pensadas para quem faz parte da ativação.</p>
+                </article>
+
+                <article class="section-novidades__card">
+                  <h3>Mais desejo</h3>
+                  <p>Uma vitrine visual forte para despertar interesse e gerar ação.</p>
+                </article>
+
+                <article class="section-novidades__card">
+                  <h3>Mais valor</h3>
+                  <p>Produtos, ofertas e vantagens alinhados com a experiência da campanha.</p>
+                </article>
+              </div>
+
+              <ul class="section-novidades__list" aria-label="Destaques da campanha">
+                <li>Ofertas selecionadas para quem ama construir.</li>
+                <li>Condições diferenciadas em produtos e acabamentos.</li>
+                <li>Conteúdo especial para aproximar a marca do torcedor.</li>
+              </ul>
+
+              <a href="#cadastro" class="section-novidades__cta">Quero aproveitar</a>
+            </div>
+
+            <figure class="section-novidades__media">
+              <img
+                src="./assets/abc-encarte-novidades.jpg"
+                alt="Encartes e novidades da ABC da Construção"
+                class="section-novidades__image"
+              />
+            </figure>
+          </div>
+        </div>
+      </section>
+      <!-- FIM Seção 4 -->
+
+      <!-- Seção 5: O estádio e a experiência -->
+      <section id="estadio-experiencia" class="section section-estadio">
+        <div class="container">
+          <div class="section-estadio__grid">
+            <div class="section-estadio__content">
+              <span class="section-estadio__kicker">Grandeza que se sente</span>
+
+              <h2 class="section-title section-estadio__title">
+                O estádio é palco, a experiência é o que fica
+              </h2>
+
+              <p class="section-text section-estadio__text">
+                Quando a campanha ocupa esse espaço, ela não fala só de futebol. Fala de
+                dimensão, presença e da força de uma marca que participa dos momentos que
+                realmente importam para a torcida.
+              </p>
+
+              <div class="section-estadio__cards">
+                <article class="section-estadio__card">
+                  <h3>Escala</h3>
+                  <p>Uma cena ampla para transmitir a dimensão da parceria.</p>
+                </article>
+
+                <article class="section-estadio__card">
+                  <h3>Vivência</h3>
+                  <p>O jogo deixa de ser apenas jogo e vira experiência compartilhada.</p>
+                </article>
+
+                <article class="section-estadio__card">
+                  <h3>Memória</h3>
+                  <p>O ambiente ajuda a criar lembrança afetiva e valor de marca.</p>
+                </article>
+              </div>
+            </div>
+
+            <figure class="section-estadio__media">
+              <img
+                src="./assets/CAM - estadio.png"
+                alt="Estádio do Atlético Mineiro em clima de grandeza e torcida"
+                class="section-estadio__image"
+              />
+            </figure>
+          </div>
+        </div>
+      </section>
+      <!-- FIM Seção 5 -->
+<!-- Seção 6: O lance e a paixão -->
+<section id="lance-paixao" class="section section-lance">
+  <div class="container">
+    <div class="section-lance__grid">
+      <figure class="section-lance__media">
+        <img
+          src="./assets/CAM - jogador lance.png"
+          alt="Jogador do Atlético Mineiro em lance de jogo"
+          class="section-lance__image"
+        />
+      </figure>
+
+      <div class="section-lance__content">
+        <span class="section-lance__kicker">Movimento e intensidade</span>
+
+        <h2 class="section-title section-lance__title">
+          O lance acontece rápido, a paixão fica para sempre
+        </h2>
+
+        <p class="section-text section-lance__text">
+          É nessa fração de segundo que a emoção explode. A campanha usa esse clima
+          para traduzir energia, velocidade e entrega — tudo que conecta futebol,
+          torcida e construção de marca.
+        </p>
+
+        <div class="section-lance__cards">
+          <article class="section-lance__card">
+            <h3>Ação</h3>
+            <p>Uma imagem viva para mostrar potência e dinamismo.</p>
+          </article>
+
+          <article class="section-lance__card">
+            <h3>Foco</h3>
+            <p>O olhar vai direto para o momento decisivo da jogada.</p>
+          </article>
+
+          <article class="section-lance__card">
+            <h3>Emoção</h3>
+            <p>O impacto visual reforça a entrega da parceria.</p>
+          </article>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- FIM Seção 6 -->
+
+<!-- Seção 7: Torcida e pertencimento -->
+<section id="torcida-pertencimento" class="section section-torcida">
+  <div class="container">
+    <div class="section-torcida__grid">
+      <div class="section-torcida__content">
+        <span class="section-torcida__kicker">A força de uma nação</span>
+
+        <h2 class="section-title section-torcida__title">
+          Quando a torcida ocupa as arquibancadas, o sentimento vira coletivo
+        </h2>
+
+        <p class="section-text section-torcida__text">
+          Aqui a campanha encontra seu lado mais humano e mais forte. A imagem da
+          torcida reforça que essa experiência não é individual: ela é compartilhada,
+          celebrada e lembrada por muita gente ao mesmo tempo.
+        </p>
+
+        <div class="section-torcida__cards">
+          <article class="section-torcida__card">
+            <h3>Prova social</h3>
+            <p>Mostra que a energia da campanha é aceita, vivida e sentida pelo público.</p>
+          </article>
+
+          <article class="section-torcida__card">
+            <h3>Comunidade</h3>
+            <p>Cria um senso de grupo que fortalece a identificação com o clube.</p>
+          </article>
+
+          <article class="section-torcida__card">
+            <h3>Vibração</h3>
+            <p>Converte o entusiasmo da arquibancada em valor para a marca.</p>
+          </article>
+        </div>
+      </div>
+
+      <figure class="section-torcida__media">
+        <img
+          src="./assets/CAM - torcida estadio.jpg"
+          alt="Torcida do Atlético Mineiro no estádio"
+          class="section-torcida__image"
+        />
+      </figure>
+    </div>
+  </div>
+</section>
+<!-- FIM Seção 7 -->
+
+<!-- Seção 8: Viver junto com amigos -->
+<section id="amigos-campanha" class="section section-amigos">
+  <div class="container">
+    <div class="section-amigos__grid">
+      <figure class="section-amigos__media">
+        <img
+          src="./assets/CAM - vc3amigos.png"
+          alt="Três amigos vivendo o momento da campanha juntos"
+          class="section-amigos__image"
+        />
+      </figure>
+
+      <div class="section-amigos__content">
+        <span class="section-amigos__kicker">A campanha também é sobre pessoas</span>
+
+        <h2 class="section-title section-amigos__title">
+          Viver isso junto com amigos deixa tudo ainda melhor
+        </h2>
+
+        <p class="section-text section-amigos__text">
+          Essa imagem aproxima a campanha do dia a dia. Ela mostra que a experiência
+          não é só sobre clube ou produto, mas sobre os momentos compartilhados que
+          tornam a relação com a marca mais leve, real e memorável.
+        </p>
+
+        <div class="section-amigos__cards">
+          <article class="section-amigos__card">
+            <h3>Proximidade</h3>
+            <p>Uma cena que conversa com a vida real e com a linguagem do público.</p>
+          </article>
+
+          <article class="section-amigos__card">
+            <h3>Naturalidade</h3>
+            <p>Menos institucional, mais humana, mais fácil de se identificar.</p>
+          </article>
+
+          <article class="section-amigos__card">
+            <h3>Memória</h3>
+            <p>Momentos simples e verdadeiros têm mais chance de ficar na lembrança.</p>
+          </article>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- FIM Seção 8 -->
+
+<!-- Seção 9: Patrocínio e credibilidade -->
+<section id="patrocinio-credibilidade" class="section section-patrocinio">
+  <div class="container">
+    <div class="section-patrocinio__grid">
+      <div class="section-patrocinio__content">
+        <span class="section-patrocinio__kicker">Reforço institucional</span>
+
+        <h2 class="section-title section-patrocinio__title">
+          Patrocínio que gera credibilidade e sustenta a campanha
+        </h2>
+
+        <p class="section-text section-patrocinio__text">
+          O patrocínio não aparece só como assinatura. Ele reforça a seriedade da
+          parceria, mostra força de marca e ajuda o público a enxergar consistência
+          no projeto como um todo.
+        </p>
+
+        <div class="section-patrocinio__cards">
+          <article class="section-patrocinio__card">
+            <h3>Confiança</h3>
+            <p>Uma base institucional que aumenta a segurança da mensagem.</p>
+          </article>
+
+          <article class="section-patrocinio__card">
+            <h3>Autoridade</h3>
+            <p>A presença da marca legitima a campanha e amplia sua força.</p>
+          </article>
+
+          <article class="section-patrocinio__card">
+            <h3>Consistência</h3>
+            <p>Tudo conversa entre si: emoção, valor e posicionamento de marca.</p>
+          </article>
+        </div>
+      </div>
+
+      <figure class="section-patrocinio__media">
+        <img
+          src="./assets/CAM - patrocinador.png"
+          alt="Imagem de patrocínio do Atlético Mineiro com a ABC da Construção"
+          class="section-patrocinio__image"
+        />
+      </figure>
+    </div>
+  </div>
+</section>
+<!-- FIM Seção 9 -->
+ 
       <!-- duvidas -->
       <section id="duvidas" class="section" aria-labelledby="faq-title">
           <h2 class="section-title" id="faq-title">Dúvidas Frequentes</h2>
