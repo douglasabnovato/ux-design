@@ -2,6 +2,7 @@
 const header = document.querySelector(".lp-header");
 const menuToggle = document.getElementById("menuToggle");
 const mainNavigation = document.getElementById("main-navigation");
+const body = document.body;
 
 function openMenu() {
   if (!mainNavigation || !menuToggle) return;
@@ -9,12 +10,10 @@ function openMenu() {
   mainNavigation.classList.add("is-open");
   menuToggle.classList.add("is-open");
   menuToggle.setAttribute("aria-expanded", "true");
-  document.body.classList.add("menu-open");
+  body.classList.add("menu-open");
 
   const firstLink = mainNavigation.querySelector("a");
-  if (firstLink) {
-    firstLink.focus({ preventScroll: true });
-  }
+  if (firstLink) firstLink.focus({ preventScroll: true });
 }
 
 function closeMenu() {
@@ -23,7 +22,7 @@ function closeMenu() {
   mainNavigation.classList.remove("is-open");
   menuToggle.classList.remove("is-open");
   menuToggle.setAttribute("aria-expanded", "false");
-  document.body.classList.remove("menu-open");
+  body.classList.remove("menu-open");
 }
 
 function toggleMenu() {
@@ -34,7 +33,10 @@ function toggleMenu() {
 }
 
 if (menuToggle && mainNavigation) {
-  menuToggle.addEventListener("click", toggleMenu);
+  menuToggle.addEventListener("click", (event) => {
+    event.stopPropagation();
+    toggleMenu();
+  });
 
   mainNavigation.querySelectorAll("a").forEach((link) => {
     link.addEventListener("click", closeMenu);
@@ -45,9 +47,7 @@ if (menuToggle && mainNavigation) {
       !mainNavigation.contains(event.target) &&
       !menuToggle.contains(event.target);
 
-    if (clickedOutside) {
-      closeMenu();
-    }
+    if (clickedOutside) closeMenu();
   });
 
   document.addEventListener("keydown", (event) => {
@@ -60,16 +60,9 @@ if (menuToggle && mainNavigation) {
 
 if (header) {
   window.addEventListener("scroll", () => {
-    if (window.scrollY > 12) {
-      header.classList.add("is-scrolled");
-    } else {
-      header.classList.remove("is-scrolled");
-    }
+    header.classList.toggle("is-scrolled", window.scrollY > 12);
   });
 }
-/* ================================
-   FIM Header / Menu mobile
-================================ */
 
 /* ================================
    Botões de cadastro
@@ -78,10 +71,12 @@ const heroButton = document.getElementById("heroButton");
 const openModalButtonHeader = document.getElementById("openModalButtonHeader");
 const cadastroSection = document.getElementById("cadastro");
 
-function scrollToCadastro() {
-  if (cadastroSection) {
-    cadastroSection.scrollIntoView({ behavior: "smooth", block: "start" });
-  }
+function scrollToCadastro(event) {
+  if (event) event.preventDefault();
+  if (!cadastroSection) return;
+
+  closeMenu();
+  cadastroSection.scrollIntoView({ behavior: "smooth", block: "start" });
 }
 
 if (heroButton) {
@@ -89,43 +84,28 @@ if (heroButton) {
 }
 
 if (openModalButtonHeader) {
-  openModalButtonHeader.addEventListener("click", (event) => {
-    event.preventDefault();
-    scrollToCadastro();
-  });
+  openModalButtonHeader.addEventListener("click", scrollToCadastro);
 }
-/* ================================
-   FIM Botões de cadastro
-================================ */
 
 /* ================================
    Scroll suave para âncoras
 ================================ */
 document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-  anchor.addEventListener("click", function (event) {
-    const targetId = this.getAttribute("href");
+  anchor.addEventListener("click", (event) => {
+    const targetId = anchor.getAttribute("href");
     if (!targetId || targetId === "#") return;
 
     const target = document.querySelector(targetId);
     if (!target) return;
 
     event.preventDefault();
+    closeMenu();
     target.scrollIntoView({ behavior: "smooth", block: "start" });
-
-    if (mainNavigation && mainNavigation.classList.contains("is-open")) {
-      closeMenu();
-    }
   });
 });
-/* ================================
-   FIM Scroll suave para âncoras
-================================ */
 
 /* ================================
    Formulário multi-etapas
-================================ */
-/* ================================
-   Elementos do formulário
 ================================ */
 const landingForm = document.getElementById("landingForm");
 const formSteps = Array.from(document.querySelectorAll(".form-step"));
@@ -150,9 +130,6 @@ const stepMeta = [
   { label: "Etapa 3 de 3", title: "CRF e diversão" },
 ];
 
-/* ================================
-   Funções auxiliares
-================================ */
 function getFieldErrorId(fieldId) {
   return `error${fieldId.charAt(0).toUpperCase()}${fieldId.slice(1)}`;
 }
@@ -197,8 +174,9 @@ function clearStepErrors(stepEl) {
 
 function showStep(stepIndex) {
   formSteps.forEach((step, index) => {
-    step.classList.toggle("is-active", index === stepIndex);
-    step.hidden = index !== stepIndex;
+    const isActive = index === stepIndex;
+    step.classList.toggle("is-active", isActive);
+    step.hidden = !isActive;
   });
 
   if (prevStepBtn) {
@@ -224,6 +202,8 @@ function showStep(stepIndex) {
 
 function validateStep(stepIndex) {
   const step = formSteps[stepIndex];
+  if (!step) return false;
+
   clearStepErrors(step);
 
   let isValid = true;
@@ -238,8 +218,6 @@ function validateStep(stepIndex) {
       isValid = false;
       field.setAttribute("aria-invalid", "true");
       if (errorEl) errorEl.textContent = "Campo obrigatório.";
-    } else if (errorEl) {
-      errorEl.textContent = "";
     }
   });
 
@@ -284,9 +262,7 @@ function showSuccessCard() {
 }
 
 function hideSuccessCard() {
-  if (signupResponse) {
-    signupResponse.hidden = true;
-  }
+  if (signupResponse) signupResponse.hidden = true;
 }
 
 function resetWizard() {
@@ -296,15 +272,14 @@ function resetWizard() {
   currentStep = 0;
   hideSuccessCard();
   showStep(currentStep);
+
   landingForm.querySelectorAll("input, select, textarea").forEach((field) => {
     field.removeAttribute("aria-invalid");
   });
+
   clearStepErrors(formSteps[0]);
 }
 
-/* ================================
-   Inicialização
-================================ */
 if (landingForm && formSteps.length) {
   formSteps.forEach((step, index) => {
     step.hidden = index !== 0;
@@ -313,9 +288,6 @@ if (landingForm && formSteps.length) {
   showStep(currentStep);
 }
 
-/* ================================
-   Navegação entre etapas
-================================ */
 if (nextStepBtn) {
   nextStepBtn.addEventListener("click", () => {
     if (!validateStep(currentStep)) return;
@@ -337,9 +309,6 @@ if (prevStepBtn) {
   });
 }
 
-/* ================================
-   Envio do formulário
-================================ */
 if (landingForm) {
   landingForm.addEventListener("submit", (event) => {
     event.preventDefault();
@@ -351,9 +320,6 @@ if (landingForm) {
   });
 }
 
-/* ================================
-   Reset do formulário
-================================ */
 if (resetFormBtn) {
   resetFormBtn.addEventListener("click", () => {
     resetWizard();
@@ -361,9 +327,6 @@ if (resetFormBtn) {
   });
 }
 
-/* ================================
-   Atualização dinâmica de erros
-================================ */
 landingForm?.querySelectorAll("input, select, textarea").forEach((field) => {
   field.addEventListener("input", () => {
     const errorEl = document.getElementById(getFieldErrorId(field.id));
@@ -377,32 +340,3 @@ landingForm?.querySelectorAll("input, select, textarea").forEach((field) => {
     field.removeAttribute("aria-invalid");
   });
 });
-
-/* ================================
-   Acessibilidade do accordion de progresso
-================================ */
-window.addEventListener("keydown", (event) => {
-  if (event.key === "Enter" && document.activeElement === nextStepBtn) {
-    nextStepBtn.click();
-  }
-});
-/* ================================
-   FIM Formulário multi-etapas
-================================ */
-
-/* ================================
-   Ajuste visual do header ao rolar
-================================ */
-
-if (header) {
-  window.addEventListener("scroll", () => {
-    if (window.scrollY > 12) {
-      header.classList.add("is-scrolled");
-    } else {
-      header.classList.remove("is-scrolled");
-    }
-  });
-}
-/* ================================
-   FIM Ajuste visual do header ao rolar
-================================ */
