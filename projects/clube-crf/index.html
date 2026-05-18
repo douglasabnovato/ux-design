@@ -10,49 +10,51 @@
     <meta name="theme-color" content="#9b111e" />
     <meta name="author" content="douglasabnovato" />
     <title>CRF | ABC da Construção</title>
-    <link rel="icon" href="./assets/favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" sizes="180x180" href="./public/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./public/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./public/favicon-16x16.png">
+    <link rel="manifest" href="./public/site.webmanifest">
     <link rel="stylesheet" href="./style.css" />
   </head>
-  <body>
+  <body> 
     <!-- Header -->
-    <header class="lp-header" id="topo">
-      <div class="lp-header__inner">
+    <header class="lp-header" id="topo" role="banner">
+    <div class="lp-header__inner">
         <a href="#topo" class="lp-header__brand" aria-label="Ir para o topo da página">
-          <span class="lp-header__brand-frame">
+        <span class="lp-header__brand-frame">
             <img
-              src="./assets/abc-logo-branca-cinza.jpg"
-              alt="ABC da Construção"
-              class="lp-header__logo"
+            src="./assets/abc-logo-branca-cinza.jpg"
+            alt="ABC da Construção"
+            class="lp-header__logo"
             />
-          </span>
+        </span>
         </a>
 
         <button
-          class="lp-header__menu-btn"
-          type="button"
-          aria-label="Abrir menu"
-          aria-controls="main-navigation"
-          aria-expanded="false"
-          id="menuToggle"
+        class="lp-header__menu-btn"
+        type="button"
+        aria-label="Abrir menu de navegação"
+        aria-controls="main-navigation"
+        aria-expanded="false"
+        id="menuToggle"
         >
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
         </button>
 
         <nav class="lp-header__nav" id="main-navigation" aria-label="Navegação principal">
-          <a href="#home" class="lp-header__link">Home</a>
-          <a href="#campanha" class="lp-header__link">Campanha</a>
-          <a href="#beneficios" class="lp-header__link">Benefícios</a>
-          <a href="#sobre" class="lp-header__link">ABC da Construção</a>
-          <a href="#duvidas" class="lp-header__link">Dúvidas</a>
-          <a href="#cadastro" class="lp-header__link lp-header__link--cta-mobile">Cadastre-se</a>
+            <a href="#home" class="lp-header__link">Home</a>
+            <a href="#campanha" class="lp-header__link">Campanha</a>
+            <a href="#beneficios" class="lp-header__link">Benefícios</a>
+            <a href="#sobre" class="lp-header__link">ABC da Construção</a>
+            <a href="#duvidas" class="lp-header__link">Dúvidas</a>
         </nav>
 
         <a href="#cadastro" class="lp-header__cta" id="openModalButtonHeader">Cadastre-se</a>
-      </div>
-    </header>
-    <!-- FIM Header -->
+    </div>
+    </header> 
+    <!-- FIM Header --> 
 
     <main>
       <!-- hero -->
@@ -502,7 +504,7 @@
 
             <figure class="section-patrocinio__media">
               <img
-                src="./assets/abc-construcao-caminhoes.png"
+                src="./assets/abc-e-crf.png"
                 alt="Imagem de patrocínio do Flamengo com a ABC da Construção"
                 class="section-patrocinio__image"
               />
@@ -968,37 +970,68 @@
     </div>
     </section>
     <!-- FIM Formulário --> 
-
+ 
     <!-- footer -->
     <footer class="footer" id="footer" role="contentinfo">
-      <div class="footer-container">
+    <div class="footer-container">
         <div class="footer-top">
-          <div class="footer-item">
-            <h4>ABC da Construção</h4>
-            <p>
-              Conectando obras e torcedores com uma experiência completa em
-              acabamentos, reformas e design.
-            </p>
-          </div>
+        <div class="footer-brand">
+            <a href="#home" class="footer-logo" aria-label="Voltar para o início">
+            <img src="./assets/abc-logo-branca-cinza.jpg" alt="ABC da Construção" />
+            </a>
 
-          <div class="footer-item">
+            <p class="footer-description">
+            Conectando torcedores e clientes com uma experiência completa em acabamentos,
+            reformas e design, em uma parceria que carrega a força do Flamengo e da ABC da Construção.
+            </p>
+
+            <div class="footer-badges" aria-label="Destaques da marca">
+            <span>Paixão</span>
+            <span>Confiança</span>
+            <span>Construção</span>
+            </div>
+        </div>
+
+        <div class="footer-column">
             <h4>Links úteis</h4>
             <nav class="footer-links" aria-label="Links do rodapé">
-              <a href="#home">Home</a>
-              <a href="#campanha">Campanha</a>
-              <a href="#beneficios">Benefícios</a>
-              <a href="#sobre">Sobre</a>
-              <a href="#duvidas">Dúvidas</a>
+            <a href="#home">Home</a>
+            <a href="#campanha">Campanha</a>
+            <a href="#beneficios">Benefícios</a>
+            <a href="#sobre">Sobre</a>
+            <a href="#duvidas">Dúvidas</a> 
             </nav>
-          </div>
+        </div>
+
+        <div class="footer-column">
+            <h4>Fale com a ABC</h4>
+            <div class="footer-contact">
+            <a href="mailto:contato@abcdaconstrucao.com.br">contato@abcdaconstrucao.com.br</a>
+            <a href="tel:+5500000000000">(00) 0000-0000</a>
+            <p>Atendimento de segunda a sexta, em horário comercial.</p>
+            </div>
+        </div>
+
+        <div class="footer-column footer-column--cta">
+            <h4>Pronto para começar?</h4>
+            <p>
+            Faça seu cadastro e viva a experiência da campanha com a energia rubro-negra.
+            </p>
+            <a href="#cadastro" class="footer-cta">Quero me cadastrar</a>
+        </div>
         </div>
 
         <div class="footer-bottom">
-          © 2026 ABC da Construção. Todos os direitos reservados.
+        <p>© 2026 ABC da Construção. Todos os direitos reservados.</p>
+
+        <div class="footer-legal">
+            <a href="#duvidas">Política de privacidade</a>
+            <a href="#duvidas">Termos de uso</a>
         </div>
-      </div>
+        </div>
+    </div>
     </footer>
-    <!-- FIM footer -->
+    <!-- FIM footer --> 
 
     <script src="./script.js"></script>
   </body>

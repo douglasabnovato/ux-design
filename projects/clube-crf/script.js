@@ -1,29 +1,43 @@
-/* ================================
-   Menu mobile
-================================ */
+/* Header / Menu mobile */
+const header = document.querySelector(".lp-header");
 const menuToggle = document.getElementById("menuToggle");
 const mainNavigation = document.getElementById("main-navigation");
 
-function closeMenu() {
-  mainNavigation.classList.remove("is-open");
-  menuToggle.setAttribute("aria-expanded", "false");
+function openMenu() {
+  if (!mainNavigation || !menuToggle) return;
+
+  mainNavigation.classList.add("is-open");
+  menuToggle.classList.add("is-open");
+  menuToggle.setAttribute("aria-expanded", "true");
+  document.body.classList.add("menu-open");
+
+  const firstLink = mainNavigation.querySelector("a");
+  if (firstLink) {
+    firstLink.focus({ preventScroll: true });
+  }
 }
 
-function openMenu() {
-  mainNavigation.classList.add("is-open");
-  menuToggle.setAttribute("aria-expanded", "true");
+function closeMenu() {
+  if (!mainNavigation || !menuToggle) return;
+
+  mainNavigation.classList.remove("is-open");
+  menuToggle.classList.remove("is-open");
+  menuToggle.setAttribute("aria-expanded", "false");
+  document.body.classList.remove("menu-open");
+}
+
+function toggleMenu() {
+  if (!mainNavigation || !menuToggle) return;
+
+  const isOpen = mainNavigation.classList.contains("is-open");
+  isOpen ? closeMenu() : openMenu();
 }
 
 if (menuToggle && mainNavigation) {
-  menuToggle.addEventListener("click", () => {
-    const isOpen = mainNavigation.classList.contains("is-open");
-    isOpen ? closeMenu() : openMenu();
-  });
+  menuToggle.addEventListener("click", toggleMenu);
 
   mainNavigation.querySelectorAll("a").forEach((link) => {
-    link.addEventListener("click", () => {
-      closeMenu();
-    });
+    link.addEventListener("click", closeMenu);
   });
 
   document.addEventListener("click", (event) => {
@@ -39,11 +53,22 @@ if (menuToggle && mainNavigation) {
   document.addEventListener("keydown", (event) => {
     if (event.key === "Escape") {
       closeMenu();
+      menuToggle.focus();
+    }
+  });
+}
+
+if (header) {
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 12) {
+      header.classList.add("is-scrolled");
+    } else {
+      header.classList.remove("is-scrolled");
     }
   });
 }
 /* ================================
-   FIM Menu mobile
+   FIM Header / Menu mobile
 ================================ */
 
 /* ================================
@@ -99,17 +124,81 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
 /* ================================
    Formulário multi-etapas
 ================================ */
+/* ================================
+   Elementos do formulário
+================================ */
 const landingForm = document.getElementById("landingForm");
-const formSteps = document.querySelectorAll(".form-step");
+const formSteps = Array.from(document.querySelectorAll(".form-step"));
 const nextStepBtn = document.getElementById("nextStep");
 const prevStepBtn = document.getElementById("prevStep");
 const submitFormBtn = document.getElementById("submitForm");
+const signupResponse = document.getElementById("signupResponse");
+const resetFormBtn = document.getElementById("resetForm");
+const stepLabel = document.getElementById("stepLabel");
+const stepTitle = document.getElementById("stepTitle");
+const progressFill = document.getElementById("progressFill");
+const progressBar = document.querySelector(".signup-progress__bar");
+const progressSteps = Array.from(
+  document.querySelectorAll(".signup-progress__steps li"),
+);
 
 let currentStep = 0;
+
+const stepMeta = [
+  { label: "Etapa 1 de 3", title: "Informações do cliente" },
+  { label: "Etapa 2 de 3", title: "Loja ABC e produtos" },
+  { label: "Etapa 3 de 3", title: "CRF e diversão" },
+];
+
+/* ================================
+   Funções auxiliares
+================================ */
+function getFieldErrorId(fieldId) {
+  return `error${fieldId.charAt(0).toUpperCase()}${fieldId.slice(1)}`;
+}
+
+function setFocusToStep(stepIndex) {
+  const heading = formSteps[stepIndex]?.querySelector("h3");
+  if (heading) {
+    heading.setAttribute("tabindex", "-1");
+    heading.focus({ preventScroll: true });
+  }
+}
+
+function updateProgress(stepIndex) {
+  const percent = ((stepIndex + 1) / formSteps.length) * 100;
+
+  if (stepLabel) stepLabel.textContent = stepMeta[stepIndex].label;
+  if (stepTitle) stepTitle.textContent = stepMeta[stepIndex].title;
+  if (progressFill) progressFill.style.width = `${percent}%`;
+
+  if (progressBar) {
+    progressBar.setAttribute("aria-valuenow", String(stepIndex + 1));
+    progressBar.setAttribute(
+      "aria-valuetext",
+      `${stepMeta[stepIndex].label} - ${stepMeta[stepIndex].title}`,
+    );
+  }
+
+  progressSteps.forEach((item, index) => {
+    item.classList.toggle("is-active", index === stepIndex);
+  });
+}
+
+function clearStepErrors(stepEl) {
+  stepEl.querySelectorAll(".error").forEach((errorEl) => {
+    errorEl.textContent = "";
+  });
+
+  stepEl.querySelectorAll("input, select, textarea").forEach((field) => {
+    field.removeAttribute("aria-invalid");
+  });
+}
 
 function showStep(stepIndex) {
   formSteps.forEach((step, index) => {
     step.classList.toggle("is-active", index === stepIndex);
+    step.hidden = index !== stepIndex;
   });
 
   if (prevStepBtn) {
@@ -128,92 +217,175 @@ function showStep(stepIndex) {
       stepIndex !== formSteps.length - 1,
     );
   }
+
+  updateProgress(stepIndex);
+  setFocusToStep(stepIndex);
 }
 
-function clearErrors(stepEl) {
-  stepEl.querySelectorAll(".error").forEach((errorEl) => {
-    errorEl.textContent = "";
-  });
-}
+function validateStep(stepIndex) {
+  const step = formSteps[stepIndex];
+  clearStepErrors(step);
 
-function validateCurrentStep() {
-  const step = formSteps[currentStep];
-  clearErrors(step);
   let isValid = true;
+  const fields = step.querySelectorAll("input, select, textarea");
 
-  const inputs = step.querySelectorAll("input, select, textarea");
+  fields.forEach((field) => {
+    const value =
+      field.type === "checkbox" ? field.checked : field.value.trim();
+    const errorEl = document.getElementById(getFieldErrorId(field.id));
 
-  inputs.forEach((input) => {
-    if (!input.value.trim()) {
+    if (!value) {
       isValid = false;
-      const errorBox = step.querySelector(
-        `#error${input.id.charAt(0).toUpperCase()}${input.id.slice(1)}`,
-      );
-      if (errorBox) {
-        errorBox.textContent = "Campo obrigatório.";
-      }
-      input.setAttribute("aria-invalid", "true");
-    } else {
-      input.removeAttribute("aria-invalid");
+      field.setAttribute("aria-invalid", "true");
+      if (errorEl) errorEl.textContent = "Campo obrigatório.";
+    } else if (errorEl) {
+      errorEl.textContent = "";
     }
   });
 
   return isValid;
 }
 
-if (landingForm && formSteps.length) {
+function getSummaryValue(id, fallback = "-") {
+  const el = document.getElementById(id);
+  if (!el) return fallback;
+
+  if (el.tagName === "SELECT") {
+    const option = el.options[el.selectedIndex];
+    return option && option.value ? option.textContent : fallback;
+  }
+
+  if (el.type === "checkbox") {
+    return el.checked ? "Sim" : fallback;
+  }
+
+  return el.value.trim() || fallback;
+}
+
+function showSuccessCard() {
+  if (!signupResponse) return;
+
+  const nome = document.getElementById("nome")?.value.trim() || "-";
+  const sobrenome = document.getElementById("sobrenome")?.value.trim() || "-";
+  const loja = getSummaryValue("loja");
+  const time = getSummaryValue("time");
+
+  const summaryCliente = document.getElementById("summaryCliente");
+  const summaryLoja = document.getElementById("summaryLoja");
+  const summaryTime = document.getElementById("summaryTime");
+
+  if (summaryCliente)
+    summaryCliente.textContent = `${nome} ${sobrenome}`.trim();
+  if (summaryLoja) summaryLoja.textContent = loja;
+  if (summaryTime) summaryTime.textContent = time;
+
+  signupResponse.hidden = false;
+  signupResponse.scrollIntoView({ behavior: "smooth", block: "center" });
+}
+
+function hideSuccessCard() {
+  if (signupResponse) {
+    signupResponse.hidden = true;
+  }
+}
+
+function resetWizard() {
+  if (!landingForm) return;
+
+  landingForm.reset();
+  currentStep = 0;
+  hideSuccessCard();
   showStep(currentStep);
+  landingForm.querySelectorAll("input, select, textarea").forEach((field) => {
+    field.removeAttribute("aria-invalid");
+  });
+  clearStepErrors(formSteps[0]);
+}
 
-  if (nextStepBtn) {
-    nextStepBtn.addEventListener("click", () => {
-      if (!validateCurrentStep()) return;
+/* ================================
+   Inicialização
+================================ */
+if (landingForm && formSteps.length) {
+  formSteps.forEach((step, index) => {
+    step.hidden = index !== 0;
+  });
 
-      if (currentStep < formSteps.length - 1) {
-        currentStep += 1;
-        showStep(currentStep);
-      }
-    });
-  }
+  showStep(currentStep);
+}
 
-  if (prevStepBtn) {
-    prevStepBtn.addEventListener("click", () => {
-      if (currentStep > 0) {
-        currentStep -= 1;
-        showStep(currentStep);
-      }
-    });
-  }
+/* ================================
+   Navegação entre etapas
+================================ */
+if (nextStepBtn) {
+  nextStepBtn.addEventListener("click", () => {
+    if (!validateStep(currentStep)) return;
 
+    if (currentStep < formSteps.length - 1) {
+      currentStep += 1;
+      showStep(currentStep);
+    }
+  });
+}
+
+if (prevStepBtn) {
+  prevStepBtn.addEventListener("click", () => {
+    if (currentStep > 0) {
+      currentStep -= 1;
+      hideSuccessCard();
+      showStep(currentStep);
+    }
+  });
+}
+
+/* ================================
+   Envio do formulário
+================================ */
+if (landingForm) {
   landingForm.addEventListener("submit", (event) => {
     event.preventDefault();
 
-    const lastStep = formSteps[formSteps.length - 1];
-    clearErrors(lastStep);
+    if (!validateStep(currentStep)) return;
 
-    const requiredFields = lastStep.querySelectorAll("input, select, textarea");
-    let isValid = true;
-
-    requiredFields.forEach((field) => {
-      if (field.type === "checkbox") {
-        if (!field.checked) {
-          isValid = false;
-        }
-      } else if (!field.value.trim()) {
-        isValid = false;
-      }
-    });
-
-    if (!isValid) {
-      alert("Por favor, revise os campos obrigatórios antes de enviar.");
-      return;
-    }
-
-    alert("Cadastro enviado com sucesso!");
+    showSuccessCard();
     landingForm.reset();
-    currentStep = 0;
-    showStep(currentStep);
   });
 }
+
+/* ================================
+   Reset do formulário
+================================ */
+if (resetFormBtn) {
+  resetFormBtn.addEventListener("click", () => {
+    resetWizard();
+    document.getElementById("nome")?.focus();
+  });
+}
+
+/* ================================
+   Atualização dinâmica de erros
+================================ */
+landingForm?.querySelectorAll("input, select, textarea").forEach((field) => {
+  field.addEventListener("input", () => {
+    const errorEl = document.getElementById(getFieldErrorId(field.id));
+    if (errorEl) errorEl.textContent = "";
+    field.removeAttribute("aria-invalid");
+  });
+
+  field.addEventListener("change", () => {
+    const errorEl = document.getElementById(getFieldErrorId(field.id));
+    if (errorEl) errorEl.textContent = "";
+    field.removeAttribute("aria-invalid");
+  });
+});
+
+/* ================================
+   Acessibilidade do accordion de progresso
+================================ */
+window.addEventListener("keydown", (event) => {
+  if (event.key === "Enter" && document.activeElement === nextStepBtn) {
+    nextStepBtn.click();
+  }
+});
 /* ================================
    FIM Formulário multi-etapas
 ================================ */
@@ -221,7 +393,6 @@ if (landingForm && formSteps.length) {
 /* ================================
    Ajuste visual do header ao rolar
 ================================ */
-const header = document.querySelector(".lp-header");
 
 if (header) {
   window.addEventListener("scroll", () => {
