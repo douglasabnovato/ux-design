@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="ABC da Construção e São Paulo FC: uma parceria que fortalece o Tricolor dentro e fora de campo." />
+  <title>SPFC | ABC da Construção </title>
+    <link rel="apple-touch-icon" sizes="180x180" href="./public/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./public/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./public/favicon-16x16.png">
+    <link rel="manifest" href="./public/site.webmanifest">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+  <!-- Header -->
+  <header class="lp-header" id="topo" role="banner">
+    <div class="lp-header__inner">
+      <a href="#topo" class="lp-header__brand" aria-label="Ir para o topo da página">
+        <span class="lp-header__brand-frame">
+          <img src="./assets/abc-logo-vermelha-branca.jpg" alt="São Paulo FC" class="lp-header__logo" />
+        </span>
+        <span class="lp-header__brand-plus">+</span>
+        <span class="lp-header__brand-frame">
+          <img src="./assets/spfc-abc.png" alt="ABC da Construção" class="lp-header__logo lp-header__logo--abc" />
+        </span>
+      </a>
+
+      <button
+        class="lp-header__menu-btn"
+        type="button"
+        aria-label="Abrir menu de navegação"
+        aria-controls="main-navigation"
+        aria-expanded="false"
+        id="menuToggle"
+      >
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </button>
+
+      <nav class="lp-header__nav" id="main-navigation" aria-label="Navegação principal">
+        <a href="#beneficios" class="lp-header__link">Benefícios</a>
+        <a href="#sobre" class="lp-header__link">A parceria</a>
+        <a href="#abc" class="lp-header__link">ABC da Construção</a>
+        <a href="#duvidas" class="lp-header__link">Dúvidas</a>
+      </nav>
+
+      <a href="#cadastro" class="lp-header__cta" id="openModalButtonHeader">Cadastre-se</a>
+    </div>
+  </header>
+  <!-- FIM Header -->
+
+  <main>
+    <!-- Hero -->
+    <section class="hero" id="home">
+      <div class="hero__media">
+        <img src="./assets/spfc-jogadores-campo.png" alt="São Paulo FC e ABC da Construção em parceria" class="hero__image" />
+      </div>
+
+      <div class="hero__content">
+        <span class="hero__eyebrow">Parceria oficial</span>
+        <h1 class="hero__title">ABC da Construção e o Tricolor: construindo sucesso dentro e fora de campo.</h1>
+        <p class="hero__text">
+          Uma união entre tradição, paixão e confiança para você viver essa experiência com a força da ABC e a energia do São Paulo FC.
+        </p>
+
+        <div class="hero__actions">
+          <a href="#cadastro" class="btn btn--primary" id="heroButton">Cadastre-se agora</a>
+          <a href="#beneficios" class="btn btn--secondary">Ver benefícios</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Destaque curto -->
+    <section class="strip strip--dark" id="sobre">
+      <div class="container">
+        <h2 class="section-title">Uma parceria que fortalece o Tricolor.</h2>
+        <p class="section-text">
+          Quando duas marcas fortes se unem, o resultado é mais valor, mais presença e mais motivo para a torcida participar.
+        </p>
+      </div>
+    </section>
+
+    <!-- Benefícios -->
+    <section class="benefits" id="beneficios">
+      <div class="container">
+        <div class="section-heading">
+          <span class="section-kicker">Por que participar</span>
+          <h2 class="section-title">A experiência foi pensada para o torcedor tricolor.</h2>
+        </div>
+
+        <div class="benefits__grid">
+          <article class="benefit-card">
+            <img src="./assets/spfc-parceria.png" alt="" class="benefit-card__icon" />
+            <h3>Mais conexão com o clube</h3>
+            <p>Uma campanha feita para aproximar o torcedor do universo São Paulo FC.</p>
+          </article>
+
+          <article class="benefit-card">
+            <img src="./assets/spfc-patrocinio.png" alt="" class="benefit-card__icon" />
+            <h3>Mais força com a ABC</h3>
+            <p>Uma marca consolidada que traz credibilidade e estrutura para a parceria.</p>
+          </article>
+
+          <article class="benefit-card">
+            <img src="./assets/spfc-vc3amigos.png" alt="" class="benefit-card__icon" />
+            <h3>Mais motivo para participar</h3>
+            <p>Uma comunicação feita para gerar identificação, engajamento e conversão.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Torcida -->
+    <section class="story">
+      <div class="story__media">
+        <img src="./assets/spfc-torcida-estadio.jpg" alt="Torcida do São Paulo FC no estádio" class="story__image" />
+      </div>
+
+      <div class="story__content">
+        <span class="section-kicker">Paixão que move</span>
+        <h2 class="section-title">O Tricolor move multidões.</h2>
+        <p class="section-text">
+          É no estádio, na arquibancada e na paixão pelo clube que essa parceria ganha vida. A experiência é feita para quem carrega o São Paulo no coração.
+        </p>
+      </div>
+    </section>
+
+    <!-- ABC institucional -->
+    <section class="company" id="abc">
+      <div class="container company__grid">
+        <div class="company__media">
+          <img src="./assets/abc-construcao-caminhoes.png" alt="Frota da ABC da Construção" class="company__image" />
+        </div>
+
+        <div class="company__content">
+          <span class="section-kicker">Força da marca</span>
+          <h2 class="section-title">A força da ABC por trás da campanha.</h2>
+          <p class="section-text">
+            Com presença nacional, estrutura robusta e referência em acabamentos, a ABC da Construção leva confiança para cada detalhe da parceria.
+          </p>
+
+          <div class="stats">
+            <div class="stat">
+              <strong>66</strong>
+              <span>anos de história</span>
+            </div>
+            <div class="stat">
+              <strong>+400</strong>
+              <span>lojas</span>
+            </div>
+            <div class="stat">
+              <strong>+25.000</strong>
+              <span>produtos</span>
+            </div>
+            <div class="stat">
+              <strong>#1</strong>
+              <span>em acabamentos</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Prova visual -->
+    <section class="gallery">
+      <div class="container">
+        <div class="section-heading">
+          <span class="section-kicker">Prova visual</span>
+          <h2 class="section-title">Dentro e fora de campo, o Tricolor faz história.</h2>
+        </div>
+
+        <div class="gallery__grid">
+          <img src="./assets/spfc-estadio.png" alt="Estádio do São Paulo FC" class="gallery__image" />
+          <img src="./assets/spfc-jogador.png" alt="Jogador do São Paulo FC" class="gallery__image" />
+          <img src="./assets/spfc-jogador-2.png" alt="Jogador do São Paulo FC em ação" class="gallery__image" />
+          <img src="./assets/spfc-jogadores-campo.png" alt="Jogadores do São Paulo FC no campo" class="gallery__image" />
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq" id="duvidas">
+      <div class="container">
+        <div class="section-heading">
+          <span class="section-kicker">Dúvidas frequentes</span>
+          <h2 class="section-title">Tudo o que você precisa saber.</h2>
+        </div>
+
+        <div class="accordion" id="faqAccordion">
+          <div class="accordion__item">
+            <h3 class="accordion__header">
+              <button class="accordion__button" type="button" aria-expanded="false" aria-controls="faq1" id="faq1-btn">
+                Como participar da campanha?
+              </button>
+            </h3>
+            <div class="accordion__panel" id="faq1" role="region" aria-labelledby="faq1-btn" hidden>
+              <p>Cadastre-se no formulário final da página e siga as instruções da campanha.</p>
+            </div>
+          </div>
+
+          <div class="accordion__item">
+            <h3 class="accordion__header">
+              <button class="accordion__button" type="button" aria-expanded="false" aria-controls="faq2" id="faq2-btn">
+                Quem pode se cadastrar?
+              </button>
+            </h3>
+            <div class="accordion__panel" id="faq2" role="region" aria-labelledby="faq2-btn" hidden>
+              <p>A participação é destinada ao público definido pela campanha e pelas regras da promoção.</p>
+            </div>
+          </div>
+
+          <div class="accordion__item">
+            <h3 class="accordion__header">
+              <button class="accordion__button" type="button" aria-expanded="false" aria-controls="faq3" id="faq3-btn">
+                Quais são os benefícios?
+              </button>
+            </h3>
+            <div class="accordion__panel" id="faq3" role="region" aria-labelledby="faq3-btn" hidden>
+              <p>A parceria une a força da ABC com a paixão do São Paulo FC, criando uma experiência de marca única.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA final -->
+    <section class="cta-final" id="cadastro">
+      <div class="cta-final__overlay"></div>
+      <img src="./assets/spfc-torcida.png" alt="Torcida do São Paulo FC" class="cta-final__image" />
+
+      <div class="cta-final__content">
+        <span class="section-kicker">Último passo</span>
+        <h2 class="section-title">Faça parte dessa parceria.</h2>
+        <p class="section-text">
+          Cadastre-se e participe da união entre a força da ABC e a paixão do São Paulo FC.
+        </p>
+        <a href="#topo" class="btn btn--primary">Cadastre-se</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p>© 2026 ABC da Construção e São Paulo Futebol Clube. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <script src="./script.js"></script>
+</body>
+</html>
