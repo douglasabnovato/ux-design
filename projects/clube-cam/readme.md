@@ -22,3 +22,5 @@
 
 @douglasabnovato
 
+Quero inserir 8 imagens do CAM e 2 imagens da ABC. uma em cada seção da landing page.
+Responsividade eficiente
