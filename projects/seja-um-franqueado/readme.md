@@ -1,51 +1,146 @@
-## Landing Page 
+# Seja um Franqueado | ABC da Construção 
 
-### ABC da Construção
+Landing page de alta conversão para apresentar a oportunidade de franquia da ABC da Construção e captar leads qualificados para o time de expansão.
 
-- Cliente: Expansão
-- Link oficial: https://franqueado.abcevoce.com.br/
+## Visão geral
 
-- Versão 2:
-    - ![View 1](./github/two-1.jpg)
-    - ![View 2](./github/two-2.jpg)
-    - ![View 3](./github/two-3.jpg)
-    - ![View 4](./github/two-4.jpg)
-    - ![View 5](./github/two-5.jpg)
-    - ![View 6](./github/two-6.jpg)
-    - ![View 7](./github/two-7.jpg)
-    - ![View 8](./github/two-8.jpg)
-    - ![View 9](./github/two-9.jpg)
-    - ![View 10](./github/two-10.jpg)
-    - ![View 11](./github/two-11.jpg)
-    - ![View 12](./github/two-12.jpg)
-    - ![View 13](./github/two-13.jpg)
-    - ![View 14](./github/two-14.jpg)
-    - ![View 15](./github/two-15.jpg)
-    - ![View 16](./github/two-16.jpg)
-    - ![View 17](./github/two-17.jpg)
-    - ![View 18](./github/two-18.jpg)
-    - ![View 19](./github/two-19.jpg)
-    - ![View 20](./github/two-20.jpg) 
+O projeto **ABC da Construção | Franqueado** foi desenvolvido para comunicar a força da rede, o potencial de expansão e o ecossistema de suporte oferecido aos interessados em se tornar franqueados.
 
-- Ordem:
-    1. header-navbar-fullbanner
-    2. first-section
-    3. modelo-de-negocio
-    4. abc-ecommerce
-    5. abc-fintech
-    6. plataforma-digital
-    7. Futebol
-    8. Formulário
+A proposta é unir:
+- apresentação institucional da marca;
+- prova social e credibilidade;
+- explicação do modelo de negócio;
+- ecossistema digital e de suporte;
+- formulário de contato com foco em conversão.
 
-- Versão 1:
-    - ![View 1](./github/view-1.jpg)
-    - ![View 2](./github/view-2.jpg)
-    - ![View 3](./github/view-3.jpg)
-    - ![View 4](./github/view-4.jpg)
-    - ![View 5](./github/view-5.jpg)
-    - ![View 6](./github/view-6.jpg)
-    - ![View 7](./github/view-7.jpg)
-    - ![View 8](./github/view-8.jpg)
+## Objetivo da landing page
 
-@douglasabnovato
+Gerar interesse qualificado e incentivar o visitante a deixar seus dados para entrar em contato com a equipe de expansão da ABC da Construção.
 
+## Funcionalidades
+
+- Header fixo com navegação.
+- Hero com mensagem de impacto.
+- Bloco de prova social com indicadores da rede.
+- Seção sobre o modelo de negócio.
+- Seção de ecossistema digital.
+- Bloco sobre ABC Fintech.
+- Seção institucional sobre a plataforma digital.
+- Área com CTA final.
+- Formulário de captação de leads.
+- Rodapé com newsletter, links institucionais e suporte.
+- Botão fixo para voltar à home do UX Design.
+- Botão flutuante para voltar ao topo.
+
+## Estrutura da experiência
+
+A página foi desenhada para conduzir o usuário em uma jornada clara:
+
+1. **Hero**
+   - Apresenta o convite para se tornar franqueado.
+   - Mostra os principais indicadores da rede.
+
+2. **Prova social**
+   - Exibe imagens institucionais da operação da marca.
+
+3. **Modelo de negócio**
+   - Explica a proposta da rede em três frentes:
+     - escala da rede;
+     - geração de vendas;
+     - logística nacional.
+
+4. **Ecossistema digital**
+   - Apresenta as frentes digitais da marca.
+
+5. **ABC Fintech**
+   - Destaca o suporte complementar para a operação.
+
+6. **Plataforma digital**
+   - Reforça a organização e a integração da rede.
+
+7. **CTA final**
+   - Direciona o usuário para o formulário.
+
+8. **Formulário**
+   - Captura nome, e-mail e telefone do interessado.
+
+## Tecnologias utilizadas
+
+- HTML5
+- CSS3
+- JavaScript
+- Google Fonts
+- Formulário de captação
+- Estrutura responsiva
+- Links institucionais externos
+
+## Como executar o projeto
+
+### 1. Clonar ou baixar o repositório
+
+```bash
+git clone <URL_DO_REPOSITORIO>
+```
+
+### 2. Acessar a pasta do projeto
+
+```bash
+cd seja-um-franqueado
+```
+
+### 3. Abrir no navegador
+
+Abra o arquivo `index.html` diretamente no navegador ou utilize um servidor local como:
+- Live Server
+- http-server
+- qualquer servidor estático
+
+## Estrutura de arquivos
+
+```bash
+seja-um-franqueado/
+├── index.html
+├── style.css
+├── script.js
+├── assets/
+│   ├── abc-logo.jpg
+│   ├── nossas_lojas.png
+│   └── ...
+└── README.md
+```
+
+## Destaques do projeto
+
+- Layout institucional e moderno.
+- Narrativa voltada para expansão e crescimento.
+- Hierarquia visual clara.
+- CTA forte em múltiplos pontos da página.
+- Rodapé completo com navegação e contatos.
+- Pensado para experiência desktop e mobile.
+
+## Personalização
+
+A landing page pode ser facilmente adaptada para:
+- alterar textos de campanha;
+- atualizar imagens institucionais;
+- ajustar CTAs;
+- modificar dados de contato;
+- trocar indicadores de prova social;
+- integrar novos blocos sobre operação e expansão.
+
+## Contato
+
+A página foi pensada para direcionar leads ao time de expansão da ABC da Construção, usando o formulário e os canais institucionais do rodapé.
+
+## Observações
+
+Este projeto foi desenvolvido com foco em:
+- conversão;
+- clareza de mensagem;
+- apresentação institucional;
+- experiência mobile;
+- captação de leads qualificados.
+
+## Licença
+
+Uso interno e institucional, salvo orientação diferente do time responsável.
