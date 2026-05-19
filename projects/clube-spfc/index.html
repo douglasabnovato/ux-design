@@ -44,6 +44,7 @@
       </button>
 
       <nav class="lp-header__nav" id="main-navigation" aria-label="Navegação principal">
+        <a href="#home" class="lp-header__link">Home</a>
         <a href="#beneficios" class="lp-header__link">Benefícios</a>
         <a href="#sobre" class="lp-header__link">A parceria</a>
         <a href="#abc" class="lp-header__link">ABC da Construção</a>
@@ -87,34 +88,49 @@
     </section>
 
     <!-- Benefícios -->
-    <section class="benefits" id="beneficios">
-      <div class="container">
-        <div class="section-heading">
-          <span class="section-kicker">Por que participar</span>
-          <h2 class="section-title">A experiência foi pensada para o torcedor tricolor.</h2>
+<section class="benefits" id="beneficios">
+  <div class="container">
+    <div class="section-heading">
+      <span class="section-kicker">Por que participar</span>
+      <h2 class="section-title">A experiência foi pensada para o torcedor tricolor.</h2>
+    </div>
+
+    <div class="benefits__grid">
+      <article class="benefit-card">
+        <div class="benefit-card__media">
+          <img src="./assets/spfc-parceria.png" alt="Parceria SPFC e ABC da Construção" class="benefit-card__image" />
         </div>
-
-        <div class="benefits__grid">
-          <article class="benefit-card">
-            <img src="./assets/spfc-parceria.png" alt="" class="benefit-card__icon" />
-            <h3>Mais conexão com o clube</h3>
-            <p>Uma campanha feita para aproximar o torcedor do universo São Paulo FC.</p>
-          </article>
-
-          <article class="benefit-card">
-            <img src="./assets/spfc-patrocinio.png" alt="" class="benefit-card__icon" />
-            <h3>Mais força com a ABC</h3>
-            <p>Uma marca consolidada que traz credibilidade e estrutura para a parceria.</p>
-          </article>
-
-          <article class="benefit-card">
-            <img src="./assets/spfc-vc3amigos.png" alt="" class="benefit-card__icon" />
-            <h3>Mais motivo para participar</h3>
-            <p>Uma comunicação feita para gerar identificação, engajamento e conversão.</p>
-          </article>
+        <div class="benefit-card__content">
+          <span class="benefit-card__tag">Conexão</span>
+          <h3>Mais conexão com o clube</h3>
+          <p>Uma campanha feita para aproximar o torcedor do universo São Paulo FC.</p>
         </div>
-      </div>
-    </section>
+      </article>
+
+      <article class="benefit-card">
+        <div class="benefit-card__media">
+          <img src="./assets/spfc-patrocinio.png" alt="Patrocínio e força da marca ABC" class="benefit-card__image" />
+        </div>
+        <div class="benefit-card__content">
+          <span class="benefit-card__tag">Credibilidade</span>
+          <h3>Mais força com a ABC</h3>
+          <p>Uma marca consolidada que traz estrutura e confiança para a parceria.</p>
+        </div>
+      </article>
+
+      <article class="benefit-card">
+        <div class="benefit-card__media">
+          <img src="./assets/spfc-vc3amigos.png" alt="Você e três amigos na experiência SPFC" class="benefit-card__image" />
+        </div>
+        <div class="benefit-card__content">
+          <span class="benefit-card__tag">Experiência</span>
+          <h3>Mais motivo para participar</h3>
+          <p>Uma comunicação feita para gerar identificação, engajamento e conversão.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
 
     <!-- Torcida -->
     <section class="story">
@@ -229,26 +245,164 @@
       </div>
     </section>
 
-    <!-- CTA final -->
-    <section class="cta-final" id="cadastro">
-      <div class="cta-final__overlay"></div>
-      <img src="./assets/spfc-torcida.png" alt="Torcida do São Paulo FC" class="cta-final__image" />
+    <!-- cadastro -->
+    <section class="form-section" id="cadastro">
+        <div class="container">
+            <div class="section-heading">
+            <span class="section-kicker">Cadastro rápido</span>
+            <h2 class="section-title">Complete seu cadastro em 3 passos.</h2>
+            <p class="section-text">
+                Rápido, simples e feito para você viver a parceria ABC + SPFC.
+            </p>
+            </div>
 
-      <div class="cta-final__content">
-        <span class="section-kicker">Último passo</span>
-        <h2 class="section-title">Faça parte dessa parceria.</h2>
-        <p class="section-text">
-          Cadastre-se e participe da união entre a força da ABC e a paixão do São Paulo FC.
-        </p>
-        <a href="#topo" class="btn btn--primary">Cadastre-se</a>
-      </div>
+            <form class="form-wizard" id="regForm" action="#" method="post" novalidate>
+            <div class="form-wizard__progress" aria-label="Progresso do formulário">
+                <div class="form-wizard__step is-active" data-step-indicator="1">
+                <span>01</span>
+                <strong>Dados básicos</strong>
+                </div>
+                <div class="form-wizard__step" data-step-indicator="2">
+                <span>02</span>
+                <strong>Conexão</strong>
+                </div>
+                <div class="form-wizard__step" data-step-indicator="3">
+                <span>03</span>
+                <strong>Intenção</strong>
+                </div>
+            </div>
+
+            <p class="form-wizard__announce" id="step-announcer" aria-live="polite">Etapa 1 de 3</p>
+
+            <div class="form-wizard__steps">
+                <fieldset class="form-step is-active" data-step="1">
+                <legend>Dados básicos</legend>
+
+                <div class="form-grid">
+                    <label class="field">
+                    <span>Qual é o seu nome completo?</span>
+                    <input type="text" name="nome" placeholder="Digite seu nome completo" required />
+                    </label>
+
+                    <label class="field">
+                    <span>Qual é o seu melhor e-mail?</span>
+                    <input type="email" name="email" placeholder="Digite seu e-mail" required />
+                    </label>
+                </div>
+
+                <p class="form-step__note">Vamos usar seus dados para confirmar sua participação na campanha.</p>
+                </fieldset>
+
+                <fieldset class="form-step" data-step="2" hidden>
+                <legend>Conexão com a campanha</legend>
+
+                <div class="form-grid">
+                    <label class="field">
+                    <span>Você participa como torcedor, cliente ou parceiro?</span>
+                    <select name="perfil" required>
+                        <option value="" selected disabled>Selecione uma opção</option>
+                        <option value="torcedor">Torcedor</option>
+                        <option value="cliente">Cliente</option>
+                        <option value="parceiro">Parceiro</option>
+                    </select>
+                    </label>
+
+                    <label class="field">
+                    <span>Como você conheceu essa parceria?</span>
+                    <select name="origem" required>
+                        <option value="" selected disabled>Selecione uma opção</option>
+                        <option value="site">Site / LP</option>
+                        <option value="redes">Redes sociais</option>
+                        <option value="indicação">Indicação</option>
+                        <option value="loja">Loja física</option>
+                    </select>
+                    </label>
+                </div>
+
+                <p class="form-step__note">Queremos entender melhor seu perfil para organizar a experiência.</p>
+                </fieldset>
+
+                <fieldset class="form-step" data-step="3" hidden>
+                <legend>Intenção final</legend>
+
+                <label class="field">
+                    <span>O que você espera receber dessa parceria?</span>
+                    <textarea
+                    name="expectativa"
+                    rows="5"
+                    placeholder="Ex.: benefícios, promoções, experiências com o clube..."
+                    required
+                    ></textarea>
+                </label>
+
+                <p class="form-step__note">
+                    Sua resposta nos ajuda a personalizar a comunicação e a próxima etapa da jornada.
+                </p>
+                </fieldset>
+            </div>
+
+            <div class="form-wizard__actions">
+                <button type="button" class="btn btn--secondary form-btn" id="prevBtn">Voltar</button>
+                <button type="button" class="btn btn--primary form-btn" id="nextBtn">Próximo</button>
+            </div>
+            </form>
+        </div>
     </section>
+    
   </main>
 
   <!-- Footer -->
-  <footer class="footer">
-    <div class="container footer__inner">
-      <p>© 2026 ABC da Construção e São Paulo Futebol Clube. Todos os direitos reservados.</p>
+  <footer class="lp-footer" id="cadastro">
+    <div class="lp-footer__cta">
+        <img
+        src="./assets/spfc-torcida.png"
+        alt="Torcida do São Paulo FC"
+        class="lp-footer__bg"
+        />
+        <div class="lp-footer__overlay"></div>
+
+        <div class="container lp-footer__cta-inner">
+        <div class="lp-footer__cta-copy">
+            <span class="section-kicker">Último passo</span>
+            <h2 class="section-title">Faça parte dessa parceria.</h2>
+            <p class="section-text">
+            Cadastre-se e participe da união entre a força da ABC e a paixão do São Paulo FC.
+            </p>
+            <div class="lp-footer__actions">
+            <a href="#cadastro" class="btn btn--primary">Cadastre-se</a>
+            <a href="#beneficios" class="btn btn--secondary">Ver benefícios</a>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <div class="lp-footer__bottom">
+        <div class="container lp-footer__bottom-inner">
+        <div class="lp-footer__brandline">
+            <a href="#topo" class="lp-footer__brand" aria-label="Voltar ao topo">
+            <img src="./assets/spfc-escudo.png" alt="São Paulo FC" class="lp-footer__brand-logo" />
+            <span>+</span>
+            <img src="./assets/abc-logo-vermelha-branca.jpg" alt="ABC da Construção" class="lp-footer__brand-logo lp-footer__brand-logo--abc" />
+            </a>
+
+            <p class="lp-footer__legal">
+            © 2026 ABC da Construção e São Paulo Futebol Clube. Todos os direitos reservados.
+            </p>
+        </div>
+
+        <nav class="lp-footer__nav" aria-label="Links do rodapé">
+            <a href="#beneficios">Benefícios</a>
+            <a href="#sobre">A parceria</a>
+            <a href="#abc">ABC da Construção</a>
+            <a href="#duvidas">Dúvidas</a>
+        </nav>
+
+        <div class="lp-footer__social" aria-label="Redes sociais">
+            <a href="#" aria-label="Instagram da ABC e SPFC">Instagram</a>
+            <a href="#" aria-label="Facebook da ABC e SPFC">Facebook</a>
+            <a href="#" aria-label="YouTube da ABC e SPFC">YouTube</a>
+        </div>
+        </div>
     </div>
   </footer>
 

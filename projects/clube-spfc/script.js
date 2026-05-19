@@ -98,3 +98,78 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.getElementById("regForm");
+  const steps = Array.from(document.querySelectorAll(".form-step"));
+  const progressSteps = Array.from(document.querySelectorAll(".form-wizard__step"));
+  const stepAnnouncer = document.getElementById("step-announcer");
+  const prevBtn = document.getElementById("prevBtn");
+  const nextBtn = document.getElementById("nextBtn");
+
+  let currentStep = 0;
+
+  function updateWizard() {
+    steps.forEach((step, index) => {
+      const active = index === currentStep;
+      step.hidden = !active;
+      step.classList.toggle("is-active", active);
+    });
+
+    progressSteps.forEach((item, index) => {
+      item.classList.toggle("is-active", index === currentStep);
+    });
+
+    stepAnnouncer.textContent = `Etapa ${currentStep + 1} de ${steps.length}`;
+
+    prevBtn.disabled = currentStep === 0;
+    nextBtn.textContent = currentStep === steps.length - 1 ? "Enviar" : "Próximo";
+
+    const firstField = steps[currentStep].querySelector("input, select, textarea");
+    if (firstField) firstField.focus({ preventScroll: true });
+  }
+
+  function validateCurrentStep() {
+    const currentFields = Array.from(steps[currentStep].querySelectorAll("input, select, textarea"));
+    let valid = true;
+
+    currentFields.forEach((field) => {
+      if (!field.checkValidity()) {
+        valid = false;
+        field.reportValidity();
+      }
+    });
+
+    return valid;
+  }
+
+  function nextStep() {
+    if (!validateCurrentStep()) return;
+
+    if (currentStep < steps.length - 1) {
+      currentStep += 1;
+      updateWizard();
+      return;
+    }
+
+    form.submit();
+  }
+
+  function prevStep() {
+    if (currentStep > 0) {
+      currentStep -= 1;
+      updateWizard();
+    }
+  }
+
+  prevBtn.addEventListener("click", prevStep);
+  nextBtn.addEventListener("click", nextStep);
+
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+    if (!validateCurrentStep()) return;
+    alert("Formulário enviado com sucesso!");
+  });
+
+  updateWizard();
+});
