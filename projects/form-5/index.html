@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulário</title>
+    <link rel="stylesheet" href="./style5.css">
+  </head>
+  <body>
+    <div class="abc-formulario">
+        <div class="formulario">
+            <h3>Queremos te ouvir</h3>
+            <hr class="abc-linha-formulario">
+            <p>Preencha os dados abaixo e receba o contato de um consultor especializado!</p>
+    
+            <form class="form" action="" method="post" id="formularioContato">
+                <fieldset class="grupo-campos">
+                    <legend>Dados da Empresa</legend>
+                    <div class="campo">
+                        <label for="razaoSocial">Razão Social</label>
+                        <input type="text" id="razaoSocial" name="razaoSocial" required>
+                    </div>
+                    <div class="campo">
+                        <label for="cnpj">CNPJ</label>
+                        <input type="text" id="cnpj" name="cnpj" required>
+                    </div>
+                </fieldset>
+    
+                <fieldset class="grupo-campos">
+                    <legend>Dados de Contato</legend>
+                    <div class="campo">
+                        <label for="nomeContato">Como gostaria de ser chamado?</label>
+                        <input type="text" id="nomeContato" name="nomeContato" required>
+                    </div>
+                    <div class="campo">
+                        <label for="email">E-mail</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="campo">
+                        <label for="telefone">Telefone</label>
+                        <input type="tel" id="telefone" name="telefone" required>
+                    </div>
+                </fieldset>
+    
+                <fieldset class="grupo-campos">
+                    <legend>Informações da Obra</legend>
+                    <div class="campo">
+                        <label for="estado">Estado</label>
+                        <select id="estado" name="estado" required>
+                            <option value="" disabled selected>Selecione o estado</option>
+                            <option value="AC">Acre</option>
+                            <option value="AL">Alagoas</option>
+                            <option value="AP">Amapá</option>
+                            <option value="AM">Amazonas</option>
+                            <option value="BA">Bahia</option>
+                            <option value="CE">Ceará</option>
+                            <option value="DF">Distrito Federal</option>
+                            <option value="ES">Espírito Santo</option>
+                            <option value="GO">Goiás</option>
+                            <option value="MA">Maranhão</option>
+                            <option value="MT">Mato Grosso</option>
+                            <option value="MS">Mato Grosso do Sul</option>
+                            <option value="MG">Minas Gerais</option>
+                            <option value="PA">Pará</option>
+                            <option value="PB">Paraíba</option>
+                            <option value="PR">Paraná</option>
+                            <option value="PE">Pernambuco</option>
+                            <option value="PI">Piauí</option>
+                            <option value="RJ">Rio de Janeiro</option>
+                            <option value="RN">Rio Grande do Norte</option>
+                            <option value="RS">Rio Grande do Sul</option>
+                            <option value="RO">Rondônia</option>
+                            <option value="RR">Roraima</option>
+                            <option value="SC">Santa Catarina</option>
+                            <option value="SP">São Paulo</option>
+                            <option value="SE">Sergipe</option>
+                            <option value="TO">Tocantins</option>
+                        </select>
+                    </div>
+                    <div class="campo">
+                        <label for="cidade">Cidade</label>
+                        <select id="cidade" name="cidade" required>
+                            <option value="" disabled selected>Selecione uma cidade</option>
+                            </select>
+                    </div>
+                    <div class="campo">
+                        <label for="localObra">Local da Obra</label>
+                        <input type="text" id="localObra" name="localObra" required>
+                    </div>
+                    <div class="campo">
+                        <label for="areaConstruida">Área construída</label>
+                        <select id="areaConstruida" name="areaConstruida" required>
+                            <option value="" disabled selected>---</option>
+                            <option value="ate1000">Até 1.000 m²</option>
+                            <option value="1000a3000">De 1.000 até 3.000 m²</option>
+                            <option value="acima3000">Acima de 3.000 m²</option>
+                        </select>
+                    </div>
+                    <div class="campo">
+                        <label for="dataCompra">Data prevista da compra</label>
+                        <select id="dataCompra" name="dataCompra" required>
+                            <option value="" disabled selected>Data prevista da compra</option>
+                            <option value="nestaSemana">Nesta semana</option>
+                            <option value="nesteMes">Neste mês</option>
+                            <option value="proximoMes">Próximo mês</option>
+                            <option value="compraFutura">Compra futura</option>
+                        </select>
+                    </div>
+                    <div class="campo">
+                        <label for="dataEntrega">Data prevista da entrega</label>
+                        <select id="dataEntrega" name="dataEntrega" required>
+                            <option value="" disabled selected>Data prevista da entrega</option>
+                            <option value="nestaSemana">Nesta semana</option>
+                            <option value="nesteMes">Neste mês</option>
+                            <option value="proximoMes">Próximo mês</option>
+                            <option value="compraFutura">Compra futura</option>
+                        </select>
+                    </div>
+                </fieldset>
+    
+                <div class="campo">
+                    <label for="mensagem">Mensagem</label>
+                    <textarea id="mensagem" name="mensagem" class="form6MSG"></textarea>
+                </div>
+    
+                <div class="form-abc">
+                    <label>
+                        <input type="checkbox" name="subscribe" value="newsletter" required>
+                        Concordo em receber e-mails, SMS e WhatsApp da ABC da Construção.
+                    </label>
+    
+                    <div class="g-recaptcha" data-sitekey="6LfqWq0gAAAAAN5lwSlOISRA17Tx8T4pHQFcSVU9"></div>
+    
+                    <div class="form-button cta-container">
+                        <button type="submit" class="cta-button">ENVIAR</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+  </body>
+</html>

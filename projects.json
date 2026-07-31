@@ -1,0 +1,155 @@
+[
+    {
+        "id": 1,
+        "slug": "uma-franquia",
+        "title": "Uma Franquia",
+        "description": "Landing page de franquia com design moderno e conversão otimizada.",
+        "category": "Franquia",
+        "image": "./assets/uma-franquia.jpg",
+        "destaque": true
+    },
+    {
+        "id": 2,
+        "slug": "seja-um-franqueado",
+        "title": "Seja um Franqueado",
+        "description": "Plataforma para potenciais franqueados se cadastrarem e conhecerem a oportunidade.",
+        "category": "Captação",
+        "image": "./assets/seja-um-franqueado.jpg",
+        "destaque": true
+    },
+    {
+        "id": 3,
+        "slug": "encarte",
+        "title": "Encarte",
+        "description": "Catálogo digital interativo com apresentação de produtos e serviços.",
+        "category": "Catálogo",
+        "image": "./assets/encarte.jpg",
+        "destaque": true
+    },
+    {
+        "id": 4,
+        "slug": "clube-spfc",
+        "title": "Clube SPFC",
+        "description": "Portal do clube com informações, eventos e engajamento de torcedores.",
+        "category": "Esportivo",
+        "image": "./assets/clube-spfc.jpg",
+        "destaque": true
+    },
+    {
+        "id": 5,
+        "slug": "clube-crf",
+        "title": "Clube CRF",
+        "description": "Plataforma comunitária do clube com atualizações e programa de membros.",
+        "category": "Comunidade",
+        "image": "./assets/clube-crf.jpg",
+        "destaque": true
+    },
+    {
+        "id": 6,
+        "slug": "clube-cam",
+        "title": "Clube CAM",
+        "description": "Interface moderna para gerenciar eventos e conectar membros do clube.",
+        "category": "Eventos",
+        "image": "./assets/clube-cam.jpg",
+        "destaque": true
+    },
+    {
+        "id": 7,
+        "slug": "form-1",
+        "title": "Form 1",
+        "description": "Descrição a atualizar.",
+        "category": "Formulário",
+        "image": null,
+        "destaque": false
+    },
+    {
+        "id": 8,
+        "slug": "form-2",
+        "title": "Form 2",
+        "description": "Descrição a atualizar.",
+        "category": "Formulário",
+        "image": null,
+        "destaque": false
+    },
+    {
+        "id": 9,
+        "slug": "form-3",
+        "title": "Form 3",
+        "description": "Descrição a atualizar.",
+        "category": "Formulário",
+        "image": null,
+        "destaque": false
+    },
+    {
+        "id": 10,
+        "slug": "form-4",
+        "title": "Form 4",
+        "description": "Descrição a atualizar.",
+        "category": "Formulário",
+        "image": null,
+        "destaque": false
+    },
+    {
+        "id": 11,
+        "slug": "form-5",
+        "title": "Form 5",
+        "description": "Descrição a atualizar.",
+        "category": "Formulário",
+        "image": null,
+        "destaque": false
+    },
+    {
+        "id": 12,
+        "slug": "form-6",
+        "title": "Form 6",
+        "description": "Descrição a atualizar.",
+        "category": "Formulário",
+        "image": null,
+        "destaque": false
+    },
+    {
+        "id": 13,
+        "slug": "form-7",
+        "title": "Form 7",
+        "description": "Descrição a atualizar.",
+        "category": "Formulário",
+        "image": null,
+        "destaque": false
+    },
+    {
+        "id": 14,
+        "slug": "form-8",
+        "title": "Form 8",
+        "description": "Descrição a atualizar.",
+        "category": "Formulário",
+        "image": null,
+        "destaque": false
+    },
+    {
+        "id": 15,
+        "slug": "form-9",
+        "title": "Form 9",
+        "description": "Descrição a atualizar.",
+        "category": "Formulário",
+        "image": null,
+        "destaque": false
+    },
+    {
+        "id": 16,
+        "slug": "form-10",
+        "title": "Form 10",
+        "description": "Descrição a atualizar.",
+        "category": "Formulário",
+        "image": null,
+        "destaque": false
+    },
+    {
+        "id": 17,
+        "slug": "form-11",
+        "title": "Form 11",
+        "description": "Descrição a atualizar.",
+        "category": "Formulário",
+        "image": null,
+        "destaque": false
+    }
+]

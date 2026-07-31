@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style9.css">
+</head>
+<body>
+    <section class="campanha-form">
+        <div class="form-container">
+            <form action="/action_page.php" method="post" id="catalogo-form">
+                <fieldset>
+                    <legend>Informações de Contato</legend>
+                    <div class="form-group">
+                        <label for="nome">Nome</label>
+                        <input type="text" id="nome" name="nome" placeholder="Meu nome é ..." required aria-required="true">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">E-mail</label>
+                        <input type="email" id="email" name="email" placeholder="Meu e-mail é ..." required aria-required="true">
+                    </div>
+                    <div class="form-group">
+                        <label for="cpf">CPF</label>
+                        <input type="text" id="cpf" name="cpf" placeholder="Meu CPF é ..." required aria-required="true" pattern="[0-9]{11}" title="Digite um CPF válido (11 dígitos numéricos)">
+                    </div>
+                    <div class="form-group">
+                        <label for="telefone">Telefone (WhatsApp)</label>
+                        <input type="tel" id="telefone" name="telefone" placeholder="Meu telefone (WhatsApp) é ..." required aria-required="true">
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <legend>Informações Adicionais</legend>
+                    <div class="form-group">
+                        <label for="guideshop">Selecione sua Guide Shop</label>
+                        <select id="guideshop" name="guideshop" required aria-required="true">
+                            <option value="" disabled selected>Selecione uma opção</option>
+                            <option value="novalima">BH - Nova Lima</option>
+                            <option value="matriz">JF - Matriz</option>
+                            <option value="paecambu">SP - Paecambu</option>
+                            <option value="santacruz">RS - Santa Cruz</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="experiencia">Conte-nos sua experiência com a ABC da Construção</label>
+                        <textarea id="experiencia" name="experiencia" placeholder="A ABC da Construção é ..." rows="4" required aria-required="true"></textarea>
+                    </div>
+                </fieldset>
+                <div class="form-group">
+                    <button type="submit" class="cta-button">BAIXAR CATÁLOGO</button>
+                </div>
+            </form>
+            <p class="privacy-notice">
+                * Não compartilhamos seus dados com terceiros.
+                <a href="/politica-de-privacidade" aria-label="Link para a política de privacidade">Política de Privacidade</a>
+            </p>
+        </div>
+    </section>
+</body>
+</html>

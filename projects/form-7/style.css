@@ -1,0 +1,66 @@
+/* Variáveis CSS */
+:root {
+    --cinzaclaro: #f0f0f0;
+    --branco: #FFFFFF;
+    --black: #333;
+    --black2: #292929;
+    --azul: #0D6A90;
+    --conteudo-max-width: 1480px;
+}
+
+/* Estilos Globais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem; /* Tamanho de fonte base */
+    font-weight: 400;
+}
+
+/* Campanha */
+.campanha {
+    width: 100%;
+    padding: 2rem 1rem; /* Adicionado padding para responsividade */
+}
+
+.campanha-conteudo {
+    max-width: var(--conteudo-max-width);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: center; /* Alinha verticalmente */
+}
+
+.campanha-imagem img {
+    width: 100%;
+    height: auto;
+    display: block; /* Remove espaço extra abaixo da imagem */
+}
+
+.campanha-texto {
+    text-align: center;
+}
+
+.campanha-texto p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    padding: 0 1rem; /* Padding responsivo */
+    text-align: left;
+}
+
+.campanha-texto strong {
+    font-size: 1.2rem; /* Mantém o tamanho do texto destacado */
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .campanha-conteudo {
+        grid-template-columns: 1fr; /* Empilha as colunas em telas menores */
+    }
+
+    .campanha-texto {
+        text-align: center; /* Centraliza o texto em telas menores */
+    }
+}

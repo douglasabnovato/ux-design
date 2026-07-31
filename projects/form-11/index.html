@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms</title>
+    <link rel="stylesheet" href="./style11.css"> 
+</head>
+<body>
+    <section class="abc-formulario">
+        <div class="formulario">
+            <h3>Quero o meu 3D</h3>
+            <div class="linha-separadora"></div>
+            <p>Preencha o formulário abaixo e garanta sua especificação 3D!</p>
+    
+            <form action="/seu-script-de-envio" method="post" class="form-3d">
+                <fieldset>
+                    <legend>Informações Pessoais</legend>
+                    <div class="campo">
+                        <label for="nome">Como gostaria de ser chamado?</label>
+                        <input type="text" id="nome" name="nome" placeholder="Seu nome" required aria-required="true">
+                    </div>
+                    <div class="campo">
+                        <label for="email">E-mail</label>
+                        <input type="email" id="email" name="email" placeholder="seuemail@exemplo.com" required aria-required="true">
+                    </div>
+                    <div class="campo">
+                        <label for="telefone">Telefone</label>
+                        <input type="tel" id="telefone" name="telefone" placeholder="(XX) XXXXX-XXXX" required aria-required="true">
+                    </div>
+                </fieldset>
+    
+                <fieldset>
+                    <legend>Detalhes da Obra</legend>
+                    <div class="campo">
+                        <label for="num_ambiente">Número de ambientes</label>
+                        <select id="num_ambiente" name="num_ambiente" required aria-required="true">
+                            <option value="" disabled selected>Selecione</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                        </select>
+                    </div>
+                    <div class="campo">
+                        <label for="estado_obra">Estágio da obra</label>
+                        <select id="estado_obra" name="estado_obra" required aria-required="true">
+                            <option value="" disabled selected>Selecione</option>
+                            <option value="fundacao">Fundação</option>
+                            <option value="alvenaria">Alvenaria</option>
+                            <option value="acabamento">Acabamento</option>
+                        </select>
+                    </div>
+                    <div class="campo">
+                        <label for="loja">Loja</label>
+                        <select id="loja" name="loja" required aria-required="true">
+                            <option value="" disabled selected>Selecione uma cidade</option>
+                            <option value="acre">Acre</option>
+                            <option value="alagoas">Alagoas</option>
+                            <option value="amapa">Amapá</option>
+                            <option value="amazonas">Amazonas</option>
+                            <option value="bahia">Bahia</option>
+                        </select>
+                    </div>
+                </fieldset>
+    
+                <div class="campo checkbox-container">
+                    <input type="checkbox" id="newsletter" name="newsletter" value="newsletter">
+                    <label for="newsletter">Concordo em receber e-mails, SMS e WhatsApp da ABC da Construção.</label>
+                </div>
+    
+                <div class="campo">
+                    <button type="submit" class="cta-button">Enviar</button>
+                </div>
+            </form>
+    
+            <p class="politica-privacidade">
+                <a href="/politica-privacidade" aria-label="Link para a política de privacidade">Política de Privacidade</a>
+            </p>
+    
+        </div>
+    </section>
+</body>
+</html>

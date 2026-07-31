@@ -1,0 +1,146 @@
+/* Variáveis CSS */
+:root {
+    --cor-fundo-principal: #FFFFFF;
+    --cor-texto-principal: #333;
+    --cor-azul-destaque: #0D6A90;
+    --cor-verde-destaque: #87C34A;
+    --cor-cinza-claro: #D6DADB;
+    --cor-cinza-medio: #838588;
+    --tamanho-fonte-base: 1rem;
+    --espacamento-base: 1rem;
+  }
+  
+  /* Estilos Globais */
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    font-size: var(--tamanho-fonte-base);
+    font-weight: 400;
+  }
+  
+  body {
+    background-color: var(--cor-fundo-principal);
+    color: var(--cor-texto-principal);
+  }
+  
+  /* Componente: Formulário */
+  .abc-formulario {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: var(--cor-fundo-principal); /* Cor de fundo definida aqui */
+    position: static; /* Remove o posicionamento relativo */
+    height: auto; /* Altura automática */
+  }
+  
+  .formulario {
+    /* Remove estilos desnecessários */
+    position: static;
+    width: auto;
+    height: auto;
+    background-color: transparent;
+  }
+  
+  .formulario h3 {
+    font-size: 2rem;
+    text-align: center;
+    color: var(--cor-azul-destaque);
+    margin-bottom: var(--espacamento-base);
+  }
+  
+  .linha-separadora {
+    width: 5rem;
+    height: 2px;
+    background-color: var(--cor-azul-destaque);
+    margin: 1rem auto;
+  }
+  
+  .abc-formulario .formulario p {
+    font-size: 1.2rem;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  .form-3d {
+    display: grid;
+    gap: 1rem;
+  }
+  
+  .form-3d fieldset {
+    border: none;
+    padding: 0;
+  }
+  
+  .form-3d legend {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--cor-azul-destaque);
+    margin-bottom: 0.5rem;
+  }
+  
+  .campo {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .campo label {
+    font-size: 1rem;
+    color: var(--cor-azul-destaque);
+    margin-bottom: 0.25rem;
+  }
+  
+  .campo input,
+  .campo select {
+    padding: 0.5rem;
+    border: 1px solid var(--cor-cinza-claro);
+    font-size: 1rem;
+    color: var(--cor-cinza-medio);
+  }
+  
+  .checkbox-container {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .checkbox-container label {
+    font-size: 1rem;
+  }
+  
+  .cta-button {
+    background-color: var(--cor-verde-destaque);
+    color: white;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 2rem;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .cta-button:hover {
+    background-color: #689237;
+  }
+  
+  .politica-privacidade {
+    font-size: 0.9rem;
+    text-align: center;
+    margin-top: 1rem;
+  }
+  
+  .politica-privacidade a {
+    color: var(--cor-azul-destaque);
+  }
+  
+  /* Responsividade */
+  @media (max-width: 768px) {
+    .abc-formulario {
+      padding: 1rem;
+    }
+  
+    .form-3d {
+      grid-template-columns: 1fr;
+    }
+  }

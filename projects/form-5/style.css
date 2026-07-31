@@ -1,0 +1,171 @@
+/* Variáveis CSS para cores e tamanhos */
+:root {
+    --green-claro: #d2dc3d;
+    --green-300: #87c34a;
+    --cinzaclaro: #d6dadb;
+    --cinza300: #838588;
+    --branco: #ffffff;
+    --branco300: #f8f8f8;
+    --black: #333;
+    --black300: #000000c8;
+    --azul: #0d6a90;
+    --font-size-base: 12px;
+  }
+  
+  /* Reset básico e estilos globais */
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    font-family: "Montserrat", sans-serif;
+    font-size: var(--font-size-base);
+    font-weight: 400;
+    width: 100%; /* Evite usar width: 100% em todos os elementos, pode causar problemas */
+    height: auto; /* Evite usar height: auto em todos os elementos, pode causar problemas */
+  }
+  
+  main {
+    min-height: 100vh;
+  }
+  
+  /* Formulário */
+  .abc-formulario {
+    background-color: var(--branco);
+    padding: 5rem 0; /* Espaçamento vertical */
+  }
+  
+  .formulario {
+    max-width: 800px; /* Largura máxima para melhor leitura */
+    margin: 0 auto; /* Centralizar o formulário */
+    padding: 2rem;
+  }
+  
+  .formulario h3 {
+    font-size: 2.5rem; /* Tamanho de fonte maior para o título */
+    text-align: center;
+    color: var(--azul);
+    margin-bottom: 1rem;
+  }
+  
+  .abc-linha-formulario {
+    width: 95px;
+    height: 2px;
+    background-color: var(--azul);
+    margin: 1rem auto; /* Espaçamento vertical e centralização */
+  }
+  
+  .formulario p {
+    font-size: 1.125rem; /* Tamanho de fonte maior para o parágrafo */
+    line-height: 1.5;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  .form {
+    display: grid;
+    gap: 1rem;
+  }
+  
+  /* Estilos de campo genéricos */
+  .campo {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .campo label {
+    font-size: 0.875rem;
+    color: var(--azul);
+    margin-bottom: 0.5rem;
+  }
+  
+  .campo input,
+  .campo select,
+  .campo textarea {
+    padding: 0.5rem;
+    border: 1px solid var(--cinzaclaro);
+    font-size: 0.875rem;
+    color: var(--cinza300);
+    border-radius: 4px; /* Adicionado para consistência */
+  }
+  
+  .campo textarea {
+    height: 120px;
+    resize: vertical; /* Permite redimensionamento vertical */
+  }
+  
+  /* Campos em linha (Razão Social e CNPJ, etc.) */
+  .campos-linha {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+  
+  /* Checkbox e reCAPTCHA */
+  .form-abc {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .form-abc label {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+  
+  .form-abc input[type="checkbox"] {
+    width: auto;
+    margin-right: 0.5rem;
+  }
+  
+  .g-recaptcha {
+    margin-bottom: 1rem;
+  }
+  
+  /* Botão de envio (CTA) */
+  .cta-container {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .cta-button {
+    all: unset;
+    background-color: #e3062d;
+    color: #fff;
+    font-weight: 800;
+    padding: 0.75rem 1.25rem;
+    border-radius: 46px;
+    text-align: center;
+    font-size: 1rem;
+    cursor: pointer;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
+    transition: all 0.3s ease;
+  }
+  
+  .cta-button:hover {
+    background-color: #20a389;
+    box-shadow: 0 0 15px 5px rgba(32, 163, 137, 0.4);
+  }
+  
+  .cta-button:active {
+    transform: scale(0.95);
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.6);
+  }
+  
+  /* Media Queries para Responsividade */
+  @media (max-width: 768px) {
+    .campos-linha {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .formulario h3 {
+      font-size: 2rem;
+    }
+    .formulario p {
+      font-size: 1rem;
+    }
+  }

@@ -1,0 +1,171 @@
+/* Variáveis */
+:root {
+    --green-claro: #D2DC3D;
+    --green-300: #87C34A;
+    --cinzaclaro: #D6DADB;
+    --cinza300: #838588;
+    --branco: #FFFFFF;
+    --branco300: #F8F8F8;
+    --preto: #333;
+    --preto300: #000000c8;
+    --azul: #0D6A90;
+    --vermelho: #e3062d;
+    --verde-hover: #20A389;
+  }
+  
+  /* Reset */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Formulário */
+  .formulario {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--branco);
+  }
+  
+  .formulario h3 {
+    font-size: 2.5rem;
+    text-align: center;
+    color: var(--azul);
+    margin-bottom: 1rem;
+  }
+  
+  .linha-divisoria {
+    width: 5rem;
+    height: 2px;
+    background-color: var(--azul);
+    margin: 1rem auto;
+  }
+  
+  .descricao {
+    font-size: 1.1rem;
+    line-height: 1.5;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  /* Campos */
+  .form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .grupo-campos {
+    margin-bottom: 1.5rem;
+    border: none;
+    padding: 0;
+  }
+  
+  .grupo-campos legend {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    color: var(--azul);
+  }
+  
+  .campo {
+    margin-bottom: 1rem;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--azul);
+    font-size: 1rem;
+  }
+  
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  select {
+    width: 100%;
+    padding: 0.7rem;
+    border: 1px solid var(--cinzaclaro);
+    border-radius: 5px;
+    font-size: 1rem;
+    color: var(--cinza300);
+  }
+  
+  /* Botões de Rádio */
+  .ambientes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  
+  .ambiente {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5rem;
+  }
+  
+  .ambiente input[type="radio"] {
+    margin-right: 0.5rem;
+  }
+  
+  /* Checkbox */
+  .consentimento {
+    margin-bottom: 1.5rem;
+  }
+  
+  .consentimento label {
+    display: flex;
+    align-items: center;
+  }
+  
+  .consentimento input[type="checkbox"] {
+    margin-right: 0.5rem;
+  }
+  
+  /* Botão Enviar */
+  .botao-enviar {
+    background-color: var(--vermelho);
+    color: #fff;
+    font-weight: 800;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    font-size: 1.1rem;
+    align-self: center; /* Centraliza o botão */
+  }
+  
+  .botao-enviar:hover {
+    background-color: var(--verde-hover);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Media Queries */
+  @media (max-width: 768px) {
+    .formulario {
+      padding: 1rem;
+    }
+  
+    .formulario h3 {
+      font-size: 2rem;
+    }
+  
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    select {
+      font-size: 0.9rem;
+    }
+  
+    .botao-enviar {
+      font-size: 1rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .formulario h3 {
+      font-size: 1.8rem;
+    }
+  }

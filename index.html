@@ -3,90 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UX Design</title>
+    <title>UX Design — Portfólio de Landing Pages</title>
+    <meta name="description" content="Portfólio de landing pages focadas em experiência de usuário, conversão e qualidade visual.">
+    <meta property="og:title" content="UX Design — Portfólio de Landing Pages">
+    <meta property="og:description" content="Landing pages transformadoras: franquias, catálogos digitais e portais de comunidade esportiva.">
+    <meta property="og:type" content="website">
+    <meta name="theme-color" content="#00d4d4">
     <link rel="apple-touch-icon" sizes="180x180" href="./public/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="./public/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="./public/favicon-16x16.png">
     <link rel="manifest" href="./public/site.webmanifest">
     <link rel="stylesheet" href="style.css">
-</head> 
+</head>
 <body>
-  <div class="container">
+  <main class="container">
     <header class="header">
       <span class="header__eyebrow">Portfólio</span>
       <h1>UX Design</h1>
       <p>Landing Pages Transformadoras</p>
     </header>
 
-    <section class="projects-grid" aria-label="Projetos de landing pages">
-      <a href="projects/uma-franquia/index.html" class="project-card">
-        <div class="project-card__media">
-          <img src="./assets/uma-franquia.jpg" alt="Preview do projeto Uma Franquia" class="project-card__image" />
-          <span class="project-card__badge">Franquia</span>
-        </div>
-        <div class="project-card__content">
-          <h2>Uma Franquia</h2>
-          <p>Landing page de franquia com design moderno e conversão otimizada.</p>
-        </div>
-      </a>
-
-      <a href="projects/seja-um-franqueado/index.html" class="project-card">
-        <div class="project-card__media">
-          <img src="./assets/seja-um-franqueado.jpg" alt="Preview do projeto Seja um Franqueado" class="project-card__image" />
-          <span class="project-card__badge">Captação</span>
-        </div>
-        <div class="project-card__content">
-          <h2>Seja um Franqueado</h2>
-          <p>Plataforma para potenciais franqueados se cadastrarem e conhecerem a oportunidade.</p>
-        </div>
-      </a>
-
-      <a href="projects/encarte/index.html" class="project-card">
-        <div class="project-card__media">
-          <img src="./assets/encarte.jpg" alt="Preview do projeto Encarte" class="project-card__image" />
-          <span class="project-card__badge">Catálogo</span>
-        </div>
-        <div class="project-card__content">
-          <h2>Encarte</h2>
-          <p>Catálogo digital interativo com apresentação de produtos e serviços.</p>
-        </div>
-      </a>
-
-      <a href="projects/clube-spfc/index.html" class="project-card">
-        <div class="project-card__media">
-          <img src="./assets/clube-spfc.jpg" alt="Preview do projeto Clube SPFC" class="project-card__image" />
-          <span class="project-card__badge">Esportivo</span>
-        </div>
-        <div class="project-card__content">
-          <h2>Clube SPFC</h2>
-          <p>Portal do clube com informações, eventos e engajamento de torcedores.</p>
-        </div>
-      </a>
-
-      <a href="projects/clube-crf/index.html" class="project-card">
-        <div class="project-card__media">
-          <img src="./assets/clube-crf.jpg" alt="Preview do projeto Clube CRF" class="project-card__image" />
-          <span class="project-card__badge">Comunidade</span>
-        </div>
-        <div class="project-card__content">
-          <h2>Clube CRF</h2>
-          <p>Plataforma comunitária do clube com atualizações e programa de membros.</p>
-        </div>
-      </a>
-
-      <a href="projects/clube-cam/index.html" class="project-card">
-        <div class="project-card__media">
-          <img src="./assets/clube-cam.jpg" alt="Preview do projeto Clube CAM" class="project-card__image" />
-          <span class="project-card__badge">Eventos</span>
-        </div>
-        <div class="project-card__content">
-          <h2>Clube CAM</h2>
-          <p>Interface moderna para gerenciar eventos e conectar membros do clube.</p>
-        </div>
-      </a>
+    <!-- Carrossel de destaque: só os projetos "cliente" (destaque: true) -->
+    <section class="hero-carousel" aria-label="Projetos em destaque" id="heroCarousel">
+      <div class="hero-carousel__track" id="heroTrack">
+        <!-- slides injetados via JS -->
+      </div>
+      <button class="hero-carousel__nav hero-carousel__nav--prev" id="heroPrev" aria-label="Slide anterior">&#8249;</button>
+      <button class="hero-carousel__nav hero-carousel__nav--next" id="heroNext" aria-label="Próximo slide">&#8250;</button>
+      <div class="hero-carousel__dots" id="heroDots"></div>
     </section>
-  </div>
 
+    <section class="catalog-section">
+      <h2 class="catalog-section__title">Projetos</h2>
+      <div class="projects-grid" id="projectsGrid" aria-label="Projetos de landing pages"></div>
+    </section>
+
+    <section class="catalog-section">
+      <h2 class="catalog-section__title">Estudos &amp; Formulários</h2>
+      <div class="projects-grid projects-grid--compact" id="studiesGrid" aria-label="Formulários de estudo"></div>
+    </section>
+  </main>
+
+  <script src="catalog.js"></script>
   <script src="script.js"></script>
 </body>
 </html>

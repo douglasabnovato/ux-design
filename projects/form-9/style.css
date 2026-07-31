@@ -1,0 +1,129 @@
+/* Variáveis CSS para cores e tamanhos */
+:root {
+    --branco: #ffffff;
+    --preto: #000000;
+    --cinza-claro: #e4e4e4;
+    --cinza-borda: #ccc;
+    --padding-padrao: 1rem; /* 16px */
+    --borda-raio-padrao: 4px;
+    --largura-maxima-conteudo: 1200px;
+}
+
+/* Reset e estilos globais */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: sans-serif; /* Substitua por sua fonte preferida */
+    color: var(--preto);
+}
+
+section.campanha-form {
+    width: 100%;
+    padding: var(--padding-padrao);
+}
+
+.form-container {
+    width: 100%;
+    background-color: var(--preto);
+    padding: var(--padding-padrao);
+}
+
+form fieldset {
+    border: 2px solid var(--branco);
+    border-radius: 5px;
+    padding: 2rem;
+    margin-bottom: 1rem;
+    color: var(--branco);
+}
+
+form legend {
+    font-weight: bold;
+    font-size: 1.2rem;
+    padding-bottom: 1rem;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+select,
+textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--cinza-borda);
+    border-radius: var(--borda-raio-padrao);
+    resize: vertical;
+    font-size: 1rem;
+    color: var(--preto);
+}
+
+button.cta-button {
+    background-color: var(--branco);
+    color: var(--preto);
+    padding: 0.75rem 1.25rem;
+    border: none;
+    border-radius: var(--borda-raio-padrao);
+    cursor: pointer;
+    float: right;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+button.cta-button:hover {
+    background-color: var(--cinza-claro);
+}
+
+.privacy-notice {
+    color: var(--branco);
+    font-size: 0.875rem;
+    padding-top: 1rem;
+    text-align: center;
+}
+
+.privacy-notice a {
+    color: var(--branco);
+    text-decoration: underline;
+}
+
+/* Layout responsivo com Grid */
+.form-container form {
+    display: grid;
+    gap: 1rem;
+    max-width: var(--largura-maxima-conteudo);
+    margin: 0 auto;
+}
+
+.form-container fieldset {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 1fr;
+}
+
+/* Responsividade */
+@media (min-width: 768px) {
+    .form-container fieldset {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .form-container form {
+        padding: 0.5rem;
+    }
+
+    .form-container fieldset {
+        padding: 1rem;
+    }
+}

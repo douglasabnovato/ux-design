@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário</title>
+    <link rel="stylesheet" href="./style2.css">
+</head>
+<body>
+    <div class="abc-formulario">
+        <div class="formulario">
+            <h3>Agende uma visita</h3>
+            <p class="abc-linha-formulario"></p>
+            <p>Preencha o formulário abaixo e garanta sua especificação 3D!</p>
+            <div class="form">
+                <form action="" method="post">
+                    <div class="form1">
+                        <div class="form1_esquerdo">
+                            <label for="nome">Como gostaria de ser chamado?</label>
+                            <input type="text" name="name" />
+                        </div>
+                        <div class="form1_center">
+                            <label for="nome">E-mail</label>
+                            <input type="email" name="email" />
+                        </div>
+                        <div class="form1_direito">
+                            <label for="nome">Telefone</label>
+                            <input type="tel" name="telefone" />
+                        </div>
+                    </div>
+                    <div class="form2">
+                        <div class="form2_esquerdo">
+                            <label for="num_ambiente">
+                                <strong>Número de ambientes</strong>
+                            </label>
+                            <select name="numAmbiente">
+                                <option selected="" disabled="" value="---">---</option>
+                                <option value="Fundacao">1</option>
+                                <option value="Alvenaria">2</option>
+                                <option value="Acabamento">3</option>
+                             </select>
+                        </div>
+                        <div class="form2_center">
+                            <label for="estado_obra">
+                                <strong>Estágio da obra</strong>
+                            </label>
+
+                            <select name="estadoObra">
+                                <option selected="" disabled="" value="---">---</option>
+                                <option value="Fundacao">Fundação</option>
+                                <option value="Alvenaria">Alvenaria</option>
+                                <option value="Acabamento">Acabamento</option>
+                             </select>
+                        </div>
+                        <div class="form2_direito">
+                            <label for="loja">
+                               <strong>Loja</strong>
+                           </label>
+                            <select name="cidade">
+                               <option selected="" disabled="" value="lojas">Selecione uma cidade</option>
+                               <option>Acre</option>
+                               <option>Alagoas</option>
+                               <option>Amapá</option>
+                               <option>Amazonas</option>
+                               <option>Bahia</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form3">
+                        <strong>Selecione os ambientes</strong>
+                        <div class="form3-ambiente">
+                            <input type="radio" class="amb-cozinha amb-top" name="fav_language" value="Cozinha">
+                              <label for="cozinha">Cozinha</label><br>
+                              <input type="radio" class="amb-banheiro amb-top" name="fav_language" value="Banheiro">
+                              <label for="banheiro">Banheiro</label><br>
+                              <input type="radio" class="amb-sala amb-top" name="fav_language" value="Sala">
+                              <label for="sala">Sala</label>
+                            <input type="radio" class="amb-quarto amb-center" name="fav_language" value="Quarto">
+                              <label for="quarto">Quarto</label>
+                            <input type="radio" class="amb-areaExterna amb-center" name="fav_language" value="Area externa">
+                              <label for="área externa">Área externa</label>
+                            <input type="radio" class="amb-areaDeServiço amb-center" name="fav_language" value="Area de serviço">
+                              <label for="área de serviço">Área de serviço</label>
+                            <input type="radio" class="outros amb-bottom" name="fav_language" value="Outros">
+                              <label for="outros">Outros</label>
+                        </div>
+                    </div>
+                    <div class="form3-mobile">
+                        <strong>Selecione os ambientes</strong>
+                        <div class="form3-ambiente-mobile">
+                            <div class="ambiente-top">
+                                <input type="radio" class="amb-cozinha" name="fav_language" value="Cozinha">
+                              <label for="cozinha">Cozinha</label><br>
+                              <input type="radio" class="amb-banheiro" name="fav_language" value="Banheiro">
+                              <label for="banheiro">Banheiro</label><br>
+                              <input type="radio" class="amb-sala" name="fav_language" value="Sala">
+                              <label for="sala">Sala</label>
+                            </div>
+                            <div class="ambiente-center">
+                                <input type="radio" class="amb-quarto" name="fav_language" value="Quarto">
+                              <label for="quarto">Quarto</label>
+                                <input type="radio" class="amb-areaExterna" name="fav_language" value="Area externa">
+                              <label for="área externa">Área externa</label>
+                                <input type="radio" class="amb-areaDeServiço" name="fav_language" value="Area de serviço">
+                              <label for="área de serviço">Área de serviço</label>
+                            </div>
+                            <div class="ambiente-bottom">
+                                <input type="radio" class="outros" name="fav_language" value="Outros">
+                              <label for="outros">Outros</label>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <div class="form-abc">
+                    <input type="checkbox" name="subscribe" value="newsletter" />
+                    <label for="subscribeNews">Concordo em receber e-mails, sms e whatsapp da ABC da Construção.</label>
+                    <div class="form-button cta-container">
+                        <button type="submit" class="cta-button">ENVIAR</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
