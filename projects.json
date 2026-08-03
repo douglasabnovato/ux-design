@@ -241,5 +241,14 @@
         "category": "Eletrônicos",
         "image": "./assets/headphones.jpg",
         "destaque": true
+    },
+    {
+        "id": 28,
+        "slug": "doggy",
+        "title": "Doggy",
+        "description": "Apresentação encantadora de um cachorrinho. Venha brincar!",
+        "category": "Pets",
+        "image": "./assets/doggy.jpg",
+        "destaque": true
     }
 ]
