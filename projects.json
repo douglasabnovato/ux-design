@@ -205,5 +205,14 @@
         "category": "Gastronomia",
         "image": "./assets/espetinho-de-minas.jpg",
         "destaque": true
+    },
+    {
+        "id": 24,
+        "slug": "dc-jardinagem",
+        "title": "DC Jardinagem",
+        "description": " Transformando terrenos brutos em espaços de lazer e beleza com técnicas profissionais de jardinagem.",
+        "category": "Jardinagem",
+        "image": "./assets/dc-jardinagem.jpg",
+        "destaque": true
     }
 ]
