@@ -268,5 +268,32 @@
         "category": "Acessórios",
         "image": "./assets/watches.jpg",
         "destaque": true
+    },
+    {
+        "id": 31,
+        "slug": "apresentacao-store",
+        "title": "Store",
+        "description": "Conheça nossa loja. Aqui tem o produto que precisa.",
+        "category": "Negócios",
+        "image": "./assets/store.jpg",
+        "destaque": true
+    },
+    {
+        "id": 32,
+        "slug": "apresentacao-coffee",
+        "title": "Coffee",
+        "description": "Conheça esse café. São grãos com aromas únicos.",
+        "category": "Negócios",
+        "image": "./assets/coffee.jpg",
+        "destaque": true
+    },
+    {
+        "id": 33,
+        "slug": "apresentacao-project",
+        "title": "Project",
+        "description": "Te apresento o projeto em detalhes.",
+        "category": "Negócios",
+        "image": "./assets/project.jpg",
+        "destaque": true
     }
 ]
