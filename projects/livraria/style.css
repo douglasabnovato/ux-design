@@ -1,0 +1,381 @@
+/* learnTECH Books - Master Design System v4.0 
+    Estratégia: Luxury UX + Conversion Focus
+    Manutenção: [INÍCIO] e [FIM] por seção
+*/
+
+:root {
+  /* Paleta de Cores de Prestígio */
+  --primary: #0984e3;
+  --primary-dark: #074b83;
+  --accent: #b12704;
+  --bg-light: #fcfcfc;
+  --bg-section: #f4f7f6;
+  --text-main: #2d3436;
+  --text-muted: #636e72;
+  --white: #ffffff;
+  --glass: rgba(255, 255, 255, 0.85);
+
+  /* Tipografia */
+  --font-serif: "Merriweather", serif;
+  --font-sans: "Inter", sans-serif;
+
+  /* Tokens de Design */
+  --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 12px 24px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 20px 40px rgba(0, 0, 0, 0.12);
+  --transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+  --border-radius: 16px;
+}
+
+/* --- [INÍCIO] RESET & BASE --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg-light);
+  color: var(--text-main);
+  line-height: 1.6;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+.section-padding {
+  padding: 80px 0;
+}
+
+.section-title {
+  font-family: var(--font-serif);
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+.section-subtitle {
+  color: var(--text-muted);
+  margin-bottom: 3rem;
+}
+/* --- [FIM] RESET & BASE --- */
+
+/* --- [INÍCIO] NAVBAR ELITE --- */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 5%;
+  background: var(--glass);
+  backdrop-filter: blur(15px);
+  z-index: 3000;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  transition: var(--transition);
+}
+
+.navbar-scrolled {
+  height: 70px;
+  background: rgba(255, 255, 255, 0.98);
+  box-shadow: var(--shadow-sm);
+}
+
+.logo {
+  font-family: var(--font-serif);
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+.logo span {
+  color: var(--primary);
+}
+
+.nav-links {
+  display: flex;
+  gap: 2.5rem;
+  list-style: none;
+}
+.nav-links a {
+  text-decoration: none;
+  color: var(--text-main);
+  font-weight: 600;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+  transition: 0.3s;
+}
+.nav-links a:hover {
+  color: var(--primary);
+}
+/* --- [FIM] NAVBAR ELITE --- */
+
+/* --- [INÍCIO] HERO SECTION --- */
+.hero {
+  height: 85vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--white);
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6)),
+    url("https://images.unsplash.com/photo-1507842217343-583bb7270b66?auto=format&fit=crop&w=1600&q=80");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  clip-path: ellipse(150% 100% at 50% 0%);
+  margin-bottom: 40px;
+}
+
+.hero h1 {
+  font-family: var(--font-serif);
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+}
+.btn-cta-hero {
+  background: var(--primary);
+  color: white;
+  padding: 1.2rem 3.5rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 700;
+  transition: var(--transition);
+  display: inline-block;
+}
+.btn-cta-hero:hover {
+  transform: translateY(-5px);
+  background: var(--primary-dark);
+}
+/* --- [FIM] HERO SECTION --- */
+
+/* --- [INÍCIO] SEÇÃO 1: CARROSSEL DESTAQUES --- */
+.carousel-track {
+  display: flex;
+  gap: 1.5rem;
+  overflow-x: auto;
+  padding: 20px 0 40px;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+}
+.carousel-track::-webkit-scrollbar {
+  display: none;
+}
+
+.destaque-card-premium {
+  min-width: 85%;
+  height: 420px;
+  background: #f4f7f6;
+  border-radius: 32px;
+  display: flex;
+  align-items: center;
+  padding: 3rem;
+  scroll-snap-align: center;
+  flex-shrink: 0;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+@media (min-width: 1024px) {
+  .destaque-card-premium {
+    min-width: calc(48% - 1rem);
+  }
+}
+
+.destaque-image-wrapper img {
+  height: 300px;
+  filter: drop-shadow(15px 15px 25px rgba(0, 0, 0, 0.2));
+  transform: rotate(6deg);
+  transition: var(--transition);
+}
+.destaque-card-premium:hover .destaque-image-wrapper img {
+  transform: rotate(0deg) scale(1.05);
+}
+/* --- [FIM] SEÇÃO 1: CARROSSEL DESTAQUES --- */
+
+/* --- [INÍCIO] SEÇÃO 2: MAIS VENDIDOS --- */
+.bg-section {
+  background-color: var(--bg-section);
+}
+.grid-mais-vendidos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.card-mais-vendido {
+  background: var(--white);
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1.5rem;
+  border-radius: var(--border-radius);
+  transition: var(--transition);
+  position: relative;
+  cursor: pointer;
+}
+.card-mais-vendido:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+}
+
+.rank-badge {
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  background: #e67e22;
+  color: white;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 0.8rem;
+  z-index: 5;
+}
+
+.card-mais-vendido img {
+  width: 80px;
+  height: 110px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+/* --- [FIM] SEÇÃO 2: MAIS VENDIDOS --- */
+
+/* --- [INÍCIO] SEÇÃO 3: CATÁLOGO & FILTROS --- */
+.search-filters {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 2rem 0;
+  gap: 2rem;
+}
+.search-bar {
+  width: 100%;
+  padding: 0.8rem 1.5rem;
+  border-radius: 50px;
+  border: 1px solid #ddd;
+  outline: none;
+}
+
+.filter-btn {
+  padding: 0.5rem 1.5rem;
+  border-radius: 50px;
+  border: 1px solid #ddd;
+  background: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.filter-btn.active {
+  background: var(--primary);
+  color: white;
+  border-color: var(--primary);
+}
+
+.grid-livros {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 2rem;
+}
+
+.livro-card {
+  background: white;
+  padding: 1rem;
+  border-radius: var(--border-radius);
+  transition: var(--transition);
+  position: relative;
+  opacity: 0;
+}
+.livro-card img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.valor-promo {
+  color: var(--accent);
+  font-size: 1.3rem;
+  font-weight: 800;
+}
+.valor-promo span {
+  font-size: 0.7rem;
+  vertical-align: super;
+}
+
+.badge-top {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  background: #f1c40f;
+  color: #000;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 0.6rem;
+  font-weight: 800;
+}
+/* --- [FIM] SEÇÃO 3: CATÁLOGO & FILTROS --- */
+
+/* --- [INÍCIO] MODAL --- */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(10px);
+  z-index: 5000;
+  align-items: center;
+  justify-content: center;
+}
+.modal-content {
+  background: white;
+  padding: 3rem;
+  border-radius: 24px;
+  width: 90%;
+  max-width: 800px;
+  position: relative;
+}
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 2rem;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+.modal-body-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 2.5rem;
+}
+/* --- [FIM] MODAL --- */
+
+/* --- [INÍCIO] FOOTER --- */
+.footer-simple {
+  background: #1e272e;
+  color: white;
+  padding: 4rem 0 2rem;
+  margin-top: 80px;
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  margin-bottom: 2rem;
+}
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 2rem;
+  text-align: center;
+  font-size: 0.8rem;
+  color: #aaa;
+}
+/* --- [FIM] FOOTER --- */

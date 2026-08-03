@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffee Experience</title>
+    
+    <link rel="stylesheet" href="./styles/style.css"> 
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <nav class="menu-section">
+            <div class="container">
+                <img src="assets/coffee-logo.jpg" alt="learnTECH Logo" class="logo">
+                
+                <div class="menu-toggle">
+                    <div class="one"></div>
+                    <div class="two"></div>
+                    <div class="three"></div>
+                </div>
+
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#menu">Menu</a></li>
+                    <li><a href="#gallery">Galeria</a></li>
+                    <li><a href="#cultivo">Processo</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="container">
+                <h1>O café que impulsiona o seu <span>código.</span></h1>
+                <p>Descubra a ciência por trás do grão perfeito na vitrine learnTECH.</p>
+                <a href="#menu" class="button">Explorar Menu</a>
+            </div>
+            <div class="blur-effect"></div>
+        </section>
+
+        <section id="fusion" class="fusion-highlight">
+            <div class="fusion-overlay"></div>
+            <div class="container">
+                <div class="fusion-content">
+                    <span class="tag-tech">EDIÇÃO LIMITADA</span>
+                    <h2 class="fusion-title">A Arte do Grão <br><span>Digital</span></h2>
+                    
+                    <div class="glass-info">
+                        <p>
+                            Unimos a tradição do <strong>Grão Moente</strong> com a energia pulsante da 
+                            <strong>Planet Coffee</strong>. Sinta o aroma do café real processado com 
+                            precisão técnica.
+                        </p>
+                        <div class="fusion-stats">
+                            <div class="stat-item">
+                                <span class="stat-value">100%</span>
+                                <span class="stat-label">Arábica</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value">Neon</span>
+                                <span class="stat-label">Roast</span>
+                            </div>
+                        </div>
+                        <a href="#menu" class="btn-fusion">EXPERIMENTAR AGORA</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="menu" class="cards-container">
+            <div class="container">
+                <header class="section-header">
+                    <h2>Menu de Especialidades</h2>
+                    <p>Filtre por perfil sensorial ou método de preparo.</p>
+                </header>
+                <div class="cards" id="products-grid">
+                    </div>
+            </div>
+        </section>
+
+        <section id="gallery" class="orbital-carousel">
+            <div class="container">
+                <div class="carousel-header">
+                    <span class="tag-tech">FUSION ORBITAL</span>
+                    <h2>Da Colheita ao <span>Código</span></h2>
+                </div>
+
+                <div class="carousel-container">
+                    <div class="carousel-track">
+                        <div class="carousel-card"><img src="assets/insp/cafe-1.jpg" alt="Origin"><div class="card-overlay"><span>Origin</span></div></div>
+                        <div class="carousel-card"><img src="assets/insp/cafe-2.jpg" alt="Selection"><div class="card-overlay"><span>Selection</span></div></div>
+                        <div class="carousel-card"><img src="assets/insp/cafe-3.jpg" alt="Roast"><div class="card-overlay"><span>Roast</span></div></div>
+                        <div class="carousel-card active"><img src="assets/insp/cafe-4.jpg" alt="Grind"><div class="card-overlay"><span>Grind</span></div></div>
+                        <div class="carousel-card"><img src="assets/insp/cafe-5.jpg" alt="Brewing"><div class="card-overlay"><span>Brewing</span></div></div>
+                        <div class="carousel-card"><img src="assets/insp/cafe-6.jpg" alt="Taste"><div class="card-overlay"><span>Taste</span></div></div>
+                        <div class="carousel-card"><img src="assets/insp/cafe-7.jpg" alt="Power Up"><div class="card-overlay"><span>Power Up</span></div></div>
+                        <div class="carousel-card"><img src="assets/insp/cafe-8.jpg" alt="Deep Work"><div class="card-overlay"><span>Deep Work</span></div></div>
+                        <div class="carousel-card"><img src="assets/insp/cafe-9.jpg" alt="Ship It"><div class="card-overlay"><span>Ship It</span></div></div>
+                    </div>
+                </div>
+
+                <div class="carousel-controls">
+                    <button class="control-btn prev">&#10094;</button>
+                    <div class="indicators">
+                        <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+                        <span class="dot active"></span><span class="dot"></span><span class="dot"></span>
+                        <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+                    </div>
+                    <button class="control-btn next">&#10095;</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="cultivo" class="rocket-brew-fusion">
+            <div class="fusion-content container">
+                <div class="content tech-portal">
+                    <span class="tag-fusion">MÉTODOS</span>
+                    <h2 class="section-title">A Arte do <br><span>Preparo</span></h2>
+                    <p>Do <span class="neon-highlight">V60</span> à <span class="neon-highlight">Prensa Francesa</span>, cada técnica extrai uma nota diferente do software orgânico que chamamos de grão.</p>
+                </div>
+                <div class="image organic-brew">
+                    <img src="assets/rocket-coffee-1.jpg" alt="Rocket Coffee Cup">
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <img src="assets/coffee-logo.jpg" alt="learnTECH Logo" class="logo">
+                <p>O café que processa o futuro, servido no presente.</p>
+            </div>
+            <div class="footer-nav">
+                <h4>Sitemap</h4>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#menu">Menu</a></li>
+                    <li><a href="#gallery">Galeria</a></li>
+                    <li><a href="#cultivo">Processo</a></li>
+                </ul>
+            </div>
+            <div class="footer-actions">
+                <h4>Conecte-se</h4>
+                <div class="social-icons">
+                    <a href="#" class="social-link">IG</a>
+                    <a href="#" class="social-link">LI</a>
+                </div>
+                <a href="#home" class="back-to-top">
+                    <span>VOLTAR AO TOPO</span>
+                </a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 learnTECH Ecosystem. <span>// Codificado com cafeína.</span></p>
+        </div>
+    </footer>
+
+    <script type="module" src="main.js"></script>
+</body>
+</html>

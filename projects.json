@@ -160,5 +160,23 @@
         "category": "Saúde",
         "image": "./assets/doctor-care.jpg",
         "destaque": true
+    },
+    {
+        "id": 19,
+        "slug": "livraria",
+        "title": "Meus Livros",
+        "description": "Plataforma de exibição de livros que gosto.",
+        "category": "Leitura",
+        "image": "./assets/livraria.jpg",
+        "destaque": true
+    },
+    {
+        "id": 20,
+        "slug": "rocket-coffee",
+        "title": "Rocket Coffee",
+        "description": "Landing page de um café virtual, com vitrine de produtos e pedido online.",
+        "category": "Gastronomia",
+        "image": "./assets/rocket-coffee.jpg",
+        "destaque": true
     }
 ]

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="learnTECH Books - A curadoria estratégica para impulsionar sua carreira.">
+    <title>The Books | Curadoria learnTECH</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Merriweather:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo"> <span>The</span> Books</div>
+        
+        <ul class="nav-links">
+            <li><a href="#destaques">Destaques</a></li>
+            <li><a href="#mais-vendidos">Mais Vendidos</a></li>
+            <li><a href="#catalogo">Catálogo</a></li>
+        </ul>
+
+        <div class="nav-actions">
+            <button class="btn-primary-sm" onclick="location.href='#catalogo'">
+                Minha Reserva
+            </button>
+        </div>
+    </nav>
+    <header class="hero">
+        <div class="hero-content">
+            <h1>A sua próxima grande ideia começa aqui.</h1>
+            <p>Descubra títulos selecionados para transformar carreiras e mentes inquietas.</p>
+            <a href="#destaques" class="btn-cta-hero">Conhecer Biblioteca</a>
+        </div>
+    </header>
+    <main>
+        <section id="destaques" class="container section-padding">
+            <header class="section-header">
+                <h2 class="section-title">Curadoria de Elite</h2>
+                <p class="section-subtitle">Os títulos fundamentais selecionados para você.</p>
+            </header>
+            
+            <div class="carousel-container">
+                <button class="nav-arrow prev" onclick="scrollCarousel(-1)" aria-label="Anterior">&#10094;</button>
+                <button class="nav-arrow next" onclick="scrollCarousel(1)" aria-label="Próximo">&#10095;</button>
+
+                <div class="carousel-track" id="carrossel-destaque">
+                    </div>
+
+                <div class="carousel-dots" id="carousel-dots"></div>
+            </div>
+        </section>
+        <section id="mais-vendidos" class="bg-section section-padding">
+            <div class="container">
+                <h2 class="section-title">Os Mais Vendidos</h2>
+                <p class="section-subtitle">A escolha da nossa comunidade global.</p>
+                
+                <div id="grid-mais-vendidos" class="grid-mais-vendidos">
+                    </div>
+            </div>
+        </section>
+        <section id="catalogo" class="container section-padding">
+            <div class="catalogo-header">
+                <h2 class="section-title">Explorar Catálogo</h2>
+                
+                <div class="search-filters">
+                    <div class="search-wrapper">
+                        <input type="text" id="input-busca" class="search-bar" placeholder="Busque por título ou autor...">
+                        <span class="search-icon">🔍</span>
+                    </div>
+                    
+                    <nav class="filter-group">
+                        <button class="filter-btn active" data-categoria="Todos">Todos</button>
+                        <button class="filter-btn" data-categoria="Negócios">Negócios</button>
+                        <button class="filter-btn" data-categoria="Psicologia">Psicologia</button>
+                        <button class="filter-btn" data-categoria="Suspense">Suspense</button>
+                        <button class="filter-btn" data-categoria="Saúde">Biohacking</button>
+                    </nav>
+                </div>
+                
+                <div id="contador-resultados" class="contador-resultados">
+                    Carregando acervo...
+                </div>
+            </div>
+
+            <div id="grid-livros" class="grid-livros">
+                </div>
+        </section>
+        </main>
+
+    <footer class="footer-simple">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="logo">learn<span>TECH</span> Books</div>
+                    <p>Unidade estratégica de educação e curadoria.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Navegação</h4>
+                    <ul>
+                        <li><a href="#destaques">Destaques</a></li>
+                        <li><a href="#catalogo">Biblioteca</a></li>
+                        <li><a href="#">Privacidade</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 learnTECH Ecosystem. Juiz de Fora, MG.</p>
+            </div>
+        </div>
+    </footer>
+    <div id="modal-livro" class="modal" role="dialog" aria-modal="true">
+        <div class="modal-content">
+            <button class="close-btn" onclick="fecharModal()" aria-label="Fechar">&times;</button>
+            <div id="modal-detalhes">
+                </div>
+        </div>
+    </div>
+    <script src="main.js" defer></script>
+</body>
+</html>
