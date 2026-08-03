@@ -80,6 +80,8 @@ Projeto estático, sem dependências — basta abrir `index.html` num servidor l
 
 ## 🌳 Fluxo de contribuição
 
+Um workflow de desenvolvimento para organização de código e versões de projeto.
+
 ```
 feature/projetos-lp  →  developer-mvp  →  main (produção)
 ```
