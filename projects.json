@@ -223,5 +223,23 @@
         "category": "Gastronomia",
         "image": "./assets/catalogo-cafeteria.jpg",
         "destaque": true
+    },
+    {
+        "id": 26,
+        "slug": "cracha-virtual",
+        "title": "Crachá Virtual",
+        "description": "Gerador de crachá digital personalizado.",
+        "category": "Recursos Humanos",
+        "image": "./assets/cracha-virtual.jpg",
+        "destaque": true
+    },
+    {
+        "id": 27,
+        "slug": "headphones",
+        "title": "Headphones",
+        "description": "Apresentação encantadora de um headphones.",
+        "category": "Eletrônicos",
+        "image": "./assets/headphones.jpg",
+        "destaque": true
     }
 ]

@@ -1,0 +1,405 @@
+/* --- Reset e Variáveis Globais --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --black: hsl(240, 6%, 13%);
+  --grey: hsl(240, 9%, 89%);
+  --bg-panel: #ffffff;
+  --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* --- Matrizes de Identidade Visual (BUs) --- */
+.theme-green {
+  --brand-color: #49aa26;
+  --brand-glow: rgba(73, 170, 38, 0.2);
+  --bg-card: url("./assets/bg/verde-2.png");
+  --glass-overlay: rgba(20, 40, 20, 0.7);
+}
+.theme-blue {
+  --brand-color: #2649aa;
+  --brand-glow: rgba(38, 73, 170, 0.2);
+  --bg-card: url("./assets/bg/azul-4.png");
+  --glass-overlay: rgba(20, 30, 60, 0.7);
+}
+.theme-purple {
+  --brand-color: #8257e5;
+  --brand-glow: rgba(130, 87, 229, 0.2);
+  --bg-card: url("./assets/bg/roxo-1.png");
+  --glass-overlay: rgba(40, 20, 60, 0.7);
+}
+.theme-orange {
+  --brand-color: #fd951f;
+  --brand-glow: rgba(253, 149, 31, 0.2);
+  --bg-card: url("./assets/bg/laranja-3.png");
+  --glass-overlay: rgba(60, 30, 10, 0.7);
+}
+
+html,
+body {
+  height: 100vh;
+  overflow: hidden;
+  font-family: "Roboto", sans-serif;
+  background-color: var(--black);
+  color: var(--grey);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* --- Layout Principal --- */
+#app-container {
+  display: grid;
+  grid-template-columns: 1fr; /* Mobile Default */
+  height: 100vh;
+}
+
+@media (min-width: 960px) {
+  #app-container {
+    grid-template-columns: 400px 1fr;
+  }
+}
+
+/* --- Painel de Configuração (Drawer lateral no Mobile) --- */
+.config-panel {
+  background: var(--bg-panel);
+  color: var(--black);
+  height: 100%;
+  overflow-y: auto;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Menu Header Interno */
+.config-menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  background: #ffffff;
+  border-bottom: 1px solid #f1f5f9;
+  position: sticky;
+  top: 0;
+  z-index: 1100;
+}
+
+.menu-logo {
+  height: 30px;
+  width: auto;
+}
+
+/* Botão Hamburger */
+.hamburger-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 5px;
+}
+
+.hamburger-btn span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background-color: var(--black);
+  border-radius: 2px;
+  transition: var(--transition);
+}
+
+/* Animação do Hamburger para X */
+.hamburger-btn.open span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.hamburger-btn.open span:nth-child(2) {
+  opacity: 0;
+  transform: translateX(-10px);
+}
+.hamburger-btn.open span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* Conteúdo do Formulário */
+.panel-header {
+  padding: 2rem 1.5rem 0.5rem;
+}
+.bu-badge {
+  background: var(--brand-color);
+  color: #fff;
+  padding: 2px 10px;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: bold;
+  transition: var(--transition);
+}
+#badge-form {
+  padding: 1.5rem;
+}
+
+/* Estilização de Inputs */
+.input-group {
+  margin-bottom: 1.5rem;
+}
+.input-group label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #666;
+  margin-bottom: 0.6rem;
+}
+input[type="text"] {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border: 2px solid #edf2f7;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  background: #f8fafc;
+  transition: var(--transition);
+}
+input[type="text"]:focus {
+  outline: none;
+  border-color: var(--brand-color);
+  box-shadow: 0 0 0 4px var(--brand-glow);
+}
+
+.custom-file-upload {
+  display: block;
+  padding: 10px;
+  cursor: pointer;
+  background: #f1f5f9;
+  border-radius: 8px;
+  border: 1px dashed #cbd5e1;
+  text-align: center;
+  font-size: 0.9rem;
+}
+input[type="file"] {
+  display: none;
+}
+
+/* BUs e Temas */
+.theme-buttons {
+  display: flex;
+  gap: 0.8rem;
+  margin-top: 1rem;
+}
+.btn-theme {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  cursor: pointer;
+  transition: var(--transition);
+}
+.btn-theme:hover {
+  transform: scale(1.1);
+}
+.green {
+  background: #49aa26;
+}
+.blue {
+  background: #2649aa;
+}
+.purple {
+  background: #8257e5;
+}
+.orange {
+  background: #fd951f;
+}
+
+.btn-primary {
+  width: 100%;
+  height: 55px;
+  background: var(--black);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: var(--transition);
+  margin-top: 2rem;
+}
+.btn-primary:hover {
+  background: var(--brand-color);
+  transform: translateY(-2px);
+}
+
+/* --- Preview Panel (O Crachá) --- */
+.preview-panel {
+  background-color: #0b0b0c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  overflow: hidden;
+}
+
+.container {
+  width: 100%;
+  max-width: 320px;
+  aspect-ratio: 1 / 1.5;
+  border-radius: 20px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2.5rem 2rem;
+  background-image: var(--bg-card);
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+}
+
+.container::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    var(--glass-overlay) 100%
+  );
+  z-index: 1;
+}
+.container * {
+  z-index: 2;
+}
+
+/* Avatar */
+.avatar {
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+.avatar .seal {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  width: 45px;
+  z-index: 3;
+}
+.avatar > img {
+  width: 150px;
+  height: 175px;
+  object-fit: cover;
+  clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
+  border: 3px solid var(--brand-color);
+  background: var(--black);
+}
+
+h1 {
+  font-size: 1.6rem;
+  color: #fff;
+  margin-bottom: 0.3rem;
+  text-align: center;
+}
+#userProfession {
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 1.5px;
+  opacity: 0.8;
+  margin-bottom: 1.5rem;
+}
+
+.badge-links a {
+  text-decoration: none;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  margin-bottom: 1.5rem;
+  font-size: 0.85rem;
+}
+#socialLinks {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+#socialLinks i {
+  font-size: 1.4rem;
+  color: #fff;
+}
+
+/* --- ESTRATÉGIA MOBILE ESPECÍFICA --- */
+@media (max-width: 959px) {
+  .fab-mobile {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: var(--brand-color);
+    color: white;
+    border: none;
+    padding: 15px 25px;
+    border-radius: 50px;
+    font-weight: bold;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    z-index: 10; /* Abaixo do painel de config, mas acima do crachá */
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+}
+
+@media (min-width: 960px) {
+  .fab-mobile {
+    display: none;
+  }
+}
+@media (max-width: 959px) {
+  #app-container {
+    display: block;
+    position: relative;
+  }
+
+  .preview-panel {
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+  }
+
+  .config-panel {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 2000;
+    transform: translateX(-100%); /* Escondido por padrão */
+    transition: var(--transition);
+  }
+
+  .config-panel.active {
+    transform: translateX(0);
+  }
+
+  /* Forçar o menu a aparecer sobre o fundo no mobile antes de abrir o painel */
+  .config-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .panel-header {
+    margin-top: 70px;
+  }
+}
+
+@media (min-width: 960px) {
+  .hamburger-btn {
+    display: none;
+  }
+}
