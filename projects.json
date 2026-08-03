@@ -250,5 +250,14 @@
         "category": "Pets",
         "image": "./assets/doggy.jpg",
         "destaque": true
+    },
+    {
+        "id": 29,
+        "slug": "us-food",
+        "title": "US Food",
+        "description": "Apresentação encantadora de um restaurante americano.",
+        "category": "Gastronomia",
+        "image": "./assets/us-food.jpg",
+        "destaque": true
     }
 ]
