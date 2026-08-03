@@ -178,5 +178,14 @@
         "category": "Gastronomia",
         "image": "./assets/rocket-coffee.jpg",
         "destaque": true
+    },
+    {
+        "id": 21,
+        "slug": "pastel-e-cana",
+        "title": "Pastel e Cana",
+        "description": "Landing page de um restaurante, com cardápio digital e pedido online.",
+        "category": "Gastronomia",
+        "image": "./assets/pastel-e-cana.jpg",
+        "destaque": true
     }
 ]

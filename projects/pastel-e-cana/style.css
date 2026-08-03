@@ -1,0 +1,305 @@
+:root {
+  --mequi-yellow: #ffb703;
+  --mequi-yellow-dark: #ffbc0d; /* Consistência com o botão special-ingredient */
+  --mequi-gray-light: #f2f2f2;
+  --mequi-white: #ffffff;
+  --text-dark: #292929;
+  --shadow-soft: 0 4px 12px rgba(0, 0, 0, 0.05);
+  --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background-color: var(--mequi-white);
+  margin: 0;
+  color: var(--text-dark);
+  -webkit-font-smoothing: antialiased; /* Melhora renderização da fonte */
+}
+
+/* Header Slim */
+.mequi-header {
+  padding: 15px 0;
+  border-bottom: 1px solid #eee;
+  text-align: center;
+  position: sticky; /* Mantém o logo visível ao rolar */
+  top: 0;
+  background: white;
+  z-index: 100;
+}
+
+.logo {
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.logo span {
+  color: var(--mequi-yellow);
+  font-weight: 800;
+}
+
+/* Categorias */
+.category-nav {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 25px 10px;
+  background: var(--mequi-white);
+  overflow-x: auto; /* Permite scroll horizontal se houver muitas categorias */
+  white-space: nowrap;
+}
+
+.cat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 110px;
+  min-width: 110px; /* Garante que não encolha no flex */
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.cat-item:active {
+  transform: scale(0.95);
+} /* Feedback de clique */
+
+.cat-img-wrapper {
+  width: 70px;
+  height: 70px;
+  background: var(--mequi-gray-light);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+  border: 2px solid transparent;
+  transition: var(--transition);
+}
+
+.cat-item.active .cat-img-wrapper {
+  background: var(--mequi-yellow);
+  border-color: var(--mequi-yellow);
+  box-shadow: 0 4px 10px rgba(255, 183, 3, 0.3);
+}
+
+.cat-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+/* Container Principal */
+.kiosk-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px 40px;
+}
+
+/* ==========================================
+   /* 3. HERO BANNER - CARROSSEL PREMIUM
+   /* ========================================== */
+
+.hero-banner {
+  width: 100%;
+  padding: 0; /* Remove preenchimento para visual total */
+  overflow: hidden;
+  background: #fdfdfd; /* Fundo extremamente limpo */
+}
+
+.carousel-container {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 480px; /* Altura imponente */
+}
+
+.slider-wrapper {
+  display: flex;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1); /* Transição suave e orgânica */
+  height: 100%;
+}
+
+.slide {
+  min-width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Espaço total entre texto e imagem */
+  gap: 30px;
+  padding: 0 8%; /* Preenchimento confortável nas laterais */
+  box-sizing: border-box;
+}
+
+/* Informações do Slide */
+.slide-info {
+  flex: 1; /* Ocupa metade do espaço */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Alinhamento à esquerda */
+  z-index: 5;
+}
+
+.slide-info h1 {
+  font-size: clamp(2.5rem, 6vw, 4rem); /* Fonte gigante e responsiva */
+  color: #222;
+  margin: 0 0 15px 0;
+  line-height: 1.1;
+  font-weight: 800; /* Peso máximo para o nome */
+}
+
+/* Ingrediente Especial */
+.special-ingredient {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #ffbc0d; /* Amarelo premium do ecossistema */
+  color: #fff;
+  padding: 10px 24px;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  margin-bottom: 25px; /* Espaço para o botão */
+}
+
+/* NOVO BOTÃO CTA DO BANNER */
+.btn-hero-order {
+  background: transparent;
+  border: 2px solid var(--mequi-yellow);
+  color: var(--text-dark);
+  padding: 12px 30px;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.btn-hero-order:hover {
+  background: var(--mequi-yellow);
+  color: white;
+}
+
+.btn-hero-order .arrow {
+  transition: transform 0.2s;
+}
+
+.btn-hero-order:hover .arrow {
+  transform: translateX(5px);
+}
+
+/* Imagem do Produto Flutuante */
+.slide-img {
+  flex: 1; /* Ocupa a outra metade */
+  max-height: 380px; /* Maior e mais imponente */
+  width: auto;
+  object-fit: contain;
+
+  /* A Mágica: Sombra no FORMATO do produto, não quadrada */
+  filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.15));
+
+  transition: transform 0.3s ease; /* Efeito ao hover do slide inteiro */
+}
+
+/* Efeito ao passar o mouse no slide inteiro (UX) */
+.slide:hover .slide-img {
+  transform: translateY(-10px) rotate(-2deg);
+}
+
+/* Controles de Navegação Otimizados */
+.carousel-controls button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.5rem;
+  z-index: 10;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s;
+  opacity: 0.6; /* Esconde um pouco para não atrapalhar */
+}
+
+.carousel-controls button:hover {
+  opacity: 1;
+  background: var(--mequi-yellow);
+  color: white;
+}
+
+.prev-btn {
+  left: 15px;
+}
+.next-btn {
+  right: 15px;
+}
+
+/* THE END - BANNER CARROSSEL PREMIUM */
+
+/* Grid e Cards */
+.mequi-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.product-card {
+  background: var(--mequi-white);
+  border: 1px solid #f0f0f0;
+  border-radius: 16px; /* Bordas mais suaves */
+  padding: 20px;
+  text-align: center;
+  transition: var(--transition);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+  border-color: var(--mequi-yellow);
+}
+
+.product-img {
+  width: 100%;
+  height: 140px;
+  object-fit: contain;
+  margin-bottom: 15px;
+  transition: transform 0.3s;
+}
+
+.product-card:hover .product-img {
+  transform: scale(1.05);
+}
+
+.product-info h3 {
+  font-size: 1rem;
+  margin: 0 0 10px;
+  font-weight: 700;
+}
+
+.product-price {
+  font-weight: 800;
+  font-size: 1.2rem;
+  color: var(--text-dark);
+}
+
+/* Responsividade Básica */
+@media (max-width: 768px) {
+  .slide {
+    flex-direction: column-reverse;
+    text-align: center;
+    gap: 20px;
+  }
+  .slide-img {
+    max-height: 200px;
+  }
+  .carousel-container {
+    height: 500px;
+  }
+}
