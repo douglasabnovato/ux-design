@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./assets/logo.jpg" type="image/x-icon">
+    <title>Hamburguers Mágicos | Cardápio Digital</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Montserrat:wght@700;800&family=Space+Grotesk:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+    <header>
+        <nav class="nav-container">
+            <div class="header-logo">
+                <img src="./assets/hamburguer-00.jpg" alt="Logo Hamburguers Mágicos">
+                <div class="logo-name">
+                    <span>Hamburguers</span>
+                    <span>Mágicos</span>
+                </div>
+            </div>
+            
+            <div class="cart-status" onclick="openCart()">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <span id="cart-count">0</span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>Onde a tecnologia encontra o <span>sabor.</span></h1>
+            <p>Escolha seu blend favorito e experimente a magia.</p>
+        </section>
+
+        <section id="category-filter-container" class="filters-wrapper">
+            </section>
+
+        <section class="hamburguers" id="products-grid">
+            <div class="loader">Carregando magia...</div>
+        </section>
+    </main>
+
+    <div id="sticky-checkout" class="sticky-footer hidden">
+        <div class="footer-content">
+            <div class="total-info">
+                <span>Seu Pedido</span>
+                <strong id="footer-total">R$ 0,00</strong>
+            </div>
+            <button class="btn-finish">Ver Sacola <i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+    </div>
+
+    <script type="module" src="./main.js"></script>
+</body>
+</html>

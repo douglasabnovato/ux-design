@@ -187,5 +187,14 @@
         "category": "Gastronomia",
         "image": "./assets/pastel-e-cana.jpg",
         "destaque": true
+    },
+    {
+        "id": 22,
+        "slug": "hamburgueria",
+        "title": "Hamburguers Mágicos",
+        "description": "Landing page de uma hamburgueria, com cardápio digital e pedido online.",
+        "category": "Gastronomia",
+        "image": "./assets/hamburguers-magicos.jpg",
+        "destaque": true
     }
 ]
