@@ -259,5 +259,14 @@
         "category": "Gastronomia",
         "image": "./assets/us-food.jpg",
         "destaque": true
+    },
+    {
+        "id": 30,
+        "slug": "watches",
+        "title": "Watches",
+        "description": "Conheça esse modelo de relógio.",
+        "category": "Acessórios",
+        "image": "./assets/watches.jpg",
+        "destaque": true
     }
 ]
