@@ -196,5 +196,14 @@
         "category": "Gastronomia",
         "image": "./assets/hamburguers-magicos.jpg",
         "destaque": true
+    },
+    {
+        "id": 23,
+        "slug": "espetinho-de-minas",
+        "title": "Espetinho de Minas",
+        "description": "Landing page para um Food Truck com cardápio digital e pedido online.",
+        "category": "Gastronomia",
+        "image": "./assets/espetinho-de-minas.jpg",
+        "destaque": true
     }
 ]
