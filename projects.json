@@ -214,5 +214,14 @@
         "category": "Jardinagem",
         "image": "./assets/dc-jardinagem.jpg",
         "destaque": true
+    },
+    {
+        "id": 25,
+        "slug": "catalogo-cafeteria",
+        "title": "Catálogo da Cafeteria",
+        "description": "Catálogo digital com os melhores cafés e produtos da cafeteria.",
+        "category": "Gastronomia",
+        "image": "./assets/catalogo-cafeteria.jpg",
+        "destaque": true
     }
 ]

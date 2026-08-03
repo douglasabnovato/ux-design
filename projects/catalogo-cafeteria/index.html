@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sabor Artesanal | Cafeteria</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="dark-theme">
+    <header class="main-header">
+      <div class="header-content">
+        <div class="logo">
+          <h1>Sabor<span>Artesanal</span></h1>
+        </div>
+
+        <div class="search-wrapper">
+          <div class="search-bar">
+            <input
+              type="text"
+              id="smart-search"
+              placeholder="Busque por nome, tag ou código (ex: #01)..."
+            />
+            <span class="search-icon">🔍</span>
+          </div>
+        </div>
+      </div>
+
+      <nav class="category-nav">
+        <div class="category-container" id="category-list">
+          <button class="cat-btn active" data-category="Todos">Todos</button>
+          <button class="cat-btn" data-category="Cafés e Métodos">Cafés</button>
+          <button class="cat-btn" data-category="Bebidas Quentes">
+            Quentes
+          </button>
+          <button class="cat-btn" data-category="Bebidas Refrescantes">
+            Gelados
+          </button>
+          <button class="cat-btn" data-category="Assados e Mineirices">
+            Assados
+          </button>
+          <button class="cat-btn" data-category="Sanduíches e Lanches">
+            Lanches
+          </button>
+          <button class="cat-btn" data-category="Doces e Sobremesas">
+            Doces
+          </button>
+          <button class="cat-btn" data-category="Empório e Presentes">
+            Empório
+          </button>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container">
+      <section class="hero-section">
+        <div class="hero-grid">
+          <div class="hero-text">
+            <span class="promo-badge">Sugestão do Barista</span>
+            <h2 id="hero-title">Cookieccino Supremo</h2>
+            <p id="hero-desc">
+              A combinação perfeita de café espresso, leite vaporizado e uma
+              borda generosa de cookie artesanal com gotas de chocolate.
+            </p>
+            <div class="hero-cta">
+              <span class="hero-price" id="hero-price">R$ 19,90</span>
+              <a
+                href="https://wa.me/553299999999"
+                target="_blank"
+                class="btn-primary"
+                >Pedir Agora</a
+              >
+            </div>
+          </div>
+          <div class="hero-image">
+            <div class="blob-bg"></div>
+            <img
+              src="assets/hero/hero-1.png"
+              alt="Produto Destaque"
+              class="float-animation"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section class="highlights-section">
+        <h2 class="section-title">Especialidades do Barista</h2>
+        <div class="highlights-grid">
+          <div class="high-card" style="--i: 1">
+            <img src="assets/destaques/cafes-1.png" alt="O Ritual" />
+            <div class="high-content">
+              <span>O Ritual</span>
+              <h3>A Experiência do Café</h3>
+            </div>
+          </div>
+          <div class="high-card" style="--i: 2">
+            <img src="assets/destaques/cafes-2.png" alt="Doçura" />
+            <div class="high-content">
+              <span>Doçura</span>
+              <h3>Cookieccino Supremo</h3>
+            </div>
+          </div>
+          <div class="high-card" style="--i: 3">
+            <img src="assets/destaques/cafes-3.png" alt="Refresco" />
+            <div class="high-content">
+              <span>Refresco</span>
+              <h3>Iced Chocomalow</h3>
+            </div>
+          </div>
+          <div class="high-card" style="--i: 4">
+            <img src="assets/destaques/cafes-4.png" alt="Mineirice" />
+            <div class="high-content">
+              <span>Mineirice</span>
+              <h3>Waffle de Pão de Queijo</h3>
+            </div>
+          </div>
+          <div class="high-card" style="--i: 5">
+            <img src="assets/destaques/cafes-5.png" alt="Textura" />
+            <div class="high-content">
+              <span>Textura</span>
+              <h3>Divino Croissant</h3>
+            </div>
+          </div>
+          <div class="high-card" style="--i: 6">
+            <img src="assets/destaques/cafes-6.png" alt="Empório" />
+            <div class="high-content">
+              <span>Empório</span>
+              <h3>Grãos Café Mió</h3>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="solo-feature">
+        <div class="solo-grid">
+          <div class="solo-image">
+            <img src="assets/hero/hero-3.png" alt="V60 Cítrica" />
+          </div>
+          <div class="solo-text">
+            <span class="exclusive-badge">Destaque do Mês</span>
+            <h2>V60 Cítrica: Notas de Limão Siciliano</h2>
+            <p>
+              Um microlote selecionado preparado no método Hario V60 para
+              ressaltar a acidez brilhante e o aroma floral.
+            </p>
+            <a href="https://wa.me/553299999999" class="btn-primary"
+              >Provar Agora</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <section class="catalog-section" id="catalog">
+        <div class="catalog-header">
+          <h3 id="current-category-title">Todos os Produtos</h3>
+          <span id="product-count">Buscando sabores...</span>
+        </div>
+
+        <div class="product-grid" id="catalog-grid">
+          <div class="loading-shimmer">Carregando cardápio digital...</div>
+        </div>
+      </section>
+    </main>
+
+    <section class="hero-banner">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <h1>Sabor <span>Artesanal</span></h1>
+        <p>
+          A união perfeita entre o grão selecionado e a experiência digital.
+        </p>
+        <a href="#catalog" class="btn-hero">Explorar Cardápio</a>
+      </div>
+    </section>
+
+    <footer class="main-footer">
+      <div class="footer-info">
+        <div class="status-indicator">
+          <span class="dot online"></span>
+          <span id="store-status">Aberto para pedidos</span>
+        </div>
+        <p>Seu momento café, agora a um clique de distância.</p>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Catálogo Digital Cafeteria. Desenvolvido com ❤️</p>
+      </div>
+    </footer>
+
+    <a
+      href="https://wa.me/553299999999"
+      class="whatsapp-fixed"
+      target="_blank"
+      title="Falar com atendente"
+    >
+      <svg viewBox="0 0 32 32" class="wa-icon">
+        <path
+          d="M16 0c-8.837 0-16 7.163-16 16 0 2.825 0.733 5.476 2.016 7.787l-2.016 7.363 7.544-1.981c2.234 1.189 4.781 1.831 7.456 1.831 8.837 0 16-7.163 16-16s-7.163-16-16-16zM16 29.333c-2.405 0-4.704-0.621-6.721-1.801l-0.481-0.281-4.48 1.176 1.196-4.364-0.309-0.491c-1.284-2.036-1.963-4.407-1.963-6.839 0-7.352 5.981-13.333 13.333-13.333s13.333 5.981 13.333 13.333c0 7.352-5.981 13.333-13.333 13.333zM22.515 19.341c-0.357-0.179-2.112-1.041-2.441-1.161s-0.569-0.179-0.808 0.179c-0.239 0.357-0.925 1.161-1.135 1.401s-0.419 0.269-0.776 0.091c-0.357-0.179-1.507-0.555-2.871-1.771-1.060-0.945-1.776-2.112-1.984-2.469s-0.023-0.551 0.156-0.728c0.161-0.159 0.357-0.419 0.537-0.628s0.239-0.357 0.357-0.597 0.060-0.449-0.031-0.628c-0.091-0.179-0.808-1.947-1.107-2.664-0.291-0.697-0.587-0.603-0.808-0.613-0.208-0.011-0.448-0.011-0.688-0.011s-0.628 0.091-0.957 0.449c-0.328 0.357-1.255 1.225-1.255 2.985s1.285 3.46 1.464 3.699c0.179 0.239 2.528 3.861 6.125 5.411 0.855 0.368 1.523 0.588 2.044 0.753 0.859 0.272 1.641 0.233 2.259 0.141 0.689-0.103 2.112-0.863 2.412-1.696s0.3-1.545 0.211-1.696c-0.091-0.151-0.328-0.241-0.685-0.419z"
+        ></path>
+      </svg>
+    </a>
+
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
