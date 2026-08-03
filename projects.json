@@ -151,5 +151,14 @@
         "category": "Formulário",
         "image": null,
         "destaque": false
+    },
+    {
+        "id": 18,
+        "slug": "doctor-care",
+        "title": "Doctor Care",
+        "description": "Plataforma de cuidados médicos com agendamento e acompanhamento.",
+        "category": "Saúde",
+        "image": "./assets/doctor-care.jpg",
+        "destaque": true
     }
 ]
