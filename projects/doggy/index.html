@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FindAFriend</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
+    />
+    <script src="./script.js" defer></script>
+</head>
+<body>
+    <section id="home">
+        <header>
+            <div id="logo">
+                <img src="./assets/logo-mobile.svg" alt="FindAFriend">
+            </div>            
+            <div>
+                    <button id="open-menu" class="menu">
+                        <img src="./assets/burguer-menu-mobile.svg" alt="Abrir menu">
+                    </button>
+                    <button id="close-menu" class="menu hide">
+                        <img src="./assets/close-menu-mobile.svg" alt="Fechar o menu">
+                    </button>
+            </div>
+        </header>
+        <div>
+            <nav id="navigation">
+                <div class="line"></div>
+                <ul>
+                    <li>Home</li>
+                    <li>Sobre o app</li>
+                    <li>Animais disponíveis</li>
+                    <li>Sobre a FindAFriend</li>
+                    <li>Contato</li>
+                </ul>
+            </nav>
+        </div>
+        
+        <div class="main-content">
+            <div>
+                <div class="pre-title">
+                    <div class="circles">
+                        <img src="./assets/pug.png" alt="Little image of a pug">
+                        <img src="./assets/white-cat.png" alt="Little image of a white cat with black ears">
+                        <img src="./assets/dog.png" alt="Little image of a puppy">
+                        <img src="./assets/caramel-cat.png" alt="Little image of a caramel cat">
+                    </div>
+                    <p><strong>324 amigos</strong> na sua cidade</p>
+                </div>
+                <h1>Leve</br> a felicidade para o seu lar</h1>
+                <p class="main-subtitle">Encontre o animal de estimação ideal para seu estilo de vida!</p>
+            </div>
+
+            <div class="hero">
+                <button>Acesse agora</button>
+            </div>
+            
+
+        </div>
+
+
+    </section>
+    <section id="about">
+        <div class="container">
+            <h1>Um app não, uma caixinha de amigos...</h1>
+                <div class="items">
+                    <div class="item">
+                        <p>🐕</p>
+                        <p>O <strong>FindAFriend</strong> é um produto desenvolvido para você encontrar o animal de estimação ideal ao seu estilo de vida!</p>
+                    </div>
+                    <div class="item">
+                        <p>🐈</p>
+                        <p><strong>ONGs</strong> cadastram os bichinhos disponíveis para adoção informando características como: porte, nível de energia, nível de independência, sociabilidade e gênero.</p>
+                    </div>
+                    <div class="item last">
+                        <p>🦮</p>
+                        <p><strong>Filtre os bichinhos</strong> de acordo com suas preferências e lifestyle. Depois é só entrar em contato com a ONG para agendar uma visita e conhecer pessoalmente seu <strong>match perfeito</strong>!</p>
+                    </div>
+                </div>
+
+        </div>
+        <div class="app-image-wrapper">
+            <div id="app-bg"></div>
+            <img src="./assets/img-app-mobile.png" alt="" id="app-mobile">
+            <img src="./assets/img-app.png" alt="" id="app-desktop">
+        </div>
+    </section>
+    <section id="friends">
+        <div class="container">
+            <div class="friends-content">
+                <h2>Há muitos amigos esperando por você!</h2>
+                <p>
+                    O FiendAFriend conecta pessoas que estão procurando por um animal de estimação com animais que precisam de um lar amoroso. É fácil de usar e você pode navegar por uma variedade de animais para encontrar aquele que melhor se adapta ao seu estilo de vida e necessidades.
+                </p>
+                <a href="#">Acesse agora</a>
+                
+                <div class="slider">
+                    <div class="swiper">
+                        <div class="swiper-wrapper">
+                            <!-- Slides -->
+                            <div class="swiper-slide">
+                                <img src="./assets/slide-1.png" alt="">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="./assets/slide-2.png" alt="">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="./assets/slide-3.png" alt="">
+                            </div>
+                        </div>
+                        
+                        <div class="swiper-button-next" id="btn-next">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M9 6L15 12L9 18" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <div class="swiper-button-prev" id="btn-prev">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M15 18L9 12L15 6" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+
+                        <div class="swiper-pagination"></div>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+        var swiper = new Swiper(".swiper", {
+        slidesPerView: "auto",
+        spaceBetween: 10,
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+        navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+        });
+    </script>
+</body>
+</html>

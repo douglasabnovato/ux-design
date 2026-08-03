@@ -196,5 +196,77 @@
         "category": "Gastronomia",
         "image": "./assets/hamburguers-magicos.jpg",
         "destaque": true
+    },
+    {
+        "id": 23,
+        "slug": "espetinho-de-minas",
+        "title": "Espetinho de Minas",
+        "description": "Landing page para um Food Truck com cardápio digital e pedido online.",
+        "category": "Gastronomia",
+        "image": "./assets/espetinho-de-minas.jpg",
+        "destaque": true
+    },
+    {
+        "id": 24,
+        "slug": "dc-jardinagem",
+        "title": "DC Jardinagem",
+        "description": " Transformando terrenos brutos em espaços de lazer e beleza com técnicas profissionais de jardinagem.",
+        "category": "Jardinagem",
+        "image": "./assets/dc-jardinagem.jpg",
+        "destaque": true
+    },
+    {
+        "id": 25,
+        "slug": "catalogo-cafeteria",
+        "title": "Catálogo da Cafeteria",
+        "description": "Catálogo digital com os melhores cafés e produtos da cafeteria.",
+        "category": "Gastronomia",
+        "image": "./assets/catalogo-cafeteria.jpg",
+        "destaque": true
+    },
+    {
+        "id": 26,
+        "slug": "cracha-virtual",
+        "title": "Crachá Virtual",
+        "description": "Gerador de crachá digital personalizado.",
+        "category": "Recursos Humanos",
+        "image": "./assets/cracha-virtual.jpg",
+        "destaque": true
+    },
+    {
+        "id": 27,
+        "slug": "headphones",
+        "title": "Headphones",
+        "description": "Apresentação encantadora de um headphones.",
+        "category": "Eletrônicos",
+        "image": "./assets/headphones.jpg",
+        "destaque": true
+    },
+    {
+        "id": 28,
+        "slug": "doggy",
+        "title": "Doggy",
+        "description": "Apresentação encantadora de um cachorrinho. Venha brincar!",
+        "category": "Pets",
+        "image": "./assets/doggy.jpg",
+        "destaque": true
+    },
+    {
+        "id": 29,
+        "slug": "us-food",
+        "title": "US Food",
+        "description": "Apresentação encantadora de um restaurante americano.",
+        "category": "Gastronomia",
+        "image": "./assets/us-food.jpg",
+        "destaque": true
+    },
+    {
+        "id": 30,
+        "slug": "watches",
+        "title": "Watches",
+        "description": "Conheça esse modelo de relógio.",
+        "category": "Acessórios",
+        "image": "./assets/watches.jpg",
+        "destaque": true
     }
 ]

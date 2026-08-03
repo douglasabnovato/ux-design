@@ -1,0 +1,572 @@
+/* =========================================
+   1. VARIÁVEIS E CONFIGURAÇÕES GLOBAIS
+   ========================================= */
+:root {
+  --bg-body: #0a0a0a;
+  --bg-card: #161616;
+  --primary: #bc6c25; /* Tom de Café/Torra */
+  --accent: #d4a373; /* Tom de Café com Leite */
+  --text-main: #ffffff;
+  --text-muted: #a0a0a0;
+  --white: #ffffff;
+  --success: #27ae60;
+
+  --radius-lg: 24px;
+  --radius-md: 12px;
+  --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  background-color: var(--bg-body);
+  color: var(--text-main);
+  font-family: "Inter", sans-serif;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Playfair Display", serif;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 5%;
+}
+
+/* =========================================
+   2. HEADER & BUSCA & CATEGORIAS
+   ========================================= */
+.main-header {
+  background: rgba(10, 10, 10, 0.8);
+  backdrop-filter: blur(15px);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  padding: 1.2rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+}
+
+.logo h1 {
+  font-size: 1.8rem;
+  letter-spacing: -1px;
+}
+.logo span {
+  color: var(--primary);
+}
+
+.search-wrapper {
+  flex: 1;
+  max-width: 500px;
+}
+
+.search-bar {
+  position: relative;
+  background: var(--bg-card);
+  border-radius: 50px;
+  padding: 0.8rem 1.5rem;
+  display: flex;
+  align-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: var(--transition);
+}
+
+.search-bar:focus-within {
+  border-color: var(--primary);
+  box-shadow: 0 0 15px rgba(188, 108, 37, 0.2);
+}
+
+.search-bar input {
+  background: transparent;
+  border: none;
+  color: white;
+  width: 100%;
+  outline: none;
+  font-size: 0.95rem;
+}
+
+.category-nav {
+  margin-top: 1.5rem;
+}
+
+.category-container {
+  display: flex;
+  gap: 0.8rem;
+  overflow-x: auto;
+  scrollbar-width: none;
+  padding-bottom: 5px;
+}
+
+.category-container::-webkit-scrollbar {
+  display: none;
+}
+
+.cat-btn {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--text-muted);
+  padding: 0.6rem 1.4rem;
+  border-radius: 50px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: var(--transition);
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.cat-btn.active,
+.cat-btn:hover {
+  background: var(--primary);
+  color: white;
+  border-color: var(--primary);
+  transform: translateY(-2px);
+}
+
+/* =========================================
+   3. HERO PRINCIPAL (TOP)
+   ========================================= */
+.hero-section {
+  padding: 4rem 0;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.promo-badge {
+  background: rgba(188, 108, 37, 0.15);
+  color: var(--accent);
+  padding: 0.4rem 1rem;
+  border-radius: 50px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.hero-text h2 {
+  font-size: 3.5rem;
+  margin: 1.5rem 0;
+  line-height: 1.1;
+}
+
+.hero-text p {
+  color: var(--text-muted);
+  font-size: 1.1rem;
+  max-width: 500px;
+  margin-bottom: 2rem;
+}
+
+.hero-cta {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.hero-price {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: var(--accent);
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: white;
+  text-decoration: none;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  font-weight: 600;
+  transition: var(--transition);
+  display: inline-block;
+}
+
+.btn-primary:hover {
+  filter: brightness(1.2);
+  transform: scale(1.05);
+}
+
+.hero-image {
+  position: relative;
+}
+
+.blob-bg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 350px;
+  height: 350px;
+  background: var(--primary);
+  filter: blur(100px);
+  opacity: 0.2;
+  border-radius: 50%;
+}
+
+.float-animation {
+  width: 100%;
+  max-width: 400px;
+  filter: drop-shadow(0 20px 50px rgba(0, 0, 0, 0.8));
+  animation: floating 6s ease-in-out infinite;
+  position: relative;
+  z-index: 2;
+}
+
+@keyframes floating {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-30px);
+  }
+}
+
+/* =========================================
+   4. ESPECIALIDADES (GRID DE 6 DESTAQUES)
+   ========================================= */
+.highlights-section {
+  padding: 80px 0;
+  background: #000;
+}
+
+.section-title {
+  text-align: center;
+  color: var(--primary);
+  margin-bottom: 40px;
+  font-size: 2.2rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+.highlights-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+}
+
+.high-card {
+  position: relative;
+  height: 450px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  cursor: pointer;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  opacity: 0;
+  transform: translateY(40px);
+  animation: revealCards 0.8s cubic-bezier(0.2, 1, 0.3, 1) forwards;
+  animation-delay: calc(var(--i) * 0.15s);
+}
+
+.high-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 1.2s ease;
+}
+
+.high-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 40px 25px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 20%, transparent);
+  backdrop-filter: blur(3px);
+  transition: all 0.5s ease;
+}
+
+.high-content span {
+  display: block;
+  color: var(--primary);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.high-content h3 {
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.high-card:hover img {
+  transform: scale(1.1);
+}
+.high-card:hover .high-content {
+  padding-bottom: 50px;
+}
+
+@keyframes revealCards {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================================
+   5. DESTAQUE SOLO (V60 CÍTRICA)
+   ========================================= */
+.solo-feature {
+  padding: 100px 0;
+  background: #080808;
+}
+
+.solo-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.solo-image img {
+  width: 100%;
+  border-radius: 40px;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(188, 108, 37, 0.2);
+}
+
+.exclusive-badge {
+  background: rgba(188, 108, 37, 0.1);
+  color: var(--primary);
+  border: 1px solid var(--primary);
+  padding: 5px 15px;
+  border-radius: 50px;
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.solo-text h2 {
+  font-size: 3.2rem;
+  margin: 20px 0;
+  line-height: 1.1;
+}
+.solo-text p {
+  color: var(--text-muted);
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+}
+
+/* =========================================
+   6. CATÁLOGO GERAL (82 ITENS)
+   ========================================= */
+.catalog-section {
+  padding: 4rem 0;
+}
+
+.catalog-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  padding-bottom: 1rem;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 2rem;
+}
+
+.product-card {
+  background: var(--bg-card);
+  border-radius: var(--radius-lg);
+  padding: 1.2rem;
+  transition: var(--transition);
+  border: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.product-card:hover {
+  transform: translateY(-10px);
+  border-color: rgba(212, 163, 115, 0.3);
+}
+
+.card-img img {
+  width: 100%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  border-radius: 18px;
+  margin-bottom: 1.2rem;
+}
+
+.product-card h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+/* --- Ajuste do Rodapé do Card --- */
+.card-footer {
+  display: flex;
+  justify-content: space-between; /* Empurra o preço para a esquerda e o botão para a direita */
+  align-items: center;           /* Alinha ambos verticalmente ao centro */
+  margin-top: auto;              /* Garante que o rodapé fique sempre no fundo do card */
+  padding-top: 15px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05); /* Linha sutil para separar do texto */
+}
+
+.price-tag {
+  font-weight: 800;
+  font-size: 1.2rem;
+  color: var(--accent);
+  margin: 0; /* Remove margens que possam deslocar o alinhamento */
+}
+
+/* Ajuste do botão dentro do card para não ficar gigante */
+.product-card .btn-primary {
+  padding: 0.6rem 1.2rem;
+  font-size: 0.85rem;
+  margin: 0;
+}
+
+/* =========================================
+   7. HERO BANNER FINAL (RODAPÉ)
+   ========================================= */
+.hero-banner {
+  position: relative;
+  height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url("assets/hero/hero-2.png") no-repeat center center / cover;
+  text-align: center;
+  overflow: hidden;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  padding: 0 20px;
+}
+
+.hero-content h1 {
+  font-size: 3.5rem;
+  color: var(--primary);
+  margin-bottom: 15px;
+}
+
+.hero-content h1 span {
+  display: block;
+  font-size: 5rem;
+  color: #fff;
+  font-style: italic;
+  line-height: 0.8;
+}
+
+/* O BOTÃO PREMIUM REVISADO */
+.btn-hero {
+  display: inline-block;
+  margin-top: 30px;
+  padding: 20px 50px;
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  text-decoration: none;
+  color: #fff;
+  background: linear-gradient(135deg, var(--primary) 0%, #8a4d1a 100%);
+  border-radius: 60px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.5s ease;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+}
+
+.btn-hero:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 45px rgba(188, 108, 37, 0.5);
+  letter-spacing: 5px;
+}
+
+/* =========================================
+   8. FOOTER & WHATSAPP
+   ========================================= */
+.main-footer {
+  padding: 4rem 0 2rem;
+  text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.whatsapp-fixed {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 60px;
+  height: 60px;
+  background: #25d366;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+  animation: pulse-wa 2s infinite;
+}
+
+@keyframes pulse-wa {
+  0% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5);
+  }
+  70% {
+    box-shadow: 0 0 0 20px rgba(37, 211, 102, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+  }
+}
+
+/* =========================================
+   9. RESPONSIVIDADE
+   ========================================= */
+@media (max-width: 992px) {
+  .hero-grid,
+  .solo-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .hero-text h2,
+  .solo-text h2 {
+    font-size: 2.8rem;
+  }
+  .hero-cta {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+  .hero-content h1 span {
+    font-size: 3.5rem;
+  }
+}
