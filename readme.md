@@ -1,8 +1,8 @@
 <div align="center">
 
-# 🎨 UX Design — Catálogo de Landing Pages 
+# 🎨 UX Design 
 
-**Coleção de landing pages e interfaces de conversão**, com foco em experiência de usuário, design visual e implementação em HTML, CSS e JavaScript puro.
+O Ux Design é uma **Coleção de landing pages e interfaces de conversão**, com foco em experiência de usuário, design visual e implementação em HTML, CSS e JavaScript puro.
 
 </div>
 
