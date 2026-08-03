@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🎨 UX Design — Catálogo de Landing Pages
+# 🎨 UX Design — Catálogo de Landing Pages 
 
 **Coleção de landing pages e interfaces de conversão**, com foco em experiência de usuário, design visual e implementação em HTML, CSS e JavaScript puro.
 
@@ -10,7 +10,7 @@
 
 ## 🚀 Sobre o projeto
 
-Portfólio vivo de **22 projetos**, organizados em duas naturezas: **landing pages completas** (marcas, franquias, eventos, clubes, catálogos comerciais) e **formulários de prática de interface** (`form-1` a `form-11`). Cada projeto é um micro-site independente, com seu próprio HTML/CSS/JS, reunido numa página de catálogo central com carrossel de destaque.
+Portfólio vivo de mais de **30 projetos**, organizados em duas naturezas: **landing pages completas** (marcas, franquias, eventos, clubes, catálogos comerciais) e **formulários de prática de interface** (`form-1` a `form-11`). Cada projeto é um micro-site independente, com seu próprio HTML/CSS/JS, reunido numa página de catálogo central com carrossel de destaque.
 
 ## 🗂️ Estrutura do catálogo
 
