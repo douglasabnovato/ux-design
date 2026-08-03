@@ -1,0 +1,506 @@
+<!doctype html>
+<html lang="pt-br" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DC Jardinagem Profissional | Juiz de Fora</title>
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./public/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./public/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./public/favicon-16x16.png"
+    />
+    <link rel="manifest" href="./public/site.webmanifest" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#1b3d2f",
+              secondary: "#4caf50",
+              accent: "#e67e22",
+            },
+            animation: {
+              "bounce-slow": "bounce-slow 4s ease-in-out infinite",
+            },
+            keyframes: {
+              "bounce-slow": {
+                "0%, 100%": { transform: "translateY(0)" },
+                "50%": { transform: "translateY(-15px)" },
+              },
+            },
+          },
+        },
+      };
+    </script>
+    <style type="text/css">
+      .slider-before {
+        width: 50%;
+      }
+      .no-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+      .no-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+    </style>
+  </head>
+  <body class="bg-stone-50 text-slate-900 font-sans">
+    <!-- NAVBAR -->
+    <nav
+      class="sticky top-0 z-50 bg-primary/95 backdrop-blur-md text-white py-4 px-8 flex justify-between items-center shadow-lg"
+    >
+      <div class="font-bold text-xl tracking-tighter">
+        DC <span class="text-secondary">JARDINAGEM</span>
+      </div>
+      <div
+        class="hidden md:flex gap-8 text-sm font-medium uppercase tracking-widest"
+      >
+        <a href="#servicos" class="hover:text-secondary transition">Serviços</a>
+        <a href="#comparacao" class="hover:text-secondary transition"
+          >Resultados</a
+        >
+        <a href="#orcamento" class="hover:text-secondary transition text-accent"
+          >Orçamento</a
+        >
+      </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <header
+      class="bg-primary min-h-[70vh] flex flex-col md:flex-row items-center justify-between px-8 md:px-20 py-16 text-white border-b-8 border-secondary"
+    >
+      <div class="md:w-1/2 space-y-6">
+        <div
+          class="inline-block bg-secondary/20 text-secondary px-4 py-1 rounded-full text-xs font-bold tracking-widest uppercase"
+        >
+          Atendimento em Juiz de Fora e Região
+        </div>
+        <h1 class="text-4xl md:text-6xl font-extrabold leading-tight">
+          Seu jardim merece o
+          <span class="text-secondary">cuidado de um especialista.</span>
+        </h1>
+        <p class="text-lg opacity-80 max-w-md">
+          Derlan Cristian: Transformando terrenos brutos em espaços de lazer e
+          beleza com técnicas profissionais de jardinagem.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 pt-4">
+          <a
+            href="#orcamento"
+            class="bg-accent hover:bg-orange-600 transition-all text-white font-bold px-8 py-4 rounded-xl text-center shadow-xl uppercase tracking-tighter"
+          >
+            Solicitar Orçamento Grátis
+          </a>
+        </div>
+      </div>
+      <div class="md:w-1/2 mt-12 md:mt-0 relative">
+        <img
+          src="assets/banner-1.png"
+          alt="Derlan Cristian"
+          class="rounded-3xl shadow-2xl border-4 border-white/10"
+        />
+        <div
+          class="absolute -bottom-6 -left-6 bg-white p-4 rounded-2xl shadow-2xl border border-stone-100 hidden md:block"
+        >
+          <p class="text-primary font-bold text-sm">✓ Qualidade Garantida</p>
+          <p class="text-stone-400 text-xs italic">
+            Selo learnTECH de verificação
+          </p>
+        </div>
+      </div>
+    </header>
+
+    <!-- SERVIÇOS E MASCOTE -->
+    <section id="servicos" class="py-20 px-8 max-w-6xl mx-auto">
+      <div class="flex flex-col md:flex-row items-center gap-16">
+        <div class="md:w-1/3 flex flex-col items-center">
+          <div class="relative group animate-bounce-slow">
+            <img
+              src="assets/mascote-3.png"
+              alt="Mascote DC Jardinagem"
+              class="w-64 drop-shadow-[0_20px_20px_rgba(0,0,0,0.15)] group-hover:scale-110 transition-transform duration-500 ease-out"
+            />
+            <div
+              class="absolute inset-0 bg-secondary/10 blur-3xl rounded-full -z-10 group-hover:bg-secondary/20 transition-colors"
+            ></div>
+          </div>
+
+          <div class="mt-8 relative">
+            <div
+              class="absolute -top-3 left-1/2 -translate-x-1/2 w-0 h-0 border-l-[15px] border-l-transparent border-r-[15px] border-r-transparent border-b-[15px] border-b-white"
+            ></div>
+            <div
+              class="bg-white p-6 rounded-[2.5rem] shadow-xl border-b-4 border-secondary/20 text-center max-w-[280px]"
+            >
+              <p class="text-sm font-bold italic text-primary leading-relaxed">
+                "O mato está alto?
+                <span class="text-secondary">O Derlan resolve!</span> Veja as
+                transformações aqui embaixo."
+              </p>
+              <div class="absolute -right-2 -top-2 text-xl">✨</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="md:w-2/3 grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div
+            class="p-8 bg-white rounded-3xl border border-stone-100 shadow-sm hover:border-secondary transition"
+          >
+            <div class="text-3xl mb-4">🌳</div>
+            <h4 class="font-bold text-primary text-xl">Poda Técnica</h4>
+            <p class="text-sm text-stone-500 mt-2">
+              Poda de formação e limpeza para árvores e cercas-vivas.
+            </p>
+          </div>
+          <div
+            class="p-8 bg-white rounded-3xl border border-stone-100 shadow-sm hover:border-secondary transition"
+          >
+            <div class="text-3xl mb-4">🌱</div>
+            <h4 class="font-bold text-primary text-xl">Plantio e Adubação</h4>
+            <p class="text-sm text-stone-500 mt-2">
+              Preparação do solo e escolha das espécies ideais para seu clima.
+            </p>
+          </div>
+          <div
+            class="p-8 bg-white rounded-3xl border border-stone-100 shadow-sm hover:border-secondary transition"
+          >
+            <div class="text-3xl mb-4">🚜</div>
+            <h4 class="font-bold text-primary text-xl">Limpeza de Lotes</h4>
+            <p class="text-sm text-stone-500 mt-2">
+              Roçada profissional com remoção de detritos e entulhos.
+            </p>
+          </div>
+          <div
+            class="p-8 bg-white rounded-3xl border border-stone-100 shadow-sm hover:border-secondary transition"
+          >
+            <div class="text-3xl mb-4">🏡</div>
+            <h4 class="font-bold text-primary text-xl">Manutenção</h4>
+            <p class="text-sm text-stone-500 mt-2">
+              Cronograma mensal para manter seu gramado sempre verde.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDER INTERATIVO -->
+    <section id="comparacao" class="bg-stone-200 py-24 px-4 overflow-hidden">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-3xl font-bold text-primary mb-2">
+          TRANSFORMAÇÃO INTERATIVA
+        </h2>
+        <p
+          class="mb-12 text-stone-500 uppercase text-xs font-bold tracking-[0.2em]"
+        >
+          Arraste o círculo central para comparar
+        </p>
+        <div
+          class="relative w-full aspect-video mx-auto overflow-hidden rounded-[2.5rem] shadow-2xl border-[12px] border-white group"
+        >
+          <div class="absolute inset-0">
+            <img
+              src="assets/jardim-1-antes.jpg"
+              alt="Antes"
+              class="w-full h-full object-cover"
+            />
+            <span
+              class="absolute top-6 left-6 bg-black/50 backdrop-blur-md text-white px-4 py-2 rounded-lg text-xs font-black uppercase"
+              >Antes</span
+            >
+          </div>
+          <div
+            id="slider-reveal"
+            class="absolute inset-0 z-10 w-1/2 overflow-hidden border-r-4 border-white"
+          >
+            <img
+              src="assets/jardim-1-depois.jpg"
+              alt="Depois"
+              class="w-[800px] md:w-[896px] h-full max-w-none object-cover"
+            />
+            <span
+              class="absolute top-6 right-6 bg-secondary backdrop-blur-md text-white px-4 py-2 rounded-lg text-xs font-black uppercase"
+              >Depois</span
+            >
+          </div>
+          <input
+            type="range"
+            min="0"
+            max="100"
+            value="50"
+            class="absolute inset-0 w-full h-full opacity-0 z-30 cursor-ew-resize"
+            id="slider-control"
+          />
+          <div
+            id="slider-line"
+            class="absolute top-0 bottom-0 left-1/2 w-1 bg-white z-20 transform -translate-x-1/2 pointer-events-none"
+          >
+            <div
+              class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 bg-white rounded-full shadow-2xl flex items-center justify-center text-primary font-bold"
+            >
+              ↔
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GRID DE IMPACTO -->
+    <section class="py-24 px-4 bg-white">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl font-bold text-primary italic">
+            Projetos Concluídos
+          </h2>
+          <p class="text-stone-400">
+            Transformações rápidas e definitivas em diversos cenários.
+          </p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
+          <!-- Card 1 -->
+          <div
+            class="flex flex-col bg-stone-50 rounded-[2.5rem] p-4 shadow-sm border border-stone-100 hover:shadow-xl transition duration-500"
+          >
+            <div
+              class="relative w-full aspect-[4/3] overflow-hidden rounded-[2rem]"
+            >
+              <img
+                src="assets/jardim-2-antes.jpg"
+                alt="Resultado 1"
+                class="absolute inset-0 w-full h-full object-cover object-center"
+              />
+            </div>
+            <div class="p-6 flex-grow">
+              <span
+                class="text-secondary font-bold text-xs uppercase tracking-tighter"
+                >Limpeza de Lote Residencial</span
+              >
+              <h3 class="text-xl font-bold text-primary mt-1">
+                Recuperação de Acesso
+              </h3>
+              <p class="text-stone-500 text-sm mt-2">
+                Remoção de braquiária e nivelamento de gramado frontal.
+              </p>
+            </div>
+          </div>
+          <!-- Card 2 -->
+          <div
+            class="flex flex-col bg-stone-50 rounded-[2.5rem] p-4 shadow-sm border border-stone-100 hover:shadow-xl transition duration-500"
+          >
+            <div
+              class="relative w-full aspect-[4/3] overflow-hidden rounded-[2rem]"
+            >
+              <img
+                src="assets/jardins-5-antes-depois.jpg"
+                alt="Resultado 2"
+                class="absolute inset-0 w-full h-full object-cover object-center"
+              />
+            </div>
+            <div class="p-6 flex-grow">
+              <span
+                class="text-secondary font-bold text-xs uppercase tracking-tighter"
+                >Paisagismo e Manutenção</span
+              >
+              <h3 class="text-xl font-bold text-primary mt-1">
+                Revitalização de Canteiros
+              </h3>
+              <p class="text-stone-500 text-sm mt-2">
+                Poda artística de ixoras e limpeza de base com forração
+                orgânica.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ORÇAMENTO -->
+    <section
+      id="orcamento"
+      class="py-24 px-4 bg-primary text-white relative overflow-hidden"
+    >
+      <div
+        class="max-w-5xl mx-auto flex flex-col md:flex-row gap-16 items-center"
+      >
+        <div class="md:w-1/2 z-10">
+          <h2 class="text-4xl font-black mb-6">
+            Pronto para ter o
+            <span class="text-secondary italic">jardim dos sonhos?</span>
+          </h2>
+          <p class="text-white/70 mb-8 leading-relaxed">
+            Não deixe o mato tomar conta do seu patrimônio. Atendemos
+            condomínios, empresas e residências em Juiz de Fora.
+          </p>
+          <div class="space-y-6">
+            <div class="flex items-center gap-4">
+              <div
+                class="w-12 h-12 bg-secondary/20 rounded-full flex items-center justify-center text-secondary"
+              >
+                📞
+              </div>
+              <div>
+                <p class="text-xs uppercase opacity-50 font-bold">WhatsApp</p>
+                <p class="text-lg font-bold">(32) 99803-6668</p>
+              </div>
+            </div>
+            <div class="flex items-center gap-4">
+              <div
+                class="w-12 h-12 bg-secondary/20 rounded-full flex items-center justify-center text-secondary"
+              >
+                📍
+              </div>
+              <div>
+                <p class="text-xs uppercase opacity-50 font-bold">
+                  Localização
+                </p>
+                <p class="text-lg font-bold">Juiz de Fora - MG</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="md:w-1/2 bg-white rounded-[3rem] p-10 text-slate-900 shadow-2xl z-10 relative min-h-[450px] flex items-center"
+        >
+          <!-- Mensagem de Sucesso (Invisível por padrão) -->
+          <div
+            id="success-msg"
+            class="hidden text-center space-y-4 animate-in fade-in zoom-in duration-500"
+          >
+            <div class="text-6xl">✅</div>
+            <h3 class="text-2xl font-bold text-primary">Pedido Enviado!</h3>
+            <p class="text-stone-500">
+              O WhatsApp foi aberto para você concluir o contato com o Derlan.
+            </p>
+            <button
+              onclick="window.location.reload()"
+              class="text-secondary font-bold underline"
+            >
+              Enviar outro pedido
+            </button>
+          </div>
+
+          <!-- Formulário -->
+          <form id="form-lead" class="space-y-4 w-full">
+            <input
+              type="text"
+              id="nome"
+              placeholder="Seu Nome"
+              class="w-full p-4 bg-stone-100 rounded-2xl border-none focus:ring-2 focus:ring-secondary transition"
+              required
+            />
+            <input
+              type="tel"
+              id="whatsapp"
+              placeholder="Seu WhatsApp"
+              class="w-full p-4 bg-stone-100 rounded-2xl border-none focus:ring-2 focus:ring-secondary transition"
+              required
+            />
+            <textarea
+              id="mensagem"
+              placeholder="O que você precisa?"
+              rows="3"
+              class="w-full p-4 bg-stone-100 rounded-2xl border-none focus:ring-2 focus:ring-secondary transition"
+            ></textarea>
+            <button
+              type="submit"
+              id="btn-submit"
+              class="w-full bg-secondary hover:bg-green-600 text-white font-black py-5 rounded-2xl shadow-xl shadow-secondary/20 transition-all uppercase tracking-widest"
+            >
+              Enviar Pedido
+            </button>
+          </form>
+        </div>
+      </div>
+      <!-- Círculos Decorativos -->
+      <div
+        class="absolute top-[-10%] right-[-10%] w-96 h-96 bg-secondary/10 rounded-full blur-3xl"
+      ></div>
+      <div
+        class="absolute bottom-[-10%] left-[-10%] w-64 h-64 bg-accent/10 rounded-full blur-3xl"
+      ></div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer
+      class="bg-stone-900 text-stone-500 py-12 px-8 text-center border-t border-white/5"
+    >
+      <div class="font-bold text-white mb-4">DC JARDINAGEM</div>
+      <p class="text-sm max-w-md mx-auto mb-8">
+        Especialista em manutenção de áreas verdes e limpeza de terrenos em Juiz
+        de Fora.
+      </p>
+      <div class="text-[10px] uppercase tracking-widest opacity-30">
+        © 2026 Ecossistema learnTECH | Douglas Novato Mentoria
+      </div>
+    </footer>
+
+    <!-- LOGICA JAVASCRIPT -->
+    <script type="module">
+      // --- Slider de Comparação ---
+      const sliderControl = document.getElementById("slider-control");
+      const sliderReveal = document.getElementById("slider-reveal");
+      const sliderLine = document.getElementById("slider-line");
+
+      if (sliderControl) {
+        sliderControl.addEventListener("input", (e) => {
+          const val = e.target.value;
+          sliderReveal.style.width = `${val}%`;
+          sliderLine.style.left = `${val}%`;
+        });
+      }
+
+      // --- Envio de Formulário & WhatsApp ---
+      const form = document.getElementById("form-lead");
+      const successMsg = document.getElementById("success-msg");
+      const btnSubmit = document.getElementById("btn-submit");
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        // Desativa botão para evitar cliques duplos
+        btnSubmit.disabled = true;
+        btnSubmit.innerText = "PROCESSANDO...";
+
+        const nome = document.getElementById("nome").value;
+        const whatsUser = document.getElementById("whatsapp").value;
+        const msg = document.getElementById("mensagem").value;
+        const numeroDerlan = "5532998036668";
+
+        // Formatação da Mensagem
+        const texto =
+          `*Novo Orçamento - DC Jardinagem* 🌿\n\n` +
+          `*Cliente:* ${nome}\n` +
+          `*WhatsApp:* ${whatsUser}\n` +
+          `*Serviço:* ${msg}`;
+
+        const url = `https://wa.me/${numeroDerlan}?text=${encodeURIComponent(texto)}`;
+
+        // Simula um pequeno delay para feedback visual
+        setTimeout(() => {
+          // 1. Abre o WhatsApp
+          window.open(url, "_blank");
+
+          // 2. Esconde o form e mostra mensagem de sucesso
+          form.classList.add("hidden");
+          successMsg.classList.remove("hidden");
+
+          // 3. Reseta o formulário
+          form.reset();
+        }, 800);
+      });
+    </script>
+  </body>
+</html>

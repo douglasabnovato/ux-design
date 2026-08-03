@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Crachá Digital | LearnTECH</title>
+
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./public/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./public/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./public/favicon-16x16.png"
+    />
+    <link rel="manifest" href="./public/site.webmanifest" />
+
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  </head>
+  <body>
+    <main id="app-container">
+      <section class="config-panel">
+        <nav class="config-menu">
+          <div class="menu-left">
+            <img
+              src="./assets/logo/logo-career.png"
+              alt="LearnTECH"
+              class="menu-logo"
+            />
+          </div>
+
+          <div class="menu-right">
+            <button type="button" id="btn-menu-mobile" class="hamburger-btn">
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
+          </div>
+        </nav>
+
+        <header class="panel-header">
+          <h2>Editor de Perfil</h2>
+          <p>
+            Identidade Atual:
+            <span id="current-bu" class="bu-badge">Ecossistema</span>
+          </p>
+        </header>
+
+        <form id="badge-form">
+          <div class="form-section">
+            <div class="input-group">
+              <label for="inputNickname">
+                <i class="fa-solid fa-user"></i> Nome / Nickname
+              </label>
+              <input
+                type="text"
+                id="inputNickname"
+                placeholder="Ex: Douglas Novato"
+                maxlength="25"
+              />
+            </div>
+
+            <div class="input-group">
+              <label for="inputProfession">
+                <i class="fa-solid fa-briefcase"></i> Profissão
+              </label>
+              <input
+                type="text"
+                id="inputProfession"
+                placeholder="Ex: Senior Software Engineer"
+              />
+            </div>
+
+            <div class="input-group">
+              <label for="inputAvatar" class="custom-file-upload">
+                <i class="fa-solid fa-camera"></i> Alterar Foto Manualmente
+              </label>
+              <input type="file" id="inputAvatar" accept="image/*" />
+            </div>
+          </div>
+
+          <div class="social-inputs">
+            <h3>Redes Sociais</h3>
+            <div class="input-group icon-input">
+              <i class="fa-brands fa-github"></i>
+              <input
+                type="text"
+                id="inputGithub"
+                placeholder="Username GitHub"
+              />
+            </div>
+            <div class="input-group icon-input">
+              <i class="fa-brands fa-linkedin"></i>
+              <input
+                type="text"
+                id="inputLinkedin"
+                placeholder="Username LinkedIn"
+              />
+            </div>
+            <div class="input-group icon-input">
+              <i class="fa-brands fa-instagram"></i>
+              <input
+                type="text"
+                id="inputInstagram"
+                placeholder="Username Instagram"
+              />
+            </div>
+          </div>
+
+          <div class="theme-selection">
+            <h3>Escolha sua BU</h3>
+            <div class="theme-buttons">
+              <button
+                type="button"
+                class="btn-theme green"
+                data-theme="theme-green"
+                title="Educação"
+              ></button>
+              <button
+                type="button"
+                class="btn-theme blue"
+                data-theme="theme-blue"
+                title="Logística"
+              ></button>
+              <button
+                type="button"
+                class="btn-theme purple"
+                data-theme="theme-purple"
+                title="Ecossistema"
+              ></button>
+              <button
+                type="button"
+                class="btn-theme orange"
+                data-theme="theme-orange"
+                title="Startup"
+              ></button>
+            </div>
+          </div>
+
+          <button type="button" id="btnExport" class="btn-primary">
+            <i class="fa-solid fa-cloud-arrow-down"></i> Finalizar e Exportar
+          </button>
+        </form>
+      </section>
+
+      <section class="preview-panel">
+        <button type="button" id="fab-edit" class="fab-mobile">
+          <i class="fa-solid fa-pen"></i> Editar Crachá
+        </button>
+        <div class="container theme-green" id="badge-preview">
+          <div class="avatar">
+            <span class="seal">
+              <img src="./assets/icons/build.svg" alt="Selo de Especialista" />
+            </span>
+            <img src="" alt="Foto pessoal" id="UserImage" />
+          </div>
+
+          <h1 id="userName">Nome do Dev</h1>
+          <p id="userProfession">Área de Atuação</p>
+
+          <div class="badge-links">
+            <a id="userLink" href="#" target="_blank" rel="noopener noreferrer">
+              <i class="fa-brands fa-github"></i>
+              <span id="userLogin">github-handle</span>
+            </a>
+
+            <ul id="socialLinks">
+              <li class="linkedin">
+                <a href="#" target="_blank" rel="noopener noreferrer">
+                  <i class="fa-brands fa-linkedin"></i>
+                </a>
+              </li>
+              <li class="instagram">
+                <a href="#" target="_blank" rel="noopener noreferrer">
+                  <i class="fa-brands fa-instagram"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="main.js"></script>
+  </body>
+</html>

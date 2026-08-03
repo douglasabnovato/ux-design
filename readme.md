@@ -1,184 +1,95 @@
-# 🎨 UX Design
+<div align="center">
 
-> Um repositório de landing pages modernas para produtos digitais distintos, criadas com foco em experiência do usuário, conversão, clareza de mensagem e execução visual de alto nível.
+# 🎨 UX Design — Catálogo de Landing Pages
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-[![Status](https://img.shields.io/badge/Status-Ativo-brightgreen)](https://github.com/douglasabnovato/ux-design)
+**Coleção de landing pages e interfaces de conversão**, com foco em experiência de usuário, design visual e implementação em HTML, CSS e JavaScript puro.
 
----
-
-## 📌 Sobre o projeto
-
-O **UX Design** é um projeto de portfólio e prática profissional voltado para a criação de **landing pages modernas** para diferentes produtos digitais, marcas e contextos de negócio.
-
-A proposta deste repositório é reunir páginas desenvolvidas com uma mesma lógica de qualidade:
-
-- foco em conversão;
-- estrutura visual clara;
-- experiência fluida em desktop e mobile;
-- linguagem de interface alinhada ao objetivo de cada projeto;
-- atenção a acessibilidade, responsividade e performance.
-
-Mais do que reunir telas prontas, este repositório organiza a construção de landing pages como um processo completo, da concepção à implementação.
+</div>
 
 ---
 
-## 🧭 Objetivo do projeto
+## 🚀 Sobre o projeto
 
-O objetivo deste repositório é servir como base para estudar, praticar e evoluir a criação de landing pages a partir de uma visão mais próxima da realidade de mercado.
+Portfólio vivo de **22 projetos**, organizados em duas naturezas: **landing pages completas** (marcas, franquias, eventos, clubes, catálogos comerciais) e **formulários de prática de interface** (`form-1` a `form-11`). Cada projeto é um micro-site independente, com seu próprio HTML/CSS/JS, reunido numa página de catálogo central com carrossel de destaque.
 
-Cada página parte de uma necessidade específica de produto, comunicação e público, permitindo observar como uma landing page pode ser construída de forma estratégica para diferentes cenários.
+## 🗂️ Estrutura do catálogo
 
----
+- **Carrossel de destaque** — projetos marcados como `destaque: true` no `projects.json`, exibidos em rotação automática no topo da página
+- **Grade "Projetos"** — peças com propósito comercial/apresentação (franquias, gastronomia, clubes, catálogos)
+- **Grade "Estudos & Formulários"** — os 11 `form-X`, exercícios de prática de interface
 
-## 🛠️ Método de criação
+### Categorias em uso hoje
+`Franquia` · `Captação` · `Catálogo` · `Esportivo` · `Comunidade` · `Eventos` · `Formulário` · `Leitura` · `Gastronomia`
 
-A construção de cada landing page segue um processo pensado para unir estratégia, design e desenvolvimento.
+## 🛠️ Tech Stack
 
-### 1. Entendimento do contexto
+- **HTML5 / CSS3 / JavaScript** puro — sem framework, sem build step
+- **`projects.json`** — fonte única de dado do catálogo
+- **`catalog.js`** — carrega o JSON, renderiza carrossel de destaque e as duas grades
+- **`script.js`** — interatividade dos cards (ripple, hover, foco por teclado)
 
-Antes de qualquer tela, é definido:
+## 📁 Estrutura de pastas
 
-- qual é o produto ou serviço;
-- quem é o público-alvo;
-- qual é a proposta de valor;
-- qual ação principal a landing page deve gerar.
-
-### 2. Estruturação da experiência
-
-Com base nesse entendimento, é definida a arquitetura da página:
-
-- ordem das seções;
-- hierarquia da informação;
-- chamadas para ação;
-- pontos de prova social;
-- áreas de conversão.
-
-### 3. Direção visual
-
-Depois da estrutura, a interface é desenhada com foco em:
-
-- identidade da marca;
-- clareza visual;
-- contraste e legibilidade;
-- ritmo entre blocos;
-- consistência estética.
-
-### 4. Desenvolvimento
-
-A implementação é feita em HTML, CSS e JavaScript, priorizando:
-
-- responsividade;
-- animações suaves;
-- componentes reutilizáveis;
-- interação intuitiva;
-- desempenho.
-
-### 5. Refinamento
-
-Após a primeira versão, a landing page passa por ajustes de:
-
-- usabilidade;
-- alinhamento visual;
-- comportamento em mobile;
-- acessibilidade;
-- consistência entre seções.
-
----
-
-## 📂 Landing pages disponíveis
-
-| Projeto                   | Descrição                                                                             | Pasta                                                          |
-| ------------------------- | ------------------------------------------------------------------------------------- | -------------------------------------------------------------- |
-| 🏪 **Uma Franquia**       | Landing page de franquia com foco em apresentação da proposta de negócio e conversão. | [`projects/uma-franquia/`](projects/uma-franquia/)             |
-| 💼 **Seja um Franqueado** | Página voltada para captação de leads e interesse de potenciais franqueados.          | [`projects/seja-um-franqueado/`](projects/seja-um-franqueado/) |
-| 📄 **Encarte**            | Catálogo digital interativo com foco em exposição de produtos e navegação fluida.     | [`projects/encarte/`](projects/encarte/)                       |
-| ⚽ **Clube SPFC**         | Landing page temática de clube, com comunicação voltada a comunidade e engajamento.   | [`projects/clube-spfc/`](projects/clube-spfc/)                 |
-| 🏆 **Clube CRF**          | Página com linguagem institucional e foco em relacionamento com a comunidade.         | [`projects/clube-crf/`](projects/clube-crf/)                   |
-| 🎯 **Clube CAM**          | Interface para apresentação de eventos, membros e experiências associadas ao clube.   | [`projects/clube-cam/`](projects/clube-cam/)                   |
-
----
-
-## 🗂️ Estrutura do repositório
-
-```bash
+```text
 ux-design/
-├── index.html                  # Página principal do portfólio
-├── style.css                   # Estilos globais do portfólio
-├── script.js                   # Interatividade geral do portfólio
-├── README.md                   # Documentação principal do repositório
-└── projects/                   # Projetos de landing pages
+├── index.html          # página principal do catálogo
+├── style.css            # estilos globais
+├── script.js             # interatividade dos cards
+├── catalog.js            # carrega projects.json e renderiza o catálogo
+├── projects.json         # dado de todos os projetos catalogados
+├── assets/                # imagens compartilhadas do catálogo
+├── public/                # favicons, manifest
+└── projects/               # cada landing page em pasta própria
     ├── uma-franquia/
-    │   └── index.html
     ├── seja-um-franqueado/
-    │   └── index.html
     ├── encarte/
-    │   └── index.html
     ├── clube-spfc/
-    │   └── index.html
     ├── clube-crf/
-    │   └── index.html
-    └── clube-cam/
-        └── index.html
+    ├── clube-cam/
+    ├── doctor-care/          # css/ segmentado
+    ├── hamburgueria/         # database.js + qr-code.html (cardápio via QR)
+    ├── livraria/             # data/biblioteca.json
+    ├── pastel-e-cana/
+    ├── rocket-coffee/        # assets/ + styles/style.css
+    └── form-1/ … form-11/    # exercícios de formulário
 ```
 
----
+## ➕ Adicionando um novo projeto ao catálogo
 
-## 🎯 Como este repositório funciona
+Cada entrada em `projects.json` segue este formato:
 
-Este repositório centraliza os projetos e serve como ponto de entrada para o portfólio.  
-Cada landing page possui sua própria pasta, seu próprio código e seu próprio `README.md`, onde estão detalhados:
+```json
+{
+  "id": 23,
+  "slug": "nome-da-pasta",
+  "title": "Nome de Exibição",
+  "description": "Uma frase clara sobre o que o projeto faz.",
+  "category": "Categoria",
+  "image": "./assets/nome-da-pasta.jpg",
+  "destaque": false
+}
+```
 
-- conceito da página;
-- tecnologias utilizadas;
-- decisões de layout;
-- componentes específicos;
-- particularidades de implementação.
+- `slug` precisa bater com o nome real da pasta em `projects/`
+- `destaque: true` só para peças com propósito comercial/apresentação — aparecem no carrossel do topo
+- `image: null` é aceito para projetos ainda sem thumbnail (o catálogo usa um placeholder automático)
 
-Assim, este README principal funciona como visão geral do projeto, enquanto os READMEs das páginas individuais aprofundam os aspectos técnicos e de construção.
+## ⚙️ Como rodar localmente
 
----
+Projeto estático, sem dependências — basta abrir `index.html` num servidor local (Live Server, `npx serve`, etc.), já que o `fetch('./projects.json')` exige HTTP, não funciona direto do sistema de arquivos (`file://`).
 
-## ✨ Princípios aplicados
+## 🌳 Fluxo de contribuição
 
-As landing pages deste repositório seguem alguns princípios comuns:
+Um workflow de desenvolvimento para organização de código e versões de projeto.
 
-- clareza na proposta de valor;
-- foco em conversão;
-- estrutura orientada a leitura;
-- design responsivo;
-- navegação simples;
-- comunicação objetiva;
-- experiência consistente em diferentes dispositivos.
+```
+feature/projetos-lp  →  developer-mvp  →  main (produção)
+```
 
----
-
-## 🚀 Navegação
-
-Para acessar um projeto, entre na pasta correspondente dentro de `projects/` e abra o `index.html`.
-
-Se estiver usando servidor local, você também pode navegar pela página principal do portfólio e clicar no projeto desejado.
-
----
-
-## 📌 Organização da documentação
-
-A documentação foi pensada em duas camadas:
-
-- **README principal**: apresenta o projeto UX Design, o método de criação e a lista de landing pages.
-- **README de cada projeto**: aprofunda o design, o código, a estrutura e as decisões técnicas daquela landing page específica.
-
-Essa abordagem mantém o repositório mais limpo, escalável e fácil de entender.
+1. Novas landing pages e ajustes de catálogo entram por `feature/projetos-lp`
+2. Pull Request para `developer-mvp` — é aqui que mudanças são validadas
+3. Só depois de validado, um PR de `developer-mvp` para `main` promove pra produção
 
 ---
 
-## 👨‍💻 Autor
-
-**Douglas Abnovato**  
-GitHub: [@douglasabnovato](https://github.com/douglasabnovato)
-
----
-
-## 📄 Licença
-
-Este projeto está sob licença MIT. Consulte o arquivo [LICENSE](LICENSE) para mais detalhes.
+Feito por [Douglas A. B. Novato](https://www.linkedin.com/in/douglasabnovato/)
