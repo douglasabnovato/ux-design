@@ -358,5 +358,14 @@
         "category": "Escritor",
         "image": "./assets/rocket-blog.jpg",
         "destaque": true
+    },
+    {
+        "id": 41,
+        "slug": "my-linktree",
+        "title": "My LinkTree",
+        "description": "Página de linktree para apresentar uma lista de links importantes.",
+        "category": "Perfil",
+        "image": "./assets/my-linktree.jpg",
+        "destaque": true
     }
 ]
