@@ -376,5 +376,14 @@
         "category": "Código",
         "image": "./assets/login-with.jpg",
         "destaque": true
+    },
+    {
+        "id": 43,
+        "slug": "rocket-card",
+        "title": "Rocket Card",
+        "description": "Página de cartão de visita com design encantador.",
+        "category": "Código",
+        "image": "./assets/rocket-card.jpg",
+        "destaque": true
     }
 ]
