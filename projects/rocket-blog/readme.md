@@ -2,66 +2,48 @@
 	🚧 Rocket Blog 🚀
 </h4>
 
-<p align="center" style="display: flex; align-items: flex-start; justify-content: center;">
-  <img alt="rocket blog" title="#rocket-blog" src="./.github/tela.png">
+<p align="center">
+  <img alt="Tela do projeto" title="#rocket-blog" src="./.github/tela.png">
 </p>    
 
-### 💻 Sobre o desafio 
+## 💻 Sobre o desafio
 
-Neste desafio você irá desenvolver uma homepage para um blog.
+Homepage para um blog de tecnologia, com estrutura completa de header, destaques, posts e rodapé.
 
-#### 💻 Techs
+**Nível:** Intermediário
+**Tecnologias:** HTML e CSS
+**Layout base:** [Figma oficial do desafio](https://www.figma.com/file/r4CsL6MPTAvE7EvJXjhFK4/DD-RocketBlog/duplicate)
 
-- Nível de dificuldade: Intermediário
-- Tecnologias: html, css
+## 💡 Conteúdos aplicados
 
-#### 💻 Como começar? 
+- [Guia Estelar de HTML](https://app.rocketseat.com.br/node/o-guia-estelar-de-html)
+- [Guia Estelar de CSS](https://app.rocketseat.com.br/node/o-guia-estelar-de-css)
+- [Posicionando foguetes](https://app.rocketseat.com.br/node/posicionando-foguetes)
+- [Formulários de outro planeta](https://app.rocketseat.com.br/node/formularios-de-outro-planeta)
+- [Alinhando os planetas](https://app.rocketseat.com.br/node/flexbox)
+- [App bonito, até nos textos](https://app.rocketseat.com.br/node/flexbox)
+- [Guia completo de Flexbox — CSS-Tricks](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
+- [Guia completo de Grid — CSS-Tricks](https://css-tricks.com/snippets/css/complete-guide-grid/)
 
-1 - Use o link do Figma como base para o projeto. Também disponibilizamos para download todos os assets necessários (imagens e ícones), para fazer o download basta clicar no link acima.  
+## ✅ Requisitos do desafio
 
-2 - Leia com atenção todas as instruções do desafio.
+- [x] Estrutura do HTML
+- [x] Header
+- [x] Container
+- [x] Destaques
+- [x] Posts
+- [x] Seção de rodapé
 
-3 - Bora codar! Lembre-se que você pode usar as tecnologias que se sentir mais confortável, mas também pode se desafiar usando novas techs, fazendo modificações e/ou adicionando funcionalidades no projeto como preferir. 🚀
+## 📋 Próximos passos
 
-4 - Compartilhe seu resultado ou tire suas dúvidas na nossa [**comunidade aberta**](https://discord.gg/bacwY2gDCF)  
+- [ ] Responsividade
+- [ ] Responsividade das imagens
+- [ ] Funcionalidade de busca
+- [ ] Ajuste pixel-perfect
 
-### 💡 Conteúdos Aplicados
+## 🎨 Style Guide
 
-- [x] [O guia estelar de HTML](https://app.rocketseat.com.br/node/o-guia-estelar-de-html)
-- [x] [O guia estelar de CSS](https://app.rocketseat.com.br/node/o-guia-estelar-de-css)
-- [x] [Posicionando foguetes](https://app.rocketseat.com.br/node/posicionando-foguetes)
-- [x] [Formulários de outro planeta](https://app.rocketseat.com.br/node/formularios-de-outro-planeta)
-- [x] [Alinhando os planetas](https://app.rocketseat.com.br/node/flexbox)
-- [x] [App bonito, até nos textos](https://app.rocketseat.com.br/node/flexbox)
-- [x] [https://css-tricks.com/snippets/css/a-guide-to-flexbox/](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
-- [x] [https://css-tricks.com/snippets/css/complete-guide-grid/](https://css-tricks.com/snippets/css/complete-guide-grid/)
-
-### ✅ **Requisitos**
-
-![desktop.png](./.github/desktop.png)
-
-Você pode visualizar o template do projeto no [Figma](https://www.figma.com/file/r4CsL6MPTAvE7EvJXjhFK4/DD-RocketBlog/duplicate). Neste desafio você vai desenvolver uma homepage para um blog.
-
-#### ✅ **Requisitos para o [desafio](https://efficient-sloth-d85.notion.site/Desafio-RocketBlog-807e38809814423e80469b080444db5e):**
-
-- [x] estrutura do html
-- [x] header 
-- [x] container
-- [x] destaques
-- [x] posts
-- [x] seção rodá
-
-### ✅ Próximos passos
-
-- [ ] responsividade
-- [ ] responsividade das imagens
-- [ ] funcionalidade search
-- [ ] perfect pixel
-
-### 🎨 Style Guide
-
-#### 🎨 Cores
- 
+**Cores:**
 ```css
 :root {
   --purple-bg: #290742;
@@ -73,45 +55,38 @@ Você pode visualizar o template do projeto no [Figma](https://www.figma.com/fil
 }
 ```
 
-#### 🎨 Fontes
+**Tipografia:** Poppins (weight 700) e Roboto (weights 400 e 700)
 
-- [x] inserir as variáveis de [Google Fonts](https://fonts.google.com/)
-- font-family: Poppins. Font Weight: 700
-- font-family: Roboto. Font Weight: 400 e 700
- 
-### 📅 Entrega
- 
-A ideia é dominar o processo e o fluxo de desenvolver projetos e por isso, listados e descritos as tarefas em readme.
+## 📋 Status do projeto
 
-#### 📅 Gestão do projeto
-
-- [x] Organizando os detalhes do projeto no readme.md
-- [x] Uma branch main e uma developer, uma branch para cada tarefa
+- [x] Organização do README
+- [x] Branches `main` e `developer`, uma branch por tarefa
 - [x] Favicon
-
-#### 📅 Aperfeiçoar em detalhes
-
 - [ ] [Learn Responsive Design](https://web.dev/learn/design/)
 - [ ] [Learn CSS](https://web.dev/learn/css/)
 
-#### 📅 Telas Finais
+## 🖥️ Telas finais
 
-- Desktop
-
-<p align="center" style="display: flex; align-items: flex-start; justify-content: center;">
-  <img alt="login form" title="#login-form" src="./.github/desktop-2.jpg" width="400px"> 
-  <img alt="login form" title="#login-form" src="./.github/desktop-3.jpg" width="400px"> 
-  <img alt="login form" title="#login-form" src="./.github/desktop-4.jpg" width="400px"> 
-  <img alt="login form" title="#login-form" src="./.github/desktop-5.jpg" width="400px"> 
-  <img alt="login form" title="#login-form" src="./.github/desktop-1.jpg" width="400px"> 
+**Desktop:**
+<p align="center">
+  <img alt="Desktop 1" title="#rocket-blog" src="./.github/desktop-2.jpg" width="400px"> 
+  <img alt="Desktop 2" title="#rocket-blog" src="./.github/desktop-3.jpg" width="400px"> 
+  <img alt="Desktop 3" title="#rocket-blog" src="./.github/desktop-4.jpg" width="400px"> 
+  <img alt="Desktop 4" title="#rocket-blog" src="./.github/desktop-5.jpg" width="400px"> 
+  <img alt="Desktop 5" title="#rocket-blog" src="./.github/desktop-1.jpg" width="400px"> 
 </p>  
 
-- Mobile
-
-<p align="center" style="display: flex; align-items: flex-start; justify-content: center;">
-  <img alt="login form" title="#rocketnews" src="./.github/mobile-1.jpg" height="400px"> 
+**Mobile:**
+<p align="center">
+  <img alt="Mobile" title="#rocket-blog" src="./.github/mobile-1.jpg" height="400px"> 
 </p>  
 
-Feito com ❤️ por Douglas A B Novato. 👋🏽 [Entre em contato!](https://www.linkedin.com/in/douglasabnovato/)
- 
-Fonte do projeto na [Rocketseat](https://www.rocketseat.com.br/). 👋 Participe da [comunidade aberta](https://discord.gg/bacwY2gDCF)!
+## 📚 Fonte
+
+Desafio da [Rocketseat](https://www.rocketseat.com.br/) — [requisitos completos](https://efficient-sloth-d85.notion.site/Desafio-RocketBlog-807e38809814423e80469b080444db5e)
+
+---
+
+Feito com ❤️ por Douglas A. B. Novato 👋🏽 [Entre em contato!](https://www.linkedin.com/in/douglasabnovato/)
+
+Participe da [comunidade aberta da Rocketseat](https://discord.gg/bacwY2gDCF)!
