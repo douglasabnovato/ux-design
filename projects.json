@@ -371,7 +371,7 @@
     {
         "id": 42,
         "slug": "login-with",
-        "title": "login with",
+        "title": "Login With",
         "description": "Página de login e register com autenticação.",
         "category": "Código",
         "image": "./assets/login-with.jpg",
@@ -384,6 +384,24 @@
         "description": "Página de cartão de visita com design encantador.",
         "category": "Código",
         "image": "./assets/rocket-card.jpg",
+        "destaque": true
+    },
+    {
+        "id": 44,
+        "slug": "saude",
+        "title": "Fisio Saúde",
+        "description": "Site institucional para clínica de fisioterapia com proposta comercial, orçamento e foco em conversão via WhatsApp.",
+        "category": "Clínica",
+        "image": "./assets/saude.jpg",
+        "destaque": true
+    },
+    {
+        "id": 45,
+        "slug": "car-rental",
+        "title": "Car Rental",
+        "description": "Site institucional para locação de carros com proposta comercial, orçamento e foco em conversão via WhatsApp.",
+        "category": "Clínica",
+        "image": "./assets/car-rental.jpg",
         "destaque": true
     }
 ]
