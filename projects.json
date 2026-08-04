@@ -349,5 +349,14 @@
         "category": "Para Fazer",
         "image": "./assets/to-do-project.jpg",
         "destaque": true
+    },
+    {
+        "id": 40,
+        "slug": "rocket-blog",
+        "title": "Rocket blog",
+        "description": "Página de blog com design encantador.",
+        "category": "Escritor",
+        "image": "./assets/rocket-blog.jpg",
+        "destaque": true
     }
 ]
