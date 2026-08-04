@@ -304,5 +304,131 @@
         "category": "Comunicação",
         "image": "./assets/whatsapp-messages.jpg",
         "destaque": true
-    } 
+    },
+    {
+        "id": 35,
+        "slug": "dev-link",
+        "title": "Dev Link",
+        "description": "Página DevLinks para apresentar uma lista de links importantes e desafio da trilha.",
+        "category": "Perfil",
+        "image": "./assets/devlink.jpg",
+        "destaque": true
+    },
+    {
+        "id": 36,
+        "slug": "login-form",
+        "title": "Login Form",
+        "description": "Formulário de login para acesso à plataforma com design encantador.",
+        "category": "Código",
+        "image": "./assets/login-form.jpg",
+        "destaque": true
+    },
+    {
+        "id": 37,
+        "slug": "rocket-news",
+        "title": "Rocket News",
+        "description": "Página de notícias com design encantador.",
+        "category": "Código",
+        "image": "./assets/rocket-news.jpg",
+        "destaque": true
+    },
+    {
+        "id": 38,
+        "slug": "rocket-shoes",
+        "title": "Rocket Shoes",
+        "description": "Página de calçados com design encantador.",
+        "category": "Para Fazer",
+        "image": "./assets/to-do-project.jpg",
+        "destaque": true
+    },
+    {
+        "id": 39,
+        "slug": "rocket-nfts",
+        "title": "Rocket NFTs",
+        "description": "Página de NFTs com design encantador.",
+        "category": "Para Fazer",
+        "image": "./assets/to-do-project.jpg",
+        "destaque": true
+    },
+    {
+        "id": 40,
+        "slug": "rocket-blog",
+        "title": "Rocket blog",
+        "description": "Página de blog com design encantador.",
+        "category": "Escritor",
+        "image": "./assets/rocket-blog.jpg",
+        "destaque": true
+    },
+    {
+        "id": 41,
+        "slug": "my-linktree",
+        "title": "My LinkTree",
+        "description": "Página de linktree para apresentar uma lista de links importantes.",
+        "category": "Perfil",
+        "image": "./assets/my-linktree.jpg",
+        "destaque": true
+    },
+    {
+        "id": 42,
+        "slug": "login-with",
+        "title": "Login With",
+        "description": "Página de login e register com autenticação.",
+        "category": "Código",
+        "image": "./assets/login-with.jpg",
+        "destaque": true
+    },
+    {
+        "id": 43,
+        "slug": "rocket-card",
+        "title": "Rocket Card",
+        "description": "Página de cartão de visita com design encantador.",
+        "category": "Código",
+        "image": "./assets/rocket-card.jpg",
+        "destaque": true
+    },
+    {
+        "id": 44,
+        "slug": "saude",
+        "title": "Fisio Saúde",
+        "description": "Site institucional para clínica de fisioterapia com proposta comercial, orçamento e foco em conversão via WhatsApp.",
+        "category": "Clínica",
+        "image": "./assets/saude.jpg",
+        "destaque": true
+    },
+    {
+        "id": 45,
+        "slug": "car-rental",
+        "title": "Car Rental",
+        "description": "Site institucional para locação de carros com proposta comercial, orçamento e foco em conversão via WhatsApp.",
+        "category": "Clínica",
+        "image": "./assets/car-rental.jpg",
+        "destaque": true
+    },
+    {
+        "id": 46,
+        "slug": "construction",
+        "title": "Educação em Saúde",
+        "description": "Site institucional para treinamento em saúde com proposta comercial, orçamento e foco em conversão via WhatsApp.",
+        "category": "Ensino",
+        "image": "./assets/construction.jpg",
+        "destaque": true
+    },
+    {
+        "id": 47,
+        "slug": "restaurant",
+        "title": "Restaurante Gourmet",
+        "description": "Site institucional para restaurante gourmet com proposta comercial, orçamento e foco em conversão via WhatsApp.",
+        "category": "Gastronomia",
+        "image": "./assets/restaurant.jpg",
+        "destaque": true
+    }, 
+    {
+        "id": 48,
+        "slug": "edificacoes-3d",
+        "title": "Edificações 3D",
+        "description": "Aplicação web para exibição de maquetes, detalhes de engenharia civil e renderizações 3D de projetos arquitetônicos com design responsivo.",
+        "category": "Arquitetura",
+        "image": "./assets/edificacoes-3d.jpg",
+        "destaque": true
+    }
 ]

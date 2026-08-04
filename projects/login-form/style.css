@@ -1,0 +1,383 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+:root {
+    --text-base: #afb6c2;
+    --text-title: #d4ccb6;
+    --background: #4d483f;
+    --card-background: #191816;
+    --form-background: #24221f;
+    --primary-color: #ffc632;
+
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(135deg, var(--background), var(--form-background));
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 100%;
+}
+
+.form-wrapper {
+    height: 100%;
+    width: 100%;
+}
+
+.form-container {
+    display: flex;
+    align-items: stretch;
+}
+
+.form-left {
+    background-color: var(--card-background);
+    color: var(--text-base);
+}
+
+.form-left .header img {
+    margin-left: 40px;
+    margin-top: 40px;
+}
+
+.form-left .form-box {
+    background-color: var(--form-background);
+    border-radius: 4px;
+    margin-left: 74px;
+    margin-right: 74px;
+    margin-top: 134px;
+    margin-bottom: 194px;
+}
+
+.form-left .form-box .form-title {
+    padding-top: 60px;
+    margin-bottom: 30px;
+}
+
+.form-left .form-box .form-title img {
+    color: var(--primary-color);
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
+    line-height: 36px;
+}
+
+.form-left .form-box .form-title h2 {
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 36px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.form-left .form-box .form-title .form-description {
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.form-left .form-box .form-title,
+.form-left .form-box form {
+    margin-inline: 40px;
+    padding-inline: 68px;
+    padding-bottom: 1px;
+}
+
+.form-left .form-box form div.email,
+.form-left .form-box form div.password,
+.form-left .form-box form div.lembrete,
+.form-left .form-box form div.entrar {
+    margin-bottom: 23px;
+}
+
+.form-left .form-box form div.email label,
+.form-left .form-box form div.password label {
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.form-left .form-box form input.email_inp,
+.form-left .form-box form input.password_inp {
+    background: var(--form-background);
+    color: var(--text-base);
+    border: 1px solid #868686;
+    border-radius: 4px;
+    height: 44px;
+    width: 100%;
+    opacity: 1;
+    margin: 8px 0;
+    padding: 20px 5px 20px 35px;
+    font-size: 14px;
+}
+
+.form-left .form-box form input.email_inp:focus-within,
+.form-left .form-box form input.password_inp:focus-within {
+    border: 1px solid var(--primary-color);
+    outline: 1px solid var(--primary-color);
+}
+
+.form-left .form-box form input.email_inp {
+    background: url("./assets/mail.svg") no-repeat left;
+    background-position: 11px 11px;
+}
+
+.form-left .form-box form input.password_inp {
+    background: url("./assets/lock.svg") no-repeat left;
+    background-position: 11px 11px;
+}
+
+.form-left .form-box form input.email_inp:focus-within {
+    background: url("./assets/mail-focus.svg") no-repeat left;
+    background-position: 11px 11px;
+}
+
+.form-left .form-box form input.password_inp:focus-within {
+    background: url("./assets/lock-focus.svg") no-repeat left;
+    background-position: 11px 11px;
+}
+
+.form-left .form-box form div.input_password {
+    display: flex;
+}
+
+.form-left .form-box form img.eye_password_inp {
+    margin-left: -30px;
+    cursor: pointer;
+}
+
+.form-left .form-box form .bi-eye {
+    background: url("./assets/eye.svg") no-repeat left;
+}
+
+.form-left .form-box form div.lembrete {
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+}
+
+.form-left .form-box form div.lembrete div.lembrei {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.form-left .form-box form div.lembrete div.lembrei input.lembrete_inp {
+    all: unset;
+    width: 20px;
+    height: 20px;
+    box-sizing: border-box;
+    border: 1px solid #868686;
+    border-radius: 4px;
+    margin-right: 6px;
+    cursor: pointer;
+    clip: rect(0 0 0 0);
+}
+
+.form-left .form-box form div.lembrete div.lembrei input.lembrete_inp:checked {
+    border: dashed 1px transparent;
+    background: var(--primary-color);
+    background-image: url("./assets/check.svg");
+}
+
+.form-left .form-box form div.lembrete div.lembrei label.lembrete_lab {
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    cursor: pointer;
+}
+
+.form-left .form-box form div.lembrete div.esqueci a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 21px;
+}
+
+.form-left .form-box form div.entrar input.entrar {
+    background-color: var(--primary-color);
+    border-radius: 4px;
+    border: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 12px 24px;
+    gap: 10px;
+    width: 100%;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 27px;
+    letter-spacing: 0.015em;
+    text-transform: uppercase;
+    color: #473404;
+}
+
+.form-left .form-box form div.registrar_conta {
+    margin-bottom: 54px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-left .form-box form .registrar_conta span.texto {
+    color: var(--primary-color);
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    margin-right: 6px;
+}
+
+.form-left .form-box form .registrar_conta a.register {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: bold;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+}
+
+.form-right {
+    padding: 20px;
+    display: flex;
+    flex-basis: 50%;
+    flex-direction: column;
+    justify-content: center;
+    background-image: url("./assets/side-image-2x.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    font-family: 'Roboto', sans-serif;
+}
+
+.form-right::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: linear-gradient(240deg, rgba(255, 255, 255, 0), rgba(0, 0, 0, 1)100%);
+}
+
+.form-right div.content {
+    margin: 0 auto;
+    width: 80%;
+    color: var(--text-title);
+    z-index: 9;
+}
+
+.form-right div.content div.titulo {
+    font-size: 38px;
+    line-height: 48px;
+    position: relative;
+    font-weight: 600;
+    margin-bottom: 50px;
+    letter-spacing: -0.5;
+}
+
+.form-right div.content div.titulo::after {
+    background: var(--primary-color);
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 6px;
+    top: 62px;
+    left: -7px;
+}
+
+.form-right div.content p {
+    font-size: 22px;
+    line-height: 22px;
+}
+
+@media (max-width:678px) {
+    body {
+        padding: 0;
+        margin: 0;
+        background: var(--card-background);
+    }
+
+    .form-wrapper {
+        max-height: 100vh;
+        max-width: 100vw;
+    }
+
+    .form-wrapper .form-container {
+        position: relative;
+    }
+
+    .form-wrapper .form-container .form-left .form-box {
+        background: var(--card-background);
+    }
+
+    .form-wrapper .form-container .form-left .form-box .form-title {
+        margin-inline: 0px;
+    }
+
+    .form-wrapper .form-container .form-left .form-box form {
+        margin-inline: 0px;
+    }
+
+    .form-wrapper .form-container .form-left .form-box form div.password,
+    .form-wrapper .form-container .form-left .form-box form div.lembrete,
+    .form-wrapper .form-container .form-left .form-box form div.entrar,
+    .form-wrapper .form-container .form-left .form-box form div.email {
+        margin-inline: 0px;
+        padding-inline: 0px;
+        width: 90vw;
+    }
+
+    .form-wrapper .form-container .form-left,
+    .form-wrapper .form-container .form-left .header img,
+    .form-wrapper .form-container .form-left .form-box,
+    .form-wrapper .form-container .form-left .form-box .form-title h2,
+    .form-wrapper .form-container .form-left .form-box .form-title .form-description {
+        margin: 0;
+        padding: 0;
+    }
+
+    .form-wrapper .form-container .form-right {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+    }
+
+    .form-wrapper .form-container .form-right div.content {
+        display: none;
+        flex-basis: 100%;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+}
