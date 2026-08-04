@@ -367,5 +367,14 @@
         "category": "Perfil",
         "image": "./assets/my-linktree.jpg",
         "destaque": true
+    },
+    {
+        "id": 42,
+        "slug": "login-with",
+        "title": "login with",
+        "description": "Página de login e register com autenticação.",
+        "category": "Código",
+        "image": "./assets/login-with.jpg",
+        "destaque": true
     }
 ]
