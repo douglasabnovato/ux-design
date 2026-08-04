@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="./public/favicon.ico" type="image/x-icon" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;700&family=Work+Sans:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Rocket News.</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="container cards">
+      <div class="left card">
+        <div class="logo-rocket">
+          <img src="./assets/logo.svg" alt="logo rocket" />
+        </div>
+        <div class="apresentation">
+          <p class="title">atualize ideias e informações em 5 minutos</p>
+          <p class="subtitle">
+            tudo que você precisa saber para começar seu dia bem e informado
+          </p>
+          <p class="texto">
+            noticias sobre o universo Rocketseat, e tudo o que precisa para
+            começar o dia melhor. perfeito para se preparar para codar ☕
+          </p>
+        </div>
+        <form class="newsletter">
+          <h2>Insira seu e-mail:</h2>
+          <span class="retangular"></span>
+          <input 
+            id="e-mail" 
+            type="e-mail" 
+            placeholder="google@google.com" 
+            autocomplete=""
+          />
+          <button id="icon-send">
+            <span class="icon-send"></span>
+          </button>
+          <p id="responsesend"></p>
+        </form>
+        <a href="https://douglasabnovato.medium.com/" target="_blank" class="to-read">
+          <span class="message">deixe-me ler primeiro</span>
+          <span class="icon-arrow-right"></span>
+        </a>
+      </div>
+      <div class="right card">
+        <div class="banner">
+          <img src="./assets/read_news.jpg" alt="foto abertura" />
+        </div>
+      </div>
+    </div>
+    <script src="./main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,215 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;700&family=Prompt:wght@100;400;700&display=swap');
+
+:root {
+    --bg: #000000;
+    --bg-card: #0E1218;
+    --text: #F1F1F1;
+    --img-profile: #8257e5;
+    --buttons: #FFF;
+    --border-button: #1A1A1A;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    background: grey;
+}
+
+body {
+    width: 65%;
+    max-width: 70vw;
+    height: 100vh;
+    margin: 0 auto;
+}
+
+.box {
+    width: 438px;
+    height: 693px;
+    background: #000000;
+    border-radius: 50px;
+    padding-top: 1.5rem;
+    margin: 0 auto;
+}
+
+.card {
+    width: 407px;
+    height: 644px;
+    margin: 0 auto;
+    padding-top: 2rem;
+    padding-left: 2rem;
+    background: #0E1218;
+    border-radius: 50px;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    height: 54.44px;
+}
+
+.header .img-header {
+    width: 55.42px;
+    height: 54.44px;
+    border: 1px solid #F1F1F1;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 35px;
+}
+
+.header .img-header img {
+    width: 30.14px;
+    height: 36.94px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header span {
+    width: 155.55px;
+    height: 18.47px;
+    font-family: 'Prompt';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 36px;
+    color: #FFFFFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile {
+    width: 100%;
+    height: 64%;
+    margin-top: 2px;
+}
+
+.profile .image-profile {
+    width: 100%;
+    height: 100%;
+    background-image: url('./assets/image-profile.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    border: 10px solid var(--img-profile);
+    border-radius: 50%;
+}
+
+.contacts {
+    width: 203.13px;
+    height: 194.7px;
+    color: white;
+    background: linear-gradient(180deg, #000000 3.65%, rgba(70, 69, 69, 0.72) 53.65%, rgba(62, 56, 56, 0.42) 100%);
+    border-radius: 50px;
+    margin-top: -115px;
+    margin-left: -10px;
+}
+
+.contacts ul {
+    padding-top: 31px;
+    padding-left: 26px;
+    width: 195.5px;
+    height: 194.7px;
+}
+
+.contacts ul li {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    list-style-type: none;
+    margin-top: 3px;
+}
+
+.contacts ul li span {
+    font-family: 'Prompt', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    color: #FFFFFF;
+    letter-spacing: 1px;
+}
+
+.contacts ul li span img {
+    font-size: 20px;
+    margin-right: 12px;
+}
+
+.det {
+    display: flex;
+    justify-content: right;
+    width: 100%;
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 229px;
+    height: 59.47px;
+    margin-top: 10px;
+    margin-right: 12px;
+    background: #000000;
+    border: 2px solid #1A1A1A;
+    border-radius: 15px;
+}
+
+.footer:link,
+.footer:visited {
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 15px 40px;
+    display: inline-block;
+    border-radius: 100px;
+    transition: all .2s;
+    position: absolute;
+}
+
+.footer:hover {
+    cursor: pointer;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.footer:active {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.footer .img-footer img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 28px;
+    height: 34.32px;
+    margin-right: 15px;
+}
+
+.footer span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 144.52px;
+    height: 17.16px;
+    font-family: 'Prompt', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 30px;
+    color: #FFFFFF;
+}
+
+@media (min-width : 375px) and (max-width: 800px) {
+
+    body {
+        width: 100vw;
+        height: 100vh;
+        margin: 0;
+    }
+}

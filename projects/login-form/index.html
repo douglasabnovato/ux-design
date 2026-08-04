@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=1" />
+    <meta name="description" content="Login Form">
+    <meta name="keywords" content="HTML,CSS,JavaScript">
+    <meta name="author" content="douglasabnovato">
+    <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="./style.css">
+    <title>Login</title>
+</head>
+
+<body>
+    <div class="form-wrapper">
+        <div class="form-container">
+            <div class="form-left">
+                <div class="header">
+                    <img src="./assets//logo.svg" alt="logo">
+                </div>
+                <div class="form-box">
+                    <div class="form-title">
+                        <h2>
+                            <img src="./assets/log-in.svg" alt="">Faça seu login
+                        </h2>
+                        <p class="form-description">Entre com suas informações de cadastro.</p>
+                    </div>
+                    <form action="">
+                        <div class="email">
+                            <label class="email_lab" id="email_lab" for="email_inp">
+                                E-mail
+                            </label>
+                            <div>
+                                <input class="email_inp" id="email_inp" name="email_inp" type="email" value="" size="8"
+                                    tabindex="1" placeholder="Digite seu e-mail">
+                            </div>
+                        </div>
+                        <div class="password">
+                            <label class="password_lab" id="password_lab" for="password_inp">
+                                Senha
+                            </label>
+                            <div class="input_password">
+                                <input class="password_inp" id="password_inp" name="password_inp" type="password"
+                                    value="" size="8" tabindex="1" placeholder="Digite sua senha">
+                                <img class="eye_password_inp" id="toggle_password" src="./assets/eye-slash.svg" alt="" srcset="">
+                            </div>
+                        </div>
+                        <div class="lembrete">
+                            <div class="lembrei">
+                                <input class="lembrete_inp" id="lembrete_inp" name="lembrete_inp" type="checkbox"
+                                    value="lembrar" tabindex="8">
+                                <label class="lembrete_lab" for="lembrete_inp">Lembre-me</label>
+                            </div>
+                            <div class="esqueci">
+                                <a href="">Esqueci minha senha</a>
+                            </div>
+                        </div>
+                        <div class="entrar">
+                            <input class="entrar" id="entrar" name="entrar" type="submit" value="Entrar">
+                        </div>
+                        <div class="registrar_conta">
+                            <span class="texto">Não tem uma conta?</span>
+                            <a class="register" href="">Registre-se</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="form-right">
+                <div class="content">
+                    <div class="titulo">Welcome to Developer</div>
+                    <p class="subtitulo">Learn programming</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./script.js"></script>
+</body>
+
+</html>
