@@ -412,5 +412,14 @@
         "category": "Ensino",
         "image": "./assets/construction.jpg",
         "destaque": true
+    },
+    {
+        "id": 47,
+        "slug": "restaurant",
+        "title": "Restaurante Gourmet",
+        "description": "Site institucional para restaurante gourmet com proposta comercial, orçamento e foco em conversão via WhatsApp.",
+        "category": "Gastronomia",
+        "image": "./assets/restaurant.jpg",
+        "destaque": true
     }
 ]
