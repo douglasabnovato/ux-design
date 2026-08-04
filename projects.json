@@ -331,5 +331,23 @@
         "category": "Código",
         "image": "./assets/rocket-news.jpg",
         "destaque": true
+    },
+    {
+        "id": 38,
+        "slug": "rocket-shoes",
+        "title": "Rocket Shoes",
+        "description": "Página de calçados com design encantador.",
+        "category": "Para Fazer",
+        "image": "./assets/to-do-project.jpg",
+        "destaque": true
+    },
+    {
+        "id": 39,
+        "slug": "rocket-nfts",
+        "title": "Rocket NFTs",
+        "description": "Página de NFTs com design encantador.",
+        "category": "Para Fazer",
+        "image": "./assets/to-do-project.jpg",
+        "destaque": true
     }
 ]
