@@ -322,5 +322,14 @@
         "category": "Código",
         "image": "./assets/login-form.jpg",
         "destaque": true
+    },
+    {
+        "id": 37,
+        "slug": "rocket-news",
+        "title": "Rocket News",
+        "description": "Página de notícias com design encantador.",
+        "category": "Código",
+        "image": "./assets/rocket-news.jpg",
+        "destaque": true
     }
 ]
