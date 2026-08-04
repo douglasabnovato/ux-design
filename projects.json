@@ -313,5 +313,14 @@
         "category": "Perfil",
         "image": "./assets/devlink.jpg",
         "destaque": true
+    },
+    {
+        "id": 36,
+        "slug": "login-form",
+        "title": "Login Form",
+        "description": "Formulário de login para acesso à plataforma com design encantador.",
+        "category": "Código",
+        "image": "./assets/login-form.jpg",
+        "destaque": true
     }
 ]
