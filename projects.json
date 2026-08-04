@@ -304,5 +304,14 @@
         "category": "Comunicação",
         "image": "./assets/whatsapp-messages.jpg",
         "destaque": true
-    } 
+    },
+    {
+        "id": 35,
+        "slug": "dev-link",
+        "title": "Dev Link",
+        "description": "Página DevLinks para apresentar uma lista de links importantes e desafio da trilha.",
+        "category": "Perfil",
+        "image": "./assets/devlink.jpg",
+        "destaque": true
+    }
 ]
