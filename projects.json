@@ -295,5 +295,14 @@
         "category": "Negócios",
         "image": "./assets/project.jpg",
         "destaque": true
-    }
+    },
+    {
+        "id": 34,
+        "slug": "whatsapp-messages",
+        "title": "WhatsApp Messages",
+        "description": "Layout do Sistema de mensagens do WhatsApp.",
+        "category": "Comunicação",
+        "image": "./assets/whatsapp-messages.jpg",
+        "destaque": true
+    } 
 ]
