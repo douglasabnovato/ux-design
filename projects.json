@@ -421,5 +421,14 @@
         "category": "Gastronomia",
         "image": "./assets/restaurant.jpg",
         "destaque": true
+    }, 
+    {
+        "id": 48,
+        "slug": "edificacoes-3d",
+        "title": "Edificações 3D",
+        "description": "Aplicação web para exibição de maquetes, detalhes de engenharia civil e renderizações 3D de projetos arquitetônicos com design responsivo.",
+        "category": "Arquitetura",
+        "image": "./assets/edificacoes-3d.jpg",
+        "destaque": true
     }
 ]
