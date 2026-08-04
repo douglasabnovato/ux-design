@@ -403,5 +403,14 @@
         "category": "Clínica",
         "image": "./assets/car-rental.jpg",
         "destaque": true
+    },
+    {
+        "id": 46,
+        "slug": "construction",
+        "title": "Educação em Saúde",
+        "description": "Site institucional para treinamento em saúde com proposta comercial, orçamento e foco em conversão via WhatsApp.",
+        "category": "Ensino",
+        "image": "./assets/construction.jpg",
+        "destaque": true
     }
 ]
