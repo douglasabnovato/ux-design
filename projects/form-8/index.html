@@ -1,82 +1,72 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="./style8.css">
-</head>
-<body>
-    <div class="form-container">
-        <div class="form-row">
-          <div class="clubeday-galo">
-            <form action="/action_page.php">
-              <div class="clubeday-galo-row">
-                <div class="col-25">
-                  <label for="fname">Nome</label>
-                </div>
-                <div class="col-75">
-                  <input type="text" id="fname" name="name" placeholder="Meu nome é ...">
-                </div>
-              </div>
-              <div class="clubeday-galo-row">
-                <div class="col-25">
-                  <label for="email">E-mail</label>
-                </div>
-                <div class="col-75">
-                  <input type="text" id="email" name="email" placeholder="Meu e-mail é ...">
-                </div>
-              </div>
-              <div class="clubeday-galo-row">
-                <div class="col-25">
-                  <label for="cpf">CPF</label>
-                </div>
-                <div class="col-75">
-                  <input type="text" id="cpf" name="cpf" placeholder="Meu cpf é ...">
-                </div>
-              </div>
-              <div class="clubeday-galo-row">
-                <div class="col-25">
-                  <label for="telefone">Telefone (Whatsapp)</label>
-                </div>
-                <div class="col-75">
-                  <input type="text" id="telefone" name="telefone" placeholder="Meu telefone (whatsapp) é ...">
-                </div>
-              </div>
-              <div class="clubeday-galo-row">
-                <div class="col-25">
-                  <label for="guideshop">Selecione a sua Guide Shop</label>
-                </div>
-                <div class="col-75">
-                  <select id="guideshop" name="guideshop">
-                            <option value="abcdaconstrucao">Sua Guide Shop</option>
-                            <option value="novalima">BH - Nova Lima</option>
-                            <option value="matriz">JF - Matriz</option>
-                            <option value="paecambu">SP - Paecambu</option>
-                            <option value="santacruz">RS - Santa Cruz</option>
-                          </select>
-                </div>
-              </div>
-              <div class="clubeday-galo-row">
-                <div class="col-25">
-                  <label for="subject">Conte-nos sua experiência com a ABC da Construção</label>
-                </div>
-                <div class="col-75">
-                  <textarea id="subject" name="subject" placeholder="A ABC da Construção é ..." style="height:200px"></textarea>
-                </div>
-              </div>
-              <br>
-              <div class="clubeday-galo-row">
-                <input type="submit" value="BAIXAR CATÁLOGO">
-              </div>
-            </form>
-          </div>
-          <div class=" ">
-            <span style="color:white; font-size: 10px">
-                      * Não compartilhamos seus dados com terceiros
-                    </span>
-          </div>
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Download de Catálogo ABC</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <main class="catalog-shell">
+      <section class="catalog-card">
+        <header class="catalog-header">
+          <span class="eyebrow">Catálogo ABC</span>
+          <h1>Baixe o catálogo e descubra soluções completas para sua obra</h1>
+          <p>Preencha as informações em dois passos e receba acesso ao material digital exclusivo.</p>
+        </header>
+
+        <div class="catalog-steps">
+          <div class="step active"><span>1</span><p>Contato</p></div>
+          <div class="step"><span>2</span><p>Detalhes</p></div>
         </div>
-      </div>
-</body>
+
+        <div id="catalogMessage" class="catalog-message" aria-live="polite"></div>
+
+        <form id="catalogForm" novalidate>
+          <section class="catalog-page active" data-step="1">
+            <label>
+              Nome completo
+              <input type="text" name="name" placeholder="Seu nome" required />
+            </label>
+            <label>
+              E-mail
+              <input type="email" name="email" placeholder="seu@email.com" required />
+            </label>
+            <label>
+              WhatsApp
+              <input type="tel" name="whatsapp" placeholder="(00) 00000-0000" required />
+            </label>
+          </section>
+
+          <section class="catalog-page" data-step="2">
+            <label>
+              Guide Shop favorita
+              <select name="guideshop" required>
+                <option value="">Selecione</option>
+                <option value="novalima">BH - Nova Lima</option>
+                <option value="matriz">JF - Matriz</option>
+                <option value="paecambu">SP - Paecambu</option>
+                <option value="santacruz">RS - Santa Cruz</option>
+              </select>
+            </label>
+            <label>
+              Conte sua experiência
+              <textarea name="experience" rows="4" placeholder="Ex: já sou cliente ABC, estou pesquisando obra..." required></textarea>
+            </label>
+            <label class="optin-label">
+              <input type="checkbox" name="subscribe" required />
+              Concordo em receber o catálogo por e-mail e receber novidades da ABC da Construção.
+            </label>
+          </section>
+
+          <div class="catalog-actions">
+            <button type="button" id="catalogPrev" class="secondary-button" disabled>Voltar</button>
+            <button type="button" id="catalogNext" class="primary-button">Próximo</button>
+          </div>
+        </form>
+      </section>
+    </main>
+
+    <script src="./script.js"></script>
+  </body>
 </html>

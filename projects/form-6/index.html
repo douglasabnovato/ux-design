@@ -1,29 +1,81 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resp Img + Txt</title>
-    <link rel="stylesheet" href="./style6.css">
-</head>
-<body>
-    <div class="campanha">
-        <div class="negociacao">
-            <div class="negociacao-left flexbox">
-                <img src="https://abcdaconstrucao.my.site.com/vendacorporativa/sfsites/c/cms/delivery/media/MCFK4ZFMUZ3NAR3FUXLMONHCZ3LA" alt="Vendas Corporativas" />
-            </div>
-            <div class="negociacao-right flexbox">
-                <p>
-                    Só na <span>ABC da Construção</span> você encontra em um único lugar tudo que precisa para
-                    garantir o melhor para a sua obra.
-                </p>
-                <p>
-                    A <span>ABC</span>, com mais de 400 Guide Shops, é uma das maiores redes de
-                    acabamento do país e é considerada uma das mais inovadoras do
-                    segmento.
-                </p>
-            </div>
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pedido de Projeto 3D</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <main class="premium-shell">
+      <section class="premium-card">
+        <div class="premium-hero">
+          <span class="eyebrow">Projeto 3D</span>
+          <h1>Garanta sua proposta de projeto digital</h1>
+          <p>Preencha o formulário e receba análise técnica, sugestões de layout e estimativa de projeto.</p>
         </div>
-    </div>
-</body>
+
+        <form id="premiumForm" class="premium-form" novalidate>
+          <div class="field-grid">
+            <label>
+              Nome completo
+              <input type="text" name="name" placeholder="Seu nome" required />
+            </label>
+            <label>
+              E-mail
+              <input type="email" name="email" placeholder="seu@email.com" required />
+            </label>
+            <label>
+              Telefone
+              <input type="tel" name="phone" placeholder="(00) 00000-0000" required />
+            </label>
+          </div>
+
+          <div class="field-grid">
+            <label>
+              Tipo de projeto
+              <select name="projectType" required>
+                <option value="">Selecione</option>
+                <option value="residencial">Residencial</option>
+                <option value="comercial">Comercial</option>
+                <option value="industrial">Industrial</option>
+              </select>
+            </label>
+            <label>
+              Ambientes
+              <select name="environments" required>
+                <option value="">Selecione</option>
+                <option value="1">1 ambiente</option>
+                <option value="2">2 ambientes</option>
+                <option value="3">3 ambientes</option>
+                <option value="4+">4 ou mais</option>
+              </select>
+            </label>
+          </div>
+
+          <div class="premium-checklist">
+            <p>Serviços desejados</p>
+            <label class="checkbox-card"><input type="checkbox" name="service" value="layout" /> Layout 3D</label>
+            <label class="checkbox-card"><input type="checkbox" name="service" value="orcamento" /> Orçamento detalhado</label>
+            <label class="checkbox-card"><input type="checkbox" name="service" value="implantacao" /> Implantação técnica</label>
+          </div>
+
+          <label class="textarea-group">
+            Conte mais sobre sua demanda
+            <textarea name="brief" rows="5" placeholder="Ex: reforma de cozinha, projeto de fachada ou espaço comercial" required></textarea>
+          </label>
+
+          <label class="optin-label">
+            <input type="checkbox" name="subscribe" required />
+            Concordo em receber comunicação por e-mail, SMS ou WhatsApp.
+          </label>
+
+          <button type="submit" class="cta-button">Enviar pedido</button>
+          <div id="premiumMessage" class="form-message" aria-live="polite"></div>
+        </form>
+      </section>
+    </main>
+
+    <script src="./script.js"></script>
+  </body>
 </html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Inscreva-se na escola de programação e receba um plano de estudos gratuito. Cursos práticos, mentorias e apoio para sua carreira em tecnologia." />
+    <title>Escola de Programação | Inscreva-se</title>
+    <link rel="stylesheet" type="text/css" href="./style.css" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Course",
+        "name": "Escola de Programação",
+        "description": "Cursos de programação com projetos práticos, mentoria e plano de estudos personalizado.",
+        "provider": {
+          "@type": "Organization",
+          "name": "Escola de Programação",
+          "sameAs": "https://example.com"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <main class="page-shell">
+      <section class="hero-form" aria-label="Inscrição para curso de programação">
+        <div class="form-component">
+          <div class="hero-copy">
+            <span class="eyebrow">Escola de Programação</span>
+            <h1>Transforme sua carreira com código</h1>
+            <p>De iniciante a dev confiante: cursos práticos, mentorias ao vivo e plano de estudos personalizado.</p>
+
+            <ul class="benefits-list">
+              <li>📚 Projetos reais desde a primeira aula</li>
+              <li>🧑‍🏫 Mentoria com profissionais do mercado</li>
+              <li>🚀 Mais rápido para conquistar sua primeira vaga</li>
+            </ul>
+
+            <div class="hero-image-card">
+              <img src="./assets/setup-coffee-2.jpg" alt="Mesa de estudo com programação" />
+              <div>
+                <strong>Aprenda com o ambiente certo</strong>
+                <p>Material atualizado, suporte ágil e uma comunidade que ajuda você a avançar.</p>
+              </div>
+            </div>
+
+            <div class="trust-panel">
+              <article class="trust-card">
+                <span>1200+</span>
+                <p>Alunos formados com sucesso</p>
+              </article>
+              <article class="trust-card">
+                <span>98%</span>
+                <p>Aprovação dos cursos pelos estudantes</p>
+              </article>
+            </div>
+          </div>
+
+          <div class="form-wrapper">
+            <form class="lead-form" action="#" method="POST" novalidate data-lead-form>
+              <div class="form-header">
+                <h2>Inscrição rápida</h2>
+                <p>Responda abaixo e receba seu plano de estudos gratuito.</p>
+              </div>
+
+              <div id="formAlert" class="form-alert" aria-live="polite"></div>
+
+              <label>
+                Nome completo
+                <input type="text" name="name" placeholder="Digite seu nome" required autocomplete="name" />
+              </label>
+
+              <label>
+                E-mail
+                <input type="email" name="email" placeholder="seu@email.com" required autocomplete="email" />
+              </label>
+
+              <label>
+                Você já estudou programação antes?
+                <select name="experience" required>
+                  <option value="">Selecione</option>
+                  <option value="nenhuma">Nenhuma experiência</option>
+                  <option value="basica">Básica</option>
+                  <option value="intermediaria">Intermediária</option>
+                  <option value="avancada">Avançada</option>
+                </select>
+              </label>
+
+              <label>
+                Qual é o principal motivo para aprender programação?
+                <textarea name="reason" rows="4" placeholder="Ex: mudar de carreira, lançar um produto, automatizar tarefas" required></textarea>
+              </label>
+
+              <fieldset class="sub-question">
+                <legend>Em qual área você gostaria de trabalhar?</legend>
+                <div class="radio-grid">
+                  <label><input type="radio" name="interest" value="web" required /> Web</label>
+                  <label><input type="radio" name="interest" value="mobile" /> Mobile</label>
+                  <label><input type="radio" name="interest" value="data" /> Dados</label>
+                  <label><input type="radio" name="interest" value="ux" /> UX / Produto</label>
+                </div>
+              </fieldset>
+
+              <label>
+                Como você descobriu nossa escola?
+                <input type="text" name="source" placeholder="Ex: Instagram, amigo, pesquisa no Google" autocomplete="off" />
+              </label>
+
+              <button type="submit">Quero começar agora</button>
+
+              <p class="privacy-note">Sem spam. Apenas informações essenciais sobre o curso.</p>
+            </form>
+            <noscript>
+              <p class="noscript-note">O formulário também funciona sem JavaScript. Envie seus dados normalmente.</p>
+            </noscript>
+          </div>
+        </div>
+      </section>
+
+      <section class="seo-summary">
+        <h2>Por que este formulário é eficiente?</h2>
+        <p>Captura experiências, motivação e interesse por área, permitindo segmentar leads e personalizar o atendimento.</p>
+      </section>
+    </main>
+    <script src="./script.js"></script>
+  </body>
+</html>

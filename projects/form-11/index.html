@@ -1,83 +1,80 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Forms</title>
-    <link rel="stylesheet" href="./style11.css"> 
-</head>
-<body>
-    <section class="abc-formulario">
-        <div class="formulario">
-            <h3>Quero o meu 3D</h3>
-            <div class="linha-separadora"></div>
-            <p>Preencha o formulário abaixo e garanta sua especificação 3D!</p>
-    
-            <form action="/seu-script-de-envio" method="post" class="form-3d">
-                <fieldset>
-                    <legend>Informações Pessoais</legend>
-                    <div class="campo">
-                        <label for="nome">Como gostaria de ser chamado?</label>
-                        <input type="text" id="nome" name="nome" placeholder="Seu nome" required aria-required="true">
-                    </div>
-                    <div class="campo">
-                        <label for="email">E-mail</label>
-                        <input type="email" id="email" name="email" placeholder="seuemail@exemplo.com" required aria-required="true">
-                    </div>
-                    <div class="campo">
-                        <label for="telefone">Telefone</label>
-                        <input type="tel" id="telefone" name="telefone" placeholder="(XX) XXXXX-XXXX" required aria-required="true">
-                    </div>
-                </fieldset>
-    
-                <fieldset>
-                    <legend>Detalhes da Obra</legend>
-                    <div class="campo">
-                        <label for="num_ambiente">Número de ambientes</label>
-                        <select id="num_ambiente" name="num_ambiente" required aria-required="true">
-                            <option value="" disabled selected>Selecione</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                        </select>
-                    </div>
-                    <div class="campo">
-                        <label for="estado_obra">Estágio da obra</label>
-                        <select id="estado_obra" name="estado_obra" required aria-required="true">
-                            <option value="" disabled selected>Selecione</option>
-                            <option value="fundacao">Fundação</option>
-                            <option value="alvenaria">Alvenaria</option>
-                            <option value="acabamento">Acabamento</option>
-                        </select>
-                    </div>
-                    <div class="campo">
-                        <label for="loja">Loja</label>
-                        <select id="loja" name="loja" required aria-required="true">
-                            <option value="" disabled selected>Selecione uma cidade</option>
-                            <option value="acre">Acre</option>
-                            <option value="alagoas">Alagoas</option>
-                            <option value="amapa">Amapá</option>
-                            <option value="amazonas">Amazonas</option>
-                            <option value="bahia">Bahia</option>
-                        </select>
-                    </div>
-                </fieldset>
-    
-                <div class="campo checkbox-container">
-                    <input type="checkbox" id="newsletter" name="newsletter" value="newsletter">
-                    <label for="newsletter">Concordo em receber e-mails, SMS e WhatsApp da ABC da Construção.</label>
-                </div>
-    
-                <div class="campo">
-                    <button type="submit" class="cta-button">Enviar</button>
-                </div>
-            </form>
-    
-            <p class="politica-privacidade">
-                <a href="/politica-privacidade" aria-label="Link para a política de privacidade">Política de Privacidade</a>
-            </p>
-    
-        </div>
-    </section>
-</body>
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Projeto 3D - ABC da Construção</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <main class="hero-shell">
+      <section class="hero-grid">
+        <article class="hero-copy">
+          <span class="eyebrow">Projeto 3D</span>
+          <h1>Transforme sua obra em um projeto visual com modelo 3D</h1>
+          <p>Peça um orçamento rápido para projeto digital, maquete e consultoria técnica de acabamento.</p>
+
+          <div class="hero-features">
+            <div class="feature-card">
+              <strong>Apresentação realista</strong>
+              <p>Vea o resultado antes de executar a obra.</p>
+            </div>
+            <div class="feature-card">
+              <strong>Tomada de decisão</strong>
+              <p>Compare alternativas de layout e acabamento.</p>
+            </div>
+            <div class="feature-card">
+              <strong>Entrega ágil</strong>
+              <p>Proposta técnica em até 48h após envio dos dados.</p>
+            </div>
+          </div>
+        </article>
+
+        <aside class="hero-form-card">
+          <h2>Solicite seu projeto 3D</h2>
+          <form id="heroForm" novalidate>
+            <label>
+              Nome completo
+              <input type="text" name="name" required />
+            </label>
+            <label>
+              E-mail
+              <input type="email" name="email" required />
+            </label>
+            <label>
+              WhatsApp
+              <input type="tel" name="whatsapp" required />
+            </label>
+            <label>
+              Estágio da obra
+              <select name="stage" required>
+                <option value="">Selecione</option>
+                <option value="fundacao">Fundação</option>
+                <option value="alvenaria">Alvenaria</option>
+                <option value="acabamento">Acabamento</option>
+              </select>
+            </label>
+            <label>
+              Qual ambiente?
+              <select name="environment" required>
+                <option value="">Selecione</option>
+                <option value="cozinha">Cozinha</option>
+                <option value="banheiro">Banheiro</option>
+                <option value="sala">Sala</option>
+                <option value="quarto">Quarto</option>
+              </select>
+            </label>
+            <label class="textarea-group">
+              Observações
+              <textarea name="notes" rows="4" placeholder="Ex: projeto de fachada, reforma de cozinha ou decoração de interiores" required></textarea>
+            </label>
+            <button type="submit" class="cta-button">Quero meu orçamento</button>
+            <div id="heroMessage" class="form-message" aria-live="polite"></div>
+          </form>
+        </aside>
+      </section>
+    </main>
+
+    <script src="./script.js"></script>
+  </body>
 </html>

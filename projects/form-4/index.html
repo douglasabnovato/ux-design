@@ -1,241 +1,128 @@
-<!DOCTYPE html>
-<html lang="en">
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Formulários</title>
-    <link rel="stylesheet" href="./style4.css" />
+    <title>Visita Técnica ABC</title>
+    <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
-    <div class="abc-formulario">
-      <div class="formulario">
-        <h3>Queremos te ouvir</h3>
-        <p class="abc-linha-formulario"></p>
-        <p>
-          Preencha os dados abaixo e receba o contato de um consultor
-          especializado!
-        </p>
+    <main class="page-shell">
+      <section class="visit-grid">
+        <aside class="visit-info">
+          <span class="eyebrow">Visita Técnica</span>
+          <h1>Agende a visita de avaliação da sua obra</h1>
+          <p>
+            Identifique o estágio da obra, verifique ambientes e receba uma proposta personalizada sem sair do canteiro.
+          </p>
 
-        <div class="form">
-          <form action="" method="post">
-            <div class="form1">
-              <div class="form1_esquerdo">
-                <label for="nome">Razão Social</label>
-                <input type="text" name="razaoSocial" />
-              </div>
-              <div class="form1_direito">
-                <label for="nome">CNPJ</label>
-                <input type="text" name="cnpj" />
-              </div>
-            </div>
-
-            <div class="form2">
-              <div class="form2_esquerdo">
-                <label for="nome">Como gostaria de ser chamado?</label>
-                <input type="text" id="opcaoChat" />
-              </div>
-              <div class="form2_direito">
-                <label for="email">E-mail</label>
-                <input type="email" name="email" />
-              </div>
-            </div>
-
-            <div class="form3">
-              <div class="form3_esquerdo">
-                <label for="nome">Telefone</label>
-                <input type="tel" name="telefone" />
-              </div>
-
-              <div class="form3_centro">
-                <label for="estado">
-                  <strong>Estado</strong>
-                </label>
-
-                <select name="estado">
-                  <option selected="" disabled="" value="estado">
-                    Selecione o estado
-                  </option>
-                  <option value="AC">Acre</option>
-                  <option value="AL">Alagoas</option>
-                  <option value="AP">Amapá</option>
-                  <option value="AM">Amazonas</option>
-                  <option value="BA">Bahia</option>
-                  <option value="CE">Ceará</option>
-                  <option value="DF">Distrito Federal</option>
-                  <option value="ES">Espírito Santo</option>
-                  <option value="GO">Goiás</option>
-                  <option value="MA">Maranhão</option>
-                  <option value="MT">Mato Grosso</option>
-                  <option value="MS">Mato Grosso do Sul</option>
-                  <option value="MG">Minas Gerais</option>
-                  <option value="PA">Pará</option>
-                  <option value="PB">Paraíba</option>
-                  <option value="PR">Paraná</option>
-                  <option value="PE">Pernambuco</option>
-                  <option value="PI">Piauí</option>
-                  <option value="RJ">Rio de Janeiro</option>
-                  <option value="RN">Rio Grande do Norte</option>
-                  <option value="RS">Rio Grande do Sul</option>
-                  <option value="RO">Rondônia</option>
-                  <option value="RR">Roraima</option>
-                  <option value="SC">Santa Catarina</option>
-                  <option value="SP">São Paulo</option>
-                  <option value="SE">Sergipe</option>
-                  <option value="TO">Tocatins</option>
-                </select>
-              </div>
-
-              <div class="form3_direito">
-                <label for="cidade">
-                  <strong>Cidade</strong>
-                </label>
-
-                <select name="cidade">
-                  <option selected="" disabled="" value="cidade">
-                    Selecione uma cidade
-                  </option>
-                  <option>Acre</option>
-                  <option>Alagoas</option>
-                  <option>Amapá</option>
-                  <option>Amazonas</option>
-                  <option>Bahia</option>
-                  <option>Ceará</option>
-                  <option>Distrito Federal</option>
-                  <option>Espírito Santo</option>
-                  <option>Goiás</option>
-                  <option>Maranhão</option>
-                  <option>Mato Grosso</option>
-                  <option>Mato Grosso do Sul</option>
-                  <option>Minas Gerais</option>
-                  <option>Pará</option>
-                  <option>Paraíba</option>
-                  <option>Paraná</option>
-                  <option>Pernambuco</option>
-                  <option>Piauí</option>
-                  <option>Rio de Janeiro</option>
-                  <option>Rio Grande do Norte</option>
-                  <option>Rio Grande do Sul</option>
-                  <option>Rondônia</option>
-                  <option>Roraima</option>
-                  <option>Santa Catarina</option>
-                  <option>São Paulo</option>
-                  <option>Sergipe</option>
-                  <option>Tocatins</option>
-                </select>
-              </div>
-            </div>
-
-            <div class="form4">
-              <div class="form4_esquerdo">
-                <label for="nome">Local da Obra</label>
-                <input type="text" name="localObra" />
-              </div>
-
-              <div class="form4_direito">
-                <label for="areaConstruida">
-                  <strong>Área construída</strong>
-                </label>
-
-                <select name="areaconstruida">
-                  <option selected="" disabled="" value="">---</option>
-                  <option>Até 1.000 m²</option>
-                  <option>De 1.000 até 3.000 m²</option>
-                  <option>Acima de 3.000 m²</option>
-                </select>
-              </div>
-            </div>
-
-            <div class="form5">
-              <div class="form5_esquerdo">
-                <label for="dataCompra">
-                  <strong>Data prevista da compra</strong>
-                </label>
-
-                <select name="dataCompra">
-                  <option selected="" disabled="" value="">
-                    Data prevista da compra
-                  </option>
-                  <option>Nesta semana</option>
-                  <option>Neste mês</option>
-                  <option>Proxímo mês</option>
-                  <option>Compra futura</option>
-                </select>
-              </div>
-
-              <div class="form5_direito">
-                <label for="dataEntrega">
-                  <strong>Data prevista da entrega</strong>
-                </label>
-
-                <select name="dataEntrega">
-                  <option selected="" disabled="" value="">
-                    Data prevista da entrega
-                  </option>
-                  <option>Nesta semana</option>
-                  <option>Neste mês</option>
-                  <option>Proxímo mês</option>
-                  <option>Compra futura</option>
-                </select>
-              </div>
-            </div>
-
-            <div class="form6">
-              <label for="msg">Mensagem</label>
-              <textarea class="form6MSG"></textarea>
-            </div>
-          </form>
-
-          <div class="form-abc">
-            <input type="checkbox" name="subscribe" value="newsletter" />
-            <label for="subscribeNews"
-              >Concordo em receber e-mails, sms e whatsapp da ABC da
-              Construção.</label
-            >
-
-            <div
-              class="g-recaptcha"
-              data-sitekey="6LfqWq0gAAAAAN5lwSlOISRA17Tx8T4pHQFcSVU9"
-            >
-              <div style="width: 304px; height: 78px" class="recaptcha-mobile">
-                <div>
-                  <iframe
-                    title="reCAPTCHA"
-                    width="304"
-                    height="78"
-                    role="presentation"
-                    name="a-8ugcbtyonsoo"
-                    frameborder="0"
-                    scrolling="no"
-                    sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox allow-storage-access-by-user-activation"
-                    src="https://www.google.com/recaptcha/api2/anchor?ar=2&amp;k=6LfqWq0gAAAAAN5lwSlOISRA17Tx8T4pHQFcSVU9&amp;co=aHR0cHM6Ly92ZW5kYS1jb3Jwb3JhdGl2YS5hYmNldm9jZS5jb20uYnI6NDQz&amp;hl=pt-BR&amp;v=pPK749sccDmVW_9DSeTMVvh2&amp;size=normal&amp;cb=jhz3z3i37b9i"
-                  >
-                  </iframe>
-                </div>
-                <textarea
-                  id="g-recaptcha-response"
-                  name="g-recaptcha-response"
-                  class="g-recaptcha-response"
-                  style="
-                    width: 350px;
-                    height: 70px;
-                    border: 1px solid rgb(193, 193, 193);
-                    margin: 10px 25px;
-                    padding: 0px;
-                    resize: none;
-                    display: none;
-                  "
-                >
-                </textarea>
-              </div>
-              <iframe style="display: none"> </iframe>
-            </div>
-
-            <div class="form-button cta-container">
-              <button type="submit" class="cta-button">ENVIAR</button>
-            </div>
+          <div class="visit-highlights">
+            <article class="highlight-card">
+              <strong>Equipe técnica dedicada</strong>
+              <p>Profissionais prontos para análise, medições e sugestões de acabamento.</p>
+            </article>
+            <article class="highlight-card">
+              <strong>Relatório de visita</strong>
+              <p>Receba um resumo técnico com recomendações, prioridades e próximos passos.</p>
+            </article>
+            <article class="highlight-card">
+              <strong>Sem compromisso</strong>
+              <p>O agendamento é uma avaliação técnica e não obriga à compra.</p>
+            </article>
           </div>
-        </div>
-      </div>
-    </div>
+        </aside>
+
+        <section class="visit-form-card">
+          <div class="form-header">
+            <span class="eyebrow">Solicitação</span>
+            <h2>Preencha seus dados para agendar</h2>
+            <p>Nosso time confirma o melhor horário e envia a equipe ao local.</p>
+          </div>
+
+          <div id="formMessage" class="form-message" aria-live="polite"></div>
+
+          <form id="visitForm" novalidate>
+            <div class="form-block">
+              <h3>Informações da empresa</h3>
+              <div class="field-grid">
+                <label>
+                  Razão social
+                  <input type="text" name="company" placeholder="Nome da empresa" required />
+                </label>
+                <label>
+                  CNPJ
+                  <input type="text" name="cnpj" placeholder="00.000.000/0000-00" required />
+                </label>
+              </div>
+            </div>
+
+            <div class="form-block">
+              <h3>Contato responsável</h3>
+              <div class="field-grid">
+                <label>
+                  Nome completo
+                  <input type="text" name="name" placeholder="Seu nome" required />
+                </label>
+                <label>
+                  E-mail
+                  <input type="email" name="email" placeholder="seu@email.com" required />
+                </label>
+                <label>
+                  WhatsApp
+                  <input type="tel" name="whatsapp" placeholder="(00) 00000-0000" required />
+                </label>
+              </div>
+            </div>
+
+            <div class="form-block">
+              <h3>Dados da obra</h3>
+              <div class="field-grid">
+                <label>
+                  Estado
+                  <select name="state" required>
+                    <option value="">Selecione</option>
+                    <option value="SP">São Paulo</option>
+                    <option value="MG">Minas Gerais</option>
+                    <option value="RJ">Rio de Janeiro</option>
+                    <option value="BA">Bahia</option>
+                    <option value="RS">Rio Grande do Sul</option>
+                  </select>
+                </label>
+                <label>
+                  Cidade
+                  <input type="text" name="city" placeholder="Cidade da obra" required />
+                </label>
+                <label>
+                  Área construída
+                  <select name="area" required>
+                    <option value="">Selecione</option>
+                    <option value="até1000">Até 1.000 m²</option>
+                    <option value="1000a3000">1.000 a 3.000 m²</option>
+                    <option value="acima3000">Acima de 3.000 m²</option>
+                  </select>
+                </label>
+              </div>
+            </div>
+
+            <div class="form-block">
+              <h3>Objetivo da visita</h3>
+              <label class="textarea-group">
+                Descreva a prioridade da visita
+                <textarea name="objective" rows="4" placeholder="Ex: avaliação de layout, conexão hidráulica ou orçamento de acabamento" required></textarea>
+              </label>
+            </div>
+
+            <label class="optin-label">
+              <input type="checkbox" name="subscribe" required />
+              Concordo em receber informações por e-mail, SMS e WhatsApp.
+            </label>
+
+            <button type="submit" class="cta-button">Enviar solicitação</button>
+          </form>
+        </section>
+      </section>
+    </main>
+
+    <script src="./script.js"></script>
   </body>
 </html>
