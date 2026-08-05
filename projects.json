@@ -484,5 +484,14 @@
         "category": "Design",
         "image": "./assets/moveis-planejados.jpg",
         "destaque": true
+    },
+    {
+        "id": 55,
+        "slug": "puro-estilo",
+        "title": "Catálogo Virtual de Roupas",
+        "description": "SPA de e-commerce e catálogo de moda com visualização de detalhes, sacola de favoritos, geração de orçamento em PDF e paginação dinâmica.",
+        "category": "E-commerce",
+        "image": "./assets/puro-estilo.jpg",
+        "destaque": true
     }
 ]
