@@ -466,5 +466,14 @@
         "category": "Artes",
         "image": "./assets/art.jpg",
         "destaque": true
+    },
+    {
+        "id": 53,
+        "slug": "meus-treinos",
+        "title": "Meus Treinos",
+        "description": "Aplicação web para gestão de fichas de musculação, acompanhamento de progresso, rotina de suplementação e avaliações físicas.",
+        "category": "Saúde",
+        "image": "./assets/meus-treinos.jpg",
+        "destaque": true
     }
 ]
