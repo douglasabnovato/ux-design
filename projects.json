@@ -457,5 +457,14 @@
         "category": "Gastronomia",
         "image": "./assets/our-coffee.jpg",
         "destaque": true
+    },
+    {
+        "id": 52,
+        "slug": "Art",
+        "title": "Art",
+        "description": "Portal para apresentar uma obra de arte com design exclusivo, foco em branding, storytelling da obra e usabilidade responsiva..",
+        "category": "Artes",
+        "image": "./assets/art.jpg",
+        "destaque": true
     }
 ]
