@@ -421,7 +421,7 @@
         "category": "Gastronomia",
         "image": "./assets/restaurant.jpg",
         "destaque": true
-    }, 
+    },
     {
         "id": 48,
         "slug": "edificacoes-3d",
@@ -430,7 +430,7 @@
         "category": "Arquitetura",
         "image": "./assets/edificacoes-3d.jpg",
         "destaque": true
-    }, 
+    },
     {
         "id": 49,
         "slug": "transportation",
@@ -447,6 +447,15 @@
         "description": "Ecossistema digital completo de ensino e tecnologia para Developer / Tech Growth, reunindo cursos, conteúdos, portfólio e gerador de currículos.",
         "category": "Educação",
         "image": "./assets/school.jpg",
+        "destaque": true
+    },
+    {
+        "id": 51,
+        "slug": "Our Coffee",
+        "title": "Our Coffee",
+        "description": "Portal para apresentar um café de qualidade para uma cafeteria com design exclusivo, foco em branding, storytelling do café e usabilidade responsiva..",
+        "category": "Gastronomia",
+        "image": "./assets/our-coffee.jpg",
         "destaque": true
     }
 ]
