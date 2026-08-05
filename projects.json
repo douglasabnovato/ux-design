@@ -430,5 +430,23 @@
         "category": "Arquitetura",
         "image": "./assets/edificacoes-3d.jpg",
         "destaque": true
+    }, 
+    {
+        "id": 49,
+        "slug": "transportation",
+        "title": "Transportation",
+        "description": "Aplicação web para exibição de maquetes, detalhes de engenharia civil e renderizações 3D de projetos arquitetônicos com design responsivo.",
+        "category": "Arquitetura",
+        "image": "./assets/transportation.jpg",
+        "destaque": true
+    },
+    {
+        "id": 50,
+        "slug": "school",
+        "title": "School",
+        "description": "Ecossistema digital completo de ensino e tecnologia para Developer / Tech Growth, reunindo cursos, conteúdos, portfólio e gerador de currículos.",
+        "category": "Educação",
+        "image": "./assets/school.jpg",
+        "destaque": true
     }
 ]
