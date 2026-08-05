@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Inconsolata"
+  />
+  <link rel="shortcut icon" href="./public/favicon.ico">
+  <link rel="manifest" href="./public/manifest.json">
+  <title>Café Da Jéssica</title>
+  <style>
+    body,
+    html {
+      height: 100%;
+      font-family: "Inconsolata", sans-serif;
+    }
+
+    .bgimg {
+      background-position: center;
+      background-size: cover;
+      background-image: url("./assets/coffeehouse.jpg");
+      min-height: 75%;
+    }
+
+    .menu {
+      display: none;
+    }
+  </style>
+  <body>
+    <div class="w3-top">
+      <div class="w3-row w3-padding w3-black">
+        <div class="w3-col s3">
+          <a href="#" class="w3-button w3-block w3-black">HOME</a>
+        </div>
+        <div class="w3-col s3">
+          <a href="#about" class="w3-button w3-block w3-black">SOBRE</a>
+        </div>
+        <div class="w3-col s3">
+          <a href="#menu" class="w3-button w3-block w3-black">CARDÁPIO</a>
+        </div>
+        <div class="w3-col s3">
+          <a href="#where" class="w3-button w3-block w3-black">AONDE É</a>
+        </div>
+      </div>
+    </div>
+    <header class="bgimg w3-display-container w3-grayscale-min" id="home">
+      <div
+        class="w3-display-bottomleft w3-center w3-padding-large w3-hide-small"
+      >
+        <span class="w3-tag">Está aberto das 6hr às 17hr</span>
+      </div>
+      <div class="w3-display-middle w3-center">
+        <span class="w3-text-white" style="font-size: 90px">Café Da<br />Jéssica</span>
+      </div>
+      <div class="w3-display-bottomright w3-center w3-padding-large">
+        <span class="w3-text-white">Rua Maravilhosa, 101</span>
+      </div>
+    </header>
+    <div class="w3-sand w3-grayscale w3-large">
+      <div class="w3-container" id="about">
+        <div class="w3-content" style="max-width: 700px">
+          <h5 class="w3-center w3-padding-64">
+            <span class="w3-tag w3-wide">A HISTÓRIA DO Café Da Jéssica</span>
+          </h5>
+          <p>
+            Oferece uma experiência super completa e que, provavelmente, vai ganhar o seu coração. O local é aconchegante, cheio de natureza e já existe há mais de 22 anos, desde agosto de 2000.
+          </p>
+          <p>
+            No cardápio, além das excelentes opções de cafés, também há algumas outras bebidas, bolos, doces e salgados. E para completar a experiência, se você solicitar, eles até preparam a bebida na sua mesa, tirando todas as dúvidas sobre os grãos utilizados e a diferença entre os métodos.
+          </p>
+          <div class="w3-panel w3-leftbar w3-light-grey">
+            <p>
+              <i
+                >"Somos o maior exportador da bebida e o segundo maior consumidor! 
+                Um chá para acalmar a alma e um café para despertar a mente.</i
+              >
+            </p>
+            <p>Júlia Wolf</p>
+          </div>
+          <img
+            src="./assets/coffeeshop.jpg"
+            style="width: 100%; max-width: 1000px"
+            class="w3-margin-top"
+          />
+          <p><strong>Horário de funcionamento:</strong> todos os dias das 6h às 17h.</p>
+          <p><strong>Endereço:</strong> Rua Maravilhosa, 101</p>
+        </div>
+      </div>
+      <div class="w3-container" id="menu">
+        <div class="w3-content" style="max-width: 700px">
+          <h5 class="w3-center w3-padding-48">
+            <span class="w3-tag w3-wide">O CARDÁPIO</span>
+          </h5>
+          <div class="w3-row w3-center w3-card w3-padding">
+            <a
+              href="javascript:void(0)"
+              onclick="openMenu(event, 'Eat');"
+              id="myLink"
+            >
+              <div class="w3-col s6 tablink">Comer</div>
+            </a>
+            <a href="javascript:void(0)" onclick="openMenu(event, 'Drinks');">
+              <div class="w3-col s6 tablink">Beber</div>
+            </a>
+          </div>
+          <div id="Eat" class="w3-container menu w3-padding-48 w3-card">
+            <h5>Cesta de pão</h5>
+            <p class="w3-text-grey">
+              Variedade de pães e muffins de frutas frescas 5,50
+            </p>
+            <br />
+            <h5>Mel Amêndoa Granola com Frutas</h5>
+            <p class="w3-text-grey">
+              Cereal natural de mel de aveia torrado, passas, amêndoas e tâmaras
+               7,00
+            </p>
+            <br />
+            <h5>Waffle Belga</h5>
+            <p class="w3-text-grey">
+              Massa sabor baunilha com farinha maltada 7,50
+            </p>
+            <br />
+            <h5>Ovos mexidos</h5>
+            <p class="w3-text-grey">
+              Ovos mexidos, pimentão assado e alho, com cebolinha
+               7,50
+            </p>
+            <br />
+            <h5>Panquecas de Mirtilo</h5>
+            <p class="w3-text-grey">
+              Com calda, manteiga e muitas frutas vermelhas 8,50
+            </p>
+          </div>
+          <div id="Drinks" class="w3-container menu w3-padding-48 w3-card">
+            <h5>Coffee</h5>
+            <p class="w3-text-grey">Coffee 2.50</p>
+            <br />
+            <h5>Chocolato</h5>
+            <p class="w3-text-grey">Café expresso de chocolate com leite 4.50</p>
+            <br />
+            <h5>Corretto</h5>
+            <p class="w3-text-grey">Uísque e café 5.00</p>
+            <br />
+            <h5>Iced tea</h5>
+            <p class="w3-text-grey">Iced tea 3.00</p>
+            <br />
+            <h5>Soda</h5>
+            <p class="w3-text-grey">Coca-Cola, Sprite, Fanta, etc 2.50</p>
+          </div>
+          <img
+            src="./assets/coffeehouse.jpg"
+            style="width: 100%; max-width: 1000px; margin-top: 32px"
+          />
+        </div>
+      </div>
+      <div class="w3-container" id="where" style="padding-bottom: 32px">
+        <div class="w3-content" style="max-width: 700px">
+          <h5 class="w3-center w3-padding-48">
+            <span class="w3-tag w3-wide">ONDE NOS ENCONTRAR</span>
+          </h5>
+          <p>Encontre-nos em Rua Maravilhosa, 101.</p>
+          <img src="./assets/google-maps.jpg" class="w3-image" style="width: 100%" />
+          <p>
+            <span class="w3-tag">FYI!</span> Oferecemos serviço completo de buffet para qualquer evento, grande ou pequeno. Nós entendemos suas necessidades e vamos atender a comida para satisfazer os maiores critérios de todos eles, tanto na aparência quanto no sabor.
+          </p>
+          <p>
+            <strong>Reserve</strong> uma mesa, peça o especial de hoje ou apenas
+            envie-nos uma mensagem:
+          </p>
+          <form action="/action_page.php" target="_blank">
+            <p>
+              <input
+                class="w3-input w3-padding-16 w3-border"
+                type="text"
+                placeholder="Qual é o seu nome"
+                required
+                name="Name"
+              />
+            </p>
+            <p>
+              <input
+                class="w3-input w3-padding-16 w3-border"
+                type="number"
+                placeholder="Quantas pessoas"
+                required
+                name="People"
+              />
+            </p>
+            <p>
+              <input
+                class="w3-input w3-padding-16 w3-border"
+                type="datetime-local"
+                placeholder="Data e hora da reserva"
+                required
+                name="date"
+                value="2022-10-11T20:00"
+              />
+            </p>
+            <p>
+              <input
+                class="w3-input w3-padding-16 w3-border"
+                type="text"
+                placeholder="Mensagem \ Requisitos especiais"
+                required
+                name="Message"
+              />
+            </p>
+            <p>
+              <button class="w3-button w3-black" type="submit">
+                ENVIAR MENSAGEM
+              </button>
+            </p>
+          </form>
+        </div>
+      </div>
+    </div>
+    <footer class="w3-center w3-light-grey w3-padding-48 w3-large">
+      <p>
+        Café Da Jéssica
+        <a
+          href="https://www.graogourmet.com/"
+          title="Café Da Jéssica"
+          target="_blank"
+          class="w3-hover-text-green"
+          >Jéssica</a
+        >
+      </p>
+    </footer>
+    <script>
+      function openMenu(evt, menuName) {
+        var i, x, tablinks;
+        x = document.getElementsByClassName("menu");
+        for (i = 0; i < x.length; i++) {
+          x[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablink");
+        for (i = 0; i < x.length; i++) {
+          tablinks[i].className = tablinks[i].className.replace(
+            " w3-dark-grey",
+            ""
+          );
+        }
+        document.getElementById(menuName).style.display = "block";
+        evt.currentTarget.firstElementChild.className += " w3-dark-grey";
+      }
+      document.getElementById("myLink").click();
+    </script>
+  </body>
+</html>

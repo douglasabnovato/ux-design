@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Karma"
+    />
+    <link rel="stylesheet" href="./styles/style.css" />
+    <link rel="manifest" href="./public/site.webmanifest">
+    <link rel="shortcut icon" href="./public/favicon.ico">
+    <title>Restaurante da Jéssica</title>
+  </head>
+  <body>
+    <nav
+      class="w3-sidebar w3-bar-block w3-card w3-top w3-xlarge w3-animate-left"
+      style="display: none; z-index: 2; width: 40%; min-width: 300px"
+      id="mySidebar"
+    >
+      <a
+        href="javascript:void(0)"
+        onclick="w3_close()"
+        class="w3-bar-item w3-button"
+        >X </a
+      >
+      <a href="#food" onclick="w3_close()" class="w3-bar-item w3-button"
+        >Restaurante da Jéssica</a
+      >
+      <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button"
+        >A Jéssica</a
+      >
+    </nav>
+    <div class="w3-top">
+      <div class="w3-white w3-xlarge" style="max-width: 1200px; margin: auto">
+        <div class="w3-button w3-padding-16 w3-left" onclick="w3_open()">☰</div>
+        <div class="w3-right w3-padding-16">Fale com a gente</div>
+        <div class="w3-center w3-padding-16">Restaurante da Jéssica</div>
+      </div>
+    </div>
+    <div
+      class="w3-main w3-content w3-padding"
+      style="max-width: 1200px; margin-top: 100px"
+    >
+      <div class="w3-row-padding w3-padding-16 w3-center" id="food">
+        <div class="w3-quarter">
+          <img
+            src="./assets/images/sandwich.jpg"
+            alt="Sandwich"
+            style="width: 100%"
+          />
+          <h3>O sanduíche perfeito, um verdadeiro clássico de NYC</h3>
+          <p>
+            Sanduíche de presunto parma: essa é uma receita em que um pão ciabatta é recheado com presunto parma, tomate, manjericão e alguns temperos. Os ingredientes usados são poucos, mas são suficientes para um lanche super saboroso.
+          </p>
+        </div>
+        <div class="w3-quarter">
+          <img src="./assets/images/steak.jpg" alt="Steak" style="width: 100%" />
+          <h3>Deixe-me falar sobre este bife</h3>
+          <p>
+            Bife Wellington: prato tradicional da culinária inglesa, o segredo do bife Wellington é ter o exterior da massa bem crocante e o interior da carne bem rosado. Confira o passo a passo e acompanhe essa delícia com um bom vinho!
+          </p>
+        </div>
+        <div class="w3-quarter">
+          <img
+            src="./assets/images/cherries.jpg"
+            alt="Cherries"
+            style="width: 100%"
+          />
+          <h3>Cerejas, interrompidas</h3>
+          <p>Geleia de cereja simples: preparada com cereja, maçã, suco de limão e açúcar, essa geléia tem um vermelho profundo e lindo. É superfácil de fazer: basta preparar uma calda de açúcar com todos os ingredientes e deixar reduzir. Essa é uma ótima forma de aproveitar as cerejas que estão ficando muito maduras.</p>
+        </div>
+        <div class="w3-quarter">
+          <img
+            src="./assets/images/wine.jpg"
+            alt="Pasta and Wine"
+            style="width: 100%"
+          />
+          <h3>Mais uma vez, Vinho Robusto e Massa de Legumes</h3>
+          <p>Macarrão com legumes e carne moída . Em apenas dois minutos você aprende como preparar um macarrão com repolho, brócolis, tomate, carne moída, cebola e cheiro-verde. Além disso, a massa é integral, o que ajuda na sensação de saciedade após comer.</p>
+        </div>
+      </div>
+      <div class="w3-row-padding w3-padding-16 w3-center">
+        <div class="w3-quarter">
+          <img
+            src="./assets/images/popsicle.jpg"
+            alt="Popsicle"
+            style="width: 100%"
+          />
+          <h3>Tudo que eu preciso é um picolé</h3>
+          <p>Picolé de manga: esse é um picolé natural feito apenas com manga congelada. Além de refrescante, é delicioso e auxilia em uma alimentação saudável. Não é necessário colocar açúcar, mas, caso queira, você pode adicionar.</p>
+        </div>
+        <div class="w3-quarter">
+          <img src="./assets/images/salmon.jpg" alt="Salmon" style="width: 100%" />
+          <h3>Salmão para sua pele</h3>
+          <p>
+            Salmão na crosta de nozes e especiarias. Essa é uma receita elegante e sofisticada, mas que conta com um preparo simples. O salmão é assado no forno e ganha uma crosta crocante feita com nozes, temperos e farinha panko.
+          </p>
+        </div>
+        <div class="w3-quarter">
+          <img
+            src="./assets/images/sandwich.jpg"
+            alt="Sandwich"
+            style="width: 100%"
+          />
+          <h3>O sanduíche perfeito, um verdadeiro clássico</h3>
+          <p>
+            Sanduíche de almôndegas: essa é uma receita que já apareceu na série de televisão Friends, era o sanduíche preferido do personagem Joey. O lanche é composto por um pão recheado com almôndegas ao molho e mussarela de búfala. Para deixar sua refeição ainda mais gostosa, a sugestão é levar essa combinação ao forno.
+          </p>
+        </div>
+        <div class="w3-quarter">
+          <img
+            src="./assets/images/croissant.jpg"
+            alt="Croissant"
+            style="width: 100%"
+          />
+          <h3>Le French</h3>
+          <p>
+            Pão de minuto: essa é uma receita que precisa de aproximadamente 25 minutos para ficar pronta, por isso, é uma ótima opção para quando você quer preparar um pão caseiro, mas não quer esperar a massa crescer.
+          </p>
+        </div>
+      </div>
+      <div class="w3-center w3-padding-32">
+        <div class="w3-bar">
+          <a href="#" class="w3-bar-item w3-button w3-hover-black">«</a>
+          <a href="#" class="w3-bar-item w3-black w3-button">1</a>
+          <a href="#" class="w3-bar-item w3-button w3-hover-black">2</a>
+          <a href="#" class="w3-bar-item w3-button w3-hover-black">3</a>
+          <a href="#" class="w3-bar-item w3-button w3-hover-black">4</a>
+          <a href="#" class="w3-bar-item w3-button w3-hover-black">»</a>
+        </div>
+      </div>
+      <hr id="about" />
+      <div class="w3-container w3-padding-32 w3-center">
+        <h3>Sobre a Cozinheira, a Jéssica</h3>
+        <br />
+        <img
+          src="./assets/images/chef-2.jpg"
+          alt="Me"
+          class="w3-image"
+          style="display: block; margin: auto"
+          width="800"
+          height="533"
+        />
+        <div class="w3-padding-32">
+          <h4><b>I am Who I Am!</b></h4>
+          <h6><i>With Passion For Real, Good Food</i></h6>
+          <p>
+            “Estava trabalhando há 11, 12 anos para outras pessoas. Empreender foi algo que me pareceu natural mesmo: já havia decidido que queria abrir meu próprio negócio.
+            Eu trabalho mais na parte de criação de conceitos e de linguagem de todos os restaurantes. Ou seja: analiso o que vai influenciar a cozinha nessa época e nesse ano; penso em que histórias vamos contar e quem vamos conhecer culturalmente, para trazer conteúdo aos nossos restaurantes; elaboro os cardápios; organizo o treinamento que damos à equipe de cozinha; mantenho o relacionamento com os fornecedores; e vejo como vamos fazer a nossa divulgação.”
+          </p>
+        </div>
+      </div>
+      <hr />
+      <footer class="w3-row-padding w3-padding-32">
+        <div class="w3-third">
+          <h3>COOK</h3>
+          <p>
+            Cozinhar, além de ser um ato de amor, é também um importante gesto de doação. É o momento em que você dá tudo de si para preparar algo saboroso para agradar ao próximo, para recepcionar bem seus convidados e trazer felicidade e conforto por meio do alimento.
+          </p>
+          <p>
+            Restaurante da Jéssica
+            <a
+              href="https://www.google.com/search?q=o+que+%C3%A9+cozinhar+para+voc%C3%AA&bih=657&biw=1366&rlz=1C1SQJL_pt-BRBR785BR785&hl=en&sxsrf=ALiCzsblZ7fN_PE8CHnIddMOnLZMLeiJCA%3A1665497276906&ei=vHhFY-33Ntb35OUP08iy8AI&ved=0ahUKEwjtxcHsrNj6AhXWO7kGHVOkDC4Q4dUDCA8&uact=5&oq=o+que+%C3%A9+cozinhar+para+voc%C3%AA&gs_lcp=Cgdnd3Mtd2l6EANKBAhBGABKBAhGGABQAFgAYPwBaABwAXgAgAGWAYgBlgGSAQMwLjGYAQCgAQHAAQE&sclient=gws-wiz"
+              target="_blank"
+              >@restaurantedajessica</a
+            >
+          </p>
+        </div>
+        <div class="w3-third">
+          <h3>RECEITAS</h3>
+          <ul class="w3-ul w3-hoverable">
+            <li class="w3-padding-16">
+              <img
+                src="./assets/images/workshop.jpg"
+                class="w3-left w3-margin-right"
+                style="width: 50px"
+              />
+              <span class="w3-large">Ótimo Almoço</span><br />
+              <span>Arroz e bife</span>
+            </li>
+            <li class="w3-padding-16">
+              <img
+                src="./assets/images/gondol.jpg"
+                class="w3-left w3-margin-right"
+                style="width: 50px"
+              />
+              <span class="w3-large">Delicioso Omelete</span><br />
+              <span>Ingredientes saborosos</span>
+            </li>
+          </ul>
+        </div>
+        <div class="w3-third w3-serif">
+          <h3>TAGS dos ASSUNTOS POPULARES</h3>
+          <p>
+            <span class="w3-tag w3-black w3-margin-bottom">Travel</span>
+            <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom"
+              >Brasil</span
+            >
+            <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom"
+              >Jantar</span
+            >
+            <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom"
+              >Salmão</span
+            >
+            <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom"
+              >Minas Gerais</span
+            >
+            <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom"
+              >Bebidas</span
+            >
+            <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom"
+              >Receitas</span
+            >
+            <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom"
+              >Sabores</span
+            >
+            <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom"
+              >Cozinhar</span
+            >
+            <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom"
+              >Bife</span
+            >
+            <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom"
+              >Dressing</span
+            >
+            <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom"
+              >Amigos</span
+            >
+            <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom"
+              >Peixe</span
+            >
+            <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom"
+              >Amor</span
+            >
+          </p>
+        </div>
+      </footer>
+    </div>
+    <script type="text/javascript" src="./javascript/main.js"></script>
+  </body>
+</html>

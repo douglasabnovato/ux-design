@@ -55,100 +55,100 @@
     },
     {
         "id": 7,
-        "slug": "form-1",
-        "title": "Form 1",
-        "description": "Descrição a atualizar.",
-        "category": "Formulário",
+        "slug": "form-escola-de-programacao",
+        "title": "Escola de Programação",
+        "description": "Formulário estratégico de alta conversão para triagem dev, diagnóstico de nível de conhecimento e montagem de plano de carreira personalizado.",
+        "category": "Educação",
         "image": null,
         "destaque": false
     },
     {
         "id": 8,
-        "slug": "form-2",
-        "title": "Form 2",
-        "description": "Descrição a atualizar.",
-        "category": "Formulário",
+        "slug": "form-visita-a-obra",
+        "title": "Visita à Obra",
+        "description": "Formulário de agendamento de visita técnica para avaliação presencial, análise do estágio da obra, seleção de ambientes e especificações.",
+        "category": "Construção Civil",
         "image": null,
         "destaque": false
     },
     {
         "id": 9,
-        "slug": "form-3",
-        "title": "Form 3",
-        "description": "Descrição a atualizar.",
-        "category": "Formulário",
+        "slug": "form-carreira-tech",
+        "title": "Carreira Tech",
+        "description": "Formulário de diagnóstico profissional e direcionamento de carreira em tecnologia, com foco em habilidades, objetivos e transição de área.",
+        "category": "Carreira Tech",
         "image": null,
         "destaque": false
     },
     {
         "id": 10,
         "slug": "form-4",
-        "title": "Form 4",
-        "description": "Descrição a atualizar.",
-        "category": "Formulário",
+        "title": "Visita à Reforma",
+        "description": "Formulário de visita técnica e orçamento de obra inspirado em novos designs, com coleta de dados de endereço, fase do projeto, ambientes e estilo de construção.",
+        "category": "Construção Civil",
         "image": null,
         "destaque": false
     },
     {
         "id": 11,
         "slug": "form-5",
-        "title": "Form 5",
-        "description": "Descrição a atualizar.",
-        "category": "Formulário",
+        "title": "Quer Reformar",
+        "description": "Formulário wizard progressivo, com etapas claras para qualificar leads e coletar informações de contato, orçamento e preferência de serviço.",
+        "category": "Construção Civil",
         "image": null,
         "destaque": false
     },
     {
         "id": 12,
         "slug": "form-6",
-        "title": "Form 6",
-        "description": "Descrição a atualizar.",
-        "category": "Formulário",
+        "title": "Arquitetar o seu sonho",
+        "description": "Formulário premium para solicitação de projeto 3D, com briefing de demanda, tipo de projeto, número de ambientes e serviços adicionais.",
+        "category": "Arquitetura",
         "image": null,
         "destaque": false
     },
     {
         "id": 13,
         "slug": "form-7",
-        "title": "Form 7",
-        "description": "Descrição a atualizar.",
-        "category": "Formulário",
+        "title": "Construir e Reformar",
+        "description": " Formulário focado em orçamento e visita à obra com coleta de informações de contato e briefing de ambiente para atendimento técnico.",
+        "category": "Construção Civil",
         "image": null,
         "destaque": false
     },
     {
         "id": 14,
         "slug": "form-8",
-        "title": "Form 8",
-        "description": "Descrição a atualizar.",
-        "category": "Formulário",
+        "title": "Catalogo Digital",
+        "description": "Formulário em duas etapas para download de catálogo digital, com contato, seleção de loja, descrição de experiência e consentimento para envio.",
+        "category": "Produto Digital",
         "image": null,
         "destaque": false
     },
     {
         "id": 15,
         "slug": "form-9",
-        "title": "Form 9",
-        "description": "Descrição a atualizar.",
-        "category": "Formulário",
+        "title": "Capturar Lead",
+        "description": "Para capture lead, usando fieldsets para organizar contato, CPF, atendimento e briefing de experiência do cliente.",
+        "category": "Lead",
         "image": null,
         "destaque": false
     },
     {
         "id": 16,
         "slug": "form-10",
-        "title": "Form 10",
-        "description": "Descrição a atualizar.",
-        "category": "Formulário",
+        "title": "Projeto 3D",
+        "description": "Pedir projeto 3D, incluindo briefing, tipo de projeto, ambientes, serviços desejados e consentimento de comunicação.",
+        "category": "Projeto",
         "image": null,
         "destaque": false
     },
     {
         "id": 17,
         "slug": "form-11",
-        "title": "Form 11",
-        "description": "Descrição a atualizar.",
-        "category": "Formulário",
+        "title": "Modelar",
+        "description": "Modelo clean para orçamento 3D, com estágio da obra, ambiente e contato, otimizado para conversão e apresentação simples.",
+        "category": "Modelar",
         "image": null,
         "destaque": false
     },
@@ -421,7 +421,7 @@
         "category": "Gastronomia",
         "image": "./assets/restaurant.jpg",
         "destaque": true
-    }, 
+    },
     {
         "id": 48,
         "slug": "edificacoes-3d",
@@ -430,7 +430,7 @@
         "category": "Arquitetura",
         "image": "./assets/edificacoes-3d.jpg",
         "destaque": true
-    }, 
+    },
     {
         "id": 49,
         "slug": "transportation",
@@ -447,6 +447,60 @@
         "description": "Ecossistema digital completo de ensino e tecnologia para Developer / Tech Growth, reunindo cursos, conteúdos, portfólio e gerador de currículos.",
         "category": "Educação",
         "image": "./assets/school.jpg",
+        "destaque": true
+    },
+    {
+        "id": 51,
+        "slug": "Our Coffee",
+        "title": "Our Coffee",
+        "description": "Portal para apresentar um café de qualidade para uma cafeteria com design exclusivo, foco em branding, storytelling do café e usabilidade responsiva..",
+        "category": "Gastronomia",
+        "image": "./assets/our-coffee.jpg",
+        "destaque": true
+    },
+    {
+        "id": 52,
+        "slug": "Art",
+        "title": "Art",
+        "description": "Portal para apresentar uma obra de arte com design exclusivo, foco em branding, storytelling da obra e usabilidade responsiva..",
+        "category": "Artes",
+        "image": "./assets/art.jpg",
+        "destaque": true
+    },
+    {
+        "id": 53,
+        "slug": "meus-treinos",
+        "title": "Meus Treinos",
+        "description": "Aplicação web para gestão de fichas de musculação, acompanhamento de progresso, rotina de suplementação e avaliações físicas.",
+        "category": "Saúde",
+        "image": "./assets/meus-treinos.jpg",
+        "destaque": true
+    },
+    {
+        "id": 54,
+        "slug": "moveis-planejados",
+        "title": "Móveis Planejados",
+        "description": "Demonstração de projetos de móveis planejados com design responsivo, galerias de fotos do processo de montagem e foco em marcenaria sob medida.",
+        "category": "Design",
+        "image": "./assets/moveis-planejados.jpg",
+        "destaque": true
+    },
+    {
+        "id": 55,
+        "slug": "puro-estilo",
+        "title": "Catálogo Virtual de Roupas",
+        "description": "SPA de e-commerce e catálogo de moda com visualização de detalhes, sacola de favoritos, geração de orçamento em PDF e paginação dinâmica.",
+        "category": "E-commerce",
+        "image": "./assets/puro-estilo.jpg",
+        "destaque": true
+    },
+    {
+        "id": 56,
+        "slug": "restaurante",
+        "title": "Food",
+        "description": "Site institucional para restaurante com design personalizado, foco em gastronomia, cardápio visual e experiência responsiva.",
+        "category": "Alimentação",
+        "image": "./assets/restaurante.jpg",
         "destaque": true
     }
 ]

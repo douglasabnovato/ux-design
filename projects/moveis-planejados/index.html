@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="./style.css">
+    <title>Móveis Planejados</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
+  <body class="w3-light-grey w3-content" style="max-width: 1600px">
+    <nav
+      class="w3-sidebar w3-bar-block w3-white w3-animate-left w3-text-grey w3-collapse w3-top sidebar-desktop"
+      style="z-index: 3; width: 280px; font-weight: bold"
+      id="mySidebar"
+    >
+      <div class="sidebar-brand">
+        <div class="sidebar-logo">M</div>
+        <div>
+          <div class="sidebar-label">MÓVEIS</div>
+          <strong>PLANEJADOS</strong>
+        </div>
+      </div>
+      <div class="sidebar-meta w3-padding-16">
+        Robson Pereira
+      </div>
+      <a href="#portfolio" onclick="w3_close()" class="w3-bar-item w3-button"
+        >PORTFÓLIO</a
+      >
+      <a href="#nossos-planos" onclick="w3_close()" class="w3-bar-item w3-button"
+        >PLANOS</a
+      >
+      <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button"
+        >SOBRE</a
+      >
+      <div class="sidebar-cta">
+        <a href="#contact" class="w3-button btn-primary btn-full">Solicitar orçamento</a>
+      </div>
+      <div class="sidebar-contact w3-hide-small">
+        <small>Contato</small>
+        <div>WhatsApp: (11) 99999-9999</div>
+      </div>
+      <a
+        href="javascript:void(0)"
+        onclick="w3_close()"
+        class="w3-bar-item w3-button w3-padding w3-hide-large"
+        >FECHAR</a
+      >
+    </nav>
+    <header
+      class="w3-container w3-top w3-hide-large w3-white w3-padding-16 topbar"
+    >
+      <span class="topbar-brand">MÓVEIS PLANEJADOS</span>
+      <button
+        class="w3-button w3-white topbar-toggle"
+        onclick="w3_open()"
+      >☰</button>
+    </header>
+    <div
+      class="w3-overlay w3-hide-large w3-animate-opacity"
+      onclick="w3_close()"
+      title="close side menu"
+      id="myOverlay"
+    ></div>
+    <div class="w3-main" style="margin-left: 300px">
+      <section class="hero-section w3-container w3-center w3-padding-64">
+        <span class="w3-tag w3-green w3-round">MÓVEIS PLANEJADOS</span>
+        <h1 class="section-title w3-text-dark-grey">Ambientes planejados com estilo e funcionalidade</h1>
+        <p class="hero-copy w3-large">Oito projetos completos de móveis sob medida, apresentados com fotos reais da obra, acabamentos profissionais e soluções que valorizam espaços residenciais e comerciais.</p>
+        <div class="hero-actions">
+          <a href="#portfolio" class="w3-button btn-primary w3-padding-large">Ver portfólio</a>
+          <a href="#contact" class="w3-button btn-secondary w3-padding-large">Solicitar orçamento</a>
+        </div>
+      </section>
+
+      <section class="w3-container section-light w3-padding-64" id="services">
+        <div class="w3-row">
+          <div class="w3-col m12 l10 w3-center w3-margin-auto">
+            <h2 class="section-title">O que entregamos</h2>
+            <p class="section-subtitle">Soluções completas de móveis planejados com foco em projeto, fabricação e montagem.</p>
+          </div>
+        </div>
+        <div class="info-grid">
+          <article class="service-card">
+            <h4>Projeto personalizado</h4>
+            <p>Desenvolvemos desenho técnico que respeita medidas reais e estilo do cliente.</p>
+          </article>
+          <article class="service-card">
+            <h4>Medição profissional</h4>
+            <p>Visita técnica para garantir que cada móvel encaixe com precisão no ambiente.</p>
+          </article>
+          <article class="service-card">
+            <h4>Entrega e montagem</h4>
+            <p>Fabricação alinhada ao cronograma com equipe especializada na montagem.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="portfolio" class="w3-container w3-padding-64">
+        <div class="w3-row">
+          <div class="w3-col m12 l10 w3-center w3-margin-auto">
+            <h2 class="section-title">Portfólio de projetos</h2>
+            <p class="section-subtitle">Oito projetos exibidos separadamente com capa, descrição e galeria para cada ambiente.</p>
+          </div>
+        </div>
+        <div id="projectGrid" class="project-grid w3-padding-top"></div>
+      </section>
+
+      <div id="projectModal" class="w3-modal" onclick="closeProjectModal()">
+        <div class="w3-modal-content w3-animate-top project-modal-content" onclick="event.stopPropagation()">
+          <span class="w3-button w3-display-topright" onclick="closeProjectModal()">×</span>
+          <div class="project-modal-body">
+            <div class="w3-row">
+              <div class="w3-col m7">
+                <img id="modalMainImage" src="" alt="" class="project-main-image" />
+              </div>
+              <div class="w3-col m5">
+                <h3 id="modalTitle"></h3>
+                <p id="modalDescription"></p>
+                <div id="modalThumbnails" class="modal-thumbnails"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <section class="w3-container section-light w3-padding-64" id="nossos-planos">
+        <div class="w3-row">
+          <div class="w3-col m12 l10 w3-center w3-margin-auto">
+            <h2 class="section-title">Planos</h2>
+            <p class="section-subtitle">Escolha o serviço mais adequado ao seu projeto e garanta apoio do início ao fim.</p>
+          </div>
+        </div>
+        <div class="plan-grid">
+          <article class="plan-card">
+            <div class="plan-header">
+              <h3>BÁSICO</h3>
+              <span>Para projetos enxutos</span>
+            </div>
+            <ul class="plan-list">
+              <li>Projeto técnico 2D</li>
+              <li>Medição presencial</li>
+              <li>Fabricação e entrega</li>
+              <li>Garantia de 30 dias</li>
+            </ul>
+            <div class="plan-price">
+              <strong>R$ 210,00</strong>
+              <small>por m²</small>
+            </div>
+            <button class="w3-button btn-primary w3-padding-large">Solicitar orçamento</button>
+          </article>
+          <article class="plan-card plan-featured">
+            <div class="plan-header">
+              <h3>PREMIUM</h3>
+              <span>Para projetos completos</span>
+            </div>
+            <ul class="plan-list">
+              <li>Projeto técnico 3D</li>
+              <li>Medição e revisão de ambiente</li>
+              <li>Montagem completa</li>
+              <li>Garantia de 90 dias</li>
+            </ul>
+            <div class="plan-price">
+              <strong>R$ 450,00</strong>
+              <small>por m²</small>
+            </div>
+            <button class="w3-button btn-secondary w3-padding-large">Fale com nossos consultores</button>
+          </article>
+        </div>
+      </section>
+
+      <section class="w3-container w3-padding-64" id="about">
+        <div class="w3-row">
+          <div class="w3-col l6 m12 w3-center">
+            <img src="./assets/profile/equipe.jpg" alt="Equipe de marceneiros" class="w3-image w3-padding-32 about-image" />
+          </div>
+          <div class="w3-col l6 m12 w3-content" style="max-width:600px">
+            <h2 class="section-title">Sobre a equipe</h2>
+            <p>Somos uma equipe de marceneiros e designers de interiores que transforma ideias em móveis planejados. Com atendimento personalizado, cada projeto se ajusta ao espaço e ao estilo do cliente.</p>
+            <ul class="about-list">
+              <li>Mais de 8 anos entregando móveis planejados</li>
+              <li>Processo completo: projeto, fabricação e montagem</li>
+              <li>Foco em praticidade, estética e durabilidade</li>
+            </ul>
+            <a href="#contact" class="w3-button btn-primary w3-padding-large">Fale com nosso time</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="w3-container section-light w3-padding-64" id="contact">
+        <div class="w3-row">
+          <div class="w3-col m12 l10 w3-center w3-margin-auto">
+            <h2 class="section-title">Contato</h2>
+            <p class="section-subtitle">Vamos conversar sobre seu projeto. Envie uma mensagem e receba um orçamento personalizado.</p>
+          </div>
+        </div>
+        <div class="contact-grid">
+          <div class="contact-card">
+            <h4>WhatsApp</h4>
+            <p><a href="https://api.whatsapp.com/send?phone=5511999999999" target="_blank">(11) 99999-9999</a></p>
+          </div>
+          <div class="contact-card">
+            <h4>E-mail</h4>
+            <p><a href="mailto:contato@moveisplanejados.com.br">contato@moveisplanejados.com.br</a></p>
+          </div>
+          <div class="contact-card">
+            <h4>Atendimento</h4>
+            <p>Seg a Sex, 9h às 18h</p>
+          </div>
+        </div>
+      </section>
+
+      <footer class="site-footer w3-padding-32">
+        <div class="footer-grid">
+          <div>
+            <h3>Moveis Planejados</h3>
+            <p>Projetos personalizados em móveis planejados para residências e pequenos comércios.</p>
+          </div>
+          <div>
+            <h4>Links rápidos</h4>
+            <ul class="footer-links">
+              <li><a href="#portfolio">Portfólio</a></li>
+              <li><a href="#nossos-planos">Planos</a></li>
+              <li><a href="#about">Sobre</a></li>
+              <li><a href="#contact">Contato</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4>Contato</h4>
+            <p>WhatsApp: (11) 99999-9999</p>
+            <p>Email: contato@moveisplanejados.com.br</p>
+            <p>Atendimento seg-sex</p>
+          </div>
+        </div>
+        <div class="footer-copy">© 2026 Moveis Planejados. Todos os direitos reservados.</div>
+      </footer>
+      </div>
+    </div>    
+    <div class="w3-black w3-center w3-padding-24">
+      Douglas A B Novato
+      <a
+        href="https://linktr.ee/douglasabnovato"
+        title="douglasabnovato"
+        target="_blank"
+        class="w3-hover-opacity"
+        >@douglasabnovato</a
+      >
+    </div>
+    <script type="text/javascript" src="./main.js"></script>
+  </body>
+</html>

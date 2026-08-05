@@ -1,0 +1,142 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Agendamento Estratégico | Mentoria Tech</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <main class="page-shell">
+      <section class="booking-panel">
+        <article class="hero-panel">
+          <span class="eyebrow">Mentoria Executiva</span>
+          <h1>Agende sua sessão estratégica de carreira tech</h1>
+          <p>
+            Descubra o melhor caminho para sua próxima vaga, projeto ou transição de carreira.
+            A sessão é gratuita e focada em posicionamento de mercado.
+          </p>
+
+          <ul class="benefits-list">
+            <li>Qualificação de perfil profissional</li>
+            <li>Identificação do maior obstáculo atual</li>
+            <li>Agenda rápida com consultor especializado</li>
+          </ul>
+
+          <div class="hero-notes">
+            <strong>Ideal para:</strong>
+            <p>Estudantes, desenvolvedores em ascensão, líderes técnicos e fundadores de startups.</p>
+          </div>
+        </article>
+
+        <article class="form-card">
+          <div class="stepper">
+            <div class="step-item active" data-step="1">1</div>
+            <div class="step-item" data-step="2">2</div>
+          </div>
+
+          <div class="step-meta">
+            <p class="eyebrow">Etapa 1 de 2</p>
+            <h2 class="step-title">Qualificação rápida</h2>
+            <p class="step-copy">Responda com seu perfil e desafios para ganhar uma sessão personalizada.</p>
+          </div>
+
+          <div id="formMessage" class="form-message" aria-live="polite"></div>
+
+          <form id="bookingForm" novalidate>
+            <div class="form-step active" data-step="1">
+              <div class="field-group">
+                <label for="role">Qual o seu cargo / momento profissional atual?</label>
+                <select id="role" name="role" data-required>
+                  <option value="">Selecione</option>
+                  <option value="estudante">Estudante</option>
+                  <option value="dev_junior">Desenvolvedor Jr/Pl</option>
+                  <option value="lider_tecnico">Líder Técnico</option>
+                  <option value="empreendedor">Empreendedor / CTO</option>
+                </select>
+              </div>
+
+              <div class="field-group">
+                <span class="field-label">Faixa salarial / faturamento atual</span>
+                <div class="option-grid">
+                  <label class="option-card">
+                    <input type="radio" name="salary" value="até_3k" data-required />
+                    <span>Até R$ 3k</span>
+                  </label>
+                  <label class="option-card">
+                    <input type="radio" name="salary" value="3k_8k" />
+                    <span>R$ 3k a R$ 8k</span>
+                  </label>
+                  <label class="option-card">
+                    <input type="radio" name="salary" value="acima_8k" />
+                    <span>Acima de R$ 8k</span>
+                  </label>
+                </div>
+              </div>
+
+              <div class="field-group">
+                <label for="obstacle">Qual o seu maior obstáculo hoje?</label>
+                <textarea
+                  id="obstacle"
+                  name="obstacle"
+                  rows="4"
+                  data-required
+                  placeholder="Ex: dúvidas sobre trilha de estudos, falta de oportunidade ou insegurança em entrevistas"
+                ></textarea>
+              </div>
+            </div>
+
+            <div class="form-step" data-step="2">
+              <div class="field-group">
+                <label for="name">Nome completo</label>
+                <input id="name" type="text" name="name" data-required placeholder="Seu nome completo" />
+              </div>
+
+              <div class="field-group">
+                <label for="email">E-mail</label>
+                <input id="email" type="email" name="email" data-required placeholder="seu@email.com" />
+              </div>
+
+              <div class="field-group">
+                <label for="whatsapp">WhatsApp</label>
+                <input
+                  id="whatsapp"
+                  type="tel"
+                  name="whatsapp"
+                  data-required
+                  placeholder="(00) 00000-0000"
+                />
+              </div>
+
+              <div class="field-group">
+                <span class="field-label">Melhor turno para a conversa</span>
+                <div class="option-grid">
+                  <label class="option-card">
+                    <input type="radio" name="shift" value="manha" data-required />
+                    <span>Manhã</span>
+                  </label>
+                  <label class="option-card">
+                    <input type="radio" name="shift" value="tarde" />
+                    <span>Tarde</span>
+                  </label>
+                  <label class="option-card">
+                    <input type="radio" name="shift" value="noite" />
+                    <span>Noite</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-actions">
+              <button type="button" class="btn btn-secondary btn-prev">Voltar</button>
+              <button type="button" class="btn btn-primary btn-next">Próximo</button>
+              <button type="submit" class="btn btn-primary btn-submit">CONFIRMAR AGENDAMENTO GRATUITO 📅</button>
+            </div>
+          </form>
+        </article>
+      </section>
+    </main>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
