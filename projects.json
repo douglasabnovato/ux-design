@@ -475,5 +475,14 @@
         "category": "Saúde",
         "image": "./assets/meus-treinos.jpg",
         "destaque": true
+    },
+    {
+        "id": 54,
+        "slug": "moveis-planejados",
+        "title": "Móveis Planejados",
+        "description": "Demonstração de projetos de móveis planejados com design responsivo, galerias de fotos do processo de montagem e foco em marcenaria sob medida.",
+        "category": "Design",
+        "image": "./assets/moveis-planejados.jpg",
+        "destaque": true
     }
 ]
