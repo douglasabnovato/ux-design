@@ -1,69 +1,185 @@
+﻿:root {
+  --bg: #f5f8fb;
+  --surface: #ffffff;
+  --surface-soft: #eef4fb;
+  --text: #162a3a;
+  --muted: #52606d;
+  --accent: #1d4d8f;
+  --accent-light: rgba(29, 77, 143, 0.12);
+  --border: rgba(29, 77, 143, 0.14);
+}
+
 * {
-    margin: 0;
-    padding: 0;
-    outline: 0;
-    box-sizing: border-box;
-
-    font-family: 'Montserrat', sans-serif;
-    font-size: 12px;
-    font-weight: 400;
-
-    --cinzaclaro: #f0f0f0;
-    --branco: #FFFFFF;
-    --black: #333;
-    --black2: #292929;
-    --azul: #0D6A90;
+  box-sizing: border-box;
 }
 
-.campanha {
-    width: 100%;
-    max-width: 1480px;
-
-    margin: 0 auto;
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Inter, system-ui, sans-serif;
+  background: linear-gradient(180deg, #f8fbff 0%, #eef4fb 100%);
+  color: var(--text);
 }
 
-.negociacao {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
+.premium-shell {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 24px;
 }
 
-.flexbox {
-    flex: 1 1 460px;
-    box-sizing: border-box;
-    padding: 20px;
+.premium-card {
+  display: grid;
+  gap: 28px;
+  padding: 36px;
+  border-radius: 32px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  box-shadow: 0 32px 80px rgba(15, 23, 42, 0.08);
 }
 
-.negociacao-left {
-    height: 80vh;
-    width: 100%;
+.premium-hero {
+  display: grid;
+  gap: 14px;
 }
 
-.negociacao-left img {
-    background-repeat: no-repeat;
-    background-size: cover; 
-    width: 100%;
-    height: auto;
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 16px;
+  border-radius: 999px;
+  background: var(--accent-light);
+  color: var(--accent);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
 }
 
-.negociacao-right {
-    display: flex; 
-    flex-direction: column; 
-    align-items: center; 
-    justify-content: center; 
-    text-align: center;
-    height: 80vh;
+.premium-hero h1 {
+  margin: 0;
+  font-size: clamp(2rem, 2.5vw, 2.5rem);
 }
 
-.negociacao-right p {
-    text-align: left;
-    font-size: 1.8em;
-    line-height: 35px;
-    padding: 0 80px;
-    letter-spacing: .2rem;
+.premium-hero p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.75;
 }
 
-.negociacao-right p span {
-    font-weight: bold;
-    font-size: 1.0em;
+.premium-form {
+  display: grid;
+  gap: 22px;
+}
+
+.field-grid {
+  display: grid;
+  gap: 18px;
+  grid-template-columns: 1fr 1fr;
+}
+
+label {
+  display: grid;
+  gap: 10px;
+  font-size: 0.95rem;
+}
+
+input[type='text'],
+input[type='email'],
+input[type='tel'],
+select,
+textarea {
+  width: 100%;
+  padding: 16px 18px;
+  border: 1px solid rgba(15, 23, 42, 0.12);
+  border-radius: 16px;
+  background: #fff;
+  color: var(--text);
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 4px rgba(29, 77, 143, 0.1);
+}
+
+textarea {
+  min-height: 140px;
+}
+
+.premium-checklist {
+  display: grid;
+  gap: 12px;
+  padding: 22px;
+  border-radius: 24px;
+  background: var(--surface-soft);
+  border: 1px solid rgba(29, 77, 143, 0.08);
+}
+
+.premium-checklist p {
+  margin: 0;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.checkbox-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  border-radius: 16px;
+  background: white;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+}
+
+.optin-label {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  color: var(--muted);
+}
+
+.optin-label input {
+  margin-top: 4px;
+}
+
+.cta-button {
+  width: 100%;
+  padding: 18px 22px;
+  border: none;
+  border-radius: 18px;
+  background: linear-gradient(135deg, var(--accent), #0f74d1);
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.form-message {
+  display: none;
+  padding: 18px 20px;
+  border-radius: 18px;
+  font-weight: 600;
+}
+
+.form-message.visible {
+  display: block;
+}
+
+.form-message.error {
+  background: rgba(248, 113, 113, 0.14);
+  color: #b91c1c;
+}
+
+.form-message.success {
+  background: rgba(16, 185, 129, 0.14);
+  color: #166534;
+}
+
+@media (max-width: 900px) {
+  .field-grid {
+    grid-template-columns: 1fr;
+  }
 }

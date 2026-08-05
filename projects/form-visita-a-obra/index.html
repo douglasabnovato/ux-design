@@ -1,0 +1,151 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Visita à Obra | Agendamento Técnico</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <main class="page-shell">
+      <section class="visit-grid">
+        <aside class="visit-info">
+          <span class="eyebrow">Visita Técnica</span>
+          <h1>Agende sua visita à obra com especialista</h1>
+          <p>
+            Avaliação presencial rápida para entender sua necessidade, medir o espaço e garantir uma proposta precisa. O técnico visita, analisa e recomenda a melhor solução para o seu projeto.
+          </p>
+
+          <div class="visit-highlights">
+            <article class="highlight-card">
+              <strong>Visita agendada em até 48h</strong>
+              <p>Equipe técnica preparada para avaliação de obras em andamento ou em planejamento.</p>
+            </article>
+            <article class="highlight-card">
+              <strong>Relatório completo</strong>
+              <p>Receba especificação precisa, estimativa de ambientes e prioridades de execução.</p>
+            </article>
+            <article class="highlight-card">
+              <strong>Sem compromisso</strong>
+              <p>O agendamento não obriga à contratação — é uma consulta técnica para orientar seu projeto.</p>
+            </article>
+          </div>
+        </aside>
+
+        <section class="visit-form-card">
+          <div class="form-header">
+            <span class="eyebrow">Formulário</span>
+            <h2>Preencha e agende sua visita</h2>
+            <p>Nosso time entra em contato para confirmar o melhor horário e levar um técnico ao local.</p>
+          </div>
+
+          <div id="formMessage" class="form-message" aria-live="polite"></div>
+
+          <form id="visitForm" novalidate>
+            <div class="form-block">
+              <h3>Dados de contato</h3>
+              <div class="field-grid">
+                <label>
+                  Nome completo
+                  <input type="text" name="name" placeholder="Seu nome" required />
+                </label>
+                <label>
+                  E-mail
+                  <input type="email" name="email" placeholder="seu@email.com" required />
+                </label>
+                <label>
+                  WhatsApp
+                  <input type="tel" name="whatsapp" placeholder="(00) 00000-0000" required />
+                </label>
+              </div>
+            </div>
+
+            <div class="form-block">
+              <h3>Detalhes da obra</h3>
+              <div class="field-grid">
+                <label>
+                  Número de ambientes
+                  <select name="numAmbiente" required>
+                    <option value="">Selecione</option>
+                    <option value="1">1 ambiente</option>
+                    <option value="2">2 ambientes</option>
+                    <option value="3">3 ambientes</option>
+                    <option value="4+">4 ou mais</option>
+                  </select>
+                </label>
+                <label>
+                  Estágio da obra
+                  <select name="estadoObra" required>
+                    <option value="">Selecione</option>
+                    <option value="Fundacao">Fundação</option>
+                    <option value="Alvenaria">Alvenaria</option>
+                    <option value="Acabamento">Acabamento</option>
+                  </select>
+                </label>
+                <label>
+                  Região / loja
+                  <select name="cidade" required>
+                    <option value="">Selecione</option>
+                    <option value="AC">Acre</option>
+                    <option value="AL">Alagoas</option>
+                    <option value="AP">Amapá</option>
+                    <option value="AM">Amazonas</option>
+                    <option value="BA">Bahia</option>
+                    <option value="MG">Minas Gerais</option>
+                  </select>
+                </label>
+              </div>
+            </div>
+
+            <div class="form-block">
+              <h3>Ambientes para visita</h3>
+              <div class="checkbox-grid">
+                <label class="checkbox-card">
+                  <input type="checkbox" name="ambientes" value="Cozinha" />
+                  <span>Cozinha</span>
+                </label>
+                <label class="checkbox-card">
+                  <input type="checkbox" name="ambientes" value="Banheiro" />
+                  <span>Banheiro</span>
+                </label>
+                <label class="checkbox-card">
+                  <input type="checkbox" name="ambientes" value="Sala" />
+                  <span>Sala</span>
+                </label>
+                <label class="checkbox-card">
+                  <input type="checkbox" name="ambientes" value="Quarto" />
+                  <span>Quarto</span>
+                </label>
+                <label class="checkbox-card">
+                  <input type="checkbox" name="ambientes" value="Área externa" />
+                  <span>Área externa</span>
+                </label>
+                <label class="checkbox-card">
+                  <input type="checkbox" name="ambientes" value="Área de serviço" />
+                  <span>Área de serviço</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="form-block">
+              <h3>Prioridade da visita</h3>
+              <label class="textarea-group">
+                O que você quer priorizar na visita?
+                <textarea name="objective" rows="4" placeholder="Ex: melhor layout da cozinha, pontos hidráulicos ou soluções de acabamento" required></textarea>
+              </label>
+            </div>
+
+            <label class="optin-label">
+              <input type="checkbox" name="subscribe" required />
+              Concordo em receber informações por e-mail, SMS e WhatsApp sobre a visita à obra.
+            </label>
+
+            <button type="submit" class="cta-button">ENVIAR SOLICITAÇÃO</button>
+          </form>
+        </section>
+      </section>
+    </main>
+
+    <script src="./script.js"></script>
+  </body>
+</html>

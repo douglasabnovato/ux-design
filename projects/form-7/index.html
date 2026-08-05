@@ -1,26 +1,80 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resp Img + Txt</title>
-    <link rel="stylesheet" href="./style7.css">
-</head>
-<body>
-    <section class="campanha">
-        <div class="campanha-conteudo">
-            <div class="campanha-imagem">
-                <img src="https://abcdaconstrucao.my.site.com/vendacorporativa/sfsites/c/cms/delivery/media/MCFK4ZFMUZ3NAR3FUXLMONHCZ3LA" alt="Vendas Corporativas" />
-            </div>
-            <div class="campanha-texto">
-                <p>
-                    Só na <strong>ABC da Construção</strong> você encontra em um único lugar tudo que precisa para garantir o melhor para a sua obra.
-                </p>
-                <p>
-                    A <strong>ABC</strong>, com mais de 400 Guide Shops, é uma das maiores redes de acabamento do país e é considerada uma das mais inovadoras do segmento.
-                </p>
-            </div>
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Orçamento de Obra</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <main class="landing-shell">
+      <section class="landing-grid">
+        <div class="landing-copy">
+          <span class="eyebrow">Orçamento Rápido</span>
+          <h1>Solicite uma proposta ágil para sua obra</h1>
+          <p>Forma simples de informar sua necessidade e receber retorno com preço e prazo estimados.</p>
+
+          <div class="benefits">
+            <article>
+              <strong>Resposta rápida</strong>
+              <p>Contato em até 24h com uma solução inicial.</p>
+            </article>
+            <article>
+              <strong>Checklist de obra</strong>
+              <p>Orientação técnica para avaliar materiais e etapas.</p>
+            </article>
+            <article>
+              <strong>Sem compromisso</strong>
+              <p>Orçamento sem exigir contratação imediata.</p>
+            </article>
+          </div>
         </div>
-    </section>
-</body>
+
+        <aside class="landing-form-card">
+          <h2>Preencha e envie seu pedido</h2>
+          <form id="quoteForm" novalidate>
+            <label>
+              Nome completo
+              <input type="text" name="name" placeholder="Seu nome" required />
+            </label>
+            <label>
+              E-mail
+              <input type="email" name="email" placeholder="seu@email.com" required />
+            </label>
+            <label>
+              WhatsApp
+              <input type="tel" name="whatsapp" placeholder="(00) 00000-0000" required />
+            </label>
+            <label>
+              Tipo de obra
+              <select name="projectType" required>
+                <option value="">Selecione</option>
+                <option value="reforma">Reforma</option>
+                <option value="acabamento">Acabamento</option>
+                <option value="novaConstituicao">Nova construção</option>
+              </select>
+            </label>
+            <label>
+              Ambientes
+              <select name="environments" required>
+                <option value="">Selecione</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4+">4+</option>
+              </select>
+            </label>
+            <label class="textarea-group">
+              Descreva a demanda
+              <textarea name="message" rows="4" placeholder="Ex: reforma da cozinha e banheiro" required></textarea>
+            </label>
+            <button type="submit" class="cta-button">Solicitar orçamento</button>
+            <div id="quoteMessage" class="form-message" aria-live="polite"></div>
+          </form>
+        </aside>
+      </section>
+    </main>
+
+    <script src="./script.js"></script>
+  </body>
 </html>
