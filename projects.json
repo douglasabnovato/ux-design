@@ -493,5 +493,14 @@
         "category": "E-commerce",
         "image": "./assets/puro-estilo.jpg",
         "destaque": true
+    },
+    {
+        "id": 56,
+        "slug": "restaurante",
+        "title": "Food",
+        "description": "Site institucional para restaurante com design personalizado, foco em gastronomia, cardápio visual e experiência responsiva.",
+        "category": "Alimentação",
+        "image": "./assets/restaurante.jpg",
+        "destaque": true
     }
 ]
