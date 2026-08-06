@@ -502,5 +502,23 @@
         "category": "Alimentação",
         "image": "./assets/restaurante.jpg",
         "destaque": true
+    },
+    {
+        "id": 57,
+        "slug": "finances",
+        "title": "dev.finances",
+        "description": "Aplicação web de controle financeiro pessoal (entradas, saídas e saldo) construída durante a Maratona Discover, com roteiro completo de mentoria e soft/hard skills.",
+        "category": "Finanças",
+        "image": "./assets/finances.jpg",
+        "destaque": true
+    },
+    {
+        "id": 58,
+        "slug": "quiz-app",
+        "title": "Quiz App",
+        "description": "Aplicação interativa de perguntas e respostas com contagem de pontuação, feedback em tempo real e barra de progresso gamificada.",
+        "category": "Educação",
+        "image": "./assets/quiz-app.jpg",
+        "destaque": true
     }
 ]
