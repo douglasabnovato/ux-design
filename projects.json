@@ -520,5 +520,14 @@
         "category": "Educação",
         "image": "./assets/quiz-app.jpg",
         "destaque": true
+    },
+    {
+        "id": 59,
+        "slug": "marido-de-aluguel",
+        "title": "Marido de Aluguel",
+        "description": "Cartão de visitas digital interativo e mini landing page para prestador de serviços, com botões de contato direto, formulário de orçamento guiado via WhatsApp e QR Code.",
+        "category": "Serviços",
+        "image": "./assets/marido-de-aluguel.png",
+        "destaque": true
     }
 ]
