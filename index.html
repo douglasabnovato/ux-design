@@ -3,11 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UX Design — Portfólio de LPs</title>
-    <meta name="description" content="Portfólio de landing pages focadas em experiência de usuário, conversão e qualidade visual.">
-    <meta property="og:title" content="UX Design — Portfólio de Landing Pages">
-    <meta property="og:description" content="Landing pages transformadoras: franquias, catálogos digitais e portais de comunidade esportiva.">
+    <title>UX Design — Catálogo de Projetos Comerciais</title>
+    <meta name="description" content="Catálogo de 59 projetos digitais comerciais: landing pages, catálogos, formulários de captação e aplicações, em HTML, CSS e JavaScript.">
+    <meta property="og:title" content="UX Design — Catálogo de Projetos Comerciais">
+    <meta property="og:description" content="59 projetos digitais comerciais em 8 setores: alimentação, construção, varejo, saúde, educação, serviços, marca e produto digital.">
     <meta property="og:type" content="website">
+    <meta property="og:url" content="https://douglasabnovato.github.io/ux-design/">
+    <meta property="og:image" content="https://douglasabnovato.github.io/ux-design/assets/ux-design.png">
+    <meta property="og:image:alt" content="UX Design — catálogo de projetos comerciais">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://douglasabnovato.github.io/ux-design/assets/ux-design.png">
     <meta name="theme-color" content="#00d4d4">
     <link rel="apple-touch-icon" sizes="180x180" href="./public/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="./public/favicon-32x32.png">
@@ -18,33 +23,61 @@
 <body>
   <main class="container">
     <header class="header">
-      <span class="header__eyebrow">Portfólio</span>
+      <span class="header__eyebrow">Portfólio comercial</span>
       <h1>UX Design</h1>
-      <p>Landing Pages Transformadoras</p>
+      <p>Produtos digitais que colocam um negócio no ar</p>
     </header>
 
-    <!-- Carrossel de destaque: só os projetos "cliente" (destaque: true) -->
     <section class="hero-carousel" aria-label="Projetos em destaque" id="heroCarousel">
-      <div class="hero-carousel__track" id="heroTrack">
-        <!-- slides injetados via JS -->
-      </div>
-      <button class="hero-carousel__nav hero-carousel__nav--prev" id="heroPrev" aria-label="Slide anterior">&#8249;</button>
-      <button class="hero-carousel__nav hero-carousel__nav--next" id="heroNext" aria-label="Próximo slide">&#8250;</button>
+      <div class="hero-carousel__track" id="heroTrack"></div>
+      <button type="button" class="hero-carousel__nav hero-carousel__nav--prev" id="heroPrev" aria-label="Slide anterior">&#8249;</button>
+      <button type="button" class="hero-carousel__nav hero-carousel__nav--next" id="heroNext" aria-label="Próximo slide">&#8250;</button>
       <div class="hero-carousel__dots" id="heroDots"></div>
     </section>
 
     <section class="catalog-section">
-      <h2 class="catalog-section__title">Projetos</h2>
-      <div class="projects-grid" id="projectsGrid" aria-label="Projetos de landing pages"></div>
+      <div class="catalog-section__head">
+        <h2 class="catalog-section__title">Projetos <span class="catalog-section__count" id="countProjetos"></span></h2>
+        <p class="catalog-section__hint" id="filtroResumo" aria-live="polite"></p>
+      </div>
+
+      <div class="filtros" id="filtros" role="group" aria-label="Filtrar por setor"></div>
+
+      <div class="projects-grid" id="projectsGrid" aria-label="Projetos"></div>
     </section>
 
-    <section class="catalog-section">
-      <h2 class="catalog-section__title">Estudos &amp; Formulários</h2>
-      <div class="projects-grid projects-grid--compact" id="studiesGrid" aria-label="Formulários de estudo"></div>
-    </section>
+    <footer class="site-footer">
+      <p>&copy; <span id="ano"></span> Douglas A. B. Novato —
+        <a href="https://github.com/douglasabnovato" target="_blank" rel="noopener noreferrer">GitHub</a> ·
+        <a href="https://www.linkedin.com/in/douglasabnovato/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      </p>
+    </footer>
   </main>
 
+  <div class="contato" id="contato">
+    <div class="contato__painel" id="contatoPainel" hidden>
+      <a class="contato__item" href="https://wa.me/55SEUNUMERO?text=Ol%C3%A1%20Douglas%2C%20vi%20seu%20portf%C3%B3lio%20e%20quero%20conversar%20sobre%20um%20projeto."
+         target="_blank" rel="noopener noreferrer">WhatsApp</a>
+      <a class="contato__item" href="https://www.linkedin.com/in/douglasabnovato/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <a class="contato__item" href="https://github.com/douglasabnovato" target="_blank" rel="noopener noreferrer">GitHub</a>
+    </div>
+    <button type="button" class="contato__botao" id="contatoBotao" aria-expanded="false" aria-controls="contatoPainel">
+      <span class="contato__icone" aria-hidden="true">✉</span>
+      <span class="contato__texto">Fale comigo</span>
+    </button>
+  </div>
+
+  <div class="modal" id="modalCase" role="dialog" aria-modal="true" aria-labelledby="modalTitulo" hidden>
+    <div class="modal__fundo" data-fechar></div>
+    <div class="modal__caixa" role="document">
+      <button type="button" class="modal__fechar" data-fechar aria-label="Fechar o case">&times;</button>
+      <span class="modal__etiqueta">O case desse projeto</span>
+      <h2 class="modal__titulo" id="modalTitulo"></h2>
+      <p class="modal__resumo" id="modalResumo"></p>
+      <div class="modal__corpo" id="modalCorpo"></div>
+    </div>
+  </div>
+
   <script src="catalog.js"></script>
-  <script src="script.js"></script>
 </body>
 </html>

@@ -1,533 +1,868 @@
 [
-    {
-        "id": 1,
-        "slug": "uma-franquia",
-        "title": "Uma Franquia",
-        "description": "Landing page de franquia com design moderno e conversão otimizada.",
-        "category": "Franquia",
-        "image": "./assets/uma-franquia.jpg",
-        "destaque": true
-    },
-    {
-        "id": 2,
-        "slug": "seja-um-franqueado",
-        "title": "Seja um Franqueado",
-        "description": "Plataforma para potenciais franqueados se cadastrarem e conhecerem a oportunidade.",
-        "category": "Captação",
-        "image": "./assets/seja-um-franqueado.jpg",
-        "destaque": true
-    },
-    {
-        "id": 3,
-        "slug": "encarte",
-        "title": "Encarte",
-        "description": "Catálogo digital interativo com apresentação de produtos e serviços.",
-        "category": "Catálogo",
-        "image": "./assets/encarte.jpg",
-        "destaque": true
-    },
-    {
-        "id": 4,
-        "slug": "clube-spfc",
-        "title": "Clube SPFC",
-        "description": "Portal do clube com informações, eventos e engajamento de torcedores.",
-        "category": "Esportivo",
-        "image": "./assets/clube-spfc.jpg",
-        "destaque": true
-    },
-    {
-        "id": 5,
-        "slug": "clube-crf",
-        "title": "Clube CRF",
-        "description": "Plataforma comunitária do clube com atualizações e programa de membros.",
-        "category": "Comunidade",
-        "image": "./assets/clube-crf.jpg",
-        "destaque": true
-    },
-    {
-        "id": 6,
-        "slug": "clube-cam",
-        "title": "Clube CAM",
-        "description": "Interface moderna para gerenciar eventos e conectar membros do clube.",
-        "category": "Eventos",
-        "image": "./assets/clube-cam.jpg",
-        "destaque": true
-    },
-    {
-        "id": 7,
-        "slug": "form-escola-de-programacao",
-        "title": "Escola de Programação",
-        "description": "Formulário estratégico de alta conversão para triagem dev, diagnóstico de nível de conhecimento e montagem de plano de carreira personalizado.",
-        "category": "Educação",
-        "image": null,
-        "destaque": false
-    },
-    {
-        "id": 8,
-        "slug": "form-visita-a-obra",
-        "title": "Visita à Obra",
-        "description": "Formulário de agendamento de visita técnica para avaliação presencial, análise do estágio da obra, seleção de ambientes e especificações.",
-        "category": "Construção Civil",
-        "image": null,
-        "destaque": false
-    },
-    {
-        "id": 9,
-        "slug": "form-carreira-tech",
-        "title": "Carreira Tech",
-        "description": "Formulário de diagnóstico profissional e direcionamento de carreira em tecnologia, com foco em habilidades, objetivos e transição de área.",
-        "category": "Carreira Tech",
-        "image": null,
-        "destaque": false
-    },
-    {
-        "id": 10,
-        "slug": "form-4",
-        "title": "Visita à Reforma",
-        "description": "Formulário de visita técnica e orçamento de obra inspirado em novos designs, com coleta de dados de endereço, fase do projeto, ambientes e estilo de construção.",
-        "category": "Construção Civil",
-        "image": null,
-        "destaque": false
-    },
-    {
-        "id": 11,
-        "slug": "form-5",
-        "title": "Quer Reformar",
-        "description": "Formulário wizard progressivo, com etapas claras para qualificar leads e coletar informações de contato, orçamento e preferência de serviço.",
-        "category": "Construção Civil",
-        "image": null,
-        "destaque": false
-    },
-    {
-        "id": 12,
-        "slug": "form-6",
-        "title": "Arquitetar o seu sonho",
-        "description": "Formulário premium para solicitação de projeto 3D, com briefing de demanda, tipo de projeto, número de ambientes e serviços adicionais.",
-        "category": "Arquitetura",
-        "image": null,
-        "destaque": false
-    },
-    {
-        "id": 13,
-        "slug": "form-7",
-        "title": "Construir e Reformar",
-        "description": " Formulário focado em orçamento e visita à obra com coleta de informações de contato e briefing de ambiente para atendimento técnico.",
-        "category": "Construção Civil",
-        "image": null,
-        "destaque": false
-    },
-    {
-        "id": 14,
-        "slug": "form-8",
-        "title": "Catalogo Digital",
-        "description": "Formulário em duas etapas para download de catálogo digital, com contato, seleção de loja, descrição de experiência e consentimento para envio.",
-        "category": "Produto Digital",
-        "image": null,
-        "destaque": false
-    },
-    {
-        "id": 15,
-        "slug": "form-9",
-        "title": "Capturar Lead",
-        "description": "Para capture lead, usando fieldsets para organizar contato, CPF, atendimento e briefing de experiência do cliente.",
-        "category": "Lead",
-        "image": null,
-        "destaque": false
-    },
-    {
-        "id": 16,
-        "slug": "form-10",
-        "title": "Projeto 3D",
-        "description": "Pedir projeto 3D, incluindo briefing, tipo de projeto, ambientes, serviços desejados e consentimento de comunicação.",
-        "category": "Projeto",
-        "image": null,
-        "destaque": false
-    },
-    {
-        "id": 17,
-        "slug": "form-11",
-        "title": "Modelar",
-        "description": "Modelo clean para orçamento 3D, com estágio da obra, ambiente e contato, otimizado para conversão e apresentação simples.",
-        "category": "Modelar",
-        "image": null,
-        "destaque": false
-    },
-    {
-        "id": 18,
-        "slug": "doctor-care",
-        "title": "Doctor Care",
-        "description": "Plataforma de cuidados médicos com agendamento e acompanhamento.",
-        "category": "Saúde",
-        "image": "./assets/doctor-care.jpg",
-        "destaque": true
-    },
-    {
-        "id": 19,
-        "slug": "livraria",
-        "title": "Meus Livros",
-        "description": "Plataforma de exibição de livros que gosto.",
-        "category": "Leitura",
-        "image": "./assets/livraria.jpg",
-        "destaque": true
-    },
-    {
-        "id": 20,
-        "slug": "rocket-coffee",
-        "title": "Rocket Coffee",
-        "description": "Landing page de um café virtual, com vitrine de produtos e pedido online.",
-        "category": "Gastronomia",
-        "image": "./assets/rocket-coffee.jpg",
-        "destaque": true
-    },
-    {
-        "id": 21,
-        "slug": "pastel-e-cana",
-        "title": "Pastel e Cana",
-        "description": "Landing page de um restaurante, com cardápio digital e pedido online.",
-        "category": "Gastronomia",
-        "image": "./assets/pastel-e-cana.jpg",
-        "destaque": true
-    },
-    {
-        "id": 22,
-        "slug": "hamburgueria",
-        "title": "Hamburguers Mágicos",
-        "description": "Landing page de uma hamburgueria, com cardápio digital e pedido online.",
-        "category": "Gastronomia",
-        "image": "./assets/hamburguers-magicos.jpg",
-        "destaque": true
-    },
-    {
-        "id": 23,
-        "slug": "espetinho-de-minas",
-        "title": "Espetinho de Minas",
-        "description": "Landing page para um Food Truck com cardápio digital e pedido online.",
-        "category": "Gastronomia",
-        "image": "./assets/espetinho-de-minas.jpg",
-        "destaque": true
-    },
-    {
-        "id": 24,
-        "slug": "dc-jardinagem",
-        "title": "DC Jardinagem",
-        "description": " Transformando terrenos brutos em espaços de lazer e beleza com técnicas profissionais de jardinagem.",
-        "category": "Jardinagem",
-        "image": "./assets/dc-jardinagem.jpg",
-        "destaque": true
-    },
-    {
-        "id": 25,
-        "slug": "catalogo-cafeteria",
-        "title": "Catálogo da Cafeteria",
-        "description": "Catálogo digital com os melhores cafés e produtos da cafeteria.",
-        "category": "Gastronomia",
-        "image": "./assets/catalogo-cafeteria.jpg",
-        "destaque": true
-    },
-    {
-        "id": 26,
-        "slug": "cracha-virtual",
-        "title": "Crachá Virtual",
-        "description": "Gerador de crachá digital personalizado.",
-        "category": "Recursos Humanos",
-        "image": "./assets/cracha-virtual.jpg",
-        "destaque": true
-    },
-    {
-        "id": 27,
-        "slug": "headphones",
-        "title": "Headphones",
-        "description": "Apresentação encantadora de um headphones.",
-        "category": "Eletrônicos",
-        "image": "./assets/headphones.jpg",
-        "destaque": true
-    },
-    {
-        "id": 28,
-        "slug": "doggy",
-        "title": "Doggy",
-        "description": "Apresentação encantadora de um cachorrinho. Venha brincar!",
-        "category": "Pets",
-        "image": "./assets/doggy.jpg",
-        "destaque": true
-    },
-    {
-        "id": 29,
-        "slug": "us-food",
-        "title": "US Food",
-        "description": "Apresentação encantadora de um restaurante americano.",
-        "category": "Gastronomia",
-        "image": "./assets/us-food.jpg",
-        "destaque": true
-    },
-    {
-        "id": 30,
-        "slug": "watches",
-        "title": "Watches",
-        "description": "Conheça esse modelo de relógio.",
-        "category": "Acessórios",
-        "image": "./assets/watches.jpg",
-        "destaque": true
-    },
-    {
-        "id": 31,
-        "slug": "apresentacao-store",
-        "title": "Store",
-        "description": "Conheça nossa loja. Aqui tem o produto que precisa.",
-        "category": "Negócios",
-        "image": "./assets/store.jpg",
-        "destaque": true
-    },
-    {
-        "id": 32,
-        "slug": "apresentacao-coffee",
-        "title": "Coffee",
-        "description": "Conheça esse café. São grãos com aromas únicos.",
-        "category": "Negócios",
-        "image": "./assets/coffee.jpg",
-        "destaque": true
-    },
-    {
-        "id": 33,
-        "slug": "apresentacao-project",
-        "title": "Project",
-        "description": "Te apresento o projeto em detalhes.",
-        "category": "Negócios",
-        "image": "./assets/project.jpg",
-        "destaque": true
-    },
-    {
-        "id": 34,
-        "slug": "whatsapp-messages",
-        "title": "WhatsApp Messages",
-        "description": "Layout do Sistema de mensagens do WhatsApp.",
-        "category": "Comunicação",
-        "image": "./assets/whatsapp-messages.jpg",
-        "destaque": true
-    },
-    {
-        "id": 35,
-        "slug": "dev-link",
-        "title": "Dev Link",
-        "description": "Página DevLinks para apresentar uma lista de links importantes e desafio da trilha.",
-        "category": "Perfil",
-        "image": "./assets/devlink.jpg",
-        "destaque": true
-    },
-    {
-        "id": 36,
-        "slug": "login-form",
-        "title": "Login Form",
-        "description": "Formulário de login para acesso à plataforma com design encantador.",
-        "category": "Código",
-        "image": "./assets/login-form.jpg",
-        "destaque": true
-    },
-    {
-        "id": 37,
-        "slug": "rocket-news",
-        "title": "Rocket News",
-        "description": "Página de notícias com design encantador.",
-        "category": "Código",
-        "image": "./assets/rocket-news.jpg",
-        "destaque": true
-    },
-    {
-        "id": 38,
-        "slug": "rocket-shoes",
-        "title": "Rocket Shoes",
-        "description": "Página de calçados com design encantador.",
-        "category": "Para Fazer",
-        "image": "./assets/to-do-project.jpg",
-        "destaque": true
-    },
-    {
-        "id": 39,
-        "slug": "rocket-nfts",
-        "title": "Rocket NFTs",
-        "description": "Página de NFTs com design encantador.",
-        "category": "Para Fazer",
-        "image": "./assets/to-do-project.jpg",
-        "destaque": true
-    },
-    {
-        "id": 40,
-        "slug": "rocket-blog",
-        "title": "Rocket blog",
-        "description": "Página de blog com design encantador.",
-        "category": "Escritor",
-        "image": "./assets/rocket-blog.jpg",
-        "destaque": true
-    },
-    {
-        "id": 41,
-        "slug": "my-linktree",
-        "title": "My LinkTree",
-        "description": "Página de linktree para apresentar uma lista de links importantes.",
-        "category": "Perfil",
-        "image": "./assets/my-linktree.jpg",
-        "destaque": true
-    },
-    {
-        "id": 42,
-        "slug": "login-with",
-        "title": "Login With",
-        "description": "Página de login e register com autenticação.",
-        "category": "Código",
-        "image": "./assets/login-with.jpg",
-        "destaque": true
-    },
-    {
-        "id": 43,
-        "slug": "rocket-card",
-        "title": "Rocket Card",
-        "description": "Página de cartão de visita com design encantador.",
-        "category": "Código",
-        "image": "./assets/rocket-card.jpg",
-        "destaque": true
-    },
-    {
-        "id": 44,
-        "slug": "saude",
-        "title": "Fisio Saúde",
-        "description": "Site institucional para clínica de fisioterapia com proposta comercial, orçamento e foco em conversão via WhatsApp.",
-        "category": "Clínica",
-        "image": "./assets/saude.jpg",
-        "destaque": true
-    },
-    {
-        "id": 45,
-        "slug": "car-rental",
-        "title": "Car Rental",
-        "description": "Site institucional para locação de carros com proposta comercial, orçamento e foco em conversão via WhatsApp.",
-        "category": "Clínica",
-        "image": "./assets/car-rental.jpg",
-        "destaque": true
-    },
-    {
-        "id": 46,
-        "slug": "construction",
-        "title": "Educação em Saúde",
-        "description": "Site institucional para treinamento em saúde com proposta comercial, orçamento e foco em conversão via WhatsApp.",
-        "category": "Ensino",
-        "image": "./assets/construction.jpg",
-        "destaque": true
-    },
-    {
-        "id": 47,
-        "slug": "restaurant",
-        "title": "Restaurante Gourmet",
-        "description": "Site institucional para restaurante gourmet com proposta comercial, orçamento e foco em conversão via WhatsApp.",
-        "category": "Gastronomia",
-        "image": "./assets/restaurant.jpg",
-        "destaque": true
-    },
-    {
-        "id": 48,
-        "slug": "edificacoes-3d",
-        "title": "Edificações 3D",
-        "description": "Aplicação web para exibição de maquetes, detalhes de engenharia civil e renderizações 3D de projetos arquitetônicos com design responsivo.",
-        "category": "Arquitetura",
-        "image": "./assets/edificacoes-3d.jpg",
-        "destaque": true
-    },
-    {
-        "id": 49,
-        "slug": "transportation",
-        "title": "Transportation",
-        "description": "Aplicação web para exibição de maquetes, detalhes de engenharia civil e renderizações 3D de projetos arquitetônicos com design responsivo.",
-        "category": "Arquitetura",
-        "image": "./assets/transportation.jpg",
-        "destaque": true
-    },
-    {
-        "id": 50,
-        "slug": "school",
-        "title": "School",
-        "description": "Ecossistema digital completo de ensino e tecnologia para Developer / Tech Growth, reunindo cursos, conteúdos, portfólio e gerador de currículos.",
-        "category": "Educação",
-        "image": "./assets/school.jpg",
-        "destaque": true
-    },
-    {
-        "id": 51,
-        "slug": "Our Coffee",
-        "title": "Our Coffee",
-        "description": "Portal para apresentar um café de qualidade para uma cafeteria com design exclusivo, foco em branding, storytelling do café e usabilidade responsiva..",
-        "category": "Gastronomia",
-        "image": "./assets/our-coffee.jpg",
-        "destaque": true
-    },
-    {
-        "id": 52,
-        "slug": "Art",
-        "title": "Art",
-        "description": "Portal para apresentar uma obra de arte com design exclusivo, foco em branding, storytelling da obra e usabilidade responsiva..",
-        "category": "Artes",
-        "image": "./assets/art.jpg",
-        "destaque": true
-    },
-    {
-        "id": 53,
-        "slug": "meus-treinos",
-        "title": "Meus Treinos",
-        "description": "Aplicação web para gestão de fichas de musculação, acompanhamento de progresso, rotina de suplementação e avaliações físicas.",
-        "category": "Saúde",
-        "image": "./assets/meus-treinos.jpg",
-        "destaque": true
-    },
-    {
-        "id": 54,
-        "slug": "moveis-planejados",
-        "title": "Móveis Planejados",
-        "description": "Demonstração de projetos de móveis planejados com design responsivo, galerias de fotos do processo de montagem e foco em marcenaria sob medida.",
-        "category": "Design",
-        "image": "./assets/moveis-planejados.jpg",
-        "destaque": true
-    },
-    {
-        "id": 55,
-        "slug": "puro-estilo",
-        "title": "Catálogo Virtual de Roupas",
-        "description": "SPA de e-commerce e catálogo de moda com visualização de detalhes, sacola de favoritos, geração de orçamento em PDF e paginação dinâmica.",
-        "category": "E-commerce",
-        "image": "./assets/puro-estilo.jpg",
-        "destaque": true
-    },
-    {
-        "id": 56,
-        "slug": "restaurante",
-        "title": "Food",
-        "description": "Site institucional para restaurante com design personalizado, foco em gastronomia, cardápio visual e experiência responsiva.",
-        "category": "Alimentação",
-        "image": "./assets/restaurante.jpg",
-        "destaque": true
-    },
-    {
-        "id": 57,
-        "slug": "finances",
-        "title": "dev.finances",
-        "description": "Aplicação web de controle financeiro pessoal (entradas, saídas e saldo) construída durante a Maratona Discover, com roteiro completo de mentoria e soft/hard skills.",
-        "category": "Finanças",
-        "image": "./assets/finances.jpg",
-        "destaque": true
-    },
-    {
-        "id": 58,
-        "slug": "quiz-app",
-        "title": "Quiz App",
-        "description": "Aplicação interativa de perguntas e respostas com contagem de pontuação, feedback em tempo real e barra de progresso gamificada.",
-        "category": "Educação",
-        "image": "./assets/quiz-app.jpg",
-        "destaque": true
-    },
-    {
-        "id": 59,
-        "slug": "marido-de-aluguel",
-        "title": "Marido de Aluguel",
-        "description": "Cartão de visitas digital interativo e mini landing page para prestador de serviços, com botões de contato direto, formulário de orçamento guiado via WhatsApp e QR Code.",
-        "category": "Serviços",
-        "image": "./assets/marido-de-aluguel.png",
-        "destaque": true
+  {
+    "id": 1,
+    "slug": "uma-franquia",
+    "title": "Uma Franquia",
+    "description": "Landing page de franquia com design moderno e conversão otimizada.",
+    "category": "Serviços & Franquias",
+    "tipo": "comercial",
+    "image": "./assets/uma-franquia.jpg",
+    "destaque": true,
+    "emBreve": false,
+    "cliente": "ABC da Construção",
+    "case": {
+      "resumo": "Landing page de acabamentos para uma unidade franqueada, desenhada para levar o visitante do interesse visual à conversa no WhatsApp sem etapa intermediária.",
+      "antes": [
+        "A unidade dependia de atendimento presencial e de indicação para gerar contato.",
+        "O material de acabamentos existia em catálogo impresso, sem versão navegável por ambiente.",
+        "Não havia página própria da unidade: o cliente caía no site nacional da marca, sem caminho até o time local."
+      ],
+      "depois": [
+        "Página própria da unidade, com prova institucional e posicionamento de consultoria de ambientes.",
+        "Escolha por ambiente (cozinha, banheiro, sala, quarto), cada um com atendimento específico.",
+        "Contato direto com o time comercial local em qualquer ponto da página."
+      ],
+      "entregas": [
+        "Hero com proposta e CTA principal",
+        "Bloco de prova institucional",
+        "Seleção por ambiente com CTA dedicado",
+        "Galeria de ambientes reais",
+        "Bloco institucional da marca",
+        "Localização com mapa e contato"
+      ],
+      "indicadores": [
+        {
+          "rotulo": "Caminhos de contato na página",
+          "antes": "0",
+          "depois": "6"
+        },
+        {
+          "rotulo": "Seções da jornada",
+          "antes": "—",
+          "depois": "6"
+        },
+        {
+          "rotulo": "Ambientes navegáveis",
+          "antes": "catálogo impresso",
+          "depois": "4 com CTA próprio"
+        }
+      ],
+      "stack": [
+        "HTML5",
+        "CSS3",
+        "JavaScript",
+        "WhatsApp API",
+        "Google Maps"
+      ]
     }
+  },
+  {
+    "id": 2,
+    "slug": "seja-um-franqueado",
+    "title": "Seja um Franqueado",
+    "description": "Plataforma para potenciais franqueados se cadastrarem e conhecerem a oportunidade.",
+    "category": "Serviços & Franquias",
+    "tipo": "comercial",
+    "image": "./assets/seja-um-franqueado.jpg",
+    "destaque": false,
+    "emBreve": false,
+    "cliente": "ABC da Construção"
+  },
+  {
+    "id": 3,
+    "slug": "encarte",
+    "title": "Encarte",
+    "description": "Catálogo digital interativo com apresentação de produtos e serviços.",
+    "category": "Varejo & E-commerce",
+    "tipo": "comercial",
+    "image": "./assets/encarte.jpg",
+    "destaque": false,
+    "emBreve": false,
+    "cliente": "ABC da Construção"
+  },
+  {
+    "id": 4,
+    "slug": "clube-spfc",
+    "title": "Clube SPFC",
+    "description": "Portal do clube com informações, eventos e engajamento de torcedores.",
+    "category": "Marca & Comunidade",
+    "tipo": "comercial",
+    "image": "./assets/clube-spfc.jpg",
+    "destaque": false,
+    "emBreve": false
+  },
+  {
+    "id": 5,
+    "slug": "clube-crf",
+    "title": "Clube CRF",
+    "description": "Plataforma comunitária do clube com atualizações e programa de membros.",
+    "category": "Marca & Comunidade",
+    "tipo": "comercial",
+    "image": "./assets/clube-crf.jpg",
+    "destaque": false,
+    "emBreve": false
+  },
+  {
+    "id": 6,
+    "slug": "clube-cam",
+    "title": "Clube CAM",
+    "description": "Interface moderna para gerenciar eventos e conectar membros do clube.",
+    "category": "Marca & Comunidade",
+    "tipo": "comercial",
+    "image": "./assets/clube-cam.jpg",
+    "destaque": false,
+    "emBreve": false
+  },
+  {
+    "id": 7,
+    "slug": "form-escola-de-programacao",
+    "title": "Escola de Programação",
+    "description": "Formulário estratégico de alta conversão para triagem dev, diagnóstico de nível de conhecimento e montagem de plano de carreira personalizado.",
+    "category": "Educação & Carreira",
+    "tipo": "comercial",
+    "image": null,
+    "destaque": false,
+    "emBreve": false
+  },
+  {
+    "id": 8,
+    "slug": "form-visita-a-obra",
+    "title": "Visita à Obra",
+    "description": "Formulário de agendamento de visita técnica para avaliação presencial, análise do estágio da obra, seleção de ambientes e especificações.",
+    "category": "Construção & Arquitetura",
+    "tipo": "comercial",
+    "image": null,
+    "destaque": false,
+    "emBreve": false
+  },
+  {
+    "id": 9,
+    "slug": "form-carreira-tech",
+    "title": "Carreira Tech",
+    "description": "Formulário de diagnóstico profissional e direcionamento de carreira em tecnologia, com foco em habilidades, objetivos e transição de área.",
+    "category": "Educação & Carreira",
+    "tipo": "comercial",
+    "image": null,
+    "destaque": false,
+    "emBreve": false
+  },
+  {
+    "id": 10,
+    "slug": "form-4",
+    "title": "Visita à Reforma",
+    "description": "Formulário de visita técnica e orçamento de obra inspirado em novos designs, com coleta de dados de endereço, fase do projeto, ambientes e estilo de construção.",
+    "category": "Construção & Arquitetura",
+    "tipo": "comercial",
+    "image": null,
+    "destaque": false,
+    "emBreve": false
+  },
+  {
+    "id": 11,
+    "slug": "form-5",
+    "title": "Quer Reformar",
+    "description": "Formulário wizard progressivo, com etapas claras para qualificar leads e coletar informações de contato, orçamento e preferência de serviço.",
+    "category": "Construção & Arquitetura",
+    "tipo": "comercial",
+    "image": null,
+    "destaque": false,
+    "emBreve": false
+  },
+  {
+    "id": 12,
+    "slug": "form-6",
+    "title": "Arquitetar o seu sonho",
+    "description": "Formulário premium para solicitação de projeto 3D, com briefing de demanda, tipo de projeto, número de ambientes e serviços adicionais.",
+    "category": "Construção & Arquitetura",
+    "tipo": "comercial",
+    "image": null,
+    "destaque": false,
+    "emBreve": false
+  },
+  {
+    "id": 13,
+    "slug": "form-7",
+    "title": "Construir e Reformar",
+    "description": "Formulário de orçamento e visita à obra, com coleta de contato e briefing do ambiente para atendimento técnico.",
+    "category": "Construção & Arquitetura",
+    "tipo": "comercial",
+    "image": null,
+    "destaque": false,
+    "emBreve": false
+  },
+  {
+    "id": 14,
+    "slug": "form-8",
+    "title": "Catalogo Digital",
+    "description": "Formulário em duas etapas para download de catálogo digital, com contato, seleção de loja, descrição de experiência e consentimento para envio.",
+    "category": "Varejo & E-commerce",
+    "tipo": "comercial",
+    "image": null,
+    "destaque": false,
+    "emBreve": false
+  },
+  {
+    "id": 15,
+    "slug": "form-9",
+    "title": "Capturar Lead",
+    "description": "Captura de lead com fieldsets organizando contato, documento, canal de atendimento e briefing da experiência.",
+    "category": "Serviços & Franquias",
+    "tipo": "comercial",
+    "image": null,
+    "destaque": false,
+    "emBreve": false
+  },
+  {
+    "id": 16,
+    "slug": "form-10",
+    "title": "Projeto 3D",
+    "description": "Pedir projeto 3D, incluindo briefing, tipo de projeto, ambientes, serviços desejados e consentimento de comunicação.",
+    "category": "Construção & Arquitetura",
+    "tipo": "comercial",
+    "image": null,
+    "destaque": false,
+    "emBreve": false
+  },
+  {
+    "id": 17,
+    "slug": "form-11",
+    "title": "Modelar",
+    "description": "Modelo clean para orçamento 3D, com estágio da obra, ambiente e contato, otimizado para conversão e apresentação simples.",
+    "category": "Construção & Arquitetura",
+    "tipo": "comercial",
+    "image": null,
+    "destaque": false,
+    "emBreve": false
+  },
+  {
+    "id": 18,
+    "slug": "doctor-care",
+    "title": "Doctor Care",
+    "description": "Plataforma de cuidados médicos com agendamento e acompanhamento.",
+    "category": "Saúde & Bem-estar",
+    "tipo": "comercial",
+    "image": "./assets/doctor-care.jpg",
+    "destaque": false,
+    "emBreve": false
+  },
+  {
+    "id": 19,
+    "slug": "livraria",
+    "title": "Meus Livros",
+    "description": "Plataforma de exibição de livros que gosto.",
+    "category": "Educação & Carreira",
+    "tipo": "comercial",
+    "image": "./assets/livraria.jpg",
+    "destaque": false,
+    "emBreve": false
+  },
+  {
+    "id": 20,
+    "slug": "rocket-coffee",
+    "title": "Rocket Coffee",
+    "description": "Landing page de um café virtual, com vitrine de produtos e pedido online.",
+    "category": "Alimentação",
+    "tipo": "comercial",
+    "image": "./assets/rocket-coffee.jpg",
+    "destaque": false,
+    "emBreve": false
+  },
+  {
+    "id": 21,
+    "slug": "pastel-e-cana",
+    "title": "Pastel e Cana",
+    "description": "Landing page de um restaurante, com cardápio digital e pedido online.",
+    "category": "Alimentação",
+    "tipo": "comercial",
+    "image": "./assets/pastel-e-cana.jpg",
+    "destaque": false,
+    "emBreve": false
+  },
+  {
+    "id": 22,
+    "slug": "hamburgueria",
+    "title": "Hamburguers Mágicos",
+    "description": "Landing page de uma hamburgueria, com cardápio digital e pedido online.",
+    "category": "Alimentação",
+    "tipo": "comercial",
+    "image": "./assets/hamburguers-magicos.jpg",
+    "destaque": false,
+    "emBreve": false
+  },
+  {
+    "id": 23,
+    "slug": "espetinho-de-minas",
+    "title": "Espetinho de Minas",
+    "description": "Landing page para um Food Truck com cardápio digital e pedido online.",
+    "category": "Alimentação",
+    "tipo": "comercial",
+    "image": "./assets/espetinho-de-minas.jpg",
+    "destaque": false,
+    "emBreve": false
+  },
+  {
+    "id": 24,
+    "slug": "dc-jardinagem",
+    "title": "DC Jardinagem",
+    "description": "Transformação de terrenos brutos em espaços de lazer, com apresentação de serviços de jardinagem profissional.",
+    "category": "Construção & Arquitetura",
+    "tipo": "comercial",
+    "image": "./assets/dc-jardinagem.jpg",
+    "destaque": false,
+    "emBreve": false
+  },
+  {
+    "id": 25,
+    "slug": "catalogo-cafeteria",
+    "title": "Catálogo da Cafeteria",
+    "description": "Catálogo digital com os melhores cafés e produtos da cafeteria.",
+    "category": "Alimentação",
+    "tipo": "comercial",
+    "image": "./assets/catalogo-cafeteria.jpg",
+    "destaque": false,
+    "emBreve": false
+  },
+  {
+    "id": 26,
+    "slug": "cracha-virtual",
+    "title": "Crachá Virtual",
+    "description": "Gerador de crachá digital personalizado.",
+    "category": "Marca & Comunidade",
+    "tipo": "comercial",
+    "image": "./assets/cracha-virtual.jpg",
+    "destaque": false,
+    "emBreve": false
+  },
+  {
+    "id": 27,
+    "slug": "headphones",
+    "title": "Headphones",
+    "description": "Apresentação encantadora de um headphones.",
+    "category": "Varejo & E-commerce",
+    "tipo": "comercial",
+    "image": "./assets/headphones.jpg",
+    "destaque": false,
+    "emBreve": false
+  },
+  {
+    "id": 28,
+    "slug": "doggy",
+    "title": "Doggy",
+    "description": "Apresentação encantadora de um cachorrinho. Venha brincar!",
+    "category": "Varejo & E-commerce",
+    "tipo": "comercial",
+    "image": "./assets/doggy.jpg",
+    "destaque": false,
+    "emBreve": false
+  },
+  {
+    "id": 29,
+    "slug": "us-food",
+    "title": "US Food",
+    "description": "Apresentação encantadora de um restaurante americano.",
+    "category": "Alimentação",
+    "tipo": "comercial",
+    "image": "./assets/us-food.jpg",
+    "destaque": false,
+    "emBreve": false
+  },
+  {
+    "id": 30,
+    "slug": "watches",
+    "title": "Watches",
+    "description": "Conheça esse modelo de relógio.",
+    "category": "Varejo & E-commerce",
+    "tipo": "comercial",
+    "image": "./assets/watches.jpg",
+    "destaque": false,
+    "emBreve": false
+  },
+  {
+    "id": 31,
+    "slug": "apresentacao-store",
+    "title": "Store",
+    "description": "Conheça nossa loja. Aqui tem o produto que precisa.",
+    "category": "Varejo & E-commerce",
+    "tipo": "comercial",
+    "image": "./assets/store.jpg",
+    "destaque": false,
+    "emBreve": false
+  },
+  {
+    "id": 32,
+    "slug": "apresentacao-coffee",
+    "title": "Coffee",
+    "description": "Conheça esse café. São grãos com aromas únicos.",
+    "category": "Alimentação",
+    "tipo": "comercial",
+    "image": "./assets/coffee.jpg",
+    "destaque": false,
+    "emBreve": false
+  },
+  {
+    "id": 33,
+    "slug": "apresentacao-project",
+    "title": "Project",
+    "description": "Te apresento o projeto em detalhes.",
+    "category": "Marca & Comunidade",
+    "tipo": "comercial",
+    "image": "./assets/project.jpg",
+    "destaque": false,
+    "emBreve": false
+  },
+  {
+    "id": 34,
+    "slug": "whatsapp-messages",
+    "title": "WhatsApp Messages",
+    "description": "Layout do Sistema de mensagens do WhatsApp.",
+    "category": "Produto Digital",
+    "tipo": "comercial",
+    "image": "./assets/whatsapp-messages.jpg",
+    "destaque": false,
+    "emBreve": false
+  },
+  {
+    "id": 35,
+    "slug": "dev-link",
+    "title": "Dev Link",
+    "description": "Página DevLinks para apresentar uma lista de links importantes e desafio da trilha.",
+    "category": "Marca & Comunidade",
+    "tipo": "comercial",
+    "image": "./assets/devlink.jpg",
+    "destaque": false,
+    "emBreve": false
+  },
+  {
+    "id": 36,
+    "slug": "login-form",
+    "title": "Login Form",
+    "description": "Formulário de login para acesso à plataforma com design encantador.",
+    "category": "Produto Digital",
+    "tipo": "comercial",
+    "image": "./assets/login-form.jpg",
+    "destaque": false,
+    "emBreve": false
+  },
+  {
+    "id": 37,
+    "slug": "rocket-news",
+    "title": "Rocket News",
+    "description": "Página de notícias com design encantador.",
+    "category": "Produto Digital",
+    "tipo": "comercial",
+    "image": "./assets/rocket-news.jpg",
+    "destaque": false,
+    "emBreve": false
+  },
+  {
+    "id": 38,
+    "slug": "rocket-shoes",
+    "title": "Rocket Shoes",
+    "description": "Vitrine de calçados com listagem de produtos, carrinho e cálculo de pedido.",
+    "category": "Produto Digital",
+    "tipo": "comercial",
+    "image": "./assets/to-do-project.jpg",
+    "destaque": false,
+    "emBreve": true
+  },
+  {
+    "id": 39,
+    "slug": "rocket-nfts",
+    "title": "Rocket NFTs",
+    "description": "Vitrine de coleção NFT com listagem, detalhe da peça e destaque de raridade.",
+    "category": "Produto Digital",
+    "tipo": "comercial",
+    "image": "./assets/to-do-project.jpg",
+    "destaque": false,
+    "emBreve": true
+  },
+  {
+    "id": 40,
+    "slug": "rocket-blog",
+    "title": "Rocket Blog",
+    "description": "Página de blog com tipografia cuidada e leitura confortável.",
+    "category": "Produto Digital",
+    "tipo": "comercial",
+    "image": "./assets/rocket-blog.jpg",
+    "destaque": false,
+    "emBreve": false
+  },
+  {
+    "id": 41,
+    "slug": "my-linktree",
+    "title": "My LinkTree",
+    "description": "Página de linktree para apresentar uma lista de links importantes.",
+    "category": "Marca & Comunidade",
+    "tipo": "comercial",
+    "image": "./assets/my-linktree.jpg",
+    "destaque": false,
+    "emBreve": false
+  },
+  {
+    "id": 42,
+    "slug": "login-with",
+    "title": "Login With",
+    "description": "Página de login e register com autenticação.",
+    "category": "Produto Digital",
+    "tipo": "comercial",
+    "image": "./assets/login-with.jpg",
+    "destaque": false,
+    "emBreve": false
+  },
+  {
+    "id": 43,
+    "slug": "rocket-card",
+    "title": "Rocket Card",
+    "description": "Página de cartão de visita com design encantador.",
+    "category": "Marca & Comunidade",
+    "tipo": "comercial",
+    "image": "./assets/rocket-card.jpg",
+    "destaque": false,
+    "emBreve": false
+  },
+  {
+    "id": 44,
+    "slug": "saude",
+    "title": "Fisio Saúde",
+    "description": "Site institucional para clínica de fisioterapia, com apresentação de especialidades, proposta comercial e agendamento via WhatsApp.",
+    "category": "Saúde & Bem-estar",
+    "tipo": "comercial",
+    "image": "./assets/saude.jpg",
+    "destaque": false,
+    "emBreve": false
+  },
+  {
+    "id": 45,
+    "slug": "car-rental",
+    "title": "Car Rental",
+    "description": "Site institucional para locadora de veículos, com vitrine da frota, condições de aluguel e orçamento via WhatsApp.",
+    "category": "Serviços & Franquias",
+    "tipo": "comercial",
+    "image": "./assets/car-rental.jpg",
+    "destaque": false,
+    "emBreve": false
+  },
+  {
+    "id": 46,
+    "slug": "construction",
+    "title": "Educação em Saúde",
+    "description": "Site institucional para empresa de treinamento em saúde, com catálogo de cursos, proposta comercial e contato direto.",
+    "category": "Saúde & Bem-estar",
+    "tipo": "comercial",
+    "image": "./assets/construction.jpg",
+    "destaque": false,
+    "emBreve": false
+  },
+  {
+    "id": 47,
+    "slug": "restaurant",
+    "title": "Restaurante Gourmet",
+    "description": "Site institucional para restaurante gourmet, com cardápio visual, ambientação da casa e reserva via WhatsApp.",
+    "category": "Alimentação",
+    "tipo": "comercial",
+    "image": "./assets/restaurant.jpg",
+    "destaque": false,
+    "emBreve": false
+  },
+  {
+    "id": 48,
+    "slug": "edificacoes-3d",
+    "title": "Edificações 3D",
+    "description": "Aplicação web para exibição de maquetes, detalhes de engenharia civil e renderizações 3D de projetos arquitetônicos com design responsivo.",
+    "category": "Construção & Arquitetura",
+    "tipo": "comercial",
+    "image": "./assets/edificacoes-3d.jpg",
+    "destaque": true,
+    "emBreve": false,
+    "case": {
+      "resumo": "Portfólio web para engenharia civil e arquitetura: transforma um acervo de maquetes SketchUp, que só abria em software pago, numa vitrine que o cliente vê no celular.",
+      "antes": [
+        "O acervo vivia em 29 arquivos .skp, que só abrem no SketchUp instalado.",
+        "Para mostrar um projeto era preciso enviar arquivo pesado ou marcar apresentação presencial.",
+        "Não havia índice: encontrar um projeto dependia de lembrar o nome do arquivo."
+      ],
+      "depois": [
+        "Acervo publicado como página web, aberta em qualquer navegador, sem instalar nada.",
+        "Renderizações e plantas organizadas por projeto, navegáveis em sequência.",
+        "Link único que o cliente abre no celular durante a própria reunião."
+      ],
+      "entregas": [
+        "Catálogo de 27 blocos de projeto",
+        "113 renderizações e plantas publicadas",
+        "Grid responsivo para celular, tablet e desktop",
+        "Organização por tipo: residencial, condomínio, mobiliário"
+      ],
+      "indicadores": [
+        {
+          "rotulo": "Projetos no acervo",
+          "antes": "29 arquivos .skp",
+          "depois": "27 blocos publicados"
+        },
+        {
+          "rotulo": "Imagens acessíveis sem software",
+          "antes": "0",
+          "depois": "113"
+        },
+        {
+          "rotulo": "Requisito para o cliente ver",
+          "antes": "SketchUp instalado",
+          "depois": "navegador"
+        }
+      ],
+      "stack": [
+        "HTML5",
+        "W3.CSS",
+        "Font Awesome",
+        "SketchUp (origem dos modelos)"
+      ]
+    }
+  },
+  {
+    "id": 49,
+    "slug": "transportation",
+    "title": "Transportation",
+    "description": "Site institucional para transportadora, com apresentação de frota, áreas de atuação e solicitação de cotação.",
+    "category": "Serviços & Franquias",
+    "tipo": "comercial",
+    "image": "./assets/transportation.jpg",
+    "destaque": false,
+    "emBreve": false
+  },
+  {
+    "id": 50,
+    "slug": "school",
+    "title": "School",
+    "description": "Ecossistema digital completo de ensino e tecnologia para Developer / Tech Growth, reunindo cursos, conteúdos, portfólio e gerador de currículos.",
+    "category": "Educação & Carreira",
+    "tipo": "comercial",
+    "image": "./assets/school.jpg",
+    "destaque": false,
+    "emBreve": false
+  },
+  {
+    "id": 51,
+    "slug": "our-coffee",
+    "title": "Our Coffee",
+    "description": "Portal de uma cafeteria com identidade própria, storytelling do grão e navegação responsiva.",
+    "category": "Alimentação",
+    "tipo": "comercial",
+    "image": "./assets/our-coffee.jpg",
+    "destaque": false,
+    "emBreve": false
+  },
+  {
+    "id": 52,
+    "slug": "art",
+    "title": "Art",
+    "description": "Portal de exposição de obra de arte com identidade visual exclusiva, storytelling da peça e leitura confortável em qualquer tela.",
+    "category": "Marca & Comunidade",
+    "tipo": "comercial",
+    "image": "./assets/art.jpg",
+    "destaque": false,
+    "emBreve": false
+  },
+  {
+    "id": 53,
+    "slug": "meus-treinos",
+    "title": "Meus Treinos",
+    "description": "Aplicação web para gestão de fichas de musculação, acompanhamento de progresso, rotina de suplementação e avaliações físicas.",
+    "category": "Saúde & Bem-estar",
+    "tipo": "comercial",
+    "image": "./assets/meus-treinos.jpg",
+    "destaque": false,
+    "emBreve": false
+  },
+  {
+    "id": 54,
+    "slug": "moveis-planejados",
+    "title": "Móveis Planejados",
+    "description": "Demonstração de projetos de móveis planejados com design responsivo, galerias de fotos do processo de montagem e foco em marcenaria sob medida.",
+    "category": "Construção & Arquitetura",
+    "tipo": "comercial",
+    "image": "./assets/moveis-planejados.jpg",
+    "destaque": true,
+    "emBreve": false,
+    "case": {
+      "resumo": "Portfólio de marcenaria sob medida que mostra o antes, o processo de montagem e o resultado entregue — o argumento de venda que uma foto isolada não faz.",
+      "antes": [
+        "Os projetos viviam em álbuns soltos de celular, enviados um a um por mensagem.",
+        "A página anterior mostrava um recorte: o portfólio completo não aparecia.",
+        "Não havia narrativa de processo — só a foto final, sem mostrar o trabalho."
+      ],
+      "depois": [
+        "Oito projetos publicados individualmente, cada um com sua galeria.",
+        "Sequência de montagem visível: o cliente entende o que está contratando.",
+        "Copy revisado com foco comercial, não descritivo."
+      ],
+      "entregas": [
+        "8 projetos com card e galeria própria",
+        "Duplex, apartamento compacto, ambiente integrado, suíte, cozinha gourmet, home office, closet, sala",
+        "Seções de portfólio, planos e sobre",
+        "Layout responsivo com 11 âncoras de navegação interna"
+      ],
+      "indicadores": [
+        {
+          "rotulo": "Projetos exibidos",
+          "antes": "parcial",
+          "depois": "8 individuais"
+        },
+        {
+          "rotulo": "Âncoras de navegação",
+          "antes": "0",
+          "depois": "11"
+        },
+        {
+          "rotulo": "Envio do portfólio",
+          "antes": "álbum por mensagem",
+          "depois": "1 link"
+        }
+      ],
+      "stack": [
+        "HTML5",
+        "CSS3",
+        "JavaScript",
+        "W3.CSS"
+      ]
+    }
+  },
+  {
+    "id": 55,
+    "slug": "puro-estilo",
+    "title": "Catálogo Virtual de Roupas",
+    "description": "SPA de e-commerce e catálogo de moda com visualização de detalhes, sacola de favoritos, geração de orçamento em PDF e paginação dinâmica.",
+    "category": "Varejo & E-commerce",
+    "tipo": "comercial",
+    "image": "./assets/puro-estilo.jpg",
+    "destaque": false,
+    "emBreve": false
+  },
+  {
+    "id": 56,
+    "slug": "restaurante",
+    "title": "Food",
+    "description": "Site institucional para restaurante com design personalizado, foco em gastronomia, cardápio visual e experiência responsiva.",
+    "category": "Alimentação",
+    "tipo": "comercial",
+    "image": "./assets/restaurante.jpg",
+    "destaque": true,
+    "emBreve": false,
+    "case": {
+      "resumo": "Site institucional para restaurante: cardápio visual, conceito da casa e diferenciais, desenhados para o cliente que descobre o lugar pelo celular antes de decidir onde comer.",
+      "antes": [
+        "A presença digital se resumia a rede social, onde o cardápio some no feed.",
+        "Quem buscava o restaurante no Google não encontrava página própria.",
+        "Nenhum lugar fixo para conceito, história e diferenciais da casa."
+      ],
+      "depois": [
+        "Site próprio com identidade desenhada para o nicho gastronômico.",
+        "Vitrine de pratos com foto tratada, legível no celular.",
+        "Narrativa institucional: conceito, história e proposta da casa em página fixa."
+      ],
+      "entregas": [
+        "Identidade visual exclusiva do nicho",
+        "Vitrine com 11 peças visuais",
+        "Seção de conceito e storytelling gastronômico",
+        "Favicon e marca aplicados",
+        "Grid responsivo mobile, tablet e desktop"
+      ],
+      "indicadores": [
+        {
+          "rotulo": "Presença própria na web",
+          "antes": "só rede social",
+          "depois": "site institucional"
+        },
+        {
+          "rotulo": "Peças visuais do cardápio",
+          "antes": "feed",
+          "depois": "11 em vitrine fixa"
+        },
+        {
+          "rotulo": "Conceito da casa documentado",
+          "antes": "não",
+          "depois": "seção dedicada"
+        }
+      ],
+      "stack": [
+        "HTML5",
+        "CSS3",
+        "W3.CSS"
+      ]
+    }
+  },
+  {
+    "id": 57,
+    "slug": "finances",
+    "title": "dev.finances",
+    "description": "Aplicação web de controle financeiro pessoal (entradas, saídas e saldo) construída durante a Maratona Discover, com roteiro completo de mentoria e soft/hard skills.",
+    "category": "Produto Digital",
+    "tipo": "comercial",
+    "image": "./assets/finances.jpg",
+    "destaque": false,
+    "emBreve": false
+  },
+  {
+    "id": 58,
+    "slug": "quiz-app",
+    "title": "Quiz App",
+    "description": "Aplicação interativa de perguntas e respostas com contagem de pontuação, feedback em tempo real e barra de progresso gamificada.",
+    "category": "Educação & Carreira",
+    "tipo": "comercial",
+    "image": "./assets/quiz-app.jpg",
+    "destaque": true,
+    "emBreve": false,
+    "case": {
+      "resumo": "Aplicação de quiz com pontuação e feedback imediato — a peça que transforma conteúdo passivo em captação, porque o visitante responde em vez de só ler.",
+      "antes": [
+        "A avaliação de conhecimento acontecia em formulário estático, sem retorno.",
+        "Quem respondia não sabia o resultado na hora; dependia de correção manual.",
+        "Nenhum mecanismo de engajamento: o visitante lia e saía."
+      ],
+      "depois": [
+        "Quiz interativo com correção e pontuação no próprio navegador.",
+        "Feedback imediato a cada resposta, com barra de progresso.",
+        "Peça reaproveitável: troca-se o banco de perguntas e ela serve outro tema."
+      ],
+      "entregas": [
+        "Motor de perguntas e respostas",
+        "Contagem de pontuação em tempo real",
+        "Barra de progresso gamificada",
+        "Tela de resultado ao final",
+        "Manifest e favicon para instalação no celular"
+      ],
+      "indicadores": [
+        {
+          "rotulo": "Retorno ao respondente",
+          "antes": "manual",
+          "depois": "imediato"
+        },
+        {
+          "rotulo": "Correção",
+          "antes": "humana",
+          "depois": "no navegador"
+        },
+        {
+          "rotulo": "Reaproveitamento por tema",
+          "antes": "refazer a peça",
+          "depois": "trocar o banco de perguntas"
+        }
+      ],
+      "stack": [
+        "HTML5",
+        "CSS3",
+        "JavaScript",
+        "Font Awesome"
+      ]
+    }
+  },
+  {
+    "id": 59,
+    "slug": "marido-de-aluguel",
+    "title": "Marido de Aluguel",
+    "description": "Cartão de visitas digital interativo e mini landing page para prestador de serviços, com botões de contato direto, formulário de orçamento guiado via WhatsApp e QR Code.",
+    "category": "Serviços & Franquias",
+    "tipo": "comercial",
+    "image": "./assets/marido-de-aluguel.png",
+    "destaque": false,
+    "emBreve": false
+  }
 ]

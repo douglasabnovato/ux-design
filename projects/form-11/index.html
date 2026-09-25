@@ -1,11 +1,23 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Orçamento 3D em formato enxuto: estágio da obra, ambiente e contato.">
     <title>Projeto 3D - ABC da Construção</title>
     <link rel="stylesheet" href="./style.css" />
-  </head>
+  <style>
+/* Erros de campo e resumo do lead — injetado com o motor de captação */
+.campo-erro{display:block;margin-top:6px;font-size:.82rem;font-weight:600;color:#ff6b6b;line-height:1.35}
+[aria-invalid="true"]{border-color:#ff6b6b !important;outline-color:#ff6b6b}
+.resumo-lead{margin:10px 0;padding:12px 14px;border-radius:10px;background:rgba(0,0,0,.16);
+border:1px solid rgba(127,127,127,.28);font:400 .84rem/1.6 ui-monospace,SFMono-Regular,Menlo,monospace;
+white-space:pre-wrap;word-break:break-word;max-height:240px;overflow:auto}
+.resumo-copiar{padding:9px 16px;border-radius:999px;border:1px solid currentColor;background:transparent;
+color:inherit;font:700 .84rem/1 inherit;cursor:pointer}
+.resumo-copiar:hover{opacity:.78}
+</style>
+</head>
   <body>
     <main class="hero-shell">
       <section class="hero-grid">
@@ -35,15 +47,15 @@
           <form id="heroForm" novalidate>
             <label>
               Nome completo
-              <input type="text" name="name" required />
+              <input type="text" name="name" required / autocomplete="name">
             </label>
             <label>
               E-mail
-              <input type="email" name="email" required />
+              <input type="email" name="email" required / autocomplete="email">
             </label>
             <label>
               WhatsApp
-              <input type="tel" name="whatsapp" required />
+              <input type="tel" name="whatsapp" required / autocomplete="tel" inputmode="tel">
             </label>
             <label>
               Estágio da obra
@@ -76,5 +88,27 @@
     </main>
 
     <script src="./script.js"></script>
-  </body>
+  <!-- learnTECH · volta ao catálogo UX Design -->
+<style>
+.lt-voltar{position:fixed;left:18px;bottom:18px;z-index:99998;display:inline-flex;align-items:center;gap:9px;
+padding:11px 16px;border-radius:999px;background:rgba(10,14,39,.92);border:1px solid rgba(0,212,212,.42);
+color:#eaf0f7;text-decoration:none;font:700 14px/1 "Segoe UI",system-ui,-apple-system,Arial,sans-serif;
+box-shadow:0 12px 30px rgba(0,0,0,.34);backdrop-filter:blur(10px);
+transition:transform .2s ease,border-color .2s ease,background .2s ease;-webkit-font-smoothing:antialiased}
+.lt-voltar:hover{transform:translateY(-2px);border-color:#00d4d4;background:rgba(10,14,39,.98);color:#eaf0f7}
+.lt-voltar:focus-visible{outline:3px solid #00d4d4;outline-offset:3px}
+.lt-voltar__i{display:inline-grid;place-items:center;width:24px;height:24px;border-radius:999px;
+background:rgba(0,212,212,.16);color:#00d4d4;font-size:14px}
+@media (max-width:640px){.lt-voltar{left:12px;bottom:12px;padding:10px 13px;font-size:13px}
+.lt-voltar__t{display:none}}
+.lt-espaco{height:86px;flex:none;pointer-events:none}
+@media print{.lt-voltar,.lt-espaco{display:none}}
+</style>
+<div class="lt-espaco" aria-hidden="true"></div>
+<a class="lt-voltar" href="../../index.html" aria-label="Voltar ao catálogo UX Design">
+  <span class="lt-voltar__i" aria-hidden="true">&#8592;</span>
+  <span class="lt-voltar__t">Voltar ao portfólio</span>
+</a>
+<!-- fim · volta ao catálogo -->
+</body>
 </html>
