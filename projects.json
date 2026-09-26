@@ -674,12 +674,12 @@
   },
   {
     "id": 54,
-    "slug": "moveis-planejados",
-    "title": "Móveis Planejados",
+    "slug": "marceneiro-rpc",
+    "title": "Marceneiro RPC",
     "description": "Demonstração de projetos de móveis planejados com design responsivo, galerias de fotos do processo de montagem e foco em marcenaria sob medida.",
     "category": "Construção & Arquitetura",
     "tipo": "comercial",
-    "image": "./assets/moveis-planejados.jpg",
+    "image": "./assets/marceneiro-rpc.jpeg",
     "destaque": true,
     "emBreve": false,
     "case": {
@@ -864,5 +864,28 @@
     "image": "./assets/marido-de-aluguel.png",
     "destaque": false,
     "emBreve": false
-  }
+  },
+  {
+  "id": 60,
+  "slug": "engenheiro-ghbn",
+  "title": "Engenharia GHBN",
+  "cliente": "Gustavo Henrique Braga Novato",
+  "description": "Portfólio de engenharia civil com obras no Brasil e nos EUA, dossiê técnico em PDF e formulário de orçamento em etapas.",
+  "category": "Construção & Arquitetura",
+  "tipo": "comercial",
+  "image": "./assets/engenheiro-ghbn.jpg",
+  "destaque": false,
+  "emBreve": false
+},
+{
+  "id": 61,
+  "slug": "personal-trainer",
+  "title": "Personal Trainer",
+  "description": "Landing page de personal trainer com planos, galeria de treinos, depoimentos, teste A/B do título e contato por WhatsApp e formulário.",
+  "category": "Saúde & Bem-estar",
+  "tipo": "comercial",
+  "image": "./assets/personal-trainer.jpg",
+  "destaque": false,
+  "emBreve": false
+}
 ]
