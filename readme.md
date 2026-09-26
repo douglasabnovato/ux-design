@@ -4,7 +4,7 @@
 
 **Catálogo de projetos digitais comerciais** — landing pages, catálogos, formulários de captação e aplicações, em HTML, CSS e JavaScript puro.
 
-**59 projetos** · 8 setores · 5 com case documentado
+**62 projetos** · 8 setores · 5 com case documentado
 
 </div>
 

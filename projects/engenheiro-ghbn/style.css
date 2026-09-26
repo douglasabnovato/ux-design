@@ -1,0 +1,413 @@
+/* GUSTAVO HENRIQUE BRAGA NOVATO - GHBN_ENGINEERING
+   Design System: Prancha Técnica & Industrial (High-End / Zero IA) */
+
+:root {
+    --bg-dark: #07090e;
+    --bg-alt: #0d111a;
+    --orange-precision: #ff4500;
+    --orange-hover: #ff6a33;
+    --grid-border: #1f293d;
+    --text-main: #f3f4f6;
+    --text-muted: #9ca3af;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: auto;
+    /* Scroll técnico instantâneo */
+}
+
+body {
+    background: var(--bg-dark);
+    color: var(--text-main);
+    font-family: 'Inter', sans-serif;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Header Fixo / Técnico */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 4rem;
+    border-bottom: 1px solid var(--grid-border);
+    background: rgba(7, 9, 14, 0.95);
+    backdrop-filter: blur(8px);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 700;
+    color: var(--orange-precision);
+    letter-spacing: 0.08em;
+    font-size: 0.95rem;
+}
+
+.nav {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.75rem;
+    font-family: 'JetBrains Mono', monospace;
+    letter-spacing: 0.05em;
+    transition: color 0.2s ease;
+}
+
+.nav a:hover {
+    color: var(--orange-precision);
+}
+
+/* Hero Section */
+.hero {
+    padding: 8rem 4rem 6rem 4rem;
+    border-bottom: 1px solid var(--grid-border);
+    background: radial-gradient(circle at 10% 20%, rgba(255, 69, 0, 0.03) 0%, transparent 40%);
+}
+
+.meta-code {
+    color: var(--orange-precision);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    display: block;
+    margin-bottom: 1rem;
+}
+
+h1 {
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    font-weight: 900;
+    line-height: 1.05;
+    text-transform: uppercase;
+    letter-spacing: -0.03em;
+    color: #fff;
+}
+
+/* Grid de Prancha Técnica (Layout Padrão das Seções) */
+.engineering-section {
+    padding: 6rem 4rem;
+    border-bottom: 1px solid var(--grid-border);
+}
+
+.section-alt {
+    background-color: var(--bg-alt);
+}
+
+.technical-grid {
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    gap: 4rem;
+    align-items: start;
+}
+
+.meta-sidebar .code {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    color: var(--orange-precision);
+    letter-spacing: 0.08em;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.meta-sidebar h3 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: -0.01em;
+    color: #fff;
+    line-height: 1.3;
+}
+
+/* Gallery Board (Grid Contínuo Industrial) */
+.gallery-board {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    grid-auto-rows: 220px;
+    gap: 2px;
+    background: var(--grid-border);
+    border: 1px solid var(--grid-border);
+}
+
+.board-item {
+    background: #000;
+    overflow: hidden;
+    position: relative;
+}
+
+.board-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.8;
+    transition: opacity 0.3s ease, transform 0.4s ease;
+}
+
+.board-item:hover img {
+    opacity: 1;
+    transform: scale(1.03);
+}
+
+/* Seção de Documentação / PDF */
+.doc-section {
+    padding: 6rem 4rem;
+    border-bottom: 1px solid var(--grid-border);
+}
+
+.doc-card {
+    background: var(--bg-alt);
+    border: 1px solid var(--grid-border);
+    padding: 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+}
+
+.doc-info h4 {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    color: #fff;
+    letter-spacing: -0.01em;
+}
+
+.doc-info p {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+}
+
+.btn-technical-pdf {
+    display: inline-block;
+    padding: 1rem 2rem;
+    border: 1px solid var(--orange-precision);
+    color: var(--orange-precision);
+    text-decoration: none;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.05em;
+    transition: background 0.2s ease, color 0.2s ease;
+    white-space: nowrap;
+    background: transparent;
+}
+
+.btn-technical-pdf:hover {
+    background: var(--orange-precision);
+    color: #07090e;
+}
+
+/* Footer Técnico */
+.footer {
+    padding: 4rem;
+    border-top: 1px solid var(--grid-border);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    text-align: center;
+    color: var(--orange-precision);
+    letter-spacing: 0.08em;
+    background: var(--bg-dark);
+}
+
+/* Responsividade Adaptativa */
+@media (max-width: 1024px) {
+    .header {
+        padding: 1.5rem 2rem;
+    }
+
+    .hero {
+        padding: 6rem 2rem 4rem 2rem;
+    }
+
+    .engineering-section,
+    .doc-section {
+        padding: 4rem 2rem;
+    }
+
+    .technical-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .nav {
+        display: none;
+        /* Menu compacto ou drawer se necessário */
+    }
+
+    h1 {
+        font-size: 2.2rem;
+    }
+
+    .gallery-board {
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: 160px;
+    }
+
+    .doc-card {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 2rem;
+    }
+}
+
+/* --- ESTILOS DO FORMULÁRIO EM ETAPAS (MULTI-STEP) --- */
+.form-container {
+    background: var(--bg-dark);
+    border: 1px solid var(--grid-border);
+    padding: 3rem;
+}
+
+.form-step {
+    display: none;
+}
+
+.form-step.active {
+    display: block;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.step-indicator {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    color: var(--orange-precision);
+    letter-spacing: 0.08em;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.form-step h4 {
+    font-size: 1.25rem;
+    color: #fff;
+    margin-bottom: 2rem;
+    font-family: 'Inter', sans-serif;
+}
+
+.options-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.radio-card {
+    border: 1px solid var(--grid-border);
+    padding: 1.5rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: var(--bg-alt);
+    transition: border-color 0.2s ease;
+}
+
+.radio-card:hover {
+    border-color: var(--orange-precision);
+}
+
+.radio-card input[type="radio"] {
+    accent-color: var(--orange-precision);
+}
+
+.radio-card span {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.85rem;
+    color: #fff;
+}
+
+.input-group {
+    margin-bottom: 1.25rem;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 1rem;
+    background: var(--bg-alt);
+    border: 1px solid var(--grid-border);
+    color: #fff;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.85rem;
+    outline: none;
+    transition: border-color 0.2s ease;
+}
+
+.input-group input:focus {
+    border-color: var(--orange-precision);
+}
+
+.btn-next, .btn-submit {
+    background: var(--orange-precision);
+    color: #07090e;
+    border: none;
+    padding: 1rem 2rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 700;
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.btn-next:hover, .btn-submit:hover {
+    background: var(--orange-hover);
+}
+
+.btn-prev {
+    background: transparent;
+    color: var(--text-muted);
+    border: 1px solid var(--grid-border);
+    padding: 1rem 2rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    cursor: pointer;
+    transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.btn-prev:hover {
+    color: #fff;
+    border-color: #fff;
+}
+
+.btn-group {
+    display: flex;
+    gap: 1rem;
+}
+
+/* --- BOTÃO FLUTUANTE DE WHATSAPP --- */
+.whatsapp-float {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #25d366;
+    color: #fff;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    z-index: 9999;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.08);
+    background-color: #20ba5a;
+}

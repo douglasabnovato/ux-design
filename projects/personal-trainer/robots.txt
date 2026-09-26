@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://douglasabnovato.github.io/personal-trainer/sitemap.xml
