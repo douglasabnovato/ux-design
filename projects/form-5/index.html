@@ -17,6 +17,11 @@ white-space:pre-wrap;word-break:break-word;max-height:240px;overflow:auto}
 color:inherit;font:700 .84rem/1 inherit;cursor:pointer}
 .resumo-copiar:hover{opacity:.78}
 </style>
+  <link rel="stylesheet" href="../../shared/lt-base.css" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Quer Reformar · UX Design" />
+  <meta property="og:description" content="Formulário wizard progressivo, com etapas claras para qualificar leads e coletar informações de contato, orçamento e preferência de serviço." />
+  <meta property="og:url" content="https://douglasabnovato.github.io/ux-design/projects/form-5/" />
 </head>
   <body>
     <main class="wizard-shell">
@@ -40,15 +45,15 @@ color:inherit;font:700 .84rem/1 inherit;cursor:pointer}
             <div class="field-grid">
               <label>
                 Razão social
-                <input type="text" name="company" required / autocomplete="organization">
+                <input type="text" name="company" required autocomplete="organization">
               </label>
               <label>
                 CNPJ
-                <input type="text" name="cnpj" required / inputmode="numeric">
+                <input type="text" name="cnpj" required inputmode="numeric">
               </label>
               <label>
                 Responsável
-                <input type="text" name="owner" required / autocomplete="name">
+                <input type="text" name="owner" required autocomplete="name">
               </label>
             </div>
           </fieldset>
@@ -68,7 +73,7 @@ color:inherit;font:700 .84rem/1 inherit;cursor:pointer}
               </label>
               <label>
                 Cidade
-                <input type="text" name="city" required / autocomplete="address-level2">
+                <input type="text" name="city" required autocomplete="address-level2">
               </label>
               <label>
                 Área construída

@@ -5,8 +5,8 @@ import { database } from "./database.js";
  */
 const state = {
   currentProducts: [...database.products],
-  cart: [],
   activeCategory: "all",
+  sacola: null,
 };
 
 const dom = {
@@ -21,9 +21,24 @@ const dom = {
  * INICIALIZAÇÃO
  */
 const init = () => {
+  state.sacola = LT.criarSacola({
+    nomeLoja: "Hamburguers Mágicos",
+    botaoExistente: document.querySelector(".btn-finish"),
+    aoMudar: updateCartUI,
+  });
+  const icone = document.querySelector(".cart-status");
+  icone.setAttribute("role", "button");
+  icone.setAttribute("tabindex", "0");
+  icone.setAttribute("aria-label", "Abrir sacola");
+  icone.addEventListener("keydown", (e) => {
+    if (e.key === "Enter" || e.key === " ") {
+      e.preventDefault();
+      state.sacola.abrir();
+    }
+  });
+  window.openCart = () => state.sacola.abrir();
   renderFilters();
   renderProducts(state.currentProducts);
-  updateCartUI();
 };
 
 /**
@@ -69,7 +84,12 @@ const renderProducts = (products) => {
   dom.productsGrid.innerHTML = "";
 
   if (products.length === 0) {
-    dom.productsGrid.innerHTML = `<p class="empty-msg">Nenhum hambúrguer mágico encontrado nesta categoria.</p>`;
+    LT.vazio(dom.productsGrid, {
+      titulo: "Nenhum hambúrguer nesta categoria",
+      texto: "Escolha outra categoria ou veja todo o cardápio.",
+      acao: () => filterByCategory("all"),
+      rotuloAcao: "Ver todos",
+    });
     return;
   }
 
@@ -92,7 +112,7 @@ const renderProducts = (products) => {
                 
                 <div class="product-footer">
                     <span class="product-price">R$ ${product.price.toFixed(2).replace(".", ",")}</span>
-                    <button class="add-to-cart-btn" onclick="handleAddToCart('${product.id}')">
+                    <button class="add-to-cart-btn" aria-label="Adicionar ${product.name} à sacola" onclick="handleAddToCart('${product.id}')">
                         <i class="fa-solid fa-plus"></i>
                     </button>
                 </div>
@@ -108,16 +128,12 @@ const renderProducts = (products) => {
 window.handleAddToCart = (id) => {
   const product = database.products.find((p) => p.id === id);
   if (product) {
-    state.cart.push(product);
-    updateCartUI();
+    state.sacola.adicionar({ id: product.id, nome: product.name, preco: product.price });
     animateCartIcon();
   }
 };
 
-const updateCartUI = () => {
-  const total = state.cart.reduce((sum, item) => sum + item.price, 0);
-  const count = state.cart.length;
-
+const updateCartUI = (count = 0, total = 0) => {
   dom.cartCount.textContent = count;
   dom.footerTotal.textContent = `R$ ${total.toFixed(2).replace(".", ",")}`;
 

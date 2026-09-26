@@ -14,7 +14,17 @@
     <link rel="stylesheet" href="assets/css/styles.css" />
 
     <title>Login With</title>
-  </head>
+    <link rel="stylesheet" href="../../shared/lt-base.css" />
+  <link rel="stylesheet" href="../../shared/lt-feedback.css" />
+  <style>:root{--lt-cor:#1e90ff}.dica-demo{margin:.25rem 0 1rem;font-size:.85rem;color:#555}</style>
+  <script src="../../shared/lt-feedback.js"></script>
+  <meta name="description" content="Página de login e register com autenticação." />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Login With · UX Design" />
+  <meta property="og:description" content="Página de login e register com autenticação." />
+  <meta property="og:url" content="https://douglasabnovato.github.io/ux-design/projects/login-with/" />
+  <meta property="og:image" content="https://douglasabnovato.github.io/ux-design/assets/login-with.jpg" />
+</head>
   <body>
     <!--=============== LOGIN IMAGE ===============-->
     <svg
@@ -49,15 +59,16 @@
       <!--===== LOGIN ACCESS =====-->
       <div class="login__access">
         <h1 class="login__title">Log in to your account.</h1>
+        <p class="dica-demo">Demonstração: use <strong>demo@uxdesign.com</strong> e a senha <strong>demo123</strong>.</p>
 
         <div class="login__area">
-          <form action="" class="login__form">
+          <form action="" class="login__form" novalidate>
             <div class="login__content grid">
               <div class="login__box">
                 <input
                   type="email"
                   id="email"
-                  required
+                  name="email" autocomplete="email" required
                   placeholder=" "
                   class="login__input"
                 />
@@ -70,7 +81,7 @@
                 <input
                   type="password"
                   id="password"
-                  required
+                  name="senha" autocomplete="current-password" minlength="6" required
                   placeholder=" "
                   class="login__input"
                 />
@@ -127,17 +138,17 @@
 
       <!--===== LOGIN REGISTER =====-->
       <div class="login__register">
-        <h1 class="login__title">Create new account.</h1>
+        <h1 class="login__title" aria-level="2">Create new account.</h1>
 
         <div class="login__area">
-          <form action="" class="login__form">
+          <form action="" class="login__form" novalidate>
             <div class="login__content grid">
               <div class="login__group grid">
                 <div class="login__box">
                   <input
                     type="text"
                     id="names"
-                    required
+                  name="nome" autocomplete="given-name" minlength="2" required
                     placeholder=" "
                     class="login__input"
                   />
@@ -150,7 +161,7 @@
                   <input
                     type="text"
                     id="surnames"
-                    required
+                  name="sobrenome" autocomplete="family-name" minlength="2" required
                     placeholder=" "
                     class="login__input"
                   />
@@ -164,7 +175,7 @@
                 <input
                   type="email"
                   id="emailCreate"
-                  required
+                  name="email" autocomplete="email" required
                   placeholder=" "
                   class="login__input"
                 />
@@ -177,7 +188,7 @@
                 <input
                   type="password"
                   id="passwordCreate"
-                  required
+                  name="senha" autocomplete="new-password" minlength="6" required
                   placeholder=" "
                   class="login__input"
                 />
@@ -205,6 +216,7 @@
 
     <!--=============== MAIN JS ===============-->
     <script src="assets/js/main.js"></script>
+  <script src="./interacoes.js"></script>
   <!-- learnTECH · volta ao catálogo UX Design -->
 <style>
 .lt-voltar{position:fixed;left:18px;bottom:18px;z-index:99998;display:inline-flex;align-items:center;gap:9px;

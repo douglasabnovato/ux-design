@@ -4,6 +4,7 @@
 export function openWhatsApp(message, phone = "5532988367667") {
     const text = encodeURIComponent(message);
     const url = `https://wa.me/${phone}?text=${text}`;
+    if (window.LT) LT.aviso("Abrindo o WhatsApp com a sua mensagem pronta…", "info", 3200);
     window.open(url, "_blank");
 }
 

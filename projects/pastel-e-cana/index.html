@@ -1,13 +1,24 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pastel & Cana | Kiosk Premium</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="../../shared/lt-base.css" />
+  <link rel="stylesheet" href="../../shared/lt-feedback.css" />
+  <style>:root{--lt-cor:#ffbc0d;--lt-texto-sobre-cor:#1b1b1b}</style>
+  <script src="../../shared/lt-feedback.js"></script>
+  <meta name="description" content="Landing page de um restaurante, com cardápio digital e pedido online." />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Pastel e Cana · UX Design" />
+  <meta property="og:description" content="Landing page de um restaurante, com cardápio digital e pedido online." />
+  <meta property="og:url" content="https://douglasabnovato.github.io/ux-design/projects/pastel-e-cana/" />
+  <meta property="og:image" content="https://douglasabnovato.github.io/ux-design/assets/pastel-e-cana.jpg" />
 </head>
 <body>
+    <h1 class="lt-sr-only">Pastel &amp; Cana: cardápio de pastéis e caldo de cana</h1>
 
 <header class="mequi-header">
     <div class="header-content">
@@ -20,8 +31,8 @@
         <div class="carousel-container">
             <div id="hero-slider" class="slider-wrapper"></div>
             <div class="carousel-controls">
-                <button class="prev-btn">❮</button>
-                <button class="next-btn">❯</button>
+                <button class="prev-btn" type="button" aria-label="Destaque anterior">❮</button>
+                <button class="next-btn" type="button" aria-label="Próximo destaque">❯</button>
             </div>
         </div>
     </section>

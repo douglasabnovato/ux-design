@@ -1,7 +1,3 @@
-const message = document.getElementsByClassName(".message");
-
-message.addEventListener("click", hello)
-
 function hello (elementMessage){
     let messageText = elementMessage.firstElementChild.innerText
     let numberDestination = window.prompt("Para qual número deseja enviar a mensagem? DD 9XXXX-XXXX");

@@ -124,8 +124,26 @@ function showQuetions(index) {
   // set onclick attribute to all available options
   for (i = 0; i < option.length; i++) {
     option[i].setAttribute("onclick", "optionSelected(this)");
+    option[i].setAttribute("role", "button");
+    option[i].setAttribute("tabindex", "0");
+    option[i].setAttribute("aria-label", `Opção ${"ABCD"[i]}: ${questions[index].options[i]}`);
   }
+  if (option[0]) option[0].focus({ preventScroll: true });
 }
+
+document.addEventListener("keydown", (e) => {
+  if (!quiz_box.classList.contains("activeQuiz")) return;
+  const opcoes = option_list.querySelectorAll(".option:not(.disabled)");
+  if (!opcoes.length) return;
+  const mapa = { a: 0, b: 1, c: 2, d: 3, 1: 0, 2: 1, 3: 2, 4: 3 };
+  const alvo = e.target.closest && e.target.closest(".option");
+  if ((e.key === "Enter" || e.key === " ") && alvo && !alvo.classList.contains("disabled")) {
+    e.preventDefault();
+    optionSelected(alvo);
+  } else if (e.key.toLowerCase() in mapa && opcoes[mapa[e.key.toLowerCase()]]) {
+    optionSelected(opcoes[mapa[e.key.toLowerCase()]]);
+  }
+});
 // creating the new div tags which for icons
 let tickIconTag = '<div class="icon tick"><i class="fas fa-check"></i></div>';
 let crossIconTag = '<div class="icon cross"><i class="fas fa-times"></i></div>';
@@ -143,26 +161,27 @@ function optionSelected(answer) {
     scoreTextPoint.innerHTML = userScore * 10;
     answer.classList.add("correct"); //adding green color to correct selected option
     answer.insertAdjacentHTML("beforeend", tickIconTag); //adding tick icon to correct selected option
-    console.log("Correct Answer");
-    console.log("Your correct answers = " + userScore);
+    if (window.LT) LT.aviso(`Resposta certa! +10 pontos (total ${userScore * 10}).`, "sucesso", 2500);
   } else {
     answer.classList.add("incorrect"); //adding red color to correct selected option
     answer.insertAdjacentHTML("beforeend", crossIconTag); //adding cross icon to correct selected option
-    console.log("Wrong Answer");
+    if (window.LT) LT.aviso(`Resposta errada. A certa era: ${correcAns}.`, "erro", 3500);
 
     for (i = 0; i < allOptions; i++) {
-      if (option_list.children[i].textContent == correcAns) {
+      if (option_list.children[i].querySelector(".choice-text").textContent == correcAns) {
         //if there is an option which is matched to an array answer
         option_list.children[i].setAttribute("class", "option correct"); //adding green color to matched option
         option_list.children[i].insertAdjacentHTML("beforeend", tickIconTag); //adding tick icon to matched option
-        console.log("Auto selected correct answer.");
       }
     }
   }
   for (i = 0; i < allOptions; i++) {
     option_list.children[i].classList.add("disabled"); //once user select an option then disabled all options
+    option_list.children[i].setAttribute("aria-disabled", "true");
+    option_list.children[i].setAttribute("tabindex", "-1");
   }
   next_btn.classList.add("show"); //show the next button if user selected any option
+  next_btn.focus({ preventScroll: true });
 }
 
 function showResult() {

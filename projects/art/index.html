@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+  <head>
   <title>Art</title>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -10,6 +11,14 @@
     type="text/css"
   />
   <link href="./styles/style.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="../../shared/lt-base.css" />
+  <meta name="description" content="Portal de exposição de obra de arte com identidade visual exclusiva, storytelling da peça e leitura confortável em qualquer tela." />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Art · UX Design" />
+  <meta property="og:description" content="Portal de exposição de obra de arte com identidade visual exclusiva, storytelling da peça e leitura confortável em qualquer tela." />
+  <meta property="og:url" content="https://douglasabnovato.github.io/ux-design/projects/art/" />
+  <meta property="og:image" content="https://douglasabnovato.github.io/ux-design/assets/art.jpg" />
+  </head>
   <body>
     <div class="w3-content" style="max-width: 1500px">
       <header class="w3-container w3-xlarge w3-padding-24">
@@ -18,19 +27,19 @@
       </header>
       <div class="w3-row">
         <div class="w3-half">
-          <img src="./images/streetart.jpg" style="width: 100%" />
-          <img src="./images/streetart2.jpg" style="width: 100%" />
-          <img src="./images/streetart5.jpg" style="width: 100%" />
+          <img alt="Streetart" src="./images/streetart.jpg" style="width: 100%" />
+          <img alt="Streetart2" src="./images/streetart2.jpg" style="width: 100%" />
+          <img alt="Streetart5" src="./images/streetart5.jpg" style="width: 100%" />
         </div>
         <div class="w3-half">
-          <img src="./images/streetart3.jpg" style="width: 100%" />
-          <img src="./images/streetart4.jpg" style="width: 100%" />
+          <img alt="Streetart3" src="./images/streetart3.jpg" style="width: 100%" />
+          <img alt="Streetart4" src="./images/streetart4.jpg" style="width: 100%" />
         </div>
       </div>
     </div>
     <footer class="w3-light-grey w3-padding-64 w3-center" id="about">
       <h2>About</h2>
-      <img
+      <img alt="Boy"
         src="./images/boy.jpg"
         class="w3-image w3-padding-32"
         width="300"
@@ -53,15 +62,15 @@
         <p class="w3-large w3-text-pink">Do not hesitate to contact me!</p>
         <div class="w3-section">
           <label><b>Name</b></label>
-          <input class="w3-input w3-border" type="text" required name="Name" />
+          <input aria-label="Name" class="w3-input w3-border" type="text" required name="Name" />
         </div>
         <div class="w3-section">
           <label><b>Email</b></label>
-          <input class="w3-input w3-border" type="text" required name="Email" />
+          <input aria-label="Email" class="w3-input w3-border" type="text" required name="Email" />
         </div>
         <div class="w3-section">
           <label><b>Message</b></label>
-          <input class="w3-input w3-border" required name="Message" />
+          <input aria-label="Message" class="w3-input w3-border" required name="Message" />
         </div>
         <button type="submit" class="w3-button w3-block w3-dark-grey">
           Send

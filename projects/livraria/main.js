@@ -12,6 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
       texto: "",
       categoria: "Todos",
     },
+    reservas: [],
   };
   // [FIM] 1. ESTADO GLOBAL
 
@@ -62,7 +63,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const tops = state.biblioteca.filter(l => l.top_seller).slice(0, 6);
     if (dom.gridMaisVendidos) {
         dom.gridMaisVendidos.innerHTML = tops.map((livro, index) => `
-            <article class="card-mais-vendido" onclick="abrirModal(${livro.id})">
+            <article class="card-mais-vendido" role="button" tabindex="0" aria-label="Ver detalhes de ${livro.titulo}" onclick="abrirModal(${livro.id})">
                 <div class="rank-badge">${index + 1}</div>
                 <img src="${livro.capa_url}" alt="${livro.titulo}">
                 <div class="book-info">
@@ -80,12 +81,17 @@ document.addEventListener("DOMContentLoaded", () => {
     dom.contadorResultados.innerText = `${lista.length} de ${state.biblioteca.length} livros`;
 
     if (lista.length === 0) {
-      dom.gridCatalogo.innerHTML = `<div class="empty-state" style="grid-column: 1/-1; text-align: center; padding: 40px;">Nenhum livro encontrado para esta categoria ou busca.</div>`;
+      LT.vazio(dom.gridCatalogo, {
+        titulo: "Nenhum livro encontrado",
+        texto: state.filtros.texto ? `Não achamos nada para "${state.filtros.texto}" nesta categoria.` : "Não há livros nesta categoria agora.",
+        acao: limparFiltros,
+        rotuloAcao: "Limpar busca e filtros",
+      });
       return;
     }
 
     dom.gridCatalogo.innerHTML = lista.map((livro, index) => `
-        <article class="livro-card" style="animation-delay: ${index * 0.05}s; opacity: 1;" onclick="abrirModal(${livro.id})">
+        <article class="livro-card" style="animation-delay: ${index * 0.05}s; opacity: 1;" role="button" tabindex="0" aria-label="Ver detalhes de ${livro.titulo}" onclick="abrirModal(${livro.id})">
             ${livro.top_seller ? '<span class="badge-top">Top Seller</span>' : ""}
             <img src="${livro.capa_url}" alt="${livro.titulo}" loading="lazy">
             <div class="preco-container">
@@ -121,6 +127,15 @@ document.addEventListener("DOMContentLoaded", () => {
   };
   // [FIM] 5. LÓGICA DE FILTRAGEM
 
+  const limparFiltros = () => {
+    state.filtros.texto = "";
+    state.filtros.categoria = "Todos";
+    if (dom.inputBusca) dom.inputBusca.value = "";
+    dom.botoesFiltro.forEach((b) => b.classList.toggle("active", b.dataset.categoria === "Todos"));
+    applyFilters();
+    if (dom.inputBusca) dom.inputBusca.focus();
+  };
+
   // [INÍCIO] 6. SISTEMA DE MODAL & NAV
   window.abrirModal = (id) => {
     const livro = state.biblioteca.find(l => l.id === id);
@@ -145,20 +160,82 @@ document.addEventListener("DOMContentLoaded", () => {
     `;
     dom.modal.style.display = "flex";
     document.body.style.overflow = "hidden";
+    state.origemFoco = document.activeElement;
+    dom.modal.querySelector(".close-btn").focus();
   };
 
   window.fecharModal = () => {
     dom.modal.style.display = "none";
     document.body.style.overflow = "auto";
+    if (state.origemFoco && state.origemFoco.focus) state.origemFoco.focus();
   };
 
   window.confirmarReserva = (id) => {
-    const btn = document.querySelector(".modal-text-content .btn-cta-hero");
-    if(btn) {
-        btn.innerHTML = "✓ RESERVADO";
-        btn.style.background = "#27ae60";
-        setTimeout(fecharModal, 1200);
+    const livro = state.biblioteca.find((l) => l.id === id);
+    const alvo = document.querySelector(".modal-text-content .btn-cta-hero");
+    if (!livro || !alvo) return;
+    if (state.reservas.some((r) => r.id === id)) {
+      LT.aviso("Este livro já está nas suas reservas.", "info");
+      return;
     }
+    const amanha = new Date(Date.now() + 86400000).toISOString().slice(0, 10);
+    const form = document.createElement("form");
+    form.className = "form-reserva";
+    form.setAttribute("novalidate", "");
+    form.innerHTML = `
+      <label class="lt-campo">Seu nome <input type="text" name="nome" autocomplete="name" minlength="3" required></label>
+      <label class="lt-campo">E-mail para a confirmação <input type="email" name="email" autocomplete="email" required></label>
+      <label class="lt-campo">Retirar na loja em <input type="date" name="retirada" min="${amanha}" required></label>
+      <button type="submit" class="btn-cta-hero">Confirmar reserva</button>`;
+    alvo.replaceWith(form);
+    form.querySelector("input").focus();
+    LT.limparAoDigitar(form);
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      if (!LT.validar(form)) return;
+      const botao = form.querySelector("[type=submit]");
+      LT.carregando(botao, true, "Reservando…");
+      await LT.esperar(900);
+      LT.carregando(botao, false);
+      const dados = Object.fromEntries(new FormData(form));
+      const protocolo = `LT-${String(Date.now()).slice(-6)}`;
+      state.reservas.push({ id, titulo: livro.titulo, retirada: dados.retirada, protocolo });
+      atualizarContadorReservas();
+      const dataBr = new Date(`${dados.retirada}T12:00:00`).toLocaleDateString("pt-BR");
+      LT.sucesso(form, {
+        titulo: "Reserva confirmada!",
+        texto: `"${livro.titulo}" fica separado para você até ${dataBr}. Protocolo ${protocolo}. Enviamos a confirmação para ${dados.email}.`,
+      });
+      LT.aviso("Livro reservado.", "sucesso");
+    });
+  };
+
+  const atualizarContadorReservas = () => {
+    const botao = document.querySelector(".nav-actions .btn-primary-sm");
+    if (!botao) return;
+    const n = state.reservas.length;
+    botao.innerHTML = `Minha Reserva${n ? ` <span class="contador-reservas">${n}</span>` : ""}`;
+    botao.setAttribute("aria-label", `Minha reserva, ${n} ${n === 1 ? "livro" : "livros"}`);
+  };
+
+  const abrirMinhasReservas = () => {
+    const lista = document.createElement("div");
+    if (!state.reservas.length) {
+      LT.vazio(lista, {
+        titulo: "Você ainda não reservou nenhum livro",
+        texto: "Abra um livro do catálogo e toque em Reservar Agora.",
+        acao: () => {
+          document.querySelector(".lt-modal").close();
+          document.getElementById("catalogo").scrollIntoView();
+        },
+        rotuloAcao: "Ir para o catálogo",
+      });
+    } else {
+      lista.innerHTML = `<ul class="lista-reservas">${state.reservas
+        .map((r) => `<li><strong>${r.titulo}</strong><span>Retirada até ${new Date(`${r.retirada}T12:00:00`).toLocaleDateString("pt-BR")} · ${r.protocolo}</span></li>`)
+        .join("")}</ul>`;
+    }
+    LT.modal({ titulo: "Minhas reservas", conteudo: lista });
   };
 
   window.scrollCarousel = (direction) => {
@@ -195,6 +272,21 @@ document.addEventListener("DOMContentLoaded", () => {
       if (e.target === dom.modal) fecharModal();
     });
 
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && dom.modal.style.display === "flex") fecharModal();
+      const card = e.target.closest && e.target.closest(".livro-card, .card-mais-vendido");
+      if (card && (e.key === "Enter" || e.key === " ")) {
+        e.preventDefault();
+        card.click();
+      }
+    });
+
+    const botaoReserva = document.querySelector(".nav-actions .btn-primary-sm");
+    if (botaoReserva) {
+      botaoReserva.removeAttribute("onclick");
+      botaoReserva.addEventListener("click", abrirMinhasReservas);
+    }
+
     window.addEventListener("scroll", () => {
       if (window.scrollY > 50) {
         dom.navbar.classList.add("navbar-scrolled");
@@ -223,7 +315,13 @@ document.addEventListener("DOMContentLoaded", () => {
     } catch (error) {
       console.error("Erro Crítico:", error);
       if (dom.gridCatalogo) {
-        dom.gridCatalogo.innerHTML = `<p class="error" style="grid-column: 1/-1; text-align: center;">Erro ao conectar com o acervo. Verifique se o arquivo biblioteca.json está no local correto.</p>`;
+        LT.vazio(dom.gridCatalogo, {
+          titulo: "Não conseguimos carregar o acervo",
+          texto: "Verifique sua conexão e tente de novo.",
+          acao: () => location.reload(),
+          rotuloAcao: "Tentar de novo",
+        });
+        LT.aviso("Erro ao carregar os livros.", "erro");
       }
     }
   };

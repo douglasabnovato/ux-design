@@ -3,7 +3,7 @@
  */
 
 // --- ESTADO ---
-let carrinho = { itens: [], total: 0.0 };
+let sacola = null;
 let currentSlide = 0;
 
 // --- INICIALIZAÇÃO SEGURA ---
@@ -12,6 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (typeof DATA === "undefined")
       throw new Error("database.js não carregado corretamente!");
 
+    sacola = LT.criarSacola({ nomeLoja: "Pastel & Cana" });
     renderHero();
     renderCategorias();
     renderProdutos("todos");
@@ -33,16 +34,16 @@ const renderHero = () => {
       (p) => `
         <div class="slide">
             <div class="slide-info">
-                <h1>${p.nome}</h1>
+                <h1 aria-level="2">${p.nome}</h1>
                 <div class="special-ingredient">
                     <span class="icon">✨</span>
                     <span class="text">${p.ingrediente}</span>
                 </div>
-                <button class="btn-hero-order" onclick="adicionarAoCarrinho(${p.id})">
+                <button class="btn-hero-order" type="button" onclick="adicionarAoCarrinho(${p.id})">
                     Adicionar ao Pedido <span class="arrow">➔</span>
                 </button>
             </div>
-            <img src="${p.img}" class="slide-img" alt="${p.nome}" onerror="this.src='./assets/placeholder-pura.png'">
+            <img src="${p.img}" class="slide-img" alt="${p.nome}" onerror="this.onerror=null;this.src='./assets/pastel-1.jpg'">
         </div>
     `,
     )
@@ -93,14 +94,24 @@ const renderProdutos = (filtroId) => {
   const cat = DATA.categorias.find((c) => c.id === filtroId);
   if (title && cat) title.innerText = cat.nome;
 
+  if (!filtrados.length) {
+    LT.vazio(grid, {
+      titulo: "Nenhum item nesta categoria agora",
+      texto: "Veja os outros sabores do cardápio.",
+      acao: () => document.querySelector('.cat-item[data-category="todos"]').click(),
+      rotuloAcao: "Ver todos",
+    });
+    return;
+  }
+
   grid.innerHTML = filtrados
     .map(
       (p) => `
-        <div class="product-card" onclick="adicionarAoCarrinho(${p.id})">
-            <img src="${p.img}" class="product-img" onerror="this.src='https://via.placeholder.com/150?text=Pastel'">
+        <div class="product-card" role="button" tabindex="0" aria-label="Adicionar ${p.nome}, R$ ${p.preco.toFixed(2).replace(".", ",")}, à sacola" onclick="adicionarAoCarrinho(${p.id})">
+            <img src="${p.img}" class="product-img" alt="" onerror="this.onerror=null;this.src='./assets/pastel-1.jpg'">
             <div class="product-info">
                 <h3>${p.nome}</h3>
-                <p class="product-price">R$ ${p.preco.toFixed(2)}</p>
+                <p class="product-price">R$ ${p.preco.toFixed(2).replace(".", ",")}</p>
             </div>
         </div>
     `,
@@ -116,7 +127,7 @@ const renderCategorias = () => {
   nav.innerHTML = DATA.categorias
     .map(
       (cat) => `
-        <div class="cat-item ${cat.id === "todos" ? "active" : ""}" data-category="${cat.id}">
+        <div class="cat-item ${cat.id === "todos" ? "active" : ""}" data-category="${cat.id}" role="button" tabindex="0" aria-pressed="${cat.id === "todos"}">
             <div class="cat-img-wrapper">
                 <span style="font-size: 2rem;">${cat.icone}</span>
             </div>
@@ -132,20 +143,26 @@ const setupEventListeners = () => {
   document.querySelector(".category-nav").addEventListener("click", (e) => {
     const item = e.target.closest(".cat-item");
     if (item) {
-      document
-        .querySelectorAll(".cat-item")
-        .forEach((el) => el.classList.remove("active"));
+      document.querySelectorAll(".cat-item").forEach((el) => {
+        el.classList.remove("active");
+        el.setAttribute("aria-pressed", "false");
+      });
       item.classList.add("active");
+      item.setAttribute("aria-pressed", "true");
       renderProdutos(item.dataset.category);
     }
+  });
+  document.addEventListener("keydown", (e) => {
+    const alvo = e.target.closest && e.target.closest(".cat-item, .product-card");
+    if (!alvo || (e.key !== "Enter" && e.key !== " ")) return;
+    e.preventDefault();
+    alvo.click();
   });
 };
 
 const adicionarAoCarrinho = (id) => {
   const produto = DATA.produtos.find((p) => p.id === id);
   if (produto) {
-    carrinho.itens.push(produto);
-    carrinho.total += produto.preco;
-    alert(`${produto.nome} adicionado! Total: R$ ${carrinho.total.toFixed(2)}`);
+    sacola.adicionar({ id: produto.id, nome: produto.nome, preco: produto.preco });
   }
 };

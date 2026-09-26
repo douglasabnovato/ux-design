@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt_BR">
+<html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -21,8 +21,18 @@
     />
     <link rel="shortcut icon" href="./public/favicon.ico" />
     <link rel="manifest" href="./public/site.webmanifest" />
-  </head>
+    <link rel="stylesheet" href="../../shared/lt-base.css" />
+  <link rel="stylesheet" href="../../shared/lt-feedback.css" />
+  <script src="../../shared/lt-feedback.js"></script>
+  <meta name="description" content="Site institucional para clínica de fisioterapia, com apresentação de especialidades, proposta comercial e agendamento via WhatsApp." />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Fisio Saúde · UX Design" />
+  <meta property="og:description" content="Site institucional para clínica de fisioterapia, com apresentação de especialidades, proposta comercial e agendamento via WhatsApp." />
+  <meta property="og:url" content="https://douglasabnovato.github.io/ux-design/projects/saude/" />
+  <meta property="og:image" content="https://douglasabnovato.github.io/ux-design/assets/saude.jpg" />
+</head>
   <body>
+    <h1 class="lt-sr-only">Fisio Saúde: clínica de fisioterapia</h1>
     <header id="header">
       <nav class="container">
         <a class="logo" href="#">Fisio<span>Saúde</span></a>
@@ -63,8 +73,8 @@
             </p>
             <a
               class="button"
-              href="https://calendar.google.com/calendar/embed?src=c_cmfu8orfv79vno3ak8jr2dft1s%40group.calendar.google.com&ctz=America%2FSao_Paulo"
-              target="_blank"
+              href="#contact"
+              data-agendar
               >Agendar um horário</a
             >
           </div>
@@ -430,7 +440,7 @@
               >, queremos tirar suas dúvidas, ouvir suas críticas e sugestões.
             </p>
             <a
-              href="https://api.whatsapp.com/send?phone=+5532987104014&text=Oi FisioSaúde! Gostaria de agendar uma consulta."
+              href="https://api.whatsapp.com/send?phone=5532988367667&text=Oi FisioSaúde! Gostaria de agendar uma consulta."
               class="button"
               target="_blank"
               ><i class="icon-whatsapp"></i> Entrar em contato</a
@@ -440,7 +450,7 @@
             <ul class="grid">
               <li>
                 <i class="icon-phone"></i>Telefone (32) 30317777 -
-                Celular/Whatsapp +55 (32) 987104014
+                Celular/WhatsApp (32) 98836-7667
               </li>
               <li>
                 <a href="https://goo.gl/maps/EDCCxM5ktXK4nASe8" target="_blank">
@@ -485,6 +495,7 @@
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="https://unpkg.com/scrollreveal"></script>
     <script src="./main.js"></script>
+  <script src="./interacoes.js"></script>
   <!-- learnTECH · volta ao catálogo UX Design -->
 <style>
 .lt-voltar{position:fixed;left:18px;bottom:18px;z-index:99998;display:inline-flex;align-items:center;gap:9px;

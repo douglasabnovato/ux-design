@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
+  <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
@@ -28,7 +29,16 @@
       display: none;
     }
   </style>
+  <link rel="stylesheet" href="../../shared/lt-base.css" />
+  <meta name="description" content="Portal de uma cafeteria com identidade própria, storytelling do grão e navegação responsiva." />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Our Coffee · UX Design" />
+  <meta property="og:description" content="Portal de uma cafeteria com identidade própria, storytelling do grão e navegação responsiva." />
+  <meta property="og:url" content="https://douglasabnovato.github.io/ux-design/projects/our-coffee/" />
+  <meta property="og:image" content="https://douglasabnovato.github.io/ux-design/assets/our-coffee.jpg" />
+  </head>
   <body>
+    <h1 class="lt-sr-only">Café da Jéssica</h1>
     <div class="w3-top">
       <div class="w3-row w3-padding w3-black">
         <div class="w3-col s3">
@@ -79,7 +89,7 @@
             </p>
             <p>Júlia Wolf</p>
           </div>
-          <img
+          <img alt="Coffeeshop"
             src="./assets/coffeeshop.jpg"
             style="width: 100%; max-width: 1000px"
             class="w3-margin-top"
@@ -149,7 +159,7 @@
             <h5>Soda</h5>
             <p class="w3-text-grey">Coca-Cola, Sprite, Fanta, etc 2.50</p>
           </div>
-          <img
+          <img alt="Coffeehouse"
             src="./assets/coffeehouse.jpg"
             style="width: 100%; max-width: 1000px; margin-top: 32px"
           />
@@ -161,7 +171,7 @@
             <span class="w3-tag w3-wide">ONDE NOS ENCONTRAR</span>
           </h5>
           <p>Encontre-nos em Rua Maravilhosa, 101.</p>
-          <img src="./assets/google-maps.jpg" class="w3-image" style="width: 100%" />
+          <img alt="Google maps" src="./assets/google-maps.jpg" class="w3-image" style="width: 100%" />
           <p>
             <span class="w3-tag">FYI!</span> Oferecemos serviço completo de buffet para qualquer evento, grande ou pequeno. Nós entendemos suas necessidades e vamos atender a comida para satisfazer os maiores critérios de todos eles, tanto na aparência quanto no sabor.
           </p>
@@ -171,7 +181,7 @@
           </p>
           <form action="/action_page.php" target="_blank">
             <p>
-              <input
+              <input aria-label="Qual é o seu nome"
                 class="w3-input w3-padding-16 w3-border"
                 type="text"
                 placeholder="Qual é o seu nome"
@@ -180,7 +190,7 @@
               />
             </p>
             <p>
-              <input
+              <input aria-label="Quantas pessoas"
                 class="w3-input w3-padding-16 w3-border"
                 type="number"
                 placeholder="Quantas pessoas"
@@ -189,7 +199,7 @@
               />
             </p>
             <p>
-              <input
+              <input aria-label="Data e hora da reserva"
                 class="w3-input w3-padding-16 w3-border"
                 type="datetime-local"
                 placeholder="Data e hora da reserva"
@@ -199,7 +209,7 @@
               />
             </p>
             <p>
-              <input
+              <input aria-label="Mensagem \ Requisitos especiais"
                 class="w3-input w3-padding-16 w3-border"
                 type="text"
                 placeholder="Mensagem \ Requisitos especiais"

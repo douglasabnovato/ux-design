@@ -70,7 +70,7 @@ function renderProducts() {
                         <span style="font-size: 1.2rem; color: var(--primary-purple);">R$</span>
                         <span class="price">${product.price.toFixed(2)}</span>
                     </div>
-                    <button class="btn-details" onclick="alert('Item: ${product.name}')">Detalhes</button>
+                    <button class="btn-details" type="button" aria-label="Ver detalhes de ${product.name}" onclick="abrirDetalhes('${product.id}')">Detalhes</button>
                 </div>
             </div>
         </article>`;
@@ -79,6 +79,60 @@ function renderProducts() {
 
   productsGrid.innerHTML = productsHTML;
 }
+
+/* Abre a ficha do café com origem, processo, notas e pedido por quantidade. */
+function abrirDetalhes(id) {
+  const cafe = learnTechDatabase.find((item) => item.id === id);
+  if (!cafe) return;
+  const d = cafe.details || {};
+  const ficha = document.createElement("div");
+  ficha.className = "ficha-cafe";
+  ficha.innerHTML = `
+    <p class="ficha-cafe__desc"></p>
+    <dl class="ficha-cafe__dados">
+      ${d.origin ? `<dt>Origem</dt><dd>${d.origin}</dd>` : ""}
+      ${d.process ? `<dt>Processo</dt><dd>${d.process}</dd>` : ""}
+      ${d.roast ? `<dt>Torra</dt><dd>${d.roast}</dd>` : ""}
+      ${d.sensory ? `<dt>Notas</dt><dd>${d.sensory.join(" • ")}</dd>` : ""}
+      ${cafe.methods ? `<dt>Preparo</dt><dd>${cafe.methods.join(", ")}</dd>` : ""}
+    </dl>
+    <form class="ficha-cafe__pedido" novalidate>
+      <label class="lt-campo">Quantidade (${cafe.unit || "unidade"})
+        <input type="number" name="quantidade" min="1" max="20" value="1" required>
+      </label>
+      <p class="ficha-cafe__total" aria-live="polite"></p>
+      <button type="submit" class="lt-botao lt-botao--principal">Pedir pelo WhatsApp</button>
+    </form>`;
+  ficha.querySelector(".ficha-cafe__desc").textContent = cafe.description;
+  const form = ficha.querySelector("form");
+  const qtd = form.querySelector("input");
+  const total = form.querySelector(".ficha-cafe__total");
+  const atualizar = () => {
+    const n = Math.max(0, Number(qtd.value) || 0);
+    total.textContent = `Total: ${LT.moeda(n * cafe.price)}`;
+  };
+  qtd.addEventListener("input", atualizar);
+  atualizar();
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const n = Number(qtd.value);
+    if (!Number.isInteger(n) || n < 1 || n > 20) {
+      LT.marcarErro(qtd, "Escolha de 1 a 20 unidades.");
+      qtd.focus();
+      return;
+    }
+    LT.marcarErro(qtd, "");
+    const botao = form.querySelector("button");
+    LT.carregando(botao, true, "Preparando pedido…");
+    await LT.esperar(700);
+    LT.carregando(botao, false);
+    const link = LT.whatsapp(`Olá! Quero ${n}x ${cafe.name} (${cafe.unit || "un."}) — total ${LT.moeda(n * cafe.price)}.`);
+    LT.sucesso(form, { titulo: "Pedido pronto!", texto: `Abrimos o WhatsApp com ${n}x ${cafe.name}. É só enviar.`, link });
+  });
+  LT.modal({ titulo: `${cafe.name} · ${cafe.category}`, conteudo: ficha });
+}
+
+window.abrirDetalhes = abrirDetalhes;
 
 // --- 4. CARROSSEL ORBITAL ---
 

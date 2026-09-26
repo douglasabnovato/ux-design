@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -39,7 +39,14 @@
       src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" 
       integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" 
       referrerpolicy="no-referrer"></script>
-  </head>
+    <link rel="stylesheet" href="../../shared/lt-base.css" />
+  <meta name="description" content="SPA de e-commerce e catálogo de moda com visualização de detalhes, sacola de favoritos, geração de orçamento em PDF e paginação dinâmica." />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Catálogo Virtual de Roupas · UX Design" />
+  <meta property="og:description" content="SPA de e-commerce e catálogo de moda com visualização de detalhes, sacola de favoritos, geração de orçamento em PDF e paginação dinâmica." />
+  <meta property="og:url" content="https://douglasabnovato.github.io/ux-design/projects/puro-estilo/" />
+  <meta property="og:image" content="https://douglasabnovato.github.io/ux-design/assets/puro-estilo.jpg" />
+</head>
   <body>
     <header class="sticky">
        <a href="#" class="logo"
@@ -640,7 +647,7 @@
           </div>
           <div class="col-2">
             <p>Exclusivamente personalizado para a Puro Estilo</p>
-            <h1>Smart Band</h1>
+            <h1 aria-level="2">Smart Band</h1>
             <small>A moda feminina é uma forma poderosa de expressão pessoal que evolui continuamente ao longo do tempo, refletindo não apenas as tendências estéticas, mas também as mudanças sociais e culturais. Ela desempenha um papel fundamental na vida das mulheres, permitindo que expressem sua individualidade, criatividade e autoconfiança. Neste texto, exploraremos a diversidade e a influência da moda feminina ao longo dos anos.</small><br/>
              <a class="btn" href="#">Buy now &#8594</a>
           </div>
@@ -671,7 +678,7 @@
           <div class="col-2"> 
             <div class="col-2">
               <p>Home / T-Shirt<span class="close">&times;</span></p>
-              <h1>Red by HRY</h1>
+              <h1 aria-level="2">Red by HRY</h1>
               <h4>$50.00</h4>
               <select title="size">
                 <option>Select Size</option>
@@ -681,7 +688,7 @@
                 <option>Medium</option>
                 <option>Small</option>
               </select>
-              <input placeholder="pedido em unidade" type="number" value="1">
+              <input aria-label="pedido em unidade" placeholder="pedido em unidade" type="number" value="1">
               <a href="#" class="btn">Add S2</a>
               <h3>Product Details <i class="fa fa-indent"></i></h3>
               <br>

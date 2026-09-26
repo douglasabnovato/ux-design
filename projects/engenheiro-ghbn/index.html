@@ -9,6 +9,15 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=JetBrains+Mono:wght@400;700&display=swap"
         rel="stylesheet">
+  <link rel="stylesheet" href="../../shared/lt-base.css" />
+  <link rel="stylesheet" href="../../shared/lt-feedback.css" />
+  <script src="../../shared/lt-feedback.js"></script>
+  <meta name="description" content="Portfólio de engenharia civil com obras no Brasil e nos EUA, dossiê técnico em PDF e formulário de orçamento em etapas." />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Engenharia GHBN · UX Design" />
+  <meta property="og:description" content="Portfólio de engenharia civil com obras no Brasil e nos EUA, dossiê técnico em PDF e formulário de orçamento em etapas." />
+  <meta property="og:url" content="https://douglasabnovato.github.io/ux-design/projects/engenheiro-ghbn/" />
+  <meta property="og:image" content="https://douglasabnovato.github.io/ux-design/assets/engenheiro-ghbn.jpg" />
 </head>
 
 <body>
@@ -129,7 +138,7 @@
                 </div>
                 <div class="form-container">
                     <!-- Substitua o action="https://formspree.io/f/seu-id" quando configurar -->
-                    <form id="multiStepForm" action="https://formspree.io/f/seu-id" method="POST">
+                    <form id="multiStepForm">
 
                         <!-- Etapa 1: Localização -->
                         <div class="form-step active" data-step="1">
@@ -173,13 +182,13 @@
                             <span class="step-indicator">PASSO 03/03 // CREDENCIAIS DE CONTATO</span>
                             <h4>Informe seus dados para contato técnico</h4>
                             <div class="input-group">
-                                <input type="text" name="nome" placeholder="Seu Nome / Empresa" required>
+                                <input aria-label="Seu Nome / Empresa" type="text" name="nome" placeholder="Seu Nome / Empresa" required>
                             </div>
                             <div class="input-group">
-                                <input type="email" name="email" placeholder="E-mail Profissional" required>
+                                <input aria-label="E-mail Profissional" type="email" name="email" placeholder="E-mail Profissional" required>
                             </div>
                             <div class="input-group">
-                                <input type="tel" name="telefone" placeholder="Telefone / WhatsApp" required>
+                                <input aria-label="Telefone / WhatsApp" type="tel" name="telefone" placeholder="Telefone / WhatsApp" required>
                             </div>
                             <div class="btn-group">
                                 <button type="button" class="btn-prev" onclick="prevStep(3)">&larr; VOLTAR</button>
@@ -199,7 +208,7 @@
     </footer>
 
     <!-- BOTÃO FLUTUANTE DE WHATSAPP (FIXO À DIREITA) -->
-    <a href="https://wa.me/55SEUNUMEROAQUI?text=Olá,%20Gostaria%20de%20falar%20sobre%20um%20projeto%20de%20engenharia."
+    <a href="https://wa.me/5532988367667?text=Olá,%20Gostaria%20de%20falar%20sobre%20um%20projeto%20de%20engenharia."
         class="whatsapp-float" target="_blank" rel="noopener noreferrer" title="Fale via WhatsApp">
         <svg viewBox="0 0 24 24" width="28" height="28" stroke="currentColor" stroke-width="2" fill="none"
             stroke-linecap="round" stroke-linejoin="round">
@@ -210,6 +219,28 @@
     </a>
 
     <script src="script.js"></script>
+<!-- learnTECH · volta ao catálogo UX Design -->
+<style>
+.lt-voltar{position:fixed;left:18px;bottom:18px;z-index:99998;display:inline-flex;align-items:center;gap:9px;
+padding:11px 16px;border-radius:999px;background:rgba(10,14,39,.92);border:1px solid rgba(0,212,212,.42);
+color:#eaf0f7;text-decoration:none;font:700 14px/1 "Segoe UI",system-ui,-apple-system,Arial,sans-serif;
+box-shadow:0 12px 30px rgba(0,0,0,.34);backdrop-filter:blur(10px);
+transition:transform .2s ease,border-color .2s ease,background .2s ease;-webkit-font-smoothing:antialiased}
+.lt-voltar:hover{transform:translateY(-2px);border-color:#00d4d4;background:rgba(10,14,39,.98);color:#eaf0f7}
+.lt-voltar:focus-visible{outline:3px solid #00d4d4;outline-offset:3px}
+.lt-voltar__i{display:inline-grid;place-items:center;width:24px;height:24px;border-radius:999px;
+background:rgba(0,212,212,.16);color:#00d4d4;font-size:14px}
+@media (max-width:640px){.lt-voltar{left:12px;bottom:12px;padding:10px 13px;font-size:13px}
+.lt-voltar__t{display:none}}
+.lt-espaco{height:86px;flex:none;pointer-events:none}
+@media print{.lt-voltar,.lt-espaco{display:none}}
+</style>
+<div class="lt-espaco" aria-hidden="true"></div>
+<a class="lt-voltar" href="../../index.html" aria-label="Voltar ao catálogo UX Design">
+  <span class="lt-voltar__i" aria-hidden="true">&#8592;</span>
+  <span class="lt-voltar__t">Voltar ao portfólio</span>
+</a>
+<!-- fim · volta ao catálogo -->
 </body>
 
 </html>

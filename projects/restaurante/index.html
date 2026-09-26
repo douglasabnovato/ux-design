@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -12,8 +12,20 @@
     <link rel="manifest" href="./public/site.webmanifest">
     <link rel="shortcut icon" href="./public/favicon.ico">
     <title>Restaurante da Jéssica</title>
-  </head>
+    <link rel="stylesheet" href="../../shared/lt-base.css" />
+  <meta name="description" content="Site institucional para restaurante com design personalizado, foco em gastronomia, cardápio visual e experiência responsiva." />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Food · UX Design" />
+  <meta property="og:description" content="Site institucional para restaurante com design personalizado, foco em gastronomia, cardápio visual e experiência responsiva." />
+  <meta property="og:url" content="https://douglasabnovato.github.io/ux-design/projects/restaurante/" />
+  <meta property="og:image" content="https://douglasabnovato.github.io/ux-design/assets/restaurante.jpg" />
+  <style>
+    /* Ajuste de responsividade (lote 1): imagens nunca passam da largura da tela. */
+    img { max-width: 100%; height: auto; }
+  </style>
+</head>
   <body>
+    <h1 class="lt-sr-only">Restaurante da Jéssica</h1>
     <nav
       class="w3-sidebar w3-bar-block w3-card w3-top w3-xlarge w3-animate-left"
       style="display: none; z-index: 2; width: 40%; min-width: 300px"
@@ -172,7 +184,7 @@
           <h3>RECEITAS</h3>
           <ul class="w3-ul w3-hoverable">
             <li class="w3-padding-16">
-              <img
+              <img alt="Workshop"
                 src="./assets/images/workshop.jpg"
                 class="w3-left w3-margin-right"
                 style="width: 50px"
@@ -181,7 +193,7 @@
               <span>Arroz e bife</span>
             </li>
             <li class="w3-padding-16">
-              <img
+              <img alt="Gondol"
                 src="./assets/images/gondol.jpg"
                 class="w3-left w3-margin-right"
                 style="width: 50px"

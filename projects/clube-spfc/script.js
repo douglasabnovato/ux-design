@@ -130,17 +130,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function validateCurrentStep() {
-    const currentFields = Array.from(steps[currentStep].querySelectorAll("input, select, textarea"));
-    let valid = true;
-
-    currentFields.forEach((field) => {
-      if (!field.checkValidity()) {
-        valid = false;
-        field.reportValidity();
-      }
-    });
-
-    return valid;
+    return LT.validar(form, steps[currentStep]);
   }
 
   function nextStep() {
@@ -152,7 +142,7 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
-    form.submit();
+    form.requestSubmit();
   }
 
   function prevStep() {
@@ -165,10 +155,26 @@ document.addEventListener("DOMContentLoaded", () => {
   prevBtn.addEventListener("click", prevStep);
   nextBtn.addEventListener("click", nextStep);
 
-  form.addEventListener("submit", (event) => {
+  LT.limparAoDigitar(form);
+
+  form.addEventListener("submit", async (event) => {
     event.preventDefault();
     if (!validateCurrentStep()) return;
-    alert("Formulário enviado com sucesso!");
+    LT.carregando(nextBtn, true, "Enviando…");
+    await LT.esperar(1000);
+    LT.carregando(nextBtn, false);
+    LT.sucesso(form, {
+      titulo: "Cadastro concluído!",
+      texto: "Você já faz parte da campanha ABC da Construção + Tricolor. Os benefícios chegam no e-mail e no WhatsApp informados.",
+      detalhe: LT.resumo(form),
+      aoRecomecar: () => {
+        form.reset();
+        currentStep = 0;
+        updateWizard();
+      },
+      rotuloRecomecar: "Fazer novo cadastro",
+    });
+    LT.aviso("Cadastro enviado com sucesso.", "sucesso");
   });
 
   updateWizard();

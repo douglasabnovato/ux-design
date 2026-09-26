@@ -30,6 +30,10 @@
   <link rel="icon" href="/favicon.ico" />
 
   <link rel="stylesheet" href="./css/style.css" />
+  <link rel="stylesheet" href="../../shared/lt-base.css" />
+  <link rel="stylesheet" href="../../shared/lt-feedback.css" />
+  <script src="../../shared/lt-feedback.js"></script>
+  <meta name="description" content="Landing page de personal trainer com planos, galeria de treinos, depoimentos, teste A/B do título e contato por WhatsApp e formulário." />
 </head>
 
 <body>
@@ -171,19 +175,19 @@
     <div class="stack-container" id="campaignStack">
 
       <!-- Card 1 -->
-      <div class="stack-card active" onclick="bringToFront(this)">
+      <div class="stack-card active" role="button" tabindex="0" aria-label="Trazer campanha 1 para a frente" onclick="bringToFront(this)">
         <img src="./assets/imgs/anuncio-1.png" alt="Anúncio 1" />
         <div class="stack-badge">Campanha 01</div>
       </div>
 
       <!-- Card 2 -->
-      <div class="stack-card behind-1" onclick="bringToFront(this)">
+      <div class="stack-card behind-1" role="button" tabindex="0" aria-label="Trazer campanha 2 para a frente" onclick="bringToFront(this)">
         <img src="./assets/imgs/anuncio-2.png" alt="Anúncio 2" />
         <div class="stack-badge">Campanha 02</div>
       </div>
 
       <!-- Card 3 -->
-      <div class="stack-card behind-2" onclick="bringToFront(this)">
+      <div class="stack-card behind-2" role="button" tabindex="0" aria-label="Trazer campanha 3 para a frente" onclick="bringToFront(this)">
         <img src="./assets/imgs/anuncio-3.png" alt="Anúncio 3" />
         <div class="stack-badge">Campanha 03</div>
       </div>
@@ -658,10 +662,10 @@
         <p class="muted">
           Preencha o formulário ou chame no WhatsApp para uma avaliação gratuita.
         </p>
-        <form id="contactForm" action="https://formspree.io/f/xzzazdkp" method="POST" onsubmit="handleContact(event)">
+        <form id="contactForm">
           <div>
             <label for="nome">Nome</label>
-            <input id="nome" name="nome" required placeholder="Seu nome" />
+            <input id="nome" name="nome" required minlength="3" autocomplete="name" placeholder="Seu nome" />
           </div>
           <div>
             <label for="email">Email</label>
@@ -669,7 +673,7 @@
           </div>
           <div>
             <label for="msg">Mensagem</label>
-            <textarea id="msg" name="mensagem" rows="4" placeholder="Conte seu objetivo"></textarea>
+            <textarea id="msg" name="mensagem" rows="4" required placeholder="Conte seu objetivo"></textarea>
           </div>
           <button class="cta" type="submit">Enviar</button>
         </form>
@@ -774,6 +778,29 @@
 
   <!-- Script Principal Modular -->
   <script type="module" src="./script/script.js"></script>
+  <script src="./interacoes.js"></script>
+<!-- learnTECH · volta ao catálogo UX Design -->
+<style>
+.lt-voltar{position:fixed;left:18px;bottom:18px;z-index:99998;display:inline-flex;align-items:center;gap:9px;
+padding:11px 16px;border-radius:999px;background:rgba(10,14,39,.92);border:1px solid rgba(0,212,212,.42);
+color:#eaf0f7;text-decoration:none;font:700 14px/1 "Segoe UI",system-ui,-apple-system,Arial,sans-serif;
+box-shadow:0 12px 30px rgba(0,0,0,.34);backdrop-filter:blur(10px);
+transition:transform .2s ease,border-color .2s ease,background .2s ease;-webkit-font-smoothing:antialiased}
+.lt-voltar:hover{transform:translateY(-2px);border-color:#00d4d4;background:rgba(10,14,39,.98);color:#eaf0f7}
+.lt-voltar:focus-visible{outline:3px solid #00d4d4;outline-offset:3px}
+.lt-voltar__i{display:inline-grid;place-items:center;width:24px;height:24px;border-radius:999px;
+background:rgba(0,212,212,.16);color:#00d4d4;font-size:14px}
+@media (max-width:640px){.lt-voltar{left:12px;bottom:12px;padding:10px 13px;font-size:13px}
+.lt-voltar__t{display:none}}
+.lt-espaco{height:86px;flex:none;pointer-events:none}
+@media print{.lt-voltar,.lt-espaco{display:none}}
+</style>
+<div class="lt-espaco" aria-hidden="true"></div>
+<a class="lt-voltar" href="../../index.html" aria-label="Voltar ao catálogo UX Design">
+  <span class="lt-voltar__i" aria-hidden="true">&#8592;</span>
+  <span class="lt-voltar__t">Voltar ao portfólio</span>
+</a>
+<!-- fim · volta ao catálogo -->
 </body>
 
 </html>

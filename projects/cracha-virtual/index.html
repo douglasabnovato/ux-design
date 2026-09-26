@@ -36,7 +36,16 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
     />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
-  </head>
+    <link rel="stylesheet" href="../../shared/lt-base.css" />
+  <link rel="stylesheet" href="../../shared/lt-feedback.css" />
+  <script src="../../shared/lt-feedback.js"></script>
+  <meta name="description" content="Gerador de crachá digital personalizado." />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Crachá Virtual · UX Design" />
+  <meta property="og:description" content="Gerador de crachá digital personalizado." />
+  <meta property="og:url" content="https://douglasabnovato.github.io/ux-design/projects/cracha-virtual/" />
+  <meta property="og:image" content="https://douglasabnovato.github.io/ux-design/assets/cracha-virtual.jpg" />
+</head>
   <body>
     <main id="app-container">
       <section class="config-panel">
@@ -103,7 +112,7 @@
             <h3>Redes Sociais</h3>
             <div class="input-group icon-input">
               <i class="fa-brands fa-github"></i>
-              <input
+              <input aria-label="Username GitHub"
                 type="text"
                 id="inputGithub"
                 placeholder="Username GitHub"
@@ -111,7 +120,7 @@
             </div>
             <div class="input-group icon-input">
               <i class="fa-brands fa-linkedin"></i>
-              <input
+              <input aria-label="Username LinkedIn"
                 type="text"
                 id="inputLinkedin"
                 placeholder="Username LinkedIn"
@@ -119,7 +128,7 @@
             </div>
             <div class="input-group icon-input">
               <i class="fa-brands fa-instagram"></i>
-              <input
+              <input aria-label="Username Instagram"
                 type="text"
                 id="inputInstagram"
                 placeholder="Username Instagram"
