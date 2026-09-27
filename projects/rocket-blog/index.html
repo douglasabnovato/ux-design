@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
@@ -8,169 +8,138 @@
     <link rel="shortcut icon" href="./assets/robot.svg" type="image/x-icon">
     <link rel="stylesheet" href="./style.css">
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>  
-    <title>Devs</title>
+    <title>Blog Devs · guias e dicas de carreira</title>
   <link rel="stylesheet" href="../../shared/lt-base.css" />
+  <link rel="stylesheet" href="../../shared/lt-feedback.css" />
+  <script src="../../shared/lt-feedback.js"></script>
   <meta name="description" content="Página de blog com tipografia cuidada e leitura confortável." />
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Rocket Blog · UX Design" />
   <meta property="og:description" content="Página de blog com tipografia cuidada e leitura confortável." />
   <meta property="og:url" content="https://douglasabnovato.github.io/ux-design/projects/rocket-blog/" />
   <meta property="og:image" content="https://douglasabnovato.github.io/ux-design/assets/rocket-blog.jpg" />
+    <style>
+        :where(h1, h3).titulo { margin: 0; font-size: inherit; font-weight: inherit; }
+        .artigo__link { color: inherit; text-decoration: none; }
+        .artigo__link:hover { text-decoration: underline; }
+        .veja-mais { display: inline-flex; align-items: center; gap: 12px; background: none; border: 0; font: inherit; color: inherit; cursor: pointer; }
+        nav ul a { color: inherit; text-decoration: none; }
+        nav a.logo { display: block; }
+        .busca-status { min-height: 1.2em; margin-bottom: 12px; }
+        .artigo[hidden] { display: none !important; }
+        img { max-width: 100%; }
+    </style>
 </head>
 
 <body>
-
     <header>
-        <nav>
-            <div class="logo">
+        <nav aria-label="Principal">
+            <a class="logo" href="#inicio" aria-label="Blog Rocket, início">
                 <img src="./assets/logo.svg" alt="">
-            </div>  
+            </a>
             <ul>
-                <li>Home</li>
-                <li>Sobre</li>
-                <li>Categorias</li>
-                <li>Contato</li>
+                <li><a href="#inicio">Início</a></li>
+                <li><a href="#sobre" data-sobre>Sobre</a></li>
+                <li><a href="#posts">Categorias</a></li>
+                <li><a href="#contato">Contato</a></li>
             </ul>
-            <form class="search" action="/action_page.php">
-                <input aria-label="Buscar" type="text" placeholder="Buscar" name="search">
-                <button type="submit"></button>
+            <form class="search" id="form-busca" role="search" novalidate>
+                <input aria-label="Buscar artigos" type="search" placeholder="Buscar" name="search" id="busca">
+                <button type="submit" aria-label="Buscar"></button>
             </form>
         </nav>
     </header>
-
-    <main>
-
+    <main id="inicio">
         <div class="home">
-
             <div class="container">
-
                 <div class="text-group">
-                    <div class="titulo">
-                        Veja o guia definitivo para conquistar seus objetivos como DEV em 2022
-                    </div>
+                    <h1 class="titulo">
+                        Veja o guia definitivo para conquistar seus objetivos como DEV em 2026
+                    </h1>
                     <div class="texto">
-                        <div class="paragrafo">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nibh nibh eu in aliquet ut
-                            adipiscing
-                            neque. Sed volutpat aenean sit vitae, sed tristique placerat hac. </div>
+                        <p class="paragrafo">
+                            Um plano em 12 semanas para estudar com constância, montar projetos de portfólio e se preparar para entrevistas técnicas.</p>
                         <div class="link">
-                            <span>Veja mais</span><a href="#"><img src="./assets/arrow-right.svg" alt=""></a>
+                            <button type="button" class="veja-mais" id="btn-guia">Veja mais <img src="./assets/arrow-right.svg" alt=""></button>
                         </div>
                     </div>
                 </div>
-
                 <div class="feature-image">
-                    <img src="./images/featured-image.png" alt="">
+                    <img src="./images/featured-image.png" alt="Pessoa programando em um notebook">
                 </div>
-
             </div>
-
-            <div class="content">
-
+            <div class="content" id="posts">
+                <h2 class="lt-sr-only">Artigos recentes</h2>
+                <p class="busca-status" id="busca-status" role="status"></p>
                 <div class="blog">
-
                     <div class="post-highlights">
-
-                        <div class="post-top">
-                            <img src="./images/post-1.png" alt="">
-                            <div class="data">Janeiro 04, 2022</div>
-                            <div class="titulo">
-                                Começando no ReactJS em 2022
-                            </div>
-                            <div class="texto">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nibh nibh eu in
-                                aliquet ut adipiscing neque. Sed volutpat aenean sit vitae, sed tristique nibh nibh eu
-                                in aliquet ut adipiscing neque. Sed volutpat aenean sit vitae, sed tristique. Sed
-                                volutpat aenean.
-                            </div>
-                        </div>
-
+                        <article class="post-top artigo" data-tags="react front-end javascript" data-id="0">
+                            <img src="./images/post-1.png" alt="" loading="lazy">
+                            <time class="data" datetime="2026-01-04">4 de janeiro de 2026</time>
+                            <h3 class="titulo"><a href="#post-0" class="artigo__link">Começando no ReactJS em 2026</a></h3>
+                            <p class="texto">Componentes, estado e hooks explicados com um projeto pequeno: uma lista de tarefas com filtros e mensagens de erro claras.</p>
+                        </article>
                         <div class="post-side">
-                            <div class="side">
-                                <div class="data">Janeiro 04, 2022</div>
-                                <div class="titulo">
-                                    Conheça as principais técnicas para conseguir uma vaga internacional
-                                    em programação
-                                </div>
-                                <div class="texto">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nibh nibh eu
-                                    in aliquet ut adipiscing neque. Sed volutpat aenean sit vitae, sed tristique.
-                                </div>
-                            </div>
-
-                            <div class="side">
-                                <div class="data">Janeiro 04, 2022</div>
-                                <div class="titulo">
-                                    Veja a evolução do Front-end na prática
-                                </div>
-                                <div class="texto">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nibh nibh eu in aliquet ut
-                                    adipiscing neque.
-                                </div>
-                            </div>
+                            <article class="side artigo" data-tags="carreira vaga internacional ingles" data-id="1">
+                            
+                            <time class="data" datetime="2026-01-11">11 de janeiro de 2026</time>
+                            <h3 class="titulo"><a href="#post-1" class="artigo__link">Conheça as principais técnicas para conseguir uma vaga internacional em programação</a></h3>
+                            <p class="texto">Inglês técnico, portfólio em inglês e entrevistas assíncronas: o que muda no processo seletivo de fora.</p>
+                        </article>
+                            <article class="side artigo" data-tags="front-end html css historia" data-id="2">
+                            
+                            <time class="data" datetime="2026-01-18">18 de janeiro de 2026</time>
+                            <h3 class="titulo"><a href="#post-2" class="artigo__link">Veja a evolução do Front-end na prática</a></h3>
+                            <p class="texto">Do HTML estático aos frameworks: como a mesma tela evoluiu em cinco versões.</p>
+                        </article>
                         </div>
-
                     </div>
-
                     <div class="posts">
-
-                        <div class="post">
-                            <img src="./images/post-2.png" alt="">
-                            <div class="data">Janeiro 04, 2022</div>
-                            <div class="titulo">10 dicas para conseguir a vaga desejada</div>
-                            <div class="texto">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nibh nibh eu in
-                                aliquet ut adipiscing neque. Sed volutpat aenean sit vitae, sed tristique. </div>
-                        </div>
-
-                        <div class="post">
-                            <img src="./images/post-3.png" alt="">
-                            <div class="data">Janeiro 04, 2022</div>
-                            <div class="titulo">Deixe seu código mais semântico com essas dicas</div>
-                            <div class="texto">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nibh nibh eu in
-                                aliquet ut adipiscing neque. Sed volutpat aenean sit vitae, sed tristique. </div>
-                        </div>
-
-                        <div class="post">
-                            <img src="./images/post-4.png" alt="">
-                            <div class="data">Janeiro 04, 2022</div>
-                            <div class="titulo">Use essas dicas nas suas aplicações mobile</div>
-                            <div class="texto">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nibh nibh eu in
-                                aliquet ut adipiscing neque. Sed volutpat aenean sit vitae, sed tristique. </div>
-                        </div>
-
+                        <article class="post artigo" data-tags="carreira vaga curriculo" data-id="3">
+                            <img src="./images/post-2.png" alt="" loading="lazy">
+                            <time class="data" datetime="2026-01-25">25 de janeiro de 2026</time>
+                            <h3 class="titulo"><a href="#post-3" class="artigo__link">10 dicas para conseguir a vaga desejada</a></h3>
+                            <p class="texto">Currículo objetivo, projetos com README e perguntas certas na entrevista.</p>
+                        </article>
+                        <article class="post artigo" data-tags="html semantica acessibilidade" data-id="4">
+                            <img src="./images/post-3.png" alt="" loading="lazy">
+                            <time class="data" datetime="2026-02-01">1 de fevereiro de 2026</time>
+                            <h3 class="titulo"><a href="#post-4" class="artigo__link">Deixe seu código mais semântico com essas dicas</a></h3>
+                            <p class="texto">Tags certas, títulos em ordem e rótulos em formulários melhoram SEO e acessibilidade.</p>
+                        </article>
+                        <article class="post artigo" data-tags="mobile ux react native" data-id="5">
+                            <img src="./images/post-4.png" alt="" loading="lazy">
+                            <time class="data" datetime="2026-02-08">8 de fevereiro de 2026</time>
+                            <h3 class="titulo"><a href="#post-5" class="artigo__link">Use essas dicas nas suas aplicações mobile</a></h3>
+                            <p class="texto">Alvos de toque maiores, menos texto por tela e estados de carregamento visíveis.</p>
+                        </article>
                     </div>
-
                 </div>
-
+                <div id="vazio-busca"></div>
             </div>
-
         </div>
-
     </main>
-
-    <footer>
-        <div class="social"> 
+    <footer id="contato">
+        <div class="social">
             <ul class="line">
                 <li class="instagram">
-                    <a href="https://www.instagram.com/douglasabnovato/" target="_blank">
-                        <i class="fa fa-instagram fa-2x"></i>
+                    <a href="https://www.instagram.com/douglasabnovato/" target="_blank" rel="noopener" aria-label="Instagram">
+                        <i class="fa fa-instagram fa-2x" aria-hidden="true"></i>
                     </a>
                 </li>
                 <li class="github">
-                    <a href="https://github.com/douglasabnovato" target="_blank">
-                        <i class="fa fa-github fa-2x"></i>
+                    <a href="https://github.com/douglasabnovato" target="_blank" rel="noopener" aria-label="GitHub">
+                        <i class="fa fa-github fa-2x" aria-hidden="true"></i>
                     </a>
                 </li>
                 <li class="linkedin">
-                    <a href="https://www.linkedin.com/in/douglasabnovato/" target="_blank">
-                        <i class="fa fa-linkedin fa-2x"></i>
+                    <a href="https://www.linkedin.com/in/douglasabnovato/" target="_blank" rel="noopener" aria-label="LinkedIn">
+                        <i class="fa fa-linkedin fa-2x" aria-hidden="true"></i>
                     </a>
                 </li>
             </ul>
         </div>
-
     </footer>
-
     <script src="./script.js"></script>
 <!-- learnTECH · volta ao catálogo UX Design -->
 <style>

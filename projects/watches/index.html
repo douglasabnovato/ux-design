@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -23,8 +23,19 @@
     <!--=============== CSS ===============-->
     <link rel="stylesheet" href="assets/css/styles.css" />
 
-    <title>Watches</title>
+    <title>Horae Relógios · Nova coleção B720</title>
     <link rel="stylesheet" href="../../shared/lt-base.css" />
+  <link rel="stylesheet" href="../../shared/lt-feedback.css" />
+  <style>
+    .cart__close { border: 0; background: none; color: inherit; cursor: pointer; }
+    .cart__finalizar { width: 100%; margin-top: 1.25rem; justify-content: center; }
+    .cart__finalizar:disabled { opacity: .5; cursor: not-allowed; }
+    .cart__amount-box, .cart__amount-trash { border: 0; cursor: pointer; font: inherit; color: inherit; }
+    .cart__amount-trash { background: none; font-size: 1.25rem; }
+    .nav__shop { position: relative; }
+    .nav__shop-qtd { position: absolute; top: -6px; right: -10px; min-width: 18px; height: 18px; padding: 0 4px; border-radius: 9px; background: var(--first-color, #c49b2c); color: #fff; font: 700 .7rem/18px sans-serif; text-align: center; }
+  </style>
+  <script src="../../shared/lt-feedback.js"></script>
   <meta name="description" content="Conheça esse modelo de relógio." />
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Watches · UX Design" />
@@ -37,22 +48,22 @@
     <header class="header" id="header">
       <nav class="nav container">
         <a href="#" class="nav__logo">
-          <i class="bx bxs-watch nav__logo-icon"></i> Rolex
+          <i class="bx bxs-watch nav__logo-icon"></i> Horae
         </a>
 
         <div class="nav__menu" id="nav-menu">
           <ul class="nav__list">
             <li class="nav__item">
-              <a href="#home" class="nav__link active-link">Home</a>
+              <a href="#home" class="nav__link active-link">Início</a>
             </li>
             <li class="nav__item">
-              <a href="#featured" class="nav__link">Featured</a>
+              <a href="#featured" class="nav__link">Destaques</a>
             </li>
             <li class="nav__item">
-              <a href="#products" class="nav__link">Products</a>
+              <a href="#products" class="nav__link">Produtos</a>
             </li>
             <li class="nav__item">
-              <a href="#new" class="nav__link">New</a>
+              <a href="#new" class="nav__link">Novidades</a>
             </li>
           </ul>
 
@@ -78,97 +89,17 @@
 
     <!--==================== CART ====================-->
     <div class="cart" id="cart">
-      <i class="bx bx-x cart__close" id="cart-close"></i>
+      <button type="button" class="cart__close" id="cart-close" aria-label="Fechar sacola"><i class="bx bx-x"></i></button>
 
-      <h2 class="cart__title-center">My Cart</h2>
+      <h2 class="cart__title-center">Minha sacola</h2>
 
-      <div class="cart__container">
-        <article class="cart__card">
-          <div class="cart__box">
-            <img src="assets/img/featured1.png" alt="" class="cart__img" />
-          </div>
-
-          <div class="cart__details">
-            <h3 class="cart__title">Jazzmaster</h3>
-            <span class="cart__price">$1050</span>
-
-            <div class="cart__amount">
-              <div class="cart__amount-content">
-                <span class="cart__amount-box">
-                  <i class="bx bx-minus"></i>
-                </span>
-
-                <span class="cart__amount-number">1</span>
-
-                <span class="cart__amount-box">
-                  <i class="bx bx-plus"></i>
-                </span>
-              </div>
-
-              <i class="bx bx-trash-alt cart__amount-trash"></i>
-            </div>
-          </div>
-        </article>
-
-        <article class="cart__card">
-          <div class="cart__box">
-            <img src="assets/img/featured3.png" alt="" class="cart__img" />
-          </div>
-
-          <div class="cart__details">
-            <h3 class="cart__title">Rose Gold</h3>
-            <span class="cart__price">$850</span>
-
-            <div class="cart__amount">
-              <div class="cart__amount-content">
-                <span class="cart__amount-box">
-                  <i class="bx bx-minus"></i>
-                </span>
-
-                <span class="cart__amount-number">1</span>
-
-                <span class="cart__amount-box">
-                  <i class="bx bx-plus"></i>
-                </span>
-              </div>
-
-              <i class="bx bx-trash-alt cart__amount-trash"></i>
-            </div>
-          </div>
-        </article>
-
-        <article class="cart__card">
-          <div class="cart__box">
-            <img src="assets/img/new1.png" alt="" class="cart__img" />
-          </div>
-
-          <div class="cart__details">
-            <h3 class="cart__title">Longines Rose</h3>
-            <span class="cart__price">$980</span>
-
-            <div class="cart__amount">
-              <div class="cart__amount-content">
-                <span class="cart__amount-box">
-                  <i class="bx bx-minus"></i>
-                </span>
-
-                <span class="cart__amount-number">1</span>
-
-                <span class="cart__amount-box">
-                  <i class="bx bx-plus"></i>
-                </span>
-              </div>
-
-              <i class="bx bx-trash-alt cart__amount-trash"></i>
-            </div>
-          </div>
-        </article>
-      </div>
+      <div class="cart__container" aria-live="polite"></div>
 
       <div class="cart__prices">
-        <span class="cart__prices-item">3 items</span>
-        <span class="cart__prices-total">$2880</span>
+        <span class="cart__prices-item">0 itens</span>
+        <span class="cart__prices-total">R$ 0</span>
       </div>
+      <button type="button" class="button cart__finalizar">FINALIZAR PEDIDO</button>
     </div>
 
     <!--==================== MAIN ====================-->
@@ -177,7 +108,7 @@
       <section class="home" id="home">
         <div class="home__container container grid">
           <div class="home__img-bg">
-            <img src="assets/img/home.png" alt="" class="home__img" />
+            <img src="assets/img/home.png" alt="Relógio Horae B720" class="home__img" />
           </div>
 
           <div class="home__social">
@@ -204,23 +135,22 @@
             </a>
           </div>
 
-          <div class="home__data">
+          <div class="home__data" data-nome="Horae B720">
             <h1 class="home__title">
-              NEW WATCH <br />
-              COLLECTIONS B720
+              NOVA COLEÇÃO <br />
+              HORAE B720
             </h1>
             <p class="home__description">
-              Latest arrival of the new imported watches of the B720 series,
-              with a modern and resistant design.
+              Recém-chegados da série B720: caixa em aço, vidro de safira e design moderno feito para durar.
             </p>
-            <span class="home__price">$1245</span>
+            <span class="home__price">R$ 1.245</span>
 
             <div class="home__btns">
               <a href="#" class="button button--gray button--small">
-                Discover
+                Conhecer
               </a>
 
-              <button class="button home__button">ADD TO CART</button>
+              <button class="button home__button">ADICIONAR À SACOLA</button>
             </div>
           </div>
         </div>
@@ -228,46 +158,46 @@
 
       <!--==================== FEATURED ====================-->
       <section class="featured section container" id="featured">
-        <h2 class="section__title">Featured</h2>
+        <h2 class="section__title">Destaques</h2>
 
         <div class="featured__container grid">
           <article class="featured__card">
-            <span class="featured__tag">Sale</span>
+            <span class="featured__tag">Oferta</span>
 
-            <img src="assets/img/featured1.png" alt="" class="featured__img" />
+            <img src="assets/img/featured1.png" alt="Relógio" class="featured__img" loading="lazy" />
 
             <div class="featured__data">
-              <h3 class="featured__title">Jazzmaster</h3>
-              <span class="featured__price">$1050</span>
+              <h3 class="featured__title">Aurora</h3>
+              <span class="featured__price">R$ 1.050</span>
             </div>
 
-            <button class="button featured__button">ADD TO CART</button>
+            <button class="button featured__button">ADICIONAR À SACOLA</button>
           </article>
 
           <article class="featured__card">
-            <span class="featured__tag">Sale</span>
+            <span class="featured__tag">Oferta</span>
 
-            <img src="assets/img/featured2.png" alt="" class="featured__img" />
+            <img src="assets/img/featured2.png" alt="Relógio" class="featured__img" loading="lazy" />
 
             <div class="featured__data">
-              <h3 class="featured__title">Ingersoll</h3>
-              <span class="featured__price">$250</span>
+              <h3 class="featured__title">Meridiano</h3>
+              <span class="featured__price">R$ 250</span>
             </div>
 
-            <button class="button featured__button">ADD TO CART</button>
+            <button class="button featured__button">ADICIONAR À SACOLA</button>
           </article>
 
           <article class="featured__card">
-            <span class="featured__tag">Sale</span>
+            <span class="featured__tag">Oferta</span>
 
-            <img src="assets/img/featured3.png" alt="" class="featured__img" />
+            <img src="assets/img/featured3.png" alt="Relógio" class="featured__img" loading="lazy" />
 
             <div class="featured__data">
-              <h3 class="featured__title">Rose gold</h3>
-              <span class="featured__price">$890</span>
+              <h3 class="featured__title">Rosé Dourado</h3>
+              <span class="featured__price">R$ 890</span>
             </div>
 
-            <button class="button featured__button">ADD TO CART</button>
+            <button class="button featured__button">ADICIONAR À SACOLA</button>
           </article>
         </div>
       </section>
@@ -276,23 +206,22 @@
       <section class="story section container">
         <div class="story__container grid">
           <div class="story__data">
-            <h2 class="section__title story__section-title">Our Story</h2>
+            <h2 class="section__title story__section-title">Nossa história</h2>
 
-            <h1 class="story__title">
-              Inspirational Watch of <br />
-              this year
+            <h1 class="story__title" aria-level="2">
+              O relógio que inspira <br />
+              este ano
             </h1>
 
             <p class="story__description">
-              The latest and modern watches of this year, is available in
-              various presentations in this store, discover them now.
+              Os modelos mais novos da temporada, em várias versões de pulseira e mostrador. Conheça a coleção completa.
             </p>
 
-            <a href="#" class="button button--small">Discover</a>
+            <a href="#" class="button button--small">Conhecer</a>
           </div>
 
           <div class="story__images">
-            <img src="assets/img/story.png" alt="" class="story__img" />
+            <img src="assets/img/story.png" alt="Relógio em destaque da nossa história" class="story__img" />
             <div class="story__square"></div>
           </div>
         </div>
@@ -300,25 +229,14 @@
 
       <!--==================== PRODUCTS ====================-->
       <section class="products section container" id="products">
-        <h2 class="section__title">Products</h2>
+        <h2 class="section__title">Produtos</h2>
 
         <div class="products__container grid">
           <article class="products__card">
-            <img src="assets/img/product1.png" alt="" class="products__img" />
+            <img src="assets/img/product1.png" alt="Relógio" class="products__img" loading="lazy" />
 
-            <h3 class="products__title">Spirit rose</h3>
-            <span class="products__price">$1500</span>
-
-            <button class="products__button">
-              <i class="bx bx-shopping-bag"></i>
-            </button>
-          </article>
-
-          <article class="products__card">
-            <img src="assets/img/product2.png" alt="" class="products__img" />
-
-            <h3 class="products__title">Khaki pilot</h3>
-            <span class="products__price">$1350</span>
+            <h3 class="products__title">Spirit Rosé</h3>
+            <span class="products__price">R$ 1.500</span>
 
             <button class="products__button">
               <i class="bx bx-shopping-bag"></i>
@@ -326,21 +244,10 @@
           </article>
 
           <article class="products__card">
-            <img src="assets/img/product3.png" alt="" class="products__img" />
+            <img src="assets/img/product2.png" alt="Relógio" class="products__img" loading="lazy" />
 
-            <h3 class="products__title">Jubilee black</h3>
-            <span class="products__price">$870</span>
-
-            <button class="products__button">
-              <i class="bx bx-shopping-bag"></i>
-            </button>
-          </article>
-
-          <article class="products__card">
-            <img src="assets/img/product4.png" alt="" class="products__img" />
-
-            <h3 class="products__title">Fosil me3</h3>
-            <span class="products__price">$650</span>
+            <h3 class="products__title">Piloto Cáqui</h3>
+            <span class="products__price">R$ 1.350</span>
 
             <button class="products__button">
               <i class="bx bx-shopping-bag"></i>
@@ -348,10 +255,32 @@
           </article>
 
           <article class="products__card">
-            <img src="assets/img/product5.png" alt="" class="products__img" />
+            <img src="assets/img/product3.png" alt="Relógio" class="products__img" loading="lazy" />
 
-            <h3 class="products__title">Duchen</h3>
-            <span class="products__price">$950</span>
+            <h3 class="products__title">Jubileu Preto</h3>
+            <span class="products__price">R$ 870</span>
+
+            <button class="products__button">
+              <i class="bx bx-shopping-bag"></i>
+            </button>
+          </article>
+
+          <article class="products__card">
+            <img src="assets/img/product4.png" alt="Relógio" class="products__img" loading="lazy" />
+
+            <h3 class="products__title">Dunas ME3</h3>
+            <span class="products__price">R$ 650</span>
+
+            <button class="products__button">
+              <i class="bx bx-shopping-bag"></i>
+            </button>
+          </article>
+
+          <article class="products__card">
+            <img src="assets/img/product5.png" alt="Relógio" class="products__img" loading="lazy" />
+
+            <h3 class="products__title">Duquesa</h3>
+            <span class="products__price">R$ 950</span>
 
             <button class="products__button">
               <i class="bx bx-shopping-bag"></i>
@@ -370,12 +299,9 @@
                   <i class="bx bxs-quote-alt-left"></i>
                 </div>
                 <p class="testimonial__description">
-                  They are the best watches that one acquires, also they are
-                  always with the latest news and trends, with a very
-                  comfortable price and especially with the attention you
-                  receive, they are always attentive to your questions.
+                  Os melhores relógios que já comprei: sempre com as novidades da estação, preço justo e um atendimento que responde a todas as dúvidas com atenção.
                 </p>
-                <h3 class="testimonial__date">March 27. 2021</h3>
+                <h3 class="testimonial__date">27 de março de 2026</h3>
 
                 <div class="testimonial__perfil">
                   <img
@@ -387,7 +313,7 @@
                   <div class="testimonial__perfil-data">
                     <span class="testimonial__perfil-name">Lee Doe</span>
                     <span class="testimonial__perfil-detail"
-                      >Director of a company</span
+                      >Diretor de empresa</span
                     >
                   </div>
                 </div>
@@ -398,12 +324,9 @@
                   <i class="bx bxs-quote-alt-left"></i>
                 </div>
                 <p class="testimonial__description">
-                  They are the best watches that one acquires, also they are
-                  always with the latest news and trends, with a very
-                  comfortable price and especially with the attention you
-                  receive, they are always attentive to your questions.
+                  Os melhores relógios que já comprei: sempre com as novidades da estação, preço justo e um atendimento que responde a todas as dúvidas com atenção.
                 </p>
-                <h3 class="testimonial__date">March 27. 2021</h3>
+                <h3 class="testimonial__date">27 de março de 2026</h3>
 
                 <div class="testimonial__perfil">
                   <img
@@ -415,7 +338,7 @@
                   <div class="testimonial__perfil-data">
                     <span class="testimonial__perfil-name">Samantha Mey</span>
                     <span class="testimonial__perfil-detail"
-                      >Director of a company</span
+                      >Diretor de empresa</span
                     >
                   </div>
                 </div>
@@ -426,12 +349,9 @@
                   <i class="bx bxs-quote-alt-left"></i>
                 </div>
                 <p class="testimonial__description">
-                  They are the best watches that one acquires, also they are
-                  always with the latest news and trends, with a very
-                  comfortable price and especially with the attention you
-                  receive, they are always attentive to your questions.
+                  Os melhores relógios que já comprei: sempre com as novidades da estação, preço justo e um atendimento que responde a todas as dúvidas com atenção.
                 </p>
-                <h3 class="testimonial__date">March 27. 2021</h3>
+                <h3 class="testimonial__date">27 de março de 2026</h3>
 
                 <div class="testimonial__perfil">
                   <img
@@ -443,7 +363,7 @@
                   <div class="testimonial__perfil-data">
                     <span class="testimonial__perfil-name">Raul Zaman</span>
                     <span class="testimonial__perfil-detail"
-                      >Director of a company</span
+                      >Diretor de empresa</span
                     >
                   </div>
                 </div>
@@ -471,61 +391,61 @@
 
       <!--==================== NEW ====================-->
       <section class="new section container" id="new">
-        <h2 class="section__title">New Arrivals</h2>
+        <h2 class="section__title">Lançamentos</h2>
 
         <div class="new__container">
           <div class="swiper new-swiper">
             <div class="swiper-wrapper">
               <article class="new__card swiper-slide">
-                <span class="new__tag">New</span>
+                <span class="new__tag">Novo</span>
 
-                <img src="assets/img/new1.png" alt="" class="new__img" />
+                <img src="assets/img/new1.png" alt="Relógio" class="new__img" loading="lazy" />
 
                 <div class="new__data">
-                  <h3 class="new__title">Longines rose</h3>
-                  <span class="new__price">$980</span>
+                  <h3 class="new__title">Lumen Rosé</h3>
+                  <span class="new__price">R$ 980</span>
                 </div>
 
-                <button class="button new__button">ADD TO CART</button>
+                <button class="button new__button">ADICIONAR À SACOLA</button>
               </article>
 
               <article class="new__card swiper-slide">
-                <span class="new__tag">New</span>
+                <span class="new__tag">Novo</span>
 
-                <img src="assets/img/new2.png" alt="" class="new__img" />
+                <img src="assets/img/new2.png" alt="Relógio" class="new__img" loading="lazy" />
 
                 <div class="new__data">
-                  <h3 class="new__title">Jazzmaster</h3>
-                  <span class="new__price">$1150</span>
+                  <h3 class="new__title">Aurora</h3>
+                  <span class="new__price">R$ 1.150</span>
                 </div>
 
-                <button class="button new__button">ADD TO CART</button>
+                <button class="button new__button">ADICIONAR À SACOLA</button>
               </article>
 
               <article class="new__card swiper-slide">
-                <span class="new__tag">New</span>
+                <span class="new__tag">Novo</span>
 
-                <img src="assets/img/new3.png" alt="" class="new__img" />
+                <img src="assets/img/new3.png" alt="Relógio" class="new__img" loading="lazy" />
 
                 <div class="new__data">
-                  <h3 class="new__title">Dreyfuss gold</h3>
-                  <span class="new__price">$750</span>
+                  <h3 class="new__title">Dourado Real</h3>
+                  <span class="new__price">R$ 750</span>
                 </div>
 
-                <button class="button new__button">ADD TO CART</button>
+                <button class="button new__button">ADICIONAR À SACOLA</button>
               </article>
 
               <article class="new__card swiper-slide">
-                <span class="new__tag">New</span>
+                <span class="new__tag">Novo</span>
 
-                <img src="assets/img/new4.png" alt="" class="new__img" />
+                <img src="assets/img/new4.png" alt="Relógio" class="new__img" loading="lazy" />
 
                 <div class="new__data">
-                  <h3 class="new__title">Portuguese rose</h3>
-                  <span class="new__price">$1590</span>
+                  <h3 class="new__title">Lusitano Rosé</h3>
+                  <span class="new__price">R$ 1.590</span>
                 </div>
 
-                <button class="button new__button">ADD TO CART</button>
+                <button class="button new__button">ADICIONAR À SACOLA</button>
               </article>
             </div>
           </div>
@@ -537,23 +457,21 @@
         <div class="newsletter__bg grid">
           <div>
             <h2 class="newsletter__title">
-              Subscribe Our <br />
-              Newsletter
+              Assine nossa <br />
+              newsletter
             </h2>
             <p class="newsletter__description">
-              Don't miss out on your discounts. Subscribe to our email
-              newsletter to get the best offers, discounts, coupons, gifts and
-              much more.
+              Não perca os descontos. Receba ofertas, cupons, brindes e lançamentos direto no seu e-mail.
             </p>
           </div>
 
-          <form action="" class="newsletter__subscribe">
-            <input aria-label="Enter your email"
+          <form action="" class="newsletter__subscribe" novalidate>
+            <input aria-label="Seu e-mail"
               type="email"
-              placeholder="Enter your email"
+              placeholder="Seu e-mail" name="email" required
               class="newsletter__input"
             />
-            <button class="button">SUBSCRIBE</button>
+            <button class="button">ASSINAR</button>
           </form>
         </div>
       </section>
@@ -563,54 +481,54 @@
     <footer class="footer section">
       <div class="footer__container container grid">
         <div class="footer__content">
-          <h3 class="footer__title">Our information</h3>
+          <h3 class="footer__title">Nossa loja</h3>
 
           <ul class="footer__list">
-            <li>1234 - Peru</li>
-            <li>La Libertad 43210</li>
-            <li>123-456-789</li>
+            <li>Rua das Horas, 120 – Centro</li>
+            <li>Juiz de Fora – MG</li>
+            <li>(32) 98836-7667</li>
           </ul>
         </div>
         <div class="footer__content">
-          <h3 class="footer__title">About Us</h3>
+          <h3 class="footer__title">Sobre nós</h3>
 
           <ul class="footer__links">
             <li>
-              <a href="#" class="footer__link">Support Center</a>
+              <a href="#" class="footer__link">Central de ajuda</a>
             </li>
             <li>
-              <a href="#" class="footer__link">Customer Support</a>
+              <a href="#" class="footer__link">Atendimento</a>
             </li>
             <li>
-              <a href="#" class="footer__link">About Us</a>
+              <a href="#" class="footer__link">Sobre nós</a>
             </li>
             <li>
-              <a href="#" class="footer__link">Copy Right</a>
+              <a href="#" class="footer__link">Privacidade</a>
             </li>
           </ul>
         </div>
 
         <div class="footer__content">
-          <h3 class="footer__title">Product</h3>
+          <h3 class="footer__title">Produtos</h3>
 
           <ul class="footer__links">
             <li>
-              <a href="#" class="footer__link">Road bikes</a>
+              <a href="#" class="footer__link">Relógios masculinos</a>
             </li>
             <li>
-              <a href="#" class="footer__link">Mountain bikes</a>
+              <a href="#" class="footer__link">Relógios femininos</a>
             </li>
             <li>
-              <a href="#" class="footer__link">Electric</a>
+              <a href="#" class="footer__link">Smartwatches</a>
             </li>
             <li>
-              <a href="#" class="footer__link">Accesories</a>
+              <a href="#" class="footer__link">Acessórios</a>
             </li>
           </ul>
         </div>
 
         <div class="footer__content">
-          <h3 class="footer__title">Social</h3>
+          <h3 class="footer__title">Redes sociais</h3>
 
           <ul class="footer__social">
             <a
@@ -640,7 +558,7 @@
         </div>
       </div>
 
-      <span class="footer__copy">&#169; Bedimcode. All rigths reserved</span>
+      <span class="footer__copy">&#169; Horae Relógios · marca fictícia · layout base: Bedimcode</span>
     </footer>
 
     <!--=============== SCROLL UP ===============-->
@@ -653,6 +571,7 @@
 
     <!--=============== MAIN JS ===============-->
     <script src="assets/js/main.js"></script>
+  <script src="./interacoes.js"></script>
   <!-- learnTECH · volta ao catálogo UX Design -->
 <style>
 .lt-voltar{position:fixed;left:18px;bottom:18px;z-index:99998;display:inline-flex;align-items:center;gap:9px;

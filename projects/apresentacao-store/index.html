@@ -7,20 +7,28 @@
     <link rel="shortcut icon" href="./public/logo.png" type="image/x-icon" />
     <title>ABC CRM</title>
     <link rel="stylesheet" href="../../shared/lt-base.css" />
+  <link rel="stylesheet" href="../../shared/lt-feedback.css" />
+  <script src="../../shared/lt-feedback.js"></script>
   <meta name="description" content="Conheça nossa loja. Aqui tem o produto que precisa." />
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Store · UX Design" />
   <meta property="og:description" content="Conheça nossa loja. Aqui tem o produto que precisa." />
   <meta property="og:url" content="https://douglasabnovato.github.io/ux-design/projects/apresentacao-store/" />
   <meta property="og:image" content="https://douglasabnovato.github.io/ux-design/assets/store.jpg" />
+  <style>
+    .busca-portal { max-width: 560px; margin: 24px auto; display: grid; gap: 8px; text-align: left; }
+    .busca-portal label { font-weight: 700; }
+    .busca-portal input { padding: 12px 14px; border-radius: 10px; border: 2px solid currentColor; font: inherit; background: transparent; color: inherit; }
+    .busca-portal p { min-height: 1.2em; font-size: .9rem; opacity: .85; }
+  </style>
 </head>
   <body>
     <section id="presentation">
       <div class="presentation container">
         <div>
-          <h1>Olá,<span></span></h1>
-          <h1>meu nome é<span></span></h1>
-          <h1>Douglas<span></span></h1>
+          <h1 aria-label="Olá, meu nome é Douglas">Olá,<span></span></h1>
+          <h1 aria-hidden="true">meu nome é<span></span></h1>
+          <h1 aria-hidden="true">Douglas<span></span></h1>
           <a href="#description" type="button" class="cta"
             >ABC CRM - Passo à Passo</a
           >
@@ -31,10 +39,15 @@
     <section id="description">
       <div class="description">
         <div class="description">
-          <h1 class="section-title"><span>ABC CRM - Passo à Passo</span></h1>
+          <h1 class="section-title" aria-level="2"><span>ABC CRM - Passo à Passo</span></h1>
           <h2>
             Nesse portal teremos o passo à passo das tarefas realizadas no CRM.
           </h2>
+          <form class="busca-portal" id="busca-portal" role="search" aria-label="Buscar tarefas do portal" novalidate>
+            <label for="busca-termo">Buscar tarefa</label>
+            <input id="busca-termo" name="termo" type="search" placeholder="Ex.: NPS, WhatsApp, LPs" autocomplete="off" />
+            <p id="busca-status" role="status"></p>
+          </form>
           <ol class="alternating-colors">
             <li>
               <a href="#project-1">
@@ -116,12 +129,12 @@
       <div class="portfolio container">
         <div id="project-1" class="all-projects">
           <div class="portfolio-title">
-            <h1 class="section-title"><span>BASES de Consulta</span></h1>
+            <h1 class="section-title" aria-level="2"><span>BASES de Consulta</span></h1>
             <h2>Realtime do Business Inteligence</h2>
           </div>
           <div class="project-item">
             <div class="project-info">
-              <h1>Franqueados ABC</h1>
+              <h1 aria-level="3">Franqueados ABC</h1>
               <h2>DETALHES DAS GUIDES SHOP</h2>
               <p>BASE PADRÃO CONTATOS LOJAS (manuais)</p>
               <p>Local do arquivo: OneDrive\Growth abc - CRM</p>
@@ -133,12 +146,12 @@
               </p>
             </div>
             <div class="project-img">
-              <img src="./assets/1-multi-PR-Guarapuava.jpg" alt="img" />
+              <img src="./assets/1-multi-PR-Guarapuava.jpg" alt="Tela de exemplo: Franqueados ABC" />
             </div>
           </div>
           <div class="project-item">
             <div class="project-info">
-              <h1>Franqueados ABC</h1>
+              <h1 aria-level="3">Franqueados ABC</h1>
               <h2>CONTATOS DAS GUIDES SHOP</h2>
               <p>consultor de bolso: tel consultor e tel franqueado</p>
               <p>contato para clientes: tel franquia</p>
@@ -148,12 +161,12 @@
               <p>Contato da Guide Shop: 5535998427263</p>
             </div>
             <div class="project-img">
-              <img src="./assets/1-multi-PR-Guarapuava.jpg" alt="img" />
+              <img src="./assets/1-multi-PR-Guarapuava.jpg" alt="Tela de exemplo: Franqueados ABC" />
             </div>
           </div>
           <div class="project-item">
             <div class="project-info">
-              <h1>Franqueados ABC</h1>
+              <h1 aria-level="3">Franqueados ABC</h1>
               <h2>CONTATOS DAS GUIDES SHOP</h2>
               <p>
                 FORMULÁRIO SULTS: abertura de chamado Marketing > Digital ABC >
@@ -163,12 +176,12 @@
               <p>TEAMS ABC: colaboradores mandam mensagem</p>
             </div>
             <div class="project-img">
-              <img src="./assets/1-multi-PR-Guarapuava.jpg" alt="img" />
+              <img src="./assets/1-multi-PR-Guarapuava.jpg" alt="Tela de exemplo: Franqueados ABC" />
             </div>
           </div>
           <div class="project-item">
             <div class="project-info">
-              <h1>Franqueados ABC</h1>
+              <h1 aria-level="3">Franqueados ABC</h1>
               <h2>IMPORTANTES</h2>
               <p>
                 Bom dia,<br />
@@ -181,19 +194,19 @@
               </p>
             </div>
             <div class="project-img">
-              <img src="./assets/1-multi-PR-Guarapuava.jpg" alt="img" />
+              <img src="./assets/1-multi-PR-Guarapuava.jpg" alt="Tela de exemplo: Franqueados ABC" />
             </div>
           </div>
         </div>
 
         <div id="project-2" class="all-projects">
           <div class="portfolio-title">
-            <h1 class="section-title"><span>Guide Shop</span></h1>
+            <h1 class="section-title" aria-level="2"><span>Guide Shop</span></h1>
             <h2>Para boa comunicação</h2>
           </div>
           <div class="project-item">
             <div class="project-info">
-              <h1>Whatsapp</h1>
+              <h1 aria-level="3">Whatsapp</h1>
               <h2>Público alvo</h2>
               <p>
                 ABC COMUNICA<br />
@@ -204,12 +217,12 @@
               </p>
             </div>
             <div class="project-img">
-              <img src="./assets/2-light-SC-Jaragua-do-Sul.jpg" alt="img" />
+              <img src="./assets/2-light-SC-Jaragua-do-Sul.jpg" alt="Tela de exemplo: Whatsapp" />
             </div>
           </div>
           <div class="project-item">
             <div class="project-info">
-              <h1>E-mail</h1>
+              <h1 aria-level="3">E-mail</h1>
               <h2>Estratégico</h2>
               <p>
                 Lúcia da ABC: lucia@abcdaconstrucao.com.br <br />
@@ -218,19 +231,19 @@
               </p>
             </div>
             <div class="project-img">
-              <img src="./assets/2-light-SC-Jaragua-do-Sul.jpg" alt="img" />
+              <img src="./assets/2-light-SC-Jaragua-do-Sul.jpg" alt="Tela de exemplo: E-mail" />
             </div>
           </div>
         </div>
 
         <div id="project-3" class="all-projects">
           <div class="portfolio-title">
-            <h1 class="section-title"><span>Hospedar vídeos</span></h1>
+            <h1 class="section-title" aria-level="2"><span>Hospedar vídeos</span></h1>
             <h2>Nossa mídia para disparos de campanhas especiais</h2>
           </div>
           <div class="project-item">
             <div class="project-info">
-              <h1>Software de hospedagem</h1>
+              <h1 aria-level="3">Software de hospedagem</h1>
               <h2>File Zilla usados em disparos</h2>
               <p>
                 As configurações desse servidor foi realizado pelo contato do
@@ -245,12 +258,12 @@
               </p>
             </div>
             <div class="project-img">
-              <img src="./assets/4-MG-Aimores.jpeg" alt="img" />
+              <img src="./assets/4-MG-Aimores.jpeg" alt="Tela de exemplo: Software de hospedagem" />
             </div>
           </div>
           <div class="project-item">
             <div class="project-info">
-              <h1>Hospedar no File Zilla</h1>
+              <h1 aria-level="3">Hospedar no File Zilla</h1>
               <h2>Especificações para hospedar</h2>
               <p>
                 nome de arquivo: padrão url<br />
@@ -262,19 +275,19 @@
               </p>
             </div>
             <div class="project-img">
-              <img src="./assets/4-MG-Aimores.jpeg" alt="img" />
+              <img src="./assets/4-MG-Aimores.jpeg" alt="Tela de exemplo: Hospedar no File Zilla" />
             </div>
           </div>
         </div>
 
         <div id="project-4" class="all-projects">
           <div class="portfolio-title">
-            <h1 class="section-title"><span>Treinamentos</span></h1>
+            <h1 class="section-title" aria-level="2"><span>Treinamentos</span></h1>
             <h2>Aperfeiçoar as habilidades</h2>
           </div>
           <div class="project-item">
             <div class="project-info">
-              <h1>Capacitações</h1>
+              <h1 aria-level="3">Capacitações</h1>
               <h2>e-Learning ABC</h2>
               <p>
                 Plataforma Training Knowbe4<br />
@@ -285,29 +298,29 @@
               </p>
             </div>
             <div class="project-img">
-              <img src="./assets/4-MG-Aimores.jpeg" alt="img" />
+              <img src="./assets/4-MG-Aimores.jpeg" alt="Tela de exemplo: Capacitações" />
             </div>
           </div>
           <div class="project-item">
             <div class="project-info">
-              <h1>Especializações</h1>
+              <h1 aria-level="3">Especializações</h1>
               <h2>Voitto</h2>
               <p>Acesso a plataforma de treinamentos para especialização</p>
             </div>
             <div class="project-img">
-              <img src="./assets/4-MG-Aimores.jpeg" alt="img" />
+              <img src="./assets/4-MG-Aimores.jpeg" alt="Tela de exemplo: Especializações" />
             </div>
           </div>
         </div>
 
         <div id="project-5" class="all-projects">
           <div class="portfolio-title">
-            <h1 class="section-title"><span>Disparar via Whatsapp</span></h1>
+            <h1 class="section-title" aria-level="2"><span>Disparar via Whatsapp</span></h1>
             <h2>Nossas campanhas realizadas para alcançar nossos leads</h2>
           </div>
           <div class="project-item">
             <div class="project-info">
-              <h1>Nossas campanhas BI</h1>
+              <h1 aria-level="3">Nossas campanhas BI</h1>
               <h2>Todas as nossas campanhas</h2>
               <p>
                 POWER BI<br />
@@ -324,12 +337,12 @@
               </p>
             </div>
             <div class="project-img">
-              <img src="./assets/5-MG-Ipuiuna.jpeg" alt="img" />
+              <img src="./assets/5-MG-Ipuiuna.jpeg" alt="Tela de exemplo: Nossas campanhas BI" />
             </div>
           </div>
           <div class="project-item">
             <div class="project-info">
-              <h1>Campanhas Especiais</h1>
+              <h1 aria-level="3">Campanhas Especiais</h1>
               <h2>Clientes estratégicos CRM</h2>
 
               <p>
@@ -346,12 +359,12 @@
               </p>
             </div>
             <div class="project-img">
-              <img src="./assets/5-MG-Ipuiuna.jpeg" alt="img" />
+              <img src="./assets/5-MG-Ipuiuna.jpeg" alt="Tela de exemplo: Campanhas Especiais" />
             </div>
           </div>
           <div class="project-item">
             <div class="project-info">
-              <h1>Comunicações ABC</h1>
+              <h1 aria-level="3">Comunicações ABC</h1>
               <h2>Configuração para as comunicações</h2>
               <p>
                 ZENVIA<br />
@@ -367,19 +380,19 @@
               </p>
             </div>
             <div class="project-img">
-              <img src="./assets/5-MG-Ipuiuna.jpeg" alt="img" />
+              <img src="./assets/5-MG-Ipuiuna.jpeg" alt="Tela de exemplo: Comunicações ABC" />
             </div>
           </div>
         </div>
 
         <div id="project-10" class="all-projects">
           <div class="portfolio-title">
-            <h1 class="section-title"><span>NPS E-commerce </span></h1>
+            <h1 class="section-title" aria-level="2"><span>NPS E-commerce </span></h1>
             <h2>Ouvir nossos clientes B2C que compraram no E-commerce</h2>
           </div>
           <div class="project-item">
             <div class="project-info">
-              <h1>Wake com Inteligência</h1>
+              <h1 aria-level="3">Wake com Inteligência</h1>
               <h2>Exportar as bases</h2>
               <p>
                 [B2C] NPS E-commerce tem base na wake<br />
@@ -398,12 +411,12 @@
               </p>
             </div>
             <div class="project-img">
-              <img src="./assets/5-MG-Ipuiuna.jpeg" alt="img" />
+              <img src="./assets/5-MG-Ipuiuna.jpeg" alt="Tela de exemplo: Wake com Inteligência" />
             </div>
           </div>
           <div class="project-item">
             <div class="project-info">
-              <h1>Excel em bases</h1>
+              <h1 aria-level="3">Excel em bases</h1>
               <h2>Tratar as informações</h2>
               <p>
                 Relatório de Pedidos Captados - Detalhes<br />
@@ -418,12 +431,12 @@
               </p>
             </div>
             <div class="project-img">
-              <img src="./assets/5-MG-Ipuiuna.jpeg" alt="img" />
+              <img src="./assets/5-MG-Ipuiuna.jpeg" alt="Tela de exemplo: Excel em bases" />
             </div>
           </div>
           <div class="project-item">
             <div class="project-info">
-              <h1>Excel nos detalhes</h1>
+              <h1 aria-level="3">Excel nos detalhes</h1>
               <h2>A primeira fonte está pronta</h2>
               <p>
                 Relatório de Pedidos Captados - Detalhes<br />
@@ -438,12 +451,12 @@
               </p>
             </div>
             <div class="project-img">
-              <img src="./assets/5-MG-Ipuiuna.jpeg" alt="img" />
+              <img src="./assets/5-MG-Ipuiuna.jpeg" alt="Tela de exemplo: Excel nos detalhes" />
             </div>
           </div>
           <div class="project-item">
             <div class="project-info">
-              <h1>Excel</h1>
+              <h1 aria-level="3">Excel</h1>
               <h2>Limpar os dados dessa base</h2>
               <p>
                 remover : (alt + ;) + del<br />
@@ -451,12 +464,12 @@
               </p>
             </div>
             <div class="project-img">
-              <img src="./assets/5-MG-Ipuiuna.jpeg" alt="img" />
+              <img src="./assets/5-MG-Ipuiuna.jpeg" alt="Tela de exemplo: Excel" />
             </div>
           </div>
           <div class="project-item">
             <div class="project-info">
-              <h1>Excel é NPS E-commerce</h1>
+              <h1 aria-level="3">Excel é NPS E-commerce</h1>
               <h2>Analisar o E-commerce</h2>
               <p>
                 Abrir Disparo NPS e-commerce + NPS lojas físicas <br />
@@ -469,12 +482,12 @@
               </p>
             </div>
             <div class="project-img">
-              <img src="./assets/5-MG-Ipuiuna.jpeg" alt="img" />
+              <img src="./assets/5-MG-Ipuiuna.jpeg" alt="Tela de exemplo: Excel é NPS E-commerce" />
             </div>
           </div>
           <div class="project-item">
             <div class="project-info">
-              <h1>Mais NPS E-commerce</h1>
+              <h1 aria-level="3">Mais NPS E-commerce</h1>
               <h2>Ententer a construção</h2>
               <p>
                 Abrir a OUTRA planilha Relatorio_de_Pedidos_Produtos_Detalhes<br />
@@ -484,12 +497,12 @@
               </p>
             </div>
             <div class="project-img">
-              <img src="./assets/5-MG-Ipuiuna.jpeg" alt="img" />
+              <img src="./assets/5-MG-Ipuiuna.jpeg" alt="Tela de exemplo: Mais NPS E-commerce" />
             </div>
           </div>
           <div class="project-item">
             <div class="project-info">
-              <h1>Continuar NPS E-commerce</h1>
+              <h1 aria-level="3">Continuar NPS E-commerce</h1>
               <h2>Com Excel</h2>
               <p>
                 célula pedido tray<br />
@@ -501,12 +514,12 @@
               </p>
             </div>
             <div class="project-img">
-              <img src="./assets/5-MG-Ipuiuna.jpeg" alt="img" />
+              <img src="./assets/5-MG-Ipuiuna.jpeg" alt="Tela de exemplo: Continuar NPS E-commerce" />
             </div>
           </div>
           <div class="project-item">
             <div class="project-info">
-              <h1>Entendimentos de base</h1>
+              <h1 aria-level="3">Entendimentos de base</h1>
               <h2>Percorrer tables</h2>
               <p>
                 seleciona de J até O<br />
@@ -523,12 +536,12 @@
               </p>
             </div>
             <div class="project-img">
-              <img src="./assets/5-MG-Ipuiuna.jpeg" alt="img" />
+              <img src="./assets/5-MG-Ipuiuna.jpeg" alt="Tela de exemplo: Entendimentos de base" />
             </div>
           </div>
           <div class="project-item">
             <div class="project-info">
-              <h1>NPS E-commerce</h1>
+              <h1 aria-level="3">NPS E-commerce</h1>
               <h2>Limpar ruídos</h2>
               <p>
                 remover : (alt + ;) + del<br />
@@ -548,12 +561,12 @@
               </p>
             </div>
             <div class="project-img">
-              <img src="./assets/5-MG-Ipuiuna.jpeg" alt="img" />
+              <img src="./assets/5-MG-Ipuiuna.jpeg" alt="Tela de exemplo: NPS E-commerce" />
             </div>
           </div>
           <div class="project-item">
             <div class="project-info">
-              <h1>Zenvia</h1>
+              <h1 aria-level="3">Zenvia</h1>
               <h2>Template</h2>
               <p>
                 [B2C] NPS Ecommerce 2705<br />
@@ -563,12 +576,12 @@
               </p>
             </div>
             <div class="project-img">
-              <img src="./assets/5-MG-Ipuiuna.jpeg" alt="img" />
+              <img src="./assets/5-MG-Ipuiuna.jpeg" alt="Tela de exemplo: Zenvia" />
             </div>
           </div>
           <div class="project-item">
             <div class="project-info">
-              <h1>Zenvia</h1>
+              <h1 aria-level="3">Zenvia</h1>
               <h2>Montar base</h2>
               <p>
                 base:<br />
@@ -584,12 +597,12 @@
               </p>
             </div>
             <div class="project-img">
-              <img src="./assets/5-MG-Ipuiuna.jpeg" alt="img" />
+              <img src="./assets/5-MG-Ipuiuna.jpeg" alt="Tela de exemplo: Zenvia" />
             </div>
           </div>
           <div class="project-item">
             <div class="project-info">
-              <h1>Zenvia</h1>
+              <h1 aria-level="3">Zenvia</h1>
               <h2>Ajustar base</h2>
               <p>
                 coluna descr_produto:<br />
@@ -605,13 +618,13 @@
               </p>
             </div>
             <div class="project-img">
-              <img src="./assets/5-MG-Ipuiuna.jpeg" alt="img" />
+              <img src="./assets/5-MG-Ipuiuna.jpeg" alt="Tela de exemplo: Zenvia" />
             </div>
           </div>
         </div>
         <div id="project-11" class="all-projects">
           <div class="portfolio-title">
-            <h1 class="section-title"><span>NPS Loja Própria</span></h1>
+            <h1 class="section-title" aria-level="2"><span>NPS Loja Própria</span></h1>
             <h2>
               Dar oportunidade de ouvir nossos clientes B2C que compraram nas
               Lojas Própria
@@ -619,7 +632,7 @@
           </div>
           <div class="project-item">
             <div class="project-info">
-              <h1>Power BI</h1>
+              <h1 aria-level="3">Power BI</h1>
               <h2>Gerar a base</h2>
               <p>
                 base:<br />
@@ -627,12 +640,12 @@
               </p>
             </div>
             <div class="project-img">
-              <img src="./assets/6-MG-Uberlandia.jpg" alt="img" />
+              <img src="./assets/6-MG-Uberlandia.jpg" alt="Tela de exemplo: Power BI" />
             </div>
           </div>
           <div class="project-item">
             <div class="project-info">
-              <h1>Excel lapdado</h1>
+              <h1 aria-level="3">Excel lapdado</h1>
               <h2>Estruturação da base</h2>
               <p>
                 coluna A, números: excluir coluna<br />
@@ -644,12 +657,12 @@
               </p>
             </div>
             <div class="project-img">
-              <img src="./assets/6-MG-Uberlandia.jpg" alt="img" />
+              <img src="./assets/6-MG-Uberlandia.jpg" alt="Tela de exemplo: Excel lapdado" />
             </div>
           </div>
           <div class="project-item">
             <div class="project-info">
-              <h1>Excel no detalhe</h1>
+              <h1 aria-level="3">Excel no detalhe</h1>
               <h2>Base no detalhe</h2>
               <p>
                 coluna F, telefone: <br />
@@ -661,12 +674,12 @@
               </p>
             </div>
             <div class="project-img">
-              <img src="./assets/6-MG-Uberlandia.jpg" alt="img" />
+              <img src="./assets/6-MG-Uberlandia.jpg" alt="Tela de exemplo: Excel no detalhe" />
             </div>
           </div>
           <div class="project-item">
             <div class="project-info">
-              <h1>Excel é inteligência</h1>
+              <h1 aria-level="3">Excel é inteligência</h1>
               <h2>A base NPS</h2>
               <p>
                 inserir no Disparo NPS<br />
@@ -674,12 +687,12 @@
               </p>
             </div>
             <div class="project-img">
-              <img src="./assets/6-MG-Uberlandia.jpg" alt="img" />
+              <img src="./assets/6-MG-Uberlandia.jpg" alt="Tela de exemplo: Excel é inteligência" />
             </div>
           </div>
           <div class="project-item">
             <div class="project-info">
-              <h1>Excel</h1>
+              <h1 aria-level="3">Excel</h1>
               <h2>Apurar a base do NPS</h2>
               <p>
                 remover duplicata : nota, coluna A <br />
@@ -693,12 +706,12 @@
               </p>
             </div>
             <div class="project-img">
-              <img src="./assets/6-MG-Uberlandia.jpg" alt="img" />
+              <img src="./assets/6-MG-Uberlandia.jpg" alt="Tela de exemplo: Excel" />
             </div>
           </div>
           <div class="project-item">
             <div class="project-info">
-              <h1>Excel</h1>
+              <h1 aria-level="3">Excel</h1>
               <h2>Cortar as arestas</h2>
               <p>
                 filtrar coluna L, número correto: número inválido (remover alt +
@@ -708,12 +721,12 @@
               </p>
             </div>
             <div class="project-img">
-              <img src="./assets/6-MG-Uberlandia.jpg" alt="img" />
+              <img src="./assets/6-MG-Uberlandia.jpg" alt="Tela de exemplo: Excel" />
             </div>
           </div>
           <div class="project-item">
             <div class="project-info">
-              <h1>ZENVIA</h1>
+              <h1 aria-level="3">ZENVIA</h1>
               <h2>TEMPLATE</h2>
               <p>
                 [B2C] NPS Loja Física 2805<br />
@@ -724,12 +737,12 @@
               </p>
             </div>
             <div class="project-img">
-              <img src="./assets/6-MG-Uberlandia.jpg" alt="img" />
+              <img src="./assets/6-MG-Uberlandia.jpg" alt="Tela de exemplo: ZENVIA" />
             </div>
           </div>
           <div class="project-item">
             <div class="project-info">
-              <h1>ZENVIA</h1>
+              <h1 aria-level="3">ZENVIA</h1>
               <h2>Montar base</h2>
               <p>
                 Template:<br />
@@ -741,12 +754,12 @@
               </p>
             </div>
             <div class="project-img">
-              <img src="./assets/6-MG-Uberlandia.jpg" alt="img" />
+              <img src="./assets/6-MG-Uberlandia.jpg" alt="Tela de exemplo: ZENVIA" />
             </div>
           </div>
           <div class="project-item">
             <div class="project-info">
-              <h1>ZENVIA</h1>
+              <h1 aria-level="3">ZENVIA</h1>
               <h2>Ajustar base</h2>
               <p>
                 Coluna descr_produto:<br />
@@ -760,18 +773,18 @@
               </p>
             </div>
             <div class="project-img">
-              <img src="./assets/6-MG-Uberlandia.jpg" alt="img" />
+              <img src="./assets/6-MG-Uberlandia.jpg" alt="Tela de exemplo: ZENVIA" />
             </div>
           </div>
         </div>
         <div id="project-6" class="all-projects">
           <div class="portfolio-title">
-            <h1 class="section-title"><span>Disparos via E-mail</span></h1>
+            <h1 class="section-title" aria-level="2"><span>Disparos via E-mail</span></h1>
             <h2>Comunicação estratégica seguimentada</h2>
           </div>
           <div class="project-item">
             <div class="project-info">
-              <h1>Copy</h1>
+              <h1 aria-level="3">Copy</h1>
               <h2>Aniversário ABC 67</h2>
               <p>
                 https://www.abcdaconstrucao.com.br/abc-deca<br />
@@ -782,12 +795,12 @@
               </p>
             </div>
             <div class="project-img">
-              <img src="./assets/6-MG-Uberlandia.jpg" alt="img" />
+              <img src="./assets/6-MG-Uberlandia.jpg" alt="Tela de exemplo: Copy" />
             </div>
           </div>
           <div class="project-item">
             <div class="project-info">
-              <h1>Constant Contact</h1>
+              <h1 aria-level="3">Constant Contact</h1>
               <h2>configurações de e-mail</h2>
               <p>
                 Assunto: Deca com produtos selecionados e preços imperdíveis de
@@ -800,12 +813,12 @@
               </p>
             </div>
             <div class="project-img">
-              <img src="./assets/6-MG-Uberlandia.jpg" alt="img" />
+              <img src="./assets/6-MG-Uberlandia.jpg" alt="Tela de exemplo: Constant Contact" />
             </div>
           </div>
           <div class="project-item">
             <div class="project-info">
-              <h1>Bases</h1>
+              <h1 aria-level="3">Bases</h1>
               <h2>Montar a base</h2>
               <p>
                 arquivo via email: base_disparo-clientes_prime-dia_dos_pais-2307
@@ -816,12 +829,12 @@
               </p>
             </div>
             <div class="project-img">
-              <img src="./assets/6-MG-Uberlandia.jpg" alt="img" />
+              <img src="./assets/6-MG-Uberlandia.jpg" alt="Tela de exemplo: Bases" />
             </div>
           </div>
           <div class="project-item">
             <div class="project-info">
-              <h1>Base</h1>
+              <h1 aria-level="3">Base</h1>
               <h2>Upload a base</h2>
               <p>
                 Contatos >> Gerenciador de Contatos >> Importar Contatos >>
@@ -837,12 +850,12 @@
               </p>
             </div>
             <div class="project-img">
-              <img src="./assets/6-MG-Uberlandia.jpg" alt="img" />
+              <img src="./assets/6-MG-Uberlandia.jpg" alt="Tela de exemplo: Base" />
             </div>
           </div>
           <div class="project-item">
             <div class="project-info">
-              <h1>Enviar</h1>
+              <h1 aria-level="3">Enviar</h1>
               <h2>Testar e Enviar</h2>
               <p>
                 ENVIAR teste<br />
@@ -853,12 +866,12 @@
               </p>
             </div>
             <div class="project-img">
-              <img src="./assets/6-MG-Uberlandia.jpg" alt="img" />
+              <img src="./assets/6-MG-Uberlandia.jpg" alt="Tela de exemplo: Enviar" />
             </div>
           </div>
           <div class="project-item">
             <div class="project-info">
-              <h1>Testes CRM</h1>
+              <h1 aria-level="3">Testes CRM</h1>
               <h2>Bases testes estratégicos</h2>
               <p>
                 base_2024_crm_abc_eu: <br />
@@ -869,12 +882,12 @@
               </p>
             </div>
             <div class="project-img">
-              <img src="./assets/6-MG-Uberlandia.jpg" alt="img" />
+              <img src="./assets/6-MG-Uberlandia.jpg" alt="Tela de exemplo: Testes CRM" />
             </div>
           </div>
           <div class="project-item">
             <div class="project-info">
-              <h1>Testes Comunicação</h1>
+              <h1 aria-level="3">Testes Comunicação</h1>
               <h2>Bases testes estratégicos</h2>
               <p>
                 base_2024_comunicacao_abc: <br />
@@ -886,18 +899,18 @@
               </p>
             </div>
             <div class="project-img">
-              <img src="./assets/6-MG-Uberlandia.jpg" alt="img" />
+              <img src="./assets/6-MG-Uberlandia.jpg" alt="Tela de exemplo: Testes Comunicação" />
             </div>
           </div>
         </div>
         <div id="project-7" class="all-projects">
           <div class="portfolio-title">
-            <h1 class="section-title"><span>Desenvolvimento de LPs</span></h1>
+            <h1 class="section-title" aria-level="2"><span>Desenvolvimento de LPs</span></h1>
             <h2>Design moderno e fluxo estratégico para conversão</h2>
           </div>
           <div class="project-item">
             <div class="project-info">
-              <h1>Front End</h1>
+              <h1 aria-level="3">Front End</h1>
               <h2>UX com boa conversão</h2>
               <p>
                 Desenvolvimentos de landing pages para aperfeiçoar as
@@ -905,18 +918,18 @@
               </p>
             </div>
             <div class="project-img">
-              <img src="./assets/7-PR-Cianorte.jpg" alt="img" />
+              <img src="./assets/7-PR-Cianorte.jpg" alt="Tela de exemplo: Front End" />
             </div>
           </div>
         </div>
         <div id="project-12" class="all-projects">
           <div class="portfolio-title">
-            <h1 class="section-title"><span>LPs do Futebol</span></h1>
+            <h1 class="section-title" aria-level="2"><span>LPs do Futebol</span></h1>
             <h2>Designs personalizados para campanhas</h2>
           </div>
           <div class="project-item">
             <div class="project-info">
-              <h1>Clube Day</h1>
+              <h1 aria-level="3">Clube Day</h1>
               <h2>Guide Shop</h2>
               <p>
                 CONSULTAR CALENDÁRIO DO EVENTO<br />
@@ -931,12 +944,12 @@
               </p>
             </div>
             <div class="project-img">
-              <img src="./assets/9-PR-Londrina-2.jpeg" alt="img" />
+              <img src="./assets/9-PR-Londrina-2.jpeg" alt="Tela de exemplo: Clube Day" />
             </div>
           </div>
           <div class="project-item">
             <div class="project-info">
-              <h1>Constant Contact</h1>
+              <h1 aria-level="3">Constant Contact</h1>
               <h2>O futebol na sua Guide Shop</h2>
               <p>
                 Editar:<br />
@@ -946,12 +959,12 @@
               </p>
             </div>
             <div class="project-img">
-              <img src="./assets/9-PR-Londrina-2.jpeg" alt="img" />
+              <img src="./assets/9-PR-Londrina-2.jpeg" alt="Tela de exemplo: Constant Contact" />
             </div>
           </div>
           <div class="project-item">
             <div class="project-info">
-              <h1>Campos Personalizados</h1>
+              <h1 aria-level="3">Campos Personalizados</h1>
               <h2>LOJA DE INTERESSE</h2>
               <p>
                 em DN >> Configurações >> Funcionalidades >> Campos
@@ -966,12 +979,12 @@
               </p>
             </div>
             <div class="project-img">
-              <img src="./assets/9-PR-Londrina-2.jpeg" alt="img" />
+              <img src="./assets/9-PR-Londrina-2.jpeg" alt="Tela de exemplo: Campos Personalizados" />
             </div>
           </div>
           <div class="project-item">
             <div class="project-info">
-              <h1>Campos Personalizados</h1>
+              <h1 aria-level="3">Campos Personalizados</h1>
               <h2>GUIDE SHOP</h2>
               <p>
                 >> ALTERAR [CLUBE DAY] GUIDE SHOP<br />
@@ -982,12 +995,12 @@
               </p>
             </div>
             <div class="project-img">
-              <img src="./assets/9-PR-Londrina-2.jpeg" alt="img" />
+              <img src="./assets/9-PR-Londrina-2.jpeg" alt="Tela de exemplo: Campos Personalizados" />
             </div>
           </div>
           <div class="project-item">
             <div class="project-info">
-              <h1>Campos Personalizados</h1>
+              <h1 aria-level="3">Campos Personalizados</h1>
               <h2>AUTOMAÇÃO</h2>
               <p>
                 >> Automação >> Workflow visual >> Pasta do [B2C] Clube Day
@@ -1001,12 +1014,12 @@
               </p>
             </div>
             <div class="project-img">
-              <img src="./assets/9-PR-Londrina-2.jpeg" alt="img" />
+              <img src="./assets/9-PR-Londrina-2.jpeg" alt="Tela de exemplo: Campos Personalizados" />
             </div>
           </div>
           <div class="project-item">
             <div class="project-info">
-              <h1>Campos Personalizados</h1>
+              <h1 aria-level="3">Campos Personalizados</h1>
               <h2>FILTRO</h2>
               <p>
                 >> + Filtro >> Lead >> Tem o campo<br />
@@ -1020,12 +1033,12 @@
               </p>
             </div>
             <div class="project-img">
-              <img src="./assets/9-PR-Londrina-2.jpeg" alt="img" />
+              <img src="./assets/9-PR-Londrina-2.jpeg" alt="Tela de exemplo: Campos Personalizados" />
             </div>
           </div>
           <div class="project-item">
             <div class="project-info">
-              <h1>Campos Personalizados</h1>
+              <h1 aria-level="3">Campos Personalizados</h1>
               <h2>CRIAR a TAG</h2>
               <p>
                 Contatos >> Gerenciador de contatos >> Abrir um contato<br />
@@ -1039,12 +1052,12 @@
               </p>
             </div>
             <div class="project-img">
-              <img src="./assets/9-PR-Londrina-2.jpeg" alt="img" />
+              <img src="./assets/9-PR-Londrina-2.jpeg" alt="Tela de exemplo: Campos Personalizados" />
             </div>
           </div>
           <div class="project-item">
             <div class="project-info">
-              <h1>Campos Personalizados</h1>
+              <h1 aria-level="3">Campos Personalizados</h1>
               <h2>ATRIBUIR A TAG</h2>
               <p>
                 >> Automação >> Workflow visual >> Pasta do [B2C] Clube day<br />
@@ -1057,12 +1070,12 @@
               </p>
             </div>
             <div class="project-img">
-              <img src="./assets/9-PR-Londrina-2.jpeg" alt="img" />
+              <img src="./assets/9-PR-Londrina-2.jpeg" alt="Tela de exemplo: Campos Personalizados" />
             </div>
           </div>
           <div class="project-item">
             <div class="project-info">
-              <h1>Campos Personalizados</h1>
+              <h1 aria-level="3">Campos Personalizados</h1>
               <h2>ALTERAR O CAMPO DO LEAD</h2>
               <p>
                 >> + Ação >> Ações de Editar Contato >> alterar campo do
@@ -1076,12 +1089,12 @@
               </p>
             </div>
             <div class="project-img">
-              <img src="./assets/9-PR-Londrina-2.jpeg" alt="img" />
+              <img src="./assets/9-PR-Londrina-2.jpeg" alt="Tela de exemplo: Campos Personalizados" />
             </div>
           </div>
           <div class="project-item">
             <div class="project-info">
-              <h1>FORMULÁRIO</h1>
+              <h1 aria-level="3">FORMULÁRIO</h1>
               <h2>CALENDÁRIO</h2>
               <p>
                 Lista de Formulários >> <br />
@@ -1097,38 +1110,38 @@
               </p>
             </div>
             <div class="project-img">
-              <img src="./assets/9-PR-Londrina-2.jpeg" alt="img" />
+              <img src="./assets/9-PR-Londrina-2.jpeg" alt="Tela de exemplo: FORMULÁRIO" />
             </div>
           </div>
         </div>
         <div id="project-8" class="all-projects">
           <div class="portfolio-title">
-            <h1 class="section-title">
+            <h1 class="section-title" aria-level="2">
               <span>Desenvolvimento de Email Marketing</span>
             </h1>
             <h2>Comunicação e base segmentada</h2>
           </div>
           <div class="project-item">
             <div class="project-info">
-              <h1>UX Estratégico</h1>
+              <h1 aria-level="3">UX Estratégico</h1>
               <h2>Estilização e Copy</h2>
               <p>
                 Personalização de imagens e copies para comunicar campanhas.
               </p>
             </div>
             <div class="project-img">
-              <img src="./assets/8-PR-Curitiba-1.jpg" alt="img" />
+              <img src="./assets/8-PR-Curitiba-1.jpg" alt="Tela de exemplo: UX Estratégico" />
             </div>
           </div>
         </div>
         <div id="project-9" class="all-projects">
           <div class="portfolio-title">
-            <h1 class="section-title"><span>WorkFlow</span></h1>
+            <h1 class="section-title" aria-level="2"><span>WorkFlow</span></h1>
             <h2>Rotinas e processos para performance</h2>
           </div>
           <div class="project-item">
             <div class="project-info">
-              <h1>Performance</h1>
+              <h1 aria-level="3">Performance</h1>
               <h2>Gerar valor com os meus resultados</h2>
               <p>
                 Utilização do Teams para manter uma agenda atualizada e
@@ -1141,7 +1154,7 @@
               </p>
             </div>
             <div class="project-img">
-              <img src="./assets/9-PR-Londrina-2.jpeg" alt="img" />
+              <img src="./assets/9-PR-Londrina-2.jpeg" alt="Tela de exemplo: Performance" />
             </div>
           </div>
         </div>
@@ -1170,6 +1183,7 @@
     </footer>
     <a href="#description" class="back-to-top" onclick="scrollToTop()">^</a>
     <script src="./index.js"></script>
+  <script src="./interacoes.js"></script>
   <!-- learnTECH · volta ao catálogo UX Design -->
 <style>
 .lt-voltar{position:fixed;left:18px;bottom:18px;z-index:99998;display:inline-flex;align-items:center;gap:9px;

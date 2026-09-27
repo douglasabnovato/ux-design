@@ -6,21 +6,29 @@
     <link rel="stylesheet" href="./style.css" />
     <title>Coffee</title>
     <link rel="stylesheet" href="../../shared/lt-base.css" />
+  <link rel="stylesheet" href="../../shared/lt-feedback.css" />
+  <script src="../../shared/lt-feedback.js"></script>
   <meta name="description" content="Conheça esse café. São grãos com aromas únicos." />
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Coffee · UX Design" />
   <meta property="og:description" content="Conheça esse café. São grãos com aromas únicos." />
   <meta property="og:url" content="https://douglasabnovato.github.io/ux-design/projects/apresentacao-coffee/" />
   <meta property="og:image" content="https://douglasabnovato.github.io/ux-design/assets/coffee.jpg" />
+  <style>
+    .cta-final { text-align: center; margin: 32px 0 8px; }
+    .cta-final .cta, .pedir-item { display: inline-block; padding: .8rem 2rem; color: gold; background: transparent; border: .2rem solid gold; font: inherit; font-size: 1.4rem; text-transform: uppercase; letter-spacing: .1rem; cursor: pointer; }
+    .cta-final .cta:hover, .pedir-item:hover { color: #111; background: gold; }
+    .pedir-item { margin-top: 16px; font-size: 1rem; padding: .6rem 1.4rem; }
+  </style>
 </head>
   <body>
     <section id="presentation">
       <div class="presentation container">
         <header>
-          <h1>TOP 4<span></span></h1>
-          <h1>cafés<span></span></h1>
-          <h1>MAIS saborosos <span></span></h1>
-          <h1>da semana<span></span></h1>
+          <h1 aria-label="Top 4 cafés mais saborosos da semana">TOP 4<span></span></h1>
+          <h1 aria-hidden="true">cafés<span></span></h1>
+          <h1 aria-hidden="true">MAIS saborosos <span></span></h1>
+          <h1 aria-hidden="true">da semana<span></span></h1>
           <a href="#coffee" type="button" class="cta">Cafés</a>
         </header>
       </div>
@@ -28,13 +36,13 @@
     <main id="coffee">
       <div class="coffee container">
         <header class="coffee-header">
-          <h1 class="section-title-hover">Coffee</h1>
+          <h1 class="section-title-hover" aria-level="2">Cafés</h1>
         </header>
         <div class="all-coffee-beans">
           <section class="coffee-bean-item">
             <article class="coffee-bean-info">
               <header>
-                <h1>Café Especial da Casa</h1>
+                <h1 aria-level="3">Café Especial da Casa</h1>
                 <h2>café especial, moído na hora, coador de papel</h2>
               </header>
               <ul>
@@ -56,13 +64,13 @@
               </p>
             </article>
             <figure class="coffee-bean-img">
-              <img src="./assets/coffee-1.jpg" alt="img" />
+              <img src="./assets/coffee-1.jpg" alt="Café Especial da Casa servido na xícara" />
             </figure>
           </section>
           <section class="coffee-bean-item">
             <article class="coffee-bean-info">
               <header>
-                <h1>Café Espresso</h1>
+                <h1 aria-level="3">Café Espresso</h1>
                 <h2>café especial, moído na hora, máquina</h2>
               </header>
               <ul>
@@ -87,13 +95,13 @@
               </p>
             </article>
             <figure class="coffee-bean-img">
-              <img src="./assets/coffee-3.jpg" alt="img" />
+              <img src="./assets/coffee-3.jpg" alt="Café Espresso servido na xícara" />
             </figure>
           </section>
           <section class="coffee-bean-item">
             <article class="coffee-bean-info">
               <header>
-                <h1>Cappuccino</h1>
+                <h1 aria-level="3">Cappuccino</h1>
                 <h2>café especial, moído na hora, vaporizado</h2>
               </header>
               <ul>
@@ -118,13 +126,13 @@
               </p>
             </article>
             <figure class="coffee-bean-img">
-              <img src="./assets/coffee-1.jpg" alt="img" />
+              <img src="./assets/coffee-1.jpg" alt="Cappuccino servido na xícara" />
             </figure>
           </section>
           <section class="coffee-bean-item">
             <article class="coffee-bean-info">
               <header>
-                <h1>Cappuccino de Chocolate</h1>
+                <h1 aria-level="3">Cappuccino de Chocolate</h1>
                 <h2>
                   café especial, moído na hora, vaporizado, chocolate 50% cacau
                 </h2>
@@ -134,7 +142,7 @@
                   Uma máquina para espresso prepara um delicioso cappuccino. Aproximadamente 150 ml de bebida, composta por um espresso (30 ml) + partes iguais de leite e creme de leite.
                 </li>
                 <li>
-                  1 colher (chá) de cappuccino + 2 colheres (chá) de açúcar + meia colher (chá) de água quente + meia xícara (chá) de Leite Líquidoquente + 1 colher (chá) de Chocolate em Pó
+                  1 colher (chá) de cappuccino + 2 colheres (chá) de açúcar + meia colher (chá) de água quente + meia xícara (chá) de leite quente + 1 colher (chá) de Chocolate em Pó
                 </li>
                 <li>Em uma xícara (chá), coloque o cappuccino, o açúcar e a água quente e bata com uma colher até ficar como uma espuma.
                 </li>
@@ -146,7 +154,7 @@
               </p>
             </article>
             <figure class="coffee-bean-img">
-              <img src="./assets/coffee-4.jpg" alt="img" />
+              <img src="./assets/coffee-4.jpg" alt="Cappuccino de Chocolate servido na xícara" />
             </figure>
           </section>
         </div>
@@ -154,14 +162,14 @@
 
       <div class="coffee container">
         <header class="coffee-header">
-          <h1 class="section-title-hover">Limonada</h1>
+          <h1 class="section-title-hover" aria-level="2">Limonada</h1>
         </header>
         <div class="all-coffee-beans">
           <section class="coffee-bean-item">
             <article class="limonada-bean-info">
               <header>
-                <h1>Limonada Especial da Casa</h1>
-                <h2>uma limonada suiça da forma especial da casa</h2>
+                <h1 aria-level="3">Limonada Especial da Casa</h1>
+                <h2>uma limonada suíça da forma especial da casa</h2>
               </header>
               <ul>
                 <li>
@@ -175,11 +183,11 @@
                 </li>
               </ul>
               <p>
-                "Adoro gente que ama cheirinho de café fresco."
+                "Um copo gelado para refrescar o dia e o humor."
               </p>
             </article>
             <figure class="coffee-bean-img">
-              <img src="./assets/limonada-1.jpg" alt="img" />
+              <img src="./assets/limonada-1.jpg" alt="Copo de limonada suíça com gelo" />
             </figure>
           </section>
         </div>
@@ -189,7 +197,11 @@
         <div class="word">venha</div>
         <div class="word">conhecer nossos</div>
         <div class="word">cafés</div>
+        <div class="cta-final">
+          <button type="button" class="cta" data-degustacao>Agendar uma degustação</button>
+        </div>
     </footer>
+  <script src="./interacoes.js"></script>
   <!-- learnTECH · volta ao catálogo UX Design -->
 <style>
 .lt-voltar{position:fixed;left:18px;bottom:18px;z-index:99998;display:inline-flex;align-items:center;gap:9px;

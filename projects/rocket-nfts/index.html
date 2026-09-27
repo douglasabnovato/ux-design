@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rocket NFTs · Descubra a verdadeira arte digital</title>
+  <meta name="description" content="Landing page de NFTs: galeria ampliável, carteira simulada, compra com confirmação, artistas, FAQ e newsletter com validação." />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Rocket NFTs · Descubra a verdadeira arte digital" />
+  <meta property="og:description" content="Landing page de NFTs: galeria ampliável, carteira simulada, compra com confirmação, artistas, FAQ e newsletter com validação." />
+  <meta property="og:url" content="https://douglasabnovato.github.io/ux-design/projects/rocket-nfts/" />
+  <meta property="og:image" content="https://douglasabnovato.github.io/ux-design/assets/rocket-nfts.jpg" />
+  <link rel="icon" href="./assets/favicon.ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" />
+  <link rel="stylesheet" href="./style.css" />
+  <link rel="stylesheet" href="../../shared/lt-base.css" />
+  <link rel="stylesheet" href="../../shared/lt-feedback.css" />
+  <script src="../../shared/lt-feedback.js"></script>
+</head>
+<body>
+  <a class="pular" href="#conteudo">Pular para o conteúdo</a>
+  <header class="topo" id="topo">
+    <div class="container topo__linha">
+      <a class="logo" href="#topo">Rocket <span>NFTs</span></a>
+      <nav aria-label="Principal">
+        <ul class="menu">
+          <li><a href="#populares">Comprar NFT</a></li>
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </nav>
+      <button type="button" class="carteira" id="btn-carteira" aria-live="polite"><span class="carteira__ponto" aria-hidden="true"></span><span id="carteira-texto">Conectar carteira</span></button>
+    </div>
+  </header>
+
+  <main id="conteudo">
+    <section class="hero" aria-labelledby="hero-titulo">
+      <div class="container hero__grade">
+        <div class="hero__lado">
+          <p>Mercado digital para colecionáveis em criptos e tokens não fungíveis (NFT). Compre, venda e descubra ativos digitais exclusivos para você.</p>
+          <div class="hero__artistas"><img src="./assets/group-avarts.png" alt="" width="85" height="44" /><p><strong>+10</strong> artistas selecionados</p></div>
+        </div>
+        <h1 id="hero-titulo">Descubra a verdadeira arte digital e colecione diversas <span>NFTs</span></h1>
+        <a href="#galeria" class="selo" aria-label="Explore a arte: ir para a galeria"><img src="./assets/badge.svg" alt="" width="120" height="120" /></a>
+      </div>
+      <ul class="container galeria" id="galeria" aria-label="Galeria de obras">
+        <li><button type="button" class="galeria__item" data-obra="1" aria-label="Ampliar obra Astronauta Aurora"><img src="./assets/galeria-1.png" alt="Retrato digital de astronauta em luz neon, obra 1" width="305" height="198" loading="lazy" /></button></li>
+        <li><button type="button" class="galeria__item" data-obra="2" aria-label="Ampliar obra Astronauta Órbita"><img src="./assets/galeria-2.png" alt="Retrato digital de astronauta em luz neon, obra 2" width="305" height="198" loading="lazy" /></button></li>
+        <li><button type="button" class="galeria__item" data-obra="3" aria-label="Ampliar obra Astronauta Nebulosa"><img src="./assets/galeria-3.png" alt="Retrato digital de astronauta em luz neon, obra 3" width="305" height="198" loading="lazy" /></button></li>
+        <li><button type="button" class="galeria__item" data-obra="4" aria-label="Ampliar obra Astronauta Cometa"><img src="./assets/galeria-4.png" alt="Retrato digital de astronauta em luz neon, obra 4" width="305" height="198" loading="lazy" /></button></li>
+        <li><button type="button" class="galeria__item" data-obra="5" aria-label="Ampliar obra Astronauta Eclipse"><img src="./assets/galeria-5.png" alt="Retrato digital de astronauta em luz neon, obra 5" width="305" height="198" loading="lazy" /></button></li>
+        <li><button type="button" class="galeria__item" data-obra="6" aria-label="Ampliar obra Astronauta Zênite"><img src="./assets/galeria-6.png" alt="Retrato digital de astronauta em luz neon, obra 6" width="305" height="198" loading="lazy" /></button></li>
+        <li><button type="button" class="galeria__item" data-obra="7" aria-label="Ampliar obra Astronauta Pulsar"><img src="./assets/galeria-7.png" alt="Retrato digital de astronauta em luz neon, obra 7" width="305" height="198" loading="lazy" /></button></li>
+        <li><button type="button" class="galeria__item" data-obra="8" aria-label="Ampliar obra Astronauta Quasar"><img src="./assets/galeria-8.png" alt="Retrato digital de astronauta em luz neon, obra 8" width="305" height="198" loading="lazy" /></button></li>
+      </ul>
+    </section>
+
+    <section class="sobre" id="sobre" aria-labelledby="sobre-titulo">
+      <h2 id="sobre-titulo" class="lt-sr-only">Sobre a Rocket NFTs</h2>
+      <ul class="numeros">
+        <li><strong>10K+</strong><span>Artes</span></li>
+        <li><strong>200K+</strong><span>Vendas</span></li>
+        <li><strong>20K+</strong><span>Artistas</span></li>
+      </ul>
+      <div class="sobre__textos">
+        <div>
+          <p>Cada obra é registrada em <mark>blockchain</mark>, o que garante autoria, histórico de vendas e autenticidade para quem coleciona.</p>
+          <a href="#faq" data-faq="0">Como funciona a autenticidade</a>
+        </div>
+        <div>
+          <p>Artistas recebem <mark>royalties</mark> em toda revenda da obra, e você acompanha o valor de cada peça direto na sua carteira.</p>
+          <a href="#faq" data-faq="1">Entenda os royalties</a>
+        </div>
+      </div>
+      <img class="sobre__banner" src="./assets/banner.png" alt="Pessoa com óculos futuristas em luz neon rosa e azul" width="1158" height="300" loading="lazy" />
+    </section>
+
+    <section class="container populares" id="populares" aria-labelledby="pop-titulo">
+      <h2 id="pop-titulo" class="titulo"><span>Populares</span> da semana</h2>
+      <div class="populares__grade">
+        <article class="pop">
+          <div class="pop__topo"><h3>Astronauta 1</h3><img src="./assets/arrow-white.svg" alt="" width="16" height="16" /></div>
+          <p class="pop__meta"><span>Lia Monteiro</span><strong>1.50 RKT</strong></p>
+          <img class="pop__img" src="./assets/astronauta 1.png" alt="Astronauta 1, obra de Lia Monteiro" width="350" height="200" loading="lazy" />
+          <button type="button" class="botao botao--linha" data-comprar="Astronauta 1" data-artista="Lia Monteiro" data-preco="1.50">Comprar</button>
+        </article>
+        <article class="pop">
+          <div class="pop__topo"><h3>Astronauta 2</h3><img src="./assets/arrow-white.svg" alt="" width="16" height="16" /></div>
+          <p class="pop__meta"><span>Rafa Nunes</span><strong>2.00 RKT</strong></p>
+          <img class="pop__img" src="./assets/astronauta-2.png" alt="Astronauta 2, obra de Rafa Nunes" width="350" height="200" loading="lazy" />
+          <button type="button" class="botao botao--linha" data-comprar="Astronauta 2" data-artista="Rafa Nunes" data-preco="2.00">Comprar</button>
+        </article>
+        <article class="pop">
+          <div class="pop__topo"><h3>Astronauta 3</h3><img src="./assets/arrow-white.svg" alt="" width="16" height="16" /></div>
+          <p class="pop__meta"><span>Caio Duarte</span><strong>3.75 RKT</strong></p>
+          <img class="pop__img" src="./assets/astronauta-3.png" alt="Astronauta 3, obra de Caio Duarte" width="350" height="200" loading="lazy" />
+          <button type="button" class="botao botao--linha" data-comprar="Astronauta 3" data-artista="Caio Duarte" data-preco="3.75">Comprar</button>
+        </article>
+        <article class="pop">
+          <div class="pop__topo"><h3>Astronauta 4</h3><img src="./assets/arrow-white.svg" alt="" width="16" height="16" /></div>
+          <p class="pop__meta"><span>Bia Tavares</span><strong>4.30 RKT</strong></p>
+          <img class="pop__img" src="./assets/astronauta-4.png" alt="Astronauta 4, obra de Bia Tavares" width="350" height="200" loading="lazy" />
+          <button type="button" class="botao botao--linha" data-comprar="Astronauta 4" data-artista="Bia Tavares" data-preco="4.30">Comprar</button>
+        </article>
+      </div>
+    </section>
+
+    <section class="container artistas" aria-labelledby="art-titulo">
+      <h2 id="art-titulo" class="titulo titulo--centro">Melhores <span>artistas</span></h2>
+      <ul class="artistas__grade">
+        <li><button type="button" class="artista" data-artista="Lia Monteiro" data-fotos="80"><img src="./assets/artista-1.png" alt="" width="56" height="56" loading="lazy" /><span><strong>Lia Monteiro</strong><small>80 fotografias</small></span></button></li>
+        <li><button type="button" class="artista" data-artista="Rafa Nunes" data-fotos="99"><img src="./assets/artista-2.png" alt="" width="56" height="56" loading="lazy" /><span><strong>Rafa Nunes</strong><small>99 fotografias</small></span></button></li>
+        <li><button type="button" class="artista" data-artista="Caio Duarte" data-fotos="50"><img src="./assets/artista-3.png" alt="" width="56" height="56" loading="lazy" /><span><strong>Caio Duarte</strong><small>50 fotografias</small></span></button></li>
+        <li><button type="button" class="artista" data-artista="Bia Tavares" data-fotos="43"><img src="./assets/artista-4.png" alt="" width="56" height="56" loading="lazy" /><span><strong>Bia Tavares</strong><small>43 fotografias</small></span></button></li>
+        <li><button type="button" class="artista" data-artista="Ana Siqueira" data-fotos="28"><img src="./assets/artista-5.png" alt="" width="56" height="56" loading="lazy" /><span><strong>Ana Siqueira</strong><small>28 fotografias</small></span></button></li>
+        <li><button type="button" class="artista" data-artista="Diego Farias" data-fotos="20"><img src="./assets/artista-6.png" alt="" width="56" height="56" loading="lazy" /><span><strong>Diego Farias</strong><small>20 fotografias</small></span></button></li>
+      </ul>
+      <p class="centro"><button type="button" class="link-seta" id="btn-todos">Veja todos os artistas <img src="./assets/arrow-orange.svg" alt="" width="14" height="14" /></button></p>
+    </section>
+
+    <section class="container faq" id="faq" aria-labelledby="faq-titulo">
+      <h2 id="faq-titulo" class="titulo titulo--centro">Perguntas <span>frequentes</span></h2>
+      <div class="faq__lista">
+        <details><summary>Como sei que a obra é autêntica?</summary><p>Cada NFT tem um registro único em blockchain com o endereço do artista que a criou. O certificado aparece na sua carteira após a compra.</p></details>
+        <details><summary>O que são royalties?</summary><p>Uma porcentagem (aqui, 10%) de toda revenda volta automaticamente para o artista original.</p></details>
+        <details><summary>O que é RKT?</summary><p>É o token fictício usado nesta demonstração. Nenhuma transação real é feita.</p></details>
+        <details><summary>Preciso de uma carteira?</summary><p>Sim. Use o botão "Conectar carteira" no topo; nesta demonstração a conexão é simulada.</p></details>
+      </div>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    <div class="container rodape__topo">
+      <p class="logo">Rocket <span>NFTs</span></p>
+      <a href="#topo" class="topo-btn" aria-label="Voltar ao topo"><img src="./assets/arrow-white.svg" alt="" width="18" height="18" /></a>
+    </div>
+    <div class="container rodape__meio">
+      <form class="news" id="form-news" novalidate>
+        <h2>Fique por dentro de <span>todas as novidades</span></h2>
+        <div class="news__linha">
+          <label for="news-email" class="lt-sr-only">Seu e-mail</label>
+          <input id="news-email" name="email" type="email" required placeholder="seu@email.com" autocomplete="email" />
+          <button type="submit">Enviar</button>
+        </div>
+      </form>
+      <nav class="mapa" aria-label="Rodapé">
+        <div><h3>Empresa</h3><ul><li><a href="#sobre">Sobre</a></li><li><a href="#populares">Serviços</a></li><li><a href="#art-titulo">Time</a></li><li><a href="#form-news">Carreira</a></li></ul></div>
+        <div><h3>Mapa</h3><ul><li><a href="#galeria">Galeria</a></li><li><a href="#populares">Populares</a></li><li><a href="#populares">Vendas</a></li><li><a href="https://wa.me/5532988367667">Contato</a></li></ul></div>
+        <div><h3>Links</h3><ul><li><a href="#faq">FAQs</a></li><li><a href="#faq">Termos</a></li><li><a href="#faq">Política</a></li><li><a href="https://wa.me/5532988367667">Ajuda</a></li></ul></div>
+      </nav>
+    </div>
+    <div class="container rodape__base">
+      <p>Projeto de estudo · marca e token fictícios · desafio Rocket NFTs</p>
+      <ul class="redes">
+        <li><a href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Instagram"><img src="./assets/instagram.svg" alt="" width="20" height="20" /></a></li>
+        <li><a href="https://www.youtube.com/" target="_blank" rel="noopener" aria-label="YouTube"><img src="./assets/youtube.svg" alt="" width="20" height="20" /></a></li>
+        <li><a href="https://twitter.com/" target="_blank" rel="noopener" aria-label="Twitter"><img src="./assets/twitter.svg" alt="" width="20" height="20" /></a></li>
+        <li><a href="#form-news" aria-label="Newsletter por e-mail"><img src="./assets/email.svg" alt="" width="20" height="20" /></a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script src="./script.js"></script>
+<!-- learnTECH · volta ao catálogo UX Design -->
+<style>
+.lt-voltar{position:fixed;left:18px;bottom:18px;z-index:99998;display:inline-flex;align-items:center;gap:9px;
+padding:11px 16px;border-radius:999px;background:rgba(10,14,39,.92);border:1px solid rgba(0,212,212,.42);
+color:#eaf0f7;text-decoration:none;font:700 14px/1 "Segoe UI",system-ui,-apple-system,Arial,sans-serif;
+box-shadow:0 12px 30px rgba(0,0,0,.34);backdrop-filter:blur(10px);
+transition:transform .2s ease,border-color .2s ease,background .2s ease;-webkit-font-smoothing:antialiased}
+.lt-voltar:hover{transform:translateY(-2px);border-color:#00d4d4;background:rgba(10,14,39,.98);color:#eaf0f7}
+.lt-voltar:focus-visible{outline:3px solid #00d4d4;outline-offset:3px}
+.lt-voltar__i{display:inline-grid;place-items:center;width:24px;height:24px;border-radius:999px;
+background:rgba(0,212,212,.16);color:#00d4d4;font-size:14px}
+@media (max-width:640px){.lt-voltar{left:12px;bottom:12px;padding:10px 13px;font-size:13px}
+.lt-voltar__t{display:none}}
+.lt-espaco{height:86px;flex:none;pointer-events:none}
+@media print{.lt-voltar,.lt-espaco{display:none}}
+</style>
+<div class="lt-espaco" aria-hidden="true"></div>
+<a class="lt-voltar" href="../../index.html" aria-label="Voltar ao catálogo UX Design">
+  <span class="lt-voltar__i" aria-hidden="true">&#8592;</span>
+  <span class="lt-voltar__t">Voltar ao portfólio</span>
+</a>
+<!-- fim · volta ao catálogo -->
+</body>
+</html>

@@ -13,88 +13,92 @@
   <meta property="og:description" content="Te apresento o projeto em detalhes." />
   <meta property="og:url" content="https://douglasabnovato.github.io/ux-design/projects/apresentacao-project/" />
   <meta property="og:image" content="https://douglasabnovato.github.io/ux-design/assets/project.jpg" />
+  <style>
+    .project-tec { font-size: .9rem; opacity: .75; margin-top: 8px; }
+    .project-link { display: inline-block; margin-top: 16px; padding: .7rem 1.6rem; border: .2rem solid currentColor; color: inherit; text-decoration: none; font-weight: 700; text-transform: uppercase; letter-spacing: .08rem; }
+    .project-link:hover { opacity: .8; }
+    .project-cta { display: flex; flex-wrap: wrap; gap: 16px; justify-content: center; margin: 48px 0 16px; }
+    .project-cta .cta { display: inline-block; padding: 1rem 2.4rem; border: .2rem solid gold; color: gold; text-decoration: none; text-transform: uppercase; font-weight: 700; }
+    .project-cta .cta:hover { background: gold; color: #111; }
+  </style>
 </head>
   <body>
     <section id="presentation">
       <div class="presentation container">
         <div>
-          <h1>Olá,<span></span></h1>
-          <h1>meu nome é<span></span></h1>
-          <h1>Douglas<span></span></h1>
-          <a href="#portfolio" type="button" class="cta">Portfolio</a>
+          <h1 aria-label="Olá, meu nome é Douglas">Olá,<span></span></h1>
+          <h1 aria-hidden="true">meu nome é<span></span></h1>
+          <h1 aria-hidden="true">Douglas<span></span></h1>
+          <a href="#portfolio" type="button" class="cta">Portfólio</a>
         </div>
       </div>
     </section>
     <section id="portfolio">
       <div class="portfolio container">
         <div class="portfolio header">
-          <h1 class="section-title"><span>Portfolio</span></h1>
+          <h1 class="section-title" aria-level="2"><span>Portfólio</span></h1>
         </div>
         <div class="all-projects">
           <div class="project-item">
             <div class="project-info">
-              <h1>Projeto 1</h1>
-              <h2>Codar é daora</h2>
+              <h1 aria-level="3">Tech Educa</h1>
+              <h2>Escola on-line de tecnologia</h2>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-                nec eros leo. Vestibulum aliquam vel libero eget porttitor. Nunc
-                nisl nunc, suscipit quis quam ut, congue fermentum ipsum. In
-                consectetur, leo a accumsan eleifend, tortor leo eleifend nunc,
-                sed pulvinar neque urna vitae dui.
+                Site com 7 páginas: catálogo de cursos com filtros e estado vazio, ementa em acordeão, matrícula em janela com validação, blog com busca e comentários.
               </p>
+              <p class="project-tec">HTML, CSS, JavaScript</p>
+              <a class="project-link" href="../school/index.html">Ver projeto</a>
             </div>
             <div class="project-img">
-              <img src="./assets/img-1.png" alt="img" />
+              <img src="../../assets/school.jpg" alt="Tela inicial do projeto Tech Educa" loading="lazy" />
             </div>
           </div>
           <div class="project-item">
             <div class="project-info">
-              <h1>Projeto 2</h1>
-              <h2>Codar é vida</h2>
+              <h1 aria-level="3">Puro Estilo</h1>
+              <h2>Catálogo virtual de moda</h2>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-                nec eros leo. Vestibulum aliquam vel libero eget porttitor. Nunc
-                nisl nunc, suscipit quis quam ut, congue fermentum ipsum. In
-                consectetur, leo a accumsan eleifend, tortor leo eleifend nunc,
-                sed pulvinar neque urna vitae dui.
+                Vitrine com favoritos, quantidades e total, exportação da lista em PDF, sacola, paginação real e cupons para a loja de São João Nepomuceno.
               </p>
+              <p class="project-tec">HTML, CSS, JavaScript, html2pdf</p>
+              <a class="project-link" href="../puro-estilo/index.html">Ver projeto</a>
             </div>
             <div class="project-img">
-              <img src="./assets/img-1.png" alt="img" />
+              <img src="../../assets/puro-estilo.jpg" alt="Tela inicial do projeto Puro Estilo" loading="lazy" />
             </div>
           </div>
           <div class="project-item">
             <div class="project-info">
-              <h1>Projeto 3</h1>
-              <h2>Codar é amor</h2>
+              <h1 aria-level="3">Volta Express</h1>
+              <h2>Marketplace de fretes</h2>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-                nec eros leo. Vestibulum aliquam vel libero eget porttitor. Nunc
-                nisl nunc, suscipit quis quam ut, congue fermentum ipsum. In
-                consectetur, leo a accumsan eleifend, tortor leo eleifend nunc,
-                sed pulvinar neque urna vitae dui.
+                Busca de fretes por cidade, data e veículo, com destaque dos resultados e aceite do frete com validação de placa e WhatsApp.
               </p>
+              <p class="project-tec">HTML, CSS, JavaScript</p>
+              <a class="project-link" href="../transportation/index.html">Ver projeto</a>
             </div>
             <div class="project-img">
-              <img src="./assets/img-1.png" alt="img" />
+              <img src="../../assets/transportation.jpg" alt="Tela inicial do projeto Volta Express" loading="lazy" />
             </div>
           </div>
           <div class="project-item">
             <div class="project-info">
-              <h1>Projeto 4</h1>
-              <h2>Codar é gostoso demais</h2>
+              <h1 aria-level="3">Meus Livros</h1>
+              <h2>Livraria e reservas</h2>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-                nec eros leo. Vestibulum aliquam vel libero eget porttitor. Nunc
-                nisl nunc, suscipit quis quam ut, congue fermentum ipsum. In
-                consectetur, leo a accumsan eleifend, tortor leo eleifend nunc,
-                sed pulvinar neque urna vitae dui.
+                Catálogo de livros com reserva por formulário, lista "Minhas reservas", estados vazio e de erro e confirmação na tela.
               </p>
+              <p class="project-tec">HTML, CSS, JavaScript</p>
+              <a class="project-link" href="../livraria/index.html">Ver projeto</a>
             </div>
             <div class="project-img">
-              <img src="./assets/img-1.png" alt="img" />
+              <img src="../../assets/livraria.jpg" alt="Tela inicial do projeto Meus Livros" loading="lazy" />
             </div>
           </div>
+        </div>
+        <div class="project-cta">
+          <a class="cta" href="../../index.html">Ver todos os projetos</a>
+          <a class="cta" href="https://wa.me/5532988367667?text=Ol%C3%A1%2C%20Douglas!%20Vi%20o%20seu%20portf%C3%B3lio.">Fale comigo</a>
         </div>
       </div>
     </section>

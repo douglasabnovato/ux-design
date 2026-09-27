@@ -1,12 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="styles.css" />
-    <title>Whatsapp Messages</title>
+    <title>Mensagens de bom dia · WhatsApp Messages</title>
   <link rel="stylesheet" href="../../shared/lt-base.css" />
+  <link rel="stylesheet" href="../../shared/lt-feedback.css" />
+  <script src="../../shared/lt-feedback.js"></script>
   <meta name="description" content="Layout do Sistema de mensagens do WhatsApp." />
   <meta property="og:type" content="website" />
   <meta property="og:title" content="WhatsApp Messages · UX Design" />
@@ -15,61 +17,67 @@
   <meta property="og:image" content="https://douglasabnovato.github.io/ux-design/assets/whatsapp-messages.jpg" />
 </head>
 <body>
-    <div class="message" onclick="hello(this)">
-        <p class="text-message">Bom dia, luz do dia.</p>
-        <img 
-        src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" 
-        alt="logo WhatsApp">
-    </div>
-    <div class="message" onclick="hello(this)">
-        <p class="text-message">Bom dia, minha princesa.</p>
-        <img 
-        src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" 
-        alt="logo WhatsApp">
-    </div>    
-    <div class="message" onclick="hello(this)">
-        <p class="text-message">Bom dia mãe!!</p>
-        <img 
-        src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" 
-        alt="logo WhatsApp">
-    </div>
-    <div class="message" onclick="hello(this)">
-        <p class="text-message">Bom dia brother. Bora para pelada!?</p>
-        <img 
-        src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" 
-        alt="logo WhatsApp">
-    </div>
-    <div class="message" onclick="hello(this)">
-        <p class="text-message">Bom dia brow. Bora tomar uma?!</p>
-        <img 
-        src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" 
-        alt="logo WhatsApp">
-    </div>    
-    <div class="message" onclick="hello(this)">
-        <p class="text-message">Bom dia brow. Qual a boa de hoje?</p>
-        <img 
-        src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" 
-        alt="logo WhatsApp">
-    </div>
-    <div class="message" onclick="hello(this)">
-        <p class="text-message">Bom dia! Segundou. Foco no trabalho.</p>
-        <img 
-        src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" 
-        alt="logo WhatsApp">
-    </div>
-    <div class="message" onclick="hello(this)">
-        <p class="text-message">Bom dia. Sextoou.</p>
-        <img 
-        src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" 
-        alt="logo WhatsApp">
-    </div>    
-    <div class="message" onclick="hello(this)">
-        <p class="text-message">Bom dia. Meio-dia. Quem fez, fez!!!</p>
-        <img 
-        src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" 
-        alt="logo WhatsApp">
-    </div>
-    <script type="text/javascript" src="main.js"></script>
+  <main class="app">
+    <header class="app__topo">
+      <h1>Mensagens de bom dia</h1>
+      <p>Escolha uma mensagem pronta (ou escreva a sua), informe o número e envie pelo WhatsApp.</p>
+    </header>
+    <section aria-labelledby="lista-titulo">
+      <h2 id="lista-titulo" class="lt-sr-only">Mensagens prontas</h2>
+      <ul class="mensagens">
+        <li><button type="button" class="mensagem" aria-pressed="false">
+          <span class="mensagem__texto">Bom dia, luz do dia.</span>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="" width="36" height="36">
+        </button></li>
+        <li><button type="button" class="mensagem" aria-pressed="false">
+          <span class="mensagem__texto">Bom dia, minha princesa.</span>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="" width="36" height="36">
+        </button></li>
+        <li><button type="button" class="mensagem" aria-pressed="false">
+          <span class="mensagem__texto">Bom dia mãe!!</span>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="" width="36" height="36">
+        </button></li>
+        <li><button type="button" class="mensagem" aria-pressed="false">
+          <span class="mensagem__texto">Bom dia brother. Bora para pelada!?</span>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="" width="36" height="36">
+        </button></li>
+        <li><button type="button" class="mensagem" aria-pressed="false">
+          <span class="mensagem__texto">Bom dia brow. Bora tomar uma?!</span>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="" width="36" height="36">
+        </button></li>
+        <li><button type="button" class="mensagem" aria-pressed="false">
+          <span class="mensagem__texto">Bom dia brow. Qual a boa de hoje?</span>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="" width="36" height="36">
+        </button></li>
+        <li><button type="button" class="mensagem" aria-pressed="false">
+          <span class="mensagem__texto">Bom dia! Segundou. Foco no trabalho.</span>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="" width="36" height="36">
+        </button></li>
+        <li><button type="button" class="mensagem" aria-pressed="false">
+          <span class="mensagem__texto">Bom dia. Sextoou.</span>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="" width="36" height="36">
+        </button></li>
+        <li><button type="button" class="mensagem" aria-pressed="false">
+          <span class="mensagem__texto">Bom dia. Meio-dia. Quem fez, fez!!!</span>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="" width="36" height="36">
+        </button></li>
+      </ul>
+    </section>
+    <form class="envio" id="form-envio" novalidate>
+      <h2>Enviar mensagem</h2>
+      <div class="campo">
+        <label for="msg-texto">Mensagem</label>
+        <textarea id="msg-texto" name="mensagem" rows="3" required minlength="3" placeholder="Toque em uma mensagem acima ou escreva aqui"></textarea>
+      </div>
+      <div class="campo">
+        <label for="msg-numero">WhatsApp de destino (com DDD)</label>
+        <input id="msg-numero" name="telefone" type="tel" inputmode="numeric" required autocomplete="off" placeholder="(32) 98836-7667">
+      </div>
+      <button type="submit" class="envio__botao">Enviar pelo WhatsApp</button>
+      <div class="recentes" id="recentes" aria-live="polite"></div>
+    </form>
+  </main>
+  <script type="text/javascript" src="main.js"></script>
 <!-- learnTECH · volta ao catálogo UX Design -->
 <style>
 .lt-voltar{position:fixed;left:18px;bottom:18px;z-index:99998;display:inline-flex;align-items:center;gap:9px;

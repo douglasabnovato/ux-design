@@ -15,12 +15,18 @@
     />
     <title>Social Tree</title>
     <link rel="stylesheet" href="../../shared/lt-base.css" />
+  <link rel="stylesheet" href="../../shared/lt-feedback.css" />
+  <script src="../../shared/lt-feedback.js"></script>
   <meta name="description" content="Página de linktree para apresentar uma lista de links importantes." />
   <meta property="og:type" content="website" />
   <meta property="og:title" content="My LinkTree · UX Design" />
   <meta property="og:description" content="Página de linktree para apresentar uma lista de links importantes." />
   <meta property="og:url" content="https://douglasabnovato.github.io/ux-design/projects/my-linktree/" />
   <meta property="og:image" content="https://douglasabnovato.github.io/ux-design/assets/my-linktree.jpg" />
+  <style>
+    .compartilhar { display: block; margin: 20px auto 0; padding: 12px 22px; border-radius: 999px; border: 2px solid currentColor; background: transparent; color: inherit; font: inherit; cursor: pointer; }
+    .compartilhar:hover { opacity: .85; }
+  </style>
 </head>
   <body>
     <h1 class="lt-sr-only">Links de Douglas Novato</h1>
@@ -31,55 +37,55 @@
           src="https://avatars.githubusercontent.com/u/14242834?v=4"
           alt="Imagem do perfil do Github do Douglas"
         />
-        <idpersona>
-          <a href="https://linktr.ee/douglasabnovato" target="_blank">
+        <div class="idpersona">
+          <a href="https://linktr.ee/douglasabnovato" target="_blank" rel="noopener">
             <p>@douglasabnovato</p>
           </a>
-        </idpersona>
+        </div>
         <ul>
           <li>
-            <a href="https://meu-salao.netlify.app/" target="_blank"
+            <a href="https://meu-salao.netlify.app/" target="_blank" rel="noopener"
               >Meu Salão</a
             >
           </li>
           <li>
-            <a href="https://meu-salao.netlify.app/" target="_blank"
-              >Feedback Widget</a
+            <a href="../../index.html"
+              >Portfólio UX Design</a
             >
           </li>
           <li>
-            <a href="https://douglasabnovato.github.io/coffee/" target="_blank"
+            <a href="https://douglasabnovato.github.io/coffee/" target="_blank" rel="noopener"
               >Coffee</a
             >
           </li>
           <li>
             <a
-              href="https://douglasabnovato.github.io/cracha-virtual/"
-              target="_blank"
+              href="../cracha-virtual/index.html"
               >Crachá Virtual</a
             >
           </li>
           <li>
-            <a href="https://dev-finances-app.netlify.app/" target="_blank"
+            <a href="../finances/index.html"
               >Dev Finances</a
             >
           </li>
         </ul>
+        <button type="button" class="compartilhar" id="btn-compartilhar">Compartilhar meus links</button>
         <footer>
-          <a href="https://twitter.com/douglasabnovato" target="_blank">
-            <img src="./assets/twitter.svg" alt="logo twitter"
+          <a href="https://twitter.com/douglasabnovato" target="_blank" rel="noopener">
+            <img src="./assets/twitter.svg" alt="Twitter"
           /></a>
-          <a href="https://twitch.com/douglasabnovato" target="_blank">
-            <img src="./assets/twitch.svg" alt="logo twitch"
+          <a href="https://www.twitch.tv/douglasabnovato" target="_blank" rel="noopener">
+            <img src="./assets/twitch.svg" alt="Twitch"
           /></a>
-          <a href="https://instagram.com/douglasabnovato" target="_blank">
-            <img src="./assets/instagram.svg" alt="logo instagram"
+          <a href="https://instagram.com/douglasabnovato" target="_blank" rel="noopener">
+            <img src="./assets/instagram.svg" alt="Instagram"
           /></a>
-          <a href="https://www.linkedin.com/in/douglasabnovato/" target="_blank">
-            <img src="./assets/linkedin.svg" alt="logo linkedin"
+          <a href="https://www.linkedin.com/in/douglasabnovato/" target="_blank" rel="noopener">
+            <img src="./assets/linkedin.svg" alt="LinkedIn"
           /></a>
-          <a href="https://github.com/douglasabnovato" target="_blank">
-            <img src="./assets/github.svg" alt="logo github"
+          <a href="https://github.com/douglasabnovato" target="_blank" rel="noopener">
+            <img src="./assets/github.svg" alt="GitHub"
           /></a>
         </footer>
       </div>

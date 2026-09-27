@@ -1,754 +1,105 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="./style.css">
-    <link rel="shortcut icon" href="./public/house.png" type="image/x-icon">
-    <title>Edificações 3D</title>
-  <link rel="stylesheet" href="../../shared/lt-base.css" />
-  <meta name="description" content="Aplicação web para exibição de maquetes, detalhes de engenharia civil e renderizações 3D de projetos arquitetônicos com design responsivo." />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Edificações 3D · projetos e maquetes em SketchUp</title>
+  <meta name="description" content="Portfólio de maquetes 3D em SketchUp: residências, condomínios, interiores e móveis, com filtros, busca, galeria ampliada e pedido de orçamento." />
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Edificações 3D · UX Design" />
-  <meta property="og:description" content="Aplicação web para exibição de maquetes, detalhes de engenharia civil e renderizações 3D de projetos arquitetônicos com design responsivo." />
+  <meta property="og:title" content="Edificações 3D · projetos e maquetes em SketchUp" />
+  <meta property="og:description" content="Portfólio de maquetes 3D em SketchUp: residências, condomínios, interiores e móveis." />
   <meta property="og:url" content="https://douglasabnovato.github.io/ux-design/projects/edificacoes-3d/" />
   <meta property="og:image" content="https://douglasabnovato.github.io/ux-design/assets/edificacoes-3d.jpg" />
+  <link rel="shortcut icon" href="./public/house.png" type="image/x-icon" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" />
+  <link rel="stylesheet" href="./style.css" />
+  <link rel="stylesheet" href="../../shared/lt-base.css" />
+  <link rel="stylesheet" href="../../shared/lt-feedback.css" />
+  <script src="../../shared/lt-feedback.js"></script>
 </head>
-
-<body class="w3-content" style="max-width:1200px">
-    <header class="hero">
-        <div class="w3-panel">
-            <i class="w3-xlarge fa fa-bars"></i>
+<body>
+  <a class="pular" href="#projetos">Pular para os projetos</a>
+  <header class="topo">
+    <div class="container topo__linha">
+      <a class="marca" href="#">Edificações <strong>3D</strong></a>
+      <nav aria-label="Principal">
+        <ul class="menu">
+          <li><a href="#projetos">Projetos</a></li>
+          <li><a href="#processo">Como trabalhamos</a></li>
+          <li><a href="#orcamento" class="menu__cta">Pedir orçamento</a></li>
+        </ul>
+      </nav>
+    </div>
+    <section class="container hero" aria-labelledby="hero-titulo">
+      <div>
+        <p class="hero__selo">Maquetes 3D em SketchUp</p>
+        <h1 id="hero-titulo">Veja o seu projeto pronto antes do primeiro tijolo</h1>
+        <p class="hero__texto">Residências, condomínios, interiores e móveis modelados em 3D, com renders humanizados para você decidir com segurança.</p>
+        <div class="hero__acoes">
+          <a class="botao" href="#projetos">Ver projetos</a>
+          <a class="botao botao--linha" href="#orcamento">Pedir orçamento</a>
         </div>
+      </div>
+      <ul class="numeros" aria-label="Números do portfólio">
+        <li><strong id="n-projetos">23</strong><span>projetos</span></li>
+        <li><strong id="n-imagens">104</strong><span>imagens 3D</span></li>
+        <li><strong>4</strong><span>categorias</span></li>
+      </ul>
+    </section>
+  </header>
 
-        <section class="w3-row project-section hero-content">
-            <div class="w3-half w3-container">
-                <h1 class="w3-xxlarge w3-text-light-grey">Hello</h1>
-                <h1 class="w3-xxlarge w3-text-grey">We are</h1>
-                <h1 class="w3-jumbo">InShock</h1>
-            </div>
-            <div class="w3-half w3-container w3-xlarge w3-text-grey">
-                <p class="">We build design teams
-                    - we break things down and build it better
-                    - we deliver the best of solutions</p>
-                <p>InShock means powerfull simplicity</p>
-            </div>
-        </section>
-    </header>
-    <main>
-        <div class="w3-panel w3-text-grey">
-            <h3 class="section-title">Projetos em destaque</h3>
+  <main>
+    <section class="container projetos" id="projetos" aria-labelledby="proj-titulo">
+      <h2 id="proj-titulo">Projetos</h2>
+      <form class="filtros" id="form-filtros" role="search" aria-label="Filtrar projetos">
+        <div class="filtros__categorias" role="group" aria-label="Categoria" id="categorias"></div>
+        <label for="busca" class="lt-sr-only">Buscar projeto</label>
+        <input id="busca" name="busca" type="search" placeholder="Buscar projeto, ex.: piscina, vila" autocomplete="off" />
+      </form>
+      <p class="contagem" id="contagem" role="status"></p>
+      <ul class="grade" id="grade"></ul>
+    </section>
+
+    <section class="processo" id="processo" aria-labelledby="proc-titulo">
+      <div class="container">
+        <h2 id="proc-titulo">Como trabalhamos</h2>
+        <ol class="passos">
+          <li><strong>Briefing</strong><span>Entendemos o terreno, o orçamento e o estilo que você quer.</span></li>
+          <li><strong>Modelagem 3D</strong><span>Criamos a maquete no SketchUp com medidas reais.</span></li>
+          <li><strong>Renders</strong><span>Imagens humanizadas com luz, vegetação e mobiliário.</span></li>
+          <li><strong>Ajustes</strong><span>Duas rodadas de revisão até ficar do seu jeito.</span></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="container orcamento" id="orcamento" aria-labelledby="orc-titulo">
+      <div>
+        <h2 id="orc-titulo">Peça um orçamento</h2>
+        <p>Conte o que você precisa e respondemos pelo WhatsApp com prazo e valor estimados.</p>
+      </div>
+      <form id="form-orcamento" novalidate>
+        <div class="campo"><label for="o-nome">Nome</label><input id="o-nome" name="nome" required minlength="3" autocomplete="name" /></div>
+        <div class="campo"><label for="o-tel">WhatsApp</label><input id="o-tel" name="telefone" type="tel" required autocomplete="tel" placeholder="(32) 98836-7667" /></div>
+        <div class="campo"><label for="o-tipo">Tipo de projeto</label>
+          <select id="o-tipo" name="tipo" required>
+            <option value="">Escolha uma opção</option>
+            <option>Residência</option><option>Condomínio ou vila</option><option>Interiores</option><option>Móveis planejados</option>
+          </select>
         </div>
-
-        <section class="w3-row project-section">
-
-            <div class="w3-panel w3-text-grey">
-                <h4 class="project-title">Uma maravilha</h4>
-            </div>
-            <div class="w3-half w3-container project-card">
-                <img alt="Projeto 13 1" src="./assets/google-sketchUp/imagens/projeto-13-1.png" style="width:100%">
-            </div>
-            <div class="w3-half w3-container project-card">
-                <img alt="Projeto 13 2" src="./assets/google-sketchUp/imagens/projeto-13-2.png" style="width:100%">
-                <p class="w3-xlarge w3-text-grey project-copy">
-                    Demos, Logos, Reports, Names, Events, Media, Wordpress, Google, Books, Optimisations</p>
-            </div>
-
-            <div class="w3-half w3-container project-card">
-                <img alt="Projeto 13 3" src="./assets/google-sketchUp/imagens/projeto-13-3.png" style="width:100%">
-            </div>
-            <div class="w3-half w3-container project-card">
-                <img alt="Projeto 13 4" src="./assets/google-sketchUp/imagens/projeto-13-4.png" style="width:100%">
-                <p class="w3-xlarge w3-text-grey project-copy">
-                    Demos, Logos, Reports, Names, Events, Media, Wordpress, Google, Books, Optimisations</p>
-            </div>
-
-            <div class="w3-half w3-container project-card">
-                <img alt="Projeto 13 5" src="./assets/google-sketchUp/imagens/projeto-13-5.png" style="width:100%">
-            </div>
-            <div class="w3-half w3-container project-card">
-                <img alt="Projeto 13 6" src="./assets/google-sketchUp/imagens/projeto-13-6.png" style="width:100%">
-                <p class="w3-xlarge w3-text-grey project-copy">
-                    Demos, Logos, Reports, Names, Events, Media, Wordpress, Google, Books, Optimisations</p>
-            </div>
-            <div class="w3-half w3-container project-card">
-                <img alt="Projeto 13 7" src="./assets/google-sketchUp/imagens/projeto-13-7.png" style="width:100%">
-            </div>
-
-        </section>
-
-        <section class="w3-row project-section">
-
-            <div class="w3-panel w3-text-grey">
-                <h4 class="project-title">Um lar</h4>
-            </div>
-            <div class="w3-half w3-container project-card">
-                <img alt="Projeto 14 1" src="./assets/google-sketchUp/imagens/projeto-14-1.png" style="width:100%">
-            </div>
-            <div class="w3-half w3-container project-card">
-                <img alt="Projeto 14 2" src="./assets/google-sketchUp/imagens/projeto-14-2.png" style="width:100%">
-                <p class="w3-xlarge w3-text-grey project-copy">
-                    Demos, Logos, Reports, Names, Events, Media, Wordpress, Google, Books, Optimisations</p>
-            </div>
-
-            <div class="w3-half w3-container project-card">
-                <img alt="Projeto 14 3" src="./assets/google-sketchUp/imagens/projeto-14-3.png" style="width:100%">
-            </div>
-            <div class="w3-half w3-container project-card">
-                <img alt="Projeto 14 4" src="./assets/google-sketchUp/imagens/projeto-14-4.png" style="width:100%">
-                <p class="w3-xlarge w3-text-grey project-copy">
-                    Demos, Logos, Reports, Names, Events, Media, Wordpress, Google, Books, Optimisations</p>
-            </div>
-
-        </section>
-
-        <section class="w3-row project-section">
-
-            <div class="w3-panel w3-text-grey">
-                <h4 class="project-title">Casa linda</h4>
-            </div>
-            <div class="w3-half w3-container project-card">
-                <img alt="House1" src="./assets/house1.jpg" style="width:100%">
-            </div>
-            <div class="w3-half w3-container project-card">
-                <img alt="House2" src="./assets/house2.jpg" style="width:100%">
-                <p class="w3-xlarge w3-text-grey project-copy">
-                    Demos, Logos, Reports, Names, Events, Media, Wordpress, Google, Books, Optimisations</p>
-            </div>
-
-        </section>
-
-        <section class="w3-row project-section">
-
-            <div class="w3-panel w3-text-grey">
-                <h4 class="project-title">Um Clássico</h4>
-            </div>
-            <div class="w3-half w3-container project-card">
-                <img alt="Projeto 9 1" src="./assets/google-sketchUp/imagens/projeto-9-1.png" style="width:100%">
-            </div>
-            <div class="w3-half w3-container project-card">
-                <img alt="Projeto 9 2" src="./assets/google-sketchUp/imagens/projeto-9-2.png" style="width:100%">
-                <p class="w3-xlarge w3-text-grey project-copy">
-                    Demos, Logos, Reports, Names, Events, Media, Wordpress, Google, Books, Optimisations</p>
-            </div>
-
-            <div class="w3-half w3-container project-card">
-                <img alt="Projeto 9 3" src="./assets/google-sketchUp/imagens/projeto-9-3.png" style="width:100%">
-            </div>
-            <div class="w3-half w3-container project-card">
-                <img alt="Projeto 9 4" src="./assets/google-sketchUp/imagens/projeto-9-4.png" style="width:100%">
-                <p class="w3-xlarge w3-text-grey project-copy">
-                    Demos, Logos, Reports, Names, Events, Media, Wordpress, Google, Books, Optimisations</p>
-            </div>
-
-        </section>
-
-        <section class="w3-row project-section">
-
-            <div class="w3-panel w3-text-grey">
-                <h4 class="project-title">No detalhe</h4>
-            </div>
-
-            <div class="w3-half w3-container project-card">
-                <img alt="Projeto 10 1" src="./assets/google-sketchUp/imagens/projeto-10-1.png" style="width:100%">
-            </div>
-            <div class="w3-half w3-container project-card">
-                <img alt="Projeto 10 2" src="./assets/google-sketchUp/imagens/projeto-10-2.png" style="width:100%">
-                <p class="w3-xlarge w3-text-grey project-copy">
-                    Demos, Logos, Reports, Names, Events, Media, Wordpress, Google, Books, Optimisations</p>
-            </div>
-
-            <div class="w3-half w3-container project-card">
-                <img alt="Projeto 10 3" src="./assets/google-sketchUp/imagens/projeto-10-3.png" style="width:100%">
-            </div>
-            <div class="w3-half w3-container project-card">
-                <img alt="Projeto 10 4" src="./assets/google-sketchUp/imagens/projeto-10-4.png" style="width:100%">
-                <p class="w3-xlarge w3-text-grey project-copy">
-                    Demos, Logos, Reports, Names, Events, Media, Wordpress, Google, Books, Optimisations</p>
-            </div>
-
-        </section>
-
-        <section class="w3-row project-section">
-
-            <div class="w3-panel w3-text-grey">
-                <h4 class="project-title">Casa Romance</h4>
-            </div>
-            <div class="w3-half w3-container project-card">
-                <img alt="Casa 1 humanizada 1" src="./assets/google-sketchUp/imagens/casa-1-humanizada-1.png" style="width:100%">
-            </div>
-            <div class="w3-half w3-container project-card">
-                <img alt="Casa 1 humanizada 2" src="./assets/google-sketchUp/imagens/casa-1-humanizada-2.png" style="width:100%">
-                <p class="w3-xlarge w3-text-grey project-copy">
-                    Demos, Logos, Reports, Names, Events, Media, Wordpress, Google, Books, Optimisations</p>
-            </div>
-            <div class="w3-half w3-container project-card">
-                <img alt="Casa 1 humanizada 3" src="./assets/google-sketchUp/imagens/casa-1-humanizada-3.png" style="width:100%">
-            </div>
-            <div class="w3-half w3-container project-card">
-                <img alt="Casa 1 humanizada 4" src="./assets/google-sketchUp/imagens/casa-1-humanizada-4.png" style="width:100%">
-                <p class="w3-xlarge w3-text-grey project-copy">
-                    Demos, Logos, Reports, Names, Events, Media, Wordpress, Google, Books, Optimisations</p>
-            </div>
-            <div class="w3-half w3-container project-card">
-                <img alt="Casa 1 humanizada 5" src="./assets/google-sketchUp/imagens/casa-1-humanizada-5.png" style="width:100%">
-            </div>
-            <div class="w3-half w3-container project-card">
-                <img alt="Casa 1 humanizada 6" src="./assets/google-sketchUp/imagens/casa-1-humanizada-6.bmp" style="width:100%">
-                <p class="w3-xlarge w3-text-grey project-copy">
-                    Demos, Logos, Reports, Names, Events, Media, Wordpress, Google, Books, Optimisations</p>
-            </div>
-            <div class="w3-half w3-container project-card">
-                <img alt="Casa 1 humanizada 7" src="./assets/google-sketchUp/imagens/casa-1-humanizada-7.png" style="width:100%">
-            </div>
-            <div class="w3-half w3-container project-card">
-                <img alt="Casa 1 humanizada 8 projeto" src="./assets/google-sketchUp/imagens/casa-1-humanizada-8-projeto.bmp" style="width:100%">
-                <p class="w3-xlarge w3-text-grey project-copy">
-                    Demos, Logos, Reports, Names, Events, Media, Wordpress, Google, Books, Optimisations</p>
-            </div>
-        </section>
-
-        <section class="w3-row project-section">
-
-            <div class="w3-panel w3-text-grey">
-                <h4 class="project-title">Casa de Sol</h4>
-            </div>
-            <div class="w3-half w3-container project-card">
-                <img alt="Casa 2 casa amiga 1" src="./assets/google-sketchUp/imagens/casa-2-casa-amiga-1.png" style="width:100%">
-            </div>
-            <div class="w3-half w3-container project-card">
-                <img alt="Casa 2 casa amiga 2" src="./assets/google-sketchUp/imagens/casa-2-casa-amiga-2.png" style="width:100%">
-                <p class="w3-xlarge w3-text-grey project-copy">
-                    Demos, Logos, Reports, Names, Events, Media, Wordpress, Google, Books, Optimisations</p>
-            </div>
-            <div class="w3-half w3-container project-card">
-                <img alt="Casa 2 casa amiga 3" src="./assets/google-sketchUp/imagens/casa-2-casa-amiga-3.png" style="width:100%">
-            </div>
-            <div class="w3-half w3-container project-card">
-                <img alt="Casa 2 casa amiga 4" src="./assets/google-sketchUp/imagens/casa-2-casa-amiga-4.png" style="width:100%">
-                <p class="w3-xlarge w3-text-grey project-copy">
-                    Demos, Logos, Reports, Names, Events, Media, Wordpress, Google, Books, Optimisations</p>
-            </div>
-            <div class="w3-half w3-container project-card">
-                <img alt="Casa 2 casa amiga 5" src="./assets/google-sketchUp/imagens/casa-2-casa-amiga-5.png" style="width:100%">
-            </div>
-            <div class="w3-half w3-container project-card">
-                <img alt="Casa 2 casa amiga 6" src="./assets/google-sketchUp/imagens/casa-2-casa-amiga-6.bmp" style="width:100%">
-                <p class="w3-xlarge w3-text-grey project-copy">
-                    Demos, Logos, Reports, Names, Events, Media, Wordpress, Google, Books, Optimisations</p>
-            </div>
-            <div class="w3-half w3-container project-card">
-                <img alt="Casa 2 casa amiga 7" src="./assets/google-sketchUp/imagens/casa-2-casa-amiga-7.bmp" style="width:100%">
-            </div>
-        </section>
-
-        <section class="w3-row project-section">
-
-            <div class="w3-panel w3-text-grey">
-                <h4 class="project-title">Uma Casinha</h4>
-            </div>
-            <div class="w3-half w3-container project-card">
-                <img alt="Casa 3 casa modelo 1" src="./assets/google-sketchUp/imagens/casa-3-casa-modelo-1.png" style="width:100%">
-            </div>
-            <div class="w3-half w3-container project-card">
-                <img alt="Casa 3 casa modelo 2" src="./assets/google-sketchUp/imagens/casa-3-casa-modelo-2.png" style="width:100%">
-                <p class="w3-xlarge w3-text-grey project-copy">
-                    Demos, Logos, Reports, Names, Events, Media, Wordpress, Google, Books, Optimisations</p>
-            </div>
-
-        </section>
-
-        <section class="w3-row project-section">
-
-            <div class="w3-panel w3-text-grey">
-                <h4 class="project-title">Meu sítio</h4>
-            </div>
-            <div class="w3-half w3-container project-card">
-                <img alt="Casa 4 sitio 1" src="./assets/google-sketchUp/imagens/casa-4-sitio-1.png" style="width:100%">
-            </div>
-            <div class="w3-half w3-container project-card">
-                <img alt="Casa 4 sitio 2" src="./assets/google-sketchUp/imagens/casa-4-sitio-2.png" style="width:100%">
-                <p class="w3-xlarge w3-text-grey project-copy">
-                    Demos, Logos, Reports, Names, Events, Media, Wordpress, Google, Books, Optimisations</p>
-            </div>
-
-        </section>
-
-        <section class="w3-row project-section">
-
-            <div class="w3-panel w3-text-grey">
-                <h4 class="project-title">Minha casa</h4>
-            </div>
-            <div class="w3-half w3-container project-card">
-                <img alt="Meu 1 sala" src="./assets/google-sketchUp/imagens/meu-1-sala.bmp" style="width:100%">
-            </div>
-            <div class="w3-half w3-container project-card">
-                <img alt="Meu 2 piscina" src="./assets/google-sketchUp/imagens/meu-2-piscina.bmp" style="width:100%">
-                <p class="w3-xlarge w3-text-grey project-copy">
-                    Demos, Logos, Reports, Names, Events, Media, Wordpress, Google, Books, Optimisations</p>
-            </div>
-
-        </section>
-
-        <section class="w3-row project-section">
-
-            <div class="w3-panel w3-text-grey">
-                <h4 class="project-title">Minha casa minimalista</h4>
-            </div>
-            <div class="w3-half w3-container project-card">
-                <img alt="Projeto 2 1" src="./assets/google-sketchUp/imagens/projeto-2-1.bmp" style="width:100%">
-            </div>
-            <div class="w3-half w3-container project-card">
-                <img alt="Projeto 2 2" src="./assets/google-sketchUp/imagens/projeto-2-2.bmp" style="width:100%">
-                <p class="w3-xlarge w3-text-grey project-copy">
-                    Demos, Logos, Reports, Names, Events, Media, Wordpress, Google, Books, Optimisations</p>
-            </div>
-
-            <div class="w3-half w3-container project-card">
-                <img alt="Projeto 2 3 churrasqueira  piscina" src="./assets/google-sketchUp/imagens/projeto-2-3-CHURRASQUEIRA- PISCINA.bmp" style="width:100%">
-            </div>
-            <div class="w3-half w3-container project-card">
-                <img alt="Projeto 2 4 alto" src="./assets/google-sketchUp/imagens/projeto-2-4-ALTO.bmp" style="width:100%">
-                <p class="w3-xlarge w3-text-grey project-copy">
-                    Demos, Logos, Reports, Names, Events, Media, Wordpress, Google, Books, Optimisations</p>
-            </div>
-
-            <div class="w3-half w3-container project-card">
-                <img alt="Projeto 2 5 frente" src="./assets/google-sketchUp/imagens/projeto-2-5-FRENTE.bmp" style="width:100%">
-            </div>
-            <div class="w3-half w3-container project-card">
-                <img alt="Projeto 2 6 fundos" src="./assets/google-sketchUp/imagens/projeto-2-6-FUNDOS.bmp" style="width:100%">
-                <p class="w3-xlarge w3-text-grey project-copy">
-                    Demos, Logos, Reports, Names, Events, Media, Wordpress, Google, Books, Optimisations</p>
-            </div>
-
-            <div class="w3-half w3-container project-card">
-                <img alt="Projeto 2 7 planta" src="./assets/google-sketchUp/imagens/projeto-2-7-planta.bmp" style="width:100%">
-            </div>
-            <div class="w3-half w3-container project-card">
-                <img alt="Projeto 2 8" src="./assets/google-sketchUp/imagens/projeto-2-8.bmp" style="width:100%">
-                <p class="w3-xlarge w3-text-grey project-copy">
-                    Demos, Logos, Reports, Names, Events, Media, Wordpress, Google, Books, Optimisations</p>
-            </div>
-        </section>
-
-        <section class="w3-row project-section">
-
-            <div class="w3-panel w3-text-grey">
-                <h4 class="project-title">Minhas férias</h4>
-            </div>
-            <div class="w3-half w3-container project-card">
-                <img alt="Projeto 3 7" src="./assets/google-sketchUp/imagens/projeto-3-7.png" style="width:100%">
-            </div>
-            <div class="w3-half w3-container project-card">
-                <img alt="Projeto 3 8" src="./assets/google-sketchUp/imagens/projeto-3-8.png" style="width:100%">
-                <p class="w3-xlarge w3-text-grey project-copy">
-                    Demos, Logos, Reports, Names, Events, Media, Wordpress, Google, Books, Optimisations</p>
-            </div>
-            <div class="w3-half w3-container project-card">
-                <img alt="Projeto 3 1" src="./assets/google-sketchUp/imagens/projeto-3-1.png" style="width:100%">
-            </div>
-            <div class="w3-half w3-container project-card">
-                <img alt="Projeto 3 2" src="./assets/google-sketchUp/imagens/projeto-3-2.png" style="width:100%">
-                <p class="w3-xlarge w3-text-grey project-copy">
-                    Demos, Logos, Reports, Names, Events, Media, Wordpress, Google, Books, Optimisations</p>
-            </div>
-            <div class="w3-half w3-container project-card">
-                <img alt="Projeto 3 3" src="./assets/google-sketchUp/imagens/projeto-3-3.png" style="width:100%">
-            </div>
-            <div class="w3-half w3-container project-card">
-                <img alt="Projeto 3 4" src="./assets/google-sketchUp/imagens/projeto-3-4.png" style="width:100%">
-                <p class="w3-xlarge w3-text-grey project-copy">
-                    Demos, Logos, Reports, Names, Events, Media, Wordpress, Google, Books, Optimisations</p>
-            </div>
-            <div class="w3-half w3-container project-card">
-                <img alt="Projeto 3 5" src="./assets/google-sketchUp/imagens/projeto-3-5.png" style="width:100%">
-            </div>
-            <div class="w3-half w3-container project-card">
-                <img alt="Projeto 3 6" src="./assets/google-sketchUp/imagens/projeto-3-6.png" style="width:100%">
-                <p class="w3-xlarge w3-text-grey project-copy">
-                    Demos, Logos, Reports, Names, Events, Media, Wordpress, Google, Books, Optimisations</p>
-            </div>
-
-        </section>
-
-        <section class="w3-row project-section">
-
-            <div class="w3-panel w3-text-grey">
-                <h4 class="project-title">Do meu jeito</h4>
-            </div>
-
-            <div class="w3-half w3-container project-card">
-                <img alt="Projeto 7 1" src="./assets/google-sketchUp/imagens/projeto-7-1.png" style="width:100%">
-            </div>
-            <div class="w3-half w3-container project-card">
-                <img alt="Projeto 7 2" src="./assets/google-sketchUp/imagens/projeto-7-2.png" style="width:100%">
-                <p class="w3-xlarge w3-text-grey project-copy">
-                    Demos, Logos, Reports, Names, Events, Media, Wordpress, Google, Books, Optimisations</p>
-            </div>
-
-            <div class="w3-half w3-container project-card">
-                <img alt="Projeto 7 3" src="./assets/google-sketchUp/imagens/projeto-7-3.png" style="width:100%">
-            </div>
-            <div class="w3-half w3-container project-card">
-                <img alt="Projeto 7 4" src="./assets/google-sketchUp/imagens/projeto-7-4.png" style="width:100%">
-                <p class="w3-xlarge w3-text-grey project-copy">
-                    Demos, Logos, Reports, Names, Events, Media, Wordpress, Google, Books, Optimisations</p>
-            </div>
-
-        </section>
-
-        <section class="w3-row project-section">
-
-            <div class="w3-panel w3-text-grey">
-                <h4 class="project-title">Vizinhas</h4>
-            </div>
-
-            <div class="w3-half w3-container project-card">
-                <img alt="Projeto 2 1" src="./assets/google-sketchUp/imagens/projeto-2-1.png" style="width:100%">
-            </div>
-            <div class="w3-half w3-container project-card">
-                <img alt="Projeto 2 2" src="./assets/google-sketchUp/imagens/projeto-2-2.png" style="width:100%">
-                <p class="w3-xlarge w3-text-grey project-copy">
-                    Demos, Logos, Reports, Names, Events, Media, Wordpress, Google, Books, Optimisations</p>
-            </div>
-
-            <div class="w3-half w3-container project-card">
-                <img alt="Projeto 2 3" src="./assets/google-sketchUp/imagens/projeto-2-3.png" style="width:100%">
-            </div>
-            <div class="w3-half w3-container project-card">
-                <img alt="Projeto 2 4" src="./assets/google-sketchUp/imagens/projeto-2-4.png" style="width:100%">
-                <p class="w3-xlarge w3-text-grey project-copy">
-                    Demos, Logos, Reports, Names, Events, Media, Wordpress, Google, Books, Optimisations</p>
-            </div>
-
-            <div class="w3-half w3-container project-card">
-                <img alt="Projeto 2 5" src="./assets/google-sketchUp/imagens/projeto-2-5.png" style="width:100%">
-            </div>
-            <div class="w3-half w3-container project-card">
-                <img alt="Projeto 2 6" src="./assets/google-sketchUp/imagens/projeto-2-6.png" style="width:100%">
-                <p class="w3-xlarge w3-text-grey project-copy">
-                    Demos, Logos, Reports, Names, Events, Media, Wordpress, Google, Books, Optimisations</p>
-            </div>
-
-            <div class="w3-half w3-container project-card">
-                <img alt="Projeto 2 7" src="./assets/google-sketchUp/imagens/projeto-2-7.png" style="width:100%">
-            </div>
-            <div class="w3-half w3-container project-card">
-                <img alt="Projeto 2 8" src="./assets/google-sketchUp/imagens/projeto-2-8.png" style="width:100%">
-                <p class="w3-xlarge w3-text-grey project-copy">
-                    Demos, Logos, Reports, Names, Events, Media, Wordpress, Google, Books, Optimisations</p>
-            </div>
-
-        </section>
-
-        <section class="w3-row project-section">
-
-            <div class="w3-panel w3-text-grey">
-                <h4 class="project-title">Nossa vila</h4>
-            </div>
-
-            <div class="w3-half w3-container project-card">
-                <img alt="Vila 1" src="./assets/google-sketchUp/imagens/vila-1.png" style="width:100%">
-            </div>
-            <div class="w3-half w3-container project-card">
-                <img alt="Vila 2" src="./assets/google-sketchUp/imagens/vila-2.png" style="width:100%">
-                <p class="w3-xlarge w3-text-grey project-copy">
-                    Demos, Logos, Reports, Names, Events, Media, Wordpress, Google, Books, Optimisations</p>
-            </div>
-
-        </section>
-
-        <section class="w3-row project-section">
-
-            <div class="w3-panel w3-text-grey">
-                <h4 class="project-title">A realeza</h4>
-            </div>
-            <div class="w3-half w3-container project-card">
-                <img alt="Projeto 11 1" src="./assets/google-sketchUp/imagens/projeto-11-1.png" style="width:100%">
-            </div>
-            <div class="w3-half w3-container project-card">
-                <img alt="Projeto 11 2" src="./assets/google-sketchUp/imagens/projeto-11-2.png" style="width:100%">
-                <p class="w3-xlarge w3-text-grey project-copy">
-                    Demos, Logos, Reports, Names, Events, Media, Wordpress, Google, Books, Optimisations</p>
-            </div>
-            <div class="w3-half w3-container project-card">
-                <img alt="Projeto 11 3" src="./assets/google-sketchUp/imagens/projeto-11-3.png" style="width:100%">
-            </div>
-            <div class="w3-half w3-container project-card">
-                <img alt="Projeto 11 4" src="./assets/google-sketchUp/imagens/projeto-11-4.png" style="width:100%">
-                <p class="w3-xlarge w3-text-grey project-copy">
-                    Demos, Logos, Reports, Names, Events, Media, Wordpress, Google, Books, Optimisations</p>
-            </div>
-            <div class="w3-half w3-container project-card">
-                <img alt="Projeto 11 5" src="./assets/google-sketchUp/imagens/projeto-11-5.png" style="width:100%">
-            </div>
-            <div class="w3-half w3-container project-card">
-                <img alt="Projeto 11 6" src="./assets/google-sketchUp/imagens/projeto-11-6.png" style="width:100%">
-                <p class="w3-xlarge w3-text-grey project-copy">
-                    Demos, Logos, Reports, Names, Events, Media, Wordpress, Google, Books, Optimisations</p>
-            </div>
-
-        </section>
-
-        <section class="w3-row project-section">
-
-            <div class="w3-panel w3-text-grey">
-                <h4 class="project-title">Era uma vez</h4>
-            </div>
-            <div class="w3-half w3-container project-card">
-                <img alt="Condominio 1 santo andre 1" src="./assets/google-sketchUp/imagens/condominio-1-santo-andre-1.png" style="width:100%">
-            </div>
-            <div class="w3-half w3-container project-card">
-                <img alt="Condominio 1 santo andre 2" src="./assets/google-sketchUp/imagens/condominio-1-santo-andre-2.png" style="width:100%">
-                <p class="w3-xlarge w3-text-grey project-copy">
-                    Demos, Logos, Reports, Names, Events, Media, Wordpress, Google, Books, Optimisations</p>
-            </div>
-            <div class="w3-half w3-container project-card">
-                <img alt="Condominio 1 santo andre 3" src="./assets/google-sketchUp/imagens/condominio-1-santo-andre-3.png" style="width:100%">
-            </div>
-
-        </section>
-
-        <section class="w3-row project-section">
-
-            <div class="w3-panel w3-text-grey">
-                <h4 class="project-title">Cidadezinha</h4>
-            </div>
-
-            <div class="w3-half w3-container project-card">
-                <img alt="Projeto 4 1" src="./assets/google-sketchUp/imagens/projeto-4-1.png" style="width:100%">
-            </div>
-            <div class="w3-half w3-container project-card">
-                <img alt="Projeto 4 2" src="./assets/google-sketchUp/imagens/projeto-4-2.png" style="width:100%">
-                <p class="w3-xlarge w3-text-grey project-copy">
-                    Demos, Logos, Reports, Names, Events, Media, Wordpress, Google, Books, Optimisations</p>
-            </div>
-
-            <div class="w3-half w3-container project-card">
-                <img alt="Projeto 4 3" src="./assets/google-sketchUp/imagens/projeto-4-3.png" style="width:100%">
-            </div>
-            <div class="w3-half w3-container project-card">
-                <img alt="Projeto 4 4" src="./assets/google-sketchUp/imagens/projeto-4-4.png" style="width:100%">
-                <p class="w3-xlarge w3-text-grey project-copy">
-                    Demos, Logos, Reports, Names, Events, Media, Wordpress, Google, Books, Optimisations</p>
-            </div>
-
-            <div class="w3-half w3-container project-card">
-                <img alt="Projeto 4 5" src="./assets/google-sketchUp/imagens/projeto-4-5.png" style="width:100%">
-            </div>
-
-        </section>
-
-        <section class="w3-row project-section">
-
-            <div class="w3-panel w3-text-grey">
-                <h4 class="project-title">Cidadezinha crescendo</h4>
-            </div>
-
-            <div class="w3-half w3-container project-card">
-                <img alt="Projeto 5 1" src="./assets/google-sketchUp/imagens/projeto-5-1.png" style="width:100%">
-            </div>
-            <div class="w3-half w3-container project-card">
-                <img alt="Projeto 5 2" src="./assets/google-sketchUp/imagens/projeto-5-2.png" style="width:100%">
-                <p class="w3-xlarge w3-text-grey project-copy">
-                    Demos, Logos, Reports, Names, Events, Media, Wordpress, Google, Books, Optimisations</p>
-            </div>
-
-            <div class="w3-half w3-container project-card">
-                <img alt="Projeto 5 3" src="./assets/google-sketchUp/imagens/projeto-5-3.png" style="width:100%">
-            </div>
-            <div class="w3-half w3-container project-card">
-                <img alt="Projeto 5 4" src="./assets/google-sketchUp/imagens/projeto-5-4.png" style="width:100%">
-                <p class="w3-xlarge w3-text-grey project-copy">
-                    Demos, Logos, Reports, Names, Events, Media, Wordpress, Google, Books, Optimisations</p>
-            </div>
-
-        </section>
-
-        <section class="w3-row project-section">
-
-            <div class="w3-panel w3-text-grey">
-                <h4 class="project-title">Traços certos</h4>
-            </div>
-            <div class="w3-half w3-container project-card">
-                <img alt="Projeto 1 1" src="./assets/google-sketchUp/imagens/projeto-1-1.jpg" style="width:100%">
-            </div>
-            <div class="w3-half w3-container project-card">
-                <img alt="Projeto 1 2" src="./assets/google-sketchUp/imagens/projeto-1-2.jpg" style="width:100%">
-                <p class="w3-xlarge w3-text-grey project-copy">
-                    Demos, Logos, Reports, Names, Events, Media, Wordpress, Google, Books, Optimisations</p>
-            </div>
-            <div class="w3-half w3-container project-card">
-                <img alt="Projeto 1 3" src="./assets/google-sketchUp/imagens/projeto-1-3.jpg" style="width:100%">
-            </div>
-
-        </section>
-
-        <section class="w3-row project-section">
-
-            <div class="w3-panel w3-text-grey">
-                <h4 class="project-title">Um perfume</h4>
-            </div>
-            <div class="w3-half w3-container project-card">
-                <img alt="Projeto 1 1" src="./assets/google-sketchUp/imagens/projeto-1-1.jpg" style="width:100%">
-            </div>
-            <div class="w3-half w3-container project-card">
-                <img alt="Projeto 1 2" src="./assets/google-sketchUp/imagens/projeto-1-2.jpg" style="width:100%">
-                <p class="w3-xlarge w3-text-grey project-copy">
-                    Demos, Logos, Reports, Names, Events, Media, Wordpress, Google, Books, Optimisations</p>
-            </div>
-            <div class="w3-half w3-container project-card">
-                <img alt="Projeto 1 3" src="./assets/google-sketchUp/imagens/projeto-1-3.jpg" style="width:100%">
-            </div>
-
-        </section>
-
-        <section class="w3-row project-section">
-
-            <div class="w3-panel w3-text-grey">
-                <h4 class="project-title">Que projeto lindo</h4>
-            </div>
-            <div class="w3-half w3-container project-card">
-                <img alt="Projeto 8 1" src="./assets/google-sketchUp/imagens/projeto-8-1.png" style="width:100%">
-            </div>
-            <div class="w3-half w3-container project-card">
-                <img alt="Projeto 8 2" src="./assets/google-sketchUp/imagens/projeto-8-2.png" style="width:100%">
-                <p class="w3-xlarge w3-text-grey project-copy">
-                    Demos, Logos, Reports, Names, Events, Media, Wordpress, Google, Books, Optimisations</p>
-            </div>
-
-            <div class="w3-half w3-container project-card">
-                <img alt="Projeto 8 3" src="./assets/google-sketchUp/imagens/projeto-8-3.png" style="width:100%">
-            </div>
-            <div class="w3-half w3-container project-card">
-                <img alt="Projeto 8 4" src="./assets/google-sketchUp/imagens/projeto-8-4.png" style="width:100%">
-                <p class="w3-xlarge w3-text-grey project-copy">
-                    Demos, Logos, Reports, Names, Events, Media, Wordpress, Google, Books, Optimisations</p>
-            </div>
-
-            <div class="w3-half w3-container project-card">
-                <img alt="Projeto 8 5" src="./assets/google-sketchUp/imagens/projeto-8-5.png" style="width:100%">
-            </div>
-            <div class="w3-half w3-container project-card">
-                <img alt="Projeto 8 6" src="./assets/google-sketchUp/imagens/projeto-8-6.png" style="width:100%">
-                <p class="w3-xlarge w3-text-grey project-copy">
-                    Demos, Logos, Reports, Names, Events, Media, Wordpress, Google, Books, Optimisations</p>
-            </div>
-
-            <div class="w3-half w3-container project-card">
-                <img alt="Projeto 8 7" src="./assets/google-sketchUp/imagens/projeto-8-7.png" style="width:100%">
-            </div>
-
-        </section>
-
-        <section class="w3-row project-section">
-
-            <div class="w3-panel w3-text-grey">
-                <h4 class="project-title">Linhas curtas</h4>
-            </div>
-
-            <div class="w3-half w3-container project-card">
-                <img alt="Movel 1" src="./assets/google-sketchUp/imagens/movel-1.png" style="width:100%">
-            </div>
-            <div class="w3-half w3-container project-card">
-                <img alt="Movel 2" src="./assets/google-sketchUp/imagens/movel-2.png" style="width:100%">
-                <p class="w3-xlarge w3-text-grey project-copy">
-                    Demos, Logos, Reports, Names, Events, Media, Wordpress, Google, Books, Optimisations</p>
-            </div>
-
-        </section>
-
-        <section class="w3-row project-section">
-
-            <div class="w3-panel w3-text-grey">
-                <h4 class="project-title">Linhas longas</h4>
-            </div>
-
-            <div class="w3-half w3-container project-card">
-                <img alt="Movel 3" src="./assets/google-sketchUp/imagens/movel-3.png" style="width:100%">
-            </div>
-            <div class="w3-half w3-container project-card">
-                <img alt="Movel 4" src="./assets/google-sketchUp/imagens/movel-4.png" style="width:100%">
-                <p class="w3-xlarge w3-text-grey project-copy">
-                    Demos, Logos, Reports, Names, Events, Media, Wordpress, Google, Books, Optimisations</p>
-            </div>
-
-        </section>
-
-        <section class="w3-row project-section">
-
-            <div class="w3-panel w3-text-grey">
-                <h4 class="project-title">Linhas curvas</h4>
-            </div>
-
-            <div class="w3-half w3-container project-card">
-                <img alt="Movel 5" src="./assets/google-sketchUp/imagens/movel-5.png" style="width:100%">
-            </div>
-            <div class="w3-half w3-container project-card">
-                <img alt="Movel 6" src="./assets/google-sketchUp/imagens/movel-6.png" style="width:100%">
-                <p class="w3-xlarge w3-text-grey project-copy">
-                    Demos, Logos, Reports, Names, Events, Media, Wordpress, Google, Books, Optimisations</p>
-            </div>
-
-        </section>
-
-        <section class="w3-row project-section">
-
-            <div class="w3-panel w3-text-grey">
-                <h4 class="project-title">Cada detalhe</h4>
-            </div>
-
-            <div class="w3-half w3-container project-card">
-                <img alt="Projeto 12 1" src="./assets/google-sketchUp/imagens/projeto-12-1.png" style="width:100%">
-            </div>
-            <div class="w3-half w3-container project-card">
-                <img alt="Projeto 12 2" src="./assets/google-sketchUp/imagens/projeto-12-2.png" style="width:100%">
-                <p class="w3-xlarge w3-text-grey project-copy">
-                    Demos, Logos, Reports, Names, Events, Media, Wordpress, Google, Books, Optimisations</p>
-            </div>
-
-            <div class="w3-half w3-container project-card">
-                <img alt="Projeto 12 3" src="./assets/google-sketchUp/imagens/projeto-12-3.png" style="width:100%">
-            </div>
-            <div class="w3-half w3-container project-card">
-                <img alt="Projeto 12 4" src="./assets/google-sketchUp/imagens/projeto-12-4.png" style="width:100%">
-                <p class="w3-xlarge w3-text-grey project-copy">
-                    Demos, Logos, Reports, Names, Events, Media, Wordpress, Google, Books, Optimisations</p>
-            </div>
-
-        </section>
-        <footer class="site-footer">
-            <div class="footer-panel footer-contact">
-                <h2>Contato</h2>
-                <p><i class="fa fa-map-marker"></i> São Paulo, Brasil</p>
-                <p><i class="fa fa-phone"></i> +55 (32) 98836-7667</p>
-                <p><i class="fa fa-envelope"></i> contato@edificacoes3d.com</p>
-            </div>
-
-            <div class="footer-panel footer-cta">
-                <h2>Vamos projetar juntos?</h2>
-                <p>Transformamos sua ideia em um projeto 3D funcional, bonito e pronto para apresentação.</p>
-                <a href="#contact" class="button button-secondary">Fale conosco</a>
-            </div>
-
-            <div class="footer-panel footer-social">
-                <h2>Siga</h2>
-                <div class="social-icons">
-                    <a href="#"><i class="fa fa-facebook"></i></a>
-                    <a href="#"><i class="fa fa-instagram"></i></a>
-                    <a href="#"><i class="fa fa-linkedin"></i></a>
-                </div>
-            </div>
-        </footer>
-
-        <div class="site-credit">
-            <p>© 2026 Edificações 3D — Modelagem arquitetônica e visualização 3D</p>
-        </div>
-    </main>
+        <div class="campo"><label for="o-area">Área aproximada (m²)</label><input id="o-area" name="area" type="number" min="10" max="5000" placeholder="Ex.: 120" /></div>
+        <div class="campo campo--largo"><label for="o-msg">Detalhes</label><textarea id="o-msg" name="mensagem" rows="4" required minlength="10" placeholder="Terreno, cômodos, estilo, referências…"></textarea></div>
+        <button type="submit" class="botao">Enviar pedido</button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    <div class="container"><p>Edificações 3D · projetos modelados no Google SketchUp · <a href="https://wa.me/5532988367667">WhatsApp (32) 98836-7667</a></p></div>
+  </footer>
+
+  <script src="./dados.js"></script>
+  <script src="./script.js"></script>
 <!-- learnTECH · volta ao catálogo UX Design -->
 <style>
 .lt-voltar{position:fixed;left:18px;bottom:18px;z-index:99998;display:inline-flex;align-items:center;gap:9px;
@@ -772,5 +123,4 @@ background:rgba(0,212,212,.16);color:#00d4d4;font-size:14px}
 </a>
 <!-- fim · volta ao catálogo -->
 </body>
-
 </html>
