@@ -3,13 +3,19 @@ const Modal = {
         document
             .querySelector('.modal-overlay')
             .classList.add('active')
+        setTimeout(() => document.querySelector('input#description').focus(), 50)
     },
     close(){
         document
             .querySelector('.modal-overlay')
             .classList.remove('active')
+        document.querySelector('.button.new').focus()
     }
 } 
+
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && document.querySelector('.modal-overlay.active')) Modal.close()
+})
 
 const Storage = {
     get(){
@@ -31,8 +37,9 @@ const Transaction = {
     },
 
     remove(index){
-        Transaction.all.splice(index,1)
+        const [removida] = Transaction.all.splice(index,1)
         App.reload()
+        LT.aviso(`Transação "${removida.description}" removida.`, "info")
     },
 
     incomes(){
@@ -78,7 +85,7 @@ const DOM = {
             <td class="description">${transaction.description}</td>
             <td class="${CssClass}">${amount}</td>
             <td class="date">${transaction.date}</td> 
-            <td><img onclick="Transaction.remove(${index})" src="./assets/minus.svg" alt="Remover transação."></td>
+            <td><button type="button" class="remover" onclick="Transaction.remove(${index})" aria-label="Remover ${transaction.description}"><img src="./assets/minus.svg" alt=""></button></td>
         ` 
         return html
     },
@@ -138,9 +145,13 @@ const Form = {
     },
 
     validateFields(){//validar informações foram preenchidas
-        const { description, amount, date } = Form.getValues()  
-        if(description.trim() === "" || amount.trim() === ""  || date.trim() === "" ){
-            throw new Error("Por favor, preencha todos os campos.")
+        if(!LT.validar(document.querySelector('#form form'))){
+            throw new Error("")
+        }
+        if(Number(Form.amount.value) === 0){
+            LT.marcarErro(Form.amount, "Informe um valor diferente de zero.")
+            Form.amount.focus()
+            throw new Error("")
         }
     },
 
@@ -173,8 +184,9 @@ const Form = {
             Form.saveTransaction(transaction)  
             Form.clearFields()
             Modal.close()//fechar modal 
+            LT.aviso(transaction.amount < 0 ? "Despesa registrada." : "Entrada registrada.", "sucesso")
         }catch(error){
-            alert(error.message)
+            if(error.message) LT.aviso(error.message, "erro")
         }
     }
 }
@@ -182,6 +194,11 @@ const Form = {
 const App = {
     init(){
         Transaction.all.forEach( DOM.addTransaction )
+        if(!Transaction.all.length){
+            const tr = document.createElement('tr')
+            tr.innerHTML = '<td colspan="4" class="vazio">Nenhuma transação ainda. Clique em <strong>+ Nova Transação</strong> para registrar a primeira entrada ou despesa.</td>'
+            DOM.transactionsContainer.appendChild(tr)
+        }
         DOM.updateBalance()
         Storage.set(Transaction.all) 
     },
@@ -192,5 +209,6 @@ const App = {
     }
 }
 
+ LT.limparAoDigitar(document.querySelector('#form form'))
 App.init() 
  

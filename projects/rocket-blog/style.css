@@ -74,7 +74,7 @@ header nav form.search {
     height: 44px;
 }
 
-header nav form.search input[type=text] {
+header nav form.search input[type=search] {
     background: var(--dark-bg);
     border-radius: 4px 0px 0px 4px;
     padding: 12px;
@@ -86,7 +86,7 @@ header nav form.search input[type=text] {
     border: none;
 }
 
-header nav form.search input[type=text]::placeholder {
+header nav form.search input[type=search]::placeholder {
     color: var(--white);
 }
 
@@ -310,3 +310,30 @@ footer .social ul li.linkedin a:hover {
     background: var(--linkedin);
     border-radius: 12px;
 }
+
+/* ajustes de layout e responsividade (curadoria) */
+header nav { flex-wrap: wrap; gap: 2rem 5rem; padding-inline: 20px; }
+main .home .container { padding: 3rem 5vw 0; }
+main .home .content { padding-inline: 5vw; padding-top: 2rem; }
+main .home .content .blog .post-highlights { padding: 2.5rem 0; gap: 3rem; align-items: flex-start; }
+main .home .content .blog .post-highlights .post-top { flex: 1 1 420px; }
+main .home .content .blog .post-highlights .post-side { flex: 1 1 320px; }
+main .home .content .blog .posts { gap: 2rem; padding: 0 0 2rem; align-items: flex-start; }
+main .home .content .blog .posts .post { flex: 1 1 260px; }
+main .home .content img { width: 100%; height: auto; border-radius: 6px; }
+.busca-status { font-family: 'Roboto', sans-serif; font-weight: 400; font-size: 16px; }
+@media (max-width: 900px) {
+  body { font-size: 18px; }
+  header { padding-block: 2rem; }
+  header nav { flex-direction: column; }
+  header nav ul { flex-wrap: wrap; justify-content: center; gap: 1rem 1.6rem; }
+  header nav ul::before { display: none; }
+  header nav form.search { width: min(370px, 100%); }
+  header nav form.search input[type=search] { width: calc(100% - 70px); }
+  main .home .container .text-group, main .home .container .feature-image { flex: 1 1 100%; }
+  main .home .container .text-group .titulo { font-size: 28px; line-height: 38px; flex-basis: auto; }
+  main .home .container .text-group .texto .paragrafo { width: 100%; }
+  main .home .content .blog .titulo { font-size: 20px; line-height: 30px; }
+  main .home .content .blog .texto { margin-block-end: 1.5rem; }
+}
+/* fim de style.css */

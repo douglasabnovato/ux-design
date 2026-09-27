@@ -1205,3 +1205,11 @@ body {
 }
 
 /* --- FIM CHAT IA V2 --- */
+
+/* Ajustes de responsividade (curadoria UX Design, lote 1): evita rolagem lateral no celular. */
+.hero, .hero-section, header, section { overflow-x: clip; }
+@media (max-width: 576px) {
+  .nav-links-desktop { gap: 12px; }
+  .nav-links-desktop .nav-menu { display: none; }
+}
+/* Fim dos ajustes de responsividade. */

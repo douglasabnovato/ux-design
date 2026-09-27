@@ -287,3 +287,9 @@ footer{
         gap: 2rem;
     }
 }
+
+/* Ajustes de interação (curadoria UX Design, lote 2): botão de remover e estado vazio. */
+.remover { padding: 4px; border: 0; background: none; cursor: pointer; border-radius: 50%; }
+.remover:hover { background: rgba(233, 41, 88, 0.1); }
+td.vazio { padding: 2rem 1rem; text-align: center; color: #969cb3; }
+/* Fim dos ajustes de interação. */

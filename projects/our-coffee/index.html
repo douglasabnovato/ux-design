@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
+  <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
@@ -28,7 +29,18 @@
       display: none;
     }
   </style>
+  <link rel="stylesheet" href="../../shared/lt-base.css" />
+  <link rel="stylesheet" href="../../shared/lt-feedback.css" />
+  <script src="../../shared/lt-feedback.js"></script>
+  <meta name="description" content="Portal de uma cafeteria com identidade própria, storytelling do grão e navegação responsiva." />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Our Coffee · UX Design" />
+  <meta property="og:description" content="Portal de uma cafeteria com identidade própria, storytelling do grão e navegação responsiva." />
+  <meta property="og:url" content="https://douglasabnovato.github.io/ux-design/projects/our-coffee/" />
+  <meta property="og:image" content="https://douglasabnovato.github.io/ux-design/assets/our-coffee.jpg" />
+  </head>
   <body>
+    <h1 class="lt-sr-only">Café da Jéssica</h1>
     <div class="w3-top">
       <div class="w3-row w3-padding w3-black">
         <div class="w3-col s3">
@@ -41,7 +53,7 @@
           <a href="#menu" class="w3-button w3-block w3-black">CARDÁPIO</a>
         </div>
         <div class="w3-col s3">
-          <a href="#where" class="w3-button w3-block w3-black">AONDE É</a>
+          <a href="#where" class="w3-button w3-block w3-black">ONDE FICA</a>
         </div>
       </div>
     </div>
@@ -49,7 +61,7 @@
       <div
         class="w3-display-bottomleft w3-center w3-padding-large w3-hide-small"
       >
-        <span class="w3-tag">Está aberto das 6hr às 17hr</span>
+        <span class="w3-tag">Aberto todos os dias, das 6h às 17h</span>
       </div>
       <div class="w3-display-middle w3-center">
         <span class="w3-text-white" style="font-size: 90px">Café Da<br />Jéssica</span>
@@ -65,7 +77,7 @@
             <span class="w3-tag w3-wide">A HISTÓRIA DO Café Da Jéssica</span>
           </h5>
           <p>
-            Oferece uma experiência super completa e que, provavelmente, vai ganhar o seu coração. O local é aconchegante, cheio de natureza e já existe há mais de 22 anos, desde agosto de 2000.
+            Oferece uma experiência super completa e que, provavelmente, vai ganhar o seu coração. O local é aconchegante, cheio de natureza e está de portas abertas desde agosto de 2000.
           </p>
           <p>
             No cardápio, além das excelentes opções de cafés, também há algumas outras bebidas, bolos, doces e salgados. E para completar a experiência, se você solicitar, eles até preparam a bebida na sua mesa, tirando todas as dúvidas sobre os grãos utilizados e a diferença entre os métodos.
@@ -79,7 +91,7 @@
             </p>
             <p>Júlia Wolf</p>
           </div>
-          <img
+          <img alt="Coffeeshop"
             src="./assets/coffeeshop.jpg"
             style="width: 100%; max-width: 1000px"
             class="w3-margin-top"
@@ -108,48 +120,46 @@
           <div id="Eat" class="w3-container menu w3-padding-48 w3-card">
             <h5>Cesta de pão</h5>
             <p class="w3-text-grey">
-              Variedade de pães e muffins de frutas frescas 5,50
+              Variedade de pães e muffins de frutas frescas · R$ 5,50
             </p>
             <br />
             <h5>Mel Amêndoa Granola com Frutas</h5>
             <p class="w3-text-grey">
-              Cereal natural de mel de aveia torrado, passas, amêndoas e tâmaras
-               7,00
+              Cereal natural de mel de aveia torrado, passas, amêndoas e tâmaras · R$ 7,00
             </p>
             <br />
             <h5>Waffle Belga</h5>
             <p class="w3-text-grey">
-              Massa sabor baunilha com farinha maltada 7,50
+              Massa sabor baunilha com farinha maltada · R$ 7,50
             </p>
             <br />
             <h5>Ovos mexidos</h5>
             <p class="w3-text-grey">
-              Ovos mexidos, pimentão assado e alho, com cebolinha
-               7,50
+              Ovos mexidos, pimentão assado e alho, com cebolinha · R$ 7,50
             </p>
             <br />
             <h5>Panquecas de Mirtilo</h5>
             <p class="w3-text-grey">
-              Com calda, manteiga e muitas frutas vermelhas 8,50
+              Com calda, manteiga e muitas frutas vermelhas · R$ 8,50
             </p>
           </div>
           <div id="Drinks" class="w3-container menu w3-padding-48 w3-card">
-            <h5>Coffee</h5>
-            <p class="w3-text-grey">Coffee 2.50</p>
+            <h5>Café coado</h5>
+            <p class="w3-text-grey">Grãos da casa, moídos na hora · R$ 2,50</p>
             <br />
-            <h5>Chocolato</h5>
-            <p class="w3-text-grey">Café expresso de chocolate com leite 4.50</p>
+            <h5>Mocha</h5>
+            <p class="w3-text-grey">Café expresso com chocolate e leite vaporizado · R$ 4,50</p>
             <br />
             <h5>Corretto</h5>
-            <p class="w3-text-grey">Uísque e café 5.00</p>
+            <p class="w3-text-grey">Expresso italiano com um toque de licor · R$ 5,00</p>
             <br />
-            <h5>Iced tea</h5>
-            <p class="w3-text-grey">Iced tea 3.00</p>
+            <h5>Chá gelado</h5>
+            <p class="w3-text-grey">Chá preto com limão e hortelã · R$ 3,00</p>
             <br />
-            <h5>Soda</h5>
-            <p class="w3-text-grey">Coca-Cola, Sprite, Fanta, etc 2.50</p>
+            <h5>Refrigerantes</h5>
+            <p class="w3-text-grey">Lata de 350 ml, sabores variados · R$ 2,50</p>
           </div>
-          <img
+          <img alt="Coffeehouse"
             src="./assets/coffeehouse.jpg"
             style="width: 100%; max-width: 1000px; margin-top: 32px"
           />
@@ -161,17 +171,17 @@
             <span class="w3-tag w3-wide">ONDE NOS ENCONTRAR</span>
           </h5>
           <p>Encontre-nos em Rua Maravilhosa, 101.</p>
-          <img src="./assets/google-maps.jpg" class="w3-image" style="width: 100%" />
+          <img alt="Google maps" src="./assets/google-maps.jpg" class="w3-image" style="width: 100%" />
           <p>
-            <span class="w3-tag">FYI!</span> Oferecemos serviço completo de buffet para qualquer evento, grande ou pequeno. Nós entendemos suas necessidades e vamos atender a comida para satisfazer os maiores critérios de todos eles, tanto na aparência quanto no sabor.
+            <span class="w3-tag">Eventos</span> Oferecemos serviço completo de buffet para qualquer evento, grande ou pequeno. Nós entendemos suas necessidades e vamos atender a comida para satisfazer os maiores critérios de todos eles, tanto na aparência quanto no sabor.
           </p>
           <p>
             <strong>Reserve</strong> uma mesa, peça o especial de hoje ou apenas
             envie-nos uma mensagem:
           </p>
-          <form action="/action_page.php" target="_blank">
+          <form id="form-reserva" novalidate>
             <p>
-              <input
+              <input aria-label="Qual é o seu nome"
                 class="w3-input w3-padding-16 w3-border"
                 type="text"
                 placeholder="Qual é o seu nome"
@@ -180,36 +190,36 @@
               />
             </p>
             <p>
-              <input
+              <input aria-label="Quantas pessoas"
                 class="w3-input w3-padding-16 w3-border"
                 type="number"
                 placeholder="Quantas pessoas"
                 required
+                min="1"
+                max="20"
                 name="People"
               />
             </p>
             <p>
-              <input
+              <input aria-label="Data e hora da reserva"
                 class="w3-input w3-padding-16 w3-border"
                 type="datetime-local"
                 placeholder="Data e hora da reserva"
                 required
                 name="date"
-                value="2022-10-11T20:00"
               />
             </p>
             <p>
-              <input
+              <input aria-label="Mensagem ou pedido especial"
                 class="w3-input w3-padding-16 w3-border"
                 type="text"
-                placeholder="Mensagem \ Requisitos especiais"
-                required
+                placeholder="Mensagem ou pedido especial (opcional)"
                 name="Message"
               />
             </p>
             <p>
               <button class="w3-button w3-black" type="submit">
-                ENVIAR MENSAGEM
+                RESERVAR MESA
               </button>
             </p>
           </form>
@@ -218,14 +228,8 @@
     </div>
     <footer class="w3-center w3-light-grey w3-padding-48 w3-large">
       <p>
-        Café Da Jéssica
-        <a
-          href="https://www.graogourmet.com/"
-          title="Café Da Jéssica"
-          target="_blank"
-          class="w3-hover-text-green"
-          >Jéssica</a
-        >
+        Café da Jéssica · Rua Maravilhosa, 101 ·
+        <a href="https://wa.me/5532988367667" class="w3-hover-text-green">WhatsApp (32) 98836-7667</a>
       </p>
     </footer>
     <script>
@@ -247,6 +251,7 @@
       }
       document.getElementById("myLink").click();
     </script>
+  <script src="./interacoes.js"></script>
   <!-- learnTECH · volta ao catálogo UX Design -->
 <style>
 .lt-voltar{position:fixed;left:18px;bottom:18px;z-index:99998;display:inline-flex;align-items:center;gap:9px;

@@ -1,39 +1,126 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Artigo · Tech Educa</title>
+  <meta name="description" content="Leia o artigo completo do blog da Tech Educa e deixe o seu comentário." />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Artigo · Tech Educa" />
+  <meta property="og:description" content="Leia o artigo completo do blog da Tech Educa e deixe o seu comentário." />
+  <meta property="og:url" content="https://douglasabnovato.github.io/ux-design/projects/school/post.html" />
+  <meta property="og:image" content="https://douglasabnovato.github.io/ux-design/assets/school.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="../../shared/lt-base.css" />
+  <link rel="stylesheet" href="../../shared/lt-feedback.css" />
+  <script src="../../shared/lt-feedback.js"></script>
+</head>
+<body>
+  <a class="pular" href="#conteudo">Pular para o conteúdo</a>
+  <header class="topo">
+    <nav class="nav" aria-label="Principal">
+      <a class="nav__logo" href="index.html"><img src="./images/logo.svg" alt="Tech Educa, página inicial" width="150" height="55" /></a>
+      <button class="nav__menu" type="button" aria-expanded="false" aria-controls="nav-lista" aria-label="Abrir menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav__lista" id="nav-lista">
+          <li><a href="index.html">Início</a></li>
+          <li><a href="about.html">Sobre</a></li>
+          <li><a href="course.html">Cursos</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="contact.html">Contato</a></li>
+          <li><a class="botao botao--amarelo nav__cta" href="index.html#matricula">Matricule-se</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main id="conteudo">
+    <article class="secao artigo" id="artigo">
+      <p class="artigo__meta" id="post-meta"></p>
+      <h1 id="post-titulo">Artigo</h1>
+      <img id="post-img" src="./images/b1.jpg" alt="" width="960" height="540" />
+      <div class="artigo__corpo" id="post-corpo"></div>
+      <a class="link-seta" href="blog.html">Voltar ao blog</a>
+    </article>
 
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>new TECH</title>
+    <section class="secao secao--cinza" aria-labelledby="com-titulo">
+      <div class="estreito">
+        <h2 id="com-titulo" class="secao__titulo">Comentários</h2>
+        <ul class="comentarios" id="comentarios"></ul>
+        <form id="form-comentario" novalidate>
+          <div class="campo">
+            <label for="c-nome">Seu nome</label>
+            <input id="c-nome" name="nome" required minlength="2" autocomplete="name" />
+          </div>
+          <div class="campo">
+            <label for="c-texto">Comentário</label>
+            <textarea id="c-texto" name="comentario" rows="4" required minlength="10"></textarea>
+          </div>
+          <button class="botao botao--azul" type="submit">Publicar comentário</button>
+        </form>
+      </div>
+    </section>
+  </main>
 
-        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+  <footer class="rodape">
+    <div class="rodape__grade">
+      <div>
+        <img src="./images/logo.svg" alt="Tech Educa" width="140" height="52" class="rodape__logo" />
+        <p>Escola on-line de tecnologia com trilhas práticas, mentoria e projetos para o seu portfólio.</p>
+      </div>
+      <div>
+        <h2 class="rodape__titulo">Navegação</h2>
+        <ul>
+          <li><a href="about.html">Sobre a escola</a></li>
+          <li><a href="course.html">Todos os cursos</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="contact.html">Fale com a gente</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2 class="rodape__titulo">Contato</h2>
+        <ul>
+          <li><a href="https://wa.me/5532988367667">WhatsApp (32) 98836-7667</a></li>
+          <li>Atendimento de segunda a sexta, das 9h às 18h</li>
+          <li>Juiz de Fora · MG · aulas 100% on-line</li>
+        </ul>
+      </div>
+      <form class="rodape__news" id="form-news" novalidate>
+        <h2 class="rodape__titulo">Novidades por e-mail</h2>
+        <label for="news-email">Seu e-mail</label>
+        <div class="linha">
+          <input id="news-email" name="email" type="email" required placeholder="nome@dominio.com" autocomplete="email" />
+          <button class="botao botao--amarelo" type="submit">Assinar</button>
+        </div>
+      </form>
+    </div>
+    <p class="rodape__copy">© Tech Educa · escola fictícia criada para o portfólio UX Design.</p>
+  </footer>
 
-        <link rel="stylesheet" href="style.css">
-
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"
-            integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-
-    </head>
-
-    <body>
-
-        <!-- Navigation -->
-
-        <!-- Home -->
-
-        <!-- post -->
-
-        <!-- Footer -->
-
-
-        <script>
-
-            // Navaigation Bar
-
-        </script>
-
-
-    </body>
-
+  <script src="./dados.js"></script>
+  <script src="./script.js"></script>
+<!-- learnTECH · volta ao catálogo UX Design -->
+<style>
+.lt-voltar{position:fixed;left:18px;bottom:18px;z-index:99998;display:inline-flex;align-items:center;gap:9px;
+padding:11px 16px;border-radius:999px;background:rgba(10,14,39,.92);border:1px solid rgba(0,212,212,.42);
+color:#eaf0f7;text-decoration:none;font:700 14px/1 "Segoe UI",system-ui,-apple-system,Arial,sans-serif;
+box-shadow:0 12px 30px rgba(0,0,0,.34);backdrop-filter:blur(10px);
+transition:transform .2s ease,border-color .2s ease,background .2s ease;-webkit-font-smoothing:antialiased}
+.lt-voltar:hover{transform:translateY(-2px);border-color:#00d4d4;background:rgba(10,14,39,.98);color:#eaf0f7}
+.lt-voltar:focus-visible{outline:3px solid #00d4d4;outline-offset:3px}
+.lt-voltar__i{display:inline-grid;place-items:center;width:24px;height:24px;border-radius:999px;
+background:rgba(0,212,212,.16);color:#00d4d4;font-size:14px}
+@media (max-width:640px){.lt-voltar{left:12px;bottom:12px;padding:10px 13px;font-size:13px}
+.lt-voltar__t{display:none}}
+.lt-espaco{height:86px;flex:none;pointer-events:none}
+@media print{.lt-voltar,.lt-espaco{display:none}}
+</style>
+<div class="lt-espaco" aria-hidden="true"></div>
+<a class="lt-voltar" href="../../index.html" aria-label="Voltar ao catálogo UX Design">
+  <span class="lt-voltar__i" aria-hidden="true">&#8592;</span>
+  <span class="lt-voltar__t">Voltar ao portfólio</span>
+</a>
+<!-- fim · volta ao catálogo -->
+</body>
 </html>

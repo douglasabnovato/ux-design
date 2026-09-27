@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,8 +10,17 @@
         <!--========== CSS ==========-->
         <link rel="stylesheet" href="assets/css/styles.css">
 
-        <title>Restaurant</title>
-    </head>
+        <title>Sabor da Semana · Restaurante</title>
+      <link rel="stylesheet" href="../../shared/lt-base.css" />
+  <link rel="stylesheet" href="../../shared/lt-feedback.css" />
+  <script src="../../shared/lt-feedback.js"></script>
+  <meta name="description" content="Site institucional para restaurante gourmet, com cardápio visual, ambientação da casa e reserva via WhatsApp." />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Restaurante Gourmet · UX Design" />
+  <meta property="og:description" content="Site institucional para restaurante gourmet, com cardápio visual, ambientação da casa e reserva via WhatsApp." />
+  <meta property="og:url" content="https://douglasabnovato.github.io/ux-design/projects/restaurant/" />
+  <meta property="og:image" content="https://douglasabnovato.github.io/ux-design/assets/restaurant.jpg" />
+</head>
     <body>
 
         <!--========== SCROLL TOP ==========-->
@@ -22,15 +31,15 @@
         <!--========== HEADER ==========-->
         <header class="l-header" id="header">
             <nav class="nav bd-container">
-                <a href="#" class="nav__logo">Tasty</a>
+                <a href="#home" class="nav__logo">Sabor da Semana</a>
 
                 <div class="nav__menu" id="nav-menu">
                     <ul class="nav__list">
-                        <li class="nav__item"><a href="#home" class="nav__link active-link">Home</a></li>
-                        <li class="nav__item"><a href="#about" class="nav__link">About</a></li>
-                        <li class="nav__item"><a href="#services" class="nav__link">Services</a></li>
-                        <li class="nav__item"><a href="#menu" class="nav__link">Menu</a></li>
-                        <li class="nav__item"><a href="#contact" class="nav__link">Contact us</a></li>
+                        <li class="nav__item"><a href="#home" class="nav__link active-link">Início</a></li>
+                        <li class="nav__item"><a href="#about" class="nav__link">Sobre</a></li>
+                        <li class="nav__item"><a href="#services" class="nav__link">Serviços</a></li>
+                        <li class="nav__item"><a href="#menu" class="nav__link">Cardápio</a></li>
+                        <li class="nav__item"><a href="#contact" class="nav__link">Contato</a></li>
 
                         <li><i class='bx bx-moon change-theme' id="theme-button"></i></li>
                     </ul>
@@ -47,9 +56,9 @@
             <section class="home" id="home">
                 <div class="home__container bd-container bd-grid">
                     <div class="home__data">
-                        <h1 class="home__title">Tasty food</h1>
-                        <h2 class="home__subtitle">Try the best food of <br> the week.</h2>
-                        <a href="#" class="button">View Menu</a>
+                        <h1 class="home__title">Comida boa</h1>
+                        <h2 class="home__subtitle">Prove os melhores pratos <br> da semana.</h2>
+                        <a href="#menu" class="button">Ver cardápio</a>
                     </div>
     
                     <img src="assets/img/home.png" alt="" class="home__img">
@@ -60,10 +69,10 @@
             <section class="about section bd-container" id="about">
                 <div class="about__container  bd-grid">
                     <div class="about__data">
-                        <span class="section-subtitle about__initial">About us</span>
-                        <h2 class="section-title about__initial">We cook the best <br> tasty food</h2>
-                        <p class="about__description">We cook the best food in the entire city, with excellent customer service, the best meals and at the best price, visit us.</p>
-                        <a href="#" class="button">Explore history</a>
+                        <span class="section-subtitle about__initial">Sobre nós</span>
+                        <h2 class="section-title about__initial">Cozinhamos a melhor <br> comida da cidade</h2>
+                        <p class="about__description">Comida caseira feita na hora, atendimento atencioso e preço justo. Venha almoçar ou jantar com a gente.</p>
+                        <a href="#services" class="button">Conheça nossa história</a>
                     </div>
 
                     <img src="assets/img/about.jpg" alt="" class="about__img">
@@ -72,8 +81,8 @@
 
             <!--========== SERVICES ==========-->
             <section class="services section bd-container" id="services">
-                <span class="section-subtitle">Offering</span>
-                <h2 class="section-title">Our amazing services</h2>
+                <span class="section-subtitle">O que oferecemos</span>
+                <h2 class="section-title">Nossos serviços</h2>
 
                 <div class="services__container  bd-grid">
                     <div class="services__content">
@@ -138,8 +147,8 @@
                             16.8875 47.057C17.3045 47.4744 17.9811 47.4746 18.3984 47.0576C18.8157 
                             46.6405 18.816 45.964 18.3989 45.5466Z"/>
                         </svg>
-                        <h3 class="services__title">Excellent food</h3>
-                        <p class="services__description">We offer our clients excellent quality services for many years, with the best and delicious food in the city.</p>
+                        <h3 class="services__title">Comida de qualidade</h3>
+                        <p class="services__description">Ingredientes frescos, receitas da casa e o cuidado de quem cozinha há mais de dez anos.</p>
                     </div>
 
                     <div class="services__content">
@@ -295,8 +304,8 @@
                             </clipPath>
                             </defs>
                         </svg>
-                        <h3 class="services__title">Fast food</h3>
-                        <p class="services__description">We offer our clients excellent quality services for many years, with the best and delicious food in the city.</p>
+                        <h3 class="services__title">Pedido rápido</h3>
+                        <p class="services__description">Ingredientes frescos, receitas da casa e o cuidado de quem cozinha há mais de dez anos.</p>
                     </div>
 
                     <div class="services__content">
@@ -351,40 +360,40 @@
                                 </clipPath>
                                 </defs>
                         </svg>
-                        <h3 class="services__title">Delivery</h3>
-                        <p class="services__description">We offer our clients excellent quality services for many years, with the best and delicious food in the city.</p>
+                        <h3 class="services__title">Entrega</h3>
+                        <p class="services__description">Ingredientes frescos, receitas da casa e o cuidado de quem cozinha há mais de dez anos.</p>
                     </div>
                 </div>
             </section>
 
             <!--========== MENU ==========-->
             <section class="menu section bd-container" id="menu">
-                <span class="section-subtitle">Special</span>
-                <h2 class="section-title">Menu of the week</h2>
+                <span class="section-subtitle">Especial</span>
+                <h2 class="section-title">Cardápio da semana</h2>
 
                 <div class="menu__container bd-grid">
                     <div class="menu__content">
                         <img src="assets/img/plate1.png" alt="" class="menu__img">
-                        <h3 class="menu__name">Barbecue salad</h3>
-                        <span class="menu__detail">Delicious dish</span>
-                        <span class="menu__preci">$22.00</span>
-                        <a href="#" class="button menu__button"><i class='bx bx-cart-alt'></i></a>
+                        <h3 class="menu__name">Salada com churrasco</h3>
+                        <span class="menu__detail">Prato da casa</span>
+                        <span class="menu__preci">R$ 42,00</span>
+                        <a href="#menu" class="button menu__button"><i class='bx bx-cart-alt'></i></a>
                     </div>
 
                     <div class="menu__content">
                         <img src="assets/img/plate2.png" alt="" class="menu__img">
-                        <h3 class="menu__name">Salad with fish</h3>
-                        <span class="menu__detail">Delicious dish</span>
-                        <span class="menu__preci">$12.00</span>
-                        <a href="#" class="button menu__button"><i class='bx bx-cart-alt'></i></a>
+                        <h3 class="menu__name">Salada com peixe</h3>
+                        <span class="menu__detail">Prato da casa</span>
+                        <span class="menu__preci">R$ 36,00</span>
+                        <a href="#menu" class="button menu__button"><i class='bx bx-cart-alt'></i></a>
                     </div>
                     
                     <div class="menu__content">
                         <img src="assets/img/plate3.png" alt="" class="menu__img">
-                        <h3 class="menu__name">Spinach salad</h3>
-                        <span class="menu__detail">Delicious dish</span>
-                        <span class="menu__preci">$9.50</span>
-                        <a href="#" class="button menu__button"><i class='bx bx-cart-alt'></i></a>
+                        <h3 class="menu__name">Salada de espinafre</h3>
+                        <span class="menu__detail">Prato da casa</span>
+                        <span class="menu__preci">R$ 28,50</span>
+                        <a href="#menu" class="button menu__button"><i class='bx bx-cart-alt'></i></a>
                     </div>
                 </div>
             </section>
@@ -393,12 +402,12 @@
             <section class="app section bd-container">
                 <div class="app__container bd-grid">
                     <div class="app__data">
-                        <span class="section-subtitle app__initial">App</span>
-                        <h2 class="section-title app__initial">App is aviable</h2>
-                        <p class="app__description">Find our application and download it, you can make reservations, food orders, see your deliveries on the way and much more.</p>
+                        <span class="section-subtitle app__initial">Aplicativo</span>
+                        <h2 class="section-title app__initial">O app está chegando</h2>
+                        <p class="app__description">Pelo app você vai reservar mesa, pedir comida e acompanhar a entrega em tempo real.</p>
                         <div class="app__stores">
-                            <a href="#"><img src="assets/img/app1.png" alt="" class="app__store"></a>
-                            <a href="#"><img src="assets/img/app2.png" alt="" class="app__store"></a>
+                            <a href="#app" data-app><img src="assets/img/app1.png" alt="Baixar na App Store" class="app__store"></a>
+                            <a href="#app" data-app><img src="assets/img/app2.png" alt="Disponível no Google Play" class="app__store"></a>
                         </div>
                     </div>
 
@@ -410,13 +419,13 @@
             <section class="contact section bd-container" id="contact">
                 <div class="contact__container bd-grid">
                     <div class="contact__data">
-                        <span class="section-subtitle contact__initial">Let's talk</span>
-                        <h2 class="section-title contact__initial">Contact us</h2>
-                        <p class="contact__description">If you want to reserve a table in our restaurant, contact us and we will attend you quickly, with our 24/7 chat service.</p>
+                        <span class="section-subtitle contact__initial">Vamos conversar</span>
+                        <h2 class="section-title contact__initial">Contato</h2>
+                        <p class="contact__description">Quer reservar uma mesa? Escolha o dia e o horário e confirmamos pelo WhatsApp.</p>
                     </div>
 
                     <div class="contact__button">
-                        <a href="#" class="button">Contact us now</a>
+                        <a href="#contact" class="button" data-reservar>Reservar mesa</a>
                     </div>
                 </div>
             </section>
@@ -426,47 +435,47 @@
         <footer class="footer section bd-container">
             <div class="footer__container bd-grid">
                 <div class="footer__content">
-                    <a href="#" class="footer__logo">Tasty Food</a>
-                    <span class="footer__description">Restaurant</span>
+                    <a href="#home" class="footer__logo">Sabor da Semana</a>
+                    <span class="footer__description">Restaurante</span>
                     <div>
-                        <a href="#" class="footer__social"><i class='bx bxl-facebook'></i></a>
-                        <a href="#" class="footer__social"><i class='bx bxl-instagram'></i></a>
-                        <a href="#" class="footer__social"><i class='bx bxl-twitter'></i></a>
+                        <a href="#" class="footer__social" aria-label="Facebook"><i class='bx bxl-facebook'></i></a>
+                        <a href="#" class="footer__social" aria-label="Instagram"><i class='bx bxl-instagram'></i></a>
+                        <a href="#" class="footer__social" aria-label="Twitter"><i class='bx bxl-twitter'></i></a>
                     </div>
                 </div>
 
                 <div class="footer__content">
-                    <h3 class="footer__title">Services</h3>
+                    <h3 class="footer__title">Serviços</h3>
                     <ul>
-                        <li><a href="#" class="footer__link">Delivery</a></li>
-                        <li><a href="#" class="footer__link">Pricing</a></li>
-                        <li><a href="#" class="footer__link">Fast food</a></li>
-                        <li><a href="#" class="footer__link">Reserve your spot</a></li>
+                        <li><a href="#menu" class="footer__link">Entrega</a></li>
+                        <li><a href="#menu" class="footer__link">Preços</a></li>
+                        <li><a href="#menu" class="footer__link">Pedido rápido</a></li>
+                        <li><a href="#contact" class="footer__link" data-reservar>Reservar mesa</a></li>
                     </ul>
                 </div>
 
                 <div class="footer__content">
-                    <h3 class="footer__title">Information</h3>
+                    <h3 class="footer__title">Informações</h3>
                     <ul>
-                        <li><a href="#" class="footer__link">Event</a></li>
-                        <li><a href="#" class="footer__link">Contact us</a></li>
-                        <li><a href="#" class="footer__link">Privacy policy</a></li>
-                        <li><a href="#" class="footer__link">Terms of services</a></li>
+                        <li><a href="#contact" class="footer__link">Eventos</a></li>
+                        <li><a href="#contact" class="footer__link">Contato</a></li>
+                        <li><a href="#" class="footer__link">Política de privacidade</a></li>
+                        <li><a href="#" class="footer__link">Termos de uso</a></li>
                     </ul>
                 </div>
 
                 <div class="footer__content">
-                    <h3 class="footer__title">Adress</h3>
+                    <h3 class="footer__title">Endereço</h3>
                     <ul>
-                        <li>Lima - Peru</li>
-                        <li>Jr Union #999</li>
-                        <li>999 - 888 - 777</li>
-                        <li>tastyfood@email.com</li>
+                        <li>Juiz de Fora – MG</li>
+                        <li>Rua do Sabor, 999</li>
+                        <li>(32) 98836-7667</li>
+                        <li>contato@sabordasemana.com.br</li>
                     </ul>
                 </div>
             </div>
 
-            <p class="footer__copy">&#169; 2020 Bedimcode. All right reserved</p>
+            <p class="footer__copy">&#169; Sabor da Semana · restaurante fictício · layout base: Bedimcode</p>
         </footer>
 
         <!--========== SCROLL REVEAL ==========-->
@@ -474,6 +483,7 @@
 
         <!--========== MAIN JS ==========-->
         <script src="assets/js/main.js"></script>
+  <script src="./interacoes.js"></script>
     <!-- learnTECH · volta ao catálogo UX Design -->
 <style>
 .lt-voltar{position:fixed;left:18px;bottom:18px;z-index:99998;display:inline-flex;align-items:center;gap:9px;

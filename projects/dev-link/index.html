@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -7,24 +7,54 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:slnt,wght@-10..0,100..900&display=swap" rel="stylesheet">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DevLinks</title>
+  <title>DevLinks · Douglas Novato</title>
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="../../shared/lt-base.css" />
+  <link rel="stylesheet" href="../../shared/lt-feedback.css" />
+  <script src="../../shared/lt-feedback.js"></script>
+  <meta name="description" content="Página DevLinks para apresentar uma lista de links importantes e desafio da trilha." />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Dev Link · UX Design" />
+  <meta property="og:description" content="Página DevLinks para apresentar uma lista de links importantes e desafio da trilha." />
+  <meta property="og:url" content="https://douglasabnovato.github.io/ux-design/projects/dev-link/" />
+  <meta property="og:image" content="https://douglasabnovato.github.io/ux-design/assets/devlink.jpg" />
+  <style>
+    #profile h1 { font-size: 1.1rem; margin-top: 8px; }
+    #profile .bio { font-size: .9rem; opacity: .85; margin-top: 4px; }
+    #profile img { border-radius: 50%; }
+    .copiar { display: block; margin: 16px auto 0; padding: 12px 20px; border-radius: 999px; border: 1px solid rgba(255,255,255,.6); background: rgba(255,255,255,.08); color: #fff; font: inherit; cursor: pointer; }
+    .copiar:hover { background: rgba(255,255,255,.18); }
+    @media (max-width: 400px) { #container { width: 100%; } }
+  </style>
 </head>
 
 <body>
-  <div id="container">
+  <main id="container">
     <div id="profile">
-      <img src="./assets/Avatar.png"
-        alt="Foto de Mayk Brito sorrindo, usando óculos e camisa preta, barba e fundo amarelo." />
-      <p>@maykbrito</p>
+      <img src="https://github.com/douglasabnovato.png" width="112" height="112"
+        alt="Foto de perfil de Douglas Novato no GitHub" />
+      <h1>@douglasabnovato</h1>
+      <p class="bio">Desenvolvedor e educador em tecnologia · UX, front-end e produto</p>
     </div>
     <ul>
-      <li><a href="#" target="_blank">Inscrever-se no NLW</a></li>
-      <li><a href="#" target="_blank">Baixar meu e-book</a></li>
-      <li><a href="#" target="_blank">Ver meu portfólio</a></li>
-      <li><a href="#" target="_blank">Conheça o Explorer</a></li>
+      <li><a href="../../index.html">Ver meu portfólio UX Design</a></li>
+      <li><a href="https://github.com/douglasabnovato" target="_blank" rel="noopener">Projetos no GitHub</a></li>
+      <li><a href="https://www.linkedin.com/in/douglasabnovato/" target="_blank" rel="noopener">Conectar no LinkedIn</a></li>
+      <li><a href="https://wa.me/5532988367667?text=Ol%C3%A1%2C%20Douglas!%20Vim%20pelo%20DevLinks." target="_blank" rel="noopener">Conversar no WhatsApp</a></li>
     </ul>
-  </div>
+    <button type="button" class="copiar" id="btn-copiar">Copiar link desta página</button>
+  </main>
+  <script>
+    /* Copia o endereço da página e confirma com aviso (ou mostra o link se falhar). */
+    document.getElementById("btn-copiar").addEventListener("click", async () => {
+      try {
+        await navigator.clipboard.writeText(location.href);
+        LT.aviso("Link copiado para a área de transferência.");
+      } catch (e) {
+        LT.aviso(`Não foi possível copiar. Endereço: ${location.href}`, "erro", 7000);
+      }
+    });
+  </script>
 <!-- learnTECH · volta ao catálogo UX Design -->
 <style>
 .lt-voltar{position:fixed;left:18px;bottom:18px;z-index:99998;display:inline-flex;align-items:center;gap:9px;

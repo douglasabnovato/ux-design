@@ -1,111 +1,96 @@
-//scroll header
+/*
+ * script.js · Puro Estilo.
+ * Cabeçalho fixo ao rolar, menu responsivo acessível, galeria de fotos do
+ * look em destaque e abertura/fechamento das janelas de detalhes e favoritos
+ * (clique fora, botão × ou tecla Esc) e exportação da lista em PDF.
+ */
 const header = document.querySelector("header");
 
 window.addEventListener("scroll", function () {
-  header.classList.toggle("sticky", this.window.scrollY > 0);
+  header.classList.toggle("sticky", window.scrollY > 0);
 });
 
-//menu responsive
-let menu = document.querySelector("#menu-icon");
-let navmenu = document.querySelector(".navmenu");
+/* Menu responsivo com estado anunciado. */
+const menu = document.querySelector("#menu-icon");
+const navmenu = document.querySelector(".navmenu");
+menu.addEventListener("click", () => {
+  const aberto = navmenu.classList.toggle("open");
+  menu.classList.toggle("bx-x", aberto);
+  menu.setAttribute("aria-expanded", String(aberto));
+  menu.setAttribute("aria-label", aberto ? "Fechar menu" : "Abrir menu");
+});
+navmenu.addEventListener("click", (e) => {
+  if (e.target.closest("a") && navmenu.classList.contains("open")) menu.click();
+});
 
-menu.onclick = () => {
-  menu.classList.toggle("bx-x");
-  navmenu.classList.toggle("open");
-};
-
-//single product
-var productImg = document.getElementById("productImg");
-var smallImg = document.getElementsByClassName("small-img");
-
-smallImg[0].onclick = function () {
-  productImg.src = smallImg[0].src;
-};
-
-smallImg[1].onclick = function () {
-  productImg.src = smallImg[1].src;
-};
-
-smallImg[2].onclick = function () {
-  productImg.src = smallImg[2].src;
-};
-
-smallImg[3].onclick = function () {
-  productImg.src = smallImg[3].src;
-};
-
-//details single product 
-var modal = document.getElementById("myModal");
-
-// Get the button that opens the modal
-var btn = document.getElementById("myBtn");
-
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
-
-// When the user clicks the button, open the modal 
-btn.onclick = function() {
-  modal.style.display = "block";
-}
-
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-  modal.style.display = "none";
-}
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-}
-
-//botão sacola favoritos myIcon
-
-//details modal sacola favoritos class modalSacola [modal] e id myModalSacola [myModal]
-
-//details sacola favoritos
-var modalFav = document.getElementById("myModalSacola");
-
-// Get the button that opens the modal
-var btnFav = document.getElementById("myBtnIcon");
-
-// Get the <span> element that closes the modal
-var spanFav = document.getElementsByClassName("closeFav")[0];
-
-// When the user clicks the button, open the modal 
-btnFav.onclick = function() {
-  modalFav.style.display = "block";
-}
-
-// When the user clicks on <span> (x), close the modal
-spanFav.onclick = function() {
-  console.log("fechar")
-  modalFav.style.display = "none";
-}
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-  if (event.target == modalFav) {
-    modalFav.style.display = "none";
-  }
-}
-
-//html 2 pdf
-
-function downloadPDF(){
-  const listFavorates = document.querySelector("#content-favorate");
-
-  var option = {
-    margin: 1,
-    filename: "my-favorate-puro-estilo.pdf",
-    html2canvas: { scale: 2},
-    jsPDF: {
-      unit: "in",
-      format: "letter",
-      orientation: "portrait"
+/* Miniaturas trocam a foto principal do look. */
+const productImg = document.getElementById("productImg");
+document.querySelectorAll(".small-img").forEach((img, i) => {
+  img.alt = `Foto ${i + 1} do look`;
+  img.tabIndex = 0;
+  const trocar = () => (productImg.src = img.src);
+  img.addEventListener("click", trocar);
+  img.addEventListener("keydown", (e) => {
+    if (e.key === "Enter" || e.key === " ") {
+      e.preventDefault();
+      trocar();
     }
-  };
+  });
+});
 
-  html2pdf().set(option).from(listFavorates).save();
+/* Abre uma janela (detalhes ou favoritos) e guarda quem a abriu. */
+let origemJanela = null;
+function abrirJanela(el) {
+  origemJanela = document.activeElement;
+  el.style.display = "block";
+  const foco = el.querySelector("button, select, input, a");
+  if (foco) foco.focus();
 }
+
+/* Fecha a janela e devolve o foco. */
+function fecharJanela(el) {
+  el.style.display = "none";
+  if (origemJanela && origemJanela.focus) origemJanela.focus();
+}
+
+const modal = document.getElementById("myModal");
+const modalFav = document.getElementById("myModalSacola");
+const btn = document.getElementById("myBtn");
+btn.tabIndex = 0;
+btn.setAttribute("role", "button");
+btn.setAttribute("aria-label", "Ver detalhes do look em destaque");
+btn.addEventListener("click", (e) => {
+  if (!e.target.closest(".heart-icon")) abrirJanela(modal);
+});
+btn.addEventListener("keydown", (e) => {
+  if (e.key === "Enter") abrirJanela(modal);
+});
+document.querySelector("#myModal .close").addEventListener("click", () => fecharJanela(modal));
+document.getElementById("myBtnIcon").addEventListener("click", (e) => {
+  e.preventDefault();
+  abrirJanela(modalFav);
+});
+document.querySelector(".closeFav").addEventListener("click", () => fecharJanela(modalFav));
+
+window.addEventListener("click", (e) => {
+  if (e.target === modal) fecharJanela(modal);
+  if (e.target === modalFav) fecharJanela(modalFav);
+});
+document.addEventListener("keydown", (e) => {
+  if (e.key !== "Escape") return;
+  if (modal.style.display === "block") fecharJanela(modal);
+  if (modalFav.style.display === "block") fecharJanela(modalFav);
+});
+
+/* Exporta a lista de favoritos em PDF (html2pdf). */
+function downloadPDF() {
+  const listFavorates = document.querySelector("#content-favorate");
+  const option = {
+    margin: 0.5,
+    filename: "meus-favoritos-puro-estilo.pdf",
+    html2canvas: { scale: 2 },
+    jsPDF: { unit: "in", format: "letter", orientation: "portrait" },
+  };
+  return html2pdf().set(option).from(listFavorates).save();
+}
+/* fim de script.js */

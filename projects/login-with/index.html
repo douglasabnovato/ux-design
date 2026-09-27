@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -13,8 +13,18 @@
     <!--=============== CSS ===============-->
     <link rel="stylesheet" href="assets/css/styles.css" />
 
-    <title>Login With</title>
-  </head>
+    <title>Entrar ou criar conta · Login With</title>
+    <link rel="stylesheet" href="../../shared/lt-base.css" />
+  <link rel="stylesheet" href="../../shared/lt-feedback.css" />
+  <style>:root{--lt-cor:#1e90ff}.dica-demo{margin:.25rem 0 1rem;font-size:.85rem;color:#555}</style>
+  <script src="../../shared/lt-feedback.js"></script>
+  <meta name="description" content="Página de login e register com autenticação." />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Login With · UX Design" />
+  <meta property="og:description" content="Página de login e register com autenticação." />
+  <meta property="og:url" content="https://douglasabnovato.github.io/ux-design/projects/login-with/" />
+  <meta property="og:image" content="https://douglasabnovato.github.io/ux-design/assets/login-with.jpg" />
+</head>
   <body>
     <!--=============== LOGIN IMAGE ===============-->
     <svg
@@ -48,20 +58,21 @@
     <div class="login container grid" id="loginAccessRegister">
       <!--===== LOGIN ACCESS =====-->
       <div class="login__access">
-        <h1 class="login__title">Log in to your account.</h1>
+        <h1 class="login__title">Entre na sua conta.</h1>
+        <p class="dica-demo">Demonstração: use <strong>demo@uxdesign.com</strong> e a senha <strong>demo123</strong>.</p>
 
         <div class="login__area">
-          <form action="" class="login__form">
+          <form action="" class="login__form" novalidate>
             <div class="login__content grid">
               <div class="login__box">
                 <input
                   type="email"
                   id="email"
-                  required
+                  name="email" autocomplete="email" required
                   placeholder=" "
                   class="login__input"
                 />
-                <label for="email" class="login__label">Email</label>
+                <label for="email" class="login__label">E-mail</label>
 
                 <i class="ri-mail-fill login__icon"></i>
               </div>
@@ -70,11 +81,11 @@
                 <input
                   type="password"
                   id="password"
-                  required
+                  name="senha" autocomplete="current-password" minlength="6" required
                   placeholder=" "
                   class="login__input"
                 />
-                <label for="password" class="login__label">Password</label>
+                <label for="password" class="login__label">Senha</label>
 
                 <i
                   class="ri-eye-off-fill login__icon login__password"
@@ -83,19 +94,19 @@
               </div>
             </div>
 
-            <a href="#" class="login__forgot">Forgot your password?</a>
+            <a href="#" class="login__forgot">Esqueceu a senha?</a>
 
-            <button type="submit" class="login__button">Login</button>
+            <button type="submit" class="login__button">Entrar</button>
           </form>
 
           <div class="login__social">
-            <p class="login__social-title">Or login with</p>
+            <p class="login__social-title">Ou entre com</p>
 
             <div class="login__social-links">
               <a href="#" class="login__social-link">
                 <img
                   src="assets/img/icon-google.svg"
-                  alt="image"
+                  alt="Entrar com Google"
                   class="login__social-img"
                 />
               </a>
@@ -103,7 +114,7 @@
               <a href="#" class="login__social-link">
                 <img
                   src="assets/img/icon-facebook.svg"
-                  alt="image"
+                  alt="Entrar com Facebook"
                   class="login__social-img"
                 />
               </a>
@@ -111,7 +122,7 @@
               <a href="#" class="login__social-link">
                 <img
                   src="assets/img/icon-apple.svg"
-                  alt="image"
+                  alt="Entrar com Apple"
                   class="login__social-img"
                 />
               </a>
@@ -119,29 +130,29 @@
           </div>
 
           <p class="login__switch">
-            Don't have an account?
-            <button id="loginButtonRegister">Create Account</button>
+            Ainda não tem conta?
+            <button id="loginButtonRegister">Criar conta</button>
           </p>
         </div>
       </div>
 
       <!--===== LOGIN REGISTER =====-->
       <div class="login__register">
-        <h1 class="login__title">Create new account.</h1>
+        <h1 class="login__title" aria-level="2">Crie a sua conta.</h1>
 
         <div class="login__area">
-          <form action="" class="login__form">
+          <form action="" class="login__form" novalidate>
             <div class="login__content grid">
               <div class="login__group grid">
                 <div class="login__box">
                   <input
                     type="text"
                     id="names"
-                    required
+                  name="nome" autocomplete="given-name" minlength="2" required
                     placeholder=" "
                     class="login__input"
                   />
-                  <label for="names" class="login__label">Names</label>
+                  <label for="names" class="login__label">Nome</label>
 
                   <i class="ri-id-card-fill login__icon"></i>
                 </div>
@@ -150,11 +161,11 @@
                   <input
                     type="text"
                     id="surnames"
-                    required
+                  name="sobrenome" autocomplete="family-name" minlength="2" required
                     placeholder=" "
                     class="login__input"
                   />
-                  <label for="surnames" class="login__label">Surnames</label>
+                  <label for="surnames" class="login__label">Sobrenome</label>
 
                   <i class="ri-id-card-fill login__icon"></i>
                 </div>
@@ -164,11 +175,11 @@
                 <input
                   type="email"
                   id="emailCreate"
-                  required
+                  name="email" autocomplete="email" required
                   placeholder=" "
                   class="login__input"
                 />
-                <label for="emailCreate" class="login__label">Email</label>
+                <label for="emailCreate" class="login__label">E-mail</label>
 
                 <i class="ri-mail-fill login__icon"></i>
               </div>
@@ -177,12 +188,12 @@
                 <input
                   type="password"
                   id="passwordCreate"
-                  required
+                  name="senha" autocomplete="new-password" minlength="6" required
                   placeholder=" "
                   class="login__input"
                 />
                 <label for="passwordCreate" class="login__label"
-                  >Password</label
+                  >Senha</label
                 >
 
                 <i
@@ -192,12 +203,12 @@
               </div>
             </div>
 
-            <button type="submit" class="login__button">Create account</button>
+            <button type="submit" class="login__button">Criar conta</button>
           </form>
 
           <p class="login__switch">
-            Already have an account?
-            <button id="loginButtonAccess">Log In</button>
+            Já tem uma conta?
+            <button id="loginButtonAccess">Entrar</button>
           </p>
         </div>
       </div>
@@ -205,6 +216,7 @@
 
     <!--=============== MAIN JS ===============-->
     <script src="assets/js/main.js"></script>
+  <script src="./interacoes.js"></script>
   <!-- learnTECH · volta ao catálogo UX Design -->
 <style>
 .lt-voltar{position:fixed;left:18px;bottom:18px;z-index:99998;display:inline-flex;align-items:center;gap:9px;

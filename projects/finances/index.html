@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,8 +11,18 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
         <title>dev.finance$</title>
-    </head>
-    <body> 
+      <link rel="stylesheet" href="../../shared/lt-base.css" />
+  <link rel="stylesheet" href="../../shared/lt-feedback.css" />
+  <style>:root{--lt-cor:#2d4a22}</style>
+  <script src="../../shared/lt-feedback.js"></script>
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="dev.finances · UX Design" />
+  <meta property="og:description" content="Aplicação web de controle financeiro pessoal (entradas, saídas e saldo) construída durante a Maratona Discover, com roteiro completo de mentoria e soft/hard skills." />
+  <meta property="og:url" content="https://douglasabnovato.github.io/ux-design/projects/finances/" />
+  <meta property="og:image" content="https://douglasabnovato.github.io/ux-design/assets/finances.jpg" />
+</head>
+    <body>
+    <h1 class="lt-sr-only">dev.finances: controle de entradas e saídas</h1> 
         <header> 
             <img src="./assets/logo.svg" alt="Logo Dev Finance">
         </header> 
@@ -44,7 +54,7 @@
             <section  id="transaction">
                 <h2 class="sr-only">Transações</h2>
                 <a  href="#" 
-                    onclick="Modal.open()" 
+                    onclick="event.preventDefault(); Modal.open()" 
                     class="button new">+ Nova Transação</a>
                 <table id="data-table">
                     <thead> 
@@ -60,10 +70,10 @@
             </section> 
         </main> 
         <div class="modal-overlay">
-            <div class="modal">
+            <div class="modal" role="dialog" aria-modal="true" aria-labelledby="titulo-nova-transacao">
                 <div id="form" onsubmit="Form.submit(event)">
-                    <h2>Nova Transação</h2>
-                    <form action="">
+                    <h2 id="titulo-nova-transacao">Nova Transação</h2>
+                    <form action="" novalidate>
                         <div class="input-group">
                             <label 
                                 class="sr-only" 
@@ -73,6 +83,8 @@
                                 id="description"
                                 name="description"
                                 placeholder="Descrição"
+                                minlength="3"
+                                required
                             />
                         </div>
                         <div class="input-group">
@@ -85,6 +97,7 @@
                                 id="amount"
                                 name="amount"
                                 placeholder="0.00"
+                                required
                             />
                             <small class="help">Use o sinal negativo para despesas e vírgula para casas decimais.</small>
                         </div>
@@ -96,10 +109,11 @@
                                 type="date"
                                 id="date"
                                 name="date" 
+                                required
                             />
                         </div>
                         <div class="input-group actions">
-                            <a href="#" onclick="Modal.close()" class="button cancel">Cancelar</a>
+                            <a href="#" onclick="event.preventDefault(); Modal.close()" class="button cancel">Cancelar</a>
                             <button>Salvar</button>
                         </div>
                     </form>

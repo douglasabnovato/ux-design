@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
@@ -10,14 +10,24 @@
     <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="./style.css">
     <title>Login</title>
+  <link rel="stylesheet" href="../../shared/lt-base.css" />
+  <link rel="stylesheet" href="../../shared/lt-feedback.css" />
+  <style>:root{--lt-cor:#ffc632;--lt-texto-sobre-cor:#161616}.dica-demo{margin:10px 0 0;padding:8px 12px;border-radius:6px;background:rgba(255,198,50,.1);color:#e1e1e6;font-size:.85rem}.lt-sucesso{color:#e1e1e6}.lt-sucesso__texto{color:#b3b3b3}</style>
+  <script src="../../shared/lt-feedback.js"></script>
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Login Form · UX Design" />
+  <meta property="og:description" content="Formulário de login para acesso à plataforma com design encantador." />
+  <meta property="og:url" content="https://douglasabnovato.github.io/ux-design/projects/login-form/" />
+  <meta property="og:image" content="https://douglasabnovato.github.io/ux-design/assets/login-form.jpg" />
 </head>
 
 <body>
+    <h1 class="lt-sr-only">Login da plataforma</h1>
     <div class="form-wrapper">
         <div class="form-container">
             <div class="form-left">
                 <div class="header">
-                    <img src="./assets//logo.svg" alt="logo">
+                    <img src="./assets/logo.svg" alt="Camp.in">
                 </div>
                 <div class="form-box">
                     <div class="form-title">
@@ -25,15 +35,16 @@
                             <img src="./assets/log-in.svg" alt="">Faça seu login
                         </h2>
                         <p class="form-description">Entre com suas informações de cadastro.</p>
+                        <p class="dica-demo">Para testar, use <strong>demo@uxdesign.com</strong> e a senha <strong>demo123</strong>.</p>
                     </div>
-                    <form action="">
+                    <form action="" novalidate>
                         <div class="email">
                             <label class="email_lab" id="email_lab" for="email_inp">
                                 E-mail
                             </label>
                             <div>
                                 <input class="email_inp" id="email_inp" name="email_inp" type="email" value="" size="8"
-                                    tabindex="1" placeholder="Digite seu e-mail">
+                                    autocomplete="email" required placeholder="Digite seu e-mail">
                             </div>
                         </div>
                         <div class="password">
@@ -42,18 +53,18 @@
                             </label>
                             <div class="input_password">
                                 <input class="password_inp" id="password_inp" name="password_inp" type="password"
-                                    value="" size="8" tabindex="1" placeholder="Digite sua senha">
-                                <img class="eye_password_inp" id="toggle_password" src="./assets/eye-slash.svg" alt="" srcset="">
+                                    value="" size="8" autocomplete="current-password" minlength="6" required placeholder="Digite sua senha">
+                                <img class="eye_password_inp" id="toggle_password" src="./assets/eye-slash.svg" alt="Mostrar senha" role="button" tabindex="0">
                             </div>
                         </div>
                         <div class="lembrete">
                             <div class="lembrei">
                                 <input class="lembrete_inp" id="lembrete_inp" name="lembrete_inp" type="checkbox"
-                                    value="lembrar" tabindex="8">
+                                    value="lembrar">
                                 <label class="lembrete_lab" for="lembrete_inp">Lembre-me</label>
                             </div>
                             <div class="esqueci">
-                                <a href="">Esqueci minha senha</a>
+                                <a href="#" id="esqueci-senha">Esqueci minha senha</a>
                             </div>
                         </div>
                         <div class="entrar">
@@ -61,15 +72,15 @@
                         </div>
                         <div class="registrar_conta">
                             <span class="texto">Não tem uma conta?</span>
-                            <a class="register" href="">Registre-se</a>
+                            <a class="register" href="#" id="registrar">Registre-se</a>
                         </div>
                     </form>
                 </div>
             </div>
             <div class="form-right">
                 <div class="content">
-                    <div class="titulo">Welcome to Developer</div>
-                    <p class="subtitulo">Learn programming</p>
+                    <div class="titulo">Bem-vindo, dev</div>
+                    <p class="subtitulo">Aprenda programação no seu ritmo</p>
                 </div>
             </div>
         </div>

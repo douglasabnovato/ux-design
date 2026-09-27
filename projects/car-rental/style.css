@@ -576,3 +576,20 @@ header {
     grid-template-columns: repeat(auto-fit, minmax(254px, auto));
   }
 }
+
+/* Ajustes de responsividade (curadoria UX Design, lote 1): evita rolagem lateral no celular. */
+@media (max-width: 480px) {
+  .text, .form-container { max-width: calc(100vw - 64px); }
+  .home { overflow-x: clip; }
+  .form-container form { left: 16px; right: 16px; }
+}
+@media (max-width: 480px) {
+  header .header-btn, header .btn { padding: 8px 12px; font-size: 0.85rem; }
+  header .header-btn .sign-up { display: none; }
+}
+.newsletter .box { width: 100%; max-width: 350px; }
+.newsletter .box input { min-width: 0; flex: 1; }
+@media (max-width: 480px) {
+  .text h1 { font-size: clamp(1.9rem, 9vw, 2.6rem); overflow-wrap: anywhere; }
+}
+/* Fim dos ajustes de responsividade. */

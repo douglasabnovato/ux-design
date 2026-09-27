@@ -858,3 +858,9 @@ footer {
     justify-content: center;
   }
 }
+
+/* Ajustes de responsividade (curadoria UX Design, lote 1): evita rolagem lateral no celular. */
+section, header, main { overflow-x: clip; }
+.hero { position: relative; }
+.orbital-carousel .carousel-container { overflow-x: clip; }
+/* Fim dos ajustes de responsividade. */

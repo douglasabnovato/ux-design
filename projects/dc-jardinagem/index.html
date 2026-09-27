@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="pt-br" class="scroll-smooth">
+<html lang="pt-BR" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -57,7 +57,16 @@
         scrollbar-width: none;
       }
     </style>
-  </head>
+    <link rel="stylesheet" href="../../shared/lt-base.css" />
+  <link rel="stylesheet" href="../../shared/lt-feedback.css" />
+  <script src="../../shared/lt-feedback.js"></script>
+  <meta name="description" content="Transformação de terrenos brutos em espaços de lazer, com apresentação de serviços de jardinagem profissional." />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="DC Jardinagem · UX Design" />
+  <meta property="og:description" content="Transformação de terrenos brutos em espaços de lazer, com apresentação de serviços de jardinagem profissional." />
+  <meta property="og:url" content="https://douglasabnovato.github.io/ux-design/projects/dc-jardinagem/" />
+  <meta property="og:image" content="https://douglasabnovato.github.io/ux-design/assets/dc-jardinagem.jpg" />
+</head>
   <body class="bg-stone-50 text-slate-900 font-sans">
     <!-- NAVBAR -->
     <nav
@@ -377,6 +386,8 @@
           <!-- Mensagem de Sucesso (Invisível por padrão) -->
           <div
             id="success-msg"
+            role="status"
+            tabindex="-1"
             class="hidden text-center space-y-4 animate-in fade-in zoom-in duration-500"
           >
             <div class="text-6xl">✅</div>
@@ -385,7 +396,8 @@
               O WhatsApp foi aberto para você concluir o contato com o Derlan.
             </p>
             <button
-              onclick="window.location.reload()"
+              type="button"
+              id="btn-novo-pedido"
               class="text-secondary font-bold underline"
             >
               Enviar outro pedido
@@ -393,23 +405,31 @@
           </div>
 
           <!-- Formulário -->
-          <form id="form-lead" class="space-y-4 w-full">
-            <input
+          <form id="form-lead" class="space-y-4 w-full" novalidate>
+            <input aria-label="Seu Nome"
               type="text"
               id="nome"
+              name="nome"
+              autocomplete="name"
+              minlength="3"
               placeholder="Seu Nome"
               class="w-full p-4 bg-stone-100 rounded-2xl border-none focus:ring-2 focus:ring-secondary transition"
               required
             />
-            <input
+            <input aria-label="Seu WhatsApp"
               type="tel"
               id="whatsapp"
+              name="whatsapp"
+              autocomplete="tel"
+              inputmode="tel"
               placeholder="Seu WhatsApp"
               class="w-full p-4 bg-stone-100 rounded-2xl border-none focus:ring-2 focus:ring-secondary transition"
               required
             />
-            <textarea
+            <textarea aria-label="O que você precisa?"
               id="mensagem"
+              name="mensagem"
+              required
               placeholder="O que você precisa?"
               rows="3"
               class="w-full p-4 bg-stone-100 rounded-2xl border-none focus:ring-2 focus:ring-secondary transition"
@@ -467,8 +487,17 @@
       const successMsg = document.getElementById("success-msg");
       const btnSubmit = document.getElementById("btn-submit");
 
+      LT.limparAoDigitar(form);
+
+      document.getElementById("btn-novo-pedido").addEventListener("click", () => {
+        successMsg.classList.add("hidden");
+        form.classList.remove("hidden");
+        document.getElementById("nome").focus();
+      });
+
       form.addEventListener("submit", (e) => {
         e.preventDefault();
+        if (!LT.validar(form)) return;
 
         // Desativa botão para evitar cliques duplos
         btnSubmit.disabled = true;
@@ -477,7 +506,7 @@
         const nome = document.getElementById("nome").value;
         const whatsUser = document.getElementById("whatsapp").value;
         const msg = document.getElementById("mensagem").value;
-        const numeroDerlan = "5532998036668";
+        const numeroDerlan = "5532988367667";
 
         // Formatação da Mensagem
         const texto =
@@ -499,6 +528,10 @@
 
           // 3. Reseta o formulário
           form.reset();
+          btnSubmit.disabled = false;
+          btnSubmit.innerText = "Enviar Pedido";
+          successMsg.focus();
+          LT.aviso("Pedido enviado. O Derlan responde pelo WhatsApp.", "sucesso");
         }, 800);
       });
     </script>

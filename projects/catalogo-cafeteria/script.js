@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const state = {
     searchTerm: "",
     activeCategory: "Todos",
-    whatsappNumber: "553299999999", // Altere para o seu número real
+    whatsappNumber: "5532988367667", // Altere para o seu número real
   };
 
   // 2. Seletores do DOM
@@ -83,7 +83,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 ${
                   produto.vazio
                     ? '<span class="status-tag">Esgotado</span>'
-                    : `<a href="${getWhatsAppLink(produto)}" target="_blank" class="btn-primary" style="padding: 0.5rem 1rem; font-size: 0.8rem;">Pedir</a>`
+                    : `<a href="${getWhatsAppLink(produto)}" target="_blank" rel="noopener" class="btn-primary" aria-label="Pedir ${produto.nome} pelo WhatsApp" style="padding: 0.5rem 1rem; font-size: 0.8rem;">Pedir</a>`
                 }
             </div>
         </div>
@@ -97,7 +97,19 @@ document.addEventListener("DOMContentLoaded", () => {
     productCount.innerText = `${count} ${count === 1 ? "item encontrado" : "itens encontrados"}`;
 
     if (count === 0) {
-      grid.innerHTML = `<div class="no-results" style="grid-column: 1/-1; text-align: center; padding: 3rem; color: var(--text-muted);">Ops! Nenhum sabor encontrado com "${state.searchTerm}".</div>`;
+      LT.vazio(grid, {
+        titulo: "Nenhum sabor encontrado",
+        texto: state.searchTerm ? `Não achamos nada para "${state.searchTerm}" em ${state.activeCategory}. Tente outro nome ou código.` : `Ainda não há itens em ${state.activeCategory}.`,
+        acao: () => {
+          state.searchTerm = "";
+          state.activeCategory = "Todos";
+          searchInput.value = "";
+          categoryButtons.forEach((b) => b.classList.toggle("active", b.getAttribute("data-category") === "Todos"));
+          render();
+          searchInput.focus();
+        },
+        rotuloAcao: "Limpar busca",
+      });
     }
 
     applyScrollAnimations();

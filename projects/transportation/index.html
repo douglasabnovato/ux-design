@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -9,27 +9,37 @@
       href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css"
     />
     <link rel="stylesheet" href="./style.css" />
-  </head>
+    <link rel="stylesheet" href="../../shared/lt-base.css" />
+  <link rel="stylesheet" href="../../shared/lt-feedback.css" />
+  <style>.form-news{display:flex;justify-content:space-between;width:100%}.form-news input{min-width:0;flex:1;border:none;outline:none}.form-container select{border:none;outline:none;background:transparent;font:inherit}.box.lt-destaque{outline:3px solid #ff7e33;outline-offset:4px}</style>
+  <script src="../../shared/lt-feedback.js"></script>
+  <meta name="description" content="Site institucional para transportadora, com apresentação de frota, áreas de atuação e solicitação de cotação." />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Transportation · UX Design" />
+  <meta property="og:description" content="Site institucional para transportadora, com apresentação de frota, áreas de atuação e solicitação de cotação." />
+  <meta property="og:url" content="https://douglasabnovato.github.io/ux-design/projects/transportation/" />
+  <meta property="og:image" content="https://douglasabnovato.github.io/ux-design/assets/transportation.jpg" />
+</head>
   <body>
     <!-- Header -->
     <header>
       <a href="#" class="logo"
         ><img
           src="./assets/images-t/transportar-caixas/caixas.png"
-          alt="logo da car rental"
+          alt="Volta Express"
           srcset=""
       /></a>
       <div class="bx bx-menu" id="menu-icon"></div>
       <ul class="navbar">
-        <li><a href="#home">Home</a></li>
+        <li><a href="#home">Início</a></li>
         <li><a href="#ride">Transportar </a></li>
         <li><a href="#services">Serviços</a></li>
         <li><a href="#about">O Volta Express</a></li>
         <li><a href="#reviews">Vantagens</a></li>
       </ul>
       <div class="header-btn">
-        <a href="#" class="sign-up">Sign Up</a>
-        <a href="#" class="sign-in">Sign In</a>
+        <a href="#" class="sign-up">Cadastrar</a>
+        <a href="#" class="sign-in">Entrar</a>
       </div>
     </header>
 
@@ -41,29 +51,34 @@
           para transportar
         </h1>
         <p>
-          Lorem ipsum dolor sit amet consectetur adi <br />
-          pisicing elit. Explicabo esse non fugiat!
+          Encontre fretes perto de você, escolha a data que cabe na sua rota <br />
+          e aceite a carga direto pelo celular.
         </p>
         <div class="app-stores">
-          <img src="./assets/ios.png" alt="" />
-          <img src="./assets/play.png" alt="" />
+          <img src="./assets/ios.png" alt="Baixar na App Store" />
+          <img src="./assets/play.png" alt="Disponível no Google Play" />
         </div>
       </div>
       <div class="form-container">
-        <form action="">
+        <form action="" id="form-busca" novalidate>
           <div class="input-box">
-            <span>Location</span>
-            <input type="search" name="" id="" placeholder="Search Places" />
+            <span>Estou em</span>
+            <input aria-label="Cidade onde você está" type="search" name="cidade" placeholder="Ex.: Juiz de Fora" required minlength="3" />
           </div>
           <div class="input-box">
-            <span>Pick-Up Date</span>
-            <input type="date" name="" id="" />
+            <span>Posso retirar em</span>
+            <input type="date" name="data" aria-label="Data em que pode retirar" required />
           </div>
           <div class="input-box">
-            <span>Return Date</span>
-            <input type="date" name="" id="" />
+            <span>Veículo</span>
+            <select name="veiculo" aria-label="Tipo de veículo" required>
+              <option value="">Escolha</option>
+              <option>Utilitário (até 700 kg)</option>
+              <option>Van (até 1.500 kg)</option>
+              <option>Caminhão 3/4 (até 4 t)</option>
+            </select>
           </div>
-          <input type="submit" name="" id="" class="btn" />
+          <button type="submit" class="btn">Buscar fretes</button>
         </form>
       </div>
     </section>
@@ -72,31 +87,28 @@
     <section class="ride" id="ride">
       <div class="heading">
         <span>Como funciona</span>
-        <h1>Transporte em 3 etapas fáceis</h1>
+        <h1 aria-level="2">Transporte em 3 etapas fáceis</h1>
       </div>
       <div class="ride-container">
         <div class="box">
           <i class="bx bxs-map"></i>
           <h2>Escolha um local</h2>
           <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-            Perspiciatis, impedit? Saepe quo quam numquam maxime?
+            Informe a cidade onde você está com o veículo. Mostramos as cargas que saem dali.
           </p>
         </div>
         <div class="box">
           <i class="bx bxs-calendar-check"></i>
           <h2>Data de retirada</h2>
           <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-            Perspiciatis, impedit? Saepe quo quam numquam maxime?
+            Escolha a data em que pode retirar a carga. As ofertas se ajustam à sua agenda.
           </p>
         </div>
         <div class="box">
           <i class="bx bxs-calendar-star"></i>
           <h2>Reserve um espaço</h2>
           <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-            Perspiciatis, impedit? Saepe quo quam numquam maxime?
+            Aceite o frete, confirme o veículo e receba o contato do remetente pelo WhatsApp.
           </p>
         </div>
       </div>
@@ -106,190 +118,190 @@
     <section class="services" id="services">
       <div class="heading">
         <span>Melhores Serviços</span>
-        <h1>
+        <h1 aria-level="2">
           Explore as Melhores Ofertas <br />
           dos Mais Bem Avaliados
         </h1>
       </div>
       <div class="services-container">
-        <div class="box">
+        <div class="box" data-frete="20 caixas de livros" data-origem="Juiz de Fora – MG" data-destino="São Caetano do Sul – SP" data-valor="1000" data-data="22/10">
           <div class="box-img">
             <img
               src="./assets/images-t/transportar-caixas/caminhao-caixas-1.jpg"
-              alt="car1"
+              alt="20 caixas de livros" loading="lazy"
             />
           </div>
-          <p class="infos">Trajeto</p>
-          <h3>20 caixas de Livros</h3>
-          <h2>de Juiz de Fora - MG</h2>
-          <h2>para São Caetano - SP</h2>
+          <p class="infos">Frete disponível</p>
+          <h3>20 caixas de livros</h3>
+          <h2>de Juiz de Fora – MG</h2>
+          <h2>para São Caetano do Sul – SP</h2>
           <p>
-            <span> R$1.000</span>
-            <span> | 22/05</span>
-            <span> | 500kg</span>
-            <span> | 6m²</span>
+            <span> R$ 1.000</span>
+            <span> | 22/10</span>
+            <span> | 500 kg</span>
+            <span> | 6 m²</span>
           </p>
-          <a href="#" class="btn">Trasnporte Agora</a>
+          <a href="#services" class="btn" data-aceitar>Quero este frete</a>
         </div>
 
-        <div class="box">
+        <div class="box" data-frete="Mudança de 1 quarto" data-origem="Juiz de Fora – MG" data-destino="Rio de Janeiro – RJ" data-valor="1450" data-data="24/10">
           <div class="box-img">
             <img
               src="./assets/images-t/transportar-caixas/caminhao-caixas-2.jpg"
-              alt="car1"
+              alt="Mudança de 1 quarto" loading="lazy"
             />
           </div>
-          <p class="infos">Trajeto</p>
-          <h3>20 caixas de Livros</h3>
-          <h2>de Juiz de Fora - MG</h2>
-          <h2>para São Caetano - SP</h2>
+          <p class="infos">Frete disponível</p>
+          <h3>Mudança de 1 quarto</h3>
+          <h2>de Juiz de Fora – MG</h2>
+          <h2>para Rio de Janeiro – RJ</h2>
           <p>
-            <span> R$1.000</span>
-            <span> | 22/05</span>
-            <span> | 500kg</span>
-            <span> | 6m²</span>
+            <span> R$ 1.450</span>
+            <span> | 24/10</span>
+            <span> | 900 kg</span>
+            <span> | 12 m²</span>
           </p>
-          <a href="#" class="btn">Trasnporte Agora</a>
+          <a href="#services" class="btn" data-aceitar>Quero este frete</a>
         </div>
 
-        <div class="box">
+        <div class="box" data-frete="Paletes de piso cerâmico" data-origem="Juiz de Fora – MG" data-destino="Belo Horizonte – MG" data-valor="1800" data-data="25/10">
           <div class="box-img">
             <img
               src="./assets/images-t/transportar-caixas/caminhao-caixas-3.jpg"
-              alt="car1"
+              alt="Paletes de piso cerâmico" loading="lazy"
             />
           </div>
-          <p class="infos">Trajeto</p>
-          <h3>20 caixas de Livros</h3>
-          <h2>de Juiz de Fora - MG</h2>
-          <h2>para São Caetano - SP</h2>
+          <p class="infos">Frete disponível</p>
+          <h3>Paletes de piso cerâmico</h3>
+          <h2>de Juiz de Fora – MG</h2>
+          <h2>para Belo Horizonte – MG</h2>
           <p>
-            <span> R$1.000</span>
-            <span> | 22/05</span>
-            <span> | 500kg</span>
-            <span> | 6m²</span>
+            <span> R$ 1.800</span>
+            <span> | 25/10</span>
+            <span> | 1800 kg</span>
+            <span> | 8 m²</span>
           </p>
-          <a href="#" class="btn">Trasnporte Agora</a>
+          <a href="#services" class="btn" data-aceitar>Quero este frete</a>
         </div>
 
-        <div class="box">
+        <div class="box" data-frete="Eletrodomésticos (6 volumes)" data-origem="Juiz de Fora – MG" data-destino="Petrópolis – RJ" data-valor="620" data-data="23/10">
           <div class="box-img">
             <img
               src="./assets/images-t/transportar-caixas/caminhao-caixas-4.jpg"
-              alt="car1"
+              alt="Eletrodomésticos (6 volumes)" loading="lazy"
             />
           </div>
-          <p class="infos">Trajeto</p>
-          <h3>20 caixas de Livros</h3>
-          <h2>de Juiz de Fora - MG</h2>
-          <h2>para São Caetano - SP</h2>
+          <p class="infos">Frete disponível</p>
+          <h3>Eletrodomésticos (6 volumes)</h3>
+          <h2>de Juiz de Fora – MG</h2>
+          <h2>para Petrópolis – RJ</h2>
           <p>
-            <span> R$1.000</span>
-            <span> | 22/05</span>
-            <span> | 500kg</span>
-            <span> | 6m²</span>
+            <span> R$ 620</span>
+            <span> | 23/10</span>
+            <span> | 350 kg</span>
+            <span> | 5 m²</span>
           </p>
-          <a href="#" class="btn">Trasnporte Agora</a>
+          <a href="#services" class="btn" data-aceitar>Quero este frete</a>
         </div>
 
-        <div class="box">
+        <div class="box" data-frete="Estoque de loja de roupas" data-origem="Barbacena – MG" data-destino="Juiz de Fora – MG" data-valor="540" data-data="26/10">
           <div class="box-img">
             <img
               src="./assets/images-t/transportar-caixas/caminhao-caixas-5.jpg"
-              alt="car1"
+              alt="Estoque de loja de roupas" loading="lazy"
             />
           </div>
-          <p class="infos">Trajeto</p>
-          <h3>20 caixas de Livros</h3>
-          <h2>de Juiz de Fora - MG</h2>
-          <h2>para São Caetano - SP</h2>
+          <p class="infos">Frete disponível</p>
+          <h3>Estoque de loja de roupas</h3>
+          <h2>de Barbacena – MG</h2>
+          <h2>para Juiz de Fora – MG</h2>
           <p>
-            <span> R$1.000</span>
-            <span> | 22/05</span>
-            <span> | 500kg</span>
-            <span> | 6m²</span>
+            <span> R$ 540</span>
+            <span> | 26/10</span>
+            <span> | 280 kg</span>
+            <span> | 4 m²</span>
           </p>
-          <a href="#" class="btn">Trasnporte Agora</a>
+          <a href="#services" class="btn" data-aceitar>Quero este frete</a>
         </div>
 
-        <div class="box">
+        <div class="box" data-frete="Móveis planejados desmontados" data-origem="Juiz de Fora – MG" data-destino="Viçosa – MG" data-valor="780" data-data="27/10">
           <div class="box-img">
             <img
               src="./assets/images-t/transportar-caixas/deposito-1.jpg"
-              alt="car1"
+              alt="Móveis planejados desmontados" loading="lazy"
             />
           </div>
-          <p class="infos">Trajeto</p>
-          <h3>20 caixas de Livros</h3>
-          <h2>de Juiz de Fora - MG</h2>
-          <h2>para São Caetano - SP</h2>
+          <p class="infos">Frete disponível</p>
+          <h3>Móveis planejados desmontados</h3>
+          <h2>de Juiz de Fora – MG</h2>
+          <h2>para Viçosa – MG</h2>
           <p>
-            <span> R$1.000</span>
-            <span> | 22/05</span>
-            <span> | 500kg</span>
-            <span> | 6m²</span>
+            <span> R$ 780</span>
+            <span> | 27/10</span>
+            <span> | 600 kg</span>
+            <span> | 9 m²</span>
           </p>
-          <a href="#" class="btn">Trasnporte Agora</a>
+          <a href="#services" class="btn" data-aceitar>Quero este frete</a>
         </div>
 
-        <div class="box">
+        <div class="box" data-frete="Material de escritório" data-origem="Juiz de Fora – MG" data-destino="Muriaé – MG" data-valor="430" data-data="28/10">
           <div class="box-img">
             <img
               src="./assets/images-t/transportar-caixas/deposito-2.jpg"
-              alt="car1"
+              alt="Material de escritório" loading="lazy"
             />
           </div>
-          <p class="infos">Trajeto</p>
-          <h3>20 caixas de Livros</h3>
-          <h2>de Juiz de Fora - MG</h2>
-          <h2>para São Caetano - SP</h2>
+          <p class="infos">Frete disponível</p>
+          <h3>Material de escritório</h3>
+          <h2>de Juiz de Fora – MG</h2>
+          <h2>para Muriaé – MG</h2>
           <p>
-            <span> R$1.000</span>
-            <span> | 22/05</span>
-            <span> | 500kg</span>
-            <span> | 6m²</span>
+            <span> R$ 430</span>
+            <span> | 28/10</span>
+            <span> | 200 kg</span>
+            <span> | 3 m²</span>
           </p>
-          <a href="#" class="btn">Trasnporte Agora</a>
+          <a href="#services" class="btn" data-aceitar>Quero este frete</a>
         </div>
 
-        <div class="box">
+        <div class="box" data-frete="Peças automotivas" data-origem="Ubá – MG" data-destino="Juiz de Fora – MG" data-valor="690" data-data="29/10">
           <div class="box-img">
             <img
               src="./assets/images-t/transportar-caixas/deposito-3.jpg"
-              alt="car1"
+              alt="Peças automotivas" loading="lazy"
             />
           </div>
-          <p class="infos">Trajeto</p>
-          <h3>20 caixas de Livros</h3>
-          <h2>de Juiz de Fora - MG</h2>
-          <h2>para São Caetano - SP</h2>
+          <p class="infos">Frete disponível</p>
+          <h3>Peças automotivas</h3>
+          <h2>de Ubá – MG</h2>
+          <h2>para Juiz de Fora – MG</h2>
           <p>
-            <span> R$1.000</span>
-            <span> | 22/05</span>
-            <span> | 500kg</span>
-            <span> | 6m²</span>
+            <span> R$ 690</span>
+            <span> | 29/10</span>
+            <span> | 450 kg</span>
+            <span> | 4 m²</span>
           </p>
-          <a href="#" class="btn">Trasnporte Agora</a>
+          <a href="#services" class="btn" data-aceitar>Quero este frete</a>
         </div>
 
-        <div class="box">
+        <div class="box" data-frete="Insumos de padaria" data-origem="Juiz de Fora – MG" data-destino="Santos Dumont – MG" data-valor="350" data-data="30/10">
           <div class="box-img">
             <img
               src="./assets/images-t/transportar-caixas/deposito-4.jpg"
-              alt="car1"
+              alt="Insumos de padaria" loading="lazy"
             />
           </div>
-          <p class="infos">Trajeto</p>
-          <h3>20 caixas de Livros</h3>
-          <h2>de Juiz de Fora - MG</h2>
-          <h2>para São Caetano - SP</h2>
+          <p class="infos">Frete disponível</p>
+          <h3>Insumos de padaria</h3>
+          <h2>de Juiz de Fora – MG</h2>
+          <h2>para Santos Dumont – MG</h2>
           <p>
-            <span> R$1.000</span>
-            <span> | 22/05</span>
-            <span> | 500kg</span>
-            <span> | 6m²</span>
+            <span> R$ 350</span>
+            <span> | 30/10</span>
+            <span> | 300 kg</span>
+            <span> | 3 m²</span>
           </p>
-          <a href="#" class="btn">Trasnporte Agora</a>
+          <a href="#services" class="btn" data-aceitar>Quero este frete</a>
         </div>
       </div>
     </section>
@@ -298,21 +310,18 @@
     <section class="about" id="about">
       <div class="heading">
         <span>O VOLTA EXPRESS</span>
-        <h1>Melhor experiência do cliente</h1>
+        <h1 aria-level="2">Melhor experiência do cliente</h1>
       </div>
       <div class="about-container">
         <div class="about-img">
-          <img src="./assets/images-t/transportar-caixas/caixas.png" alt="" />
+          <img src="./assets/images-t/transportar-caixas/caixas.png" alt="Caixas prontas para o frete" />
         </div>
         <div class="about-text">
           <span>O VOLTA EXPRESS</span>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo atque
-            quidem excepturi sunt est qui corporis iusto quo nobis vitae
-            molestias veniam deleniti fugiat, beatae iste doloribus rerum
-            officiis iure voluptates perferendis eaque ratione?
+            A Volta Express conecta quem precisa enviar mercadorias a motoristas que já estão na estrada. Menos viagens vazias para o motorista, frete mais barato para quem envia.
           </p>
-          <a href="#" class="btn">Learn More</a>
+          <a href="#services" class="btn">Ver fretes</a>
         </div>
       </div>
     </section>
@@ -321,14 +330,14 @@
     <section class="reviews" id="reviews">
       <div class="heading">
         <span>Vantagens</span>
-        <h1>A opção onde e quando precisar</h1>
+        <h1 aria-level="2">A opção onde e quando precisar</h1>
       </div>
       <div class="reviews-container">
         <div class="box">
           <div class="rev-img">
             <img
               src="./assets/images-t/caminhoneiro/caminhoneiro-3.png"
-              alt=""
+              alt="Motorista parceiro"
             />
           </div>
           <h2>A carga mais perto de você</h2>
@@ -340,15 +349,14 @@
             <i class="bx bxs-star-half"></i>
           </div>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo
-            qui similique laborum hic molestiae. Quaerat ipsa cum sit.
+            As ofertas aparecem por proximidade: você vê primeiro as cargas que saem da cidade onde está.
           </p>
         </div>
         <div class="box">
           <div class="rev-img">
             <img
               src="./assets/images-t/caminhoneiro/caminhoneiro-2.png"
-              alt=""
+              alt="Motorista parceiro"
             />
           </div>
           <h2>Informações para o seu planejamento</h2>
@@ -360,15 +368,14 @@
             <i class="bx bxs-star-half"></i>
           </div>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo
-            qui similique laborum hic molestiae. Quaerat ipsa cum sit.
+            Peso, volume, data e valor aparecem antes do aceite, para você planejar a rota sem surpresa.
           </p>
         </div>
         <div class="box">
           <div class="rev-img">
             <img
               src="./assets/images-t/caminhoneiro/caminhoneiro-1.png"
-              alt=""
+              alt="Motorista parceiro"
             />
           </div>
           <h2>Sempre tem o que transportar</h2>
@@ -380,8 +387,7 @@
             <i class="bx bxs-star-half"></i>
           </div>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo
-            qui similique laborum hic molestiae. Quaerat ipsa cum sit.
+            Retornos que voltariam vazios viram renda: sempre há uma carga no caminho de volta.
           </p>
         </div>
       </div>
@@ -389,16 +395,16 @@
 
     <!-- Newsletter -->
     <section class="newsletter">
-      <h2>Subscribe To Newsletter</h2>
+      <h2>Receba novos fretes por e-mail</h2>
       <div class="box">
-        <input type="text" placeholder="Enter Your E-mail ..." />
-        <a href="#" class="btn">Subscribe</a>
+        <form class="form-news" novalidate><input aria-label="Seu e-mail" type="email" name="email" required placeholder="Seu e-mail" />
+        <button type="submit" class="btn">Assinar</button></form>
       </div>
     </section>
 
     <!-- Copyright -->
     <div class="copyright">
-      <p>&#169; @douglasabnovato All Right Reserved</p>
+      <p>&#169; Volta Express Brasil</p>
       <div class="social">
         <a href="#"><i class="bx bxl-facebook"></i></a>
         <a href="#"><i class="bx bxl-twitter"></i></a>
@@ -411,6 +417,7 @@
 
     <!-- Link to JS -->
     <script src="./script.js"></script>
+  <script src="./interacoes.js"></script>
   <!-- learnTECH · volta ao catálogo UX Design -->
 <style>
 .lt-voltar{position:fixed;left:18px;bottom:18px;z-index:99998;display:inline-flex;align-items:center;gap:9px;

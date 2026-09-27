@@ -1,46 +1,33 @@
-var listEmails = JSON.parse(localStorage.getItem("listEmails"));
-var currentEmail = JSON.parse(localStorage.getItem("currentEmail"));
+/*
+ * main.js · Rocket News.
+ * Inscrição na newsletter com validação de e-mail e frequência, estado de
+ * envio, confirmação na tela e aviso quando o e-mail já foi inscrito nesta visita.
+ */
+document.documentElement.style.setProperty("--lt-cor", "#8257e5");
 
-if (!listEmails && !currentEmail) {
-  listEmails = [];
-  currentEmail = "";
-}
+const inscritos = new Set();
+const form = document.getElementById("form-news");
 
-function validateEmail(email) {
-  var re = /\S+@\S+\.\S+/;
-  return re.test(email);
-}
-
-let emailInput = document.getElementById("e-mail");
-
-document
-  .getElementById("icon-send")
-  .addEventListener("click", function (event) {
-    event.preventDefault();
-
-    if (!emailInput.value) {
-      console.log("Insira o seu melhor e-mail.");
-      document.getElementById("responsesend").innerHTML =
-        "Insira o seu melhor e-mail.";
-    } else {
-      console.log(
-        "Obrigado " + emailInput.value + " por assinar nossa newsletter!!"
-      );
-
-      if (!validateEmail(emailInput.value)) {
-        document.getElementById("responsesend").innerHTML = 
-          emailInput.value +
-          ": Não é um e-mail válido. Insira o seu melhor e-mail.";
-      } else {
-        document.getElementById("responsesend").innerHTML =
-          "Obrigado " + emailInput.value + " por assinar nossa newsletter!!";
-
-        currentEmail = emailInput.value;
-        listEmails.push(currentEmail);
-
-        localStorage.setItem("currentEmail", JSON.stringify(currentEmail));
-        localStorage.setItem("listEmails", JSON.stringify(listEmails));
-      }
+/* Barra e-mails repetidos antes do fluxo padrão de envio. */
+form.addEventListener(
+  "submit",
+  (e) => {
+    const email = form.email.value.trim().toLowerCase();
+    if (email && inscritos.has(email)) {
+      e.preventDefault();
+      e.stopImmediatePropagation();
+      LT.marcarErro(form.email, "Este e-mail já está inscrito. Use outro endereço.");
+      form.email.focus();
     }
-    emailInput.value = "";
-  });
+  },
+  true
+);
+
+LT.ligarFormulario(form, {
+  titulo: "Inscrição confirmada!",
+  texto: "Você vai receber a Rocket News no seu e-mail. Confira a caixa de spam se não chegar em alguns minutos.",
+  aviso: "Obrigado por assinar a newsletter!",
+  textoCarregando: "Inscrevendo…",
+  aoEnviar: (f) => inscritos.add(f.email.value.trim().toLowerCase()),
+});
+/* fim de main.js */

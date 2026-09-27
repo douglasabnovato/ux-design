@@ -381,3 +381,14 @@ body {
     }
 
 }
+
+/* Ajustes de responsividade (curadoria UX Design, lote 1): evita rolagem lateral no celular. */
+.form-left, .form-right { min-width: 0; }
+@media (max-width: 678px) {
+  .form-left .form-box { margin: 48px 16px; }
+  .form-left .header img { margin: 24px 0 0 16px; }
+}
+@media (max-width: 678px) {
+  .form-left .form-box form { padding-left: 16px; padding-right: 16px; }
+}
+/* Fim dos ajustes de responsividade. */

@@ -94,18 +94,18 @@ body {
     font-weight: 500;
 }
 
-#projetos .container idpersona {
+#projetos .container .idpersona {
     font-weight: 500;
     font-size: 12px;
     opacity: 0.6;
     transition: opacity 400ms;
 }
 
-#projetos .container idpersona:hover {
+#projetos .container .idpersona:hover {
     opacity: 1;
 }
 
-#projetos .container idpersona a {
+#projetos .container .idpersona a {
     color: var(--purple);
 }
 

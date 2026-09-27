@@ -54,33 +54,64 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // --- LÓGICA DO FORMULÁRIO EM ETAPAS (MULTI-STEP) ---
-window.nextStep = function(currentStep) {
+
+/* Avança uma etapa depois de validar os campos visíveis da etapa atual. */
+window.nextStep = function (currentStep) {
+    const form = document.getElementById("multiStepForm");
     const currentFormStep = document.querySelector(`.form-step[data-step="${currentStep}"]`);
-    
-    // Validação simples de campos obrigatórios da etapa atual
-    const radios = currentFormStep.querySelectorAll('input[type="radio"]');
-    if (radios.length > 0) {
-        let selected = false;
-        radios.forEach(r => { if (r.checked) selected = true; });
-        if (!selected) {
-            alert("Por favor, selecione uma opção para prosseguir.");
-            return;
-        }
-    }
+    if (!LT.validar(form, currentFormStep)) return;
 
     const nextFormStep = document.querySelector(`.form-step[data-step="${currentStep + 1}"]`);
     if (nextFormStep) {
         currentFormStep.classList.remove('active');
         nextFormStep.classList.add('active');
+        const primeiro = nextFormStep.querySelector('input, select, textarea');
+        if (primeiro) primeiro.focus();
     }
 }
 
-window.prevStep = function(currentStep) {
+/* Volta uma etapa sem perder o que já foi preenchido. */
+window.prevStep = function (currentStep) {
     const currentFormStep = document.querySelector(`.form-step[data-step="${currentStep}"]`);
     const prevFormStep = document.querySelector(`.form-step[data-step="${currentStep - 1}"]`);
-    
+
     if (prevFormStep) {
         currentFormStep.classList.remove('active');
         prevFormStep.classList.add('active');
     }
 }
+
+/* Envio final: valida a última etapa, simula o envio e abre o WhatsApp com o resumo. */
+function ligarEnvio() {
+    const form = document.getElementById("multiStepForm");
+    if (!form) return;
+    document.documentElement.style.setProperty("--lt-cor", "#ff4d00");
+    form.setAttribute("novalidate", "");
+    LT.limparAoDigitar(form);
+    form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        const ultima = form.querySelector(".form-step.active") || form;
+        if (!LT.validar(form, ultima)) return;
+        const botao = form.querySelector("[type=submit]");
+        LT.carregando(botao, true, "ENVIANDO…");
+        await LT.esperar(1000);
+        LT.carregando(botao, false);
+        const resumo = LT.resumo(form);
+        const link = LT.whatsapp(`Olá, GHBN Engenharia! Quero abrir um diálogo técnico:\n\n${resumo}`);
+        LT.sucesso(form, {
+            titulo: "Diálogo técnico aberto!",
+            texto: "Abrimos o WhatsApp com o resumo da sua demanda. A equipe técnica responde em até 1 dia útil.",
+            detalhe: resumo,
+            link,
+            aoRecomecar: () => {
+                form.reset();
+                form.querySelectorAll(".form-step").forEach((s) => s.classList.toggle("active", s.dataset.step === "1"));
+            },
+            rotuloRecomecar: "Nova solicitação",
+        });
+        LT.aviso("Solicitação técnica enviada.", "sucesso");
+    });
+}
+
+document.addEventListener("DOMContentLoaded", ligarEnvio);
+/* Fim do script. */

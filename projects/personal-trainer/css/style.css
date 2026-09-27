@@ -839,3 +839,7 @@ footer {
 }
 
 /* FIM: PADRONIZAÇÃO DE BOTÕES - CSS */
+
+/* Ajustes de responsividade (curadoria UX Design, lote 1): evita rolagem lateral no celular. */
+section, .stack-wrapper, .stack-container { overflow-x: clip; }
+/* Fim dos ajustes de responsividade. */

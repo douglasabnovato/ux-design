@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="pt-br">
+<html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -13,7 +13,17 @@
     />
 
     <link rel="stylesheet" href="style.css" />
-  </head>
+    <link rel="stylesheet" href="../../shared/lt-base.css" />
+  <link rel="stylesheet" href="../../shared/lt-feedback.css" />
+  <style>:root{--lt-cor:#d4a373;--lt-texto-sobre-cor:#1a120b;--lt-suave:#b9a99a;--lt-texto:#f3e9dc}</style>
+  <script src="../../shared/lt-feedback.js"></script>
+  <meta name="description" content="Catálogo digital com os melhores cafés e produtos da cafeteria." />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Catálogo da Cafeteria · UX Design" />
+  <meta property="og:description" content="Catálogo digital com os melhores cafés e produtos da cafeteria." />
+  <meta property="og:url" content="https://douglasabnovato.github.io/ux-design/projects/catalogo-cafeteria/" />
+  <meta property="og:image" content="https://douglasabnovato.github.io/ux-design/assets/catalogo-cafeteria.jpg" />
+</head>
   <body class="dark-theme">
     <header class="main-header">
       <div class="header-content">
@@ -23,7 +33,7 @@
 
         <div class="search-wrapper">
           <div class="search-bar">
-            <input
+            <input aria-label="Busque por nome, tag ou código (ex: #01)"
               type="text"
               id="smart-search"
               placeholder="Busque por nome, tag ou código (ex: #01)..."
@@ -72,7 +82,7 @@
             <div class="hero-cta">
               <span class="hero-price" id="hero-price">R$ 19,90</span>
               <a
-                href="https://wa.me/553299999999"
+                href="https://wa.me/5532988367667"
                 target="_blank"
                 class="btn-primary"
                 >Pedir Agora</a
@@ -150,7 +160,7 @@
               Um microlote selecionado preparado no método Hario V60 para
               ressaltar a acidez brilhante e o aroma floral.
             </p>
-            <a href="https://wa.me/553299999999" class="btn-primary"
+            <a href="https://wa.me/5532988367667" class="btn-primary"
               >Provar Agora</a
             >
           </div>
@@ -160,7 +170,7 @@
       <section class="catalog-section" id="catalog">
         <div class="catalog-header">
           <h3 id="current-category-title">Todos os Produtos</h3>
-          <span id="product-count">Buscando sabores...</span>
+          <span id="product-count" aria-live="polite">Buscando sabores...</span>
         </div>
 
         <div class="product-grid" id="catalog-grid">
@@ -172,7 +182,7 @@
     <section class="hero-banner">
       <div class="hero-overlay"></div>
       <div class="hero-content">
-        <h1>Sabor <span>Artesanal</span></h1>
+        <h1 aria-level="2">Sabor <span>Artesanal</span></h1>
         <p>
           A união perfeita entre o grão selecionado e a experiência digital.
         </p>
@@ -194,7 +204,7 @@
     </footer>
 
     <a
-      href="https://wa.me/553299999999"
+      href="https://wa.me/5532988367667"
       class="whatsapp-fixed"
       target="_blank"
       title="Falar com atendente"

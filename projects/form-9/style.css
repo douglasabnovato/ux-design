@@ -1,129 +1,202 @@
-/* Variáveis CSS para cores e tamanhos */
+/*
+ * style.css · form-9 (Capturar Lead).
+ * Formulário de lead qualificado em cartão único: contato, detalhes do
+ * projeto e briefing. Mesmo sistema visual dos demais formulários do
+ * catálogo (fundo claro, cartões arredondados, azul de destaque).
+ */
+
 :root {
-    --branco: #ffffff;
-    --preto: #000000;
-    --cinza-claro: #e4e4e4;
-    --cinza-borda: #ccc;
-    --padding-padrao: 1rem; /* 16px */
-    --borda-raio-padrao: 4px;
-    --largura-maxima-conteudo: 1200px;
+  --bg: #eef5fb;
+  --surface: #ffffff;
+  --text: #12263a;
+  --muted: #5b6f85;
+  --accent: #1e4e8f;
+  --accent-strong: #163c70;
+  --accent-soft: rgba(30, 78, 143, 0.12);
+  --border: rgba(30, 78, 143, 0.14);
+  --erro: #c62828;
+  --sucesso: #1b7f4a;
 }
 
-/* Reset e estilos globais */
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: sans-serif; /* Substitua por sua fonte preferida */
-    color: var(--preto);
+  margin: 0;
+  min-height: 100vh;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", sans-serif;
+  background: var(--bg);
+  color: var(--text);
 }
 
-section.campanha-form {
-    width: 100%;
-    padding: var(--padding-padrao);
+.form-shell {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 32px 20px 120px;
 }
 
-.form-container {
-    width: 100%;
-    background-color: var(--preto);
-    padding: var(--padding-padrao);
+.form-card {
+  padding: 36px;
+  border-radius: 32px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  box-shadow: 0 24px 60px rgba(15, 23, 42, 0.08);
 }
 
-form fieldset {
-    border: 2px solid var(--branco);
-    border-radius: 5px;
-    padding: 2rem;
-    margin-bottom: 1rem;
-    color: var(--branco);
+.form-head {
+  display: grid;
+  gap: 14px;
+  margin-bottom: 28px;
 }
 
-form legend {
-    font-weight: bold;
-    font-size: 1.2rem;
-    padding-bottom: 1rem;
+.eyebrow {
+  justify-self: start;
+  padding: 8px 16px;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
 }
 
-.form-group {
-    margin-bottom: 1rem;
+.form-head h1 {
+  margin: 0;
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  line-height: 1.15;
 }
 
-.form-group label {
-    display: block;
-    margin-bottom: 0.5rem;
+.form-head p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.7;
 }
 
-input[type="text"],
-input[type="email"],
-input[type="tel"],
+form {
+  display: grid;
+  gap: 22px;
+}
+
+fieldset {
+  display: grid;
+  gap: 16px;
+  margin: 0;
+  padding: 22px;
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  background: #f8fbfe;
+}
+
+legend {
+  padding: 0 8px;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+label {
+  display: grid;
+  gap: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+input,
 select,
 textarea {
-    width: 100%;
-    padding: 0.75rem;
-    border: 1px solid var(--cinza-borda);
-    border-radius: var(--borda-raio-padrao);
-    resize: vertical;
-    font-size: 1rem;
-    color: var(--preto);
+  width: 100%;
+  padding: 14px 16px;
+  border: 1px solid rgba(15, 23, 42, 0.14);
+  border-radius: 14px;
+  background: #fff;
+  color: var(--text);
+  font: 400 1rem/1.4 inherit;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
-button.cta-button {
-    background-color: var(--branco);
-    color: var(--preto);
-    padding: 0.75rem 1.25rem;
-    border: none;
-    border-radius: var(--borda-raio-padrao);
-    cursor: pointer;
-    float: right;
-    font-size: 1rem;
-    transition: background-color 0.3s ease;
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 4px var(--accent-soft);
+  outline: none;
 }
 
-button.cta-button:hover {
-    background-color: var(--cinza-claro);
+textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.cta-button {
+  padding: 16px 28px;
+  border: 0;
+  border-radius: 999px;
+  background: var(--accent);
+  color: #fff;
+  font: 700 1rem/1 inherit;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.cta-button:hover {
+  background: var(--accent-strong);
+  transform: translateY(-1px);
 }
 
 .privacy-notice {
-    color: var(--branco);
-    font-size: 0.875rem;
-    padding-top: 1rem;
-    text-align: center;
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.85rem;
 }
 
-.privacy-notice a {
-    color: var(--branco);
-    text-decoration: underline;
+.form-message {
+  display: none;
+  padding: 16px 18px;
+  border-radius: 16px;
+  line-height: 1.6;
 }
 
-/* Layout responsivo com Grid */
-.form-container form {
-    display: grid;
-    gap: 1rem;
-    max-width: var(--largura-maxima-conteudo);
-    margin: 0 auto;
+.form-message.visible {
+  display: block;
 }
 
-.form-container fieldset {
-    display: grid;
-    gap: 1rem;
+.form-message.error {
+  background: rgba(198, 40, 40, 0.08);
+  border: 1px solid rgba(198, 40, 40, 0.3);
+  color: var(--erro);
+}
+
+.form-message.success {
+  background: rgba(27, 127, 74, 0.08);
+  border: 1px solid rgba(27, 127, 74, 0.3);
+  color: var(--sucesso);
+}
+
+@media (max-width: 640px) {
+  .form-card {
+    padding: 24px 18px;
+    border-radius: 24px;
+  }
+
+  .grid-2 {
     grid-template-columns: 1fr;
+  }
+
+  .form-actions .cta-button {
+    width: 100%;
+  }
 }
 
-/* Responsividade */
-@media (min-width: 768px) {
-    .form-container fieldset {
-        grid-template-columns: 1fr 1fr;
-    }
-}
-
-@media (max-width: 600px) {
-    .form-container form {
-        padding: 0.5rem;
-    }
-
-    .form-container fieldset {
-        padding: 1rem;
-    }
-}
+/* Fim do estilo do form-9. */

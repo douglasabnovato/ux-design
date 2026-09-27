@@ -441,3 +441,10 @@ footer .footer-futebol-abc {
     flex-direction: row-reverse;
   }
 }
+
+/* Ajustes de responsividade (curadoria UX Design, lote 1): evita rolagem lateral no celular. */
+#portfolio .all-projects, #portfolio .project-item { max-width: 100%; }
+#portfolio .project-item img { max-width: 100%; height: auto; }
+#portfolio .all-projects .portfolio-title { overflow-wrap: anywhere; max-width: 100%; }
+#portfolio .project-info { max-width: 100%; }
+/* Fim dos ajustes de responsividade. */

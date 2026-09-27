@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,12 +8,22 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://unpkg.com/scrollreveal"></script>
-    <title>Landing page</title>
+    <title>Bom Prato · Delivery em Juiz de Fora</title>
+  <link rel="stylesheet" href="../../shared/lt-base.css" />
+  <link rel="stylesheet" href="../../shared/lt-feedback.css" />
+  <style>.dish-heart{border:0;cursor:pointer}.dish-heart[aria-pressed="true"]{background-color:#e9a209;color:#fff}.feedback[hidden]{display:none}</style>
+  <script src="../../shared/lt-feedback.js"></script>
+  <meta name="description" content="Apresentação encantadora de um restaurante americano." />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="US Food · UX Design" />
+  <meta property="og:description" content="Apresentação encantadora de um restaurante americano." />
+  <meta property="og:url" content="https://douglasabnovato.github.io/ux-design/projects/us-food/" />
+  <meta property="og:image" content="https://douglasabnovato.github.io/ux-design/assets/us-food.jpg" />
 </head>
 <body>
     <header>
         <nav id="navbar">
-            <i class="fa-solid fa-burger" id="nav_logo"> food</i>
+            <i class="fa-solid fa-burger" id="nav_logo"> Bom Prato</i>
 
             <ul id="nav_list">
                 <li class="nav-item active">
@@ -27,11 +37,11 @@
                 </li>
             </ul>
 
-            <button class="btn-default">
+            <button class="btn-default" type="button" data-abrir-sacola>
                 Peça aqui
             </button>
 
-            <button id="mobile_btn">
+            <button id="mobile_btn" type="button" aria-label="Abrir menu">
                 <i class="fa-solid fa-bars"></i>
             </button>
         </nav>
@@ -49,7 +59,7 @@
                 </li>
             </ul>
 
-            <button class="btn-default">
+            <button class="btn-default" type="button" data-abrir-sacola>
                 Peça aqui
             </button>
         </div>
@@ -65,40 +75,39 @@
                 </h1>
 
                 <p class="description">
-                    Lorem ipsum dolor sit amet, consectetur 
-                    adipiscing elit ut aliquam, purus sit amet
+                    Comida fresca, feita na hora e entregue quentinha em até 40 minutos em Juiz de Fora.
                 </p>
 
                 <div id="cta_buttons">
-                    <a href="#" class="btn-default">
+                    <a href="#menu" class="btn-default">
                         Ver cardápio
                     </a>
 
-                    <a href="tel:+55555555555" id="phone_button">
-                        <button class="btn-default">
+                    <a href="tel:+5532988367667" id="phone_button">
+                        <span class="btn-default" aria-hidden="true">
                             <i class="fa-solid fa-phone"></i>
-                        </button>
-                        (51) 92342-3243
+                        </span>
+                        (32) 98836-7667
                     </a>
                 </div>
 
                 <div class="social-media-buttons">
-                    <a href="">
+                    <a href="https://wa.me/5532988367667?text=Ol%C3%A1%2C%20Bom%20Prato!%20Quero%20fazer%20um%20pedido." aria-label="Whatsapp" target="_blank" rel="noopener">
                         <i class="fa-brands fa-whatsapp"></i>
                     </a>
 
-                    <a href="">
+                    <a href="#" aria-label="Instagram" target="_blank" rel="noopener">
                         <i class="fa-brands fa-instagram"></i>
                     </a>
 
-                    <a href="">
+                    <a href="#" aria-label="Facebook" target="_blank" rel="noopener">
                         <i class="fa-brands fa-facebook"></i>
                     </a>
                 </div>
             </div>
 
             <div id="banner">
-                <img src="src/images/hero.png" alt="">
+                <img src="src/images/hero.png" alt="Pratos do Bom Prato">
             </div>
         </section>
 
@@ -108,19 +117,15 @@
 
             <div id="dishes">
                 <div class="dish">
-                    <div class="dish-heart">
+                    <button type="button" class="dish-heart" aria-pressed="false" aria-label="Favoritar Bowl de frango grelhado">
                         <i class="fa-solid fa-heart"></i>
-                    </div>
+                    </button>
 
-                    <img src="src/images/dish.png" class="dish-image" alt="">
+                    <img src="src/images/dish.png" class="dish-image" alt="Bowl de frango grelhado" loading="lazy">
 
-                    <h3 class="dish-title">
-                        Lorem Ipsum
-                    </h3>
+                    <h3 class="dish-title">Bowl de frango grelhado</h3>
 
-                    <span class="dish-description">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    </span>
+                    <span class="dish-description">Arroz integral, frango grelhado, legumes assados e molho de iogurte.</span>
 
                     <div class="dish-rate">
                         <i class="fa-solid fa-star"></i>
@@ -132,27 +137,23 @@
                     </div>
 
                     <div class="dish-price">
-                        <h4>R$20,00</h4>
-                        <button class="btn-default">
+                        <h4>R$ 32,90</h4>
+                        <button class="btn-default" type="button" data-prato="Bowl de frango grelhado" data-preco="32.90" aria-label="Adicionar Bowl de frango grelhado à sacola">
                             <i class="fa-solid fa-basket-shopping"></i>
                         </button>
                     </div>
                 </div>
 
                 <div class="dish">
-                    <div class="dish-heart">
+                    <button type="button" class="dish-heart" aria-pressed="false" aria-label="Favoritar Salada tropical">
                         <i class="fa-solid fa-heart"></i>
-                    </div>
+                    </button>
 
-                    <img src="src/images/dish2.png" class="dish-image" alt="">
+                    <img src="src/images/dish2.png" class="dish-image" alt="Salada tropical" loading="lazy">
 
-                    <h3 class="dish-title">
-                        Lorem Ipsum
-                    </h3>
+                    <h3 class="dish-title">Salada tropical</h3>
 
-                    <span class="dish-description">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    </span>
+                    <span class="dish-description">Folhas, manga, palmito, castanhas e molho de maracujá.</span>
 
                     <div class="dish-rate">
                         <i class="fa-solid fa-star"></i>
@@ -164,27 +165,23 @@
                     </div>
 
                     <div class="dish-price">
-                        <h4>R$20,00</h4>
-                        <button class="btn-default">
+                        <h4>R$ 27,50</h4>
+                        <button class="btn-default" type="button" data-prato="Salada tropical" data-preco="27.50" aria-label="Adicionar Salada tropical à sacola">
                             <i class="fa-solid fa-basket-shopping"></i>
                         </button>
                     </div>
                 </div>
 
                 <div class="dish">
-                    <div class="dish-heart">
+                    <button type="button" class="dish-heart" aria-pressed="false" aria-label="Favoritar Poke de salmão">
                         <i class="fa-solid fa-heart"></i>
-                    </div>
+                    </button>
 
-                    <img src="src/images/dish3.png" class="dish-image" alt="">
+                    <img src="src/images/dish3.png" class="dish-image" alt="Poke de salmão" loading="lazy">
 
-                    <h3 class="dish-title">
-                        Lorem Ipsum
-                    </h3>
+                    <h3 class="dish-title">Poke de salmão</h3>
 
-                    <span class="dish-description">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    </span>
+                    <span class="dish-description">Salmão fresco, arroz japonês, pepino, edamame e gergelim.</span>
 
                     <div class="dish-rate">
                         <i class="fa-solid fa-star"></i>
@@ -196,27 +193,23 @@
                     </div>
 
                     <div class="dish-price">
-                        <h4>R$20,00</h4>
-                        <button class="btn-default">
+                        <h4>R$ 42,00</h4>
+                        <button class="btn-default" type="button" data-prato="Poke de salmão" data-preco="42.00" aria-label="Adicionar Poke de salmão à sacola">
                             <i class="fa-solid fa-basket-shopping"></i>
                         </button>
                     </div>
                 </div>
 
                 <div class="dish">
-                    <div class="dish-heart">
+                    <button type="button" class="dish-heart" aria-pressed="false" aria-label="Favoritar Wrap vegetariano">
                         <i class="fa-solid fa-heart"></i>
-                    </div>
+                    </button>
 
-                    <img src="src/images/dish4.png" class="dish-image" alt="">
+                    <img src="src/images/dish4.png" class="dish-image" alt="Wrap vegetariano" loading="lazy">
 
-                    <h3 class="dish-title">
-                        Lorem Ipsum
-                    </h3>
+                    <h3 class="dish-title">Wrap vegetariano</h3>
 
-                    <span class="dish-description">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    </span>
+                    <span class="dish-description">Tortilha integral com falafel, homus, tomate e rúcula.</span>
 
                     <div class="dish-rate">
                         <i class="fa-solid fa-star"></i>
@@ -228,8 +221,8 @@
                     </div>
 
                     <div class="dish-price">
-                        <h4>R$20,00</h4>
-                        <button class="btn-default">
+                        <h4>R$ 25,90</h4>
+                        <button class="btn-default" type="button" data-prato="Wrap vegetariano" data-preco="25.90" aria-label="Adicionar Wrap vegetariano à sacola">
                             <i class="fa-solid fa-basket-shopping"></i>
                         </button>
                     </div>
@@ -250,11 +243,11 @@
 
                 <div id="feedbacks">
                     <div class="feedback">
-                        <img src="src/images/avatar.png" class="feedback-avatar" alt="">
+                        <img src="src/images/avatar.png" class="feedback-avatar" alt="Foto de cliente">
 
                         <div class="feedback-content">
                             <p>
-                                Fulana de Tal
+                                Carla Mendes
                                 <span>
                                     <i class="fa-solid fa-star"></i>
                                     <i class="fa-solid fa-star"></i>
@@ -264,18 +257,17 @@
                                 </span>
                             </p>
                             <p>
-                                "Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                                Repellat voluptatibus cumque dolor ea est quae alias necessitatibus"
+                                "Chegou quentinho em 30 minutos e o poke estava fresco. Virou meu pedido de sexta."
                             </p>
                         </div>
                     </div>
 
                     <div class="feedback">
-                        <img src="src/images/avatar.png" class="feedback-avatar" alt="">
+                        <img src="src/images/avatar.png" class="feedback-avatar" alt="Foto de cliente">
 
                         <div class="feedback-content">
                             <p>
-                                Fulana de Tal
+                                Bruno Alves
                                 <span>
                                     <i class="fa-solid fa-star"></i>
                                     <i class="fa-solid fa-star"></i>
@@ -285,14 +277,13 @@
                                 </span>
                             </p>
                             <p>
-                                "Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                                Repellat voluptatibus cumque dolor ea est quae alias necessitatibus"
+                                "Porções bem servidas e preço honesto. O bowl de frango é o melhor da cidade."
                             </p>
                         </div>
                     </div>
                 </div>
 
-                <button class="btn-default">
+                <button class="btn-default" type="button" id="mais-avaliacoes">
                     Ver mais avaliações
                 </button>
             </div>
@@ -300,29 +291,30 @@
     </main>
 
     <footer>
-        <img src="src/images/wave.svg" alt="">
+        <img src="src/images/wave.svg" alt="" role="presentation">
 
         <div id="footer_items">
             <span id="copyright">
-                &copy 2024 Larissa Kich
+                &copy; Bom Prato Delivery · restaurante fictício · layout base: Larissa Kich
             </span>
 
             <div class="social-media-buttons">
-                <a href="">
+                <a href="https://wa.me/5532988367667?text=Ol%C3%A1%2C%20Bom%20Prato!%20Quero%20fazer%20um%20pedido." aria-label="Whatsapp" target="_blank" rel="noopener">
                     <i class="fa-brands fa-whatsapp"></i>
                 </a>
 
-                <a href="">
+                <a href="#" aria-label="Instagram" target="_blank" rel="noopener">
                     <i class="fa-brands fa-instagram"></i>
                 </a>
 
-                <a href="">
+                <a href="#" aria-label="Facebook" target="_blank" rel="noopener">
                     <i class="fa-brands fa-facebook"></i>
                 </a>
             </div>
         </div>
     </footer>
     <script src="src/javascript/script.js"></script>
+  <script src="./interacoes.js"></script>
 <!-- learnTECH · volta ao catálogo UX Design -->
 <style>
 .lt-voltar{position:fixed;left:18px;bottom:18px;z-index:99998;display:inline-flex;align-items:center;gap:9px;

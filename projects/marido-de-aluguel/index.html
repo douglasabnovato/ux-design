@@ -20,6 +20,15 @@
             }
         }
     </script>
+  <link rel="stylesheet" href="../../shared/lt-base.css" />
+  <link rel="stylesheet" href="../../shared/lt-feedback.css" />
+  <script src="../../shared/lt-feedback.js"></script>
+  <meta name="description" content="Cartão de visitas digital interativo e mini landing page para prestador de serviços, com botões de contato direto, formulário de orçamento guiado via WhatsApp e QR Code." />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Marido de Aluguel · UX Design" />
+  <meta property="og:description" content="Cartão de visitas digital interativo e mini landing page para prestador de serviços, com botões de contato direto, formulário de orçamento guiado via WhatsApp e QR Code." />
+  <meta property="og:url" content="https://douglasabnovato.github.io/ux-design/projects/marido-de-aluguel/" />
+  <meta property="og:image" content="https://douglasabnovato.github.io/ux-design/assets/marido-de-aluguel.png" />
 </head>
 
 <body
@@ -123,9 +132,10 @@
 
             <div class="space-y-3 text-xs">
                 <div>
-                    <label class="block text-slate-300 font-semibold mb-1">1. Qual serviço você precisa?</label>
-                    <select id="servico-select"
+                    <label for="servico-select" class="block text-slate-300 font-semibold mb-1">1. Qual serviço você precisa?</label>
+                    <select id="servico-select" name="servico" required
                         class="w-full bg-slate-900 border border-slate-700 rounded-xl p-2.5 text-white font-medium">
+                        <option value="">Selecione o serviço</option>
                         <option value="Eletricista">⚡ Eletricista (Tomadas, Chuveiro, Luz)</option>
                         <option value="Bombeiro Hidráulico">🚰 Bombeiro Hidráulico (Vazamentos, Torneira)</option>
                         <option value="Pintor">🎨 Pintor (Pintura e Acabamento)</option>
@@ -135,9 +145,10 @@
                 </div>
 
                 <div>
-                    <label class="block text-slate-300 font-semibold mb-1">2. Qual a urgência?</label>
-                    <select id="urgencia-select"
+                    <label for="urgencia-select" class="block text-slate-300 font-semibold mb-1">2. Qual a urgência?</label>
+                    <select id="urgencia-select" name="urgencia" required
                         class="w-full bg-slate-900 border border-slate-700 rounded-xl p-2.5 text-white font-medium">
+                        <option value="">Selecione a urgência</option>
                         <option value="Para hoje / Emergência">🚨 Para hoje / Urgente</option>
                         <option value="Nesta semana">📅 Nesta semana</option>
                         <option value="Apenas orçamento / Planejando">🔍 Apenas orçamento prévio</option>
@@ -145,12 +156,12 @@
                 </div>
 
                 <div>
-                    <label class="block text-slate-300 font-semibold mb-1">3. Breve descrição do problema:</label>
-                    <textarea id="detalhes-input" rows="2" placeholder="Ex: Chuveiro parou de esquentar no banheiro..."
+                    <label for="detalhes-input" class="block text-slate-300 font-semibold mb-1">3. Breve descrição do problema:</label>
+                    <textarea id="detalhes-input" name="detalhes" required minlength="10" rows="2" placeholder="Ex: Chuveiro parou de esquentar no banheiro..."
                         class="w-full bg-slate-900 border border-slate-700 rounded-xl p-2 text-white resize-none"></textarea>
                 </div>
 
-                <button onclick="enviarWhatsAppForm()"
+                <button type="button" id="enviar-orcamento" onclick="enviarWhatsAppForm()"
                     class="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-3 rounded-xl shadow-md flex items-center justify-center gap-2 transition">
                     <span>🚀 Enviar Respostas para o WhatsApp</span>
                 </button>
@@ -189,17 +200,30 @@
         }
 
         // Função para montar a mensagem do formulário e redirecionar para o WhatsApp
-        function enviarWhatsAppForm() {
+        document.addEventListener('DOMContentLoaded', () => LT.limparAoDigitar(document.getElementById('form-section')));
+
+        async function enviarWhatsAppForm() {
+            const secao = document.getElementById('form-section');
+            if (!LT.validar(secao)) return;
+            const botao = document.getElementById('enviar-orcamento');
             const servico = document.getElementById('servico-select').value;
             const urgencia = document.getElementById('urgencia-select').value;
-            const detalhes = document.getElementById('detalhes-input').value || 'Não informado';
+            const detalhes = document.getElementById('detalhes-input').value.trim();
 
-            const texto = `Olá Abraão! Preenchi o formulário no seu cartão digital:%0A%0A*Serviço:* ${servico}%0A*Urgência:* ${urgencia}%0A*Detalhes:* ${detalhes}`;
+            LT.carregando(botao, true, 'Preparando mensagem…');
+            await LT.esperar(700);
+            LT.carregando(botao, false);
 
-            const numeroWhatsApp = '5532988367667';
-            const urlWhatsApp = `https://wa.me/${numeroWhatsApp}?text=${texto}`;
-
-            window.open(urlWhatsApp, '_blank');
+            const texto = `Olá Abraão! Preenchi o formulário no seu cartão digital:\n\n*Serviço:* ${servico}\n*Urgência:* ${urgencia}\n*Detalhes:* ${detalhes}`;
+            const link = LT.whatsapp(texto);
+            const campos = secao.querySelector('.space-y-3.text-xs');
+            LT.sucesso(campos, {
+                titulo: 'Orçamento pronto!',
+                texto: `Abrimos o WhatsApp com o seu pedido de ${servico.toLowerCase()} (${urgencia.toLowerCase()}). É só enviar.`,
+                link,
+                aoRecomecar: () => campos.querySelectorAll('select, textarea').forEach((c) => (c.value = '')),
+                rotuloRecomecar: 'Pedir outro orçamento',
+            });
         }
     </script>
 

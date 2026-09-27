@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,6 +15,15 @@
 <link rel="manifest" href="./public/site.webmanifest">
 
     <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="../../shared/lt-base.css" />
+  <link rel="stylesheet" href="../../shared/lt-feedback.css" />
+  <script src="../../shared/lt-feedback.js"></script>
+  <meta name="description" content="Landing page para um Food Truck com cardápio digital e pedido online." />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Espetinho de Minas · UX Design" />
+  <meta property="og:description" content="Landing page para um Food Truck com cardápio digital e pedido online." />
+  <meta property="og:url" content="https://douglasabnovato.github.io/ux-design/projects/espetinho-de-minas/" />
+  <meta property="og:image" content="https://douglasabnovato.github.io/ux-design/assets/espetinho-de-minas.jpg" />
 </head>
 <body>
 
@@ -22,7 +31,7 @@
     <div class="container">
         <div class="header-left">
             <div class="logo-wrapper">
-                <img src="./assets/food-truck-espetinho-de-minas-4.png" style="height: 50px; width: auto;">
+                <img alt="Food truck espetinho de minas 4" src="./assets/food-truck-espetinho-de-minas-4.png" style="height: 50px; width: auto;">
                 <div class="logo">Espetinho <span>de Minas</span></div>
             </div>
         </div>
@@ -32,7 +41,7 @@
                 <a href="#catalogo">Cardápio</a>
                 <a href="#sobre">Sobre</a>
             </div>
-            <a href="https://wa.me/5532999999999" class="btn-header">Pedir Agora</a>
+            <a href="https://wa.me/5532988367667?text=Ol%C3%A1%2C%20Espetinho%20de%20Minas!%20Quero%20fazer%20um%20pedido." target="_blank" rel="noopener" class="btn-header">Pedir Agora</a>
         </nav>
     </div>
 </header>
@@ -55,7 +64,7 @@
             
             <div class="hero-actions">
                 <a href="#catalogo" class="btn-lg btn-primary pulse-effect">Ver Cardápio Completo</a>
-                <a href="https://wa.me/5532999999999" target="_blank" class="btn-lg btn-success">
+                <a href="https://wa.me/5532988367667?text=Ol%C3%A1%2C%20Espetinho%20de%20Minas!%20Quero%20fazer%20um%20pedido." target="_blank" rel="noopener" class="btn-lg btn-success">
                     Pedir no WhatsApp <span class="wa-icon">→</span>
                 </a>
             </div>
@@ -216,7 +225,7 @@
     </div>
 
     <div class="chat-input-area">
-        <input type="text" id="user-query" placeholder="Dúvidas? Pergunte...">
+        <input aria-label="Dúvidas? Pergunte" type="text" id="user-query" placeholder="Dúvidas? Pergunte...">
         <button id="send-query">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
         </button>

@@ -97,6 +97,7 @@ const App = {
 
     // Eventos de Input
     inputs.nickname.addEventListener("input", updateField("nickname"));
+    inputs.nickname.addEventListener("input", () => LT.marcarErro(inputs.nickname, ""));
     inputs.profession.addEventListener("input", updateField("profession"));
     inputs.github.addEventListener("input", updateField("github"));
     inputs.linkedin.addEventListener("input", updateField("linkedin"));
@@ -153,14 +154,24 @@ const App = {
    */
   handleImageUpload(event) {
     const file = event.target.files[0];
-    if (file) {
-      const reader = new FileReader();
-      reader.onload = (e) => {
-        this.state.user.avatarUrl = e.target.result;
-        this.render();
-      };
-      reader.readAsDataURL(file);
+    if (!file) return;
+    if (!file.type.startsWith("image/")) {
+      LT.aviso("Escolha um arquivo de imagem (JPG, PNG ou WebP).", "erro");
+      event.target.value = "";
+      return;
     }
+    if (file.size > 5 * 1024 * 1024) {
+      LT.aviso("A foto passa de 5 MB. Escolha uma imagem menor.", "erro");
+      event.target.value = "";
+      return;
+    }
+    const reader = new FileReader();
+    reader.onload = (e) => {
+      this.state.user.avatarUrl = e.target.result;
+      this.render();
+      LT.aviso("Foto atualizada no crachá.", "sucesso", 2600);
+    };
+    reader.readAsDataURL(file);
   },
 
   /**
@@ -170,9 +181,17 @@ const App = {
     const { badge } = this.el.preview;
     const btn = this.el.btnExport;
 
+    if (!this.el.inputs.nickname.value.trim()) {
+      LT.marcarErro(this.el.inputs.nickname, "Informe um nome para o crachá antes de exportar.");
+      this.el.inputs.nickname.focus();
+      LT.aviso("Falta o nome no crachá.", "erro");
+      return;
+    }
+
     const originalContent = btn.innerHTML;
     btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Gerando...';
     btn.disabled = true;
+    btn.setAttribute("aria-busy", "true");
 
     try {
       const canvas = await html2canvas(badge, {
@@ -190,12 +209,14 @@ const App = {
       link.download = `cracha-${fileName}.png`;
       link.href = image;
       link.click();
+      LT.aviso(`Imagem pronta: cracha-${fileName}.png foi baixada.`, "sucesso");
     } catch (error) {
       console.error("Erro ao exportar:", error);
-      alert("Erro ao gerar imagem. Tente novamente.");
+      LT.aviso("Não foi possível gerar a imagem. Tente novamente.", "erro");
     } finally {
       btn.innerHTML = originalContent;
       btn.disabled = false;
+      btn.removeAttribute("aria-busy");
     }
   },
 

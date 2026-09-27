@@ -1,69 +1,172 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>New TECH</title>
-
-    <link
-      rel="stylesheet"
-      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
-    />
-
-    <link rel="stylesheet" href="style.css" />
-
-    <script
-      src="https://code.jquery.com/jquery-3.6.0.min.js"
-      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
-      crossorigin="anonymous"
-    ></script>
-  </head>
-
-  <body>
-    <!-- Navigation -->
-    <nav>
-      <img src="./images/logo.svg" alt="logo o treinamento" srcset="" />
-      <div class="navigation">
-        <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Blog</a></li>
-          <li><a href="#">Courses</a></li>
-          <li><a href="#">Contact</a></li>
-        </ul>
-      </div>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cursos de tecnologia · Tech Educa</title>
+  <meta name="description" content="Tech Educa: escola on-line de tecnologia com cursos de front-end, back-end, dados e UX, mentoria e projetos para portfólio." />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Cursos de tecnologia · Tech Educa" />
+  <meta property="og:description" content="Tech Educa: escola on-line de tecnologia com cursos de front-end, back-end, dados e UX, mentoria e projetos para portfólio." />
+  <meta property="og:url" content="https://douglasabnovato.github.io/ux-design/projects/school/" />
+  <meta property="og:image" content="https://douglasabnovato.github.io/ux-design/assets/school.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="../../shared/lt-base.css" />
+  <link rel="stylesheet" href="../../shared/lt-feedback.css" />
+  <script src="../../shared/lt-feedback.js"></script>
+</head>
+<body>
+  <a class="pular" href="#conteudo">Pular para o conteúdo</a>
+  <header class="topo">
+    <nav class="nav" aria-label="Principal">
+      <a class="nav__logo" href="index.html"><img src="./images/logo.svg" alt="Tech Educa, página inicial" width="150" height="55" /></a>
+      <button class="nav__menu" type="button" aria-expanded="false" aria-controls="nav-lista" aria-label="Abrir menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav__lista" id="nav-lista">
+          <li><a href="index.html" aria-current="page">Início</a></li>
+          <li><a href="about.html">Sobre</a></li>
+          <li><a href="course.html">Cursos</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="contact.html">Contato</a></li>
+          <li><a class="botao botao--amarelo nav__cta" href="index.html#matricula">Matricule-se</a></li>
+      </ul>
     </nav>
-
-    <!-- Home -->
-    <section id="home">
-      <h2>New TECH</h2>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi eos
-        exercitationem dolorum officiis cum, debitis reprehenderit impedit unde
-        et, quod nam cumque accusantium veritatis quisquam error itaque facilis
-        veniam. 
-      </p>
-      <div class="btn">
-        <a href="#" class="blue">Learn More</a>
-        <a href="#" class="yellow">Visit Courses</a>
+  </header>
+  <main id="conteudo">
+    <section class="hero" aria-labelledby="hero-titulo">
+      <div class="hero__texto">
+        <p class="selo">Turmas abertas · início em outubro</p>
+        <h1 id="hero-titulo">Aprenda tecnologia construindo projetos de verdade</h1>
+        <p>Trilhas práticas de front-end, back-end, dados e UX, com mentoria semanal e um portfólio pronto para mostrar em entrevistas.</p>
+        <div class="acoes">
+          <a class="botao botao--amarelo" href="course.html">Ver cursos</a>
+          <a class="botao botao--contorno" href="#matricula">Quero me matricular</a>
+        </div>
       </div>
     </section>
 
-    <!-- features -->
+    <section class="secao diferenciais" aria-labelledby="dif-titulo">
+      <h2 id="dif-titulo" class="secao__titulo">Por que estudar na Tech Educa</h2>
+      <div class="grade grade--3">
+        <article class="cartao cartao--icone">
+          <img src="./images/fe1.png" alt="" width="64" height="64" loading="lazy" />
+          <h3>Aulas curtas e práticas</h3>
+          <p>Vídeos de até 15 minutos e um desafio no fim de cada módulo para fixar o conteúdo.</p>
+        </article>
+        <article class="cartao cartao--icone">
+          <img src="./images/fe2.png" alt="" width="64" height="64" loading="lazy" />
+          <h3>Mentoria toda semana</h3>
+          <p>Encontros ao vivo para tirar dúvidas, revisar código e planejar os próximos passos.</p>
+        </article>
+        <article class="cartao cartao--icone">
+          <img src="./images/a.png" alt="" width="64" height="64" loading="lazy" />
+          <h3>Portfólio e carreira</h3>
+          <p>Cada trilha termina com um projeto publicado e uma revisão do seu currículo e LinkedIn.</p>
+        </article>
+      </div>
+    </section>
 
-    <!-- Courses -->
+    <section class="secao secao--cinza" aria-labelledby="cursos-titulo">
+      <div class="secao__topo">
+        <h2 id="cursos-titulo" class="secao__titulo">Cursos em destaque</h2>
+        <a class="link-seta" href="course.html">Ver todos os cursos</a>
+      </div>
+      <div class="grade grade--3" id="cursos-destaque" aria-live="polite"></div>
+    </section>
 
-    <!-- Registration -->
+    <section class="secao matricula" id="matricula" aria-labelledby="mat-titulo">
+      <div class="matricula__foto" role="img" aria-label="Estudantes em aula prática com notebooks"></div>
+      <div class="matricula__caixa">
+        <h2 id="mat-titulo" class="secao__titulo">Garanta a sua vaga</h2>
+        <p>Preencha os dados e a nossa equipe envia a proposta com as condições da turma pelo WhatsApp.</p>
+        <form id="form-matricula" novalidate>
+          <div class="campo">
+            <label for="mat-nome">Nome completo</label>
+            <input id="mat-nome" name="nome" required minlength="3" autocomplete="name" />
+          </div>
+          <div class="campo">
+            <label for="mat-email">E-mail</label>
+            <input id="mat-email" name="email" type="email" required autocomplete="email" />
+          </div>
+          <div class="campo">
+            <label for="mat-tel">WhatsApp</label>
+            <input id="mat-tel" name="telefone" type="tel" required autocomplete="tel" placeholder="(32) 98836-7667" />
+          </div>
+          <div class="campo">
+            <label for="mat-curso">Curso de interesse</label>
+            <select id="mat-curso" name="curso" required>
+              <option value="">Escolha um curso</option>
+            </select>
+          </div>
+          <button class="botao botao--azul" type="submit">Enviar inscrição</button>
+        </form>
+      </div>
+    </section>
 
-    <!-- Profiles -->
+    <section class="secao" aria-labelledby="prof-titulo">
+      <h2 id="prof-titulo" class="secao__titulo">Quem ensina</h2>
+      <div class="grade grade--4">
+        <article class="pessoa"><img src="./images/pro1.webp" alt="Retrato de Marina Alves" width="120" height="120" loading="lazy" /><h3>Marina Alves</h3><p>Front-end e acessibilidade</p></article>
+        <article class="pessoa"><img src="./images/pro2.webp" alt="Retrato de Rafael Costa" width="120" height="120" loading="lazy" /><h3>Rafael Costa</h3><p>Back-end com Node.js</p></article>
+        <article class="pessoa"><img src="./images/pro3.webp" alt="Retrato de Júlia Mendes" width="120" height="120" loading="lazy" /><h3>Júlia Mendes</h3><p>Dados com Python</p></article>
+        <article class="pessoa"><img src="./images/pro4.webp" alt="Retrato de Caio Ribeiro" width="120" height="120" loading="lazy" /><h3>Caio Ribeiro</h3><p>UX/UI Design</p></article>
+      </div>
+    </section>
 
-    <!-- Footer -->
+    <section class="secao secao--cinza" aria-labelledby="parc-titulo">
+      <h2 id="parc-titulo" class="secao__titulo">Empresas que contratam nossos alunos</h2>
+      <ul class="parceiros">
+        <li><img src="./images/trust (1).png" alt="Parceira Nuvem Azul" width="72" height="72" loading="lazy" /></li>
+        <li><img src="./images/trust (2).png" alt="Parceira Código Norte" width="72" height="72" loading="lazy" /></li>
+        <li><img src="./images/trust (3).png" alt="Parceira Pixel Sul" width="72" height="72" loading="lazy" /></li>
+        <li><img src="./images/trust (4).png" alt="Parceira Dados Vivos" width="72" height="72" loading="lazy" /></li>
+        <li><img src="./images/trust (5).png" alt="Parceira Rota Digital" width="72" height="72" loading="lazy" /></li>
+        <li><img src="./images/trust (6).png" alt="Parceira Ponte Tech" width="72" height="72" loading="lazy" /></li>
+      </ul>
+    </section>
+  </main>
 
-    <script>
-      // Navaigation Bar
-    </script>
-  <!-- learnTECH · volta ao catálogo UX Design -->
+  <footer class="rodape">
+    <div class="rodape__grade">
+      <div>
+        <img src="./images/logo.svg" alt="Tech Educa" width="140" height="52" class="rodape__logo" />
+        <p>Escola on-line de tecnologia com trilhas práticas, mentoria e projetos para o seu portfólio.</p>
+      </div>
+      <div>
+        <h2 class="rodape__titulo">Navegação</h2>
+        <ul>
+          <li><a href="about.html">Sobre a escola</a></li>
+          <li><a href="course.html">Todos os cursos</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="contact.html">Fale com a gente</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2 class="rodape__titulo">Contato</h2>
+        <ul>
+          <li><a href="https://wa.me/5532988367667">WhatsApp (32) 98836-7667</a></li>
+          <li>Atendimento de segunda a sexta, das 9h às 18h</li>
+          <li>Juiz de Fora · MG · aulas 100% on-line</li>
+        </ul>
+      </div>
+      <form class="rodape__news" id="form-news" novalidate>
+        <h2 class="rodape__titulo">Novidades por e-mail</h2>
+        <label for="news-email">Seu e-mail</label>
+        <div class="linha">
+          <input id="news-email" name="email" type="email" required placeholder="nome@dominio.com" autocomplete="email" />
+          <button class="botao botao--amarelo" type="submit">Assinar</button>
+        </div>
+      </form>
+    </div>
+    <p class="rodape__copy">© Tech Educa · escola fictícia criada para o portfólio UX Design.</p>
+  </footer>
+
+  <script src="./dados.js"></script>
+  <script src="./script.js"></script>
+<!-- learnTECH · volta ao catálogo UX Design -->
 <style>
 .lt-voltar{position:fixed;left:18px;bottom:18px;z-index:99998;display:inline-flex;align-items:center;gap:9px;
 padding:11px 16px;border-radius:999px;background:rgba(10,14,39,.92);border:1px solid rgba(0,212,212,.42);

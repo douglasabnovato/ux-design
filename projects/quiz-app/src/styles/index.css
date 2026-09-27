@@ -504,4 +504,10 @@ footer button.show {
 
 .hidden {
     display: none;
-} 
+}
+
+/* Ajustes de responsividade (curadoria UX Design, lote 1): evita rolagem lateral no celular. */
+@media (max-width: 640px) {
+  .info_box, .quiz_box, .result_box { width: calc(100% - 24px); max-width: 560px; }
+}
+/* Fim dos ajustes de responsividade. */

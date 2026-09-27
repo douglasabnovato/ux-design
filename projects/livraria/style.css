@@ -379,3 +379,11 @@ body {
   color: #aaa;
 }
 /* --- [FIM] FOOTER --- */
+
+/* Ajustes de interação (curadoria UX Design, lote 2): reserva e lista de reservas. */
+.form-reserva { display: grid; gap: 4px; margin-top: 8px; }
+.contador-reservas { display: inline-grid; place-items: center; min-width: 22px; height: 22px; margin-left: 6px; padding: 0 6px; border-radius: 999px; background: #fff; color: #0a84ff; font-size: 0.8rem; font-weight: 700; }
+.lista-reservas { display: grid; gap: 10px; margin: 0; padding: 0; list-style: none; }
+.lista-reservas li { display: grid; gap: 2px; padding: 12px 14px; border: 1px solid rgba(0, 0, 0, 0.1); border-radius: 12px; }
+.lista-reservas span { color: #666; font-size: 0.9rem; }
+/* Fim dos ajustes de interação. */

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
@@ -7,22 +7,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style.css">
     <link rel="shortcut icon" href="./assets/profile.svg" type="image/x-icon">
-    <title>Profile</title>
+    <title>Rocket Card · cartão de perfil GitHub</title>
+  <link rel="stylesheet" href="../../shared/lt-base.css" />
+  <link rel="stylesheet" href="../../shared/lt-feedback.css" />
+  <script src="../../shared/lt-feedback.js"></script>
+  <meta name="description" content="Página de cartão de visita com design encantador." />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Rocket Card · UX Design" />
+  <meta property="og:description" content="Página de cartão de visita com design encantador." />
+  <meta property="og:url" content="https://douglasabnovato.github.io/ux-design/projects/rocket-card/" />
+  <meta property="og:image" content="https://douglasabnovato.github.io/ux-design/assets/rocket-card.jpg" />
+    <style>
+        .busca-dev { width: min(360px, 92vw); margin: 0 auto 20px; font-family: inherit; color: #fff; }
+        .busca-dev label { display: block; font-weight: 700; margin-bottom: 6px; }
+        .busca-dev__linha { display: flex; gap: 8px; }
+        .busca-dev input { flex: 1; min-width: 0; padding: 10px 12px; border-radius: 8px; border: 0; font: inherit; }
+        .busca-dev button { padding: 10px 14px; border-radius: 8px; border: 0; background: #04d361; color: #121214; font-weight: 700; cursor: pointer; }
+        .busca-dev__status { min-height: 1.3em; font-size: .85rem; margin-top: 6px; }
+        h1.titulo { margin: 0; font-size: inherit; font-weight: inherit; }
+        .box { height: auto !important; min-height: 693px; width: min(438px, 96vw) !important; padding-bottom: 1.5rem; }
+        .busca-dev { width: min(360px, 86%); }
+        button.footer { border: 0; font: inherit; color: inherit; cursor: pointer; }
+        .card[aria-busy="true"] { opacity: .55; transition: opacity .2s; }
+    </style>
 </head>
 
 <body>
     <div class="box">
-        <div class="card">
+        <form class="busca-dev" id="form-dev" novalidate>
+            <label for="dev-usuario">Usuário do GitHub</label>
+            <div class="busca-dev__linha">
+                <input id="dev-usuario" name="usuario" required pattern="[A-Za-z0-9](?:[A-Za-z0-9-]{0,38})" value="douglasabnovato" autocomplete="off" spellcheck="false" />
+                <button type="submit">Gerar cartão</button>
+            </div>
+            <p class="busca-dev__status" id="dev-status" role="status"></p>
+        </form>
+        <div class="card" aria-live="polite" aria-busy="false">
 
             <div class="header">
                 <div class="img-header">
                     <img src="./assets/profile.svg" alt="" srcset="">
                 </div>
-                <span class="titulo">usuário</span>
+                <h1 class="titulo">usuário</h1>
             </div>
 
             <div class="profile">
-                <div class="image-profile"></div> 
+                <div class="image-profile" role="img" aria-label="Foto de perfil"></div> 
             </div>
 
             <div class="contacts">
@@ -54,12 +84,12 @@
             </div>
 
             <div class="det">
-                <div id="footer" class="footer" onclick="generatebkg()">
-                    <div class="img-footer">
+                <button type="button" id="footer" class="footer" aria-label="Trocar a cor de fundo do cartão">
+                    <span class="img-footer">
                         <img src="./assets/profile.svg" alt="" srcset="">
-                    </div>
+                    </span>
                     <span>DEVELOPER</span>
-                </div>
+                </button>
             </div>
 
         </div>

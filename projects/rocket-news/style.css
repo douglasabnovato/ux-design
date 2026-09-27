@@ -1,188 +1,39 @@
+/*
+ * style.css · Rocket News.
+ * Painel escuro com a chamada e o formulário, imagem de destaque ao lado,
+ * layout em grid fluido (sem posições absolutas) e empilhado no celular.
+ */
 :root {
-    --body-bg-color: #121214;
-    --text-color: #E1E1E6;
-    --title-color: #04D361;
-    --form-color: #A8A8A8;
-    --bg-button-color: #8257e5;
+  --body-bg-color: #121214;
+  --text-color: #e1e1e6;
+  --title-color: #04d361;
+  --form-color: #a8a8a8;
+  --bg-button-color: #8257e5;
 }
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: "League Spartan", "Work Sans", system-ui, sans-serif; background: #e5e5e5; }
+img { max-width: 100%; display: block; }
+.news { display: grid; grid-template-columns: minmax(0, 720px) minmax(0, 1fr); min-height: 100vh; }
+.news__painel { background: var(--body-bg-color); color: var(--text-color); padding: clamp(32px, 6vw, 72px) clamp(20px, 5vw, 56px); display: flex; flex-direction: column; justify-content: center; gap: 20px; }
+.news__logo { width: min(260px, 70%); height: auto; margin-bottom: 20px; }
+.news__titulo { color: var(--title-color); font-size: clamp(1.6rem, 3vw, 2.2rem); line-height: 1.2; }
+.news__sub { font-weight: 500; font-size: 1.15rem; }
+.news__texto { font-family: "Work Sans", sans-serif; color: #c4c4cc; }
+.news__form { margin-top: 16px; }
+.news__rotulo { display: block; color: var(--form-color); font-weight: 700; font-size: .95rem; margin-bottom: 10px; }
+.news__linha { display: flex; border-left: 5px solid var(--title-color); box-shadow: 4px 10px 15px rgba(0, 0, 0, .5); }
+.news__linha input { flex: 1; min-width: 0; padding: 14px 16px; border: 0; font: inherit; font-size: 1rem; }
+.news__enviar { width: 52px; background: var(--bg-button-color); border: 0; display: grid; place-items: center; cursor: pointer; }
+.news__enviar:hover { filter: brightness(1.15); }
+.news__form .lt-erro-campo { color: #ff8a8a; }
+.news__frequencia { border: 0; margin-top: 16px; display: flex; gap: 18px; flex-wrap: wrap; font-family: "Work Sans", sans-serif; }
+.news__frequencia legend { color: var(--form-color); font-weight: 700; margin-bottom: 8px; width: 100%; }
+.news__frequencia label { display: inline-flex; gap: 8px; align-items: center; cursor: pointer; }
+.news__ler { display: inline-flex; align-items: center; gap: 10px; color: #a88bf0; font-weight: 700; text-decoration: none; margin-top: 12px; align-self: flex-start; }
+.news__ler:hover { text-decoration: underline; }
+.news__banner img { width: 100%; height: 100%; object-fit: cover; }
+@media (max-width: 860px) {
+  .news { grid-template-columns: minmax(0, 1fr); }
+  .news__banner { order: -1; height: 240px; }
 }
-
-body {
-    font-family: Spartan, Work Sans, sans-serif;
-    background: #E5E5E5;
-}
-
-.cards {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 1em;
-}
-
-.cards .card {
-    flex-basis: 15em;
-    flex-grow: 1;
-}
-
-.container {
-    position: relative;
-    width: 90vw;
-    height: 48vh;
-    margin: .5% auto 0;
-}
-
-.left {
-    position: absolute;
-    width: 100%;
-    max-width: 720px;
-    height: 780px;
-    background: #121214;
-}
-
-.logo-rocket {
-    position: absolute;
-    width: 389px;
-    height: 94px;
-    left: 30px;
-    top: 50px;
-}
-
-.apresentation .title {
-    color: var(--title-color);
-    font-weight: 700;
-    margin-top: 1rem;
-}
-
-.apresentation {
-    position: absolute;
-    width: 647px;
-    height: 102px;
-    left: 36px;
-    top: 236px;
-}
-
-.apresentation .subtitle {
-    color: var(--text-color);
-    font-weight: 500;
-    margin-top: 1rem;
-}
-
-.apresentation .texto {
-    color: var(--text-color);
-    font-weight: 400;
-    margin-top: 1rem;
-}
-
-.newsletter {
-    position: absolute;
-    width: 798px;
-    height: 84px;
-    left: 2px;
-    top: 32px;
-    z-index: 10;
-}
-
-.newsletter h2 {
-    position: absolute;
-    width: 133px;
-    height: 19px;
-    left: 36px;
-    top: 388px;
-    font-family: 'Spartan';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 14px;
-    line-height: 138.73%;
-    color: #A8A8A8;
-}
-
-.newsletter .retangular {
-    position: absolute;
-    width: 5px;
-    height: 48px;
-    left: 36px;
-    top: 424px;
-    background: #04D361;
-    z-index: 11;
-}
-
-.newsletter input {
-    position: absolute;
-    width: 798px;
-    height: 48px;
-    left: 36px;
-    top: 424px;
-    filter: drop-shadow(4px 10px 15px rgba(0, 0, 0, 0.5));
-    padding: 15px;
-}
-
-.newsletter button {
-    position: absolute;
-    background-color: #8257e5;
-    width: 48px;
-    height: 48px;
-    left: 786px;
-    top: 424px;
-    cursor: pointer;
-    border: 1px solid #8257e5;
-}
-
-.newsletter .icon-send {
-    content: url(./assets/send.svg);
-}
-
-.newsletter #responsesend {
-    position: absolute;
-    left: 46px;
-    top: 480px;
-    font-size: 8px;
-    color: #04D361;
-}
-
-.to-read {
-    position: absolute;
-    width: 196px;
-    height: 24px;
-    left: 40px;
-    top: 532px;
-    color: #8257e5;
-    cursor: pointer;
-}
-
-.to-read {
-    text-align: center;
-}
-
-.to-read .message {
-    text-align: center;
-}
-
-.to-read .icon-arrow-right {
-    content: url(./assets/arrow-right.svg);
-    width: 22px;
-}
-
-.logo-rocket img {
-    position: absolute;
-    width: 389px;
-    height: 94px;
-    left: 30px;
-    top: 50px;
-}
-
-.right {
-    width: 1275px;
-    margin-left: 250px;
-}
-
-.right .banner img {
-    width: 1175px;
-    height: 780px;
-    top: 0px;
-    left: 10px;
-}
+/* fim de style.css */

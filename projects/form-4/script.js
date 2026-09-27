@@ -1,11 +1,10 @@
 /* script.js — motor de captação de lead.
    Serve formulário de página única e formulário em etapas; detecta qual é.
    Valida campo a campo, aponta o erro no próprio campo, monta o resumo das
-   respostas e entrega no WhatsApp. Sem destino configurado, o resumo aparece
-   na tela com botão de copiar, em vez de dizer que enviou e descartar o lead.
-   Para ligar o envio: troque SEUNUMERO abaixo pelo número com DDI e DDD. */
+   respostas e entrega no WhatsApp. O resumo também fica na tela, com botão
+   de copiar e link direto, para o caso de o WhatsApp não abrir. */
 
-const DESTINO_WHATSAPP = "55SEUNUMERO";
+const DESTINO_WHATSAPP = "5532988367667";
 const SELETOR_FORM = "#visitForm";
 const SELETOR_AVISO = "#formMessage";
 const EMAIL_VALIDO = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
@@ -96,14 +95,16 @@ function avisar(caixa, tipo, texto) {
   caixa.textContent = texto;
 }
 
-/* Sem WhatsApp configurado, entrega o resumo na tela para o visitante copiar. */
-function mostrarResumo(caixa, resumo) {
+/* Mostra o resumo na tela para o visitante copiar, com link direto para o WhatsApp. */
+function mostrarResumo(caixa, resumo, linkWhatsapp) {
   if (!caixa) return;
   caixa.className = `${caixa.dataset.classeBase || "form-message"} visible success`;
   caixa.innerHTML = "";
 
   const titulo = document.createElement("p");
-  titulo.textContent = "Resumo do seu pedido — copie e envie para o nosso atendimento:";
+  titulo.textContent = linkWhatsapp
+    ? "Pedido pronto! Abrimos o WhatsApp com a sua mensagem. Se ele não abriu, use o link ou copie o resumo:"
+    : "Resumo do seu pedido — copie e envie para o nosso atendimento:";
 
   const bloco = document.createElement("pre");
   bloco.className = "resumo-lead";
@@ -129,6 +130,15 @@ function mostrarResumo(caixa, resumo) {
   });
 
   caixa.append(titulo, bloco, copiar);
+  if (linkWhatsapp) {
+    const abrir = document.createElement("a");
+    abrir.className = "resumo-copiar";
+    abrir.href = linkWhatsapp;
+    abrir.target = "_blank";
+    abrir.rel = "noopener";
+    abrir.textContent = "Abrir WhatsApp";
+    caixa.append(" ", abrir);
+  }
 }
 
 /* Um campo é obrigatório por required ou por data-required. */
@@ -186,8 +196,9 @@ function entregar(form, caixa) {
     return;
   }
   const texto = encodeURIComponent(`Olá! Vim pelo site e preenchi o formulário:\n\n${resumo}`);
-  window.open(`https://wa.me/${DESTINO_WHATSAPP}?text=${texto}`, "_blank", "noopener");
-  avisar(caixa, "success", "Abrimos o WhatsApp com o seu pedido. É só enviar a mensagem.");
+  const link = `https://wa.me/${DESTINO_WHATSAPP}?text=${texto}`;
+  mostrarResumo(caixa, resumo, link);
+  window.open(link, "_blank", "noopener");
 }
 
 /* Limpa o erro assim que o visitante mexe no campo. */

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rocket Shoes · Tênis Esportivo para Corrida</title>
+  <meta name="description" content="Mini e-commerce de tênis esportivo: galeria com indicador, escolha de tamanho e cor, sacola, busca e vídeo de treino." />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Rocket Shoes · Tênis Esportivo para Corrida" />
+  <meta property="og:description" content="Mini e-commerce de tênis esportivo: galeria com indicador, escolha de tamanho e cor, sacola, busca e vídeo de treino." />
+  <meta property="og:url" content="https://douglasabnovato.github.io/ux-design/projects/rocket-shoes/" />
+  <meta property="og:image" content="https://douglasabnovato.github.io/ux-design/assets/rocket-shoes.jpg" />
+  <link rel="icon" href="./assets/favicon.ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" />
+  <link rel="stylesheet" href="./style.css" />
+  <link rel="stylesheet" href="../../shared/lt-base.css" />
+  <link rel="stylesheet" href="../../shared/lt-feedback.css" />
+  <script src="../../shared/lt-feedback.js"></script>
+</head>
+<body>
+  <a class="pular" href="#produto">Pular para o produto</a>
+  <div class="pagina">
+    <header class="topo">
+      <a href="#" class="topo__logo" aria-label="Rocket Shoes, início"><img src="./assets/logo.svg" alt="" width="52" height="36" /></a>
+      <nav aria-label="Categorias">
+        <ul class="topo__menu">
+          <li><a href="#" data-categoria="Homem">Homem</a></li>
+          <li><a href="#" data-categoria="Mulher">Mulher</a></li>
+          <li><a href="#" data-categoria="Criança">Criança</a></li>
+          <li><a href="#" data-categoria="Customizar">Customizar</a></li>
+        </ul>
+      </nav>
+      <form class="busca" id="form-busca" role="search" novalidate>
+        <label for="busca-termo" class="lt-sr-only">Pesquisar produtos</label>
+        <img src="./assets/icon-search.svg" alt="" width="20" height="20" />
+        <input id="busca-termo" name="termo" type="search" placeholder="Pesquisar" autocomplete="off" />
+      </form>
+      <button type="button" class="topo__sacola" id="btn-sacola" aria-label="Abrir sacola (0 itens)">
+        <img src="./assets/icon-bag.svg" alt="" width="30" height="30" />
+        <span class="topo__qtd" id="sacola-qtd" aria-hidden="true">0</span>
+      </button>
+    </header>
+
+    <main class="produto" id="produto">
+      <section class="produto__info" aria-labelledby="produto-titulo">
+        <p class="produto__categoria" id="produto-categoria">Corrida · Unissex</p>
+        <h1 id="produto-titulo">Tênis Esportivo Para Corrida Top</h1>
+        <p class="produto__desc">Amortecimento leve, cabedal respirável e solado com tração para treinos longos no asfalto ou na esteira.</p>
+        <p class="produto__preco"><strong>R$ 1.000,00</strong> <span>ou 10x de R$ 100,00 sem juros</span></p>
+        <form id="form-compra" novalidate>
+          <fieldset class="tamanhos">
+            <legend>Tamanho</legend>
+            <div class="tamanhos__opcoes">
+              <label><input type="radio" name="tamanho" value="37" required /><span>37</span></label>
+              <label><input type="radio" name="tamanho" value="38" /><span>38</span></label>
+              <label><input type="radio" name="tamanho" value="39" /><span>39</span></label>
+              <label><input type="radio" name="tamanho" value="40" /><span>40</span></label>
+              <label><input type="radio" name="tamanho" value="41" /><span>41</span></label>
+              <label><input type="radio" name="tamanho" value="42" /><span>42</span></label>
+              <label class="esgotado"><input type="radio" name="tamanho" value="43" disabled /><span>43</span></label>
+            </div>
+            <button type="button" class="link" id="btn-guia">Guia de tamanhos</button>
+          </fieldset>
+          <button type="submit" class="botao-comprar">Comprar</button>
+        </form>
+      </section>
+
+      <section class="galeria" aria-label="Fotos do produto">
+        <figure class="galeria__destaque">
+          <img id="foto-destaque" src="./assets/tenis-1-ampliado.png" alt="Tênis azul de corrida, vista lateral em destaque" width="605" height="520" />
+        </figure>
+        <ul class="galeria__miniaturas">
+          <li><button type="button" class="miniatura" aria-pressed="true" data-foto="./assets/tenis-1-ampliado.png" data-alt="Tênis azul de corrida, vista lateral em destaque"><img src="./assets/tenis-1-galeria.png" alt="Vista lateral" width="270" height="184" /></button></li>
+          <li><button type="button" class="miniatura" aria-pressed="false" data-foto="./assets/tenis-2-galeria.png" data-alt="Tênis azul de corrida, vista do solado"><img src="./assets/tenis-2-galeria.png" alt="Vista do solado" width="270" height="184" /></button></li>
+          <li><button type="button" class="miniatura" aria-pressed="false" data-foto="./assets/tenis-3-galeria.png" data-alt="Tênis azul de corrida, detalhe do bico"><img src="./assets/tenis-3-galeria.png" alt="Detalhe do bico" width="270" height="184" /></button></li>
+        </ul>
+      </section>
+    </main>
+
+    <footer class="rodape">
+      <div class="rodape__video" id="video">
+        <button type="button" class="video__capa" id="btn-video" aria-label="Assistir ao vídeo: dicas de treino de corrida">
+          <img src="./assets/img-video.png" alt="" width="250" height="166" />
+          <span class="video__play" aria-hidden="true"></span>
+        </button>
+      </div>
+      <ul class="rodape__redes">
+        <li><a href="https://www.facebook.com/" target="_blank" rel="noopener">Facebook</a></li>
+        <li><a href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram</a></li>
+        <li><a href="https://www.youtube.com/" target="_blank" rel="noopener">YouTube</a></li>
+        <li><a href="https://twitter.com/" target="_blank" rel="noopener">Twitter</a></li>
+      </ul>
+      <button type="button" class="rodape__explore" id="btn-explore">Explore mais <img src="./assets/icon-arrow.svg" alt="" width="20" height="20" /></button>
+    </footer>
+  </div>
+
+  <script src="./script.js"></script>
+<!-- learnTECH · volta ao catálogo UX Design -->
+<style>
+.lt-voltar{position:fixed;left:18px;bottom:18px;z-index:99998;display:inline-flex;align-items:center;gap:9px;
+padding:11px 16px;border-radius:999px;background:rgba(10,14,39,.92);border:1px solid rgba(0,212,212,.42);
+color:#eaf0f7;text-decoration:none;font:700 14px/1 "Segoe UI",system-ui,-apple-system,Arial,sans-serif;
+box-shadow:0 12px 30px rgba(0,0,0,.34);backdrop-filter:blur(10px);
+transition:transform .2s ease,border-color .2s ease,background .2s ease;-webkit-font-smoothing:antialiased}
+.lt-voltar:hover{transform:translateY(-2px);border-color:#00d4d4;background:rgba(10,14,39,.98);color:#eaf0f7}
+.lt-voltar:focus-visible{outline:3px solid #00d4d4;outline-offset:3px}
+.lt-voltar__i{display:inline-grid;place-items:center;width:24px;height:24px;border-radius:999px;
+background:rgba(0,212,212,.16);color:#00d4d4;font-size:14px}
+@media (max-width:640px){.lt-voltar{left:12px;bottom:12px;padding:10px 13px;font-size:13px}
+.lt-voltar__t{display:none}}
+.lt-espaco{height:86px;flex:none;pointer-events:none}
+@media print{.lt-voltar,.lt-espaco{display:none}}
+</style>
+<div class="lt-espaco" aria-hidden="true"></div>
+<a class="lt-voltar" href="../../index.html" aria-label="Voltar ao catálogo UX Design">
+  <span class="lt-voltar__i" aria-hidden="true">&#8592;</span>
+  <span class="lt-voltar__t">Voltar ao portfólio</span>
+</a>
+<!-- fim · volta ao catálogo -->
+</body>
+</html>

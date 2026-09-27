@@ -1308,3 +1308,10 @@ small {
     transition: 0.4s;
   }
 }
+
+/* Ajustes de responsividade (curadoria UX Design, lote 1): evita rolagem lateral no celular. */
+html, body { overflow-x: clip; }
+.cart, .cart-page, .cart-info { max-width: 100%; }
+.update-cart .cart { width: auto; max-width: 100%; }
+.update-cart { grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); }
+/* Fim dos ajustes de responsividade. */
