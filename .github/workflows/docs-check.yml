@@ -1,0 +1,33 @@
+name: Conferir documentos
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - "docs/**"
+      - ".github/workflows/docs-check.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  links:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          filter: blob:none
+          sparse-checkout: docs
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Conferir links relativos
+        run: |
+          node -e '
+          const fs = require("fs"), path = require("path");
+          const dir = "docs/ux-teoria";
+          for (const f of fs.readdirSync(dir)) {
+            const s = fs.readFileSync(path.join(dir, f), "utf8");
+            for (const m of s.matchAll(/\]\(([^)#:]+\.md)\)/g)) fs.accessSync(path.join(dir, m[1]));
+          }
+          '
