@@ -1,7 +1,6 @@
 # Dependências
 node_modules/
 npm-debug.log
-package-lock.json
 yarn.lock
 
 # Ambiente
@@ -33,3 +32,6 @@ logs/
 # Temporários
 tmp/
 temp/
+node_modules/
+test-results/
+playwright-report/
