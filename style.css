@@ -153,7 +153,7 @@ body.sem-rolagem {
   text-transform: uppercase;
 }
 
-.hero-carousel__caption h3 {
+.hero-carousel__titulo {
   font-size: clamp(1.5rem, 3vw, 2.4rem);
   color: var(--text-light);
   margin-bottom: 10px;
@@ -195,27 +195,44 @@ body.sem-rolagem {
 
 .hero-carousel__dots {
   position: absolute;
-  bottom: 18px;
-  right: 24px;
+  bottom: 10px;
+  right: 16px;
   z-index: 3;
   display: flex;
-  gap: 8px;
+  gap: 2px;
 }
 
+/* A área de toque tem 24 px; o ponto visível é desenhado dentro dela */
 .hero-carousel__dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
+  position: relative;
+  min-width: 24px;
+  height: 24px;
   border: none;
-  background: rgba(255, 255, 255, 0.32);
+  background: transparent;
   cursor: pointer;
   padding: 0;
   transition: var(--transition);
 }
 
-.hero-carousel__dot.is-active {
-  width: 22px;
+.hero-carousel__dot::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 8px;
+  height: 8px;
   border-radius: 999px;
+  background: rgba(255, 255, 255, 0.55);
+  transform: translate(-50%, -50%);
+  transition: var(--transition);
+}
+
+.hero-carousel__dot.is-active {
+  min-width: 28px;
+}
+
+.hero-carousel__dot.is-active::before {
+  width: 22px;
   background: var(--primary-color);
 }
 
