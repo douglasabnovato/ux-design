@@ -10,6 +10,8 @@
 
 ---
 
+> **Estado em 02/11/2026:** Publicado no GitHub Pages. Verificação: `node scripts/verificar-conteudo.mjs`, `npm ci`, `npx playwright install chromium` e `npm test`. Só amostras dos projetos foram abertas. Critérios em [docs/MVP.md](docs/MVP.md).
+
 ## 🚀 Sobre o projeto
 
 Catálogo vivo de 59 produtos digitais entregues para negócios reais: franquias, restaurantes, clínicas, marcenarias, clubes, prestadores de serviço e escolas. Vários nasceram em aula ou em desafio de trilha — o que conta aqui é que cada um virou produto, com marca, conteúdo real e caminho de conversão.
