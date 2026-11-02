@@ -49,8 +49,7 @@ function montarCard(projeto) {
 
   const alvo = projeto.emBreve
     ? `<div class="project-card__link project-card__link--soon" aria-label="${escapar(projeto.title)} — em breve">${miolo}</div>`
-    : `<a href="projects/${escapar(projeto.slug)}/index.html" class="project-card__link"
-           aria-label="Abrir ${escapar(projeto.title)}">${miolo}</a>`;
+    : `<a href="projects/${escapar(projeto.slug)}/index.html" class="project-card__link">${miolo}</a>`;
 
   const botaoCase = projeto.case
     ? `<button type="button" class="project-card__case" data-case="${escapar(projeto.slug)}">O case desse projeto</button>`
@@ -107,13 +106,12 @@ function renderizarCarrossel(destaques) {
   trilho.innerHTML = destaques
     .map(
       (p, i) => `
-      <a href="projects/${escapar(p.slug)}/index.html" class="hero-carousel__slide"
-         aria-label="Abrir ${escapar(p.title)}">
+      <a href="projects/${escapar(p.slug)}/index.html" class="hero-carousel__slide">
         <img src="${escapar(p.image)}" alt="" class="hero-carousel__image"
              ${i === 0 ? 'fetchpriority="high"' : 'loading="lazy"'} decoding="async" />
         <div class="hero-carousel__caption">
           <span class="hero-carousel__badge">${escapar(p.category)}</span>
-          <h3>${escapar(p.title)}</h3>
+          <p class="hero-carousel__titulo">${escapar(p.title)}</p>
           <p>${escapar(p.description)}</p>
         </div>
       </a>`
