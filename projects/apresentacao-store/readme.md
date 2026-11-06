@@ -1,0 +1,72 @@
+<h4 align="center"> 
+	 🚀🚧 ABC CRM - POPs
+</h4>
+
+<h1 align="center">
+    <img alt="Portfólio" title="#Portfólio" src="./.github/abc-desktop-1.jpg" />
+</h1> 
+
+## 💻🔖 Organização do projeto 
+
+Organizamos as branches para serem guardadas as versões do projeto
+- main: em produção
+- developer: em desenvolvimento das tarefas
+- v-dev-projetos: primeira versão do projeto
+- v-dev-coffee: segunda versão do projeto
+- v-dev-abc-crm: terceira versão do projeto
+
+## 💻🔖 Sobre o projeto  
+
+- Projeto de um site com instruções das tarefas do ambiente de crm.
+
+#### 💻Requisitos
+
+- [x] design personalizado
+- [x] responsividade
+- [x] favicon
+- [x] páginas para conteúdos
+- [x] botão topo: aperfeiçoar círculo
+
+#### 💻Seções
+
+- [x] presentation: imagem ao fundo hospedada
+- [x] description
+- [x] projects
+- [ ] Imagens dos programas de relacionamento: prime, abcx 
+- [ ] Imagens institucionais
+- [x] footer : estilizar conforme abc
+
+#### 💻Copies
+
+Especializar o copy e adicionar elementos visuais para destacar importâncias. 
+
+#### 💻Design
+
+- [x] Imagens dos cards  
+- [x] Colors Projeto 1:
+    - #a72327 
+    - #610609e9
+
+#### 💻Telas
+
+- Desktop
+
+<p align="center" style="display: flex; align-items: flex-start; justify-content: center;">
+    <img alt="Portfólio" title="#Portfólio" src="./.github/abc-desktop-1.jpg" width="400px"/>
+    <img alt="Portfólio" title="#Portfólio" src="./.github/abc-desktop-2.jpg" width="400px"/>
+    <img alt="Portfólio" title="#Portfólio" src="./.github/abc-desktop-3.jpg" width="400px"/>
+</p>
+
+- Mobile
+
+<p align="center" style="display: flex; align-items: flex-start; justify-content: center;">
+    <img alt="Portfólio" title="#Portfólio" src="./.github/abc-mobile-1.jpg" height="400px"/>
+    <img alt="Portfólio" title="#Portfólio" src="./.github/abc-mobile-2.jpg" height="400px"/>
+    <img alt="Portfólio" title="#Portfólio" src="./.github/abc-mobile-3.jpg" height="400px"/>
+</p>
+
+#### 💻Inspirações para aperfeiçoamentos  
+
+- Funcionalidades de um bom site
+
+@douglasabnovato

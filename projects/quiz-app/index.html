@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie-edge" />
+    <link rel="manifest" href="./public/manifest.json">
+    <link rel="shortcut icon" href="./public/favicon.ico">
+    <title>Incrível Quiz</title>
+    <link rel="stylesheet" href="./src/styles/index.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <link rel="stylesheet" href="../../shared/lt-base.css" />
+  <link rel="stylesheet" href="../../shared/lt-feedback.css" />
+  <script src="../../shared/lt-feedback.js"></script>
+  <meta name="description" content="Aplicação interativa de perguntas e respostas com contagem de pontuação, feedback em tempo real e barra de progresso gamificada." />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Quiz App · UX Design" />
+  <meta property="og:description" content="Aplicação interativa de perguntas e respostas com contagem de pontuação, feedback em tempo real e barra de progresso gamificada." />
+  <meta property="og:url" content="https://douglasabnovato.github.io/ux-design/projects/quiz-app/" />
+  <meta property="og:image" content="https://douglasabnovato.github.io/ux-design/assets/quiz-app.jpg" />
+</head>
+  <body id="page-home">
+    <h1 class="lt-sr-only">Incrível Quiz</h1>
+    <div id="loader"></div>
+    <!-- start Quiz button -->
+    <div class="start_btn">
+      <button class="btn" id="button_play">Jogar o Quiz</button>
+      <a class="btn" id="button_score" href="./src/pages/highscores.html"
+        >Maiores Pontuações</a
+      >
+    </div>
+
+    <!-- Info Box -->
+    <div class="info_box">
+      <div class="info-title"><span>Algumas regras deste Quiz</span></div>
+      <div class="info-list">
+        <div class="info">
+          1. Você terá apenas<span> 15 segundos</span> para cada pergunta.
+        </div>
+        <div class="info">
+          2. Depois de selecionar sua resposta não pode ser desfeita.
+        </div>
+        <div class="info">
+          3. Você não pode selecionar opção depois que o tempo acabar.
+        </div>
+        <div class="info">
+          4. Você não pode sair do Quiz enquanto estiver jogando.
+        </div>
+        <div class="info">5. Você receberá 10 pontos por resposta correta.</div>
+      </div>
+      <div class="buttons">
+        <button class="quit">Sair do Quiz</button>
+        <button class="restart">Continuar</button>
+      </div>
+    </div>
+    <!-- Quiz Box -->
+    <div class="quiz_box">
+      <header>
+        <div class="title">Incrível Quiz</div>
+        <div class="timer">
+          <div class="time_left_txt">Tempo Restante</div>
+          <div class="timer_sec">15</div>
+        </div>
+        <div class="time_line"></div>
+      </header>
+      <section>
+        <div class="que_text">
+          <!-- Here I've inserted question from JavaScript -->
+        </div>
+        <div class="option_list">
+          <!-- Here I've inserted options from JavaScript -->
+        </div>
+      </section>
+      <!-- footer of Quiz Box -->
+      <footer>
+        <div class="total_que">
+          <!-- Here I've inserted Question Count Number from JavaScript -->
+        </div>
+        <div id="hud-item">
+          <p class="hud-prefix">Pontuação <span class="hud-main-text" id="score">0</span></p>
+        </div>
+        <button class="next_btn">Próxima Questão</button>
+      </footer>
+    </div>
+    <!-- Result Box -->
+    <div class="result_box">
+      <div class="icon">
+        <i class="fas fa-crown"></i>
+      </div>
+      <div class="complete_text">Você completou o Quiz!!</div>
+      <div class="score_text">
+        <!-- Here I've inserted Score Result from JavaScript -->
+      </div>
+      <div class="buttons">
+        <button class="restart">Salvar Quiz</button>
+        <button class="quit">Sair do Quiz</button>
+      </div>
+    </div>
+    <!-- Inside this JavaScript file I've inserted Questions and Options only -->
+    <script src="./src/data/questions.js"></script>
+    <!-- Inside this JavaScript file I've coded all Quiz Codes -->
+    <script src="./src/javascript/index.js"></script>
+  <!-- learnTECH · volta ao catálogo UX Design -->
+<style>
+.lt-voltar{position:fixed;left:18px;bottom:18px;z-index:99998;display:inline-flex;align-items:center;gap:9px;
+padding:11px 16px;border-radius:999px;background:rgba(10,14,39,.92);border:1px solid rgba(0,212,212,.42);
+color:#eaf0f7;text-decoration:none;font:700 14px/1 "Segoe UI",system-ui,-apple-system,Arial,sans-serif;
+box-shadow:0 12px 30px rgba(0,0,0,.34);backdrop-filter:blur(10px);
+transition:transform .2s ease,border-color .2s ease,background .2s ease;-webkit-font-smoothing:antialiased}
+.lt-voltar:hover{transform:translateY(-2px);border-color:#00d4d4;background:rgba(10,14,39,.98);color:#eaf0f7}
+.lt-voltar:focus-visible{outline:3px solid #00d4d4;outline-offset:3px}
+.lt-voltar__i{display:inline-grid;place-items:center;width:24px;height:24px;border-radius:999px;
+background:rgba(0,212,212,.16);color:#00d4d4;font-size:14px}
+@media (max-width:640px){.lt-voltar{left:12px;bottom:12px;padding:10px 13px;font-size:13px}
+.lt-voltar__t{display:none}}
+.lt-espaco{height:86px;flex:none;pointer-events:none}
+@media print{.lt-voltar,.lt-espaco{display:none}}
+</style>
+<div class="lt-espaco" aria-hidden="true"></div>
+<a class="lt-voltar" href="../../index.html" aria-label="Voltar ao catálogo UX Design">
+  <span class="lt-voltar__i" aria-hidden="true">&#8592;</span>
+  <span class="lt-voltar__t">Voltar ao portfólio</span>
+</a>
+<!-- fim · volta ao catálogo -->
+</body>
+</html>

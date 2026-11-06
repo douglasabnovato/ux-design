@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+  <title>Rua Viva · arte urbana de Léo Moraes</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+  <link
+    href="https://fonts.googleapis.com/css?family=Raleway"
+    rel="stylesheet"
+    type="text/css"
+  />
+  <link href="./styles/style.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="../../shared/lt-base.css" />
+  <link rel="stylesheet" href="../../shared/lt-feedback.css" />
+  <script src="../../shared/lt-feedback.js"></script>
+  <style>
+    .art__titulo { font-size: clamp(1.6rem, 4vw, 2.4rem); margin: 0 0 4px; }
+    .art__sub { color: #555; margin: 0 0 16px; }
+    .obra { margin: 0 0 16px; padding: 0 8px; }
+    .obra__abrir { display: block; width: 100%; padding: 0; border: 0; background: none; cursor: zoom-in; }
+    .obra__abrir img { display: block; transition: filter .2s; }
+    .obra__abrir:hover img { filter: brightness(.9); }
+    .obra figcaption { text-align: left; padding: 6px 2px; color: #444; }
+    .art__caixa { margin: auto; width: min(90%, 640px); text-align: left; }
+    .lt-modal img { width: 100%; border-radius: 8px; }
+  </style>
+  <meta name="description" content="Portal de exposição de obra de arte com identidade visual exclusiva, storytelling da peça e leitura confortável em qualquer tela." />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Art · UX Design" />
+  <meta property="og:description" content="Portal de exposição de obra de arte com identidade visual exclusiva, storytelling da peça e leitura confortável em qualquer tela." />
+  <meta property="og:url" content="https://douglasabnovato.github.io/ux-design/projects/art/" />
+  <meta property="og:image" content="https://douglasabnovato.github.io/ux-design/assets/art.jpg" />
+  </head>
+  <body>
+    <div class="w3-content" style="max-width: 1500px">
+      <header class="w3-container w3-xlarge w3-padding-24">
+        <a href="#" class="w3-left w3-button w3-white">RUA VIVA</a>
+        <a href="#about" class="w3-right w3-button w3-white">Sobre e contato</a>
+      </header>
+      <div class="w3-container">
+        <h1 class="art__titulo">Rua Viva · arte urbana de Léo Moraes</h1>
+        <p class="art__sub">Murais que transformam muros esquecidos em pontos de encontro. Toque em uma obra para ampliar.</p>
+      </div>
+      <div class="w3-row" id="galeria">
+        <div class="w3-half">
+          <figure class="obra">
+            <button type="button" class="obra__abrir" data-obra="0" aria-label="Ampliar a obra Cores da Esquina">
+              <img alt="Mural Cores da Esquina: Muro no centro, spray e látex, 2024" src="./images/streetart.jpg" style="width: 100%" loading="lazy" />
+            </button>
+            <figcaption><strong>Cores da Esquina</strong> · Muro no centro, spray e látex, 2024</figcaption>
+          </figure>
+          <figure class="obra">
+            <button type="button" class="obra__abrir" data-obra="1" aria-label="Ampliar a obra Olhar da Cidade">
+              <img alt="Mural Olhar da Cidade: Empena residencial, 2023" src="./images/streetart2.jpg" style="width: 100%" loading="lazy" />
+            </button>
+            <figcaption><strong>Olhar da Cidade</strong> · Empena residencial, 2023</figcaption>
+          </figure>
+          <figure class="obra">
+            <button type="button" class="obra__abrir" data-obra="2" aria-label="Ampliar a obra Raízes">
+              <img alt="Mural Raízes: Painel coletivo, 2025" src="./images/streetart5.jpg" style="width: 100%" loading="lazy" />
+            </button>
+            <figcaption><strong>Raízes</strong> · Painel coletivo, 2025</figcaption>
+          </figure>
+        </div>
+        <div class="w3-half">
+          <figure class="obra">
+            <button type="button" class="obra__abrir" data-obra="3" aria-label="Ampliar a obra Maré Alta">
+              <img alt="Mural Maré Alta: Viaduto, spray, 2022" src="./images/streetart3.jpg" style="width: 100%" loading="lazy" />
+            </button>
+            <figcaption><strong>Maré Alta</strong> · Viaduto, spray, 2022</figcaption>
+          </figure>
+          <figure class="obra">
+            <button type="button" class="obra__abrir" data-obra="4" aria-label="Ampliar a obra Sonho Acordado">
+              <img alt="Mural Sonho Acordado: Galeria a céu aberto, 2024" src="./images/streetart4.jpg" style="width: 100%" loading="lazy" />
+            </button>
+            <figcaption><strong>Sonho Acordado</strong> · Galeria a céu aberto, 2024</figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+    <footer class="w3-light-grey w3-padding-64 w3-center" id="about">
+      <h2>Sobre o artista</h2>
+      <img alt="Retrato do artista Léo Moraes"
+        src="./images/boy.jpg"
+        class="w3-image w3-padding-32"
+        width="300"
+        height="300"
+      />
+      <div class="art__caixa">
+        <p>
+          Léo Moraes pinta murais há mais de dez anos. Cada obra nasce de conversas
+          com quem vive no bairro: histórias, cores e memórias viram imagens que
+          ficam na rua para todo mundo ver. Além de murais sob encomenda, ele
+          conduz oficinas para escolas e projetos sociais.
+        </p>
+        <p class="w3-large w3-text-pink">Quer um mural ou uma oficina? Fale comigo!</p>
+        <form id="form-art" novalidate>
+          <div class="w3-section">
+            <label for="art-nome"><b>Nome</b></label>
+            <input id="art-nome" class="w3-input w3-border" type="text" required minlength="3" name="nome" autocomplete="name" />
+          </div>
+          <div class="w3-section">
+            <label for="art-email"><b>E-mail</b></label>
+            <input id="art-email" class="w3-input w3-border" type="email" required name="email" autocomplete="email" />
+          </div>
+          <div class="w3-section">
+            <label for="art-tipo"><b>Tipo de projeto</b></label>
+            <select id="art-tipo" class="w3-select w3-border" required name="projeto">
+              <option value="">Escolha uma opção</option>
+              <option>Mural residencial</option>
+              <option>Mural para empresa</option>
+              <option>Oficina em escola ou projeto social</option>
+            </select>
+          </div>
+          <div class="w3-section">
+            <label for="art-msg"><b>Mensagem</b></label>
+            <textarea id="art-msg" class="w3-input w3-border" rows="4" required minlength="10" name="mensagem"></textarea>
+          </div>
+          <button type="submit" class="w3-button w3-block w3-dark-grey">
+            Enviar pedido
+          </button>
+        </form>
+      </div>
+      <br />
+      <p>
+        Layout com
+        <a
+          href="https://www.w3schools.com/w3css/default.asp"
+          target="_blank"
+          rel="noopener"
+          class="w3-hover-text-green"
+        >
+          w3.css
+        </a>
+      </p>
+    </footer>
+  <script src="./interacoes.js"></script>
+  <!-- learnTECH · volta ao catálogo UX Design -->
+<style>
+.lt-voltar{position:fixed;left:18px;bottom:18px;z-index:99998;display:inline-flex;align-items:center;gap:9px;
+padding:11px 16px;border-radius:999px;background:rgba(10,14,39,.92);border:1px solid rgba(0,212,212,.42);
+color:#eaf0f7;text-decoration:none;font:700 14px/1 "Segoe UI",system-ui,-apple-system,Arial,sans-serif;
+box-shadow:0 12px 30px rgba(0,0,0,.34);backdrop-filter:blur(10px);
+transition:transform .2s ease,border-color .2s ease,background .2s ease;-webkit-font-smoothing:antialiased}
+.lt-voltar:hover{transform:translateY(-2px);border-color:#00d4d4;background:rgba(10,14,39,.98);color:#eaf0f7}
+.lt-voltar:focus-visible{outline:3px solid #00d4d4;outline-offset:3px}
+.lt-voltar__i{display:inline-grid;place-items:center;width:24px;height:24px;border-radius:999px;
+background:rgba(0,212,212,.16);color:#00d4d4;font-size:14px}
+@media (max-width:640px){.lt-voltar{left:12px;bottom:12px;padding:10px 13px;font-size:13px}
+.lt-voltar__t{display:none}}
+.lt-espaco{height:86px;flex:none;pointer-events:none}
+@media print{.lt-voltar,.lt-espaco{display:none}}
+</style>
+<div class="lt-espaco" aria-hidden="true"></div>
+<a class="lt-voltar" href="../../index.html" aria-label="Voltar ao catálogo UX Design">
+  <span class="lt-voltar__i" aria-hidden="true">&#8592;</span>
+  <span class="lt-voltar__t">Voltar ao portfólio</span>
+</a>
+<!-- fim · volta ao catálogo -->
+</body>
+</html>

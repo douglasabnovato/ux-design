@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="./public/favicon.ico" type="image/x-icon" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;700&family=Work+Sans:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Rocket News · newsletter em 5 minutos</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="../../shared/lt-base.css" />
+  <link rel="stylesheet" href="../../shared/lt-feedback.css" />
+  <script src="../../shared/lt-feedback.js"></script>
+  <meta name="description" content="Newsletter de notícias dev em 5 minutos: inscrição com validação, frequência e confirmação." />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Rocket News · UX Design" />
+  <meta property="og:description" content="Newsletter de notícias dev em 5 minutos: inscrição com validação, frequência e confirmação." />
+  <meta property="og:url" content="https://douglasabnovato.github.io/ux-design/projects/rocket-news/" />
+  <meta property="og:image" content="https://douglasabnovato.github.io/ux-design/assets/rocket-news.jpg" />
+</head>
+  <body>
+    <main class="news">
+      <section class="news__painel" aria-labelledby="news-titulo">
+        <img class="news__logo" src="./assets/logo.svg" alt="Rocket News" width="260" height="63" />
+        <h1 id="news-titulo" class="news__titulo">Atualize ideias e informações em 5 minutos</h1>
+        <p class="news__sub">Tudo o que você precisa saber para começar o dia bem informado.</p>
+        <p class="news__texto">Notícias do universo dev e o que você precisa para começar o dia melhor. Perfeito para ler antes de codar ☕</p>
+
+        <form class="news__form" id="form-news" novalidate>
+          <label for="e-mail" class="news__rotulo">Insira seu e-mail</label>
+          <div class="news__linha">
+            <input id="e-mail" name="email" type="email" required placeholder="nome@dominio.com" autocomplete="email" />
+            <button type="submit" class="news__enviar" aria-label="Assinar a newsletter"><img src="./assets/send.svg" alt="" width="20" height="20" /></button>
+          </div>
+          <fieldset class="news__frequencia">
+            <legend>Com que frequência?</legend>
+            <label><input type="radio" name="frequencia" value="Diária" required /> Diária</label>
+            <label><input type="radio" name="frequencia" value="Semanal" /> Semanal</label>
+          </fieldset>
+        </form>
+
+        <a href="https://douglasabnovato.medium.com/" target="_blank" rel="noopener" class="news__ler">Deixe-me ler primeiro <img src="./assets/arrow-right.svg" alt="" width="22" height="22" /></a>
+      </section>
+      <div class="news__banner">
+        <img src="./assets/read_news.jpg" alt="Pessoa lendo notícias no celular com uma xícara de café" />
+      </div>
+    </main>
+    <script src="./main.js"></script>
+<!-- learnTECH · volta ao catálogo UX Design -->
+<style>
+.lt-voltar{position:fixed;left:18px;bottom:18px;z-index:99998;display:inline-flex;align-items:center;gap:9px;
+padding:11px 16px;border-radius:999px;background:rgba(10,14,39,.92);border:1px solid rgba(0,212,212,.42);
+color:#eaf0f7;text-decoration:none;font:700 14px/1 "Segoe UI",system-ui,-apple-system,Arial,sans-serif;
+box-shadow:0 12px 30px rgba(0,0,0,.34);backdrop-filter:blur(10px);
+transition:transform .2s ease,border-color .2s ease,background .2s ease;-webkit-font-smoothing:antialiased}
+.lt-voltar:hover{transform:translateY(-2px);border-color:#00d4d4;background:rgba(10,14,39,.98);color:#eaf0f7}
+.lt-voltar:focus-visible{outline:3px solid #00d4d4;outline-offset:3px}
+.lt-voltar__i{display:inline-grid;place-items:center;width:24px;height:24px;border-radius:999px;
+background:rgba(0,212,212,.16);color:#00d4d4;font-size:14px}
+@media (max-width:640px){.lt-voltar{left:12px;bottom:12px;padding:10px 13px;font-size:13px}
+.lt-voltar__t{display:none}}
+.lt-espaco{height:86px;flex:none;pointer-events:none}
+@media print{.lt-voltar,.lt-espaco{display:none}}
+</style>
+<div class="lt-espaco" aria-hidden="true"></div>
+<a class="lt-voltar" href="../../index.html" aria-label="Voltar ao catálogo UX Design">
+  <span class="lt-voltar__i" aria-hidden="true">&#8592;</span>
+  <span class="lt-voltar__t">Voltar ao portfólio</span>
+</a>
+<!-- fim · volta ao catálogo -->
+</body>
+</html>

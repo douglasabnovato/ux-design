@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffee Experience</title>
+    
+    <link rel="stylesheet" href="./styles/style.css"> 
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../shared/lt-base.css" />
+  <link rel="stylesheet" href="../../shared/lt-feedback.css" />
+  <style>:root{--lt-cor:#8257e5;--lt-fundo:#121214;--lt-texto:#e1e1e6;--lt-suave:#a8a8b3;--lt-borda:rgba(255,255,255,.14)}.ficha-cafe__dados{display:grid;grid-template-columns:auto 1fr;gap:6px 14px;margin:14px 0}.ficha-cafe__dados dt{color:#a8a8b3}.ficha-cafe__dados dd{margin:0}.ficha-cafe__total{font-weight:700}</style>
+  <script src="../../shared/lt-feedback.js"></script>
+  <meta name="description" content="Landing page de um café virtual, com vitrine de produtos e pedido online." />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Rocket Coffee · UX Design" />
+  <meta property="og:description" content="Landing page de um café virtual, com vitrine de produtos e pedido online." />
+  <meta property="og:url" content="https://douglasabnovato.github.io/ux-design/projects/rocket-coffee/" />
+  <meta property="og:image" content="https://douglasabnovato.github.io/ux-design/assets/rocket-coffee.jpg" />
+</head>
+<body>
+
+    <header>
+        <nav class="menu-section">
+            <div class="container">
+                <img src="assets/coffee-logo.jpg" alt="learnTECH Logo" class="logo">
+                
+                <div class="menu-toggle">
+                    <div class="one"></div>
+                    <div class="two"></div>
+                    <div class="three"></div>
+                </div>
+
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#menu">Menu</a></li>
+                    <li><a href="#gallery">Galeria</a></li>
+                    <li><a href="#cultivo">Processo</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="container">
+                <h1>O café que impulsiona o seu <span>código.</span></h1>
+                <p>Descubra a ciência por trás do grão perfeito na vitrine learnTECH.</p>
+                <a href="#menu" class="button">Explorar Menu</a>
+            </div>
+            <div class="blur-effect"></div>
+        </section>
+
+        <section id="fusion" class="fusion-highlight">
+            <div class="fusion-overlay"></div>
+            <div class="container">
+                <div class="fusion-content">
+                    <span class="tag-tech">EDIÇÃO LIMITADA</span>
+                    <h2 class="fusion-title">A Arte do Grão <br><span>Digital</span></h2>
+                    
+                    <div class="glass-info">
+                        <p>
+                            Unimos a tradição do <strong>Grão Moente</strong> com a energia pulsante da 
+                            <strong>Planet Coffee</strong>. Sinta o aroma do café real processado com 
+                            precisão técnica.
+                        </p>
+                        <div class="fusion-stats">
+                            <div class="stat-item">
+                                <span class="stat-value">100%</span>
+                                <span class="stat-label">Arábica</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value">Neon</span>
+                                <span class="stat-label">Roast</span>
+                            </div>
+                        </div>
+                        <a href="#menu" class="btn-fusion">EXPERIMENTAR AGORA</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="menu" class="cards-container">
+            <div class="container">
+                <header class="section-header">
+                    <h2>Menu de Especialidades</h2>
+                    <p>Filtre por perfil sensorial ou método de preparo.</p>
+                </header>
+                <div class="cards" id="products-grid">
+                    </div>
+            </div>
+        </section>
+
+        <section id="gallery" class="orbital-carousel">
+            <div class="container">
+                <div class="carousel-header">
+                    <span class="tag-tech">FUSION ORBITAL</span>
+                    <h2>Da Colheita ao <span>Código</span></h2>
+                </div>
+
+                <div class="carousel-container">
+                    <div class="carousel-track">
+                        <div class="carousel-card"><img src="assets/insp/cafe-1.jpg" alt="Origin"><div class="card-overlay"><span>Origin</span></div></div>
+                        <div class="carousel-card"><img src="assets/insp/cafe-2.jpg" alt="Selection"><div class="card-overlay"><span>Selection</span></div></div>
+                        <div class="carousel-card"><img src="assets/insp/cafe-3.jpg" alt="Roast"><div class="card-overlay"><span>Roast</span></div></div>
+                        <div class="carousel-card active"><img src="assets/insp/cafe-4.jpg" alt="Grind"><div class="card-overlay"><span>Grind</span></div></div>
+                        <div class="carousel-card"><img src="assets/insp/cafe-5.jpg" alt="Brewing"><div class="card-overlay"><span>Brewing</span></div></div>
+                        <div class="carousel-card"><img src="assets/insp/cafe-6.jpg" alt="Taste"><div class="card-overlay"><span>Taste</span></div></div>
+                        <div class="carousel-card"><img src="assets/insp/cafe-7.jpg" alt="Power Up"><div class="card-overlay"><span>Power Up</span></div></div>
+                        <div class="carousel-card"><img src="assets/insp/cafe-8.jpg" alt="Deep Work"><div class="card-overlay"><span>Deep Work</span></div></div>
+                        <div class="carousel-card"><img src="assets/insp/cafe-9.jpg" alt="Ship It"><div class="card-overlay"><span>Ship It</span></div></div>
+                    </div>
+                </div>
+
+                <div class="carousel-controls">
+                    <button class="control-btn prev">&#10094;</button>
+                    <div class="indicators">
+                        <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+                        <span class="dot active"></span><span class="dot"></span><span class="dot"></span>
+                        <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+                    </div>
+                    <button class="control-btn next">&#10095;</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="cultivo" class="rocket-brew-fusion">
+            <div class="fusion-content container">
+                <div class="content tech-portal">
+                    <span class="tag-fusion">MÉTODOS</span>
+                    <h2 class="section-title">A Arte do <br><span>Preparo</span></h2>
+                    <p>Do <span class="neon-highlight">V60</span> à <span class="neon-highlight">Prensa Francesa</span>, cada técnica extrai uma nota diferente do software orgânico que chamamos de grão.</p>
+                </div>
+                <div class="image organic-brew">
+                    <img src="assets/rocket-coffee-1.jpg" alt="Rocket Coffee Cup">
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <img src="assets/coffee-logo.jpg" alt="learnTECH Logo" class="logo">
+                <p>O café que processa o futuro, servido no presente.</p>
+            </div>
+            <div class="footer-nav">
+                <h4>Sitemap</h4>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#menu">Menu</a></li>
+                    <li><a href="#gallery">Galeria</a></li>
+                    <li><a href="#cultivo">Processo</a></li>
+                </ul>
+            </div>
+            <div class="footer-actions">
+                <h4>Conecte-se</h4>
+                <div class="social-icons">
+                    <a href="#" class="social-link">IG</a>
+                    <a href="#" class="social-link">LI</a>
+                </div>
+                <a href="#home" class="back-to-top">
+                    <span>VOLTAR AO TOPO</span>
+                </a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 learnTECH Ecosystem. <span>// Codificado com cafeína.</span></p>
+        </div>
+    </footer>
+
+    <script type="module" src="main.js"></script>
+<!-- learnTECH · volta ao catálogo UX Design -->
+<style>
+.lt-voltar{position:fixed;left:18px;bottom:18px;z-index:99998;display:inline-flex;align-items:center;gap:9px;
+padding:11px 16px;border-radius:999px;background:rgba(10,14,39,.92);border:1px solid rgba(0,212,212,.42);
+color:#eaf0f7;text-decoration:none;font:700 14px/1 "Segoe UI",system-ui,-apple-system,Arial,sans-serif;
+box-shadow:0 12px 30px rgba(0,0,0,.34);backdrop-filter:blur(10px);
+transition:transform .2s ease,border-color .2s ease,background .2s ease;-webkit-font-smoothing:antialiased}
+.lt-voltar:hover{transform:translateY(-2px);border-color:#00d4d4;background:rgba(10,14,39,.98);color:#eaf0f7}
+.lt-voltar:focus-visible{outline:3px solid #00d4d4;outline-offset:3px}
+.lt-voltar__i{display:inline-grid;place-items:center;width:24px;height:24px;border-radius:999px;
+background:rgba(0,212,212,.16);color:#00d4d4;font-size:14px}
+@media (max-width:640px){.lt-voltar{left:12px;bottom:12px;padding:10px 13px;font-size:13px}
+.lt-voltar__t{display:none}}
+.lt-espaco{height:86px;flex:none;pointer-events:none}
+@media print{.lt-voltar,.lt-espaco{display:none}}
+</style>
+<div class="lt-espaco" aria-hidden="true"></div>
+<a class="lt-voltar" href="../../index.html" aria-label="Voltar ao catálogo UX Design">
+  <span class="lt-voltar__i" aria-hidden="true">&#8592;</span>
+  <span class="lt-voltar__t">Voltar ao portfólio</span>
+</a>
+<!-- fim · volta ao catálogo -->
+</body>
+</html>

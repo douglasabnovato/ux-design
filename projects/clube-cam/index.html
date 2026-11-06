@@ -1,0 +1,973 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Clube CAM | ABC da Construção: uma landing page de campanha com benefícios exclusivos, parceria campeã e cadastro para torcedores e clientes."
+    />
+    <meta name="theme-color" content="#0b0b0b" />
+    <meta name="author" content="douglasabnovato" />
+    <title>CAM | ABC da Construção</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="./public/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./public/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./public/favicon-16x16.png">
+    <link rel="manifest" href="./public/site.webmanifest">
+
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="../../shared/lt-base.css" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Clube CAM · UX Design" />
+  <meta property="og:description" content="Interface moderna para gerenciar eventos e conectar membros do clube." />
+  <meta property="og:url" content="https://douglasabnovato.github.io/ux-design/projects/clube-cam/" />
+  <meta property="og:image" content="https://douglasabnovato.github.io/ux-design/assets/clube-cam.jpg" />
+</head> 
+  <body>  
+    <!-- Header --> 
+    <header class="lp-header" id="topo">
+      <div class="lp-header__inner">
+        <a href="#topo" class="lp-header__brand" aria-label="Ir para o topo da página">
+          <span class="lp-header__brand-frame">
+            <img
+              src="./assets/abc-logo-branca-cinza.jpg"
+              alt="ABC da Construção"
+              class="lp-header__logo"
+            />
+          </span>
+        </a>
+
+        <button
+          class="lp-header__menu-btn"
+          type="button"
+          aria-label="Abrir menu"
+          aria-controls="main-navigation"
+          aria-expanded="false"
+          id="menuToggle"
+        >
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </button>
+
+        <nav class="lp-header__nav" id="main-navigation" aria-label="Navegação principal">
+          <a href="#home" class="lp-header__link">Home</a>
+          <a href="#campanha" class="lp-header__link">Campanha</a>
+          <a href="#beneficios" class="lp-header__link">Benefícios</a>
+          <a href="#sobre" class="lp-header__link">ABC da Construção</a>
+          <a href="#duvidas" class="lp-header__link">Dúvidas</a> 
+        </nav>
+
+        <a href="#cadastro" class="lp-header__cta" id="openModalButtonHeader">Cadastre-se</a>
+      </div>
+    </header>
+    <!-- FIM Header -->
+
+    <main>
+      <!-- hero -->
+      <section id="home" class="hero">
+        <div class="hero-content">
+          <div class="hero-logo">
+            <img
+              src="./assets/abc-logo-branca-cinza.jpg"
+              alt="Galo e ABC da Construção"
+              width="140"
+            />
+          </div>
+
+          <h1>ABC da Construção e o Galo na construção do sucesso</h1>
+
+          <p>
+            Faça o seu cadastro e tenha acesso a benefícios exclusivos dessa parceria
+            campeã! Marque esse golaço.
+          </p>
+
+          <button class="cta-button" id="heroButton" type="button">Cadastre-se</button>
+        </div>
+      </section>
+
+      <!-- campanha -->
+      <section id="campanha" class="section">
+        <h2 class="section-title">A campanha</h2>
+        <p class="section-text">
+          Uma ativação moderna para aproximar torcedores e clientes da rede ABC
+          da Construção. Descubra ofertas, vantagens e uma jornada personalizada
+          para sua obra ou reforma.
+        </p>
+
+        <div class="campanha-grid">
+          <article class="campanha-card">
+            <h3>Conectando paixão e construção</h3>
+            <p>
+              A campanha destaca a parceria entre a ABC e o clube, entregando
+              benefícios exclusivos em uma comunicação visual forte e envolvente.
+            </p>
+          </article>
+
+          <article class="campanha-card">
+            <h3>Experiência na Guide Shop</h3>
+            <p>
+              Encontre a Guide Shop mais próxima e receba atendimento especializado
+              para escolher os melhores acabamentos com preço e qualidade.
+            </p>
+          </article>
+        </div>
+
+        <div class="cards-row">
+          <div class="feature-card">
+            <h3>MAIOR</h3>
+            <p>Rede brasileira de acabamentos com atuação em 10 estados.</p>
+          </div>
+
+          <div class="feature-card">
+            <h3>+30.000</h3>
+            <p>Produtos disponíveis para sua obra em um único lugar.</p>
+          </div>
+
+          <div class="feature-card">
+            <h3>BENEFÍCIOS</h3>
+            <p>Ofertas, cupons e ações especiais para clientes cadastrados.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Seção 1: Emoção da comemoração -->
+      <section id="emocao-comemoracao" class="section section-emocao">
+        <div class="container">
+          <div class="section-emocao__grid">
+            <div class="section-emocao__content">
+              <span class="section-emocao__kicker">A emoção do Galo em destaque</span>
+
+              <h2 class="section-title section-emocao__title">
+                A comemoração que faz a torcida sentir de verdade
+              </h2>
+
+              <p class="section-text section-emocao__text">
+                Quando o Galo celebra, a emoção vai além do campo. Essa parceria foi criada para transformar esse sentimento em uma experiência mais próxima, mais intensa e mais marcante para torcedores e clientes.
+              </p>
+
+              <div class="section-emocao__bullets">
+                <div class="section-emocao__bullet">
+                  <h3>Paixão</h3>
+                  <p>Uma imagem que traduz a força da torcida e a energia da celebração.</p>
+                </div>
+
+                <div class="section-emocao__bullet">
+                  <h3>Pertencimento</h3>
+                  <p>Um convite para viver a campanha como parte da história do clube.</p>
+                </div>
+
+                <div class="section-emocao__bullet">
+                  <h3>Impacto</h3>
+                  <p>Um início de jornada que prende a atenção e prepara o usuário para continuar.</p>
+                </div>
+              </div>
+            </div>
+
+            <figure class="section-emocao__media">
+              <img
+                src="./assets/CAM - comemoracao.png"
+                alt="Jogadores do Atlético Mineiro comemorando em campo"
+                class="section-emocao__image"
+              />
+            </figure>
+          </div>
+        </div>
+      </section>
+      <!-- FIM Seção 1 -->
+
+      <!-- beneficios -->
+      <section id="beneficios" class="section">
+        <div class="highlight">
+          <div class="highlight-text">
+            <h2>Dois gigantes do país renovaram essa parceria!</h2>
+            <p>
+              Descubra agora mesmo o que preparamos para você! Não fique de fora
+              dessa ativação com vantagens exclusivas e conteúdo especial.
+            </p>
+          </div>
+
+          <figure class="highlight-media">
+            <img
+              src="./assets/abc-e-cam.png"
+              alt="Parceria entre ABC da Construção e Galo"
+            />
+          </figure>
+        </div>
+      </section> 
+
+      <!-- Seção 2: Celebração com jogadores -->
+      <section id="celebracao-jogadores" class="section section-celebracao">
+        <div class="container">
+          <div class="section-celebracao__grid">
+            <figure class="section-celebracao__media">
+              <img
+                src="./assets/CAM - comemoracao jogadores.png"
+                alt="Jogadores do Atlético Mineiro comemorando juntos"
+                class="section-celebracao__image"
+              />
+            </figure>
+
+            <div class="section-celebracao__content">
+              <span class="section-celebracao__kicker">Pertencimento que contagia</span>
+
+              <h2 class="section-title section-celebracao__title">
+                Quando o time vibra junto, a torcida sente ainda mais forte
+              </h2>
+
+              <p class="section-text section-celebracao__text">
+                Essa é a energia que conecta o Galo, a torcida e a parceria com a ABC da Construção. Uma celebração coletiva que traduz união, confiança e a força de estar lado a lado em cada conquista.
+              </p>
+
+              <div class="section-celebracao__cards">
+                <article class="section-celebracao__card">
+                  <h3>União</h3>
+                  <p>O grupo celebra como um só, reforçando o sentimento de família atleticana.</p>
+                </article>
+
+                <article class="section-celebracao__card">
+                  <h3>Intensidade</h3>
+                  <p>Uma imagem vibrante para transmitir energia, movimento e emoção real.</p>
+                </article>
+
+                <article class="section-celebracao__card">
+                  <h3>Conexão</h3>
+                  <p>Torcida e clube compartilham a mesma vibração, fortalecendo a campanha.</p>
+                </article>
+              </div>
+
+              <a href="#beneficios" class="section-celebracao__cta">
+                Ver os benefícios
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- FIM Seção 2 -->
+
+      <!-- sobre -->
+      <section id="sobre" class="section" aria-labelledby="about-title">
+        <h2 class="section-title" id="about-title">Sobre a ABC da Construção</h2>
+
+        <p class="section-text">
+          A construtech com mais de 67 anos de atuação que conquistou resultados
+          como a maior rede brasileira de acabamentos. Nossa rede cresceu nove
+          vezes nos últimos anos e já conta com centenas de pontos físicos.
+        </p>
+
+        <div class="about-grid">
+          <article class="about-card">
+            <h3>Quem somos</h3>
+            <p>
+              Presente em 10 estados com mais de 400 guide shops, a ABC da
+              Construção oferece soluções completas para sua obra, desde o material
+              até a entrega com tecnologia e atendimento próximo.
+            </p>
+          </article>
+
+          <article class="about-card">
+            <h3>Nosso propósito</h3>
+            <p>
+              Ajudar você a finalizar sua obra de forma rápida, econômica e segura.
+              Com expertise em revestimentos e acabamentos, entregamos o produto
+              certo na quantidade certa.
+            </p>
+          </article>
+        </div>
+
+        <div class="stats-grid" aria-label="Indicadores da ABC da Construção">
+          <div class="stat-box">
+            <h4>67+</h4>
+            <p>Anos de atuação no mercado</p>
+          </div>
+
+          <div class="stat-box">
+            <h4>400+</h4>
+            <p>Guide shops em operação</p>
+          </div>
+
+          <div class="stat-box">
+            <h4>30K+</h4>
+            <p>Produtos disponíveis</p>
+          </div>
+
+          <div class="stat-box">
+            <h4>R$ 80M</h4>
+            <p>Investidos em infraestrutura e tecnologia</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Seção 3: A parceria em movimento -->
+      <section id="parceria-movimento" class="section section-parceria">
+        <div class="container">
+          <div class="section-parceria__grid">
+            <div class="section-parceria__content">
+              <span class="section-parceria__kicker">Presença que chega longe</span>
+
+              <h2 class="section-title section-parceria__title">
+                A parceria em movimento, levando força para todo lugar
+              </h2>
+
+              <p class="section-text section-parceria__text">
+                A ABC da Construção está onde a obra acontece. Com estrutura, capilaridade
+                e logística inteligente, a marca reforça sua presença no dia a dia de quem
+                busca qualidade, atendimento e entrega de verdade.
+              </p>
+
+              <div class="section-parceria__stats">
+                <article class="section-parceria__stat">
+                  <h3>Estrutura</h3>
+                  <p>Uma operação sólida para atender com agilidade e confiança.</p>
+                </article>
+
+                <article class="section-parceria__stat">
+                  <h3>Força</h3>
+                  <p>Uma marca grande, com presença consistente e reconhecimento nacional.</p>
+                </article>
+
+                <article class="section-parceria__stat">
+                  <h3>Presença</h3>
+                  <p>Mais perto do cliente, da loja ao canteiro, com experiência completa.</p>
+                </article>
+              </div>
+
+              <a href="#beneficios" class="section-parceria__cta">Conhecer os benefícios</a>
+            </div>
+
+            <figure class="section-parceria__media">
+              <img
+                src="./assets/abc-construcao-caminhoes.png"
+                alt="Caminhões da ABC da Construção em operação"
+                class="section-parceria__image"
+              />
+            </figure>
+          </div>
+        </div>
+      </section>
+      <!-- FIM Seção 3 -->
+
+      <!-- Seção 4: Novidades e vantagens -->
+      <section id="novidades-vantagens" class="section section-novidades">
+        <div class="container">
+          <div class="section-novidades__grid">
+            <div class="section-novidades__content">
+              <span class="section-novidades__kicker">Ofertas que chamam atenção</span>
+
+              <h2 class="section-title section-novidades__title">
+                Novidades e vantagens para quem quer mais da ABC
+              </h2>
+
+              <p class="section-text section-novidades__text">
+                A campanha traz oportunidades especiais para quem acompanha, se cadastra e quer aproveitar o melhor da ABC da Construção com benefícios pensados para o seu momento.
+              </p>
+
+              <div class="section-novidades__highlights">
+                <article class="section-novidades__card">
+                  <h3>Benefícios exclusivos</h3>
+                  <p>Condições especiais pensadas para quem faz parte da ativação.</p>
+                </article>
+
+                <article class="section-novidades__card">
+                  <h3>Mais desejo</h3>
+                  <p>Uma vitrine visual forte para despertar interesse e gerar ação.</p>
+                </article>
+
+                <article class="section-novidades__card">
+                  <h3>Mais valor</h3>
+                  <p>Produtos, ofertas e vantagens alinhados com a experiência da campanha.</p>
+                </article>
+              </div>
+
+              <ul class="section-novidades__list" aria-label="Destaques da campanha">
+                <li>Ofertas selecionadas para quem ama construir.</li>
+                <li>Condições diferenciadas em produtos e acabamentos.</li>
+                <li>Conteúdo especial para aproximar a marca do torcedor.</li>
+              </ul>
+
+              <a href="#cadastro" class="section-novidades__cta">Quero aproveitar</a>
+            </div>
+
+            <figure class="section-novidades__media">
+              <img
+                src="./assets/abc-encarte-novidades.jpg"
+                alt="Encartes e novidades da ABC da Construção"
+                class="section-novidades__image"
+              />
+            </figure>
+          </div>
+        </div>
+      </section>
+      <!-- FIM Seção 4 -->
+
+      <!-- Seção 5: O estádio e a experiência -->
+      <section id="estadio-experiencia" class="section section-estadio">
+        <div class="container">
+          <div class="section-estadio__grid">
+            <div class="section-estadio__content">
+              <span class="section-estadio__kicker">Grandeza que se sente</span>
+
+              <h2 class="section-title section-estadio__title">
+                O estádio é palco, a experiência é o que fica
+              </h2>
+
+              <p class="section-text section-estadio__text">
+                Quando a campanha ocupa esse espaço, ela não fala só de futebol. Fala de
+                dimensão, presença e da força de uma marca que participa dos momentos que
+                realmente importam para a torcida.
+              </p>
+
+              <div class="section-estadio__cards">
+                <article class="section-estadio__card">
+                  <h3>Escala</h3>
+                  <p>Uma cena ampla para transmitir a dimensão da parceria.</p>
+                </article>
+
+                <article class="section-estadio__card">
+                  <h3>Vivência</h3>
+                  <p>O jogo deixa de ser apenas jogo e vira experiência compartilhada.</p>
+                </article>
+
+                <article class="section-estadio__card">
+                  <h3>Memória</h3>
+                  <p>O ambiente ajuda a criar lembrança afetiva e valor de marca.</p>
+                </article>
+              </div>
+            </div>
+
+            <figure class="section-estadio__media">
+              <img
+                src="./assets/CAM - estadio.png"
+                alt="Estádio do Atlético Mineiro em clima de grandeza e torcida"
+                class="section-estadio__image"
+              />
+            </figure>
+          </div>
+        </div>
+      </section>
+      <!-- FIM Seção 5 -->
+<!-- Seção 6: O lance e a paixão -->
+<section id="lance-paixao" class="section section-lance">
+  <div class="container">
+    <div class="section-lance__grid">
+      <figure class="section-lance__media">
+        <img
+          src="./assets/CAM - jogador lance.png"
+          alt="Jogador do Atlético Mineiro em lance de jogo"
+          class="section-lance__image"
+        />
+      </figure>
+
+      <div class="section-lance__content">
+        <span class="section-lance__kicker">Movimento e intensidade</span>
+
+        <h2 class="section-title section-lance__title">
+          O lance acontece rápido, a paixão fica para sempre
+        </h2>
+
+        <p class="section-text section-lance__text">
+          É nessa fração de segundo que a emoção explode. A campanha usa esse clima
+          para traduzir energia, velocidade e entrega — tudo que conecta futebol,
+          torcida e construção de marca.
+        </p>
+
+        <div class="section-lance__cards">
+          <article class="section-lance__card">
+            <h3>Ação</h3>
+            <p>Uma imagem viva para mostrar potência e dinamismo.</p>
+          </article>
+
+          <article class="section-lance__card">
+            <h3>Foco</h3>
+            <p>O olhar vai direto para o momento decisivo da jogada.</p>
+          </article>
+
+          <article class="section-lance__card">
+            <h3>Emoção</h3>
+            <p>O impacto visual reforça a entrega da parceria.</p>
+          </article>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- FIM Seção 6 -->
+
+<!-- Seção 7: Torcida e pertencimento -->
+<section id="torcida-pertencimento" class="section section-torcida">
+  <div class="container">
+    <div class="section-torcida__grid">
+      <div class="section-torcida__content">
+        <span class="section-torcida__kicker">A força de uma nação</span>
+
+        <h2 class="section-title section-torcida__title">
+          Quando a torcida ocupa as arquibancadas, o sentimento vira coletivo
+        </h2>
+
+        <p class="section-text section-torcida__text">
+          Aqui a campanha encontra seu lado mais humano e mais forte. A imagem da
+          torcida reforça que essa experiência não é individual: ela é compartilhada,
+          celebrada e lembrada por muita gente ao mesmo tempo.
+        </p>
+
+        <div class="section-torcida__cards">
+          <article class="section-torcida__card">
+            <h3>Prova social</h3>
+            <p>Mostra que a energia da campanha é aceita, vivida e sentida pelo público.</p>
+          </article>
+
+          <article class="section-torcida__card">
+            <h3>Comunidade</h3>
+            <p>Cria um senso de grupo que fortalece a identificação com o clube.</p>
+          </article>
+
+          <article class="section-torcida__card">
+            <h3>Vibração</h3>
+            <p>Converte o entusiasmo da arquibancada em valor para a marca.</p>
+          </article>
+        </div>
+      </div>
+
+      <figure class="section-torcida__media">
+        <img
+          src="./assets/CAM - torcida estadio.jpg"
+          alt="Torcida do Atlético Mineiro no estádio"
+          class="section-torcida__image"
+        />
+      </figure>
+    </div>
+  </div>
+</section>
+<!-- FIM Seção 7 -->
+
+<!-- Seção 8: Viver junto com amigos -->
+<section id="amigos-campanha" class="section section-amigos">
+  <div class="container">
+    <div class="section-amigos__grid">
+      <figure class="section-amigos__media">
+        <img
+          src="./assets/CAM - vc3amigos.png"
+          alt="Três amigos vivendo o momento da campanha juntos"
+          class="section-amigos__image"
+        />
+      </figure>
+
+      <div class="section-amigos__content">
+        <span class="section-amigos__kicker">A campanha também é sobre pessoas</span>
+
+        <h2 class="section-title section-amigos__title">
+          Viver isso junto com amigos deixa tudo ainda melhor
+        </h2>
+
+        <p class="section-text section-amigos__text">
+          Essa imagem aproxima a campanha do dia a dia. Ela mostra que a experiência
+          não é só sobre clube ou produto, mas sobre os momentos compartilhados que
+          tornam a relação com a marca mais leve, real e memorável.
+        </p>
+
+        <div class="section-amigos__cards">
+          <article class="section-amigos__card">
+            <h3>Proximidade</h3>
+            <p>Uma cena que conversa com a vida real e com a linguagem do público.</p>
+          </article>
+
+          <article class="section-amigos__card">
+            <h3>Naturalidade</h3>
+            <p>Menos institucional, mais humana, mais fácil de se identificar.</p>
+          </article>
+
+          <article class="section-amigos__card">
+            <h3>Memória</h3>
+            <p>Momentos simples e verdadeiros têm mais chance de ficar na lembrança.</p>
+          </article>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- FIM Seção 8 -->
+
+<!-- Seção 9: Patrocínio e credibilidade -->
+<section id="patrocinio-credibilidade" class="section section-patrocinio">
+  <div class="container">
+    <div class="section-patrocinio__grid">
+      <div class="section-patrocinio__content">
+        <span class="section-patrocinio__kicker">Reforço institucional</span>
+
+        <h2 class="section-title section-patrocinio__title">
+          Patrocínio que gera credibilidade e sustenta a campanha
+        </h2>
+
+        <p class="section-text section-patrocinio__text">
+          O patrocínio não aparece só como assinatura. Ele reforça a seriedade da
+          parceria, mostra força de marca e ajuda o público a enxergar consistência
+          no projeto como um todo.
+        </p>
+
+        <div class="section-patrocinio__cards">
+          <article class="section-patrocinio__card">
+            <h3>Confiança</h3>
+            <p>Uma base institucional que aumenta a segurança da mensagem.</p>
+          </article>
+
+          <article class="section-patrocinio__card">
+            <h3>Autoridade</h3>
+            <p>A presença da marca legitima a campanha e amplia sua força.</p>
+          </article>
+
+          <article class="section-patrocinio__card">
+            <h3>Consistência</h3>
+            <p>Tudo conversa entre si: emoção, valor e posicionamento de marca.</p>
+          </article>
+        </div>
+      </div>
+
+      <figure class="section-patrocinio__media">
+        <img
+          src="./assets/CAM - patrocinador.png"
+          alt="Imagem de patrocínio do Atlético Mineiro com a ABC da Construção"
+          class="section-patrocinio__image"
+        />
+      </figure>
+    </div>
+  </div>
+</section>
+<!-- FIM Seção 9 -->
+ 
+      <!-- duvidas -->
+      <section id="duvidas" class="section" aria-labelledby="faq-title">
+          <h2 class="section-title" id="faq-title">Dúvidas Frequentes</h2>
+
+          <p class="section-text">
+            Esclareça as principais perguntas sobre a parceria entre ABC da
+            Construção e o clube, além das vantagens para quem se cadastra.
+          </p>
+
+          <div class="faq-list" id="faqList">
+            <article class="faq-item">
+              <button
+                class="faq-question"
+                type="button"
+                aria-expanded="false"
+                aria-controls="faq-answer-1"
+                id="faq-question-1"
+              >
+                <span>Quando foi o início da parceria?</span>
+                <span class="faq-icon" aria-hidden="true">▼</span>
+              </button>
+
+              <div class="faq-answer" id="faq-answer-1" role="region" aria-labelledby="faq-question-1" hidden>
+                <p>
+                  O início da parceria com o Clube Atlético Mineiro foi em maio de
+                  2021, quando a ABC da Construção se tornou patrocinadora oficial
+                  do clube.
+                </p>
+              </div>
+            </article>
+
+            <article class="faq-item">
+              <button
+                class="faq-question"
+                type="button"
+                aria-expanded="false"
+                aria-controls="faq-answer-2"
+                id="faq-question-2"
+              >
+                <span>Quero saber mais sobre a ABC da Construção.</span>
+                <span class="faq-icon" aria-hidden="true">▼</span>
+              </button>
+
+              <div class="faq-answer" id="faq-answer-2" role="region" aria-labelledby="faq-question-2" hidden>
+                <p>
+                  Com mais de 67 anos de história, a ABC da Construção é uma das
+                  maiores redes de acabamentos do Brasil, com estratégia digital e
+                  forte presença no varejo de materiais de obra.
+                </p>
+              </div>
+            </article>
+
+            <article class="faq-item">
+              <button
+                class="faq-question"
+                type="button"
+                aria-expanded="false"
+                aria-controls="faq-answer-3"
+                id="faq-question-3"
+              >
+                <span>Quais são as vantagens de se cadastrar?</span>
+                <span class="faq-icon" aria-hidden="true">▼</span>
+              </button>
+
+              <div class="faq-answer" id="faq-answer-3" role="region" aria-labelledby="faq-question-3" hidden>
+                <p>
+                  Ao se cadastrar você recebe ofertas, cupons, dicas, condições
+                  exclusivas e informações sobre ativações especiais da ABC da
+                  Construção.
+                </p>
+              </div>
+            </article>
+
+            <article class="faq-item">
+              <button
+                class="faq-question"
+                type="button"
+                aria-expanded="false"
+                aria-controls="faq-answer-4"
+                id="faq-question-4"
+              >
+                <span>Encontre a Guide Shop mais perto de você!</span>
+                <span class="faq-icon" aria-hidden="true">▼</span>
+              </button>
+
+              <div class="faq-answer" id="faq-answer-4" role="region" aria-labelledby="faq-question-4" hidden>
+                <p>
+                  Acesse o diretório oficial da ABC da Construção para localizar a
+                  loja mais próxima e encontrar atendimento especializado para sua
+                  obra.
+                </p>
+              </div>
+            </article>
+          </div>
+      </section>
+    </main>
+
+    <!-- Formulário -->
+     <section id="cadastro" class="signup-section" aria-labelledby="signup-title">
+      <div class="signup-container">
+        <div class="signup-copy">
+          <span class="signup-kicker">Participe da ativação</span>
+          <h2 id="signup-title">Me conta seu lado Galo e descubra o seu jeito ABC</h2>
+          <p>
+            Preencha rapidinho e receba ofertas, novidades e experiências feitas
+            para quem torce pelo CAM e gosta de construir com a ABC da Construção.
+          </p>
+
+          <ul class="signup-benefits" aria-label="Benefícios do cadastro">
+            <li>Ofertas exclusivas e novidades da ABC.</li>
+            <li>Atendimento na Guide Shop mais próxima.</li>
+            <li>Conteúdo especial para torcedores do Galo.</li>
+          </ul>
+        </div>
+        <div class="signup-card">
+          <div
+            class="form-feedback"
+            id="formFeedback"
+            role="status"
+            aria-live="polite"
+            aria-atomic="true"
+            hidden
+          >
+            <div class="form-feedback__icon" aria-hidden="true">✓</div>
+            <div class="form-feedback__content">
+              <h3 class="form-feedback__title" id="formFeedbackTitle">Tudo certo!</h3>
+              <p class="form-feedback__text" id="formFeedbackText">
+                Sua mensagem foi recebida com sucesso.
+              </p>
+            </div>
+          </div>
+          <div class="stepper" aria-label="Progresso do formulário">
+            <span class="stepper-item is-active">1</span>
+            <span class="stepper-line"></span>
+            <span class="stepper-item">2</span>
+            <span class="stepper-line"></span>
+            <span class="stepper-item">3</span>
+          </div>
+
+          <form id="landingForm" class="signup-form">
+            <div class="form-step is-active" data-step="1">
+              <h3>Começa pelo básico</h3>
+
+              <div class="form-group">
+                <label for="nome">Nome</label>
+                <input id="nome" name="nome" type="text" placeholder="Seu nome" />
+                <div class="error" id="errorNome"></div>
+              </div>
+
+              <div class="form-group">
+                <label for="sobrenome">Sobrenome</label>
+                <input id="sobrenome" name="sobrenome" type="text" placeholder="Seu sobrenome" />
+                <div class="error" id="errorSobrenome"></div>
+              </div>
+
+              <div class="form-group">
+                <label for="celular">Celular</label>
+                <input id="celular" name="celular" type="tel" placeholder="(99) 99999-9999" />
+                <div class="error" id="errorCelular"></div>
+              </div>
+
+              <div class="form-group">
+                <label for="email">E-mail</label>
+                <input id="email" name="email" type="email" placeholder="seu@email.com" />
+                <div class="error" id="errorEmail"></div>
+              </div>
+            </div>
+
+            <div class="form-step" data-step="2">
+              <h3>Seu jeito ABC</h3>
+
+              <div class="form-group">
+                <label for="estadoGuide">Estado</label>
+                <select id="estadoGuide" name="estadoGuide">
+                  <option value="">Selecione o Estado</option>
+                  <option value="BA">BA</option>
+                  <option value="DF">DF</option>
+                  <option value="ES">ES</option>
+                  <option value="GO">GO</option>
+                  <option value="MG">MG</option>
+                  <option value="MS">MS</option>
+                  <option value="PR">PR</option>
+                  <option value="RJ">RJ</option>
+                  <option value="SC">SC</option>
+                  <option value="SP">SP</option>
+                </select>
+                <div class="error" id="errorEstado"></div>
+              </div>
+
+              <div class="form-group">
+                <label for="cidadeGuide">Cidade</label>
+                <select id="cidadeGuide" name="cidadeGuide" disabled>
+                  <option value="">Escolha o estado primeiro</option>
+                </select>
+                <div class="error" id="errorCidade"></div>
+              </div>
+
+              <div class="form-group">
+                <label for="nomeGuide">Qual Guide Shop você mais gosta?</label>
+                <select id="nomeGuide" name="nomeGuide" disabled>
+                  <option value="">Escolha a cidade primeiro</option>
+                </select>
+                <div class="error" id="errorGuide"></div>
+              </div>
+
+              <div class="form-group">
+                <label for="preferenciaABC">O que você mais curte na ABC?</label>
+                <select id="preferenciaABC" name="preferenciaABC">
+                  <option value="">Selecione uma opção</option>
+                  <option value="acabamentos">Acabamentos</option>
+                  <option value="preco">Preço</option>
+                  <option value="atendimento">Atendimento</option>
+                  <option value="entrega">Entrega</option>
+                  <option value="variedade">Variedade de produtos</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-step" data-step="3">
+              <h3>Agora conta do Galo</h3>
+
+              <div class="form-group">
+                <label for="camTime">Você torce para o CAM?</label>
+                <select id="camTime" name="camTime">
+                  <option value="">Selecione</option>
+                  <option value="sim">Sim, sou Galo de coração</option>
+                  <option value="claro">Claro, acompanho sempre</option>
+                  <option value="pouco">Acompanho de vez em quando</option>
+                  <option value="nao">Não, mas adoro a parceria</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="camMomento">Qual é o seu momento mais Galo?</label>
+                <select id="camMomento" name="camMomento">
+                  <option value="">Selecione</option>
+                  <option value="jogo">Dia de jogo</option>
+                  <option value="casa">Ver com a família</option>
+                  <option value="amigos">Com os amigos</option>
+                  <option value="camisa">Vestir a camisa e apoiar</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="camMsg">Deixa uma mensagem pro Galo e pra ABC</label>
+                <textarea id="camMsg" name="camMsg" rows="4" placeholder="Escreva aqui..."></textarea>
+              </div>
+
+              <div class="checkbox-row">
+                <input aria-label="firstcheck" id="firstcheck" name="firstcheck" type="checkbox" />
+                <span>
+                  Eu concordo com a Política de Privacidade e autorizo o uso dos meus dados.
+                </span>
+              </div>
+              <div class="error" id="errorFirstcheck"></div>
+
+              <div class="checkbox-row">
+                <input aria-label="secondcheck" id="secondcheck" name="secondcheck" type="checkbox" />
+                <span>
+                  Concordo em receber e-mails, SMS e WhatsApp da ABC da Construção.
+                </span>
+              </div>
+              <div class="error" id="errorSecondcheck"></div>
+            </div>
+
+            <div class="form-actions">
+              <button class="action-button secondary" type="button" id="prevStep">Voltar</button>
+              <button class="action-button" type="button" id="nextStep">Continuar</button>
+              <button class="action-button is-hidden" type="submit" id="submitForm">Enviar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+    
+    <!-- footer -->
+    <footer class="footer" id="footer" role="contentinfo">
+      <div class="footer-container">
+        <div class="footer-top">
+          <div class="footer-item">
+            <h4>ABC da Construção</h4>
+            <p>
+              Conectando obras e torcedores com uma experiência completa em
+              acabamentos, reformas e design.
+            </p>
+          </div>
+
+          <div class="footer-item">
+            <h4>Links úteis</h4>
+            <nav class="footer-links" aria-label="Links do rodapé">
+              <a href="#home">Home</a>
+              <a href="#campanha">Campanha</a>
+              <a href="#beneficios">Benefícios</a>
+              <a href="#sobre">Sobre</a>
+              <a href="#duvidas">Dúvidas</a>
+            </nav>
+          </div>
+
+          <div class="footer-item">
+            <h4>Política</h4>
+            <p>
+              Ao se cadastrar, você concorda com a política de privacidade e o
+              envio de comunicações da ABC da Construção.
+            </p>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          © 2026 ABC da Construção. Todos os direitos reservados.
+        </div>
+      </div>
+    </footer> 
+ <script src="./script.js"></script>
+  <!-- learnTECH · volta ao catálogo UX Design -->
+<style>
+.lt-voltar{position:fixed;left:18px;bottom:18px;z-index:99998;display:inline-flex;align-items:center;gap:9px;
+padding:11px 16px;border-radius:999px;background:rgba(10,14,39,.92);border:1px solid rgba(0,212,212,.42);
+color:#eaf0f7;text-decoration:none;font:700 14px/1 "Segoe UI",system-ui,-apple-system,Arial,sans-serif;
+box-shadow:0 12px 30px rgba(0,0,0,.34);backdrop-filter:blur(10px);
+transition:transform .2s ease,border-color .2s ease,background .2s ease;-webkit-font-smoothing:antialiased}
+.lt-voltar:hover{transform:translateY(-2px);border-color:#00d4d4;background:rgba(10,14,39,.98);color:#eaf0f7}
+.lt-voltar:focus-visible{outline:3px solid #00d4d4;outline-offset:3px}
+.lt-voltar__i{display:inline-grid;place-items:center;width:24px;height:24px;border-radius:999px;
+background:rgba(0,212,212,.16);color:#00d4d4;font-size:14px}
+@media (max-width:640px){.lt-voltar{left:12px;bottom:12px;padding:10px 13px;font-size:13px}
+.lt-voltar__t{display:none}}
+.lt-espaco{height:86px;flex:none;pointer-events:none}
+@media print{.lt-voltar,.lt-espaco{display:none}}
+</style>
+<div class="lt-espaco" aria-hidden="true"></div>
+<a class="lt-voltar" href="../../index.html" aria-label="Voltar ao catálogo UX Design">
+  <span class="lt-voltar__i" aria-hidden="true">&#8592;</span>
+  <span class="lt-voltar__t">Voltar ao portfólio</span>
+</a>
+<!-- fim · volta ao catálogo -->
+</body>
+</html> 

@@ -1,0 +1,99 @@
+/*
+ * style.css · Rocket Shoes.
+ * Segue o style guide do desafio (Roboto, vermelho #FF0000, cinzas #C4C4C4
+ * e #E5E5E5), com layout em duas colunas, indicador vermelho na miniatura
+ * ativa, ponteiro nos elementos clicáveis e versão responsiva.
+ */
+:root {
+  --button: #ff0000;
+  --main-background: #c4c4c4;
+  --background: #ececec;
+  --text: #000;
+  --footer: #000;
+  --text-description: #6e6a6a;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: "Roboto", system-ui, sans-serif; color: var(--text); background: var(--background); }
+img { max-width: 100%; display: block; }
+button, a, label { cursor: pointer; }
+.pular { position: absolute; left: -999px; top: 8px; background: #fff; padding: 8px 12px; z-index: 10; }
+.pular:focus { left: 8px; }
+.pagina { min-height: 100vh; display: grid; grid-template-columns: minmax(0, 1fr); grid-template-rows: auto 1fr auto; background: linear-gradient(90deg, var(--background) 37.5%, var(--main-background) 37.5%); }
+
+/* Topo */
+.topo { display: flex; align-items: center; gap: 32px; padding: 32px 4.2vw 24px; }
+.topo__menu { display: flex; gap: clamp(20px, 5vw, 86px); list-style: none; margin-left: clamp(16px, 7vw, 110px); }
+.topo__menu a { color: var(--text); text-decoration: none; font-weight: 700; font-size: 1.4rem; text-transform: uppercase; }
+.topo__menu a:hover, .topo__menu a[aria-current="true"] { color: var(--button); }
+.busca { margin-left: auto; display: flex; align-items: center; gap: 8px; background: #fff; padding: 10px 14px; width: 220px; }
+.busca input { min-width: 0; border: 0; outline: 0; font: inherit; font-size: 1.1rem; width: 100%; background: transparent; }
+.busca:focus-within { outline: 3px solid var(--button); }
+.topo__sacola { position: relative; background: none; border: 0; margin-left: 32px; padding: 4px; }
+.topo__qtd { position: absolute; top: -4px; right: -8px; background: var(--button); color: #fff; font-size: 12px; font-weight: 700; min-width: 20px; height: 20px; line-height: 20px; border-radius: 10px; text-align: center; }
+
+/* Produto */
+.produto { display: grid; grid-template-columns: 37.5% 62.5%; align-items: center; }
+.produto > * { min-width: 0; }
+.produto__info { padding: 24px 4vw 40px 7.7vw; }
+.produto__categoria { color: var(--text-description); font-weight: 700; text-transform: uppercase; font-size: .85rem; letter-spacing: .06em; margin-bottom: 8px; }
+.produto__info h1 { font-size: clamp(2.4rem, 4.4vw, 4rem); line-height: 1.1; }
+.produto__desc { color: var(--text-description); font-weight: 700; margin: 16px 0 32px; max-width: 360px; }
+.produto__preco strong { font-size: 2.6rem; display: block; }
+.produto__preco span { color: var(--text-description); font-size: .95rem; }
+.tamanhos { border: 0; margin: 24px 0; }
+.tamanhos legend { font-weight: 700; margin-bottom: 10px; }
+.tamanhos__opcoes { display: flex; flex-wrap: wrap; gap: 8px; }
+.tamanhos__opcoes label { position: relative; }
+.tamanhos__opcoes input { position: absolute; opacity: 0; inset: 0; }
+.tamanhos__opcoes span { display: grid; place-items: center; width: 46px; height: 46px; border: 2px solid #000; font-weight: 700; background: #fff; }
+.tamanhos__opcoes input:checked + span { background: #000; color: #fff; }
+.tamanhos__opcoes input:focus-visible + span { outline: 3px solid var(--button); outline-offset: 2px; }
+.tamanhos__opcoes .esgotado span { opacity: .35; text-decoration: line-through; cursor: not-allowed; }
+.link { background: none; border: 0; text-decoration: underline; font: inherit; margin-top: 10px; color: var(--text); }
+.botao-comprar { background: var(--button); color: #fff; border: 0; font: inherit; font-weight: 700; font-size: 1.5rem; text-transform: uppercase; width: 274px; height: 90px; transition: filter .2s; }
+.botao-comprar:hover { filter: brightness(.9); }
+
+/* Galeria */
+.galeria { padding: 0 1.2vw 40px; }
+.galeria__destaque { display: grid; place-items: center; min-height: 440px; }
+.galeria__destaque img { max-height: 480px; object-fit: contain; transition: opacity .25s; }
+.galeria__miniaturas { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.6vw; list-style: none; }
+.miniatura { width: 100%; border: 0; padding: 0; background: #fff; border-bottom: 5px solid transparent; }
+.miniatura img { width: 100%; aspect-ratio: 270 / 184; object-fit: cover; }
+.miniatura[aria-pressed="true"] { border-bottom-color: var(--button); }
+.miniatura:hover { filter: brightness(.95); }
+
+/* Rodapé */
+.rodape { display: grid; grid-template-columns: 250px 1fr 30%; align-items: stretch; background: var(--background); min-height: 166px; }
+.video__capa { position: relative; display: block; width: 100%; height: 100%; border: 0; padding: 0; background: #000; }
+.video__capa img { width: 100%; height: 100%; object-fit: cover; }
+.video__play { position: absolute; left: 90px; top: 48px; width: 70px; height: 70px; border-radius: 50%; background: #fff; }
+.video__play::after { content: ""; position: absolute; left: 28px; top: 23px; border-left: 18px solid #000; border-top: 12px solid transparent; border-bottom: 12px solid transparent; }
+.rodape__redes { display: flex; align-items: center; justify-content: space-around; list-style: none; padding: 0 24px; flex-wrap: wrap; gap: 12px; }
+.rodape__redes a { color: var(--text); text-decoration: none; font-weight: 700; text-transform: uppercase; }
+.rodape__redes a:hover { color: var(--button); }
+.rodape__explore { background: var(--footer); color: #fff; border: 0; font: inherit; font-weight: 700; font-size: 1.6rem; text-transform: uppercase; display: flex; align-items: center; justify-content: center; gap: 16px; }
+.rodape__explore img { filter: invert(1); }
+.rodape__explore:hover { background: #222; }
+.guia { width: 100%; border-collapse: collapse; }
+.guia th, .guia td { border: 1px solid #ddd; padding: 8px; text-align: center; }
+
+@media (max-width: 960px) {
+  .pagina { background: var(--background); }
+  .topo { flex-wrap: wrap; gap: 16px; }
+  .topo__menu { order: 3; width: 100%; margin: 0; justify-content: space-between; gap: 8px; }
+  .topo__menu a { font-size: 1rem; }
+  .busca { width: auto; flex: 1; min-width: 0; }
+  .topo__sacola { margin-left: 8px; }
+  .produto { grid-template-columns: 1fr; }
+  .produto__info { padding: 16px 5vw 32px; order: 2; }
+  .galeria { background: var(--main-background); padding: 16px 5vw 24px; }
+  .galeria__destaque { min-height: 0; }
+  .botao-comprar { width: 100%; height: 64px; }
+  .rodape { grid-template-columns: 1fr; }
+  .rodape__video { height: 200px; }
+  .video__play { left: calc(50% - 35px); top: calc(50% - 35px); }
+  .rodape__redes { padding: 20px 5vw; }
+  .rodape__explore { padding: 28px; }
+}
+/* fim de style.css */

@@ -1,0 +1,130 @@
+/*=== COLOR PICKER =================================*/
+#color-picker {
+  position: fixed;
+  top: calc(var(--nav-height) + 2rem);
+  left: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  z-index: 99;
+}
+
+.color-dot {
+  width: 2.8rem;
+  height: 2.8rem;
+  border-radius: 50%;
+  border: 2px solid white;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
+}
+
+.color-dot:hover {
+  transform: scale(1.15);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.color-dot.active {
+  border: 3px solid var(--primary-color);
+  transform: scale(1.2);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Garante que o seletor apareça sobre o menu mobile */
+body.menu-expanded #color-picker {
+  visibility: visible;
+  z-index: 101;
+}
+
+/*=== SWIPER (Testimonials) ========================*/
+.swiper {
+  width: 100%;
+  height: auto;
+  padding-bottom: 6rem; /* Espaço para a paginação */
+}
+
+.swiper-slide {
+  height: auto;
+  display: flex;
+  justify-content: center;
+}
+
+#testimonials .card {
+  padding: 3.2rem;
+  text-align: left;
+  background: var(--brand-beige);
+  border: 1px solid var(--brand-light);
+  border-radius: 0.6rem;
+  width: 100%;
+}
+
+#testimonials p {
+  font-style: italic;
+  color: var(--headline);
+  margin-bottom: 2.4rem;
+  line-height: 150%;
+}
+
+#testimonials .user {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+}
+
+#testimonials .user img {
+  width: 4.2rem;
+  height: 4.2rem;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+#testimonials .user cite {
+  font-style: normal;
+  font-weight: 700;
+  color: var(--headline);
+}
+
+/* Customização das cores do Swiper */
+.swiper-pagination-bullet {
+  width: 1.2rem;
+  height: 1.2rem;
+}
+
+.swiper-pagination-bullet-active {
+  background: var(--primary-color) !important;
+}
+
+/*=== BACK TO TOP =================================*/
+#backToTopButton {
+  position: fixed;
+  bottom: 1rem;
+  right: 2.5rem;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(100%);
+  transition: 200ms;
+  z-index: 90;
+}
+
+#backToTopButton.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* Força o preenchimento do círculo com a cor do tema */
+#backToTopButton circle {
+  fill: var(--primary-color);
+  transition: fill 0.3s; /* Suaviza a troca de cor */
+}
+
+/* Estado quando o botão está sobre o Footer (que já é colorido) */
+#backToTopButton.footer-visible circle {
+  fill: var(--white); /* Círculo fica branco */
+}
+
+#backToTopButton.footer-visible path {
+  stroke: var(--primary-color); /* Setas ficam com a cor do tema */
+}

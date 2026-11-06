@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Meus Treinos · ficha ABC com cronômetro de descanso</title>
+  <meta name="description" content="App de treino ABC: marque as séries, registre cargas, use o cronômetro de descanso e conclua o treino com resumo." />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Meus Treinos · ficha ABC com cronômetro de descanso" />
+  <meta property="og:description" content="App de treino ABC: marque as séries, registre cargas, use o cronômetro de descanso e conclua o treino com resumo." />
+  <meta property="og:url" content="https://douglasabnovato.github.io/ux-design/projects/meus-treinos/" />
+  <meta property="og:image" content="https://douglasabnovato.github.io/ux-design/assets/meus-treinos.jpg" />
+  <link rel="shortcut icon" href="./public/treino.png" type="image/x-icon" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;600;800&display=swap" />
+  <link rel="stylesheet" href="./style.css" />
+  <link rel="stylesheet" href="../../shared/lt-base.css" />
+  <link rel="stylesheet" href="../../shared/lt-feedback.css" />
+  <script src="../../shared/lt-feedback.js"></script>
+</head>
+<body>
+  <a class="pular" href="#ficha">Pular para a ficha</a>
+  <header class="topo">
+    <div class="container topo__linha">
+      <a href="#" class="marca"><b>MT</b> Meus Treinos</a>
+      <nav aria-label="Principal">
+        <ul class="menu">
+          <li><a href="#ficha">Ficha do dia</a></li>
+          <li><a href="#grupos">Grupos</a></li>
+          <li><a href="#instrutores">Instrutores</a></li>
+          <li><a href="#avaliacao">Avaliação</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" aria-labelledby="hero-titulo">
+      <div class="container">
+        <h1 id="hero-titulo">Seu treino ABC, série por série</h1>
+        <p>Marque cada série, anote a carga e deixe o cronômetro cuidar do descanso.</p>
+        <a class="botao" href="#ficha">Começar o treino de hoje</a>
+      </div>
+    </section>
+
+    <section class="container ficha" id="ficha" aria-labelledby="ficha-titulo">
+      <div class="ficha__topo">
+        <h2 id="ficha-titulo">Ficha do dia</h2>
+        <div class="abas" role="tablist" aria-label="Escolha o treino" id="abas"></div>
+      </div>
+      <div class="progresso" aria-hidden="true"><span id="barra"></span></div>
+      <p class="progresso__texto" id="progresso-texto" role="status"></p>
+      <div role="tabpanel" id="painel" tabindex="0">
+        <ol class="exercicios" id="lista"></ol>
+      </div>
+      <div class="ficha__acoes">
+        <button type="button" class="botao" id="btn-concluir">Concluir treino</button>
+        <button type="button" class="botao botao--linha-escura" id="btn-zerar">Recomeçar ficha</button>
+      </div>
+      <div class="historico" id="historico" aria-live="polite"></div>
+    </section>
+
+    <aside class="cronometro" id="cronometro" hidden aria-label="Cronômetro de descanso">
+      <p>Descanso</p>
+      <strong id="crono-tempo" aria-live="off">1:00</strong>
+      <div>
+        <button type="button" id="crono-mais">+15s</button>
+        <button type="button" id="crono-parar">Pular</button>
+      </div>
+    </aside>
+
+    <section class="container" id="grupos" aria-labelledby="grupos-titulo">
+      <h2 id="grupos-titulo">Grupos musculares</h2>
+      <p class="secao__sub">Toque em um grupo para abrir o treino que trabalha ele.</p>
+      <ul class="grupos">
+        <li><button type="button" class="grupo" data-ficha="C" aria-label="Costas: abrir o Treino C"><img src="./images/treinos-2.jpg" alt="" loading="lazy" /><span>Costas</span><small>Treino C</small></button></li>
+        <li><button type="button" class="grupo" data-ficha="B" aria-label="Peito: abrir o Treino B"><img src="./images/treinos-3.jpg" alt="" loading="lazy" /><span>Peito</span><small>Treino B</small></button></li>
+        <li><button type="button" class="grupo" data-ficha="C" aria-label="Bíceps: abrir o Treino C"><img src="./images/treinos-4.webp" alt="" loading="lazy" /><span>Bíceps</span><small>Treino C</small></button></li>
+        <li><button type="button" class="grupo" data-ficha="B" aria-label="Tríceps: abrir o Treino B"><img src="./images/treinos-6.jpg" alt="" loading="lazy" /><span>Tríceps</span><small>Treino B</small></button></li>
+        <li><button type="button" class="grupo" data-ficha="A" aria-label="Pernas: abrir o Treino A"><img src="./images/treinos-5.jpg" alt="" loading="lazy" /><span>Pernas</span><small>Treino A</small></button></li>
+        <li><button type="button" class="grupo" data-ficha="C" aria-label="Trapézio: abrir o Treino C"><img src="./images/treinos-3.jpg" alt="" loading="lazy" /><span>Trapézio</span><small>Treino C</small></button></li>
+        <li><button type="button" class="grupo" data-ficha="A" aria-label="Panturrilha: abrir o Treino A"><img src="./images/treinos-4.webp" alt="" loading="lazy" /><span>Panturrilha</span><small>Treino A</small></button></li>
+        <li><button type="button" class="grupo" data-ficha="C" aria-label="Abdominal: abrir o Treino C"><img src="./images/treinos-6.jpg" alt="" loading="lazy" /><span>Abdominal</span><small>Treino C</small></button></li>
+      </ul>
+    </section>
+
+    <section class="container" id="instrutores" aria-labelledby="inst-titulo">
+      <h2 id="inst-titulo">Instrutores</h2>
+      <p class="secao__sub">Profissionais para ajustar a sua ficha e acompanhar a evolução.</p>
+      <ul class="pessoas">
+        <li class="pessoa"><img src="./images/teacher-1.jpg" alt="Retrato de Carla Mendes" loading="lazy" /><h3>Carla Mendes</h3><p>Musculação e hipertrofia</p><button type="button" class="botao botao--linha" data-instrutor="Carla Mendes">Falar com Carla</button></li>
+        <li class="pessoa"><img src="./images/teacher-2.jpeg" alt="Retrato de Bruno Alves" loading="lazy" /><h3>Bruno Alves</h3><p>Funcional e mobilidade</p><button type="button" class="botao botao--linha" data-instrutor="Bruno Alves">Falar com Bruno</button></li>
+        <li class="pessoa"><img src="./images/teacher-3.webp" alt="Retrato de Paula Rocha" loading="lazy" /><h3>Paula Rocha</h3><p>Emagrecimento e condicionamento</p><button type="button" class="botao botao--linha" data-instrutor="Paula Rocha">Falar com Paula</button></li>
+        <li class="pessoa"><img src="./images/teacher-4.jpg" alt="Retrato de Diego Lima" loading="lazy" /><h3>Diego Lima</h3><p>Força e powerlifting</p><button type="button" class="botao botao--linha" data-instrutor="Diego Lima">Falar com Diego</button></li>
+      </ul>
+    </section>
+
+    <section class="container" id="suplementos" aria-labelledby="supl-titulo">
+      <h2 id="supl-titulo">Suplementação</h2>
+      <p class="secao__sub">Informação geral. Converse com nutricionista ou médico antes de usar qualquer suplemento.</p>
+      <ul class="cartoes">
+        <li class="cartao"><img src="./images/supe-1.avif" alt="Embalagem ilustrativa de proteína" loading="lazy" /><h3>Proteína</h3><p>Ajuda a bater a meta diária de proteína quando a alimentação não alcança.</p></li>
+        <li class="cartao"><img src="./images/supe-2.webp" alt="Embalagem ilustrativa de creatina" loading="lazy" /><h3>Creatina</h3><p>Uma das mais estudadas para força e desempenho em treinos curtos e intensos.</p></li>
+        <li class="cartao"><img src="./images/supe-3.png" alt="Embalagem ilustrativa de hidratação" loading="lazy" /><h3>Hidratação</h3><p>Água e eletrólitos em treinos longos ou em dias quentes.</p></li>
+        <li class="cartao"><img src="./images/supe-4.png" alt="Embalagem ilustrativa de multivitamínico" loading="lazy" /><h3>Multivitamínico</h3><p>Complemento pontual quando há carência identificada em exames.</p></li>
+      </ul>
+    </section>
+
+    <section class="container" id="evolucao" aria-labelledby="evo-titulo">
+      <h2 id="evo-titulo">Evolução dos alunos</h2>
+      <ul class="depos">
+        <li class="depo"><img src="./images/after-1.webp" alt="Foto de progresso de Ana" loading="lazy" /><blockquote>“Em 4 meses de ABC ganhei força e disposição para o dia a dia.”</blockquote><p>Ana, 34 anos</p></li>
+        <li class="depo"><img src="./images/after-2.webp" alt="Foto de progresso de Rafael" loading="lazy" /><blockquote>“O cronômetro de descanso mudou meu ritmo. Treino mais rápido e melhor.”</blockquote><p>Rafael, 28 anos</p></li>
+        <li class="depo"><img src="./images/after-3.jpg" alt="Foto de progresso de Juliana" loading="lazy" /><blockquote>“Registrar as cargas me mostrou a evolução semana a semana.”</blockquote><p>Juliana, 41 anos</p></li>
+        <li class="depo"><img src="./images/after-4.jpg" alt="Foto de progresso de Marcos" loading="lazy" /><blockquote>“Com a avaliação física, ajustamos a ficha sem dores.”</blockquote><p>Marcos, 52 anos</p></li>
+      </ul>
+    </section>
+
+    <section class="container avaliacao" id="avaliacao" aria-labelledby="av-titulo">
+      <div>
+        <h2 id="av-titulo">Agende uma avaliação física</h2>
+        <p>Medidas, bioimpedância e ajuste da ficha com um instrutor. Resposta pelo WhatsApp.</p>
+        <img src="./images/map.jpg" alt="Mapa com a localização da academia" loading="lazy" />
+      </div>
+      <form id="form-avaliacao" novalidate>
+        <div class="campo"><label for="av-nome">Nome</label><input id="av-nome" name="nome" required minlength="3" autocomplete="name" /></div>
+        <div class="campo"><label for="av-tel">WhatsApp</label><input id="av-tel" name="telefone" type="tel" required autocomplete="tel" placeholder="(32) 98836-7667" /></div>
+        <div class="campo"><label for="av-obj">Objetivo</label>
+          <select id="av-obj" name="objetivo" required><option value="">Escolha uma opção</option><option>Hipertrofia</option><option>Emagrecimento</option><option>Condicionamento</option><option>Saúde e mobilidade</option></select>
+        </div>
+        <div class="campo"><label for="av-data">Data preferida</label><input id="av-data" name="data" type="date" required /></div>
+        <button type="submit" class="botao">Agendar avaliação</button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="rodape"><div class="container"><p>Meus Treinos · projeto de estudo · <a href="https://linktr.ee/douglasabnovato" target="_blank" rel="noopener">@douglasabnovato</a></p></div></footer>
+
+  <script src="./dados.js"></script>
+  <script src="./script.js"></script>
+<!-- learnTECH · volta ao catálogo UX Design -->
+<style>
+.lt-voltar{position:fixed;left:18px;bottom:18px;z-index:99998;display:inline-flex;align-items:center;gap:9px;
+padding:11px 16px;border-radius:999px;background:rgba(10,14,39,.92);border:1px solid rgba(0,212,212,.42);
+color:#eaf0f7;text-decoration:none;font:700 14px/1 "Segoe UI",system-ui,-apple-system,Arial,sans-serif;
+box-shadow:0 12px 30px rgba(0,0,0,.34);backdrop-filter:blur(10px);
+transition:transform .2s ease,border-color .2s ease,background .2s ease;-webkit-font-smoothing:antialiased}
+.lt-voltar:hover{transform:translateY(-2px);border-color:#00d4d4;background:rgba(10,14,39,.98);color:#eaf0f7}
+.lt-voltar:focus-visible{outline:3px solid #00d4d4;outline-offset:3px}
+.lt-voltar__i{display:inline-grid;place-items:center;width:24px;height:24px;border-radius:999px;
+background:rgba(0,212,212,.16);color:#00d4d4;font-size:14px}
+@media (max-width:640px){.lt-voltar{left:12px;bottom:12px;padding:10px 13px;font-size:13px}
+.lt-voltar__t{display:none}}
+.lt-espaco{height:86px;flex:none;pointer-events:none}
+@media print{.lt-voltar,.lt-espaco{display:none}}
+</style>
+<div class="lt-espaco" aria-hidden="true"></div>
+<a class="lt-voltar" href="../../index.html" aria-label="Voltar ao catálogo UX Design">
+  <span class="lt-voltar__i" aria-hidden="true">&#8592;</span>
+  <span class="lt-voltar__t">Voltar ao portfólio</span>
+</a>
+<!-- fim · volta ao catálogo -->
+</body>
+</html>

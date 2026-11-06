@@ -1,0 +1,140 @@
+/*
+ * style.css · Rocket NFTs.
+ * Style guide do desafio (Montserrat, fundo #0e0e0e, destaque #ff5b50,
+ * cartões #252525), grade de fundo no hero, animações suaves que respeitam
+ * a redução de movimento e layout responsivo.
+ */
+:root {
+  --body-background: #0e0e0e;
+  --color-logo: #ff5b50;
+  --card-color: #252525;
+  --text-color: #fff;
+  --subtitle-color: #8d8a8a;
+  --black-text: #000;
+  --color-input: #0d0d0d;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { font-family: "Montserrat", system-ui, sans-serif; background: var(--body-background); color: var(--text-color); line-height: 1.5; }
+img { max-width: 100%; display: block; }
+a { color: inherit; }
+ul { list-style: none; }
+button { font: inherit; cursor: pointer; }
+.container { width: min(1120px, 100% - 40px); margin-inline: auto; }
+.pular { position: absolute; left: -999px; top: 8px; background: #fff; color: #000; padding: 8px 12px; z-index: 10; }
+.pular:focus { left: 8px; }
+.logo { font-weight: 700; font-size: 1.6rem; text-decoration: none; }
+.logo span, .titulo span, h1 span, .news span { color: var(--color-logo); }
+mark { background: none; color: var(--color-logo); text-decoration: underline; }
+
+/* Topo */
+.topo { background: url("./assets/background.png") center top / cover; }
+.topo__linha { display: flex; align-items: center; gap: 24px; padding: 28px 0; }
+.topo__linha nav { margin-left: auto; }
+.menu { display: flex; gap: 40px; margin-right: 40px; }
+.menu a { text-decoration: none; font-size: .95rem; }
+.menu a:hover { color: var(--color-logo); }
+.carteira { display: inline-flex; align-items: center; gap: 10px; background: #fff; color: var(--black-text); border: 0; padding: 10px 18px; font-weight: 700; font-size: .85rem; }
+.carteira__ponto { width: 10px; height: 10px; border-radius: 50%; background: #aaa; }
+.carteira.conectada .carteira__ponto { background: #1ec27c; }
+.carteira:hover { background: #ffe7e5; }
+
+/* Hero */
+.hero { background: url("./assets/background.png") center -100px / cover; padding-bottom: 80px; }
+.hero__grade { display: grid; grid-template-columns: 1fr 1.6fr auto; gap: 40px; align-items: start; padding: 30px 0 60px; }
+.hero__lado p { font-size: .85rem; }
+.hero__artistas { display: flex; align-items: center; gap: 12px; margin-top: 24px; }
+.hero__artistas p { font-size: .8rem; }
+.hero h1 { font-size: clamp(1.8rem, 3.6vw, 2.6rem); line-height: 1.35; }
+.selo img { animation: girar 16s linear infinite; }
+@keyframes girar { to { transform: rotate(360deg); } }
+.galeria { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.galeria__item { border: 1px solid #555; padding: 0; background: none; display: block; width: 100%; overflow: hidden; }
+.galeria__item img { width: 100%; aspect-ratio: 305 / 198; object-fit: cover; transition: transform .4s; }
+.galeria__item:hover img, .galeria__item:focus-visible img { transform: scale(1.06); }
+
+/* Sobre */
+.sobre { display: grid; grid-template-columns: 240px minmax(0, 1fr); border-block: 1px solid #333; }
+.numeros { grid-row: span 2; border-right: 1px solid #333; padding: 40px 0 40px max(20px, calc((100vw - 1120px) / 2)); display: grid; gap: 28px; align-content: center; }
+.numeros strong { display: block; font-size: 1.9rem; }
+.numeros span { color: var(--subtitle-color); font-size: .85rem; }
+.sobre__textos { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; padding: 48px 48px 40px; font-size: .9rem; }
+.sobre__textos a { display: inline-block; margin-top: 16px; }
+.sobre__banner { width: 100%; height: 220px; object-fit: cover; }
+
+/* Populares */
+.titulo { font-size: clamp(1.6rem, 3vw, 2.1rem); margin-bottom: 48px; }
+.titulo--centro { text-align: center; }
+.populares { padding: 110px 0 60px; }
+.populares__grade { display: grid; grid-template-columns: 1fr 1fr; gap: 56px 20%; position: relative; }
+.pop__topo { display: flex; justify-content: space-between; align-items: center; }
+.pop__topo h3 { font-size: 1.4rem; }
+.pop__meta { display: flex; justify-content: space-between; font-size: .8rem; color: var(--subtitle-color); margin: 12px 0 16px; }
+.pop__meta strong { color: var(--color-logo); }
+.pop__img { width: 100%; aspect-ratio: 350 / 200; object-fit: cover; }
+.botao { display: inline-block; margin-top: 16px; padding: 10px 22px; font-weight: 700; }
+.botao--linha { background: transparent; color: #fff; border: 1px solid var(--color-logo); }
+.botao--linha:hover { background: var(--color-logo); }
+
+/* Artistas */
+.artistas { padding: 60px 0 100px; }
+.artistas__grade { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px 48px; }
+.artista { display: flex; align-items: center; gap: 18px; width: 100%; background: var(--card-color); color: #fff; border: 0; padding: 18px; text-align: left; transition: background .2s; }
+.artista:hover, .artista[aria-pressed="true"] { background: var(--color-logo); }
+.artista img { width: 56px; height: 56px; border-radius: 50%; }
+.artista strong { display: block; font-size: .9rem; }
+.artista small { color: var(--color-logo); font-size: .8rem; }
+.artista:hover small, .artista[aria-pressed="true"] small { color: #fff; }
+.centro { text-align: center; margin-top: 48px; }
+.link-seta { background: none; border: 0; color: #fff; display: inline-flex; gap: 8px; align-items: center; font-size: .9rem; }
+.link-seta:hover { color: var(--color-logo); }
+
+/* FAQ */
+.faq { padding: 0 0 100px; }
+.faq__lista { max-width: 760px; margin: 0 auto; display: grid; gap: 12px; }
+.faq details { background: var(--card-color); padding: 18px 22px; }
+.faq summary { font-weight: 700; cursor: pointer; }
+.faq details p { color: #ccc; margin-top: 10px; font-size: .95rem; }
+
+/* Rodapé */
+.rodape { background: #1a1a1a; }
+.rodape__topo { display: flex; justify-content: space-between; align-items: center; padding: 40px 0; border-bottom: 1px solid #333; }
+.topo-btn { width: 56px; height: 56px; background: var(--color-logo); display: grid; place-items: center; transform: rotate(-45deg); }
+.topo-btn img { transform: rotate(45deg); }
+.rodape__meio { display: grid; grid-template-columns: 1fr 1.6fr; border-bottom: 1px solid #333; }
+.news { padding: 40px 40px 40px 0; border-right: 1px solid #333; }
+.news h2 { font-size: 1.3rem; font-weight: 500; margin-bottom: 20px; }
+.news__linha { display: flex; flex-wrap: wrap; }
+.news input { flex: 1; min-width: 0; background: var(--color-input); color: #fff; border: 1px solid #444; padding: 12px 14px; font: inherit; font-size: .85rem; }
+.news button { background: #fff; color: #000; border: 0; padding: 12px 20px; font-weight: 700; }
+.news .lt-erro-campo { flex-basis: 100%; }
+.mapa { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; padding: 40px 0 40px 56px; }
+.mapa h3 { font-size: .9rem; margin-bottom: 12px; }
+.mapa a { color: var(--subtitle-color); text-decoration: none; font-size: .85rem; line-height: 2; }
+.mapa a:hover { color: #fff; }
+.rodape__base { display: flex; justify-content: space-between; align-items: center; padding: 28px 0 100px; color: var(--subtitle-color); font-size: .8rem; gap: 16px; flex-wrap: wrap; }
+.redes { display: flex; gap: 28px; }
+.redes a { opacity: .6; }
+.redes a:hover { opacity: 1; }
+.lt-modal img { width: 100%; }
+.compra dl { display: grid; grid-template-columns: auto 1fr; gap: 6px 16px; margin: 12px 0; }
+.compra dt { font-weight: 700; }
+
+@media (prefers-reduced-motion: reduce) { .selo img { animation: none; } }
+@media (max-width: 860px) {
+  .menu { display: none; }
+  .topo__linha { justify-content: space-between; }
+  .hero__grade { grid-template-columns: 1fr; }
+  .hero__lado { order: 2; }
+  .selo { display: none; }
+  .galeria { grid-template-columns: repeat(2, 1fr); }
+  .sobre { grid-template-columns: minmax(0, 1fr); }
+  .numeros { grid-row: auto; border-right: 0; padding: 32px 20px; grid-template-columns: repeat(3, 1fr); text-align: center; }
+  .sobre__textos { grid-template-columns: 1fr; padding: 32px 20px; gap: 28px; }
+  .populares__grade { grid-template-columns: 1fr; gap: 48px; }
+  .artistas__grade { grid-template-columns: 1fr; gap: 16px; }
+  .rodape__meio { grid-template-columns: 1fr; }
+  .news { border-right: 0; padding: 32px 0; border-bottom: 1px solid #333; }
+  .mapa { padding: 32px 0; }
+}
+/* fim de style.css */

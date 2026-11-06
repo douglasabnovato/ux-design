@@ -1,0 +1,37 @@
+# Dependências
+node_modules/
+npm-debug.log
+yarn.lock
+
+# Ambiente
+.env
+.env.local
+.env.*.local
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Build
+dist/
+build/
+*.min.js
+*.min.css
+
+# Logs
+logs/
+*.log
+
+# Temporários
+tmp/
+temp/
+node_modules/
+test-results/
+playwright-report/

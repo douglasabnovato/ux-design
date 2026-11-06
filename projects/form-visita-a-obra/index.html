@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Agendamento de visita técnica à obra: avaliação presencial, estágio do projeto, seleção de ambientes e especificações.">
+    <title>Visita à Obra | Agendamento Técnico</title>
+    <link rel="stylesheet" href="./style.css" />
+  <style>
+/* Erros de campo e resumo do lead — injetado com o motor de captação */
+.campo-erro{display:block;margin-top:6px;font-size:.82rem;font-weight:600;color:#ff6b6b;line-height:1.35}
+[aria-invalid="true"]{border-color:#ff6b6b !important;outline-color:#ff6b6b}
+.resumo-lead{margin:10px 0;padding:12px 14px;border-radius:10px;background:rgba(0,0,0,.16);
+border:1px solid rgba(127,127,127,.28);font:400 .84rem/1.6 ui-monospace,SFMono-Regular,Menlo,monospace;
+white-space:pre-wrap;word-break:break-word;max-height:240px;overflow:auto}
+.resumo-copiar{padding:9px 16px;border-radius:999px;border:1px solid currentColor;background:transparent;
+color:inherit;font:700 .84rem/1 inherit;cursor:pointer}
+.resumo-copiar:hover{opacity:.78}
+</style>
+  <link rel="stylesheet" href="../../shared/lt-base.css" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Visita à Obra · UX Design" />
+  <meta property="og:description" content="Formulário de agendamento de visita técnica para avaliação presencial, análise do estágio da obra, seleção de ambientes e especificações." />
+  <meta property="og:url" content="https://douglasabnovato.github.io/ux-design/projects/form-visita-a-obra/" />
+</head>
+  <body>
+    <main class="page-shell">
+      <section class="visit-grid">
+        <aside class="visit-info">
+          <span class="eyebrow">Visita Técnica</span>
+          <h1>Agende sua visita à obra com especialista</h1>
+          <p>
+            Avaliação presencial rápida para entender sua necessidade, medir o espaço e garantir uma proposta precisa. O técnico visita, analisa e recomenda a melhor solução para o seu projeto.
+          </p>
+
+          <div class="visit-highlights">
+            <article class="highlight-card">
+              <strong>Visita agendada em até 48h</strong>
+              <p>Equipe técnica preparada para avaliação de obras em andamento ou em planejamento.</p>
+            </article>
+            <article class="highlight-card">
+              <strong>Relatório completo</strong>
+              <p>Receba especificação precisa, estimativa de ambientes e prioridades de execução.</p>
+            </article>
+            <article class="highlight-card">
+              <strong>Sem compromisso</strong>
+              <p>O agendamento não obriga à contratação — é uma consulta técnica para orientar seu projeto.</p>
+            </article>
+          </div>
+        </aside>
+
+        <section class="visit-form-card">
+          <div class="form-header">
+            <span class="eyebrow">Formulário</span>
+            <h2>Preencha e agende sua visita</h2>
+            <p>Nosso time entra em contato para confirmar o melhor horário e levar um técnico ao local.</p>
+          </div>
+
+          <div id="formMessage" class="form-message" aria-live="polite"></div>
+
+          <form id="visitForm" novalidate>
+            <div class="form-block">
+              <h3>Dados de contato</h3>
+              <div class="field-grid">
+                <label>
+                  Nome completo
+                  <input type="text" name="name" placeholder="Seu nome" required autocomplete="name">
+                </label>
+                <label>
+                  E-mail
+                  <input type="email" name="email" placeholder="seu@email.com" required autocomplete="email">
+                </label>
+                <label>
+                  WhatsApp
+                  <input type="tel" name="whatsapp" placeholder="(00) 00000-0000" required autocomplete="tel" inputmode="tel">
+                </label>
+              </div>
+            </div>
+
+            <div class="form-block">
+              <h3>Detalhes da obra</h3>
+              <div class="field-grid">
+                <label>
+                  Número de ambientes
+                  <select name="numAmbiente" required>
+                    <option value="">Selecione</option>
+                    <option value="1">1 ambiente</option>
+                    <option value="2">2 ambientes</option>
+                    <option value="3">3 ambientes</option>
+                    <option value="4+">4 ou mais</option>
+                  </select>
+                </label>
+                <label>
+                  Estágio da obra
+                  <select name="estadoObra" required>
+                    <option value="">Selecione</option>
+                    <option value="Fundacao">Fundação</option>
+                    <option value="Alvenaria">Alvenaria</option>
+                    <option value="Acabamento">Acabamento</option>
+                  </select>
+                </label>
+                <label>
+                  Região / loja
+                  <select name="cidade" required>
+                    <option value="">Selecione</option>
+                    <option value="AC">Acre</option>
+                    <option value="AL">Alagoas</option>
+                    <option value="AP">Amapá</option>
+                    <option value="AM">Amazonas</option>
+                    <option value="BA">Bahia</option>
+                    <option value="MG">Minas Gerais</option>
+                  </select>
+                </label>
+              </div>
+            </div>
+
+            <div class="form-block">
+              <h3>Ambientes para visita</h3>
+              <div class="checkbox-grid">
+                <label class="checkbox-card">
+                  <input type="checkbox" name="ambientes" value="Cozinha" />
+                  <span>Cozinha</span>
+                </label>
+                <label class="checkbox-card">
+                  <input type="checkbox" name="ambientes" value="Banheiro" />
+                  <span>Banheiro</span>
+                </label>
+                <label class="checkbox-card">
+                  <input type="checkbox" name="ambientes" value="Sala" />
+                  <span>Sala</span>
+                </label>
+                <label class="checkbox-card">
+                  <input type="checkbox" name="ambientes" value="Quarto" />
+                  <span>Quarto</span>
+                </label>
+                <label class="checkbox-card">
+                  <input type="checkbox" name="ambientes" value="Área externa" />
+                  <span>Área externa</span>
+                </label>
+                <label class="checkbox-card">
+                  <input type="checkbox" name="ambientes" value="Área de serviço" />
+                  <span>Área de serviço</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="form-block">
+              <h3>Prioridade da visita</h3>
+              <label class="textarea-group">
+                O que você quer priorizar na visita?
+                <textarea name="objective" rows="4" placeholder="Ex: melhor layout da cozinha, pontos hidráulicos ou soluções de acabamento" required></textarea>
+              </label>
+            </div>
+
+            <label class="optin-label">
+              <input type="checkbox" name="subscribe" required />
+              Concordo em receber informações por e-mail, SMS e WhatsApp sobre a visita à obra.
+            </label>
+
+            <button type="submit" class="cta-button">ENVIAR SOLICITAÇÃO</button>
+          </form>
+        </section>
+      </section>
+    </main>
+
+    <script src="./script.js"></script>
+  <!-- learnTECH · volta ao catálogo UX Design -->
+<style>
+.lt-voltar{position:fixed;left:18px;bottom:18px;z-index:99998;display:inline-flex;align-items:center;gap:9px;
+padding:11px 16px;border-radius:999px;background:rgba(10,14,39,.92);border:1px solid rgba(0,212,212,.42);
+color:#eaf0f7;text-decoration:none;font:700 14px/1 "Segoe UI",system-ui,-apple-system,Arial,sans-serif;
+box-shadow:0 12px 30px rgba(0,0,0,.34);backdrop-filter:blur(10px);
+transition:transform .2s ease,border-color .2s ease,background .2s ease;-webkit-font-smoothing:antialiased}
+.lt-voltar:hover{transform:translateY(-2px);border-color:#00d4d4;background:rgba(10,14,39,.98);color:#eaf0f7}
+.lt-voltar:focus-visible{outline:3px solid #00d4d4;outline-offset:3px}
+.lt-voltar__i{display:inline-grid;place-items:center;width:24px;height:24px;border-radius:999px;
+background:rgba(0,212,212,.16);color:#00d4d4;font-size:14px}
+@media (max-width:640px){.lt-voltar{left:12px;bottom:12px;padding:10px 13px;font-size:13px}
+.lt-voltar__t{display:none}}
+.lt-espaco{height:86px;flex:none;pointer-events:none}
+@media print{.lt-voltar,.lt-espaco{display:none}}
+</style>
+<div class="lt-espaco" aria-hidden="true"></div>
+<a class="lt-voltar" href="../../index.html" aria-label="Voltar ao catálogo UX Design">
+  <span class="lt-voltar__i" aria-hidden="true">&#8592;</span>
+  <span class="lt-voltar__t">Voltar ao portfólio</span>
+</a>
+<!-- fim · volta ao catálogo -->
+</body>
+</html>
