@@ -1,0 +1,46 @@
+# Antes só rodava em PR que mexesse em docs/, por isso a branch principal nunca tinha execução
+name: Conferir documentos
+
+on:
+  push:
+    branches: [main, 'developer/**']
+  pull_request:
+    branches: [main, 'developer/**']
+
+permissions:
+  contents: read
+
+jobs:
+  verificar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          # O repositório é grande: só o que os testes usam
+          filter: blob:none
+          sparse-checkout: |
+            /*
+            !/*/
+            /.github/
+            /docs/
+            /scripts/
+            /tests/
+          sparse-checkout-cone-mode: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: node scripts/verificar-conteudo.mjs
+      - run: npm ci
+      - run: npx playwright install --with-deps chromium
+      - run: npm test
+      - name: Conferir links relativos da teoria
+        run: |
+          node -e '
+          const fs = require("fs"), path = require("path");
+          const dir = "docs/ux-teoria";
+          for (const f of fs.readdirSync(dir)) {
+            const s = fs.readFileSync(path.join(dir, f), "utf8");
+            for (const m of s.matchAll(/\]\(([^)#:]+\.md)\)/g)) fs.accessSync(path.join(dir, m[1]));
+          }
+          '
