@@ -33,3 +33,32 @@ test('em 375 px não há rolagem horizontal', async ({ page }) => {
   await expect(page.locator('.project-card').first()).toBeVisible();
   expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(375);
 });
+
+test('se o catálogo não carrega, avisa e "Tentar de novo" recupera', async ({ page }) => {
+  let falhar = true;
+  await page.route('**/projects.json', (r) => (falhar ? r.fulfill({ status: 500, body: 'erro' }) : r.continue()));
+  await page.goto('/');
+  const aviso = page.getByRole('alert');
+  await expect(aviso).toContainText('Não foi possível carregar o catálogo');
+  await expect(page.locator('#tentarCatalogo')).toBeFocused();
+  await expect(page.locator('#heroCarousel')).toBeHidden();
+  falhar = false;
+  await page.locator('#tentarCatalogo').click();
+  await expect(page.locator('.project-card').first()).toBeVisible();
+  await expect(page.locator('#heroCarousel')).toBeVisible();
+  await page.locator('#filtros .filtro').nth(1).click();
+  await expect(page.locator('#filtros .filtro').nth(1)).toHaveAttribute('aria-pressed', 'true');
+});
+
+test('sem rede, o catálogo mostra o aviso em vez da grade vazia', async ({ page }) => {
+  await page.route('**/projects.json', (r) => r.abort());
+  await page.goto('/');
+  await expect(page.getByRole('alert')).toBeVisible();
+  await expect(page.locator('.project-card')).toHaveCount(0);
+});
+
+test('catálogo vazio diz que não há projetos', async ({ page }) => {
+  await page.route('**/projects.json', (r) => r.fulfill({ contentType: 'application/json', body: '[]' }));
+  await page.goto('/');
+  await expect(page.locator('#projectsGrid')).toContainText('Nenhum projeto publicado ainda');
+});
