@@ -12,6 +12,33 @@
 
 > **Estado em 02/11/2026:** Publicado no GitHub Pages. Verificação: `node scripts/verificar-conteudo.mjs`, `npm ci`, `npx playwright install chromium` e `npm test`. Só amostras dos projetos foram abertas. Critérios em [docs/MVP.md](docs/MVP.md).
 
+## Estado e próximos passos (ciclo de 03/11/2026)
+
+Projeto de estudo (nível N1). Site publicado: [douglasabnovato.github.io/ux-design](https://douglasabnovato.github.io/ux-design/) (HTTP 200 em 06/11/2026).
+
+**O que foi feito**
+- Catálogo com "Carregando projetos…", aviso de erro com "Tentar de novo" e mensagem de lista vazia, com 3 testes ([#29](https://github.com/douglasabnovato/ux-design/pull/29)).
+- CI também nos PRs para a `developer` ([#29](https://github.com/douglasabnovato/ux-design/pull/29)).
+- Acessibilidade do catálogo corrigida e CI na principal ([#24](https://github.com/douglasabnovato/ux-design/issues/24)).
+- Casos de UX migrados para o catálogo, com case de 5 projetos ([#1](https://github.com/douglasabnovato/ux-design/issues/1)).
+- Nível N1 registrado no `docs/MVP.md`: 7 de 10 critérios aplicáveis atendidos.
+
+**O que queremos fazer**
+- [#30](https://github.com/douglasabnovato/ux-design/issues/30) Proteger a `main` com PR e CI obrigatórios (responsável).
+- [#31](https://github.com/douglasabnovato/ux-design/issues/31) Confirmar os clientes citados no catálogo (responsável).
+- [#32](https://github.com/douglasabnovato/ux-design/issues/32) Teste do catálogo com uma pessoa de fora (responsável).
+- [#35](https://github.com/douglasabnovato/ux-design/issues/35) Parar de carregar CSS do w3schools.com.
+- [#36](https://github.com/douglasabnovato/ux-design/issues/36) Manter o foco dentro do modal de case.
+- [#33](https://github.com/douglasabnovato/ux-design/issues/33) Tirar os arquivos `.skp` do repositório.
+- [#34](https://github.com/douglasabnovato/ux-design/issues/34) Converter as imagens pesadas para webp.
+- [#37](https://github.com/douglasabnovato/ux-design/issues/37) Escrever o case de mais projetos.
+
+**Onde está a documentação**
+- Estado e critérios: [docs/MVP.md](docs/MVP.md).
+- Plano do ciclo: [docs/PLANO-DE-ACAO.md](docs/PLANO-DE-ACAO.md), seção "Ciclo de 03/11/2026".
+
+---
+
 ## 🚀 Sobre o projeto
 
 Catálogo vivo de 59 produtos digitais entregues para negócios reais: franquias, restaurantes, clínicas, marcenarias, clubes, prestadores de serviço e escolas. Vários nasceram em aula ou em desafio de trilha — o que conta aqui é que cada um virou produto, com marca, conteúdo real e caminho de conversão.
@@ -144,6 +171,8 @@ Seis projetos já tinham botão próprio de volta e foram deixados como estavam.
 
 ## ⚙️ Como rodar localmente
 
+No Windows, clone com `git clone -c core.longpaths=true`: alguns arquivos de `projects/transportation` têm nome longo e, sem essa opção, não são criados.
+
 Projeto estático, sem dependências. O `fetch('./projects.json')` exige HTTP, então não funciona abrindo o arquivo direto (`file://`):
 
 ```bash
@@ -168,12 +197,10 @@ feature/projetos-lp  →  developer-mvp  →  main (produção)
 
 | Prioridade | Item |
 | --- | --- |
-| 🔴 | **Preencher `DESTINO_WHATSAPP`** nos 11 formulários — sem isso o lead fica na tela em vez de chegar até você |
-| 🔴 | **171 MB de `.skp`** em `projects/edificacoes-3d` (29 arquivos, o maior com 57 MB) — arquivo-fonte do SketchUp que o navegador não usa. Tirar do repositório |
+| 🔴 | **171 MB de `.skp`** ([#33](https://github.com/douglasabnovato/ux-design/issues/33)) em `projects/edificacoes-3d` (29 arquivos, o maior com 57 MB) — arquivo-fonte do SketchUp que o navegador não usa. Tirar do repositório |
 | 🔴 | **609,7 MB de histórico** em `.git/objects/pack`. Apagar arquivo **não** reduz isso: só sai com `git filter-repo` ou repositório novo |
 | 🟡 | 31 MB de `.bmp` e o `marido-de-aluguel.png` de 2 MB — converter para `.webp` com `magick mogrify`, que preserva os nomes |
-| 🟡 | `edificacoes-3d/index.html` carrega **113 imagens sem `loading="lazy"` e sem `alt`** |
-| 🟡 | Três projetos carregam CSS de `w3schools.com` em produção |
+| 🟡 | Três projetos carregam CSS de `w3schools.com` em produção ([#35](https://github.com/douglasabnovato/ux-design/issues/35)) |
 | 🟡 | Escrever case para mais projetos e marcá-los como `destaque` |
 | 🟢 | Thumbnail para os 11 `form-*`, ou assumir o placeholder como definitivo |
 | 🟢 | `rocket-shoes` e `rocket-nfts` seguem "Em breve" |
