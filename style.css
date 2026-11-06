@@ -487,11 +487,28 @@ body.sem-rolagem {
   border-color: var(--primary-color);
 }
 
-.grade-erro {
+.grade-erro,
+.grade-estado {
   grid-column: 1 / -1;
   padding: 3rem 1rem;
   text-align: center;
-  opacity: 0.7;
+  color: var(--text-light);
+}
+
+.grade-erro__botao {
+  margin-top: 1rem;
+  padding: 0.7rem 1.4rem;
+  border: 0;
+  border-radius: 999px;
+  background: var(--primary-color);
+  color: var(--secondary-color);
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.grade-erro__botao:focus-visible {
+  outline: 3px solid var(--text-light);
+  outline-offset: 3px;
 }
 
 /* --- Modal de case --- */

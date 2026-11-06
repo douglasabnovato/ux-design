@@ -277,28 +277,55 @@ function ligarEventos() {
   });
 }
 
+/* Busca o catálogo. Mostra o carregamento enquanto espera e, se falhar,
+   um aviso com "Tentar de novo", sem precisar recarregar a página. */
+async function carregarCatalogo() {
+  const grade = document.getElementById("projectsGrid");
+  grade.setAttribute("aria-busy", "true");
+  grade.innerHTML = '<p class="grade-estado" role="status">Carregando projetos…</p>';
+  try {
+    const resposta = await fetch("./projects.json", { cache: "no-store" });
+    if (!resposta.ok) throw new Error(`projects.json respondeu ${resposta.status}`);
+    const itens = await resposta.json();
+    if (!Array.isArray(itens)) throw new Error("projects.json não é uma lista");
+    return itens;
+  } catch (erro) {
+    console.error("Catálogo:", erro);
+    grade.innerHTML = `
+      <div class="grade-erro" role="alert">
+        <p>Não foi possível carregar o catálogo. Confira a conexão e tente de novo.</p>
+        <button type="button" class="grade-erro__botao" id="tentarCatalogo">Tentar de novo</button>
+      </div>`;
+    document.getElementById("heroCarousel")?.setAttribute("hidden", "");
+    return null;
+  } finally {
+    grade.removeAttribute("aria-busy");
+  }
+}
+
 /* Ponto de partida. */
 async function iniciar() {
   Catalogo.semMovimento = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  document.getElementById("ano").textContent = new Date().getFullYear();
 
-  try {
-    const resposta = await fetch("./projects.json");
-    if (!resposta.ok) throw new Error("Falha ao buscar projects.json");
-    Catalogo.itens = await resposta.json();
-  } catch (erro) {
-    console.error("Catálogo:", erro);
-    document.getElementById("projectsGrid").innerHTML =
-      '<p class="grade-erro">Não foi possível carregar o catálogo. Recarregue a página.</p>';
-    document.getElementById("heroCarousel")?.setAttribute("hidden", "");
+  const itens = await carregarCatalogo();
+  if (!itens) {
+    const botao = document.getElementById("tentarCatalogo");
+    botao.addEventListener("click", iniciar, { once: true });
+    botao.focus();
     return;
   }
 
+  Catalogo.itens = itens;
+  document.getElementById("heroCarousel")?.removeAttribute("hidden");
   renderizarCarrossel(Catalogo.itens.filter((p) => p.destaque && !p.emBreve && p.image));
   renderizarFiltros();
   renderizarGrade();
+  if (itens.length === 0) {
+    document.getElementById("projectsGrid").innerHTML =
+      '<p class="grade-estado" role="status">Nenhum projeto publicado ainda.</p>';
+  }
   ligarEventos();
-
-  document.getElementById("ano").textContent = new Date().getFullYear();
 }
 
 document.addEventListener("DOMContentLoaded", iniciar);
