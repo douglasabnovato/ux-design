@@ -226,11 +226,18 @@ function abrirCase(slug, origem) {
 }
 
 /* Enquanto o case está aberto, o resto da página fica inert (fora do Tab e do leitor de tela). */
+const marcadosInertes = [];
 function marcarFundoInerte(inerte) {
   const modal = document.getElementById("modalCase");
+  if (!inerte) {
+    // Desfaz só o que este código marcou; o que já era inert continua.
+    marcadosInertes.splice(0).forEach((el) => { el.inert = false; });
+    return;
+  }
   for (const filho of document.body.children) {
-    if (filho === modal || filho.tagName === "SCRIPT") continue;
-    filho.inert = inerte;
+    if (filho === modal || filho.tagName === "SCRIPT" || filho.inert) continue;
+    filho.inert = true;
+    marcadosInertes.push(filho);
   }
 }
 
@@ -238,8 +245,8 @@ function marcarFundoInerte(inerte) {
 function prenderFoco(evento) {
   const modal = document.getElementById("modalCase");
   if (evento.key !== "Tab" || modal.hidden) return;
-  const focaveis = [...modal.querySelectorAll('a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])')]
-    .filter((el) => el.offsetParent !== null);
+  const seletor = 'a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), summary, iframe, [contenteditable="true"], audio[controls], video[controls], [tabindex]:not([tabindex="-1"])';
+  const focaveis = [...modal.querySelectorAll(seletor)].filter((el) => el.getClientRects().length > 0);
   if (focaveis.length === 0) return;
   const primeiro = focaveis[0];
   const ultimo = focaveis[focaveis.length - 1];

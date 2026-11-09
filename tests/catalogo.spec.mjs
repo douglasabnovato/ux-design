@@ -71,10 +71,21 @@ test('com o case aberto, Tab e Shift+Tab ficam dentro do modal (#36)', async ({ 
   const modal = page.locator('#modalCase');
   await expect(modal).toBeVisible();
   await expect(page.locator('main')).toHaveJSProperty('inert', true);
-  for (const tecla of ['Tab', 'Tab', 'Tab', 'Shift+Tab', 'Shift+Tab', 'Shift+Tab']) {
-    await page.keyboard.press(tecla);
+  const fechar = page.locator('#modalCase .modal__fechar');
+  await expect(fechar).toBeFocused();
+  const controles = await page.evaluate(() => [...document.querySelectorAll('#modalCase a[href], #modalCase button')]
+    .filter((el) => el.getClientRects().length > 0).length);
+  // Shift+Tab no primeiro controle vai para o último; Tab no último volta ao primeiro
+  await page.keyboard.press('Shift+Tab');
+  expect(await page.evaluate(() => !!document.activeElement.closest('#modalCase'))).toBe(true);
+  if (controles > 1) await expect(fechar).not.toBeFocused();
+  await page.keyboard.press('Tab');
+  await expect(fechar).toBeFocused();
+  for (let i = 0; i < controles; i++) {
+    await page.keyboard.press('Tab');
     expect(await page.evaluate(() => !!document.activeElement.closest('#modalCase'))).toBe(true);
   }
+  await expect(fechar).toBeFocused();
   await page.keyboard.press('Escape');
   await expect(modal).toBeHidden();
   await expect(page.locator('main')).toHaveJSProperty('inert', false);
