@@ -62,3 +62,21 @@ test('catálogo vazio diz que não há projetos', async ({ page }) => {
   await page.goto('/');
   await expect(page.locator('#projectsGrid')).toContainText('Nenhum projeto publicado ainda');
 });
+
+test('com o case aberto, Tab e Shift+Tab ficam dentro do modal (#36)', async ({ page }) => {
+  await page.goto('/');
+  const botao = page.locator('.project-card__case').first();
+  await botao.focus();
+  await page.keyboard.press('Enter');
+  const modal = page.locator('#modalCase');
+  await expect(modal).toBeVisible();
+  await expect(page.locator('main')).toHaveJSProperty('inert', true);
+  for (const tecla of ['Tab', 'Tab', 'Tab', 'Shift+Tab', 'Shift+Tab', 'Shift+Tab']) {
+    await page.keyboard.press(tecla);
+    expect(await page.evaluate(() => !!document.activeElement.closest('#modalCase'))).toBe(true);
+  }
+  await page.keyboard.press('Escape');
+  await expect(modal).toBeHidden();
+  await expect(page.locator('main')).toHaveJSProperty('inert', false);
+  await expect(botao).toBeFocused();
+});
