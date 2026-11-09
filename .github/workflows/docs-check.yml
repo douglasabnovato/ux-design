@@ -25,6 +25,10 @@ jobs:
             /docs/
             /scripts/
             /tests/
+            /shared/
+            /projects/art/
+            /projects/our-coffee/
+            /projects/restaurante/
           sparse-checkout-cone-mode: false
       - uses: actions/setup-node@v4
         with:

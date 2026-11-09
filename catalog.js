@@ -221,7 +221,43 @@ function abrirCase(slug, origem) {
   const modal = document.getElementById("modalCase");
   modal.hidden = false;
   document.body.classList.add("sem-rolagem");
+  marcarFundoInerte(true);
   modal.querySelector(".modal__fechar").focus();
+}
+
+/* Enquanto o case está aberto, o resto da página fica inert (fora do Tab e do leitor de tela). */
+const marcadosInertes = [];
+function marcarFundoInerte(inerte) {
+  const modal = document.getElementById("modalCase");
+  if (!inerte) {
+    // Desfaz só o que este código marcou; o que já era inert continua.
+    marcadosInertes.splice(0).forEach((el) => { el.inert = false; });
+    return;
+  }
+  for (const filho of document.body.children) {
+    if (filho === modal || filho.tagName === "SCRIPT" || filho.inert) continue;
+    filho.inert = true;
+    marcadosInertes.push(filho);
+  }
+}
+
+/* Tab e Shift+Tab circulam só entre os controles do modal aberto. */
+function prenderFoco(evento) {
+  const modal = document.getElementById("modalCase");
+  if (evento.key !== "Tab" || modal.hidden) return;
+  const seletor = 'a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), summary, iframe, [contenteditable="true"], audio[controls], video[controls], [tabindex]:not([tabindex="-1"])';
+  const focaveis = [...modal.querySelectorAll(seletor)].filter((el) => el.getClientRects().length > 0);
+  if (focaveis.length === 0) return;
+  const primeiro = focaveis[0];
+  const ultimo = focaveis[focaveis.length - 1];
+  const dentro = modal.contains(document.activeElement);
+  if (evento.shiftKey && (document.activeElement === primeiro || !dentro)) {
+    evento.preventDefault();
+    ultimo.focus();
+  } else if (!evento.shiftKey && (document.activeElement === ultimo || !dentro)) {
+    evento.preventDefault();
+    primeiro.focus();
+  }
 }
 
 /* Fecha o modal e devolve o foco ao botão que o abriu. */
@@ -230,6 +266,7 @@ function fecharCase() {
   if (modal.hidden) return;
   modal.hidden = true;
   document.body.classList.remove("sem-rolagem");
+  marcarFundoInerte(false);
   Catalogo.ultimoFoco?.focus?.();
   Catalogo.ultimoFoco = null;
 }
@@ -265,6 +302,8 @@ function ligarEventos() {
   });
 
   document.getElementById("contatoBotao").addEventListener("click", () => alternarContato());
+
+  document.addEventListener("keydown", prenderFoco);
 
   document.addEventListener("keydown", (evento) => {
     if (evento.key !== "Escape") return;
