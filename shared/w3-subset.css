@@ -47,7 +47,7 @@ h1, h2, h3, h4, h5, h6 { font-family: "Segoe UI", Arial, sans-serif; font-weight
 .w3-ul { list-style-type: none; padding: 0; margin: 0; }
 .w3-ul li { padding: 8px 16px; border-bottom: 1px solid #ddd; }
 .w3-ul li:last-child { border-bottom: none; }
-.w3-ul.w3-hoverable li:hover { background-color: #ccc; }
+.w3-ul.w3-hoverable li:hover { cursor: pointer; background-color: #ccc; }
 
 /* Barra lateral e topo fixo */
 .w3-sidebar { height: 100%; width: 200px; background-color: #fff; position: fixed !important; z-index: 1; overflow: auto; }
