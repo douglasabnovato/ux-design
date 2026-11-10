@@ -12,30 +12,28 @@
 
 > **Estado em 02/11/2026:** Publicado no GitHub Pages. Verificação: `node scripts/verificar-conteudo.mjs`, `npm ci`, `npx playwright install chromium` e `npm test`. Só amostras dos projetos foram abertas. Critérios em [docs/MVP.md](docs/MVP.md).
 
-## Estado e próximos passos (ciclo de 03/11/2026)
+## Estado e próximos passos (ciclo da faixa de 90%, 10/11/2026)
 
-Projeto de estudo (nível N1). Site publicado: [douglasabnovato.github.io/ux-design](https://douglasabnovato.github.io/ux-design/) (HTTP 200 em 06/11/2026).
+Projeto de estudo (nível N1). Site publicado: [douglasabnovato.github.io/ux-design](https://douglasabnovato.github.io/ux-design/) (HTTP 200 em 10/11/2026). **Finalizado: sim**, com 9 de 10 critérios aplicáveis atendidos; o que falta (critério 9) depende do responsável (#31). A `main` exige PR e o job `verificar` do CI verde.
 
-**O que foi feito**
-- Catálogo com "Carregando projetos…", aviso de erro com "Tentar de novo" e mensagem de lista vazia, com 3 testes ([#29](https://github.com/douglasabnovato/ux-design/pull/29)).
-- CI também nos PRs para a `developer` ([#29](https://github.com/douglasabnovato/ux-design/pull/29)).
-- Acessibilidade do catálogo corrigida e CI na principal ([#24](https://github.com/douglasabnovato/ux-design/issues/24)).
-- Casos de UX migrados para o catálogo, com case de 5 projetos ([#1](https://github.com/douglasabnovato/ux-design/issues/1)).
-- Nível N1 registrado no `docs/MVP.md`: 7 de 10 critérios aplicáveis atendidos.
+**O que foi feito em 10/11/2026** (PR #44 para a `developer/sprint-2026-11-12`; a `main` espera a revisão do responsável)
+- Cliente citado aparece como "citação ilustrativa" no cartão e no case, com teste.
+- Critérios 2, 3 e 10 revistos pelas decisões D1 a D3 do ciclo.
+
+**Ciclo anterior (09/11/2026):** CSS local no lugar do w3schools.com (#35) e foco preso no modal do case (#36).
 
 **O que queremos fazer**
-- [#30](https://github.com/douglasabnovato/ux-design/issues/30) Proteger a `main` com PR e CI obrigatórios (responsável).
+- #41 Mesclar a sprint na `main` (responsável); #30 fecha nesse merge.
 - [#31](https://github.com/douglasabnovato/ux-design/issues/31) Confirmar os clientes citados no catálogo (responsável).
-- [#32](https://github.com/douglasabnovato/ux-design/issues/32) Teste do catálogo com uma pessoa de fora (responsável).
-- [#35](https://github.com/douglasabnovato/ux-design/issues/35) Parar de carregar CSS do w3schools.com.
-- [#36](https://github.com/douglasabnovato/ux-design/issues/36) Manter o foco dentro do modal de case.
+- [#32](https://github.com/douglasabnovato/ux-design/issues/32) Validar com uma pessoa de fora (validação de produto, responsável).
 - [#33](https://github.com/douglasabnovato/ux-design/issues/33) Tirar os arquivos `.skp` do repositório.
 - [#34](https://github.com/douglasabnovato/ux-design/issues/34) Converter as imagens pesadas para webp.
 - [#37](https://github.com/douglasabnovato/ux-design/issues/37) Escrever o case de mais projetos.
+- [#39](https://github.com/douglasabnovato/ux-design/issues/39) Decidir se o histórico do Git deve ser enxugado (responsável).
 
 **Onde está a documentação**
 - Estado e critérios: [docs/MVP.md](docs/MVP.md).
-- Plano do ciclo: [docs/PLANO-DE-ACAO.md](docs/PLANO-DE-ACAO.md), seção "Ciclo de 03/11/2026".
+- Plano do ciclo: [docs/PLANO-DE-ACAO.md](docs/PLANO-DE-ACAO.md), seção "Ciclo de 10/11/2026".
 
 ---
 
@@ -198,9 +196,8 @@ feature/projetos-lp  →  developer-mvp  →  main (produção)
 | Prioridade | Item |
 | --- | --- |
 | 🔴 | **171 MB de `.skp`** ([#33](https://github.com/douglasabnovato/ux-design/issues/33)) em `projects/edificacoes-3d` (29 arquivos, o maior com 57 MB) — arquivo-fonte do SketchUp que o navegador não usa. Tirar do repositório |
-| 🔴 | **609,7 MB de histórico** em `.git/objects/pack`. Apagar arquivo **não** reduz isso: só sai com `git filter-repo` ou repositório novo |
+| 🔴 | **609,7 MB de histórico** em `.git/objects/pack`. Apagar arquivo **não** reduz isso: só sai com `git filter-repo` ou repositório novo ([#39](https://github.com/douglasabnovato/ux-design/issues/39)) |
 | 🟡 | 31 MB de `.bmp` e o `marido-de-aluguel.png` de 2 MB — converter para `.webp` com `magick mogrify`, que preserva os nomes |
-| 🟡 | Três projetos carregam CSS de `w3schools.com` em produção ([#35](https://github.com/douglasabnovato/ux-design/issues/35)) |
 | 🟡 | Escrever case para mais projetos e marcá-los como `destaque` |
 | 🟢 | Thumbnail para os 11 `form-*`, ou assumir o placeholder como definitivo |
 | 🟢 | `rocket-shoes` e `rocket-nfts` seguem "Em breve" |

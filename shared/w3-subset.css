@@ -1,0 +1,123 @@
+/*
+  Subconjunto local das classes w3-* usadas em projects/art, projects/our-coffee e projects/restaurante.
+  Substitui o carregamento de https://www.w3schools.com/w3css/4/w3.css (issue #35): sem requisição a terceiro
+  e sem quebra se o endereço mudar. Escrito para este repositório, com os mesmos valores visuais do W3.CSS 4.
+  Ao usar uma classe w3-* nova nessas páginas, acrescente a regra aqui.
+*/
+
+/* Base (normalização e tipografia) */
+html { box-sizing: border-box; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; }
+*, *:before, *:after { box-sizing: inherit; }
+body { margin: 0; }
+article, aside, details, figcaption, figure, footer, header, main, menu, nav, section { display: block; }
+summary { display: list-item; }
+audio, canvas, progress, video { display: inline-block; }
+[hidden], template { display: none; }
+a { background-color: transparent; color: inherit; }
+a:active, a:hover { outline-width: 0; }
+b, strong { font-weight: bolder; }
+small { font-size: 80%; }
+figure { margin: 1em 40px; }
+img { border-style: none; vertical-align: middle; }
+hr { box-sizing: content-box; height: 0; overflow: visible; border: 0; border-top: 1px solid #eee; margin: 20px 0; }
+button, input, select, textarea, optgroup { font: inherit; margin: 0; }
+button, input { overflow: visible; }
+button, select { text-transform: none; }
+button, [type=button], [type=reset], [type=submit] { -webkit-appearance: button; }
+textarea { overflow: auto; }
+[type=checkbox], [type=radio] { padding: 0; }
+html, body { font-family: Verdana, sans-serif; font-size: 15px; line-height: 1.5; }
+html { overflow-x: hidden; }
+h1 { font-size: 36px; }
+h2 { font-size: 30px; }
+h3 { font-size: 24px; }
+h4 { font-size: 20px; }
+h5 { font-size: 18px; }
+h6 { font-size: 16px; }
+h1, h2, h3, h4, h5, h6 { font-family: "Segoe UI", Arial, sans-serif; font-weight: 400; margin: 10px 0; }
+.w3-serif { font-family: serif; }
+.w3-wide { letter-spacing: 4px; }
+.w3-image { max-width: 100%; height: auto; }
+
+/* Botões e listas */
+.w3-button { border: none; display: inline-block; padding: 8px 16px; vertical-align: middle; overflow: hidden; text-decoration: none; color: inherit; background-color: inherit; text-align: center; cursor: pointer; white-space: nowrap; -webkit-user-select: none; user-select: none; }
+.w3-button:disabled { cursor: not-allowed; opacity: 0.3; }
+.w3-button:hover { color: #000 !important; background-color: #ccc !important; }
+.w3-block { display: block; width: 100%; }
+.w3-ul { list-style-type: none; padding: 0; margin: 0; }
+.w3-ul li { padding: 8px 16px; border-bottom: 1px solid #ddd; }
+.w3-ul li:last-child { border-bottom: none; }
+.w3-ul.w3-hoverable li:hover { cursor: pointer; background-color: #ccc; }
+
+/* Barra lateral e topo fixo */
+.w3-sidebar { height: 100%; width: 200px; background-color: #fff; position: fixed !important; z-index: 1; overflow: auto; }
+.w3-bar-block .w3-bar-item { width: 100%; display: block; padding: 8px 16px; text-align: left; border: none; white-space: normal; float: none; outline: 0; }
+.w3-main { transition: margin-left .4s; }
+.w3-top { position: fixed; width: 100%; z-index: 1; top: 0; }
+
+/* Grade */
+.w3-container:after, .w3-container:before, .w3-panel:after, .w3-panel:before,
+.w3-row:after, .w3-row:before, .w3-row-padding:after, .w3-row-padding:before { content: ""; display: table; clear: both; }
+.w3-col, .w3-half, .w3-third, .w3-quarter { float: left; width: 100%; }
+.w3-col.s3 { width: 24.99999%; }
+.w3-col.s6 { width: 49.99999%; }
+@media (min-width: 601px) {
+  .w3-half { width: 49.99999%; }
+  .w3-third { width: 33.33333%; }
+  .w3-quarter { width: 24.99999%; }
+}
+.w3-content { margin-left: auto; margin-right: auto; max-width: 980px; }
+.w3-row-padding, .w3-row-padding > .w3-half, .w3-row-padding > .w3-third, .w3-row-padding > .w3-quarter, .w3-row-padding > .w3-col { padding: 0 8px; }
+.w3-container, .w3-panel { padding: 0.01em 16px; }
+.w3-panel { margin-top: 16px; margin-bottom: 16px; }
+
+/* Formulário e etiquetas */
+.w3-input { padding: 8px; display: block; border: none; border-bottom: 1px solid #ccc; width: 100%; }
+.w3-select { padding: 9px 0; width: 100%; border: none; border-bottom: 1px solid #ccc; }
+.w3-tag { background-color: #000; color: #fff; display: inline-block; padding-left: 8px; padding-right: 8px; text-align: center; }
+
+/* Posição */
+.w3-display-container { position: relative; }
+.w3-display-middle { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+.w3-display-bottomleft { position: absolute; left: 0; bottom: 0; }
+.w3-display-bottomright { position: absolute; right: 0; bottom: 0; }
+.w3-left { float: left !important; }
+.w3-right { float: right !important; }
+.w3-center { text-align: center !important; }
+@media (max-width: 600px) { .w3-hide-small { display: none !important; } }
+
+/* Efeitos */
+.w3-card { box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12); }
+.w3-animate-left { position: relative; animation: animateleft 0.4s; }
+@keyframes animateleft { from { left: -300px; opacity: 0; } to { left: 0; opacity: 1; } }
+.w3-grayscale { filter: grayscale(75%); }
+.w3-grayscale-min { filter: grayscale(50%); }
+
+/* Tamanhos, espaçamentos e bordas */
+.w3-small { font-size: 12px !important; }
+.w3-large { font-size: 18px !important; }
+.w3-xlarge { font-size: 24px !important; }
+.w3-padding { padding: 8px 16px !important; }
+.w3-padding-large { padding: 12px 24px !important; }
+.w3-padding-16 { padding-top: 16px !important; padding-bottom: 16px !important; }
+.w3-padding-24 { padding-top: 24px !important; padding-bottom: 24px !important; }
+.w3-padding-32 { padding-top: 32px !important; padding-bottom: 32px !important; }
+.w3-padding-48 { padding-top: 48px !important; padding-bottom: 48px !important; }
+.w3-padding-64 { padding-top: 64px !important; padding-bottom: 64px !important; }
+.w3-margin-top { margin-top: 16px !important; }
+.w3-margin-bottom { margin-bottom: 16px !important; }
+.w3-margin-right { margin-right: 16px !important; }
+.w3-section { margin-top: 16px !important; margin-bottom: 16px !important; }
+.w3-border { border: 1px solid #ccc !important; }
+.w3-leftbar { border-left: 6px solid #ccc !important; }
+
+/* Cores */
+.w3-white { color: #000 !important; background-color: #fff !important; }
+.w3-black { color: #fff !important; background-color: #000 !important; }
+.w3-sand { color: #000 !important; background-color: #fdf5e6 !important; }
+.w3-light-grey { color: #000 !important; background-color: #f1f1f1 !important; }
+.w3-dark-grey { color: #fff !important; background-color: #616161 !important; }
+.w3-text-grey { color: #757575 !important; }
+.w3-text-white { color: #fff !important; }
+.w3-text-pink { color: #e91e63 !important; }
+.w3-hover-text-green:hover { color: #4CAF50 !important; }
