@@ -91,3 +91,17 @@ test('com o case aberto, Tab e Shift+Tab ficam dentro do modal (#36)', async ({ 
   await expect(page.locator('main')).toHaveJSProperty('inert', false);
   await expect(botao).toBeFocused();
 });
+
+test('cliente citado aparece como ilustrativo no cartão e no case (D4, #31)', async ({ page }) => {
+  await page.goto('/');
+  const comCliente = page.locator('.project-card__cliente');
+  await expect(comCliente.first()).toBeVisible();
+  const total = await comCliente.count();
+  expect(total).toBeGreaterThan(0);
+  await expect(page.locator('.project-card__cliente .aviso-ilustrativo')).toHaveCount(total);
+  // Abre o case de um cartão que cita cliente
+  const cartao = page.locator('.project-card', { has: page.locator('.project-card__cliente') })
+    .filter({ has: page.locator('.project-card__case') }).first();
+  await cartao.locator('.project-card__case').click();
+  await expect(page.locator('#modalCase [data-aviso="ilustrativo"]')).toHaveText(/ilustrativa/);
+});

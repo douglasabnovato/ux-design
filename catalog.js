@@ -32,7 +32,7 @@ function montarCard(projeto) {
     : `<div class="project-card__placeholder" aria-hidden="true"><span>${escapar(projeto.title.charAt(0))}</span></div>`;
 
   const cliente = projeto.cliente
-    ? `<span class="project-card__cliente">${escapar(projeto.cliente)}</span>`
+    ? `<span class="project-card__cliente">${escapar(projeto.cliente)} <span class="aviso-ilustrativo">(citação ilustrativa)</span></span>`
     : "";
 
   const miolo = `
@@ -211,7 +211,11 @@ function abrirCase(slug, origem) {
     ? `${projeto.title} — ${projeto.cliente}`
     : projeto.title;
   document.getElementById("modalResumo").textContent = c.resumo || "";
+  // Cliente citado sem confirmação aparece como ilustrativo (decisão D4 de 10/11/2026, #31)
   document.getElementById("modalCorpo").innerHTML =
+    (projeto.cliente
+      ? '<p class="case-aviso" data-aviso="ilustrativo">Citação de cliente ilustrativa: ainda não confirmada.</p>'
+      : "") +
     listaCase("O problema", c.antes) +
     listaCase("O que mudou", c.depois) +
     tabelaCase(c.indicadores) +
