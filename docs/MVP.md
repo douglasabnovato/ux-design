@@ -4,11 +4,11 @@
 
 **Nível:** Estudo (N1). Critérios 5 (medição) e 7 (LCP no ar) não se aplicam e saem da conta.
 
-**Resumo:** 7 de 10 aplicáveis atendidos
+**Resumo:** 8 de 10 aplicáveis atendidos
 
 **Finalizado:** sim
 
-Os 3 critérios que faltam (3, 9 e 10) dependem do responsável, cada um com issue `depende-do-responsavel`: teste com pessoa de fora (#32), confirmar os clientes citados (#31) e proteger a `main` (#30).
+Os 2 critérios que faltam (3 e 9) dependem do responsável, cada um com issue `depende-do-responsavel`: teste com pessoa de fora (#32) e confirmar os clientes citados (#31). O 10 passou a "Atende" em 10/11/2026, com a `main` protegida (#30).
 
 | # | Critério | Como verificar | Situação em 09/11/2026 |
 |---|---|---|---|
@@ -21,7 +21,7 @@ Os 3 critérios que faltam (3, 9 e 10) dependem do responsável, cada um com iss
 | 7 | Desempenho aceitável | LCP de até 2,5 s no celular | Não se aplica (N1). Registro: mediana de 2,85 s em 02/11/2026 |
 | 8 | Acessibilidade básica | Lighthouse e teclado | Atende: `npx playwright test` em 09/11/2026, teste "com o case aberto, Tab e Shift+Tab ficam dentro do modal" passou (antes o Tab saía do modal, #36). Lighthouse 100 em 02/11/2026 |
 | 9 | Segurança e conformidade | Riscos decididos; termos cumpridos | Parcial: sem CSS de terceiro, porque `git grep "w3schools.com/w3css/4/w3.css"` não acha nada em 09/11/2026 (#35). Falta confirmar os clientes citados (#31) |
-| 10 | Entrega confiável | Publicação só depois de CI verde | Parcial: CI nos PRs para a `main` e a `developer/**`; a `main` não está protegida (#30) |
+| 10 | Entrega confiável | Publicação só depois de CI verde | Atende (10/11/2026): `gh api repos/douglasabnovato/ux-design/rulesets`, em 10/11/2026: ruleset `principal-protegida` ativo (exige PR, bloqueia force push e exclusão); workflow `Conferir documentos` roda nos PRs para a `main` e a `developer/**`. O Pages publica a `main`, que agora só recebe mudanças por PR (#30) |
 | 11 | Testes dos fluxos críticos | Testes automatizados no CI | Atende: `node scripts/verificar-conteudo.mjs` (61 projetos) e 11 testes Playwright no CI, verdes no PR do ciclo de 07/11/2026 |
 | 12 | Documentação honesta | Qualquer pessoa roda o projeto, e os números estão certos | Atende: README revisto em 09/11/2026; `curl` no site publicado deu 200 e o HTML é igual ao `index.html` da `main` |
 

@@ -14,7 +14,10 @@
 
 ## Estado e próximos passos (ciclo de 07/11/2026)
 
-Projeto de estudo (nível N1). Site publicado: [douglasabnovato.github.io/ux-design](https://douglasabnovato.github.io/ux-design/) (HTTP 200 em 09/11/2026, igual à `main`). **Finalizado: sim**, com 7 de 10 critérios aplicáveis atendidos; os 3 restantes dependem do responsável.
+Projeto de estudo (nível N1). Site publicado: [douglasabnovato.github.io/ux-design](https://douglasabnovato.github.io/ux-design/) (HTTP 200 em 09/11/2026, igual à `main`). **Finalizado: sim**, com 8 de 10 critérios aplicáveis atendidos em 10/11/2026; os 2 restantes dependem do responsável.
+
+**O que foi feito em 10/11/2026**
+- `main` protegida pelo ruleset `principal-protegida`: só recebe mudanças por PR; critério 10 atende.
 
 **O que foi feito em 09/11/2026**
 - `art`, `our-coffee` e `restaurante` não carregam mais CSS do w3schools.com: usam `shared/w3-subset.css`, com o mesmo visual (0 pixel diferente nas capturas) e um teste ([#35](https://github.com/douglasabnovato/ux-design/issues/35)).
@@ -22,7 +25,6 @@ Projeto de estudo (nível N1). Site publicado: [douglasabnovato.github.io/ux-des
 - Fluxo principal percorrido no navegador e registrado no [docs/MVP.md](docs/MVP.md).
 
 **O que queremos fazer**
-- [#30](https://github.com/douglasabnovato/ux-design/issues/30) Proteger a `main` com PR e CI obrigatórios (responsável).
 - [#31](https://github.com/douglasabnovato/ux-design/issues/31) Confirmar os clientes citados no catálogo (responsável).
 - [#32](https://github.com/douglasabnovato/ux-design/issues/32) Teste do catálogo com uma pessoa de fora (responsável).
 - [#33](https://github.com/douglasabnovato/ux-design/issues/33) Tirar os arquivos `.skp` do repositório.
