@@ -2,6 +2,21 @@
 
 O estado e os critérios ficam em [`MVP.md`](MVP.md). Este arquivo guarda o plano de cada ciclo, com data.
 
+## Ciclo de 10/11/2026 (faixa de 90%)
+
+> Branch `feature/2026-11-10-b` → `developer/sprint-2026-11-12` → `main` (o PR para a `main` fica com o responsável). Decisões D1 a D7 em `engenharia/decisoes/2026-11-10-ciclo-faixa-90.md`.
+
+**Produto.** Sem mudança de problema e público. A meta da hipótese passa a ser a do ciclo (D1). O teste com uma pessoa de fora vira validação (#32).
+
+**Engenharia.** Risco tratado: clientes citados sem confirmação. Pela D4, o cartão e o case mostram a citação como ilustrativa, com teste. Tirar ou manter cada nome é do responsável (#31); um deles é o nome completo de uma pessoa física.
+
+| Item | Destino |
+|---|---|
+| Aviso de citação ilustrativa, com teste | Este ciclo |
+| Critérios 2, 3 e 10 pelas decisões D1 a D3 | Este ciclo |
+| Manter ou tirar cada cliente citado | Responsável (#31) |
+| Validar com uma pessoa de fora | Responsável (#32) |
+
 ## Ciclo de 07/11/2026
 
 > Executado em 09/11/2026. Branch `feature/2026-11-07` → `developer/sprint-2026-11-12` → `main` (o PR para a `main` fica com o responsável). Nível: Estudo (N1).

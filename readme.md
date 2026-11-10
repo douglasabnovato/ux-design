@@ -12,21 +12,20 @@
 
 > **Estado em 02/11/2026:** Publicado no GitHub Pages. Verificação: `node scripts/verificar-conteudo.mjs`, `npm ci`, `npx playwright install chromium` e `npm test`. Só amostras dos projetos foram abertas. Critérios em [docs/MVP.md](docs/MVP.md).
 
-## Estado e próximos passos (ciclo de 07/11/2026)
+## Estado e próximos passos (ciclo da faixa de 90%, 10/11/2026)
 
-Projeto de estudo (nível N1). Site publicado: [douglasabnovato.github.io/ux-design](https://douglasabnovato.github.io/ux-design/) (HTTP 200 em 09/11/2026, igual à `main`). **Finalizado: sim**, com 8 de 10 critérios aplicáveis atendidos em 10/11/2026; os 2 restantes dependem do responsável.
+Projeto de estudo (nível N1). Site publicado: [douglasabnovato.github.io/ux-design](https://douglasabnovato.github.io/ux-design/) (HTTP 200 em 10/11/2026). **Finalizado: sim**, com 9 de 10 critérios aplicáveis atendidos; o que falta (critério 9) depende do responsável (#31). A `main` exige PR e o job `verificar` do CI verde.
 
-**O que foi feito em 10/11/2026**
-- `main` protegida pelo ruleset `principal-protegida`: só recebe mudanças por PR; critério 10 atende.
+**O que foi feito em 10/11/2026** (PR #44 para a `developer/sprint-2026-11-12`; a `main` espera a revisão do responsável)
+- Cliente citado aparece como "citação ilustrativa" no cartão e no case, com teste.
+- Critérios 2, 3 e 10 revistos pelas decisões D1 a D3 do ciclo.
 
-**O que foi feito em 09/11/2026**
-- `art`, `our-coffee` e `restaurante` não carregam mais CSS do w3schools.com: usam `shared/w3-subset.css`, com o mesmo visual (0 pixel diferente nas capturas) e um teste ([#35](https://github.com/douglasabnovato/ux-design/issues/35)).
-- Com o case aberto, o foco fica no modal e a página de trás fica `inert`, com teste ([#36](https://github.com/douglasabnovato/ux-design/issues/36)).
-- Fluxo principal percorrido no navegador e registrado no [docs/MVP.md](docs/MVP.md).
+**Ciclo anterior (09/11/2026):** CSS local no lugar do w3schools.com (#35) e foco preso no modal do case (#36).
 
 **O que queremos fazer**
+- #41 Mesclar a sprint na `main` (responsável); #30 fecha nesse merge.
 - [#31](https://github.com/douglasabnovato/ux-design/issues/31) Confirmar os clientes citados no catálogo (responsável).
-- [#32](https://github.com/douglasabnovato/ux-design/issues/32) Teste do catálogo com uma pessoa de fora (responsável).
+- [#32](https://github.com/douglasabnovato/ux-design/issues/32) Validar com uma pessoa de fora (validação de produto, responsável).
 - [#33](https://github.com/douglasabnovato/ux-design/issues/33) Tirar os arquivos `.skp` do repositório.
 - [#34](https://github.com/douglasabnovato/ux-design/issues/34) Converter as imagens pesadas para webp.
 - [#37](https://github.com/douglasabnovato/ux-design/issues/37) Escrever o case de mais projetos.
@@ -34,7 +33,7 @@ Projeto de estudo (nível N1). Site publicado: [douglasabnovato.github.io/ux-des
 
 **Onde está a documentação**
 - Estado e critérios: [docs/MVP.md](docs/MVP.md).
-- Plano do ciclo: [docs/PLANO-DE-ACAO.md](docs/PLANO-DE-ACAO.md), seção "Ciclo de 07/11/2026".
+- Plano do ciclo: [docs/PLANO-DE-ACAO.md](docs/PLANO-DE-ACAO.md), seção "Ciclo de 10/11/2026".
 
 ---
 
