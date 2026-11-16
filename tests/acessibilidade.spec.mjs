@@ -46,3 +46,14 @@ test('pelo teclado, o foco fica visível com o contorno do próprio site', async
   await expect(filtro).toHaveCSS('outline-style', 'solid');
   await expect(filtro).toHaveCSS('outline-color', 'rgb(0, 212, 212)');
 });
+
+test.describe('com movimento normal', () => {
+  test.use({ reducedMotion: 'no-preference' });
+  test('o carrossel, com o botão Pausar à vista, não tem violações do axe', async ({ page }) => {
+    await page.clock.install();
+    await page.goto('/');
+    await expect(page.locator('#heroPausa')).toBeVisible();
+    const { violations } = await new AxeBuilder({ page }).include('#heroCarousel').analyze();
+    expect(resumo(violations)).toEqual([]);
+  });
+});

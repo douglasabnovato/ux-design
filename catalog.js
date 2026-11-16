@@ -176,7 +176,9 @@ function alternarPausa() {
   Catalogo.pausadoPelaPessoa = !Catalogo.pausadoPelaPessoa;
   const pausa = document.getElementById("heroPausa");
   pausa.textContent = Catalogo.pausadoPelaPessoa ? "Retomar" : "Pausar";
+  // "Retomar" volta a girar na hora, mesmo com o foco ou o mouse no carrossel
   if (Catalogo.pausadoPelaPessoa) parar();
+  else rodar();
 }
 
 function rodar() {

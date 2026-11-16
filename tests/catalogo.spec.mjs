@@ -126,16 +126,17 @@ test('o botão Pausar para o carrossel até a pessoa retomar (WCAG 2.2.2)', asyn
 
   await pausa.click();
   await expect(pausa).toHaveText('Retomar');
-  // Tira o mouse e o foco do carrossel: antes, isso voltava a girar
-  await page.mouse.move(0, 0);
+  // Tira o foco do carrossel e leva o mouse para longe dele: antes, isso voltava a girar
+  await page.mouse.move(640, 790);
   await page.locator('#filtros .filtro').first().focus();
   await page.clock.runFor(20000);
   await expect(dots.nth(1)).toHaveAttribute('aria-current', 'true');
 
-  await pausa.click();
+  // "Retomar" pelo teclado gira de novo sem tirar o foco do botão
+  await pausa.focus();
+  await page.keyboard.press('Enter');
   await expect(pausa).toHaveText('Pausar');
-  await page.mouse.move(0, 0);
-  await page.locator('#filtros .filtro').first().focus();
+  await expect(pausa).toBeFocused();
   await page.clock.runFor(6500);
   await expect(dots.nth(2)).toHaveAttribute('aria-current', 'true');
 });
