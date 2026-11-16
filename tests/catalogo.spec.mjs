@@ -105,3 +105,47 @@ test('cliente citado aparece como ilustrativo no cartão e no case (D4, #31)', a
   await cartao.locator('.project-card__case').click();
   await expect(page.locator('#modalCase [data-aviso="ilustrativo"]')).toHaveText(/ilustrativa/);
 });
+
+test('o "Fale comigo" não mostra o link de WhatsApp sem número', async ({ page }) => {
+  await page.goto('/');
+  await expect(page.locator('.project-card').first()).toBeVisible();
+  await page.locator('#contatoBotao').click();
+  await expect(page.locator('#contatoPainel')).toBeVisible();
+  await expect(page.locator('#contatoPainel a[href*="SEUNUMERO"]')).toHaveCount(0);
+  await expect(page.locator('#contatoPainel a')).not.toHaveCount(0);
+});
+
+test('o botão Pausar para o carrossel até a pessoa retomar (WCAG 2.2.2)', async ({ page }) => {
+  await page.clock.install();
+  await page.goto('/');
+  const dots = page.locator('.hero-carousel__dot');
+  const pausa = page.locator('#heroPausa');
+  await expect(dots.nth(0)).toHaveAttribute('aria-current', 'true');
+  await page.clock.runFor(6500);
+  await expect(dots.nth(1)).toHaveAttribute('aria-current', 'true');
+
+  await pausa.click();
+  await expect(pausa).toHaveText('Retomar');
+  // Tira o mouse e o foco do carrossel: antes, isso voltava a girar
+  await page.mouse.move(0, 0);
+  await page.locator('#filtros .filtro').first().focus();
+  await page.clock.runFor(20000);
+  await expect(dots.nth(1)).toHaveAttribute('aria-current', 'true');
+
+  await pausa.click();
+  await expect(pausa).toHaveText('Pausar');
+  await page.mouse.move(0, 0);
+  await page.locator('#filtros .filtro').first().focus();
+  await page.clock.runFor(6500);
+  await expect(dots.nth(2)).toHaveAttribute('aria-current', 'true');
+});
+
+test('com movimento reduzido, o carrossel não gira e o botão Pausar fica escondido', async ({ page }) => {
+  await page.emulateMedia({ reducedMotion: 'reduce' });
+  await page.clock.install();
+  await page.goto('/');
+  await expect(page.locator('.project-card').first()).toBeVisible();
+  await expect(page.locator('#heroPausa')).toBeHidden();
+  await page.clock.runFor(13000);
+  await expect(page.locator('.hero-carousel__dot').nth(0)).toHaveAttribute('aria-current', 'true');
+});

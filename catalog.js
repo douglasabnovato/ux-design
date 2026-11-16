@@ -12,6 +12,7 @@ const Catalogo = {
   indice: 0,
   temporizador: null,
   semMovimento: false,
+  pausadoPelaPessoa: false,
   filtro: TODOS,
   ultimoFoco: null,
 };
@@ -131,6 +132,14 @@ function renderizarCarrossel(destaques) {
     b.addEventListener("click", () => irPara(Number(b.dataset.index)));
   });
 
+  // WCAG 2.2.2: o que se move sozinho por mais de 5 s precisa de um jeito de pausar.
+  // Com movimento reduzido ou um slide só, nada gira, e o botão fica escondido.
+  const pausa = document.getElementById("heroPausa");
+  if (pausa && !Catalogo.semMovimento && destaques.length > 1) {
+    pausa.hidden = false;
+    pausa.addEventListener("click", alternarPausa);
+  }
+
   secao.addEventListener("mouseenter", parar);
   secao.addEventListener("mouseleave", rodar);
   secao.addEventListener("focusin", parar);
@@ -162,8 +171,16 @@ function parar() {
   Catalogo.temporizador = null;
 }
 
+/* Pausa ou retoma a rotação a pedido da pessoa; a pausa vale até ela retomar. */
+function alternarPausa() {
+  Catalogo.pausadoPelaPessoa = !Catalogo.pausadoPelaPessoa;
+  const pausa = document.getElementById("heroPausa");
+  pausa.textContent = Catalogo.pausadoPelaPessoa ? "Retomar" : "Pausar";
+  if (Catalogo.pausadoPelaPessoa) parar();
+}
+
 function rodar() {
-  if (Catalogo.semMovimento || Catalogo.slides.length < 2) return;
+  if (Catalogo.semMovimento || Catalogo.pausadoPelaPessoa || Catalogo.slides.length < 2) return;
   parar();
   Catalogo.temporizador = setInterval(() => irPara(Catalogo.indice + 1), INTERVALO_MS);
 }
@@ -346,9 +363,16 @@ async function carregarCatalogo() {
   }
 }
 
+/* Sem número configurado, o link do WhatsApp levaria a uma conversa que não existe.
+   Ele some até o número real entrar no index.html. */
+function esconderContatoSemNumero() {
+  document.querySelectorAll('#contatoPainel a[href*="SEUNUMERO"]').forEach((link) => link.remove());
+}
+
 /* Ponto de partida. */
 async function iniciar() {
   Catalogo.semMovimento = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  esconderContatoSemNumero();
   document.getElementById("ano").textContent = new Date().getFullYear();
 
   const itens = await carregarCatalogo();

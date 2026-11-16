@@ -190,6 +190,28 @@ body.sem-rolagem {
   border-color: var(--primary-color);
 }
 
+.hero-carousel__pausa {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  z-index: 3;
+  min-height: 32px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  border: 1px solid var(--border-soft);
+  background: rgba(10, 14, 39, 0.7);
+  color: var(--text-light);
+  font: inherit;
+  font-size: 0.85rem;
+  cursor: pointer;
+  backdrop-filter: blur(8px);
+}
+
+.hero-carousel__pausa:hover {
+  background: rgba(0, 212, 212, 0.24);
+  border-color: var(--primary-color);
+}
+
 .hero-carousel__nav--prev { left: 16px; }
 .hero-carousel__nav--next { right: 16px; }
 
@@ -795,6 +817,7 @@ body.sem-rolagem {
 .hero-carousel__slide:focus-visible,
 .hero-carousel__dot:focus-visible,
 .hero-carousel__nav:focus-visible,
+.hero-carousel__pausa:focus-visible,
 .modal__fechar:focus-visible,
 .contato__botao:focus-visible,
 .contato__item:focus-visible {
