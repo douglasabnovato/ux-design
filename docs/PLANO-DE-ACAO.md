@@ -2,6 +2,55 @@
 
 O estado e os critérios ficam em [`MVP.md`](MVP.md). Este arquivo guarda o plano de cada ciclo, com data.
 
+## Ciclo de 16/11/2026
+
+> Branch `feature/2026-11-16` → `developer/sprint-2026-11-19` → `main`. O PR #42 (sprint de 12/11) entrou na `main` em 16/11/2026; por isso a sprint nova nasce da `main`. O PR para a `main` fica com o responsável. Nível: Estudo (N1).
+
+### Produto
+
+**Problema e público.** Sem mudança: quem avalia o trabalho de UX precisa achar um projeto parecido com o seu negócio e ler o antes e o depois.
+
+**Hipótese.** Acreditamos que mostrar o case com o antes e o depois faz quem avalia abrir ao menos 2 cases na mesma visita. Saberemos quando a medição de uso (fora do N1) ou o teste com uma pessoa de fora (#32) mostrar 2 cases abertos em pelo menos 3 de 5 visitas.
+
+**O que a pesquisa trouxe.**
+
+| Ideia | O que levamos para o projeto | Fonte |
+|---|---|---|
+| Conteúdo que se move sozinho por mais de 5 segundos precisa de um jeito de pausar | Botão "Pausar" no carrossel de destaques, que troca para "Retomar" e para a rotação até a pessoa pedir de novo | [WCAG 2.2, critério 2.2.2: Pausar, parar, ocultar](https://www.w3.org/WAI/WCAG22/Understanding/pause-stop-hide.html) e [W3C APG: padrão de carrossel](https://www.w3.org/WAI/ARIA/apg/patterns/carousel/) |
+| O carrossel automático começa parado quando o sistema pede menos movimento | Já existia (`prefers-reduced-motion`); o botão segue visível e coerente com o estado | [W3C APG: padrão de carrossel](https://www.w3.org/WAI/ARIA/apg/patterns/carousel/) |
+| O axe roda dentro do teste Playwright e devolve a lista de violações | Teste do fluxo principal com `@axe-core/playwright`: catálogo e case aberto, sem violações | [Playwright: testes de acessibilidade](https://playwright.dev/docs/accessibility-testing) |
+
+**Backlog do ciclo (impacto × esforço).**
+
+| Prioridade | Item | Destino |
+|---|---|---|
+| 1 | axe no teste do fluxo principal (critério 8 pede axe) | Este ciclo |
+| 2 | Link de WhatsApp do "Fale comigo" aponta para `55SEUNUMERO`: esconder enquanto o número não existir | Este ciclo, com teste |
+| 3 | Botão para pausar o carrossel | Este ciclo, com teste |
+| 4 | README e `MVP.md` com números e fluxo de branches atuais; `docs/DEPLOY.md` | Este ciclo |
+| 5 | Ligar os alertas do Dependabot | Responsável (issue nova) |
+| 6 | Imagens do catálogo com pessoas, contatos e marcas de terceiros | Responsável (issue nova) |
+
+**Fora do escopo.** Tirar ou trocar cliente citado (#31), imagem de case ou conteúdo de projeto: só com decisão do responsável. Enxugar o histórico (#39).
+
+### Engenharia
+
+**Arquitetura.** Site estático: `index.html`, `catalog.js` e `projects.json`, sem build. Cada projeto é uma pasta em `projects/`. O GitHub Pages serve a `main` no modo legado (branch `main`, pasta `/`). O CI (`Conferir documentos`) confere o conteúdo e roda o Playwright.
+
+**Riscos.** Dados de terceiros em imagens e no campo `cliente` (#31). Alertas do Dependabot desligados (a API responde 403). Repositório grande (#39): o CI usa sparse-checkout.
+
+**Qualidade.** Testes Playwright com axe no catálogo e no case; teclado no modal e no carrossel; `npm audit --omit=dev`.
+
+**Definição de pronto.** CI verde no PR, revisão independente feita, `MVP.md` com cada "Atende" citando comando, data e resultado.
+
+### Plano de ação
+
+| Item | Destino |
+|---|---|
+| axe no fluxo principal, link de WhatsApp sem número escondido, pausa do carrossel | Este ciclo, com testes |
+| `MVP.md`, README e `docs/DEPLOY.md` | Este ciclo |
+| Ligar os alertas do Dependabot; imagens de terceiros; número do WhatsApp | Issues `depende-do-responsavel` |
+
 ## Ciclo de 10/11/2026 (faixa de 90%)
 
 > Branch `feature/2026-11-10-b` → `developer/sprint-2026-11-12` → `main` (o PR para a `main` fica com o responsável). Decisões D1 a D7 em `engenharia/decisoes/2026-11-10-ciclo-faixa-90.md`.
