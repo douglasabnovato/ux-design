@@ -1,6 +1,6 @@
 # MVP — critérios
 
-> Fonte única do estado. Tabela atual de 16/11/2026 (ciclo de 16/11/2026, plano em [`PLANO-DE-ACAO.md`](PLANO-DE-ACAO.md)). As tabelas anteriores estão em "Histórico", no fim.
+> Fonte única do estado. Tabela atual de 16/11/2026 (ciclo de 16/11/2026; critério 9 revisto às 15h08, com os alertas do Dependabot ligados; plano em [`PLANO-DE-ACAO.md`](PLANO-DE-ACAO.md)). As tabelas anteriores estão em "Histórico", no fim.
 
 **Nível:** Estudo (N1). Critérios 5 (medição) e 7 (LCP no ar) não se aplicam e saem da conta.
 
@@ -8,7 +8,7 @@
 
 **Finalizado:** sim
 
-Falta só o critério 9, que depende do responsável, com issues `depende-do-responsavel`: ligar os alertas do Dependabot (#45), decidir cada cliente citado (#31) e decidir as imagens com dados de terceiros (#46).
+Falta só o critério 9, que depende do responsável, com issues `depende-do-responsavel`: decidir cada cliente citado (#31) e decidir as imagens com dados de terceiros (#46). Os alertas do Dependabot, ligados em 16/11/2026, não seguram mais o critério.
 
 **Hipótese.** Acreditamos que mostrar o case com o antes e o depois faz quem avalia abrir ao menos 2 cases na mesma visita. Saberemos quando, em pelo menos 3 de 5 visitas de pessoas de fora (#32), 2 ou mais cases forem abertos. Meta decidida pelo coordenador em 10/11/2026 (decisão D1), revisável pelo responsável.
 
@@ -24,12 +24,14 @@ Falta só o critério 9, que depende do responsável, com issues `depende-do-res
 | 6 | Falhas tratadas | Erro, vazio e carregamento têm resposta | Atende: `npx playwright test`, 16/11/2026: catálogo com erro 500 (com "Tentar de novo"), sem rede e vazio passam; o "Fale comigo" esconde o WhatsApp sem número, em vez de abrir uma conversa que não existe (#47) |
 | 7 | Desempenho aceitável | LCP de até 2,5 s no celular | Não se aplica (N1). Registro: mediana de 2,85 s em 02/11/2026 |
 | 8 | Acessibilidade básica | axe e teclado | Atende: `npx playwright test tests/acessibilidade.spec.mjs`, 16/11/2026: axe sem violações no catálogo, no catálogo filtrado, no case aberto e no carrossel com o botão "Pausar", em 1280 px e com os dados reais; foco visível pelo Tab com o contorno de 3 px do site. Teclado: Tab preso no modal e Esc fecha (`tests/catalogo.spec.mjs`). Botão "Pausar" no carrossel (WCAG 2.2.2), com teste. O site não tem tema escuro próprio (não há `prefers-color-scheme` no CSS), por isso o axe roda só no claro |
-| 9 | Segurança e conformidade | `npm audit --omit=dev`, alertas do Dependabot, segredos e dados pessoais | Parcial: `npm audit --omit=dev`, 16/11/2026: 0 vulnerabilidades. Alertas do Dependabot desligados: `gh api ".../dependabot/alerts?state=open&per_page=100"` respondeu 403 em 16/11/2026; pela regra em decisão (engenharia#33), fica Parcial até ligar (#45). Cliente citado aparece como "citação ilustrativa" (decisão D4); manter ou tirar cada um, inclusive o nome de uma pessoa física no campo `cliente`, é do responsável (#31). Imagens com dados de terceiros listadas na #46 |
+| 9 | Segurança e conformidade | `npm audit --omit=dev`, alertas do Dependabot, segredos e dados pessoais | Parcial: `npm audit --omit=dev`, 16/11/2026: 0 vulnerabilidades. Alertas do Dependabot ligados pelo responsável em 16/11/2026: `gh api "repos/douglasabnovato/ux-design/dependabot/alerts?state=open&per_page=100" --jq length`, 16/11/2026 15:08: 0 alertas abertos; `npm audit --omit=dev`, 16/11/2026 15:08: 0 vulnerabilidades. O que ainda segura o Parcial são as decisões do responsável sobre os clientes citados (#31) e as imagens com dados de terceiros (#46). Cliente citado aparece como "citação ilustrativa" (decisão D4); manter ou tirar cada um, inclusive o nome de uma pessoa física no campo `cliente`, é do responsável (#31). Imagens com dados de terceiros listadas na #46 |
 | 10 | Entrega confiável | CI nos PRs e principal protegida | Atende: `gh api repos/douglasabnovato/ux-design/rulesets/26932564`, 16/11/2026: ruleset `principal-protegida` ativo com `deletion`, `non_fast_forward`, `pull_request` e `required_status_checks` (job `verificar`). O workflow roda em PR para a `main` e a `developer/**` |
 | 11 | Testes dos fluxos críticos | Testes automatizados no CI | Atende: `node scripts/verificar-conteudo.mjs` (61 projetos) e 20 testes Playwright no job `verificar`, sem `skipped`, run [43813997478](https://github.com/douglasabnovato/ux-design/actions/runs/43813997478), 16/11/2026: 20 passed (PR #49). Na `main`, run [43799600448](https://github.com/douglasabnovato/ux-design/actions/runs/43799600448), 16/11/2026: 12 passed |
 | 12 | Documentação honesta | Qualquer pessoa roda o projeto | Atende: README com números e comandos conferidos contra o `package.json` em 16/11/2026; `docs/DEPLOY.md` novo. `curl` em https://douglasabnovato.github.io/ux-design/, 16/11/2026: 200, e o `index.html` e o `catalog.js` publicados têm o mesmo `md5sum` que os da `main` |
 
 ## Histórico
+
+- 16/11/2026, 15h08: segue 9 de 10. O responsável ligou os alertas do Dependabot (antes a API respondia 403; engenharia#33, #45): 0 abertos e audit de produção com 0 vulnerabilidades. O critério 9 segue Parcial pelas decisões #31 e #46.
 
 ### Tabela de 10/11/2026 (ciclo da faixa de 90%)
 
