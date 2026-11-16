@@ -31,3 +31,18 @@ test('o case aberto não tem violações do axe', async ({ page }) => {
   const { violations } = await new AxeBuilder({ page }).include('#modalCase').analyze();
   expect(resumo(violations)).toEqual([]);
 });
+
+test('pelo teclado, o foco fica visível com o contorno do próprio site', async ({ page }) => {
+  await page.goto('/');
+  await expect(page.locator('.project-card').first()).toBeVisible();
+  // Tab a partir do começo da página até chegar ao primeiro filtro
+  const filtro = page.locator('#filtros .filtro').first();
+  for (let i = 0; i < 40 && !(await filtro.evaluate((el) => el === document.activeElement)); i++) {
+    await page.keyboard.press('Tab');
+  }
+  await expect(filtro).toBeFocused();
+  // O contorno padrão do Chromium tem 1 px; o do site, 3 px na cor primária
+  await expect(filtro).toHaveCSS('outline-width', '3px');
+  await expect(filtro).toHaveCSS('outline-style', 'solid');
+  await expect(filtro).toHaveCSS('outline-color', 'rgb(0, 212, 212)');
+});
