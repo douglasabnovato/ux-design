@@ -4,42 +4,48 @@
 
 **Catálogo de projetos digitais comerciais** — landing pages, catálogos, formulários de captação e aplicações, em HTML, CSS e JavaScript puro.
 
-**62 projetos** · 8 setores · 5 com case documentado
+**61 projetos** · 8 setores · 5 com case documentado
 
 </div>
 
 ---
 
-> **Estado em 02/11/2026:** Publicado no GitHub Pages. Verificação: `node scripts/verificar-conteudo.mjs`, `npm ci`, `npx playwright install chromium` e `npm test`. Só amostras dos projetos foram abertas. Critérios em [docs/MVP.md](docs/MVP.md).
+## Estado e próximos passos (ciclo de 16/11/2026)
 
-## Estado e próximos passos (ciclo da faixa de 90%, 10/11/2026)
+Projeto de estudo (nível N1). Site publicado: [douglasabnovato.github.io/ux-design](https://douglasabnovato.github.io/ux-design/) (HTTP 200 em 16/11/2026, igual à `main`). **Finalizado: sim**, com 9 de 10 critérios aplicáveis atendidos. O que falta (critério 9) depende do responsável: #45, #31 e #46. A `main` exige PR e o job `verificar` do CI verde.
 
-Projeto de estudo (nível N1). Site publicado: [douglasabnovato.github.io/ux-design](https://douglasabnovato.github.io/ux-design/) (HTTP 200 em 10/11/2026). **Finalizado: sim**, com 9 de 10 critérios aplicáveis atendidos; o que falta (critério 9) depende do responsável (#31). A `main` exige PR e o job `verificar` do CI verde.
+**O que foi feito em 16/11/2026** (PR #49 para a `developer/sprint-2026-11-19`; a `main` espera a revisão do responsável no PR da sprint para a `main`)
+- axe sem violações no catálogo, no filtro e no case aberto, dentro dos testes Playwright (critério 8).
+- Foco visível pelo teclado conferido em teste.
+- Botão "Pausar" no carrossel de destaques (WCAG 2.2.2), com teste.
+- O "Fale comigo" esconde o WhatsApp enquanto o número não existir (#47), com teste.
+- README com os números atuais e `docs/DEPLOY.md` com o passo a passo do Pages.
 
-**O que foi feito em 10/11/2026** (PR #44 para a `developer/sprint-2026-11-12`; a `main` espera a revisão do responsável)
-- Cliente citado aparece como "citação ilustrativa" no cartão e no case, com teste.
-- Critérios 2, 3 e 10 revistos pelas decisões D1 a D3 do ciclo.
-
-**Ciclo anterior (09/11/2026):** CSS local no lugar do w3schools.com (#35) e foco preso no modal do case (#36).
+**Ciclos anteriores:** citação de cliente como ilustrativa (10/11/2026, PR #44); CSS local no lugar do w3schools.com e foco preso no modal (09/11/2026, PR #40). Todos na `main` desde o PR #42.
 
 **O que queremos fazer**
-- #41 Mesclar a sprint na `main` (responsável); #30 fecha nesse merge.
+- [#45](https://github.com/douglasabnovato/ux-design/issues/45) Ligar os alertas do Dependabot (responsável).
 - [#31](https://github.com/douglasabnovato/ux-design/issues/31) Confirmar os clientes citados no catálogo (responsável).
+- [#46](https://github.com/douglasabnovato/ux-design/issues/46) Decidir o uso das imagens do catálogo com dados de terceiros (responsável).
+- [#47](https://github.com/douglasabnovato/ux-design/issues/47) Decidir o número de WhatsApp do "Fale comigo" (responsável).
 - [#32](https://github.com/douglasabnovato/ux-design/issues/32) Validar com uma pessoa de fora (validação de produto, responsável).
+- [#39](https://github.com/douglasabnovato/ux-design/issues/39) Decidir se o histórico do Git deve ser enxugado (responsável).
+- [#48](https://github.com/douglasabnovato/ux-design/issues/48) Rodar o axe nas páginas dos projetos com case.
 - [#33](https://github.com/douglasabnovato/ux-design/issues/33) Tirar os arquivos `.skp` do repositório.
 - [#34](https://github.com/douglasabnovato/ux-design/issues/34) Converter as imagens pesadas para webp.
 - [#37](https://github.com/douglasabnovato/ux-design/issues/37) Escrever o case de mais projetos.
-- [#39](https://github.com/douglasabnovato/ux-design/issues/39) Decidir se o histórico do Git deve ser enxugado (responsável).
 
 **Onde está a documentação**
 - Estado e critérios: [docs/MVP.md](docs/MVP.md).
-- Plano do ciclo: [docs/PLANO-DE-ACAO.md](docs/PLANO-DE-ACAO.md), seção "Ciclo de 10/11/2026".
+- Plano do ciclo: [docs/PLANO-DE-ACAO.md](docs/PLANO-DE-ACAO.md), seção "Ciclo de 16/11/2026".
+- Publicação no GitHub Pages: [docs/DEPLOY.md](docs/DEPLOY.md).
+- Teoria de UX usada nos cases: [docs/ux-teoria](docs/ux-teoria).
 
 ---
 
 ## 🚀 Sobre o projeto
 
-Catálogo vivo de 59 produtos digitais entregues para negócios reais: franquias, restaurantes, clínicas, marcenarias, clubes, prestadores de serviço e escolas. Vários nasceram em aula ou em desafio de trilha — o que conta aqui é que cada um virou produto, com marca, conteúdo real e caminho de conversão.
+Catálogo vivo de 61 produtos digitais entregues para negócios reais: franquias, restaurantes, clínicas, marcenarias, clubes, prestadores de serviço e escolas. Vários nasceram em aula ou em desafio de trilha — o que conta aqui é que cada um virou produto, com marca, conteúdo real e caminho de conversão.
 
 Cada projeto é um micro-site independente, com seu próprio HTML/CSS/JS, reunido numa página de catálogo central.
 
@@ -52,15 +58,15 @@ Um projeto pertence a um setor, e só a um. O setor é o eixo do catálogo porqu
 | Setor | Projetos |
 | --- | ---: |
 | Alimentação | 10 |
-| Construção & Arquitetura | 10 |
+| Construção & Arquitetura | 11 |
 | Marca & Comunidade | 9 |
 | Produto Digital | 8 |
 | Varejo & E-commerce | 7 |
 | Serviços & Franquias | 6 |
 | Educação & Carreira | 5 |
-| Saúde & Bem-estar | 4 |
+| Saúde & Bem-estar | 5 |
 
-> A taxonomia anterior tinha **36 categorias para 59 projetos, 26 delas com um único item** — ou seja, não classificava nada. Os 8 setores acima agrupam de verdade: o menor tem 4 projetos, o maior tem 10.
+> A taxonomia anterior tinha **36 categorias para 59 projetos, 26 delas com um único item** — ou seja, não classificava nada. Os 8 setores acima agrupam de verdade: o menor tem 5 projetos, o maior tem 11 (contagem de `projects.json` em 16/11/2026).
 
 ## ⭐ Destaque e case
 
@@ -88,7 +94,11 @@ ux-design/
 ├── .nojekyll           desliga o processamento Jekyll no GitHub Pages
 ├── assets/             imagens do catálogo
 ├── public/             favicons e manifest
-└── projects/           cada projeto em pasta própria (59)
+├── shared/             CSS e JS comuns a vários projetos
+├── tests/              testes Playwright (fluxo, axe e falhas)
+├── scripts/            verificar-conteudo.mjs, que confere projects.json
+├── docs/               MVP, plano, deploy e teoria de UX
+└── projects/           cada projeto em pasta própria (61)
     └── <slug>/
         ├── index.html
         ├── readme.md       anotações do projeto
@@ -99,7 +109,7 @@ ux-design/
 
 ```json
 {
-  "id": 60,
+  "id": 62,
   "slug": "nome-da-pasta",
   "title": "Nome de Exibição",
   "cliente": "Nome do Cliente",
@@ -159,6 +169,8 @@ const DESTINO_WHATSAPP = "55SEUNUMERO";
 
 Troque por DDI + DDD + número e o envio passa a abrir o WhatsApp com o resumo pronto.
 
+O botão "Fale comigo" do catálogo usa o mesmo marcador em `index.html`. Enquanto ele for `55SEUNUMERO`, o link do WhatsApp some do painel (#47).
+
 **Enquanto o número não estiver preenchido**, o formulário mostra o resumo na tela com botão de copiar, em vez de dizer "Pedido enviado!" e descartar o lead — que era exatamente o que acontecia antes.
 
 ## ↩️ Voltar ao portfólio
@@ -171,23 +183,36 @@ Seis projetos já tinham botão próprio de volta e foram deixados como estavam.
 
 No Windows, clone com `git clone -c core.longpaths=true`: alguns arquivos de `projects/transportation` têm nome longo e, sem essa opção, não são criados.
 
-Projeto estático, sem dependências. O `fetch('./projects.json')` exige HTTP, então não funciona abrindo o arquivo direto (`file://`):
+Projeto estático, sem build. O `fetch('./projects.json')` exige HTTP, então não funciona abrindo o arquivo direto (`file://`):
 
 ```bash
-npx serve .
+npx http-server . -p 4173
 # ou
 python -m http.server 3000
 ```
 
+### Testes
+
+Comandos conferidos contra o `package.json` em 16/11/2026:
+
+```bash
+npm ci
+npx playwright install chromium
+node scripts/verificar-conteudo.mjs   # confere projects.json contra as pastas
+npm test                              # Playwright: fluxo, axe, falhas; sobe o servidor na porta 4173
+```
+
+O CI (`.github/workflows/docs-check.yml`, job `verificar`) roda os mesmos passos em todo PR para a `main` e a `developer/**`.
+
 ## 🌳 Fluxo de contribuição
 
 ```
-feature/projetos-lp  →  developer-mvp  →  main (produção)
+feature/AAAA-MM-DD  →  developer/sprint-<próxima quinta>  →  main (produção)
 ```
 
-1. Novos projetos e ajustes de catálogo entram por `feature/projetos-lp`
-2. Pull Request para `developer-mvp`, onde a mudança é validada
-3. Só depois, PR de `developer-mvp` para `main`
+1. Cada dia de trabalho entra numa `feature/` com a data.
+2. PR para a sprint da semana, só com o job `verificar` verde.
+3. PR da sprint para a `main`, que só o responsável mescla. A `main` é protegida pelo ruleset `principal-protegida`.
 
 ---
 
