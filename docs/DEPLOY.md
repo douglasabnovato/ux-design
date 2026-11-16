@@ -48,4 +48,4 @@ npm test
 npx http-server . -p 4173
 ```
 
-O `npm test` sobe o próprio servidor na porta 4173. O `--filter=blob:none` evita baixar os cerca de 680 MB do histórico (#39).
+O `npm test` sobe o próprio servidor na porta 4173. O `--filter=blob:none` evita só os arquivos antigos do histórico (#39); o checkout da `main` ainda baixa os cerca de 830 MB do site. Para baixar menos, use `--no-checkout` e um `sparse-checkout` só com as pastas que vai mexer, como faz o CI em `.github/workflows/docs-check.yml`.

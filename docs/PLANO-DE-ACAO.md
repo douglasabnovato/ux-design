@@ -10,7 +10,7 @@ O estado e os critérios ficam em [`MVP.md`](MVP.md). Este arquivo guarda o plan
 
 **Problema e público.** Sem mudança: quem avalia o trabalho de UX precisa achar um projeto parecido com o seu negócio e ler o antes e o depois.
 
-**Hipótese.** Acreditamos que mostrar o case com o antes e o depois faz quem avalia abrir ao menos 2 cases na mesma visita. Saberemos quando a medição de uso (fora do N1) ou o teste com uma pessoa de fora (#32) mostrar 2 cases abertos em pelo menos 3 de 5 visitas.
+**Hipótese.** Acreditamos que mostrar o case com o antes e o depois faz quem avalia abrir ao menos 2 cases na mesma visita. Saberemos quando, em pelo menos 3 de 5 visitas de pessoas de fora (#32), 2 ou mais cases forem abertos.
 
 **O que a pesquisa trouxe.**
 

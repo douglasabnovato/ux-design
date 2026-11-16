@@ -14,7 +14,7 @@
 
 Projeto de estudo (nível N1). Site publicado: [douglasabnovato.github.io/ux-design](https://douglasabnovato.github.io/ux-design/) (HTTP 200 em 16/11/2026, igual à `main`). **Finalizado: sim**, com 9 de 10 critérios aplicáveis atendidos. O que falta (critério 9) depende do responsável: #45, #31 e #46. A `main` exige PR e o job `verificar` do CI verde.
 
-**O que foi feito em 16/11/2026** (PR PR_FEATURE para a `developer/sprint-2026-11-19`; a `main` espera a revisão do responsável no PR PR_SPRINT)
+**O que foi feito em 16/11/2026** (PR #49 para a `developer/sprint-2026-11-19`; a `main` espera a revisão do responsável no PR da sprint para a `main`)
 - axe sem violações no catálogo, no filtro e no case aberto, dentro dos testes Playwright (critério 8).
 - Foco visível pelo teclado conferido em teste.
 - Botão "Pausar" no carrossel de destaques (WCAG 2.2.2), com teste.
