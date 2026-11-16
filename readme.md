@@ -12,7 +12,7 @@
 
 ## Estado e próximos passos (ciclo de 16/11/2026)
 
-Projeto de estudo (nível N1). Site publicado: [douglasabnovato.github.io/ux-design](https://douglasabnovato.github.io/ux-design/) (HTTP 200 em 16/11/2026, igual à `main`). **Finalizado: sim**, com 9 de 10 critérios aplicáveis atendidos. O que falta (critério 9) depende do responsável: #45, #31 e #46. A `main` exige PR e o job `verificar` do CI verde.
+Projeto de estudo (nível N1). Site publicado: [douglasabnovato.github.io/ux-design](https://douglasabnovato.github.io/ux-design/) (HTTP 200 em 16/11/2026, igual à `main`). **Finalizado: sim**, com 9 de 10 critérios aplicáveis atendidos. O que falta (critério 9) depende do responsável: #31 e #46. Os alertas do Dependabot foram ligados em 16/11/2026 e mostram 0 abertos (15h08), com `npm audit --omit=dev` sem vulnerabilidades (#45). A `main` exige PR e o job `verificar` do CI verde.
 
 **O que foi feito em 16/11/2026** (PR #49 para a `developer/sprint-2026-11-19`; a `main` espera a revisão do responsável no PR da sprint para a `main`)
 - axe sem violações no catálogo, no filtro e no case aberto, dentro dos testes Playwright (critério 8).
@@ -24,7 +24,7 @@ Projeto de estudo (nível N1). Site publicado: [douglasabnovato.github.io/ux-des
 **Ciclos anteriores:** citação de cliente como ilustrativa (10/11/2026, PR #44); CSS local no lugar do w3schools.com e foco preso no modal (09/11/2026, PR #40). Todos na `main` desde o PR #42.
 
 **O que queremos fazer**
-- [#45](https://github.com/douglasabnovato/ux-design/issues/45) Ligar os alertas do Dependabot (responsável).
+- [#45](https://github.com/douglasabnovato/ux-design/issues/45) Alertas do Dependabot ligados em 16/11/2026, com 0 abertos; a issue fica com o responsável para fechar.
 - [#31](https://github.com/douglasabnovato/ux-design/issues/31) Confirmar os clientes citados no catálogo (responsável).
 - [#46](https://github.com/douglasabnovato/ux-design/issues/46) Decidir o uso das imagens do catálogo com dados de terceiros (responsável).
 - [#47](https://github.com/douglasabnovato/ux-design/issues/47) Decidir o número de WhatsApp do "Fale comigo" (responsável).
