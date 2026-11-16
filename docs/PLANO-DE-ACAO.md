@@ -2,6 +2,63 @@
 
 O estado e os critérios ficam em [`MVP.md`](MVP.md). Este arquivo guarda o plano de cada ciclo, com data.
 
+## Ciclo de 10/11/2026 (faixa de 90%)
+
+> Branch `feature/2026-11-10-b` → `developer/sprint-2026-11-12` → `main` (o PR para a `main` fica com o responsável). Decisões D1 a D7 em `engenharia/decisoes/2026-11-10-ciclo-faixa-90.md`.
+
+**Produto.** Sem mudança de problema e público. A meta da hipótese passa a ser a do ciclo (D1). O teste com uma pessoa de fora vira validação (#32).
+
+**Engenharia.** Risco tratado: clientes citados sem confirmação. Pela D4, o cartão e o case mostram a citação como ilustrativa, com teste. Tirar ou manter cada nome é do responsável (#31); um deles é o nome completo de uma pessoa física.
+
+| Item | Destino |
+|---|---|
+| Aviso de citação ilustrativa, com teste | Este ciclo |
+| Critérios 2, 3 e 10 pelas decisões D1 a D3 | Este ciclo |
+| Manter ou tirar cada cliente citado | Responsável (#31) |
+| Validar com uma pessoa de fora | Responsável (#32) |
+
+## Ciclo de 07/11/2026
+
+> Executado em 09/11/2026. Branch `feature/2026-11-07` → `developer/sprint-2026-11-12` → `main` (o PR para a `main` fica com o responsável). Nível: Estudo (N1).
+
+### Produto
+
+**Foco.** Critério 9: tirar o CSS de terceiro (#35). Percorrer o fluxo principal na tela e corrigir o que ele mostrar.
+
+**O que a pesquisa trouxe.**
+
+| Ideia | O que levamos para o projeto | Fonte |
+|---|---|---|
+| CSS de terceiro bloqueia a renderização em servidor alheio: se ele cai ou demora, a página espera | `w3.css` trocado por `shared/w3-subset.css`, só com as classes usadas, servido pelo próprio site | [Web Performance Calendar: terceiros e ponto único de falha](https://calendar.perfplanet.com/2025/third-parties-and-single-points-of-failure/), [Lullabot: ADR de hospedar estáticos de terceiros](https://architecture.lullabot.com/adr/20251219-self-host-third-party-static-assets/) |
+| Em modal, o conteúdo de trás fica inerte, e Tab e Shift+Tab não saem do diálogo | Fundo com `inert` e foco circulando dentro do case (#36) | [W3C APG: padrão de diálogo modal](https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal/) |
+
+**Backlog do ciclo.**
+
+| Prioridade | Item | Destino |
+|---|---|---|
+| 1 | CSS local no lugar do w3schools.com, com o mesmo visual | Este ciclo (#35) |
+| 2 | Foco preso no modal de case (achado no fluxo na tela) | Este ciclo (#36) |
+| 3 | Imagens pesadas em webp | Issue #34 |
+| 4 | Arquivos `.skp` | Issue #33 |
+| 5 | Mais cases | Issue #37 |
+| 6 | Clientes citados, teste com pessoa de fora, proteção da `main` | Responsável (#31, #32, #30) |
+
+### Engenharia
+
+**Riscos.**
+- Uma classe `w3-*` nova nessas três páginas fica sem estilo até entrar em `shared/w3-subset.css`. O comentário no topo do arquivo avisa.
+- O clone completo tem cerca de 680 MB; este ciclo usou clone sem blobs com checkout parcial e conferiu `git ls-files` (1973) contra `git ls-tree` (1973) antes do primeiro commit.
+
+**Qualidade.** Capturas antes e depois (1280 e 390 px, 0 pixel diferente), 11 testes Playwright e o roteiro do fluxo na tela.
+
+**Definição de pronto.** CI verde no PR para a sprint; `docs/MVP.md` e README atualizados.
+
+### Plano de ação
+
+**Este ciclo executa.** Itens 1 e 2 do backlog, o fluxo na tela e a atualização do `docs/MVP.md` e do README.
+
+**Vira issue.** Já abertas: #33, #34, #37 (agente); #30, #31, #32 (responsável). Nova: #39, histórico do Git (responsável).
+
 ## Ciclo de 03/11/2026
 
 > Executado em 06/11/2026. Branch `feature/2026-11-06` → `developer/sprint-2026-11-12` → `main`. Nível: Estudo (N1); critérios 5 e 7 não se aplicam.
