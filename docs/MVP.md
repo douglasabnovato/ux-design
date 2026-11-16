@@ -1,6 +1,39 @@
 # MVP — critérios
 
-> Fonte única do estado. Tabela atual de 10/11/2026 (ciclo da faixa de 90%; decisões D1 a D7 em `engenharia/decisoes/2026-11-10-ciclo-faixa-90.md`). As tabelas anteriores estão em "Histórico", no fim.
+> Fonte única do estado. Tabela atual de 16/11/2026 (ciclo de 16/11/2026, plano em [`PLANO-DE-ACAO.md`](PLANO-DE-ACAO.md)). As tabelas anteriores estão em "Histórico", no fim.
+
+**Nível:** Estudo (N1). Critérios 5 (medição) e 7 (LCP no ar) não se aplicam e saem da conta.
+
+**Resumo:** 9 de 10 aplicáveis atendidos
+
+**Finalizado:** sim
+
+Falta só o critério 9, que depende do responsável, com issues `depende-do-responsavel`: ligar os alertas do Dependabot (#45), decidir cada cliente citado (#31) e decidir as imagens com dados de terceiros (#46).
+
+**Hipótese.** Acreditamos que mostrar o case com o antes e o depois faz quem avalia abrir ao menos 2 cases na mesma visita. Saberemos quando, em pelo menos 3 de 5 visitas de pessoas de fora (#32), 2 ou mais cases forem abertos. Meta decidida pelo coordenador em 10/11/2026 (decisão D1), revisável pelo responsável.
+
+**Fora do MVP.** Novos projetos e cases (#37), migrações pedidas na #1 que não entraram, enxugar o histórico do Git (#39) e medição de uso (N1).
+
+| # | Critério | Como verificar | Situação em 16/11/2026 |
+|---|---|---|---|
+| 1 | Problema e público claros | Dá para explicar em uma frase | Atende: catálogo de projetos de UX com o antes e o depois de cada um, para quem avalia o trabalho (README, topo) |
+| 2 | Hipótese a validar | Aposta escrita, com meta | Atende: hipótese acima, com a meta "2 cases em 3 de 5 visitas" e o "saberemos quando" |
+| 3 | Fluxo principal completo | Teste de ponta a ponta no navegador (Playwright), no CI | Atende: `npx playwright test`, 16/11/2026: 19 de 19 passaram localmente. O catálogo abre, o filtro por teclado reduz a lista, Enter abre o case com o foco no "Fechar", o Tab fica no modal e Esc fecha (`tests/catalogo.spec.mjs`). No CI: job `verificar`, run [CI_RUN](CI_LINK) |
+| 4 | Escopo enxuto | O que não entra está registrado | Atende: "Fora do MVP", acima |
+| 5 | Medição de uso | A métrica principal é coletada | Não se aplica (N1) |
+| 6 | Falhas tratadas | Erro, vazio e carregamento têm resposta | Atende: `npx playwright test`, 16/11/2026: catálogo com erro 500 (com "Tentar de novo"), sem rede e vazio passam; o "Fale comigo" esconde o WhatsApp sem número, em vez de abrir uma conversa que não existe (#47) |
+| 7 | Desempenho aceitável | LCP de até 2,5 s no celular | Não se aplica (N1). Registro: mediana de 2,85 s em 02/11/2026 |
+| 8 | Acessibilidade básica | axe e teclado | Atende: `npx playwright test tests/acessibilidade.spec.mjs`, 16/11/2026: axe sem violações no catálogo, no catálogo filtrado e no case aberto, em 1280 px e com os dados reais; foco visível pelo Tab com o contorno de 3 px do site. Teclado: Tab preso no modal e Esc fecha (`tests/catalogo.spec.mjs`). Botão "Pausar" no carrossel (WCAG 2.2.2), com teste. O site não tem tema escuro próprio (não há `prefers-color-scheme` no CSS), por isso o axe roda só no claro |
+| 9 | Segurança e conformidade | `npm audit --omit=dev`, alertas do Dependabot, segredos e dados pessoais | Parcial: `npm audit --omit=dev`, 16/11/2026: 0 vulnerabilidades. Alertas do Dependabot desligados: `gh api ".../dependabot/alerts?state=open&per_page=100"` respondeu 403 em 16/11/2026; pela regra em decisão (engenharia#33), fica Parcial até ligar (#45). Cliente citado aparece como "citação ilustrativa" (decisão D4); manter ou tirar cada um, inclusive o nome de uma pessoa física no campo `cliente`, é do responsável (#31). Imagens com dados de terceiros listadas na #46 |
+| 10 | Entrega confiável | CI nos PRs e principal protegida | Atende: `gh api repos/douglasabnovato/ux-design/rulesets/26932564`, 16/11/2026: ruleset `principal-protegida` ativo com `deletion`, `non_fast_forward`, `pull_request` e `required_status_checks` (job `verificar`). O workflow roda em PR para a `main` e a `developer/**` |
+| 11 | Testes dos fluxos críticos | Testes automatizados no CI | Atende: `node scripts/verificar-conteudo.mjs` (61 projetos) e 19 testes Playwright no job `verificar`, sem `skipped`, run [CI_RUN](CI_LINK). Na `main`, run [43799600448](https://github.com/douglasabnovato/ux-design/actions/runs/43799600448), 16/11/2026: 12 passed |
+| 12 | Documentação honesta | Qualquer pessoa roda o projeto | Atende: README com números e comandos conferidos contra o `package.json` em 16/11/2026; `docs/DEPLOY.md` novo. `curl` em https://douglasabnovato.github.io/ux-design/, 16/11/2026: 200, e o `index.html` e o `catalog.js` publicados têm o mesmo `md5sum` que os da `main` |
+
+## Histórico
+
+### Tabela de 10/11/2026 (ciclo da faixa de 90%)
+
+> Decisões D1 a D7 em `engenharia/decisoes/2026-11-10-ciclo-faixa-90.md`.
 
 **Nível:** Estudo (N1). Critérios 5 (medição) e 7 (LCP no ar) não se aplicam e saem da conta.
 
@@ -24,8 +57,6 @@ Falta só o critério 9, que depende do responsável: manter ou tirar cada clien
 | 10 | Entrega confiável | Publicação só depois de CI verde | Atende: `gh api repos/douglasabnovato/ux-design/rules/branches/main`, 10/11/2026: `deletion`, `non_fast_forward`, `pull_request` e `required_status_checks` com o job `verificar` (decisão D3). O Pages publica a `main`, que só recebe o que passou no CI (#30) |
 | 11 | Testes dos fluxos críticos | Testes automatizados no CI | Atende: `node scripts/verificar-conteudo.mjs` (61 projetos) e 12 testes Playwright no CI |
 | 12 | Documentação honesta | Qualquer pessoa roda o projeto, e os números estão certos | Atende: README revisto em 10/11/2026; `curl` em https://douglasabnovato.github.io/ux-design/, 10/11/2026: 200 |
-
-## Histórico
 
 ### Tabela de 09/11/2026, critério 10 revisto em 10/11/2026 (ciclo de 07/11/2026)
 
