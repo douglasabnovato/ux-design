@@ -29,6 +29,10 @@ jobs:
             /projects/art/
             /projects/our-coffee/
             /projects/restaurante/
+            /projects/uma-franquia/
+            /projects/edificacoes-3d/
+            /projects/marceneiro-rpc/
+            /projects/quiz-app/
           sparse-checkout-cone-mode: false
       - uses: actions/setup-node@v4
         with:

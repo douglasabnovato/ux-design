@@ -359,7 +359,7 @@ h1 {
     border-color: var(--accent-gold);
 }
 
-.diff-card h4 {
+.diff-card h3 {
     font-family: 'Playfair Display', serif;
     font-size: 1.3rem;
     color: #fff;
