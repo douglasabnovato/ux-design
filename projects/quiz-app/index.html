@@ -23,6 +23,7 @@
   <meta property="og:image" content="https://douglasabnovato.github.io/ux-design/assets/quiz-app.jpg" />
 </head>
   <body id="page-home">
+    <main>
     <h1 class="lt-sr-only">Incrível Quiz</h1>
     <div id="loader"></div>
     <!-- start Quiz button -->
@@ -99,6 +100,7 @@
         <button class="quit">Sair do Quiz</button>
       </div>
     </div>
+    </main>
     <!-- Inside this JavaScript file I've inserted Questions and Options only -->
     <script src="./src/data/questions.js"></script>
     <!-- Inside this JavaScript file I've coded all Quiz Codes -->
@@ -116,14 +118,15 @@ transition:transform .2s ease,border-color .2s ease,background .2s ease;-webkit-
 background:rgba(0,212,212,.16);color:#00d4d4;font-size:14px}
 @media (max-width:640px){.lt-voltar{left:12px;bottom:12px;padding:10px 13px;font-size:13px}
 .lt-voltar__t{display:none}}
+.lt-voltar__t{color:#eaf0f7}
 .lt-espaco{height:86px;flex:none;pointer-events:none}
 @media print{.lt-voltar,.lt-espaco{display:none}}
 </style>
 <div class="lt-espaco" aria-hidden="true"></div>
-<a class="lt-voltar" href="../../index.html" aria-label="Voltar ao catálogo UX Design">
+<nav aria-label="Volta ao catálogo"><a class="lt-voltar" href="../../index.html" aria-label="Voltar ao portfólio">
   <span class="lt-voltar__i" aria-hidden="true">&#8592;</span>
   <span class="lt-voltar__t">Voltar ao portfólio</span>
-</a>
+</a></nav>
 <!-- fim · volta ao catálogo -->
 </body>
 </html>

@@ -57,3 +57,15 @@ test.describe('com movimento normal', () => {
     expect(resumo(violations)).toEqual([]);
   });
 });
+
+// #48: as páginas dos 5 projetos com case, abertas a partir do catálogo, também passam pelo axe.
+const projetosComCase = ['uma-franquia', 'edificacoes-3d', 'marceneiro-rpc', 'restaurante', 'quiz-app'];
+
+for (const slug of projetosComCase) {
+  test(`a página do projeto ${slug} não tem violações do axe`, async ({ page }) => {
+    await page.goto(`/projects/${slug}/`);
+    await page.waitForLoadState('load');
+    const { violations } = await new AxeBuilder({ page }).analyze();
+    expect(resumo(violations)).toEqual([]);
+  });
+}
