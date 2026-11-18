@@ -220,7 +220,7 @@ feature/AAAA-MM-DD  →  developer/sprint-<próxima quinta>  →  main (produç�
 
 | Prioridade | Item |
 | --- | --- |
-| 🔴 | **171 MB de `.skp`** ([#33](https://github.com/douglasabnovato/ux-design/issues/33)) em `projects/edificacoes-3d` (29 arquivos, o maior com 57 MB) — arquivo-fonte do SketchUp que o navegador não usa. Tirar do repositório |
+| ✅ | **`.skp` fora da ponta do repositório** ([#33](https://github.com/douglasabnovato/ux-design/issues/33)): os 29 arquivos do SketchUp (172 MB) saíram de `projects/edificacoes-3d` em 18/11/2026. O navegador não abre esse formato, e nenhuma página apontava para eles. Os arquivos do site caíram de 828 MB para 656 MB (`du`). Guarde os `.skp` fora do Git, numa pasta ou nuvem do responsável. O histórico segue com o peso antigo, e um arquivo antigo volta com `git show <commit>:<caminho>` (#39) |
 | 🔴 | **609,7 MB de histórico** em `.git/objects/pack`. Apagar arquivo **não** reduz isso: só sai com `git filter-repo` ou repositório novo ([#39](https://github.com/douglasabnovato/ux-design/issues/39)) |
 | 🟡 | 31 MB de `.bmp` e o `marido-de-aluguel.png` de 2 MB — converter para `.webp` com `magick mogrify`, que preserva os nomes |
 | 🟡 | Escrever case para mais projetos e marcá-los como `destaque` |
