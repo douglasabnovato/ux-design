@@ -20,9 +20,9 @@ edificacoes-3d/
 ├── 📁 image/                          # Imagens gerais do projeto (house1.jpg, etc.)
 ├── 📁 google-sketchUp-imagens-1/      # Imagens e JPG/PNGs dos projetos
 ├── 📁 google-sketchUp-imagens-2/      # Renderizações 3D humanizadas (PNG/BMP)
-├── 📁 google-sketchUp-projetos-1/     # Arquivos originais do SketchUp (.skp)
-└── 📁 google-sketchUp-projetos-2/     # Arquivos originais do SketchUp (.skp)
 ``` 
+
+Os arquivos originais do SketchUp (`.skp`) saíram do repositório em 18/11/2026 (#33): o navegador não abre esse formato. Eles ficam fora do Git, com o responsável.
 
 ## 🚀 Funcionalidades & Checklist de Correções
 
@@ -34,7 +34,7 @@ edificacoes-3d/
 - [ ] **Estilização Local:** Criar um arquivo `style.css` local para reduzir a dependência exclusiva do CDN W3.CSS e personalizar a tipografia.
 - [ ] **Navegação & Menu:** Configurar os `id`s nas seções e implementar os links funcionais no menu.
 - [ ] **Detalhamento de Conteúdo:** Substituir textos genéricos em inglês por descrições reais dos projetos arquitetônicos.
-- [ ] **Higienização de Mídias:** Avaliar a movimentação dos arquivos `.skp` para um repositório de assets ou armazenamento cloud, mantendo no site apenas mídias otimizadas para web.
+- [x] **Higienização de Mídias (18/11/2026):** Avaliar a movimentação dos arquivos `.skp` para um repositório de assets ou armazenamento cloud, mantendo no site apenas mídias otimizadas para web.
 
 ---
 
