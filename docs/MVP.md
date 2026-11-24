@@ -1,6 +1,6 @@
 # MVP — critérios
 
-> Fonte única do estado. Tabela atual de 16/11/2026 (ciclo de 16/11/2026; critério 9 revisto às 15h08, com os alertas do Dependabot ligados; plano em [`PLANO-DE-ACAO.md`](PLANO-DE-ACAO.md)). As tabelas anteriores estão em "Histórico", no fim.
+> Fonte única do estado. Conferido em 24/11/2026 contra a `main` (`4bffb71`, PR #55 de 19/11/2026, CI run 44527849148 verde; site com HTTP 200). Tabela atual de 16/11/2026 (ciclo de 16/11/2026; critério 9 revisto às 15h08, com os alertas do Dependabot ligados; plano em [`PLANO-DE-ACAO.md`](PLANO-DE-ACAO.md)). As tabelas anteriores estão em "Histórico", no fim.
 
 **Nível:** Estudo (N1). Critérios 5 (medição) e 7 (LCP no ar) não se aplicam e saem da conta.
 
@@ -31,6 +31,7 @@ Falta só o critério 9, que depende do responsável, com issues `depende-do-res
 
 ## Histórico
 
+- 19/11/2026: a sprint de 19/11 entrou na `main` (PR #55, `4bffb71`; CI run 44527849148 e Pages run 44527848625 verdes). O axe nos 5 cases (#48) e a saída dos `.skp` (#33) estão no site. Segue 9 de 10, com o critério 9 Parcial pelas decisões #31 e #46. Registrado em 24/11/2026 (#57).
 - 18/11/2026: segue 9 de 10. O axe passou a rodar também nas páginas dos 5 projetos com case (#48), com 25 testes Playwright no total. Os 29 `.skp` saíram do repositório (#33). Nada disso muda a contagem: o critério 9 segue Parcial pelas decisões #31 e #46.
 - 16/11/2026, 15h08: segue 9 de 10. O responsável ligou os alertas do Dependabot (antes a API respondia 403; engenharia#33, #45): 0 abertos e audit de produção com 0 vulnerabilidades. O critério 9 segue Parcial pelas decisões #31 e #46.
 
