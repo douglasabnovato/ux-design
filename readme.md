@@ -10,11 +10,15 @@
 
 ---
 
-## Estado e próximos passos (ciclo de 16/11/2026)
+## Estado e próximos passos (conferido em 24/11/2026)
 
-Projeto de estudo (nível N1). Site publicado: [douglasabnovato.github.io/ux-design](https://douglasabnovato.github.io/ux-design/) (HTTP 200 em 16/11/2026, igual à `main`). **Finalizado: sim**, com 9 de 10 critérios aplicáveis atendidos. O que falta (critério 9) depende do responsável: #31 e #46. Os alertas do Dependabot foram ligados em 16/11/2026 e mostram 0 abertos (15h08), com `npm audit --omit=dev` sem vulnerabilidades (#45). A `main` exige PR e o job `verificar` do CI verde.
+Projeto de estudo (nível N1). Site publicado: [douglasabnovato.github.io/ux-design](https://douglasabnovato.github.io/ux-design/) (HTTP 200 em 24/11/2026; a `main` está no commit `4bffb71`, de 19/11/2026, com o CI e o Pages verdes). **Finalizado: sim**, com 9 de 10 critérios aplicáveis atendidos. O que falta (critério 9) depende do responsável: #31 e #46. Os alertas do Dependabot foram ligados em 16/11/2026 e mostram 0 abertos (15h08), com `npm audit --omit=dev` sem vulnerabilidades (#45). A `main` exige PR e o job `verificar` do CI verde.
 
-**O que foi feito em 16/11/2026** (PR #49 para a `developer/sprint-2026-11-19`; a `main` espera a revisão do responsável no PR da sprint para a `main`)
+**Na `main` desde 19/11/2026** (PR #55, a sprint de 19/11; CI run 44527849148 e Pages run 44527848625 verdes):
+- axe nas páginas dos 5 projetos com case, com 25 testes Playwright no total ([#48](https://github.com/douglasabnovato/ux-design/issues/48), PR #54).
+- Os 29 arquivos `.skp` saíram do repositório ([#33](https://github.com/douglasabnovato/ux-design/issues/33)).
+
+**Ciclo de 16/11/2026** (PR #49, também na `main` pelo PR #55)
 - axe sem violações no catálogo, no filtro e no case aberto, dentro dos testes Playwright (critério 8).
 - Foco visível pelo teclado conferido em teste.
 - Botão "Pausar" no carrossel de destaques (WCAG 2.2.2), com teste.
@@ -30,10 +34,7 @@ Projeto de estudo (nível N1). Site publicado: [douglasabnovato.github.io/ux-des
 - [#47](https://github.com/douglasabnovato/ux-design/issues/47) Decidir o número de WhatsApp do "Fale comigo" (responsável).
 - [#32](https://github.com/douglasabnovato/ux-design/issues/32) Validar com uma pessoa de fora (validação de produto, responsável).
 - [#39](https://github.com/douglasabnovato/ux-design/issues/39) Decidir se o histórico do Git deve ser enxugado (responsável).
-- [#48](https://github.com/douglasabnovato/ux-design/issues/48) Rodar o axe nas páginas dos projetos com case.
-- [#33](https://github.com/douglasabnovato/ux-design/issues/33) Tirar os arquivos `.skp` do repositório.
 - [#34](https://github.com/douglasabnovato/ux-design/issues/34) Converter as imagens pesadas para webp.
-- [#37](https://github.com/douglasabnovato/ux-design/issues/37) Escrever o case de mais projetos.
 
 **Onde está a documentação**
 - Estado e critérios: [docs/MVP.md](docs/MVP.md).
@@ -193,7 +194,7 @@ python -m http.server 3000
 
 ### Testes
 
-Comandos conferidos contra o `package.json` em 16/11/2026:
+Comandos conferidos contra o `package.json` em 24/11/2026 (o único script é `test`, com o Playwright; `scripts/verificar-conteudo.mjs` existe):
 
 ```bash
 npm ci
